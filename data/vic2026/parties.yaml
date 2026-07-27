@@ -65,6 +65,14 @@ parties:
     name: Pauline Hanson's One Nation
     short_name: One Nation
     family: one-nation
+    commitments:
+      - claim: Party states intention to contest all 88 Legislative Assembly seats at the Nov 2026 election
+        source:
+          url: https://www.onenation.org.au/one-nation-contest
+          publisher: Pauline Hanson's One Nation
+          title: One Nation To Contest All Victorian Seats
+          published: 2026-04-10
+          accessed: 2026-07-27
   - slug: shooters-fishers-farmers
     name: Shooters, Fishers and Farmers Party Victoria
     short_name: Shooters, Fishers & Farmers Vic
