@@ -52,6 +52,15 @@ for (const election of readdirSync(DATA_DIR)) {
   const regionSlugs = new Set(regions.map((r) => r.slug));
   const partySlugs = new Set(parties.map((p) => p.slug));
 
+  for (const d of districts) {
+    if (d.incumbent_party && !partySlugs.has(d.incumbent_party)) {
+      fail(`${election}/districts.yaml`, `${d.slug}: unknown incumbent_party '${d.incumbent_party}'`);
+    }
+    if (d.region && !regionSlugs.has(d.region)) {
+      fail(`${election}/districts.yaml`, `${d.slug}: unknown region '${d.region}'`);
+    }
+  }
+
   // candidates
   const candDir = join(dir, "candidates");
   let count = 0;

@@ -1,533 +1,535 @@
 # Victorian Legislative Assembly districts, 2021 redivision boundaries (in force for 2022 and 2026 elections).
-# Source: https://en.wikipedia.org/wiki/Electoral_districts_of_Victoria (verify against https://www.vec.vic.gov.au before election).
-# region: Legislative Council region containing this district — TODO enrich from VEC data, null until verified.
-# incumbent/incumbent_party: TODO enrich with source records.
+# Source (districts): https://en.wikipedia.org/wiki/Electoral_districts_of_Victoria
+# Source (incumbents, as at 2026-07-27): https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Assembly,_2022%E2%80%932026
+# Post-2022 by-election incumbents individually verified: Nepean (2026), Prahran (2025), Werribee (2025), Warrandyte (2023).
+# region: Legislative Council region containing this district.
+# Source (region mapping): Wikipedia region articles, e.g. https://en.wikipedia.org/wiki/Northern_Metropolitan_Region (and per-region equivalents), accessed 2026-07-27.
 districts:
   - slug: albert-park
     name: Albert Park
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: southern-metropolitan
+    incumbent: Nina Taylor
+    incumbent_party: labor
   - slug: ashwood
     name: Ashwood
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: southern-metropolitan
+    incumbent: Matt Fregon
+    incumbent_party: labor
   - slug: bass
     name: Bass
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: eastern-victoria
+    incumbent: Jordan Crugnale
+    incumbent_party: labor
   - slug: bayswater
     name: Bayswater
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: north-eastern-metropolitan
+    incumbent: Jackson Taylor
+    incumbent_party: labor
   - slug: bellarine
     name: Bellarine
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-victoria
+    incumbent: Alison Marchant
+    incumbent_party: labor
   - slug: benambra
     name: Benambra
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-victoria
+    incumbent: Bill Tilley
+    incumbent_party: liberal
   - slug: bendigo-east
     name: Bendigo East
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-victoria
+    incumbent: Jacinta Allan
+    incumbent_party: labor
   - slug: bendigo-west
     name: Bendigo West
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-victoria
+    incumbent: Maree Edwards
+    incumbent_party: labor
   - slug: bentleigh
     name: Bentleigh
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: southern-metropolitan
+    incumbent: Nick Staikos
+    incumbent_party: labor
   - slug: berwick
     name: Berwick
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: south-eastern-metropolitan
+    incumbent: Brad Battin
+    incumbent_party: liberal
   - slug: box-hill
     name: Box Hill
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: north-eastern-metropolitan
+    incumbent: Paul Hamer
+    incumbent_party: labor
   - slug: brighton
     name: Brighton
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: southern-metropolitan
+    incumbent: James Newbury
+    incumbent_party: liberal
   - slug: broadmeadows
     name: Broadmeadows
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-metropolitan
+    incumbent: Kathleen Matthews-Ward
+    incumbent_party: labor
   - slug: brunswick
     name: Brunswick
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-metropolitan
+    incumbent: Tim Read
+    incumbent_party: greens
   - slug: bulleen
     name: Bulleen
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: north-eastern-metropolitan
+    incumbent: Matthew Guy
+    incumbent_party: liberal
   - slug: bundoora
     name: Bundoora
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: north-eastern-metropolitan
+    incumbent: Colin Brooks
+    incumbent_party: labor
   - slug: carrum
     name: Carrum
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: south-eastern-metropolitan
+    incumbent: Sonya Kilkenny
+    incumbent_party: labor
   - slug: caulfield
     name: Caulfield
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: southern-metropolitan
+    incumbent: David Southwick
+    incumbent_party: liberal
   - slug: clarinda
     name: Clarinda
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: south-eastern-metropolitan
+    incumbent: Meng Heang Tak
+    incumbent_party: labor
   - slug: cranbourne
     name: Cranbourne
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: south-eastern-metropolitan
+    incumbent: Pauline Richards
+    incumbent_party: labor
   - slug: croydon
     name: Croydon
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: north-eastern-metropolitan
+    incumbent: David Hodgett
+    incumbent_party: liberal
   - slug: dandenong
     name: Dandenong
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: south-eastern-metropolitan
+    incumbent: Gabrielle Williams
+    incumbent_party: labor
   - slug: eildon
     name: Eildon
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-victoria
+    incumbent: Cindy McLeish
+    incumbent_party: liberal
   - slug: eltham
     name: Eltham
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: north-eastern-metropolitan
+    incumbent: Vicki Ward
+    incumbent_party: labor
   - slug: essendon
     name: Essendon
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-metropolitan
+    incumbent: Danny Pearson
+    incumbent_party: labor
   - slug: eureka
     name: Eureka
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-victoria
+    incumbent: Michaela Settle
+    incumbent_party: labor
   - slug: euroa
     name: Euroa
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-victoria
+    incumbent: Annabelle Cleeland
+    incumbent_party: nationals
   - slug: evelyn
     name: Evelyn
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: eastern-victoria
+    incumbent: Bridget Vallence
+    incumbent_party: liberal
   - slug: footscray
     name: Footscray
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-metropolitan
+    incumbent: Katie Hall
+    incumbent_party: labor
   - slug: frankston
     name: Frankston
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: south-eastern-metropolitan
+    incumbent: Paul Edbrooke
+    incumbent_party: labor
   - slug: geelong
     name: Geelong
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-victoria
+    incumbent: Christine Couzens
+    incumbent_party: labor
   - slug: gippsland-east
     name: Gippsland East
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: eastern-victoria
+    incumbent: Tim Bull
+    incumbent_party: nationals
   - slug: gippsland-south
     name: Gippsland South
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: eastern-victoria
+    incumbent: Danny O'Brien
+    incumbent_party: nationals
   - slug: glen-waverley
     name: Glen Waverley
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: north-eastern-metropolitan
+    incumbent: John Mullahy
+    incumbent_party: labor
   - slug: greenvale
     name: Greenvale
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-metropolitan
+    incumbent: Iwan Walters
+    incumbent_party: labor
   - slug: hastings
     name: Hastings
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: eastern-victoria
+    incumbent: Paul Mercurio
+    incumbent_party: labor
   - slug: hawthorn
     name: Hawthorn
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: southern-metropolitan
+    incumbent: John Pesutto
+    incumbent_party: liberal
   - slug: ivanhoe
     name: Ivanhoe
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: north-eastern-metropolitan
+    incumbent: Anthony Carbines
+    incumbent_party: labor
   - slug: kalkallo
     name: Kalkallo
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-metropolitan
+    incumbent: Ros Spence
+    incumbent_party: labor
   - slug: kew
     name: Kew
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: southern-metropolitan
+    incumbent: Jess Wilson
+    incumbent_party: liberal
   - slug: kororoit
     name: Kororoit
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-metropolitan
+    incumbent: Luba Grigorovitch
+    incumbent_party: labor
   - slug: lara
     name: Lara
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-victoria
+    incumbent: Ella George
+    incumbent_party: labor
   - slug: laverton
     name: Laverton
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-metropolitan
+    incumbent: Sarah Connolly
+    incumbent_party: labor
   - slug: lowan
     name: Lowan
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-victoria
+    incumbent: Emma Kealy
+    incumbent_party: nationals
   - slug: macedon
     name: Macedon
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-victoria
+    incumbent: Mary-Anne Thomas
+    incumbent_party: labor
   - slug: malvern
     name: Malvern
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: southern-metropolitan
+    incumbent: Michael O'Brien
+    incumbent_party: liberal
   - slug: melbourne
     name: Melbourne
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-metropolitan
+    incumbent: Ellen Sandell
+    incumbent_party: greens
   - slug: melton
     name: Melton
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-victoria
+    incumbent: Steve McGhie
+    incumbent_party: labor
   - slug: mildura
     name: Mildura
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-victoria
+    incumbent: Jade Benham
+    incumbent_party: nationals
   - slug: mill-park
     name: Mill Park
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: north-eastern-metropolitan
+    incumbent: Lily D'Ambrosio
+    incumbent_party: labor
   - slug: monbulk
     name: Monbulk
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: eastern-victoria
+    incumbent: Daniela De Martino
+    incumbent_party: labor
   - slug: mordialloc
     name: Mordialloc
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: south-eastern-metropolitan
+    incumbent: Tim Richardson
+    incumbent_party: labor
   - slug: mornington
     name: Mornington
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: eastern-victoria
+    incumbent: Chris Crewther
+    incumbent_party: liberal
   - slug: morwell
     name: Morwell
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: eastern-victoria
+    incumbent: Martin Cameron
+    incumbent_party: nationals
   - slug: mulgrave
     name: Mulgrave
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: south-eastern-metropolitan
+    incumbent: Eden Foster
+    incumbent_party: labor
   - slug: murray-plains
     name: Murray Plains
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-victoria
+    incumbent: Peter Walsh
+    incumbent_party: nationals
   - slug: narracan
     name: Narracan
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: eastern-victoria
+    incumbent: Wayne Farnham
+    incumbent_party: liberal
   - slug: narre-warren-north
     name: Narre Warren North
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: south-eastern-metropolitan
+    incumbent: Belinda Wilson
+    incumbent_party: labor
   - slug: narre-warren-south
     name: Narre Warren South
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: south-eastern-metropolitan
+    incumbent: Gary Maas
+    incumbent_party: labor
   - slug: nepean
     name: Nepean
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: eastern-victoria
+    incumbent: Anthony Marsh
+    incumbent_party: liberal
   - slug: niddrie
     name: Niddrie
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-metropolitan
+    incumbent: Ben Carroll
+    incumbent_party: labor
   - slug: northcote
     name: Northcote
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-metropolitan
+    incumbent: Kat Theophanous
+    incumbent_party: labor
   - slug: oakleigh
     name: Oakleigh
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: southern-metropolitan
+    incumbent: Steve Dimopoulos
+    incumbent_party: labor
   - slug: ovens-valley
     name: Ovens Valley
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-victoria
+    incumbent: Tim McCurdy
+    incumbent_party: nationals
   - slug: pakenham
     name: Pakenham
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: eastern-victoria
+    incumbent: Emma Vulin
+    incumbent_party: labor
   - slug: pascoe-vale
     name: Pascoe Vale
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-metropolitan
+    incumbent: Anthony Cianflone
+    incumbent_party: labor
   - slug: point-cook
     name: Point Cook
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-metropolitan
+    incumbent: Mathew Hilakari
+    incumbent_party: labor
   - slug: polwarth
     name: Polwarth
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-victoria
+    incumbent: Richard Riordan
+    incumbent_party: liberal
   - slug: prahran
     name: Prahran
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: southern-metropolitan
+    incumbent: Rachel Westaway
+    incumbent_party: liberal
   - slug: preston
     name: Preston
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-metropolitan
+    incumbent: Nathan Lambert
+    incumbent_party: labor
   - slug: richmond
     name: Richmond
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-metropolitan
+    incumbent: Gabrielle de Vietri
+    incumbent_party: greens
   - slug: ringwood
     name: Ringwood
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: north-eastern-metropolitan
+    incumbent: Will Fowles
+    incumbent_party: independent
   - slug: ripon
     name: Ripon
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-victoria
+    incumbent: Martha Haylett
+    incumbent_party: labor
   - slug: rowville
     name: Rowville
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: south-eastern-metropolitan
+    incumbent: Kim Wells
+    incumbent_party: liberal
   - slug: sandringham
     name: Sandringham
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: southern-metropolitan
+    incumbent: Brad Rowswell
+    incumbent_party: liberal
   - slug: shepparton
     name: Shepparton
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-victoria
+    incumbent: Kim O'Keeffe
+    incumbent_party: nationals
   - slug: south-barwon
     name: South Barwon
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-victoria
+    incumbent: Darren Cheeseman
+    incumbent_party: independent
   - slug: south-west-coast
     name: South-West Coast
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-victoria
+    incumbent: Roma Britnell
+    incumbent_party: liberal
   - slug: st-albans
     name: St Albans
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-metropolitan
+    incumbent: Natalie Suleyman
+    incumbent_party: labor
   - slug: sunbury
     name: Sunbury
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-metropolitan
+    incumbent: Josh Bull
+    incumbent_party: labor
   - slug: sydenham
     name: Sydenham
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-metropolitan
+    incumbent: Natalie Hutchins
+    incumbent_party: labor
   - slug: tarneit
     name: Tarneit
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-metropolitan
+    incumbent: Dylan Wight
+    incumbent_party: labor
   - slug: thomastown
     name: Thomastown
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-metropolitan
+    incumbent: Bronwyn Halfpenny
+    incumbent_party: labor
   - slug: warrandyte
     name: Warrandyte
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: north-eastern-metropolitan
+    incumbent: Nicole Werner
+    incumbent_party: liberal
   - slug: wendouree
     name: Wendouree
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-victoria
+    incumbent: Juliana Addison
+    incumbent_party: labor
   - slug: werribee
     name: Werribee
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-metropolitan
+    incumbent: John Lister
+    incumbent_party: labor
   - slug: williamstown
     name: Williamstown
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: western-metropolitan
+    incumbent: Melissa Horne
+    incumbent_party: labor
   - slug: yan-yean
     name: Yan Yean
     chamber: assembly
-    region: null
-    incumbent: null
-    incumbent_party: null
+    region: northern-victoria
+    incumbent: Lauren Kathage
+    incumbent_party: labor

@@ -1,29 +1,78 @@
 # Political parties for vic2026.
-# TODO(verify): reconcile this list against the VEC register of political parties
-# (https://www.vec.vic.gov.au/candidates-and-parties/political-party-register)
-# before entering candidates; add registered: true + source per party.
-# family groups related parties for dashboard rollups (e.g. coalition).
+# Verified against VEC currently-registered-parties list.
+# Source: https://www.vec.vic.gov.au/candidates-and-parties/registered-political-parties/currently-registered-parties
+# Accessed: 2026-07-27
+# family groups related parties for dashboard rollups (e.g. coalition). null = no rollup.
+source:
+  url: https://www.vec.vic.gov.au/candidates-and-parties/registered-political-parties/currently-registered-parties
+  publisher: Victorian Electoral Commission
+  title: Currently registered parties
+  accessed: 2026-07-27
 parties:
+  - slug: sustainable-australia
+    name: Affordable Housing Now – Sustainable Australia Party
+    short_name: Sustainable Australia Party
+    family: null
+  - slug: animal-justice
+    name: Animal Justice Party
+    short_name: AJP
+    family: null
+  - slug: greens
+    name: Australian Greens Victoria
+    short_name: The Greens
+    family: greens
   - slug: labor
-    name: Australian Labor Party (Victorian Branch)
-    short_name: Labor
+    name: Australian Labor Party - Victorian Branch
+    short_name: Australian Labor Party
     family: labor
+  - slug: dlp
+    name: Democratic Labour Party (DLP)
+    short_name: Labour DLP
+    family: null
+  - slug: end-mass-immigration
+    name: End Mass Immigration – Reform AU
+    short_name: End Mass Immigration – Reform AU
+    family: null
+  - slug: family-first
+    name: Family First Victoria
+    short_name: Family First
+    family: null
+  - slug: freedom-party
+    name: Freedom Party
+    short_name: Freedom Party
+    family: null
+  - slug: legalise-cannabis
+    name: Legalise Cannabis Victoria
+    short_name: Legalise Cannabis
+    family: null
   - slug: liberal
-    name: Liberal Party of Australia (Victorian Division)
+    name: Liberal Party of Australia – Victorian Division
     short_name: Liberal
     family: coalition
+  - slug: libertarian
+    name: Libertarian Party
+    short_name: Libertarian
+    family: null
   - slug: nationals
-    name: National Party of Australia – Victoria
-    short_name: Nationals
+    name: National Party of Australia - Victoria
+    short_name: The Nationals
     family: coalition
-  - slug: greens
-    name: Australian Greens – Victoria
-    short_name: Greens
-    family: greens
+  - slug: new-democrats
+    name: New Democrats
+    short_name: New Democrats
+    family: null
   - slug: one-nation
     name: Pauline Hanson's One Nation
     short_name: One Nation
     family: one-nation
+  - slug: shooters-fishers-farmers
+    name: Shooters, Fishers and Farmers Party Victoria
+    short_name: Shooters, Fishers & Farmers Vic
+    family: null
+  - slug: victorian-socialists
+    name: Victorian Socialists
+    short_name: Victorian Socialists
+    family: null
   - slug: independent
     name: Independent
     short_name: Independent
