@@ -1,0 +1,50 @@
+# 2026 Victorian state election — key facts and dates.
+# All dates AEDT. Verify against VEC as the election approaches; VEC is authoritative.
+election:
+  id: vic2026
+  name: 2026 Victorian state election
+  jurisdiction: VIC
+  level: state
+  election_day: 2026-11-28
+  assembly_seats: 88
+  council_seats: 40
+  dates:
+    - date: 2026-11-03
+      event: Parliament expires; writs issued
+      source:
+        url: https://en.wikipedia.org/wiki/2026_Victorian_state_election
+        publisher: Wikipedia
+        accessed: 2026-07-27
+    - date: 2026-11-04
+      event: Nominations open
+      source:
+        url: https://www.vec.vic.gov.au/voting/2026-state-election
+        publisher: Victorian Electoral Commission
+        accessed: 2026-07-27
+    - date: 2026-11-10
+      event: Electoral roll closes 8pm
+      source:
+        url: https://en.wikipedia.org/wiki/2026_Victorian_state_election
+        publisher: Wikipedia
+        accessed: 2026-07-27
+    - date: 2026-11-13
+      event: Nominations close 12 noon
+      source:
+        url: https://en.wikipedia.org/wiki/2026_Victorian_state_election
+        publisher: Wikipedia
+        accessed: 2026-07-27
+    - date: 2026-11-28
+      event: Election day
+      source:
+        url: https://www.vec.vic.gov.au/voting/2026-state-election
+        publisher: Victorian Electoral Commission
+        accessed: 2026-07-27
+    - date: 2026-12-19
+      event: Latest return of writs
+      source:
+        url: https://en.wikipedia.org/wiki/2026_Victorian_state_election
+        publisher: Wikipedia
+        accessed: 2026-07-27
+  authorities:
+    - name: Victorian Electoral Commission
+      url: https://www.vec.vic.gov.au/

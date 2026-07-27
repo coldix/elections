@@ -1,0 +1,533 @@
+# Victorian Legislative Assembly districts, 2021 redivision boundaries (in force for 2022 and 2026 elections).
+# Source: https://en.wikipedia.org/wiki/Electoral_districts_of_Victoria (verify against https://www.vec.vic.gov.au before election).
+# region: Legislative Council region containing this district — TODO enrich from VEC data, null until verified.
+# incumbent/incumbent_party: TODO enrich with source records.
+districts:
+  - slug: albert-park
+    name: Albert Park
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: ashwood
+    name: Ashwood
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: bass
+    name: Bass
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: bayswater
+    name: Bayswater
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: bellarine
+    name: Bellarine
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: benambra
+    name: Benambra
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: bendigo-east
+    name: Bendigo East
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: bendigo-west
+    name: Bendigo West
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: bentleigh
+    name: Bentleigh
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: berwick
+    name: Berwick
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: box-hill
+    name: Box Hill
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: brighton
+    name: Brighton
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: broadmeadows
+    name: Broadmeadows
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: brunswick
+    name: Brunswick
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: bulleen
+    name: Bulleen
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: bundoora
+    name: Bundoora
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: carrum
+    name: Carrum
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: caulfield
+    name: Caulfield
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: clarinda
+    name: Clarinda
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: cranbourne
+    name: Cranbourne
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: croydon
+    name: Croydon
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: dandenong
+    name: Dandenong
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: eildon
+    name: Eildon
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: eltham
+    name: Eltham
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: essendon
+    name: Essendon
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: eureka
+    name: Eureka
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: euroa
+    name: Euroa
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: evelyn
+    name: Evelyn
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: footscray
+    name: Footscray
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: frankston
+    name: Frankston
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: geelong
+    name: Geelong
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: gippsland-east
+    name: Gippsland East
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: gippsland-south
+    name: Gippsland South
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: glen-waverley
+    name: Glen Waverley
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: greenvale
+    name: Greenvale
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: hastings
+    name: Hastings
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: hawthorn
+    name: Hawthorn
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: ivanhoe
+    name: Ivanhoe
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: kalkallo
+    name: Kalkallo
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: kew
+    name: Kew
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: kororoit
+    name: Kororoit
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: lara
+    name: Lara
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: laverton
+    name: Laverton
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: lowan
+    name: Lowan
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: macedon
+    name: Macedon
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: malvern
+    name: Malvern
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: melbourne
+    name: Melbourne
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: melton
+    name: Melton
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: mildura
+    name: Mildura
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: mill-park
+    name: Mill Park
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: monbulk
+    name: Monbulk
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: mordialloc
+    name: Mordialloc
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: mornington
+    name: Mornington
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: morwell
+    name: Morwell
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: mulgrave
+    name: Mulgrave
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: murray-plains
+    name: Murray Plains
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: narracan
+    name: Narracan
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: narre-warren-north
+    name: Narre Warren North
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: narre-warren-south
+    name: Narre Warren South
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: nepean
+    name: Nepean
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: niddrie
+    name: Niddrie
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: northcote
+    name: Northcote
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: oakleigh
+    name: Oakleigh
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: ovens-valley
+    name: Ovens Valley
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: pakenham
+    name: Pakenham
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: pascoe-vale
+    name: Pascoe Vale
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: point-cook
+    name: Point Cook
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: polwarth
+    name: Polwarth
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: prahran
+    name: Prahran
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: preston
+    name: Preston
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: richmond
+    name: Richmond
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: ringwood
+    name: Ringwood
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: ripon
+    name: Ripon
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: rowville
+    name: Rowville
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: sandringham
+    name: Sandringham
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: shepparton
+    name: Shepparton
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: south-barwon
+    name: South Barwon
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: south-west-coast
+    name: South-West Coast
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: st-albans
+    name: St Albans
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: sunbury
+    name: Sunbury
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: sydenham
+    name: Sydenham
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: tarneit
+    name: Tarneit
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: thomastown
+    name: Thomastown
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: warrandyte
+    name: Warrandyte
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: wendouree
+    name: Wendouree
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: werribee
+    name: Werribee
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: williamstown
+    name: Williamstown
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null
+  - slug: yan-yean
+    name: Yan Yean
+    chamber: assembly
+    region: null
+    incumbent: null
+    incumbent_party: null

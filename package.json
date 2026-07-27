@@ -1,0 +1,14 @@
+{
+  "name": "@coldix/elections",
+  "private": true,
+  "type": "module",
+  "description": "Open, sourced, machine-readable Australian election candidate ledger",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "export": "node scripts/export.mjs",
+    "check": "npm run validate && npm run export"
+  },
+  "dependencies": {
+    "yaml": "^2.5.0"
+  }
+}

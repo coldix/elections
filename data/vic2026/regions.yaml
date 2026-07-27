@@ -1,0 +1,35 @@
+# Victorian Legislative Council regions, 2021 boundaries. 5 members elected per region.
+# Source: https://en.wikipedia.org/wiki/Electoral_regions_of_Victoria
+regions:
+  - slug: northern-metropolitan
+    name: Northern Metropolitan
+    chamber: council
+    seats: 5
+  - slug: southern-metropolitan
+    name: Southern Metropolitan
+    chamber: council
+    seats: 5
+  - slug: north-eastern-metropolitan
+    name: North-Eastern Metropolitan
+    chamber: council
+    seats: 5
+  - slug: south-eastern-metropolitan
+    name: South-Eastern Metropolitan
+    chamber: council
+    seats: 5
+  - slug: western-metropolitan
+    name: Western Metropolitan
+    chamber: council
+    seats: 5
+  - slug: northern-victoria
+    name: Northern Victoria
+    chamber: council
+    seats: 5
+  - slug: eastern-victoria
+    name: Eastern Victoria
+    chamber: council
+    seats: 5
+  - slug: western-victoria
+    name: Western Victoria
+    chamber: council
+    seats: 5

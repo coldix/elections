@@ -1,0 +1,30 @@
+# Political parties for vic2026.
+# TODO(verify): reconcile this list against the VEC register of political parties
+# (https://www.vec.vic.gov.au/candidates-and-parties/political-party-register)
+# before entering candidates; add registered: true + source per party.
+# family groups related parties for dashboard rollups (e.g. coalition).
+parties:
+  - slug: labor
+    name: Australian Labor Party (Victorian Branch)
+    short_name: Labor
+    family: labor
+  - slug: liberal
+    name: Liberal Party of Australia (Victorian Division)
+    short_name: Liberal
+    family: coalition
+  - slug: nationals
+    name: National Party of Australia – Victoria
+    short_name: Nationals
+    family: coalition
+  - slug: greens
+    name: Australian Greens – Victoria
+    short_name: Greens
+    family: greens
+  - slug: one-nation
+    name: Pauline Hanson's One Nation
+    short_name: One Nation
+    family: one-nation
+  - slug: independent
+    name: Independent
+    short_name: Independent
+    family: independent
