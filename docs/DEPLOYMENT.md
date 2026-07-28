@@ -124,15 +124,20 @@ Active before the custom domain and redirect steps will work.
 > moving nameservers would move DNS control and could interrupt it — recreate
 > those records in Cloudflare *before* switching.
 
-### 1. Canonical domain — attach to Pages
+### 1. Canonical domain — attach to the Worker
 
-1. Pages project → *Custom domains* → *Set up a custom domain*.
+1. Worker → *Settings* → *Domains & Routes* → *Add* → *Custom domain*.
 2. Enter `electiontracker.au`.
 3. With the zone in the same account, Cloudflare creates the DNS record itself.
-4. Add `www.electiontracker.au` too if you want it; redirect it to the apex with
-   the same rule pattern as below.
+   Nothing needs adding by hand — the apex A/AAAA records appear automatically
+   and will not show in a zone-file export taken beforehand.
+4. `www` is **not** created. If you want `www.electiontracker.au` to work, add
+   it the same way the `.com.au` is handled below: a proxied `AAAA` `www` →
+   `100::` plus a redirect rule to the apex. Leaving it off is a legitimate
+   choice — plenty of sites are apex-only — but then the hostname simply does
+   not resolve.
 
-### 2. Second domain — redirect, do NOT attach to Pages
+### 2. Second domain — redirect, do NOT attach to the Worker
 
 Adding `electiontracker.com.au` as a second custom domain would serve the whole
 site twice on two hostnames. That splits search ranking between them and gives
@@ -142,13 +147,33 @@ serves a byte of content.
 
 In the `electiontracker.com.au` zone:
 
-1. **DNS** — a redirect rule only fires if a proxied record exists for the
-   hostname. Add a placeholder that never receives traffic:
-   - `AAAA` `@` → `100::` , **Proxied** (the IPv6 discard prefix)
+1. **DNS** — a redirect rule only fires if a *proxied* record exists for the
+   hostname, but that record must not point at a real origin.
+
+   **First delete whatever Cloudflare imported when it scanned the zone.** A
+   freshly registered domain usually arrives carrying the registrar's parking
+   or forwarding records. Here that was four `A` records (apex ×2, `www` ×2)
+   pointing at `5.22.145.180` / `5.22.145.155`, which reverse-resolve to
+   `relay.mail-forwarder.io` (Key-Systems). That is the registrar's
+   web/mail-forwarding service, not a web server — it refuses TLS, which is
+   precisely the **HTTP 525** the domain returns until they are removed.
+
+   Deleting those `A` records does not affect email. Mail is routed by `MX`
+   records, and the zone has none yet.
+
+   Then add a placeholder that can never receive traffic:
+   - `AAAA` `@` → `100::` , **Proxied**
    - `AAAA` `www` → `100::` , **Proxied**
+
+   `100::` is the IPv6 discard prefix (RFC 6666) — packets sent there go
+   nowhere. The record exists only so Cloudflare's proxy answers for the
+   hostname, letting the redirect fire at the edge before any origin
+   connection is attempted.
+
 2. **Rules → Redirect Rules → Create rule**
    - Name: `com.au to canonical`
    - If: *Hostname* *contains* `electiontracker.com.au`
+     (covers `www.` as well)
    - Then: **Dynamic** redirect
      - Expression:
        `concat("https://electiontracker.au", http.request.uri.path)`
