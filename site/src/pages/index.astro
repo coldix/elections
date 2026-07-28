@@ -18,7 +18,11 @@ const summary = summaryFor(data);
 
 const stats = [
   { value: summary.districts, label: "Legislative Assembly districts" },
-  { value: summary.regions, label: "Legislative Council regions" },
+  {
+    value: summary.regions,
+    label: "Legislative Council regions",
+    note: `${summary.council_members} sitting members`,
+  },
   { value: summary.registered_parties, label: "Registered parties", note: "VEC register" },
   { value: summary.candidates, label: "Candidate records", note: "each individually sourced" },
   { value: summary.retirements, label: "Confirmed retirements", note: "MPs not recontesting" },
@@ -115,24 +119,35 @@ const schema = {
 
       <h3 class="dash-h">Every registered party</h3>
       <p class="muted dash-sub">
-        Listed alphabetically. Parties with no individually sourced candidate yet are shown
-        too — absence of a record is not evidence that a party is not standing candidates.
+        Ordered by seats currently held in the Parliament of Victoria — an objective fact
+        about the sitting parliament, not a ranking by prominence. Parties with no
+        individually sourced candidate yet are shown too: absence of a record is not
+        evidence that a party is not standing candidates.
       </p>
 
       <div class="table-scroll">
         <table class="data">
           <caption class="visually-hidden">
-            Legislative Assembly candidate coverage by party
+            Legislative Assembly candidate coverage by party, ordered by seats currently
+            held in both houses
           </caption>
           <thead>
             <tr>
-              <th scope="col">Party</th>
-              <th scope="col" class="num">Districts covered</th>
-              <th scope="col">Progress</th>
-              <th scope="col" class="num">Announced</th>
-              <th scope="col" class="num">Endorsed</th>
-              <th scope="col" class="num">Nominated</th>
-              <th scope="col" class="num">Ended</th>
+              <th scope="col" rowspan="2">Party</th>
+              <th scope="col" colspan="3" class="grp">Seats held now</th>
+              <th scope="col" colspan="2" class="grp">2026 Assembly coverage</th>
+              <th scope="col" colspan="4" class="grp">Candidate status</th>
+            </tr>
+            <tr>
+              <th scope="col" class="num sub">Assembly</th>
+              <th scope="col" class="num sub">Council</th>
+              <th scope="col" class="num sub">Total</th>
+              <th scope="col" class="num sub">Districts</th>
+              <th scope="col" class="sub">Progress</th>
+              <th scope="col" class="num sub">Announced</th>
+              <th scope="col" class="num sub">Endorsed</th>
+              <th scope="col" class="num sub">Nominated</th>
+              <th scope="col" class="num sub">Ended</th>
             </tr>
           </thead>
           <tbody>
@@ -149,6 +164,9 @@ const schema = {
                       {c.short_name}
                     </a>
                   </th>
+                  <td class="num">{c.current.assembly || "—"}</td>
+                  <td class="num">{c.current.council || "—"}</td>
+                  <td class="num tot">{c.current.total || "—"}</td>
                   <td class="num">
                     {c.assembly_seats_covered}
                     <span class="muted"> / {c.assembly_seats_total}</span>
@@ -172,6 +190,13 @@ const schema = {
           </tbody>
         </table>
       </div>
+      <p class="muted table-note">
+        <strong>Seats held now</strong> is the current Parliament (2022–2026), including
+        mid-term replacements and party changes — not the 2022 election result. The
+        Democratic Labour Party won a Council seat in 2022 but holds none today, its member
+        having left the party.{" "}
+        <a href="/districts#council">See who holds each Council seat</a>.
+      </p>
 
       <p class="muted status-key">
         <strong>Status meanings.</strong>{" "}
@@ -335,6 +360,24 @@ const schema = {
   .status-key {
     margin-top: 0.9rem;
     max-width: 60rem;
+  }
+  .table-note {
+    margin-top: 0.9rem;
+    max-width: 60rem;
+  }
+  th.grp {
+    text-align: center;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  th.sub {
+    font-weight: 620;
+  }
+  td.tot {
+    font-weight: 680;
+    border-right: 1px solid var(--rule-strong);
+  }
+  th.grp:not(:last-child) {
+    border-right: 1px solid var(--rule-strong);
   }
   .retire-strip {
     list-style: none;

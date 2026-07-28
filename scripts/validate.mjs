@@ -78,6 +78,30 @@ for (const election of readdirSync(DATA_DIR)) {
     if (e.code !== "ENOENT") throw e;
   }
 
+  // council members (optional file) — who currently holds each upper-house seat
+  try {
+    const members = load("council-members.yaml").council_members ?? [];
+    const file = `${election}/council-members.yaml`;
+    const perRegion = {};
+    for (const m of members) {
+      if (!m.name) fail(file, "council member missing name");
+      if (!partySlugs.has(m.party)) fail(file, `${m.name}: unknown party '${m.party}'`);
+      if (!regionSlugs.has(m.region)) fail(file, `${m.name}: unknown region '${m.region}'`);
+      checkSource(file, m.name, m.source);
+      perRegion[m.region] = (perRegion[m.region] ?? 0) + 1;
+    }
+    // Each Victorian Legislative Council region returns exactly five members.
+    // A miscount means a member was dropped or duplicated during entry.
+    for (const r of regions) {
+      const n = perRegion[r.slug] ?? 0;
+      if (members.length && n !== r.seats) {
+        fail(file, `${r.slug}: ${n} members recorded, expected ${r.seats}`);
+      }
+    }
+  } catch (e) {
+    if (e.code !== "ENOENT") throw e;
+  }
+
   // candidates
   const candDir = join(dir, "candidates");
   let count = 0;

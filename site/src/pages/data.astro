@@ -10,9 +10,11 @@ const base = "/data/vic2026";
 const files = [
   ["candidates.json", "candidates.csv", "Every candidacy record, with its full status history and sources.", summary.candidates],
   ["districts.json", "districts.csv", "All 88 Legislative Assembly districts, their Council region and sitting member.", summary.districts],
+  ["council-members.json", "council-members.csv", "Sitting members of the Legislative Council, by region, as the seats are held today.", summary.council_members],
   ["retirements.json", "retirements.csv", "Sitting members who have confirmed they will not recontest.", summary.retirements],
   ["parties.json", null, "Parties on the VEC register, with any public commitment they have made.", summary.registered_parties],
   ["regions.json", null, "The 8 Legislative Council regions.", summary.regions],
+  ["representation.json", null, "Seats each party holds right now in each house of the current parliament.", null],
   ["election.json", null, "Key dates and jurisdiction metadata, each with a source.", null],
   ["coverage.json", null, "Per-party district coverage, with the counting caveat attached.", null],
   ["summary.json", null, "Headline counts, regenerated on every build.", null],
@@ -127,6 +129,12 @@ const files = [
       <li>
         Dates are ISO <code>YYYY-MM-DD</code>. Slugs are stable identifiers — names are for
         display.
+      </li>
+      <li>
+        <code>representation</code> and <code>council-members</code> describe the{" "}
+        <em>current</em> parliament (2022–2026), including mid-term replacements and party
+        changes. They are neither a 2022 election result nor a 2026 candidate count — a
+        sitting member is not a candidate until there is a source saying so.
       </li>
     </ul>
   </div>

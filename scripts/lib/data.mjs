@@ -90,6 +90,7 @@ export function loadElection(id) {
   const regions = load(dir, "regions.yaml").regions;
   const parties = load(dir, "parties.yaml").parties;
   const retirements = loadOptional(dir, "retirements.yaml", "retirements");
+  const councilMembers = loadOptional(dir, "council-members.yaml", "council_members");
 
   const candidates = readdirSync(join(dir, "candidates"))
     .filter((f) => !f.startsWith("_") && f.endsWith(".yaml"))
@@ -118,6 +119,7 @@ export function loadElection(id) {
     partyBySlug,
     retirements,
     candidates,
+    councilMembers,
     districts: districts.map((d) => ({
       ...d,
       candidates: byContest(d.slug, "assembly"),
@@ -127,18 +129,49 @@ export function loadElection(id) {
       ...r,
       candidates: byContest(r.slug, "council"),
       retirements: retirements.filter((x) => x.role === "MLC" && x.seat === r.slug),
+      members: councilMembers.filter((m) => m.region === r.slug),
     })),
   };
 }
 
 /**
+ * Current parliamentary representation per party: seats actually held right
+ * now in each house, including mid-term party changes and replacements.
+ *
+ * This is a record of the sitting parliament, NOT a 2026 candidate count and
+ * NOT a 2022 election result. Sorting listings by this figure is defensible
+ * because it is an objective, externally verifiable fact rather than an
+ * editorial ranking — see docs/METHODOLOGY.md#ordering.
+ */
+export function representationFor(data) {
+  const map = new Map();
+  const bump = (slug, house) => {
+    if (!slug) return;
+    const row = map.get(slug) ?? { assembly: 0, council: 0 };
+    row[house]++;
+    map.set(slug, row);
+  };
+
+  for (const d of data.districts) bump(d.incumbent_party, "assembly");
+  for (const m of data.councilMembers) bump(m.party, "council");
+
+  return Object.fromEntries(
+    [...map.entries()].map(([slug, r]) => [slug, { ...r, total: r.assembly + r.council }])
+  );
+}
+
+/**
  * Per-party Legislative Assembly coverage: how many of the 88 districts have a
  * live candidacy for that party, broken down by status.
- * Parties are returned in a fixed, neutral order (alphabetical by name) —
- * never ranked by coverage, size or preference. See docs/METHODOLOGY.md.
+ *
+ * Ordering: by seats currently held in the Parliament (both houses), largest
+ * first, then alphabetically. That is an objective, externally verifiable fact
+ * about the sitting parliament — never a ranking by coverage, campaign
+ * prominence or editorial preference. See docs/METHODOLOGY.md#ordering.
  */
 export function coverageFor(data) {
   const totalDistricts = data.districts.length;
+  const rep = representationFor(data);
 
   const rows = data.parties.map((p) => {
     const live = data.candidates.filter(
@@ -167,13 +200,21 @@ export function coverageFor(data) {
       by_status: byStatus,
       ended_count: ended.length,
       covered_districts: [...seats].sort(),
+      // Seats held in the CURRENT parliament — context for the coverage
+      // figure, and the basis for listing order.
+      current: rep[p.slug] ?? { assembly: 0, council: 0, total: 0 },
       // A party's own public claim about how many seats it will contest,
       // where it has made one. Recorded as a claim, never as a fact.
       commitments: p.commitments ?? [],
     };
   });
 
-  return rows.sort((a, b) => a.name.localeCompare(b.name));
+  return rows.sort(
+    (a, b) =>
+      b.current.total - a.current.total ||
+      b.current.assembly - a.current.assembly ||
+      a.name.localeCompare(b.name)
+  );
 }
 
 /** Headline counts for the homepage. All derived, none hand-entered. */
@@ -203,6 +244,7 @@ export function summaryFor(data) {
   return {
     districts: data.districts.length,
     regions: data.regions.length,
+    council_members: data.councilMembers.length,
     // "Registered parties" excludes the `independent` pseudo-party, which is a
     // grouping for non-party candidates, not an entry on the VEC register.
     registered_parties: data.parties.filter((p) => p.slug !== "independent").length,

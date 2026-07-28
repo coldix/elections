@@ -1,0 +1,353 @@
+# Sitting members of the Victorian Legislative Council (upper house), 2022-2026.
+# 40 members: 5 elected from each of the 8 regions at the 2022 election.
+# This records who currently HOLDS each seat, including mid-term replacements and
+# party changes since 2022 — it is not the 2022 election result.
+# Candidacies for 2026 are tracked separately in candidates/; a member appearing
+# here is NOT thereby a 2026 candidate (see docs/METHODOLOGY.md).
+council_members:
+  - name: Sheena Watt
+    party: labor
+    region: northern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Evan Mulholland
+    party: liberal
+    region: northern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Anasina Gray-Barberio
+    party: greens
+    region: northern-metropolitan
+    note: >-
+      Replaced Samantha Ratnam (Greens), who resigned from parliament on 8 Nov
+      ember 2024; Gray-Barberio filled the vacancy on 13 November 2024.
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Enver Erdogan
+    party: labor
+    region: northern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Adem Somyurek
+    party: independent
+    region: northern-metropolitan
+    note: >-
+      Elected for the Democratic Labour Party; resigned from the DLP in March 
+      2024 and now sits as an independent. The DLP therefore holds no seat des
+      pite having won one at the 2022 election.
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: David Davis
+    party: liberal
+    region: southern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: John Berger
+    party: labor
+    region: southern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Georgie Crozier
+    party: liberal
+    region: southern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Katherine Copsey
+    party: greens
+    region: southern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Ryan Batchelor
+    party: labor
+    region: southern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Shaun Leane
+    party: labor
+    region: north-eastern-metropolitan
+    note: >-
+      Announced he will not recontest in 2026.
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Richard Welch
+    party: liberal
+    region: north-eastern-metropolitan
+    note: >-
+      Replaced Matthew Bach (Liberal), who resigned from parliament in Decembe
+      r 2023; Welch filled the vacancy on 7 February 2024.
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Sonja Terpstra
+    party: labor
+    region: north-eastern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Nick McGowan
+    party: liberal
+    region: north-eastern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Aiv Puglielli
+    party: greens
+    region: north-eastern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Lee Tarlamis
+    party: labor
+    region: south-eastern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Ann-Marie Hermans
+    party: liberal
+    region: south-eastern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Michael Galea
+    party: labor
+    region: south-eastern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Rachel Payne
+    party: legalise-cannabis
+    region: south-eastern-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: David Limbrick
+    party: libertarian
+    region: south-eastern-metropolitan
+    note: >-
+      Elected for the Liberal Democratic Party, which changed its registered n
+      ame to the Libertarian Party in 2023.
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Lizzie Blandthorn
+    party: labor
+    region: western-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Moira Deeming
+    party: liberal
+    region: western-metropolitan
+    note: >-
+      Expelled from the parliamentary Liberal Party in May 2023, sat as an Ind
+      ependent Liberal, and returned to the party room in December 2024. Separ
+      ately disendorsed as a Liberal candidate for the 2026 election in July 2
+      026 — she remains a sitting Liberal MLC.
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Ingrid Stitt
+    party: labor
+    region: western-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: David Ettershank
+    party: legalise-cannabis
+    region: western-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Trung Luu
+    party: liberal
+    region: western-metropolitan
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Wendy Lovell
+    party: liberal
+    region: northern-victoria
+    note: >-
+      Announced she will not recontest in 2026.
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Jaclyn Symes
+    party: labor
+    region: northern-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Gaelle Broad
+    party: nationals
+    region: northern-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Georgie Purcell
+    party: animal-justice
+    region: northern-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Rikkie-Lee Tyrrell
+    party: one-nation
+    region: northern-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Renee Heath
+    party: liberal
+    region: eastern-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Tom McIntosh
+    party: labor
+    region: eastern-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Melina Bath
+    party: nationals
+    region: eastern-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Harriet Shing
+    party: labor
+    region: eastern-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Jeff Bourman
+    party: shooters-fishers-farmers
+    region: eastern-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Jacinta Ermacora
+    party: labor
+    region: western-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Bev McArthur
+    party: liberal
+    region: western-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Gayle Tierney
+    party: labor
+    region: western-victoria
+    note: >-
+      Announced she will not recontest in 2026.
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Sarah Mansfield
+    party: greens
+    region: western-victoria
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28
+  - name: Joe McCracken
+    party: liberal
+    region: western-victoria
+    note: >-
+      Announced he will not recontest in 2026.
+    source:
+      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
+      title: Members of the Victorian Legislative Council, 2022-2026
+      publisher: Wikipedia
+      accessed: 2026-07-28

@@ -41,8 +41,13 @@ Rumour and speculation are **not** statuses and are not recorded.
 ## Neutrality
 
 - All registered parties and independents get identical structure, rules and
-  display treatment. Ordering in listings is alphabetical or by seat, never by
-  party preference.
+  display treatment.
+- **Ordering.** Party listings are ordered by seats currently held in the
+  Parliament of Victoria (both houses), largest first, then alphabetically —
+  an objective, externally verifiable fact about the sitting parliament.
+  District listings are ordered by seat name. Listings are never ordered by
+  candidate coverage, campaign activity, polling, or any editorial judgement of
+  importance.
 - Editorial features (e.g. coverage dashboards) are generated from the same
   data for every party.
 - No payments, sponsorship or advertising can affect coverage, ordering or

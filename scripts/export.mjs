@@ -16,6 +16,7 @@ import {
   loadElection,
   coverageFor,
   summaryFor,
+  representationFor,
   COVERAGE_CAVEAT,
 } from "./lib/data.mjs";
 
@@ -50,6 +51,15 @@ for (const id of listElections()) {
   write("parties.json", data.parties);
   write("candidates.json", candidates);
   write("retirements.json", data.retirements);
+  write("council-members.json", data.councilMembers);
+  write("representation.json", {
+    generated: new Date().toISOString(),
+    note:
+      "Seats held in the current Parliament of Victoria (2022-2026), including " +
+      "mid-term replacements and party changes. Not a 2022 election result and " +
+      "not a 2026 candidate count.",
+    representation: representationFor(data),
+  });
   write("summary.json", { generated: new Date().toISOString(), ...summaryFor(data) });
   write("coverage.json", {
     generated: new Date().toISOString(),
@@ -75,6 +85,13 @@ for (const id of listElections()) {
     )
   );
   writeFileSync(
+    join(out, "council-members.csv"),
+    csv(
+      data.councilMembers.map((m) => ({ ...m, source_url: m.source?.url })),
+      ["name", "party", "region", "source_url"]
+    )
+  );
+  writeFileSync(
     join(out, "retirements.csv"),
     csv(
       data.retirements.map((r) => ({ ...r, source_url: r.source?.url })),
@@ -90,8 +107,9 @@ for (const id of listElections()) {
     candidates: summary.candidates,
     files: [
       "election.json", "districts.json", "regions.json", "parties.json",
-      "candidates.json", "retirements.json", "summary.json", "coverage.json",
-      "districts.csv", "candidates.csv", "retirements.csv",
+      "candidates.json", "retirements.json", "council-members.json",
+      "representation.json", "summary.json", "coverage.json",
+      "districts.csv", "candidates.csv", "retirements.csv", "council-members.csv",
     ],
   });
 

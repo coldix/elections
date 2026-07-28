@@ -65,35 +65,61 @@ const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
       </table>
     </div>
 
-    <h2 class="lh">Legislative Council regions</h2>
-    <div class="table-scroll">
-      <table class="data">
-        <caption class="visually-hidden">Legislative Council regions</caption>
-        <thead>
-          <tr>
-            <th scope="col">Region</th>
-            <th scope="col" class="num">Members elected</th>
-            <th scope="col">Districts contained</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            regions.map((r) => (
-              <tr>
-                <th scope="row">{r.name}</th>
-                <td class="num">{r.seats}</td>
-                <td class="muted district-list">
-                  {data.districts
-                    .filter((d) => d.region === r.slug)
-                    .map((d) => d.name)
-                    .join(", ")}
-                </td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
-    </div>
+    <h2 class="lh" id="council">Legislative Council regions</h2>
+    <p class="muted section-note">
+      Each region elects five members by proportional representation. Listed below are the
+      members who <strong>currently hold</strong> each seat — including mid-term
+      replacements and party changes since 2022. Sitting here does not make someone a 2026
+      candidate; candidacies are tracked separately.
+    </p>
+
+    <ul class="regions" role="list">
+      {
+        regions.map((r) => (
+          <li class="card region">
+            <div class="region-head">
+              <h3>{r.name}</h3>
+              <span class="muted">{r.seats} members</span>
+            </div>
+
+            <ul class="members" role="list">
+              {r.members.map((m) => {
+                const retiring = data.retirements.some(
+                  (x) => x.role === "MLC" && x.name === m.name
+                );
+                return (
+                  <li>
+                    <span
+                      class="swatch"
+                      style={`--party-colour:${partyColour(m.party)}`}
+                      aria-hidden="true"
+                    />
+                    <span class="m-name">{m.name}</span>
+                    <span class="muted m-party">
+                      {data.partyBySlug.get(m.party)?.short_name ?? m.party}
+                    </span>
+                    {retiring && <span class="pill pill-withdrawn">Not recontesting</span>}
+                    {m.note && (
+                      <span class="m-note muted" title={m.note}>
+                        ⓘ<span class="visually-hidden"> {m.note}</span>
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+
+            <p class="muted region-districts">
+              <strong>Districts:</strong>{" "}
+              {data.districts
+                .filter((d) => d.region === r.slug)
+                .map((d) => d.name)
+                .join(", ")}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </Base>
 
@@ -113,5 +139,59 @@ const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
   .district-list {
     max-width: 34rem;
     font-size: 0.85rem;
+  }
+  .section-note {
+    max-width: 54rem;
+    margin-bottom: 1.25rem;
+  }
+  .regions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
+  }
+  .region-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .region-head h3 {
+    margin: 0;
+    font-size: 1.02rem;
+  }
+  .members {
+    list-style: none;
+    margin: 0.8rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+  }
+  .members li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-size: 0.92rem;
+  }
+  .m-name {
+    font-weight: 560;
+  }
+  .m-party {
+    font-size: 0.85rem;
+  }
+  .m-note {
+    cursor: help;
+  }
+  .region-districts {
+    margin: 0.95rem 0 0;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.82rem;
+    line-height: 1.55;
   }
 </style>

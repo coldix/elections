@@ -35,9 +35,31 @@ Astro static site in `site/`, 112 pages, deployed via Cloudflare Pages.
 
 ### Still to do on the site
 - Recent-changes feed derived from `git log` (in SCOPE's MVP, not built).
-- Council (upper house) candidate coverage is thin — only the 2 Western
-  Metropolitan records exist, so region pages aren't built yet.
+- Council **candidate** coverage is thin — only the 2 Western Metropolitan
+  records exist. (Sitting MLCs are now fully recorded; candidates are not.)
+  Per-region pages would be worth building once candidates exist.
 - Social preview image (`og:image`) not set; add a static one or generate.
+
+## Current parliament (added 2026-07-28)
+
+`data/vic2026/council-members.yaml` records all 40 sitting MLCs by region —
+who holds each seat **today**, not the 2022 result. Mid-term changes captured:
+Richard Welch replaced Matthew Bach (Feb 2024); Anasina Gray-Barberio replaced
+Samantha Ratnam (Nov 2024); Adem Somyurek left the DLP (Mar 2024) and sits as
+an independent, so the DLP holds no seat despite winning one in 2022; David
+Limbrick's party was renamed Liberal Democrats → Libertarian (2023); Moira
+Deeming was expelled and readmitted to the Liberal party room, and is a sitting
+Liberal MLC even though she was disendorsed as a 2026 candidate.
+
+`representationFor()` in `scripts/lib/data.mjs` derives per-party seat counts
+(Assembly from `districts.yaml` incumbents, Council from the new file).
+Validator enforces exactly 5 members per region — a miscount fails the build.
+
+**Party listings are now ordered by current parliamentary representation**
+(both houses, largest first, then alphabetically) instead of alphabetically.
+`docs/METHODOLOGY.md` and `/methodology#ordering` were updated in the same
+change so the published rule matches what the site actually does — if you
+change the ordering again, change both.
 
 ## Current state (2026-07-28)
 
@@ -82,17 +104,23 @@ Do not expand scope beyond the wedge. Kill criteria in docs/SCOPE.md.
 ## Blocked on Colin (cannot be done from here)
 
 1. **Create the Cloudflare Pages project** — settings in docs/DEPLOYMENT.md.
-   Needs account access; there is no API token in this environment.
-2. **Confirm the DNS zone.** The account is known to hold `ozol.net.au`, but the
-   site is specified to publish at `elections.oze.net.au` — a different apex.
-   If `oze.net.au` isn't in the account, decide the real hostname, then update
-   `site` in `site/astro.config.mjs`, `SITE.url` in `site/src/lib/site.mjs`, and
-   the `Sitemap:` line in `site/public/robots.txt`.
-3. **Check the authorisation statement.** `/about#authorisation` currently reads
-   "Authorised by C. Dixon, OZE, Victoria." Verify against Electoral Act 2002
-   (Vic) requirements — a fuller address may be required for electoral matter.
-   No address was invented here.
-4. **`elections@oze.net.au`** is referenced on /about — create or redirect it.
+   This is a **dashboard-only** step: connecting a Pages project to a GitHub
+   repo (so pushes auto-deploy) is not exposed by the Cloudflare API or by
+   `wrangler`. Wrangler can only do direct uploads of a pre-built directory,
+   which would bypass CI and defeat the point of the validation gate. Do it in
+   the dashboard once; after that every push deploys itself.
+
+Resolved 2026-07-28:
+- ~~DNS zone~~ — confirmed `oze.net.au` is the right apex and is in the
+  account. Config already targets `elections.oze.net.au`; nothing to change.
+  A zone ID isn't needed: the Pages *custom domain* flow creates the CNAME
+  itself when the zone is in the same account.
+- ~~Authorisation statement~~ — now reads "Authorised by Colin Dixon, 2 Fern
+  Court, Mallacoota VIC 3892", with the PO Box shown as the postal address.
+  Street address used because electoral-matter authorisations generally
+  require one rather than a post office box; worth a final check against
+  current VEC guidance before launch.
+- ~~`elections@oze.net.au`~~ — confirmed as an alias to col@oze.com.au.
 
 ## TODO (priority order)
 
