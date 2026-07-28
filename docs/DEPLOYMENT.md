@@ -39,26 +39,52 @@ Working from nothing, do it in this order — each step depends on the one above
 
 Steps 1 and 2 are independent of each other; 3 needs both.
 
-## Cloudflare Pages settings
+## Cloudflare project settings
 
-Create a Pages project connected to the GitHub repository `coldix/elections`.
+Cloudflare now routes new projects through **Workers Builds** rather than
+Pages. Either works. The repo is configured for the Workers flow, because that
+is what the dashboard offers by default.
+
+The site deploys as an **assets-only Worker** — [`wrangler.jsonc`](../wrangler.jsonc)
+points at `site/dist` and has no `main` entry point, so no code runs per
+request. It is static hosting on the Workers platform, not a server. See
+DECISIONS.md ADR-2.
+
+Connect to the GitHub repository `coldix/elections`, then:
+
+| Field | Value |
+|---|---|
+| Project name | `elections` |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+| Builds for non-production branches | ✅ enabled |
+| Non-production branch deploy command | `npx wrangler versions upload` |
+| Path | `/` (repo root — `package.json` lives there) |
+| API token | *Create new token* — let Cloudflare generate it |
+| API token name | leave blank, or `elections-builds` |
+| Variable name | `NODE_VERSION` |
+| Variable value | `22` |
+
+`NODE_VERSION` is belt-and-braces: [`.node-version`](../.node-version) pins the
+same value and is respected by both Workers Builds and Pages.
+
+Leave *Encrypt* off — `22` is not a secret. No other variables or bindings are
+needed; the build only reads files in the repository.
+
+Non-production branch builds give every PR its own preview URL, so data changes
+can be reviewed visually before merge.
+
+### If you use the Pages flow instead
 
 | Setting | Value |
 |---|---|
-| Project name | `elections` |
-| Production branch | `main` |
-| Framework preset | None (or Astro — the explicit values below take precedence) |
 | Build command | `npm run build` |
 | Build output directory | `site/dist` |
-| Root directory | *(leave blank — repo root)* |
+| Root directory | *(blank)* |
 | Environment variable | `NODE_VERSION` = `22` |
 
-Preview deployments: enable for all non-production branches and pull requests.
-Every PR then gets its own URL, so data changes can be reviewed visually before
-merge.
-
-No secrets, API tokens or environment bindings are required. The build reads
-only files in the repository.
+Pages ignores `wrangler.jsonc` for static output; the file is harmless either
+way.
 
 ## Domains
 

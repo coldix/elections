@@ -103,12 +103,14 @@ Do not expand scope beyond the wedge. Kill criteria in docs/SCOPE.md.
 
 ## Blocked on Colin (cannot be done from here)
 
-1. **Create the Cloudflare Pages project** — settings in docs/DEPLOYMENT.md.
-   This is a **dashboard-only** step: connecting a Pages project to a GitHub
-   repo (so pushes auto-deploy) is not exposed by the Cloudflare API or by
-   `wrangler`. Wrangler can only do direct uploads of a pre-built directory,
-   which would bypass CI and defeat the point of the validation gate. Do it in
-   the dashboard once; after that every push deploys itself.
+1. **Create the Cloudflare project** — settings in docs/DEPLOYMENT.md.
+   Dashboard-only: connecting a project to a GitHub repo (so pushes
+   auto-deploy) is not exposed by the API or by `wrangler`. Do it once; after
+   that every push deploys itself.
+   Cloudflare now defaults new projects to **Workers Builds**, not Pages, so
+   the repo carries `wrangler.jsonc` — an **assets-only** Worker (no `main`,
+   no bindings, nothing runs per request). `npx wrangler deploy` fails without
+   it. Verified with `npx wrangler deploy --dry-run`: 245 files, no bindings.
 
 2. **Add the redirect for `electiontracker.com.au`** — DNS placeholder plus a
    dynamic Redirect Rule, both spelled out in docs/DEPLOYMENT.md. Do *not*

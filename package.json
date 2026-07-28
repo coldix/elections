@@ -15,5 +15,8 @@
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^5.18.2",
     "yaml": "^2.5.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.114.0"
   }
 }

@@ -1,0 +1,18 @@
+{
+  // Assets-only Worker: no server code, no compute, no bindings.
+  //
+  // There is deliberately no "main" entry point. Cloudflare serves the built
+  // files straight from its edge, exactly as Pages did — this is static
+  // hosting on the Workers platform, not a server. See docs/DECISIONS.md ADR-2:
+  // no D1, no R2, no KV, no request-time logic.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "elections",
+  "compatibility_date": "2026-07-28",
+  "assets": {
+    // Astro's output. Produced by `npm run build`, which validates the data
+    // and regenerates the JSON/CSV exports first.
+    "directory": "./site/dist",
+    // Serve our own 404 page for unmatched paths rather than a bare error.
+    "not_found_handling": "404-page"
+  }
+}

@@ -18,11 +18,21 @@ versioning, review workflow, public transparency and portability for free.
 (unlikely below tens of thousands of records), export to SQLite from the same
 YAML — the schema is the contract, not the storage.
 
-## ADR-2: Static site, not Workers + D1 + R2
+## ADR-2: Static site, no server runtime and no database
 
 **Decision.** The site is a fully static build (Astro preferred; any SSG works)
-deployed to Cloudflare Pages from GitHub. No Workers, no D1, no R2, no
-Turnstile in the MVP.
+deployed to Cloudflare from GitHub. No D1, no R2, no KV, no Turnstile, and no
+request-time code of any kind.
+
+**Amended 2026-07-28.** Cloudflare now steers new projects into the *Workers*
+flow rather than Pages, so the project deploys as an **assets-only Worker**:
+`wrangler.jsonc` declares an `assets.directory` and deliberately has **no
+`main` entry point**, so there is no Worker script and nothing executes per
+request. Cloudflare serves the built files from its edge exactly as Pages did.
+The substance of this ADR is unchanged — "no Workers" meant no server-side
+compute and no managed database, and that still holds. If a future dashboard
+offers Pages and you prefer it, either is fine; do not add a `main` script or a
+binding without a new ADR.
 
 **Why.** The originally proposed stack (Next.js + Workers + D1 + R2 +
 Turnstile) was evaluated and rejected as ~10× over-built. Every page is
