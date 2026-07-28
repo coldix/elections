@@ -27,6 +27,18 @@ The exports live inside `site/public/` so the same deploy publishes both the
 human-readable site and the machine-readable data. They no longer collide with
 Astro's own output.
 
+## Order of operations
+
+Working from nothing, do it in this order — each step depends on the one above:
+
+1. Add both domains to Cloudflare and repoint nameservers (§ Domains, step 0)
+2. Create the Pages project from GitHub (§ Cloudflare Pages settings)
+3. Attach `electiontracker.au` as a custom domain (§ Domains, step 1)
+4. Add the `.com.au` redirect rule (§ Domains, step 2)
+5. Add Google Workspace MX/SPF/DKIM/DMARC to both zones (§ Email)
+
+Steps 1 and 2 are independent of each other; 3 needs both.
+
 ## Cloudflare Pages settings
 
 Create a Pages project connected to the GitHub repository `coldix/elections`.
@@ -56,6 +68,35 @@ only files in the repository.
 | `electiontracker.com.au` | Redirect only. 301s to the matching path on the canonical domain. |
 
 Both sit in the dedicated Cloudflare account (`col@oze.com.au`, Super Admin).
+
+Everything below is done at **https://dash.cloudflare.com**, signed in as
+`col@oze.com.au` — except step 0b, which is at the registrar where the domains
+were purchased.
+
+### 0. Get both domains into Cloudflare first
+
+Nothing else works until Cloudflare is authoritative for DNS. Do this once per
+domain, for **both** `electiontracker.au` and `electiontracker.com.au`.
+
+**0a. Add the zone.** Dashboard → *Add a site* → enter the domain → choose the
+**Free** plan. Cloudflare scans for existing records (freshly registered
+domains will have none or a parking record) and then shows you **two
+nameservers**, e.g. `ada.ns.cloudflare.com` / `rex.ns.cloudflare.com`. The pair
+can differ between the two domains — copy each one separately, don't assume
+they match.
+
+**0b. Repoint the nameservers at the registrar.** Log in wherever the domains
+were bought, find *Nameservers* / *DNS settings* for the domain, replace the
+registrar's defaults with Cloudflare's two, save. Repeat for the second domain.
+
+**0c. Wait for activation.** Cloudflare emails you and the zone flips from
+*Pending* to **Active**, usually minutes to a few hours. Both zones must be
+Active before the custom domain and redirect steps will work.
+
+> These are newly registered domains with nothing running on them, so moving
+> nameservers breaks nothing. If a domain already had live email or a website,
+> moving nameservers would move DNS control and could interrupt it — recreate
+> those records in Cloudflare *before* switching.
 
 ### 1. Canonical domain — attach to Pages
 
