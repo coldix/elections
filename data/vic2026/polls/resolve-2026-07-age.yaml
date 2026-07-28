@@ -1,0 +1,31 @@
+id: resolve-2026-07-age
+pollster: resolve
+commissioner: the-age
+commissioner_type: media
+fieldwork_start: 2026-07-08
+fieldwork_end: 2026-07-12
+sample_size: 1000
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Victorian state voting intention; sample padded from Resolve national fieldwork for The Age."
+primaries:
+  alp: 27
+  lnp: 27
+  onp: 22
+  grn: 12
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theage.com.au/politics/victoria/even-with-one-nation-support-dropping-state-labor-still-has-reason-to-worry-ahead-of-november-20260713-p60etg.html
+    publisher: The Age
+    title: Even with One Nation support dropping, state Labor still has reason to worry ahead of November
+    published: 2026-07-13
+    accessed: 2026-07-29
+  - url: https://www.pollbludger.net/2026/07/14/resolve-strategic-labor-27-coalition-27-one-nation-22-in-victoria/
+    publisher: The Poll Bludger
+    title: "Resolve Strategic: Labor 27, Coalition 27, One Nation 22 in Victoria"
+    published: 2026-07-14
+    accessed: 2026-07-29

@@ -1,0 +1,26 @@
+id: freshwater-2026-06
+pollster: freshwater
+commissioner: herald-sun
+commissioner_type: media
+fieldwork_start: 2026-06-05
+fieldwork_end: 2026-06-08
+sample_size: 1034
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Victorian state voting intention."
+primaries:
+  alp: 23
+  lnp: 27
+  onp: 25
+  grn: 14
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/06/08/freshwater-strategy-labor-23-coalition-27-one-nation-25-in-victoria/
+    publisher: The Poll Bludger
+    title: "Freshwater Strategy: Labor 23, Coalition 27, One Nation 25 in Victoria"
+    published: 2026-06-08
+    accessed: 2026-07-29

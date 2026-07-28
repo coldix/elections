@@ -1,0 +1,216 @@
+---
+import Base from "../layouts/Base.astro";
+import { formatDate } from "../lib/site.mjs";
+import { listElections } from "../../../scripts/lib/data.mjs";
+import {
+  loadPolls,
+  computePollAverage,
+  PARTY_LABELS,
+  POLL_CAVEAT,
+} from "../../../scripts/lib/polls.mjs";
+
+const electionId = listElections()[0] ?? "vic2026";
+const polls = loadPolls(electionId);
+const average = computePollAverage(polls);
+const included = new Set(average.included_poll_ids ?? []);
+const partyOrder = ["alp", "lnp", "onp", "grn", "others"];
+
+const sortedPolls = [...polls].sort((a, b) =>
+  a.fieldwork_end < b.fieldwork_end ? 1 : -1
+);
+---
+
+<Base
+  title="Poll average"
+  description="Sourced Victorian statewide primary-vote polls and a transparent weighted average with uncertainty bands. Not a forecast."
+>
+  <div class="wrap wrap-narrow section">
+    <p class="eyebrow">Statewide voting intention</p>
+    <h1>Poll average</h1>
+    <p class="lede">
+      Public statewide primary-vote polls for the Victorian Legislative Assembly, each with a
+      dated source, plus a transparent weighted average under published rules. This is a
+      summary of recent polling — <strong>not a forecast</strong> of election day.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>Read the bands carefully.</strong> {POLL_CAVEAT}
+    </div>
+
+    {
+      average.status === "ok" && average.primaries ? (
+        <section aria-labelledby="avg-heading">
+          <h2 id="avg-heading">Tracker average</h2>
+          <p class="muted">
+            As of fieldwork ending {formatDate(average.as_of)} · {average.included_poll_ids.length}{" "}
+            polls · {average.window_days_used}-day window · half-life {average.parameters.half_life_days}{" "}
+            days · default design effect {average.parameters.design_effect_default}
+          </p>
+          <div class="table-scroll">
+            <table class="data">
+              <caption class="visually-hidden">Weighted primary-vote average with 95% intervals</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Party</th>
+                  <th scope="col" class="num">Average</th>
+                  <th scope="col" class="num">95% band</th>
+                </tr>
+              </thead>
+              <tbody>
+                {partyOrder.map((k) => (
+                  <tr>
+                    <th scope="row">{PARTY_LABELS[k]}</th>
+                    <td class="num mono">{average.primaries[k].toFixed(1)}%</td>
+                    <td class="num mono muted">
+                      {average.intervals[k].low.toFixed(1)}–{average.intervals[k].high.toFixed(1)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="muted">
+            Weights combine effective sample size and exponential time decay. Full formula:
+            <a href="https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md">
+              poll methodology
+            </a>
+            · machine-readable
+            <a href={`/data/${electionId}/poll-average.json`}>poll-average.json</a>.
+          </p>
+        </section>
+      ) : (
+        <section aria-labelledby="avg-heading">
+          <h2 id="avg-heading">Tracker average</h2>
+          <p>
+            No numeric average is published right now
+            {average.note ? ` — ${average.note}` : ""}. Eligible polls are still listed below.
+          </p>
+        </section>
+      )
+    }
+
+    <h2 id="polls">Polls in the ledger</h2>
+    <p>
+      Every row is a sourced record in the repository. Polls marked
+      <strong> not in average</strong> fail inclusion rules (for example advocacy
+      commissioners) and are kept for transparency.
+    </p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead>
+          <tr>
+            <th scope="col">Fieldwork</th>
+            <th scope="col">Pollster</th>
+            <th scope="col" class="num">n</th>
+            <th scope="col" class="num">ALP</th>
+            <th scope="col" class="num">L-NP</th>
+            <th scope="col" class="num">ONP</th>
+            <th scope="col" class="num">GRN</th>
+            <th scope="col" class="num">OTH</th>
+            <th scope="col">Average</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            sortedPolls.map((p) => (
+              <tr>
+                <th scope="row" class="mono">
+                  {formatDate(p.fieldwork_end)}
+                </th>
+                <td>
+                  {p.pollster}
+                  <span class="muted block-sm">{p.commissioner_type}</span>
+                </td>
+                <td class="num mono">{p.sample_size}</td>
+                <td class="num mono">{p.primaries.alp}</td>
+                <td class="num mono">{p.primaries.lnp}</td>
+                <td class="num mono">{p.primaries.onp}</td>
+                <td class="num mono">{p.primaries.grn}</td>
+                <td class="num mono">{p.primaries.others}</td>
+                <td>
+                  {included.has(p.id) ? (
+                    <span class="pill in">In</span>
+                  ) : p.eligible_for_average ? (
+                    <span class="pill out">Window</span>
+                  ) : (
+                    <span class="pill out" title={p.exclusion_reason ?? ""}>
+                      Excluded
+                    </span>
+                  )}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="rules">Which polls count</h2>
+    <ul>
+      <li>Victorian <strong>state</strong> Assembly voting intention only (not federal).</li>
+      <li>Published fieldwork dates and sample size (n ≥ 800).</li>
+      <li>
+        Commissioner is media, the pollster, or neutral academic — not party, union or
+        advocacy.
+      </li>
+      <li>
+        Rolling window (45 days, extendable to 60), one poll per pollster, at least two
+        pollsters before a number is published.
+      </li>
+    </ul>
+    <p>
+      Full rules and maths:
+      <a href="https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md">
+        docs/POLL-METHODOLOGY.md
+      </a>
+      · downloads:
+      <a href={`/data/${electionId}/polls.json`}>polls.json</a>,
+      <a href={`/data/${electionId}/polls.csv`}>polls.csv</a>,
+      <a href={`/data/${electionId}/poll-average.json`}>poll-average.json</a>.
+    </p>
+
+    <p class="foot muted">
+      Candidate coverage remains the core product of this site. Poll records use the same
+      source discipline as candidacies. Ordering of parties elsewhere never uses these
+      figures — see <a href="/methodology#ordering">methodology</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  h2 {
+    margin-top: 2.5rem;
+  }
+  ul {
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--ink-2);
+  }
+  .notice {
+    margin: 1.25rem 0;
+  }
+  .block-sm {
+    display: block;
+    font-size: 0.8rem;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.45rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+  }
+  .pill.in {
+    background: var(--surface-2);
+  }
+  .pill.out {
+    color: var(--ink-2);
+  }
+  .foot {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>

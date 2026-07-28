@@ -1,0 +1,31 @@
+id: redbridge-accent-2026-06-afr
+pollster: redbridge-accent
+commissioner: australian-financial-review
+commissioner_type: media
+fieldwork_start: 2026-06-17
+fieldwork_end: 2026-06-28
+sample_size: 5516
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Victorian state voting intention for the Australian Financial Review."
+primaries:
+  alp: 26
+  lnp: 26
+  onp: 27
+  grn: 13
+  others: 8
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.afr.com/politics/one-nation-overtakes-labor-liberals-in-victoria-allan-s-rating-dives-20260701-p60bnh
+    publisher: Australian Financial Review
+    title: One Nation overtakes Labor, Liberals in Victoria as Allan's rating dives
+    published: 2026-07-01
+    accessed: 2026-07-29
+  - url: https://theconversation.com/victorian-redbridge-poll-has-one-nation-just-ahead-of-labor-and-the-coalition-286753
+    publisher: The Conversation
+    title: Victorian Redbridge poll has One Nation just ahead of Labor and the Coalition
+    published: 2026-07-06
+    accessed: 2026-07-29

@@ -146,10 +146,41 @@ const statuses = [
       </li>
     </ul>
 
+    <h2 id="polls">Public polls and the tracker average</h2>
+    <p>
+      In addition to the candidate ledger, the project collects publicly released
+      statewide Victorian Legislative Assembly primary-vote polls as sourced records and
+      publishes a transparent weighted average with uncertainty bands.
+    </p>
+    <ul>
+      <li>
+        Inclusion rules, time window, weights and error bars are fixed in
+        <a href="https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md">
+          docs/POLL-METHODOLOGY.md</a>.
+      </li>
+      <li>
+        Party, union and advocacy-commissioned polls may be recorded for transparency but
+        are excluded from the average.
+      </li>
+      <li>
+        The average is a summary of recent public polling — not a forecast, seat model or
+        preference recommendation.
+      </li>
+      <li>
+        Poll figures never change party or district ordering on this site (see
+        <a href="#ordering">ordering</a>).
+      </li>
+    </ul>
+    <p>
+      Live figures: <a href="/polls">poll average</a>. Exports:
+      <a href="/data/vic2026/polls.json">polls.json</a>,
+      <a href="/data/vic2026/poll-average.json">poll-average.json</a>.
+    </p>
+
     <p class="foot muted">
-      This page mirrors <code>docs/METHODOLOGY.md</code> in the
-      <a href={SITE.repo}> public repository</a>, which is the authoritative version and
-      carries its own change history.
+      Candidate rules on this page mirror <code>docs/METHODOLOGY.md</code> in the
+      <a href={SITE.repo}>public repository</a>. Poll rules live in
+      <code>docs/POLL-METHODOLOGY.md</code>. Both carry their own change history.
     </p>
   </div>
 </Base>

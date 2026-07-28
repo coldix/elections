@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Validate all election data: structure, vocab, referential integrity, sources.
 // Exits non-zero on any error. Run in CI on every push/PR.
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, basename } from "node:path";
 import { parse } from "yaml";
 
@@ -134,7 +134,81 @@ for (const election of readdirSync(DATA_DIR)) {
     // filename convention: <contest>--<name-slug>.yaml
     if (!f.startsWith(`${c.contest}--`)) fail(file, `filename must start with '${c.contest}--'`);
   }
-  console.log(`${election}: ${districts.length} districts, ${regions.length} regions, ${parties.length} parties, ${count} candidates`);
+
+  // polls (optional directory) — statewide VI ledger; see docs/POLL-METHODOLOGY.md
+  const pollDir = join(dir, "polls");
+  let pollCount = 0;
+  if (existsSync(pollDir) && statSync(pollDir).isDirectory()) {
+    const COMMISSIONER_TYPES = [
+      "media", "self", "academic", "excluded_advocacy", "party", "union", "candidate",
+    ];
+    const EXCLUDED_TYPES = new Set(["excluded_advocacy", "party", "union", "candidate"]);
+    const MODES = ["online", "sms", "phone", "mixed", "other"];
+    const PRIMARY_KEYS = ["alp", "lnp", "onp", "grn", "others"];
+
+    for (const f of readdirSync(pollDir)) {
+      if (f.startsWith("_") || !f.endsWith(".yaml")) continue;
+      pollCount++;
+      const file = `${election}/polls/${f}`;
+      const raw = parse(readFileSync(join(pollDir, f), "utf8"));
+      const p = raw?.poll ?? raw;
+      if (!p || typeof p !== "object") {
+        fail(file, "missing poll fields");
+        continue;
+      }
+      if (!p.id) fail(file, "id required");
+      if (!p.pollster) fail(file, "pollster required");
+      if (!p.commissioner) fail(file, "commissioner required");
+      if (!COMMISSIONER_TYPES.includes(p.commissioner_type)) {
+        fail(file, `invalid commissioner_type: ${p.commissioner_type}`);
+      }
+      if (!isDate(String(p.fieldwork_start))) fail(file, "fieldwork_start must be YYYY-MM-DD");
+      if (!isDate(String(p.fieldwork_end))) fail(file, "fieldwork_end must be YYYY-MM-DD");
+      if (p.fieldwork_end < p.fieldwork_start) fail(file, "fieldwork_end before fieldwork_start");
+      if (!Number.isInteger(p.sample_size) || p.sample_size < 1) {
+        fail(file, "sample_size must be a positive integer");
+      }
+      if (!MODES.includes(p.mode)) fail(file, `invalid mode: ${p.mode}`);
+      if (!p.population) fail(file, "population required");
+      if (!p.primaries || typeof p.primaries !== "object") {
+        fail(file, "primaries required");
+      } else {
+        let sum = 0;
+        for (const k of PRIMARY_KEYS) {
+          const v = p.primaries[k];
+          if (typeof v !== "number" || v < 0 || v > 100) {
+            fail(file, `primaries.${k} must be a number 0–100`);
+          } else {
+            sum += v;
+          }
+        }
+        if (Math.abs(sum - 100) > 0.6) {
+          fail(file, `primaries sum to ${sum.toFixed(1)}, expected ~100`);
+        }
+      }
+      if (!["allocated", "excluded", "not-stated"].includes(p.undecided_handling)) {
+        fail(file, `invalid undecided_handling: ${p.undecided_handling}`);
+      }
+      if (typeof p.eligible_for_average !== "boolean") {
+        fail(file, "eligible_for_average must be boolean");
+      }
+      if (EXCLUDED_TYPES.has(p.commissioner_type) && p.eligible_for_average) {
+        fail(file, "eligible_for_average must be false for party/union/advocacy commissioner");
+      }
+      if (!p.eligible_for_average && !p.exclusion_reason) {
+        fail(file, "exclusion_reason required when not eligible for average");
+      }
+      if (!Array.isArray(p.sources) || p.sources.length === 0) {
+        fail(file, "at least one source required");
+      } else {
+        p.sources.forEach((s, i) => checkSource(file, `sources[${i}]`, s));
+      }
+    }
+  }
+
+  console.log(
+    `${election}: ${districts.length} districts, ${regions.length} regions, ${parties.length} parties, ${count} candidates, ${pollCount} polls`
+  );
 }
 
 if (errors) { console.error(`\n${errors} error(s)`); process.exit(1); }

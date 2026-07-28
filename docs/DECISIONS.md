@@ -128,3 +128,30 @@ citable by machines — which is the point of the project.
 **Consequences.** Only parties with at least one Assembly candidate get a
 rendered panel; the full table below the matrix covers every party. If the panel
 count grows large, reconsider — but do not reach for a framework first.
+
+## ADR-10: Poll average (sourced ledger + transparent maths)
+
+**Decision.** The project publishes a **sourced primary-vote poll ledger** plus
+a transparent **weighted average with error bars**, not a forecast. Rules live
+in [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). Implementation:
+`data/**/polls/`, `scripts/lib/polls.mjs`, `/polls`, exports `polls.json` and
+`poll-average.json`.
+
+**Why.** State polling is sparse, One Nation makes classic ALP–Coalition 2PP a
+poor headline metric, and advocacy-commissioned polls (even large-n) are not
+exchangeable with media/self-funded public series. Fixed inclusion and maths
+prevent ad hoc “which polls count” decisions under campaign pressure.
+
+**Rules locked for v1**
+
+- Average **primary vote only** (ALP, L-NP, ONP, GRN, Others).
+- **Exclude** party / union / advocacy commissioners from the average.
+- Window + one-poll-per-pollster + inverse-effective-n × exponential time decay
+  (21-day half-life); default design effect 1.3; no house effects; no
+  subjective pollster grades.
+- Error bars combine sampling variance and between-poll dispersion (with a
+  minimum floor), not a fake MoE on pooled n.
+
+**Consequences.** New polls are YAML PRs with sources. Forecasting, MRP and
+seat models remain out of scope (SCOPE.md). Candidate ordering never uses
+polls (METHODOLOGY.md).

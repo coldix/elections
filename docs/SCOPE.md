@@ -37,12 +37,36 @@ Site (static, after data layer works):
 
 ## Explicitly out of scope (first release)
 
-- Opinion polls, forecasts, swing models
+- Forecasts, swing models, MRP, seat projections, how-to-vote advice
 - Comments, forums, user accounts
 - Interactive maps
 - Custom submission backend, admin UI, databases (D1/R2/Workers) — GitHub
   Issues/PRs + git are the submission workflow and the database
 - Newsletter, payments, API keys, sponsorship tooling
+
+## Polling (secondary product — implemented)
+
+The product **wedge** remains machine-readable candidacies + coverage + evidence
+ledger. Polling is a secondary module and is **not** required for the original
+kill/success criteria on candidate coverage.
+
+**In scope and live**
+
+- Sourced public statewide primary-vote polls under `data/<election>/polls/`
+- Transparent **primary-vote average** with uncertainty bands
+  ([POLL-METHODOLOGY.md](POLL-METHODOLOGY.md), site `/polls`, exports
+  `polls.json` / `poll-average.json`)
+- Discovery inventory: [polls-inventory.md](polls-inventory.md)
+
+**Still forbidden without a new decision**
+
+- Forecast language, 2PP/seat models derived without published preference
+  assumptions, or ordering candidates/parties by polling
+- Treating advocacy/party/union polls as equal inputs to the average (they may
+  be recorded with `eligible_for_average: false`)
+
+Party/union/advocacy-commissioned polls are excluded from the average
+(see poll methodology).
 
 ## Success / kill criteria
 

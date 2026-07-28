@@ -3,7 +3,9 @@
 **[electiontracker.au](https://electiontracker.au)** — an open, versioned,
 machine-readable record of who is standing where in Australian elections:
 candidate announcements, endorsements, nominations, withdrawals and
-disendorsements, each backed by a dated source.
+disendorsements, each backed by a dated source. The project also collects
+**public statewide primary-vote polls** and publishes a transparent weighted
+average with uncertainty bands ([/polls](https://electiontracker.au/polls)).
 
 First election: **Victorian state election, 28 November 2026** (`data/vic2026/`).
 The structure is jurisdiction-agnostic — future federal, state and territory
@@ -11,19 +13,23 @@ elections are added as new data directories, not rebuilds.
 
 ## What this is
 
-- **The repository is the database.** Every district, party, member and
-  candidate is a YAML file. Git history is the audit trail: every status change,
+- **The repository is the database.** Every district, party, member, candidate
+  and poll is a YAML file. Git history is the audit trail: every status change,
   correction and its evidence is a commit.
 - **Every material claim carries a source** — URL, publisher, date published,
   date accessed. A record without one fails validation and cannot be published.
 - **Statuses are distinct**: `announced` ≠ `endorsed` ≠ `nominated`. See
   [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
+- **Poll average is transparent**: inclusion rules, weights and error bars are
+  published in [docs/POLL-METHODOLOGY.md](docs/POLL-METHODOLOGY.md). It is a
+  summary of recent public polling, not a forecast.
 - **Exports are free.** Every record is published as JSON and CSV at
   [/data](https://electiontracker.au/data), CC BY 4.0, no key or rate limit.
 
 ## What this is not
 
-- Not polling, forecasting, commentary or how-to-vote advice.
+- Not forecasting, commentary or how-to-vote advice. The poll average does not
+  predict election day, invent preference flows or rank candidates.
 - Not affiliated with any party, candidate or electoral commission. The VEC is
   authoritative; where we differ, the VEC is right.
 - Not complete. Coverage counts only what has been individually verified — see
@@ -42,8 +48,10 @@ data/<election>/          one directory per election (vic2026 first)
   parties.yaml            registered parties, party families, public commitments
   retirements.yaml        sitting members not recontesting
   candidates/*.yaml       one file per candidacy, with full status history
+  polls/*.yaml            statewide primary-vote polls (sourced)
 schema/                   JSON Schema the data must validate against
 scripts/lib/data.mjs      shared loader + derived figures (site AND exports)
+scripts/lib/polls.mjs     poll load + tracker average
 scripts/validate.mjs      schema, vocabulary, sources, referential integrity
 scripts/export.mjs        JSON/CSV export to site/public/data/
 site/                     Astro static site (built to site/dist/)
@@ -90,7 +98,7 @@ record, the correction and its reason all stay visible.
 
 ## Status
 
-Live and publishing. The platform is complete; the dataset is not. Current
-counts, known gaps and the next priorities are in
+Live and publishing. The platform is complete; the candidate dataset is not.
+Current counts, known gaps and the next priorities are in
 [HANDOVER.md](HANDOVER.md); scope boundaries and kill criteria in
 [docs/SCOPE.md](docs/SCOPE.md).

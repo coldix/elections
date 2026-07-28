@@ -19,6 +19,7 @@ import {
   representationFor,
   COVERAGE_CAVEAT,
 } from "./lib/data.mjs";
+import { loadPolls, computePollAverage, POLL_CAVEAT } from "./lib/polls.mjs";
 
 const OUT_ROOT = new URL("../site/public/data/", import.meta.url).pathname;
 
@@ -67,6 +68,43 @@ for (const id of listElections()) {
     coverage: coverageFor(data),
   });
 
+  const polls = loadPolls(id);
+  const pollAverage = computePollAverage(polls);
+  write("polls.json", {
+    generated: new Date().toISOString(),
+    caveat: POLL_CAVEAT,
+    methodology: "docs/POLL-METHODOLOGY.md",
+    polls: polls.map(({ file, ...p }) => p),
+  });
+  write("poll-average.json", pollAverage);
+  writeFileSync(
+    join(out, "polls.csv"),
+    csv(
+      polls.map((p) => ({
+        id: p.id,
+        pollster: p.pollster,
+        commissioner: p.commissioner,
+        commissioner_type: p.commissioner_type,
+        fieldwork_start: p.fieldwork_start,
+        fieldwork_end: p.fieldwork_end,
+        sample_size: p.sample_size,
+        alp: p.primaries?.alp,
+        lnp: p.primaries?.lnp,
+        onp: p.primaries?.onp,
+        grn: p.primaries?.grn,
+        others: p.primaries?.others,
+        eligible_for_average: p.eligible_for_average,
+        source_url: p.sources?.[0]?.url,
+      })),
+      [
+        "id", "pollster", "commissioner", "commissioner_type",
+        "fieldwork_start", "fieldwork_end", "sample_size",
+        "alp", "lnp", "onp", "grn", "others",
+        "eligible_for_average", "source_url",
+      ]
+    )
+  );
+
   writeFileSync(
     join(out, "districts.csv"),
     csv(districts, ["slug", "name", "chamber", "region", "incumbent", "incumbent_party"])
@@ -109,11 +147,17 @@ for (const id of listElections()) {
       "election.json", "districts.json", "regions.json", "parties.json",
       "candidates.json", "retirements.json", "council-members.json",
       "representation.json", "summary.json", "coverage.json",
+      "polls.json", "poll-average.json",
       "districts.csv", "candidates.csv", "retirements.csv", "council-members.csv",
+      "polls.csv",
     ],
+    polls: polls.length,
+    poll_average_status: pollAverage.status,
   });
 
-  console.log(`${id}: exported ${summary.candidates} candidates -> site/public/data/${id}/`);
+  console.log(
+    `${id}: exported ${summary.candidates} candidates, ${polls.length} polls -> site/public/data/${id}/`
+  );
 }
 
 writeFileSync(join(OUT_ROOT, "index.json"), JSON.stringify(index, null, 2));

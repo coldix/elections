@@ -1,0 +1,26 @@
+id: roy-morgan-2026-02
+pollster: roy-morgan
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-02-13
+fieldwork_end: 2026-02-16
+sample_size: 2462
+design_effect: null
+mode: sms
+population: victorian-electors
+question_notes: "Special SMS Roy Morgan survey of Victorian state voting intention."
+primaries:
+  alp: 25.5
+  lnp: 21.5
+  onp: 26.5
+  grn: 13.5
+  others: 13
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10133-victorian-state-voting-intention-february-2026
+    publisher: Roy Morgan Research
+    title: "Victorian State Voting Intention: One Nation (26.5%) now ahead of ALP (25.5%) and L-NP Coalition (21.5%) on primary vote"
+    published: 2026-02-19
+    accessed: 2026-07-29

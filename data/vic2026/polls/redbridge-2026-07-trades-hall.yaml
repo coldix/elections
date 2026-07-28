@@ -1,0 +1,31 @@
+id: redbridge-2026-07-trades-hall
+pollster: redbridge
+commissioner: victorian-trades-hall
+commissioner_type: union
+fieldwork_start: 2026-07-01
+fieldwork_end: 2026-07-14
+sample_size: 6500
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Large-sample poll reported as commissioned for Victorian Trades Hall. Recorded for transparency; excluded from the tracker average."
+primaries:
+  alp: 26
+  lnp: 26
+  onp: 27
+  grn: 12
+  others: 9
+undecided_handling: allocated
+eligible_for_average: false
+exclusion_reason: "Union/advocacy commissioner (Victorian Trades Hall) — hard exclusion under POLL-METHODOLOGY.md"
+sources:
+  - url: https://www.pollbludger.net/2026/07/14/resolve-strategic-labor-27-coalition-27-one-nation-22-in-victoria/
+    publisher: The Poll Bludger
+    title: "Resolve Strategic: Labor 27, Coalition 27, One Nation 22 in Victoria (also reports Trades Hall RedBridge)"
+    published: 2026-07-14
+    accessed: 2026-07-29
+  - url: https://theconversation.com/victorian-redbridge-poll-has-one-nation-just-ahead-of-labor-and-the-coalition-286753
+    publisher: The Conversation
+    title: Victorian Redbridge poll has One Nation just ahead of Labor and the Coalition
+    published: 2026-07-06
+    accessed: 2026-07-29
