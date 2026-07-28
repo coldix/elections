@@ -21,12 +21,13 @@ election:
         url: https://www.vec.vic.gov.au/voting/2026-state-election
         publisher: Victorian Electoral Commission
         accessed: 2026-07-27
-    - date: 2026-11-10
+    - date: 2026-11-03
       event: Electoral roll closes 8pm
       source:
-        url: https://en.wikipedia.org/wiki/2026_Victorian_state_election
-        publisher: Wikipedia
-        accessed: 2026-07-27
+        url: https://www.vec.vic.gov.au/enrolment/enrol-to-vote
+        publisher: Victorian Electoral Commission
+        title: Enrol to vote — 2026 state election enrolment deadline
+        accessed: 2026-07-29
     - date: 2026-11-13
       event: Nominations close 12 noon
       source:

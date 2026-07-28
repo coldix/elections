@@ -1,0 +1,410 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, formatDate, formatDateLong } from "../lib/site.mjs";
+import { loadElection } from "../../../scripts/lib/data.mjs";
+
+const data = loadElection("vic2026");
+const electionDay = data.election.election_day;
+const rollClose = data.election.dates?.find((d) =>
+  /roll closes|electoral roll/i.test(d.event ?? "")
+);
+const rollCloseDate = rollClose?.date;
+
+const links = [
+  {
+    name: "Victorian Electoral Commission",
+    url: "https://www.vec.vic.gov.au/",
+    note: "Authoritative source for state elections",
+  },
+  {
+    name: "2026 Victorian state election",
+    url: "https://www.vec.vic.gov.au/voting/2026-state-election",
+    note: "Key dates and official election information",
+  },
+  {
+    name: "Enrol to vote (VEC)",
+    url: "https://www.vec.vic.gov.au/enrolment/enrol-to-vote",
+    note: "Who must enrol and how",
+  },
+  {
+    name: "Enrol or update online (AEC)",
+    url: "https://www.aec.gov.au/enrol/",
+    note: "Joint federal / state / council enrolment",
+  },
+  {
+    name: "Check or update my enrolment (AEC)",
+    url: "https://check.aec.gov.au/",
+    note: "Confirm you are on the roll",
+  },
+  {
+    name: "Fines and reviews (VEC)",
+    url: "https://www.vec.vic.gov.au/voting/fines-and-reviews",
+    note: "What happens if you do not vote",
+  },
+  {
+    name: "Preferential voting (VEC)",
+    url: "https://www.vec.vic.gov.au/voting/how-voting-works/preferential-voting",
+    note: "How preferences work in Victoria",
+  },
+  {
+    name: "How to fill out state ballot papers (VEC)",
+    url: "https://www.vec.vic.gov.au/voting/learn-to-vote/how-to-fill-out-state-ballot-papers",
+    note: "Lower house and upper house ballots",
+  },
+  {
+    name: "How voting works (VEC)",
+    url: "https://www.vec.vic.gov.au/voting/how-voting-works",
+    note: "Overview of the voting system",
+  },
+  {
+    name: "VoterAlert reminders (VEC)",
+    url: "https://www.vec.vic.gov.au/enrolment/voteralert",
+    note: "Free enrolment and voting reminders",
+  },
+  {
+    name: "Information in your language (VEC)",
+    url: "https://www.vec.vic.gov.au/information-in-your-language",
+    note: "Interpreters and translated materials",
+  },
+];
+---
+
+<Base
+  title="Voting in Victoria"
+  description="Who can vote in the Victorian state election, compulsory voting and fines, how to enrol, and how preferential voting works — with links to the VEC and AEC."
+>
+  <div class="wrap wrap-narrow section">
+    <p class="eyebrow">Voters</p>
+    <h1>Voting in Victoria</h1>
+    <p class="lede">
+      A plain-language guide to enrolment, compulsory voting and preferential voting for the
+      Victorian state election. This page summarises public information from the electoral
+      commissions. It is <strong>not</strong> legal advice and not a recommendation for any
+      candidate or party.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>The Victorian Electoral Commission is authoritative.</strong> Rules, dates,
+      fine amounts and ballot instructions can change. Always confirm on the
+      <a href="https://www.vec.vic.gov.au/" rel="noopener">VEC website</a> before you act.
+      This site is not affiliated with the VEC or the Australian Electoral Commission.
+    </div>
+
+    <p>
+      The next Victorian state election is on
+      <strong>{formatDateLong(electionDay)}</strong>. You will vote for both houses of the
+      Parliament of Victoria:
+    </p>
+    <ul>
+      <li>
+        <strong>Legislative Assembly</strong> (lower house) — one member for your local
+        district (88 seats statewide).
+      </li>
+      <li>
+        <strong>Legislative Council</strong> (upper house) — five members for your region
+        (8 regions, 40 seats).
+      </li>
+    </ul>
+    <p class="muted">
+      Official election page:{" "}
+      <a href="https://www.vec.vic.gov.au/voting/2026-state-election" rel="noopener">
+        VEC — 2026 state election</a>.
+    </p>
+
+    <h2 id="eligibility">Who must enrol</h2>
+    <p>
+      According to the
+      <a href="https://www.vec.vic.gov.au/enrolment/enrol-to-vote" rel="noopener">VEC</a>,
+      you <strong>must enrol to vote</strong> if you:
+    </p>
+    <ul>
+      <li>are an Australian citizen,</li>
+      <li>are 18 or older, <strong>and</strong></li>
+      <li>have lived in Victoria for longer than a month.</li>
+    </ul>
+    <p>
+      You must enrol within <strong>21 days</strong> of meeting those requirements. If you
+      are 17, you can fill out an enrolment form now; the commission can enrol you
+      automatically when you turn 18.
+    </p>
+    <p>
+      A smaller group of British subjects who were on an Australian electoral roll between
+      26 October 1983 and 26 January 1984, and who live at a Victorian address, must also
+      enrol — see the VEC enrol page for the exact wording.
+    </p>
+    <p class="muted">
+      Source:{" "}
+      <a href="https://www.vec.vic.gov.au/enrolment/enrol-to-vote" rel="noopener">
+        vec.vic.gov.au — Enrol to vote</a>
+      (accessed 29 July 2026).
+    </p>
+
+    <h2 id="compulsory">Compulsory voting</h2>
+    <p>
+      Voting is compulsory in Australia for people who are enrolled. In Victoria, if you
+      are enrolled you must vote in federal, state and local council elections. The
+      obligation follows <strong>being on the roll</strong>, not whether you care about a
+      particular contest.
+    </p>
+    <p>
+      The Australian Electoral Commission (AEC) runs federal elections. The VEC runs
+      Victorian state and local council elections.
+    </p>
+    <p class="muted">
+      Source:{" "}
+      <a href="https://www.vec.vic.gov.au/voting/fines-and-reviews" rel="noopener">
+        vec.vic.gov.au — Fines and reviews</a>.
+    </p>
+
+    <h2 id="fines">If you do not vote</h2>
+    <p>
+      If it looks as though you did not vote, the VEC may write to you. Do not ignore the
+      letters — each step can increase what you owe.
+    </p>
+    <ol>
+      <li>
+        <strong>Apparent failure to vote notice</strong> — your chance to explain (for
+        example, that you did vote, or why you could not). You usually have 28 days to
+        respond. This first letter is not itself the fine.
+      </li>
+      <li>
+        <strong>Infringement notice</strong> — a fine, if you do not respond in time or
+        your explanation is not accepted.
+      </li>
+      <li>
+        <strong>Penalty reminder notice</strong> — the original fine plus an extra fee if
+        you still do not deal with it.
+      </li>
+      <li>
+        <strong>Fines Victoria</strong> — if the matter is still unpaid, the VEC must
+        refer it for further enforcement.
+      </li>
+    </ol>
+    <p>
+      For elections held between <strong>1 July 2026 and 30 June 2027</strong>, the VEC
+      lists the fine for not voting as <strong>$105</strong>. Amounts are set by financial
+      year and can change — always check the notice you receive and the
+      <a href="https://www.vec.vic.gov.au/voting/fines-and-reviews" rel="noopener">
+        VEC fines page</a>.
+    </p>
+    <p>
+      You may be able to request a review, a payment plan, or take the matter to court.
+      Valid reasons and processes are decided by the VEC under the law; this site does not
+      list exhaustive excuses.
+      <a href="https://www.vec.vic.gov.au/voting/fines-and-reviews" rel="noopener">
+        Read the full process on the VEC site</a>
+      or call <a href="tel:1300551575">1300 551 575</a>.
+    </p>
+
+    <h2 id="enrol">How to enrol or update your details</h2>
+    <p>
+      Victoria works with the AEC so you enrol once for federal, state and local council
+      elections.
+    </p>
+    <ul>
+      <li>
+        <a href="https://www.aec.gov.au/enrol/" rel="noopener">Enrol or update online (AEC)</a>
+      </li>
+      <li>
+        <a href="https://check.aec.gov.au/" rel="noopener">Check your enrolment (AEC)</a>
+      </li>
+      <li>
+        <a href="https://www.aec.gov.au/enrol/form.htm" rel="noopener">
+          Download a paper enrolment form (AEC)</a>
+        {" "}— or call the VEC on <a href="tel:131832">131 832</a> to have a form posted.
+      </li>
+    </ul>
+    <p>
+      When you move house, you need to have lived at the new address for about 30 days
+      before updating, then update within 21 days (VEC guidance). Keep your name and
+      postal address current so election material reaches you.
+    </p>
+    <p>
+      <strong>For the 2026 state election:</strong> enrol or update by{" "}
+      <strong>8 pm on Tuesday 3 November 2026</strong>
+      {rollCloseDate && rollCloseDate !== "2026-11-03" && (
+        <> (key dates file currently lists {formatDate(rollCloseDate)} — treat the VEC date as correct)</>
+      )}
+      , according to the VEC. Always re-check the{" "}
+      <a href="https://www.vec.vic.gov.au/enrolment/enrol-to-vote" rel="noopener">
+        VEC enrol page</a>{" "}
+      before the deadline.
+    </p>
+    <p>
+      Free reminders:{" "}
+      <a href="https://www.vec.vic.gov.au/enrolment/voteralert" rel="noopener">
+        sign up for VoterAlert</a>.
+    </p>
+
+    <h2 id="preferences">How preferential voting works</h2>
+    <p>
+      Victoria uses <strong>preferential voting</strong>. You rank candidates (or, in the
+      upper house, a group) in the order you prefer. If your higher choices cannot win, your
+      vote can still count for later preferences — so long as the ballot is filled in
+      correctly (a <em>formal</em> vote).
+    </p>
+
+    <h3 id="assembly">Legislative Assembly (lower house)</h3>
+    <p>
+      One member is elected per district. Full preferential voting applies: you must
+      number <strong>every</strong> box.
+    </p>
+    <ol>
+      <li>Write <strong>1</strong> next to the candidate you most want elected.</li>
+      <li>Write <strong>2</strong> next to your second choice.</li>
+      <li>
+        Continue 3, 4, 5… until <strong>every</strong> box has a different number.
+      </li>
+    </ol>
+    <p>
+      Counting (in plain terms): first-preference votes are tallied. If no candidate has a
+      majority, the last-placed candidate is excluded and their ballots move to each
+      voter’s next preference. That continues until one candidate has a majority of votes
+      still in the count.
+    </p>
+
+    <h3 id="council">Legislative Council (upper house)</h3>
+    <p>
+      You elect five members for your region. The upper house ballot is larger and has a
+      thick line across it. Under current VEC instructions you may vote{" "}
+      <strong>above the line</strong> or <strong>below the line</strong> — not both.
+    </p>
+    <ul>
+      <li>
+        <strong>Above the line:</strong> write <strong>1</strong> in the box for one group
+        and leave the rest of the paper blank. Preferences then follow the group voting
+        ticket registered by that group (published by the VEC before the election).
+      </li>
+      <li>
+        <strong>Below the line:</strong> number individual candidates. You must number at
+        least <strong>five</strong> boxes (1 through 5) for the vote to count; you may
+        number more if you wish. Do not write numbers above the line.
+      </li>
+    </ul>
+    <p>
+      Upper house rules have been under public discussion (including group voting
+      tickets). Before you vote, re-read the
+      <a
+        href="https://www.vec.vic.gov.au/voting/learn-to-vote/how-to-fill-out-state-ballot-papers"
+        rel="noopener"
+      >
+        VEC ballot-paper instructions</a>
+      for the rules that apply on the day.
+    </p>
+
+    <h3 id="htv">Party how-to-vote cards</h3>
+    <p>
+      Parties and others may hand out how-to-vote cards suggesting an order of numbers.
+      You are <strong>not required</strong> to follow them. Your ballot is secret; the
+      numbers you write are your choice, within the formal rules above.
+    </p>
+    <p>
+      This website does <strong>not</strong> publish preference recommendations or sample
+      orderings for any party or candidate.
+    </p>
+    <p class="muted">
+      Sources:{" "}
+      <a
+        href="https://www.vec.vic.gov.au/voting/how-voting-works/preferential-voting"
+        rel="noopener"
+      >
+        Preferential voting</a>
+      ·{" "}
+      <a
+        href="https://www.vec.vic.gov.au/voting/learn-to-vote/how-to-fill-out-state-ballot-papers"
+        rel="noopener"
+      >
+        How to fill out state ballot papers</a>
+      (VEC).
+    </p>
+
+    <h2 id="ways">Other ways to vote</h2>
+    <p>
+      Closer to election day the VEC publishes options such as voting early, voting by
+      post, and assistance for people who need it. Details (dates, locations, eligibility)
+      change each election — use the official guide rather than a third-party summary.
+    </p>
+    <p>
+      <a href="https://www.vec.vic.gov.au/voting/2026-state-election" rel="noopener">
+        VEC — 2026 state election</a>
+      ·{" "}
+      <a href="https://www.vec.vic.gov.au/voting/how-voting-works" rel="noopener">
+        How voting works</a>.
+    </p>
+
+    <h2 id="links">Official links</h2>
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">Official electoral commission links</caption>
+        <thead>
+          <tr>
+            <th scope="col">Resource</th>
+            <th scope="col">What it is for</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            links.map((l) => (
+              <tr>
+                <th scope="row">
+                  <a href={l.url} rel="noopener">
+                    {l.name}
+                  </a>
+                </th>
+                <td class="muted">{l.note}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="not-advice">What this page is not</h2>
+    <ul>
+      <li>Not voting advice, a how-to-vote card, or a preference recommendation.</li>
+      <li>Not legal advice about fines, reviews or special circumstances.</li>
+      <li>
+        Not a substitute for the VEC or AEC. If anything here differs from a commission
+        publication, the commission is correct.
+      </li>
+      <li>
+        Not about who is standing — for candidates and sources, start at the
+        <a href="/">homepage</a> or <a href="/districts">districts</a>.
+      </li>
+    </ul>
+
+    <p class="foot muted">
+      Reviewed against public VEC and AEC pages as of 29 July 2026. See also the site
+      <a href="/disclaimer">disclaimer</a> and <a href="/about">independence statement</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  h2 {
+    margin-top: 2.5rem;
+  }
+  h3 {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+  }
+  ul,
+  ol {
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--ink-2);
+  }
+  ul strong,
+  ol strong {
+    color: var(--ink);
+  }
+  .notice {
+    margin: 1.25rem 0;
+  }
+  .foot {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>

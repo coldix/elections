@@ -37,12 +37,22 @@ Site (static, after data layer works):
 
 ## Explicitly out of scope (first release)
 
-- Forecasts, swing models, MRP, seat projections, how-to-vote advice
+- Forecasts, swing models, MRP, seat projections
+- How-to-vote advice (party/candidate preference recommendations or sample
+  ballots favouring anyone) — a neutral civic explainer of enrolment and
+  preferential *rules* is allowed at `/voting`
 - Comments, forums, user accounts
 - Interactive maps
 - Custom submission backend, admin UI, databases (D1/R2/Workers) — GitHub
   Issues/PRs + git are the submission workflow and the database
 - Newsletter, payments, API keys, sponsorship tooling
+
+## Civic voting guide (implemented)
+
+Plain-language page at `/voting`: eligibility and enrolment, compulsory voting,
+fines process, official links, and how preferential numbering works for the
+Assembly and Council. Always defers to the VEC/AEC. Not legal advice and not
+preference recommendations.
 
 ## Polling (secondary product — implemented)
 
