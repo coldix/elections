@@ -19,6 +19,12 @@ export const SITE = {
   issues: "https://github.com/coldix/elections/issues/new",
   email: "elections@electiontracker.au",
   publisher: "OZE",
+  // Google Search Console. Primary verification is by DNS (sc-domain), which
+  // covers every subdomain and protocol. This meta tag is a second method so
+  // verification survives a DNS change — the HTML-file method cannot be used
+  // here because Cloudflare's drop-trailing-slash rule strips the .html
+  // extension, and Google requires that exact URL to return 200.
+  googleSiteVerification: "c1C819fHSzS0z2WXIPZE419OrNveoSyQy1LDXjijkiw",
   publisherUrl: "https://oze.net.au",
 };
 
@@ -60,6 +66,8 @@ export const PARTY_COLOURS = {
   "end-mass-immigration": "#5A5A66",
   "new-democrats": "#3D6B99",
   "freedom-party": "#7A5C99",
+  "socialist-alliance": "#D0342C",
+  "west-party": "#8C6A3F",
   independent: "#6E6E7A",
 };
 

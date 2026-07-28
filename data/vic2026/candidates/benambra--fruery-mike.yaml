@@ -1,0 +1,14 @@
+candidate:
+  name: Mike Fruery
+  party: animal-justice
+  contest: benambra
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-03
+      source:
+        url: "https://vic.animaljusticeparty.org/mike-fuery"
+        title: Mike Fuery for Benambra
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-06-03

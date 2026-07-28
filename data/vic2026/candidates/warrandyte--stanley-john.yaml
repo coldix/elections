@@ -1,0 +1,14 @@
+candidate:
+  name: John Stanley
+  party: victorian-socialists
+  contest: warrandyte
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-21
+      source:
+        url: "https://www.victoriansocialists.org.au/candidates/john-stanley"
+        title: John Stanley – Victorian Socialists
+        publisher: www.victoriansocialists.org.au
+        accessed: 2026-06-21

@@ -12,58 +12,72 @@ parties:
   - slug: sustainable-australia
     name: Affordable Housing Now – Sustainable Australia Party
     short_name: Sustainable Australia Party
+    registered: true
     family: null
   - slug: animal-justice
     name: Animal Justice Party
     short_name: AJP
+    registered: true
     family: null
   - slug: greens
     name: Australian Greens Victoria
     short_name: The Greens
+    registered: true
     family: greens
   - slug: labor
     name: Australian Labor Party - Victorian Branch
     short_name: Australian Labor Party
+    registered: true
     family: labor
   - slug: dlp
     name: Democratic Labour Party (DLP)
     short_name: Labour DLP
+    registered: true
     family: null
   - slug: end-mass-immigration
     name: End Mass Immigration – Reform AU
     short_name: End Mass Immigration – Reform AU
+    registered: true
     family: null
   - slug: family-first
     name: Family First Victoria
     short_name: Family First
+    registered: true
     family: null
   - slug: freedom-party
     name: Freedom Party
     short_name: Freedom Party
+    registered: true
     family: null
   - slug: legalise-cannabis
     name: Legalise Cannabis Victoria
     short_name: Legalise Cannabis
+    registered: true
     family: null
   - slug: liberal
     name: Liberal Party of Australia – Victorian Division
     short_name: Liberal
+    registered: true
     family: coalition
   - slug: libertarian
     name: Libertarian Party
     short_name: Libertarian
+    registered: true
     family: null
   - slug: nationals
     name: National Party of Australia - Victoria
     short_name: The Nationals
+    registered: true
     family: coalition
   - slug: new-democrats
     name: New Democrats
     short_name: New Democrats
+    registered: true
     family: null
   - slug: one-nation
     name: Pauline Hanson's One Nation
     short_name: One Nation
+    registered: true
     family: one-nation
     commitments:
       - claim: Party states intention to contest all 88 Legislative Assembly seats at the Nov 2026 election
@@ -76,12 +90,47 @@ parties:
   - slug: shooters-fishers-farmers
     name: Shooters, Fishers and Farmers Party Victoria
     short_name: Shooters, Fishers & Farmers Vic
+    registered: true
     family: null
   - slug: victorian-socialists
     name: Victorian Socialists
     short_name: Victorian Socialists
+    registered: true
     family: null
   - slug: independent
     name: Independent
     short_name: Independent
+    registered: null
     family: independent
+  - slug: socialist-alliance
+    name: Socialist Alliance
+    short_name: Socialist Alliance
+    registered: false
+    family: null
+    registration:
+      status: seeking registration in Victoria
+      note: >-
+        Federally registered, but NOT on the Victorian register. Unless it
+        registers before nominations close, its candidates appear on the ballot
+        without a party name.
+      source:
+        url: https://socialist-alliance.org/party-registration/victoria
+        title: Help Socialist Alliance register in Victoria
+        publisher: Socialist Alliance
+        accessed: 2026-07-29
+  - slug: west-party
+    name: The West Party
+    short_name: The West Party
+    registered: false
+    family: null
+    registration:
+      status: application received by the VEC 11 June 2026
+      note: >-
+        Registration applied for but not yet granted. Until it is, candidates
+        appear on the ballot without a party name.
+      source:
+        url: https://wyndham.starweekly.com.au/news/the-west-party-applies-for-registration/
+        title: The West Party applies for registration
+        publisher: Star Weekly (Wyndham)
+        published: 2026-06-11
+        accessed: 2026-07-29

@@ -1,0 +1,15 @@
+candidate:
+  name: Oscar Yildiz
+  party: independent
+  contest: essendon
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-06-04
+      source:
+        url: "https://www.theaustralian.com.au/commentary/victoria-ink/the-jacinta-allanjess-wilson-meeting-that-never-happened/news-story/49af1b88a278e8458b4b4057e56c1ca5"
+        title: The Jacinta-Jess meeting that never happened
+        publisher: The Australian
+        published: 2026-06-04
+        accessed: 2026-07-10

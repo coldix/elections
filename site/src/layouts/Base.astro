@@ -98,6 +98,14 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
+    {
+      /* Homepage only — Google reads it there, and repeating it on 115 pages
+         would be noise. */
+      canonical === `${SITE.url}/` && (
+        <meta name="google-site-verification" content={SITE.googleSiteVerification} />
+      )
+    }
+
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

@@ -1,0 +1,14 @@
+candidate:
+  name: Chloe Bond
+  party: animal-justice
+  contest: eildon
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-03
+      source:
+        url: "https://vic.animaljusticeparty.org/chloe-bond"
+        title: Chloe Bond for Eildon
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-06-03

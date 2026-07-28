@@ -1,0 +1,14 @@
+candidate:
+  name: Rachel Unicomb
+  party: animal-justice
+  contest: preston
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-03
+      source:
+        url: "https://vic.animaljusticeparty.org/rachel-unicomb"
+        title: Rachel Unicomb for Preston
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-06-03

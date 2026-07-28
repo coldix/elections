@@ -1,0 +1,14 @@
+candidate:
+  name: Minh Quan Nguyen
+  party: west-party
+  contest: footscray
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-07
+      source:
+        url: "https://thewestparty.org.au/local-representation/"
+        title: Local Representation
+        publisher: The West Parties
+        accessed: 2026-07-07

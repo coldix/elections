@@ -1,0 +1,14 @@
+candidate:
+  name: Oskar Martin
+  party: victorian-socialists
+  contest: williamstown
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-01
+      source:
+        url: "https://www.victoriansocialists.org.au/candidates/oskar-martin"
+        title: Oskar Martin – Victorian Socialists
+        publisher: www.victoriansocialists.org.au
+        accessed: 2026-06-01

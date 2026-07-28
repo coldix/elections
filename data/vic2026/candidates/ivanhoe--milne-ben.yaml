@@ -1,0 +1,14 @@
+candidate:
+  name: Ben Milne
+  party: victorian-socialists
+  contest: ivanhoe
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-01
+      source:
+        url: "https://www.victoriansocialists.org.au/candidates/ben-milne"
+        title: Ben Milne – Victorian Socialists
+        publisher: www.victoriansocialists.org.au
+        accessed: 2026-06-01

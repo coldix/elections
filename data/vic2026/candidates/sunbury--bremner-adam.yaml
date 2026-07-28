@@ -1,0 +1,14 @@
+candidate:
+  name: Adam Bremner
+  party: victorian-socialists
+  contest: sunbury
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-16
+      source:
+        url: "https://www.victoriansocialists.org.au/candidates/adam-bremner"
+        title: "Adam Bremner: Candidate for Sunbury"
+        publisher: Victorian Socialists
+        accessed: 2026-06-16

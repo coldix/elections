@@ -116,12 +116,14 @@ const schema = {
 
       <CoverageMatrix data={data} coverage={coverage} />
 
-      <h3 class="dash-h">Every registered party</h3>
+      <h3 class="dash-h">Every party</h3>
       <p class="muted dash-sub">
-        Ordered by seats currently held in the Parliament of Victoria — an objective fact
-        about the sitting parliament, not a ranking by prominence. Parties with no
-        individually sourced candidate yet are shown too: absence of a record is not
-        evidence that a party is not standing candidates.
+        Every party on the VEC register, plus any unregistered party with publicly
+        announced candidates, plus independents as a group. Ordered by seats currently
+        held in the Parliament of Victoria — an objective fact about the sitting
+        parliament, not a ranking by prominence. Parties with no individually sourced
+        candidate yet are shown too: absence of a record is not evidence that a party is
+        not standing candidates.
       </p>
 
       <div class="table-scroll">
@@ -162,6 +164,11 @@ const schema = {
                       />
                       {c.short_name}
                     </a>
+                    {data.partyBySlug.get(c.party)?.registered === false && (
+                      <span class="unreg-flag" title="Not on the VEC register">
+                        unregistered
+                      </span>
+                    )}
                   </th>
                   <td class="num">{c.current.assembly || "—"}</td>
                   <td class="num">{c.current.council || "—"}</td>
@@ -189,6 +196,12 @@ const schema = {
           </tbody>
         </table>
       </div>
+      <p class="muted table-note">
+        <strong>Unregistered</strong> marks a party that has publicly announced candidates
+        but is not on the VEC register. If it is still unregistered when nominations close,
+        its candidates appear on the ballot with no party name beside them.{" "}
+        <a href="/parties">Registration status by party</a>.
+      </p>
       <p class="muted table-note">
         <strong>Seats held now</strong> is the current Parliament (2022–2026), including
         mid-term replacements and party changes — not the 2022 election result. The
@@ -363,6 +376,19 @@ const schema = {
   .table-note {
     margin-top: 0.9rem;
     max-width: 60rem;
+  }
+  .unreg-flag {
+    display: inline-block;
+    margin-left: 0.45rem;
+    padding: 0.05em 0.4em;
+    border-radius: 3px;
+    background: var(--st-announced-bg);
+    color: var(--st-announced);
+    font-size: 0.68rem;
+    font-weight: 620;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
   }
   th.grp {
     text-align: center;

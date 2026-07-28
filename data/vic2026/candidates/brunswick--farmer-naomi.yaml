@@ -1,0 +1,14 @@
+candidate:
+  name: Naomi Farmer
+  party: victorian-socialists
+  contest: brunswick
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-03-11
+      source:
+        url: "https://www.victoriansocialists.org.au/candidates/naomi-farmer"
+        title: "Naomi Farmer: Candidate for Brunswick"
+        publisher: Victorian Socialists
+        accessed: 2026-03-11

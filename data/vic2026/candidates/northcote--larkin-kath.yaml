@@ -1,0 +1,14 @@
+candidate:
+  name: Kath Larkin
+  party: victorian-socialists
+  contest: northcote
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-01
+      source:
+        url: "https://www.victoriansocialists.org.au/candidates/kath-larkin"
+        title: Kath Larkin – Victorian Socialists
+        publisher: www.victoriansocialists.org.au
+        accessed: 2026-06-01

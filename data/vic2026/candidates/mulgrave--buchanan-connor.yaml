@@ -1,0 +1,14 @@
+candidate:
+  name: Connor Buchanan
+  party: victorian-socialists
+  contest: mulgrave
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-01
+      source:
+        url: "https://www.victoriansocialists.org.au/candidates/connor-buchanan"
+        title: Connor Buchanan – Victorian Socialists
+        publisher: www.victoriansocialists.org.au
+        accessed: 2026-06-01

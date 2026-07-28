@@ -1,0 +1,14 @@
+candidate:
+  name: Gil Gannon
+  party: west-party
+  contest: williamstown
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-21
+      source:
+        url: "https://thewestparty.org.au/local-representation/gill-gannon/"
+        title: Gil Gannon – Candidate for Williamstown
+        publisher: www.thewestparty.org.au
+        accessed: 2026-06-21

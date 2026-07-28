@@ -108,6 +108,35 @@ Validator enforces exactly 5 members per region — a miscount fails the build.
 change so the published rule matches what the site actually does — if you
 change the ordering again, change both.
 
+## Data expansion (2026-07-29)
+
+**203 candidate records**, up from 119. Extracted the Socialists and "Other"
+columns of the Wikipedia candidates table, which the first pass never touched:
+53 Victorian Socialists, 10 Animal Justice, 8 independents, 6 The West Party,
+6 Socialist Alliance, 1 Libertarian.
+
+Two of those are **not on the VEC register** — Socialist Alliance (seeking
+registration) and The West Party (application received 11 June 2026). Both were
+verified before recording rather than assumed. `parties.yaml` now carries
+`registered: true|false|null` on every entry plus a `registration` block with
+status, consequence and source for the unregistered two. This matters
+editorially: a party still unregistered when nominations close has **no party
+name printed beside its candidates** — they appear ungrouped. Surfaced on the
+homepage table (an "unregistered" flag), the parties index and each party page.
+
+`registered: null` on `independent` — it is a grouping, not a party, so
+registration does not apply. Don't "fix" it to false.
+
+Coverage now: Victorian Socialists 53/88, Greens 51/88, Liberal 35/88,
+Labor 25/88, AJP 10/88, independents 8/88, West 6/88, Socialist Alliance 6/88,
+Nationals 4/88, One Nation 1/88, Libertarian 1/88.
+
+### Still not extracted
+- Legislative Council ticket tables (per region, all parties) — messy
+  multi-party grids in the Wikipedia plain text; fetch region-by-region.
+- The ~67 incumbents still lack individual sources (unchanged, still the
+  single biggest gap — it is why Labor reads 25/88).
+
 ## Current state (2026-07-28)
 
 Scaffold + core data complete:

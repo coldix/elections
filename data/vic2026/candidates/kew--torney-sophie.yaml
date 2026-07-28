@@ -1,0 +1,15 @@
+candidate:
+  name: Sophie Torney
+  party: independent
+  contest: kew
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-03-20
+      source:
+        url: "https://www.theage.com.au/politics/victoria/wilson-faces-fresh-teal-threat-as-voters-abandon-major-parties-20260319-p5qb6e.html"
+        title: Wilson faces fresh teal threat as voters abandon major parties
+        publisher: The Age
+        published: 2026-03-20
+        accessed: 2026-04-19

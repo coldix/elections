@@ -1,0 +1,15 @@
+candidate:
+  name: Raymond French
+  party: independent
+  contest: pakenham
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-06-19
+      source:
+        url: "https://pakenhamnews.starcommunity.com.au/news/2026-06-19/new-independent-enters-the-election-battleground-claims-seat-could-decide-victorias-next-government/"
+        title: "New independent enters the election battleground, claims seat could decide Victoria's next government"
+        publisher: Pakenham Star News
+        published: 2026-06-19
+        accessed: 2026-06-20

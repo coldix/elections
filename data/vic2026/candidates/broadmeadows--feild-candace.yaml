@@ -1,0 +1,14 @@
+candidate:
+  name: Candace Feild
+  party: animal-justice
+  contest: broadmeadows
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-04-19
+      source:
+        url: "https://vic.animaljusticeparty.org/lower-house"
+        title: Lower House Candidates
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-04-19

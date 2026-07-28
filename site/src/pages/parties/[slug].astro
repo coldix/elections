@@ -100,6 +100,17 @@ const sittingMLCs = data.councilMembers.filter((m) => m.party === party.slug);
     </div>
 
     {
+      party.registered === false && (
+        <div class="notice unregistered" role="note">
+          <strong>Not registered with the Victorian Electoral Commission.</strong>{" "}
+          {party.registration?.status && <>Status: {party.registration.status}. </>}
+          {party.registration?.note}{" "}
+          {party.registration?.source && <SourceLink source={party.registration.source} />}
+        </div>
+      )
+    }
+
+    {
       cov.commitments.length > 0 && (
         <div class="notice" role="note">
           <strong>The party's own claim.</strong>{" "}
@@ -362,6 +373,9 @@ const sittingMLCs = data.councilMembers.filter((m) => m.party === party.slug);
   .muted-notice {
     border-left-color: var(--rule-strong);
     font-size: 0.88rem;
+  }
+  .unregistered {
+    border-left-color: var(--st-announced);
   }
   .sh {
     margin-top: 2.5rem;

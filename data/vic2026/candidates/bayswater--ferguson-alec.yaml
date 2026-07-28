@@ -1,0 +1,14 @@
+candidate:
+  name: Alec Ferguson
+  party: victorian-socialists
+  contest: bayswater
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-22
+      source:
+        url: "https://www.victoriansocialists.org.au/candidates/alec-ferguson"
+        title: Alec Ferguson – Victorian Socialists
+        publisher: www.victoriansocialists.org.au
+        accessed: 2026-06-22

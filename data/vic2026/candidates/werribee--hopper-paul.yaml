@@ -1,0 +1,14 @@
+candidate:
+  name: Paul Hopper
+  party: west-party
+  contest: werribee
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-21
+      source:
+        url: "https://thewestparty.org.au/local-representation/paul-hopper/"
+        title: Paul Hopper – Candidate for Werribee
+        publisher: www.thewestparty.org.au
+        accessed: 2026-06-21

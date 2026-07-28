@@ -1,0 +1,20 @@
+candidate:
+  name: Sue Bolton
+  party: socialist-alliance
+  contest: broadmeadows
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-02-11
+      source:
+        url: https://www.facebook.com/photo?fbid=1357585603067352&set=pb.100064477760752.-2207520000
+        title: Sue Bolton for Broadmeadows
+        publisher: Socialist Alliance (official Facebook page)
+        published: 2026-02-11
+        accessed: 2026-07-29
+      note: >-
+        Announced on the party's own Facebook page, which meets the sourcing
+        rule for official party accounts. Socialist Alliance is not on the
+        Victorian register, so unless it registers before nominations close
+        this candidacy would appear on the ballot without a party name.

@@ -5,26 +5,38 @@ import { partyColour } from "../../lib/site.mjs";
 
 const data = loadElection("vic2026");
 const coverage = coverageFor(data);
+const unregistered = coverage.filter((c) => data.partyBySlug.get(c.party)?.registered === false);
 ---
 
 <Base
   title="Parties"
-  description="Candidate coverage for every party registered with the Victorian Electoral Commission, plus independents, at the 2026 Victorian state election."
+  description="Candidate coverage for every party contesting the 2026 Victorian state election — registered and unregistered — plus independents."
 >
   <div class="wrap section">
     <p class="eyebrow">Victoria 2026</p>
     <h1>Parties</h1>
     <p class="lede">
-      Every party on the Victorian Electoral Commission's register, given identical
-      treatment. Ordered by seats currently held in the Parliament of Victoria — an
-      objective fact about the sitting parliament, not a ranking by prominence.
-      Independents are grouped for convenience; they are not a party.
+      Every party on the Victorian Electoral Commission's register, plus any unregistered
+      party with publicly announced candidates, all given identical treatment. Ordered by
+      seats currently held in the Parliament of Victoria — an objective fact about the
+      sitting parliament, not a ranking by prominence. Independents are grouped for
+      convenience; they are not a party.
     </p>
 
     <div class="notice" role="note">
       <strong>Coverage is a count of our records, not of the ballot paper.</strong>{" "}
       {COVERAGE_CAVEAT}
     </div>
+
+    {unregistered.length > 0 && (
+      <div class="notice unreg-notice" role="note">
+        <strong>{unregistered.length} of these are not on the VEC register.</strong>{" "}
+        We list them because they have publicly announced candidates, but a party that
+        is not registered when nominations close has no party name printed beside its
+        candidates on the ballot — those candidates appear ungrouped. Registration
+        status is shown on each party's page.
+      </div>
+    )}
 
     <ul class="party-grid" role="list">
       {
@@ -34,6 +46,9 @@ const coverage = coverageFor(data);
               <span class="p-bar" aria-hidden="true" />
               <h2>{c.short_name}</h2>
               <p class="p-full muted">{c.name}</p>
+              {data.partyBySlug.get(c.party)?.registered === false && (
+                <p class="unreg">Not on the VEC register</p>
+              )}
 
               <p class="p-seats">
                 <span class="p-seats-n">{c.current.total}</span>
@@ -97,7 +112,18 @@ const coverage = coverageFor(data);
   }
   .p-full {
     font-size: 0.8rem;
-    margin: 0 0 0.9rem;
+    margin: 0 0 0.5rem;
+  }
+  .unreg {
+    margin: 0 0 0.7rem;
+    font-size: 0.72rem;
+    font-weight: 620;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--st-announced);
+  }
+  .unreg-notice {
+    border-left-color: var(--st-announced);
   }
   .p-seats {
     margin: 0 0 0.6rem;

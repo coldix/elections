@@ -1,0 +1,14 @@
+candidate:
+  name: Chloe Coulson
+  party: animal-justice
+  contest: hastings
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-21
+      source:
+        url: "https://vic.animaljusticeparty.org/chloe-coulson"
+        title: Chloe Coulson for Hastings
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-06-21

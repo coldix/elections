@@ -1,0 +1,14 @@
+candidate:
+  name: Chris Dite
+  party: victorian-socialists
+  contest: richmond
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-01
+      source:
+        url: "https://www.victoriansocialists.org.au/candidates/chris-dite"
+        title: Chris Dite – Victorian Socialists
+        publisher: www.victoriansocialists.org.au
+        accessed: 2026-06-01
