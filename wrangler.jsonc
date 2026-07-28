@@ -8,6 +8,17 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "elections",
   "compatibility_date": "2026-07-28",
+
+  // The site is served from electiontracker.au (custom domain). Turning the
+  // workers.dev hostname off stops it answering on a second public hostname
+  // with byte-identical content. Only safe because the custom domain resolves;
+  // if it ever breaks, flip this back to reach the site again.
+  "workers_dev": false,
+  // Per-branch preview URLs, kept for reviewing data changes before merge.
+  // These live on the workers.dev subdomain, so if disabling workers_dev also
+  // kills previews, that is the trade-off — re-enable workers_dev if previews
+  // matter more than the duplicate hostname.
+  "preview_urls": true,
   "assets": {
     // Astro's output. Produced by `npm run build`, which validates the data
     // and regenerates the JSON/CSV exports first.

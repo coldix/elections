@@ -6,8 +6,7 @@ infrastructure; the Workers/D1/R2 stack was already evaluated and rejected
 
 ## The site (added 2026-07-28)
 
-**Live** at https://elections.col-ab2.workers.dev since 2026-07-28 (first
-successful deploy). Astro static site in `site/`, 112 pages, deployed as an
+**Live** at https://electiontracker.au since 2026-07-28. Astro static site in `site/`, 112 pages, deployed as an
 assets-only Worker via Workers Builds — a push to `main` builds and deploys
 itself.
 
@@ -122,17 +121,21 @@ Do not expand scope beyond the wedge. Kill criteria in docs/SCOPE.md.
    no bindings, nothing runs per request). `npx wrangler deploy` fails without
    it. Verified with `npx wrangler deploy --dry-run`: 245 files, no bindings.
 
-2. **Attach `electiontracker.au`** to the Worker, then set
-   `"workers_dev": false` in wrangler.jsonc so the site stops answering on
-   `elections.col-ab2.workers.dev` as well. Not before — that URL is currently
-   the only way to reach the site.
-3. **Add the redirect for `electiontracker.com.au`** — DNS placeholder plus a
+2. **Add the redirect for `electiontracker.com.au`** — DNS placeholder plus a
    dynamic Redirect Rule, both spelled out in docs/DEPLOYMENT.md. Do *not*
    attach it to Pages as a second custom domain; that would serve the site
    twice and split its search ranking.
-4. **MX / SPF / DKIM / DMARC** on both domains for the Google Workspace routing.
+3. **MX / SPF / DKIM / DMARC** on both domains for the Google Workspace routing.
 
 Resolved 2026-07-28:
+- ~~Cloudflare project + custom domain~~ — deployed as an assets-only Worker
+  via Workers Builds; `electiontracker.au` resolves and serves. A push to
+  `main` now builds and deploys on its own (~1 min).
+- ~~workers.dev duplicate hostname~~ — `workers_dev: false` set once the
+  custom domain was confirmed working. `preview_urls: true` set explicitly to
+  keep per-branch previews; these live on the workers.dev subdomain, so if
+  previews stop appearing on the next branch push, that is the cause — flip
+  `workers_dev` back if previews matter more.
 - ~~DNS zone~~ — superseded. The site now publishes at **electiontracker.au**
   (canonical), with **electiontracker.com.au** redirecting to it. Both in the
   dedicated Cloudflare account. A zone ID isn't needed: the Pages custom-domain
