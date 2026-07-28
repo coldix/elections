@@ -1,0 +1,139 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, LEGAL_UPDATED, formatDate } from "../lib/site.mjs";
+import { COVERAGE_CAVEAT } from "../../../scripts/lib/data.mjs";
+---
+
+<Base
+  title="Disclaimer"
+  description="The limits of what the Australian Election Tracker can tell you: it is not the Victorian Electoral Commission, not voting advice, and its coverage is incomplete by design."
+>
+  <div class="wrap wrap-narrow section">
+    <p class="eyebrow">Legal</p>
+    <h1>Disclaimer</h1>
+    <p class="lede">
+      This project takes accuracy seriously — every claim carries a dated source, and the
+      whole dataset is open to inspection. That is exactly why it is worth being precise
+      about what it cannot tell you.
+    </p>
+
+    <h2 id="not-the-vec">We are not the electoral commission</h2>
+    <p>
+      The Australian Election Tracker is an independent project. It is not affiliated
+      with, endorsed by, or speaking for the
+      <a href="https://www.vec.vic.gov.au/" rel="nofollow noopener">
+        Victorian Electoral Commission</a>, the Australian Electoral Commission, any
+      other electoral authority, any political party, or any candidate.
+    </p>
+    <p>
+      <strong>The VEC is authoritative</strong> for enrolment, nominations, voting
+      procedure and results. Where this site and the VEC differ, the VEC is correct and
+      we are wrong. The definitive list of candidates for the 2026 Victorian state
+      election does not exist until nominations close on 13 November 2026.
+    </p>
+
+    <h2 id="not-advice">We do not tell you how to vote</h2>
+    <p>
+      Nothing here is voting advice, a recommendation, an endorsement, or a criticism of
+      any party or candidate. There are no how-to-vote suggestions, no preference
+      recommendations, no candidate ratings, no polling and no forecasts. The site
+      records who is standing and what evidence supports that — nothing more.
+    </p>
+    <p>
+      Listing a candidate is not endorsement. Party order in any table reflects seats
+      currently held in the Parliament of Victoria, which is a fact about the sitting
+      parliament, not a judgement about merit. See the
+      <a href="/methodology#ordering">methodology</a>.
+    </p>
+
+    <h2 id="incomplete">Coverage is incomplete, by design</h2>
+    <div class="notice" role="note">
+      <strong>Read every coverage figure with this in mind.</strong> {COVERAGE_CAVEAT}
+    </div>
+    <p>
+      A district showing no candidate for a party means <strong>we have not verified
+      one</strong> — not that nobody is standing. We would rather publish a number that
+      understates reality than one we cannot evidence. Verification is progressive and
+      ongoing.
+    </p>
+
+    <h2 id="statuses">What a status does and does not mean</h2>
+    <p>
+      A status records what a source said on a date. "Announced" means someone stated an
+      intention to stand; it does not mean a party has endorsed them. "Endorsed" means a
+      party selected them; it does not mean they will appear on the ballot. Only
+      "formally nominated" — which cannot occur before nominations open on 4 November
+      2026 — reflects an electoral commission's own record.
+    </p>
+    <p>
+      Candidacies change. People withdraw, are disendorsed, or switch seats. A record
+      here reflects the most recent sourced information we hold, which may lag events.
+    </p>
+
+    <h2 id="sources">Third-party sources and links</h2>
+    <p>
+      Records cite published sources including news outlets, party websites and official
+      publications. Citing a source is not endorsement of that source, its accuracy, or
+      anything else it publishes. We link to sources so you can check our work; where a
+      source turns out to be wrong, we correct the record and say so.
+    </p>
+    <p>
+      We do not control external sites and are not responsible for their content or
+      availability.
+    </p>
+
+    <h2 id="accuracy">Accuracy and liability</h2>
+    <p>
+      The information here is provided in good faith and on a best-efforts basis, without
+      warranty of any kind, express or implied, including as to accuracy, completeness or
+      fitness for a particular purpose. This is a volunteer public-interest project, not
+      a professional information service.
+    </p>
+    <p>
+      To the extent permitted by law, we accept no liability for any loss or damage
+      arising from reliance on this site or the data it publishes. If a decision matters,
+      verify it against the electoral commission. Nothing in this disclaimer excludes any
+      right or guarantee that cannot lawfully be excluded, including under the Australian
+      Consumer Law.
+    </p>
+
+    <h2 id="corrections">Found an error? Tell us</h2>
+    <p>
+      Corrections are welcomed rather than tolerated — they are how the project stays
+      worth citing. Requests concerning living people are prioritised above all other
+      work.
+    </p>
+    <p>
+      Public route: <a href={SITE.issues}>open a GitHub issue</a> with a source.
+      Private route: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    </p>
+    <p>
+      Corrections are recorded, not quietly erased: the original entry, the correction
+      and its reason all remain visible in the public
+      <a href={SITE.repo}>commit history</a>. See the
+      <a href="/methodology#corrections">corrections policy</a>.
+    </p>
+
+    <h2 id="authorisation">Authorisation</h2>
+    <p>
+      The authorisation statement for this site appears on the
+      <a href="/about#authorisation">about page</a>.
+    </p>
+
+    <p class="updated muted">Last reviewed {formatDate(LEGAL_UPDATED)}.</p>
+  </div>
+</Base>
+
+<style>
+  h2 {
+    margin-top: 2.5rem;
+  }
+  .notice {
+    margin: 1.25rem 0;
+  }
+  .updated {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>

@@ -14,14 +14,15 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
 <header class="site-header no-print">
   <div class="wrap bar">
     <a class="brand" href="/">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round">
-          <path d="M3 20h18" />
-          <path d="M6 20V11" />
-          <path d="M12 20V4" />
-          <path d="M18 20v-6" />
-        </svg>
-      </span>
+      <img
+        class="brand-mark"
+        src="/images/aet-logo-512.webp"
+        alt=""
+        aria-hidden="true"
+        width="34"
+        height="34"
+        decoding="async"
+      />
       <span class="brand-text">
         <strong>Australian Election Tracker</strong>
         <span class="brand-sub">by {SITE.publisher}</span>
@@ -69,19 +70,10 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
     text-decoration: none;
   }
   .brand-mark {
-    display: grid;
-    place-items: center;
-    width: 2.1rem;
-    height: 2.1rem;
-    border-radius: 7px;
-    background: var(--accent);
-    color: #fff;
+    width: 2.15rem;
+    height: 2.15rem;
+    border-radius: 50%;
     flex: none;
-  }
-  @media (prefers-color-scheme: dark) {
-    .brand-mark {
-      color: #16161d;
-    }
   }
   .brand-text {
     display: flex;

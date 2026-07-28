@@ -1,5 +1,5 @@
 ---
-import { SITE, ATTRIBUTION } from "../lib/site.mjs";
+import { SITE, ATTRIBUTION, SOCIAL } from "../lib/site.mjs";
 const year = new Date().getFullYear();
 ---
 
@@ -30,6 +30,18 @@ const year = new Date().getFullYear();
           <li><a href="/about">Independence statement</a></li>
           <li><a href="/about#authorisation">Legal authorisation</a></li>
           <li><a href="/about#contact">Contact</a></li>
+          <li>
+            <a href={SOCIAL.facebook} rel="me noopener">Facebook</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="eyebrow">Legal</p>
+        <ul>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/terms">Terms of use</a></li>
         </ul>
       </div>
     </div>

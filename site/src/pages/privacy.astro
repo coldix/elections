@@ -1,0 +1,183 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, SOCIAL, LEGAL_UPDATED, formatDate } from "../lib/site.mjs";
+---
+
+<Base
+  title="Privacy policy"
+  description="What the Australian Election Tracker collects — almost nothing. No cookies, no analytics, no tracking. How candidate information is handled and how to request a correction."
+>
+  <div class="wrap wrap-narrow section">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy policy</h1>
+    <p class="lede">
+      This site is deliberately built so that there is very little to collect. It is a
+      set of static files. It sets no cookies, runs no analytics, and has no accounts,
+      no logins and no tracking scripts of any kind.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>The short version.</strong> We don't track you. We don't know who you are.
+      If you email us, we have your email. If you post a GitHub issue, that's public.
+      Candidate records contain only publicly available information about people's
+      public candidacies.
+    </div>
+
+    <h2 id="not-collected">What we do not collect</h2>
+    <ul>
+      <li>No cookies are set by this site.</li>
+      <li>No analytics, no page-view tracking, no session recording, no heatmaps.</li>
+      <li>No advertising networks, no tracking pixels, no third-party scripts.</li>
+      <li>No user accounts, logins, newsletters or mailing lists.</li>
+      <li>
+        No fingerprinting. The site ships no JavaScript bundles at all — the one small
+        script it does include only refreshes the election countdown.
+      </li>
+    </ul>
+
+    <h2 id="processed">What is processed when you visit</h2>
+    <p>
+      The site is delivered by Cloudflare. Like any web host, Cloudflare's servers
+      process the technical details of each request — including your IP address, the
+      time, the page requested and your browser's user-agent string — in order to serve
+      the page and to protect against attacks and abuse. This is standard infrastructure
+      logging that we do not control, do not use for analytics and do not combine with
+      anything else.
+    </p>
+    <p>
+      Cloudflare also enables Network Error Logging on the sites it serves. If your
+      browser fails to load a page, it may send a technical error report to Cloudflare's
+      reporting endpoint. Successful requests are not reported. This is a hosting-level
+      feature rather than anything this site does, and it is not analytics — but it is a
+      report leaving your browser, so it is listed here for completeness.
+    </p>
+    <p class="muted">
+      Cloudflare acts as our hosting provider. See
+      <a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">
+        Cloudflare's privacy policy</a>.
+    </p>
+
+    <h2 id="you-contact">If you contact us</h2>
+    <p>
+      Email sent to <a href={`mailto:${SITE.email}`}>{SITE.email}</a> reaches a private
+      mailbox. We keep correspondence for as long as needed to deal with the matter and
+      to keep a record of corrections. We do not add you to any list, and we do not pass
+      your details to anyone else.
+    </p>
+    <p>
+      If you raise a correction through <a href={SITE.issues}>GitHub Issues</a>, be aware
+      that issues are <strong>public</strong> and governed by GitHub's own terms and
+      privacy policy. If your request involves anything you would rather not publish,
+      email instead.
+    </p>
+    <p>
+      We never publish the identity or contact details of anyone who submits information
+      to us.
+    </p>
+
+    <h2 id="social">Our Facebook page</h2>
+    <p>
+      We run a <a href={SOCIAL.facebook} rel="nofollow noopener">Facebook page</a>. If
+      you interact with it, Meta collects information about you under its own policies,
+      which we neither control nor receive. Nothing on this website loads anything from
+      Facebook — no like buttons, no embedded feeds, no pixel.
+    </p>
+
+    <h2 id="candidates">Information about candidates and members</h2>
+    <p>
+      This site records information about people acting in a public political capacity:
+      candidates who have publicly announced or been endorsed, and sitting members of
+      parliament. Every record is drawn from a published, cited source.
+    </p>
+    <p>We deliberately limit what is recorded:</p>
+    <ul>
+      <li>
+        <strong>What we publish:</strong> name, the party and seat associated with the
+        candidacy, its status, the dates of any change, and the sources supporting each.
+      </li>
+      <li>
+        <strong>What we never publish:</strong> home addresses, contact details, family
+        details, employment unrelated to the candidacy, or any personal information the
+        person has not themselves made public in the context of standing for office.
+      </li>
+      <li>
+        <strong>What we never record at all:</strong> rumour, speculation or unverified
+        allegations.
+      </li>
+    </ul>
+    <p>
+      Full detail is in the <a href="/methodology">methodology</a>.
+    </p>
+
+    <h2 id="corrections">Corrections, and asking us to remove something</h2>
+    <p>
+      If a record about you is wrong, out of date, or should not be there, tell us and we
+      will deal with it promptly. Requests concerning living people are prioritised above
+      all other work on this project.
+    </p>
+    <p>
+      Because the dataset is a public Git repository, corrections are made by adding a
+      new entry rather than silently erasing history — the correction and its reason
+      remain visible. If you believe information should be removed entirely rather than
+      corrected, say so and explain why, and we will consider it on the merits.
+    </p>
+    <p>
+      You may also ask what information we hold about you.
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    </p>
+
+    <h2 id="handling">How we handle information generally</h2>
+    <p>
+      We aim to handle personal information consistently with the Australian Privacy
+      Principles in the <i>Privacy Act 1988</i> (Cth): collect only what is needed, keep
+      it accurate, keep it secure, and correct it when asked. No credentials, private
+      correspondence or unpublished submissions are ever committed to the public
+      repository.
+    </p>
+    <p>
+      If you are unhappy with how we have handled a privacy matter, contact us first. If
+      you remain dissatisfied, you may complain to the
+      <a href="https://www.oaic.gov.au/" rel="nofollow noopener">
+        Office of the Australian Information Commissioner</a>.
+    </p>
+
+    <h2 id="children">Children</h2>
+    <p>
+      This site is a public-interest reference work not directed at children, and it
+      collects nothing from anyone, including children.
+    </p>
+
+    <h2 id="changes">Changes</h2>
+    <p>
+      If this policy changes materially, the date below changes with it. Because the site
+      is published from a public repository, every past version of this page and the
+      exact date it changed can be inspected in the
+      <a href={SITE.repo}>commit history</a>.
+    </p>
+
+    <p class="updated muted">Last reviewed {formatDate(LEGAL_UPDATED)}.</p>
+  </div>
+</Base>
+
+<style>
+  h2 {
+    margin-top: 2.5rem;
+  }
+  ul {
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--ink-2);
+  }
+  ul strong {
+    color: var(--ink);
+  }
+  .notice {
+    margin: 1.5rem 0;
+  }
+  .updated {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>

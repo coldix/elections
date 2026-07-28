@@ -42,12 +42,36 @@ redirected. Fixed; if you change one, change the other.
   **and** inside `coverage.json`. Keep it that way — it is the honest
   qualification on every number the project publishes.
 
+### Legal pages (added 2026-07-29)
+
+`/privacy`, `/terms`, `/disclaimer`, linked from a new footer column. Written to
+describe what the site *actually* does, not boilerplate: the "no cookies, no
+analytics, no tracking" claims were verified against live response headers
+(`curl -sI` — no `Set-Cookie` at all, even with a browser UA). Cloudflare's
+Network Error Logging headers ARE present, so privacy.astro discloses them
+rather than claiming nothing leaves the browser.
+
+`LEGAL_UPDATED` in `site/src/lib/site.mjs` drives the "last reviewed" date on
+all three — bump it whenever they change materially.
+
+**Not legally reviewed.** These are careful, accurate and honest, but written by
+an agent, not a lawyer. Before the campaign gets busy, have someone qualified
+look at them — particularly the defamation exposure around `withdrawn` and
+`disendorsed` statuses about named individuals, which is the single largest
+legal risk this project carries.
+
 ### Still to do on the site
 - Recent-changes feed derived from `git log` (in SCOPE's MVP, not built).
 - Council **candidate** coverage is thin — only the 2 Western Metropolitan
   records exist. (Sitting MLCs are now fully recorded; candidates are not.)
   Per-region pages would be worth building once candidates exist.
-- Social preview image (`og:image`) not set; add a static one or generate.
+- ~~Social preview~~ done: `og:image` 1200x630 generated from the brand banner
+  (padded, not cropped, so the logo and badges survive), plus favicon /
+  apple-touch icons from the round logo. Brand assets live in `images/`;
+  web-ready copies in `site/public/images/`.
+- Brand palette (navy/teal/gold) does not match the site shell (ink/sand/plum).
+  Deliberately left alone — worth a decision, not an accident. Note teal was
+  originally avoided because of the federal "teal independents" association.
 
 ## Current parliament (added 2026-07-28)
 

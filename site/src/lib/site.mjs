@@ -25,6 +25,18 @@ export const SITE = {
 /** How reusers should credit the data under CC BY 4.0. */
 export const ATTRIBUTION = SITE.domain;
 
+/** Social presence. Listed so the footer and about page stay in step. */
+export const SOCIAL = {
+  facebook: "https://www.facebook.com/election.tracker.au/",
+};
+
+/**
+ * Last review date for the legal pages. Bump whenever privacy, terms or the
+ * disclaimer change materially — the pages display it, and a stale date on a
+ * legal page is worse than none.
+ */
+export const LEGAL_UPDATED = "2026-07-29";
+
 /**
  * Party colours, used ONLY inside party-specific data visualisation.
  * Conventional Australian party colours so charts read correctly at a glance;

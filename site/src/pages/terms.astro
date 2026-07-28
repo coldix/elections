@@ -1,0 +1,174 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, ATTRIBUTION, LEGAL_UPDATED, formatDate } from "../lib/site.mjs";
+---
+
+<Base
+  title="Terms of use"
+  description="Terms for using the Australian Election Tracker and reusing its open data: CC BY 4.0 for data, MIT for code, no warranty, and how to attribute."
+>
+  <div class="wrap wrap-narrow section">
+    <p class="eyebrow">Legal</p>
+    <h1>Terms of use</h1>
+    <p class="lede">
+      Short version: take the data, use it for anything, credit us, and don't pretend we
+      said something we didn't.
+    </p>
+
+    <h2 id="acceptance">1. These terms</h2>
+    <p>
+      By using {SITE.domain} you accept these terms. If you don't accept them, don't use
+      the site. They apply alongside the
+      <a href="/privacy">privacy policy</a> and <a href="/disclaimer">disclaimer</a>,
+      which form part of them.
+    </p>
+
+    <h2 id="service">2. What this is</h2>
+    <p>
+      A free, independent, public-interest record of announced, endorsed and formally
+      nominated candidates for Australian elections, published as web pages and as open
+      data. It is provided as-is and may change, move or stop at any time. Nobody is
+      promised continuity of service.
+    </p>
+
+    <h2 id="licence">3. Licence and reuse</h2>
+    <p>You are actively encouraged to reuse this material.</p>
+    <ul>
+      <li>
+        <strong>Election data</strong> (everything under <code>/data/</code> and the
+        <code>data/</code> directory of the repository) is licensed
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.
+        Use it commercially or non-commercially, adapt it, redistribute it — provided you
+        credit <code>{ATTRIBUTION}</code>.
+      </li>
+      <li>
+        <strong>Code</strong> (site, schemas, tooling) is MIT-licensed. See the
+        <a href={SITE.repo}>repository</a>.
+      </li>
+      <li>
+        <strong>Page text</strong> — methodology, explanatory writing and these terms —
+        is © {new Date(LEGAL_UPDATED).getFullYear()} {SITE.publisher}, and may be quoted
+        with attribution.
+      </li>
+      <li>
+        <strong>Logos and branding</strong> are not covered by the above licences. Please
+        don't use them in a way suggesting we endorse you or produced your work.
+      </li>
+    </ul>
+    <p>
+      Third-party material — the news articles, party pages and official publications we
+      cite — remains the property of its owners. We link to sources; we do not relicense
+      them.
+    </p>
+
+    <h2 id="attribution">4. Attributing the data</h2>
+    <p>
+      Attribution is the whole price. Something like:
+    </p>
+    <p class="cite mono">
+      Australian Election Tracker ({SITE.publisher}), {ATTRIBUTION}, CC BY 4.0.
+    </p>
+    <p>
+      If you publish figures drawn from our coverage counts, please carry the
+      <a href="/disclaimer#incomplete">coverage caveat</a> with them. Those numbers
+      understate reality in a specific, known way, and reproducing them without that
+      context misleads your readers rather than ours.
+    </p>
+
+    <h2 id="acceptable-use">5. Acceptable use</h2>
+    <p>Please do not:</p>
+    <ul>
+      <li>
+        Present our data as something it isn't — for example, as an official electoral
+        commission record, or as a complete list of candidates.
+      </li>
+      <li>
+        Alter records and continue to attribute them to us as though unmodified. Adapt
+        freely, but say that you have.
+      </li>
+      <li>
+        Imply that this project, its publisher, or any person associated with it endorses
+        a party, candidate, campaign or product.
+      </li>
+      <li>
+        Attempt to interfere with the site's operation or security.
+      </li>
+    </ul>
+    <p>
+      Bulk downloading is explicitly fine — that is what the
+      <a href="/data">JSON and CSV exports</a> are for. Please use those rather than
+      scraping the HTML; they are smaller, more stable and easier for you.
+    </p>
+
+    <h2 id="contributions">6. Contributions</h2>
+    <p>
+      If you submit a correction, source or pull request, you confirm you are entitled to
+      share it and you agree it may be published under the licences above. Nothing is
+      published without verification, and we never publish a submitter's identity or
+      contact details.
+    </p>
+
+    <h2 id="warranty">7. No warranty, and liability</h2>
+    <p>
+      The site and data are provided without warranty of any kind. Coverage is
+      incomplete, verification is ongoing, and the electoral commission is the
+      authoritative source — see the <a href="/disclaimer">disclaimer</a>, which sets out
+      these limits in full.
+    </p>
+    <p>
+      To the extent permitted by law, we are not liable for any loss or damage arising
+      from use of, or reliance on, this site or its data. Nothing here excludes any right
+      or guarantee that cannot lawfully be excluded, including under the Australian
+      Consumer Law.
+    </p>
+
+    <h2 id="changes">8. Changes to these terms</h2>
+    <p>
+      These terms may change. The review date below moves when they do, and every prior
+      version is visible in the public <a href={SITE.repo}>commit history</a> — you can
+      see exactly what changed and when.
+    </p>
+
+    <h2 id="law">9. Governing law</h2>
+    <p>
+      These terms are governed by the laws of Victoria, Australia, and the courts of
+      Victoria have jurisdiction.
+    </p>
+
+    <h2 id="contact">10. Contact</h2>
+    <p>
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, or
+      <a href={SITE.issues}>open an issue</a>.
+    </p>
+
+    <p class="updated muted">Last reviewed {formatDate(LEGAL_UPDATED)}.</p>
+  </div>
+</Base>
+
+<style>
+  h2 {
+    margin-top: 2.5rem;
+  }
+  ul {
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--ink-2);
+  }
+  ul strong {
+    color: var(--ink);
+  }
+  .cite {
+    padding: 0.85rem 1.1rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+    background: var(--surface-2);
+    display: inline-block;
+    font-size: 0.88rem;
+  }
+  .updated {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>
