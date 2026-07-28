@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { SITE, formatDate } from "../lib/site.mjs";
+import { SITE, ATTRIBUTION, formatDate } from "../lib/site.mjs";
 import { loadElection, summaryFor } from "../../../scripts/lib/data.mjs";
 
 const data = loadElection("vic2026");
@@ -88,7 +88,7 @@ const files = [
         <h3>How to cite</h3>
         <p class="cite mono">
           Australian Election Tracker (OZE), <em>Victorian state election 2026 candidate
-          ledger</em>, elections.oze.net.au, accessed {formatDate(summary.latest_verified)}.
+          ledger</em>, {ATTRIBUTION}, accessed {formatDate(summary.latest_verified)}.
         </p>
       </div>
       <div class="card">

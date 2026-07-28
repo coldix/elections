@@ -2,7 +2,7 @@
 // Export public data as JSON and CSV.
 //
 // Output goes to site/public/data/<election>/ so the Astro build serves the
-// exports directly at https://elections.oze.net.au/data/<election>/... — the
+// exports directly at https://electiontracker.au/data/<election>/... — the
 // machine-readable half of the project is published by the same deploy as the
 // human-readable half, and can never drift out of sync with it.
 //

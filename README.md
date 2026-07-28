@@ -8,7 +8,8 @@ First election: **Victorian state election, 28 November 2026** (`data/vic2026/`)
 The structure is jurisdiction-agnostic — future federal, state and territory
 elections are added as new data directories, not rebuilds.
 
-Production site: https://elections.oze.net.au (static, built from this repo).
+Production site: https://electiontracker.au (static, built from this repo).
+`electiontracker.com.au` 301-redirects to it.
 
 ## What this is
 
@@ -70,7 +71,7 @@ CI validates schema and sources. See [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
 
 - Code (`scripts/`, `schema/`, site): MIT — see [LICENSE](LICENSE).
 - Data (`data/`): Creative Commons Attribution 4.0 (CC BY 4.0) — see
-  [data/LICENSE](data/LICENSE). Attribute as "elections.oze.net.au".
+  [data/LICENSE](data/LICENSE). Attribute as "electiontracker.au".
 
 ## Status
 

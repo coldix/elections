@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { SITE } from "../lib/site.mjs";
+import { SITE, ATTRIBUTION } from "../lib/site.mjs";
 ---
 
 <Base
@@ -87,7 +87,7 @@ import { SITE } from "../lib/site.mjs";
       record: <a href={SITE.issues}>open an issue</a> with a source. For anything else —
       including matters concerning a named individual that you would prefer not to raise
       publicly — write to
-      <a href="mailto:elections@oze.net.au">elections@oze.net.au</a>.
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
     </p>
     <p class="muted">
       Requests for correction concerning living people are prioritised over all other work.
@@ -98,7 +98,7 @@ import { SITE } from "../lib/site.mjs";
       The election data is published under
       <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a> —
       you may reuse it, including commercially, with attribution to
-      <code>elections.oze.net.au</code>. The site and tooling code are MIT-licensed. See the
+      <code>{ATTRIBUTION}</code>. The site and tooling code are MIT-licensed. See the
       <a href="/data">open data page</a> for files and citation guidance.
     </p>
   </div>

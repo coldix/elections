@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://elections.oze.net.au/schema/candidate.schema.json",
+  "$id": "https://electiontracker.au/schema/candidate.schema.json",
   "title": "Candidacy record",
   "type": "object",
   "required": ["candidate"],

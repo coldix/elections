@@ -110,17 +110,24 @@ Do not expand scope beyond the wedge. Kill criteria in docs/SCOPE.md.
    which would bypass CI and defeat the point of the validation gate. Do it in
    the dashboard once; after that every push deploys itself.
 
+2. **Add the redirect for `electiontracker.com.au`** — DNS placeholder plus a
+   dynamic Redirect Rule, both spelled out in docs/DEPLOYMENT.md. Do *not*
+   attach it to Pages as a second custom domain; that would serve the site
+   twice and split its search ranking.
+3. **MX / SPF / DKIM / DMARC** on both domains for the Google Workspace routing.
+
 Resolved 2026-07-28:
-- ~~DNS zone~~ — confirmed `oze.net.au` is the right apex and is in the
-  account. Config already targets `elections.oze.net.au`; nothing to change.
-  A zone ID isn't needed: the Pages *custom domain* flow creates the CNAME
-  itself when the zone is in the same account.
+- ~~DNS zone~~ — superseded. The site now publishes at **electiontracker.au**
+  (canonical), with **electiontracker.com.au** redirecting to it. Both in the
+  dedicated Cloudflare account. A zone ID isn't needed: the Pages custom-domain
+  flow creates the DNS record itself when the zone is in the same account.
 - ~~Authorisation statement~~ — now reads "Authorised by Colin Dixon, 2 Fern
   Court, Mallacoota VIC 3892", with the PO Box shown as the postal address.
   Street address used because electoral-matter authorisations generally
   require one rather than a post office box; worth a final check against
   current VEC guidance before launch.
-- ~~`elections@oze.net.au`~~ — confirmed as an alias to col@oze.com.au.
+- ~~contact address~~ — now `elections@electiontracker.au`, routed via Google
+  Workspace to `elections@ozol.org`. Only the branded address is published.
 
 ## TODO (priority order)
 
@@ -134,7 +141,7 @@ Resolved 2026-07-28:
    and full LC ticket tables per region — not entered yet (out of this pass's
    "major parties" scope). LC ticket tables are messy multi-party grids in
    plain-text form; parse carefully or fetch region-by-region.
-3. Static site: Astro on Cloudflare Pages, custom domain elections.oze.net.au.
+3. Static site: Astro on Cloudflare Pages, custom domain electiontracker.au.
    First page = party coverage grid from dist/vic2026/coverage.json, WITH the
    caveat text surfaced prominently, not buried. Follow the oze playbook
    header/versioning conventions if adopting Aurora styling.

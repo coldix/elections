@@ -48,29 +48,87 @@ merge.
 No secrets, API tokens or environment bindings are required. The build reads
 only files in the repository.
 
-## Custom domain
+## Domains
 
-Target: **`elections.oze.net.au`**
+| Domain | Role |
+|---|---|
+| `electiontracker.au` | **Canonical.** Serves the site. |
+| `electiontracker.com.au` | Redirect only. 301s to the matching path on the canonical domain. |
 
-1. In the Pages project → *Custom domains* → *Set up a custom domain*.
-2. Enter `elections.oze.net.au`.
-3. If the `oze.net.au` zone is in the same Cloudflare account, Cloudflare
-   creates the CNAME automatically. Otherwise add a CNAME record manually:
-   `elections` → `<project>.pages.dev`, proxied.
+Both sit in the dedicated Cloudflare account (`col@oze.com.au`, Super Admin).
 
-Then set `site:` in [`site/astro.config.mjs`](../site/astro.config.mjs) to match
-the final hostname if it ever changes — it drives canonical URLs, the sitemap
-and Open Graph tags.
+### 1. Canonical domain — attach to Pages
 
-### ⚠ Confirm the zone before starting
+1. Pages project → *Custom domains* → *Set up a custom domain*.
+2. Enter `electiontracker.au`.
+3. With the zone in the same account, Cloudflare creates the DNS record itself.
+4. Add `www.electiontracker.au` too if you want it; redirect it to the apex with
+   the same rule pattern as below.
 
-The Cloudflare account is known to hold **`ozol.net.au`**. This project is
-specified to publish at **`elections.oze.net.au`** — a different apex domain.
-Before creating the custom domain, confirm that the `oze.net.au` zone exists in
-the same Cloudflare account. If it does not, either add that zone or decide on
-the final hostname, then update `site` in the Astro config, `SITE.url` in
-[`site/src/lib/site.mjs`](../site/src/lib/site.mjs), and the `Sitemap:` line in
-[`site/public/robots.txt`](../site/public/robots.txt).
+### 2. Second domain — redirect, do NOT attach to Pages
+
+Adding `electiontracker.com.au` as a second custom domain would serve the whole
+site twice on two hostnames. That splits search ranking between them and gives
+crawlers two competing copies of the same records — the opposite of what a
+citable reference site wants. Redirect it at the edge instead, so it never
+serves a byte of content.
+
+In the `electiontracker.com.au` zone:
+
+1. **DNS** — a redirect rule only fires if a proxied record exists for the
+   hostname. Add a placeholder that never receives traffic:
+   - `AAAA` `@` → `100::` , **Proxied** (the IPv6 discard prefix)
+   - `AAAA` `www` → `100::` , **Proxied**
+2. **Rules → Redirect Rules → Create rule**
+   - Name: `com.au to canonical`
+   - If: *Hostname* *contains* `electiontracker.com.au`
+   - Then: **Dynamic** redirect
+     - Expression:
+       `concat("https://electiontracker.au", http.request.uri.path)`
+     - Status: **301**
+     - ✅ *Preserve query string*
+
+Dynamic (not static) is what carries the path across, so
+`electiontracker.com.au/districts/ripon` lands on the matching page rather than
+dumping every visitor on the homepage.
+
+### 3. Verify after setup
+
+```bash
+curl -sI https://electiontracker.com.au/districts/ripon | grep -i '^location\|HTTP/'
+```
+
+Expect `301` and `location: https://electiontracker.au/districts/ripon`.
+
+### If the domain ever changes again
+
+Three files, all with matching comments pointing at each other:
+
+- `site` in [`site/astro.config.mjs`](../site/astro.config.mjs)
+- `SITE.url` / `SITE.domain` in [`site/src/lib/site.mjs`](../site/src/lib/site.mjs)
+  — everything user-facing (canonical tags, citation string, CC BY attribution)
+  derives from here
+- `Sitemap:` in [`site/public/robots.txt`](../site/public/robots.txt)
+
+Also update `$id` in `schema/candidate.schema.json` and the attribution line in
+`data/LICENSE`, which are outside the site build.
+
+## Email
+
+Google Workspace routes both branded addresses to the working mailbox:
+
+| Address | Routes to |
+|---|---|
+| `elections@electiontracker.au` | `elections@ozol.org` |
+| `elections@electiontracker.com.au` | `elections@ozol.org` |
+
+The site publishes **`elections@electiontracker.au`** only — the routing target
+is internal and should stay off the public pages. It appears on `/about#contact`
+and comes from `SITE.email`.
+
+Each domain needs its own MX records pointing at Google Workspace, plus SPF,
+DKIM and DMARC. Corrections about named individuals arrive here, so the mailbox
+should be monitored during the campaign period.
 
 ## Recommended after first deploy
 

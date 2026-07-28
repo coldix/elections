@@ -4,13 +4,26 @@
 export const SITE = {
   name: "Australian Election Tracker",
   short: "Election Tracker",
-  url: "https://elections.oze.net.au",
+
+  // Canonical origin. Change this and the `site` value in astro.config.mjs
+  // together — everything else on the site derives from here.
+  url: "https://electiontracker.au",
+  domain: "electiontracker.au",
+  // Secondary registration. 301-redirects to the matching path on the
+  // canonical domain at the edge; it never serves content, so there is no
+  // duplicate-content split. See docs/DEPLOYMENT.md.
+  altDomain: "electiontracker.com.au",
+
   tagline: "Independent, sourced and machine-readable Australian election information",
   repo: "https://github.com/coldix/elections",
   issues: "https://github.com/coldix/elections/issues/new",
+  email: "elections@electiontracker.au",
   publisher: "OZE",
   publisherUrl: "https://oze.net.au",
 };
+
+/** How reusers should credit the data under CC BY 4.0. */
+export const ATTRIBUTION = SITE.domain;
 
 /**
  * Party colours, used ONLY inside party-specific data visualisation.
