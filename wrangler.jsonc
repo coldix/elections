@@ -13,6 +13,11 @@
     // and regenerates the JSON/CSV exports first.
     "directory": "./site/dist",
     // Serve our own 404 page for unmatched paths rather than a bare error.
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    // One canonical URL shape: no trailing slash. Must stay in step with
+    // `trailingSlash: "never"` in site/astro.config.mjs, which is what the
+    // sitemap and the <link rel=canonical> tags follow. If these disagree,
+    // the canonical tag points at a URL that redirects somewhere else.
+    "html_handling": "drop-trailing-slash"
   }
 }

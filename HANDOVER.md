@@ -6,7 +6,17 @@ infrastructure; the Workers/D1/R2 stack was already evaluated and rejected
 
 ## The site (added 2026-07-28)
 
-Astro static site in `site/`, 112 pages, deployed via Cloudflare Pages.
+**Live** at https://elections.col-ab2.workers.dev since 2026-07-28 (first
+successful deploy). Astro static site in `site/`, 112 pages, deployed as an
+assets-only Worker via Workers Builds — a push to `main` builds and deploys
+itself.
+
+URL shape is no-trailing-slash, enforced in two places that must stay in step:
+`trailingSlash: "never"` (astro.config.mjs) and `"html_handling":
+"drop-trailing-slash"` (wrangler.jsonc). The first deploy had them disagreeing
+— Cloudflare 307'd `/districts/ripon` to `/districts/ripon/` while the
+canonical tag claimed the unslashed form, so canonicals pointed at URLs that
+redirected. Fixed; if you change one, change the other.
 **Read [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) before touching build config.**
 
 - `npm run build` = validate → export → astro build, failing fast. An unsourced
@@ -112,11 +122,15 @@ Do not expand scope beyond the wedge. Kill criteria in docs/SCOPE.md.
    no bindings, nothing runs per request). `npx wrangler deploy` fails without
    it. Verified with `npx wrangler deploy --dry-run`: 245 files, no bindings.
 
-2. **Add the redirect for `electiontracker.com.au`** — DNS placeholder plus a
+2. **Attach `electiontracker.au`** to the Worker, then set
+   `"workers_dev": false` in wrangler.jsonc so the site stops answering on
+   `elections.col-ab2.workers.dev` as well. Not before — that URL is currently
+   the only way to reach the site.
+3. **Add the redirect for `electiontracker.com.au`** — DNS placeholder plus a
    dynamic Redirect Rule, both spelled out in docs/DEPLOYMENT.md. Do *not*
    attach it to Pages as a second custom domain; that would serve the site
    twice and split its search ranking.
-3. **MX / SPF / DKIM / DMARC** on both domains for the Google Workspace routing.
+4. **MX / SPF / DKIM / DMARC** on both domains for the Google Workspace routing.
 
 Resolved 2026-07-28:
 - ~~DNS zone~~ — superseded. The site now publishes at **electiontracker.au**

@@ -159,7 +159,27 @@ Dynamic (not static) is what carries the path across, so
 `electiontracker.com.au/districts/ripon` lands on the matching page rather than
 dumping every visitor on the homepage.
 
-### 3. Verify after setup
+### 3. After the custom domain is live — retire the workers.dev URL
+
+The first deploy also published the site at `elections.col-ab2.workers.dev`,
+because `workers_dev` defaults to enabled. Once `electiontracker.au` serves the
+site, that is a second public hostname carrying identical content — the same
+duplicate-content problem the `.com.au` redirect exists to avoid.
+
+Add to [`wrangler.jsonc`](../wrangler.jsonc):
+
+```jsonc
+"workers_dev": false
+```
+
+Leave `preview_urls` alone — per-branch preview URLs are useful for reviewing
+data changes, and every page carries a canonical tag pointing at the production
+domain.
+
+Do this **after** the custom domain resolves, not before: until then the
+workers.dev URL is the only way to reach the site.
+
+### 4. Verify after setup
 
 ```bash
 curl -sI https://electiontracker.com.au/districts/ripon | grep -i '^location\|HTTP/'
