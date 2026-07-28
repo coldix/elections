@@ -31,10 +31,34 @@ export const SITE = {
 /** How reusers should credit the data under CC BY 4.0. */
 export const ATTRIBUTION = SITE.domain;
 
-/** Social presence. Listed so the footer and about page stay in step. */
+/**
+ * Project social presence only (Election Tracker brand).
+ * Do NOT add personal channels (e.g. mallacoota2020) — see docs/SOCIAL.md.
+ * Add a key only when the account exists and is actively maintained.
+ */
 export const SOCIAL = {
   facebook: "https://www.facebook.com/election.tracker.au/",
+  // youtube: "https://www.youtube.com/@…",  // project channel when created
 };
+
+/** Display labels for SOCIAL keys (footer, privacy). */
+export const SOCIAL_LABELS = {
+  facebook: "Facebook",
+  youtube: "YouTube",
+  instagram: "Instagram",
+  x: "X",
+};
+
+/** Ordered list of { key, label, url } for defined project social links. */
+export function socialLinks() {
+  return Object.entries(SOCIAL)
+    .filter(([, url]) => typeof url === "string" && url.length > 0)
+    .map(([key, url]) => ({
+      key,
+      label: SOCIAL_LABELS[key] ?? key,
+      url,
+    }));
+}
 
 /**
  * Last review date for the legal pages. Bump whenever privacy, terms or the

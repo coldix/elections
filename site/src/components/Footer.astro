@@ -1,6 +1,7 @@
 ---
-import { SITE, ATTRIBUTION, SOCIAL } from "../lib/site.mjs";
+import { SITE, ATTRIBUTION, socialLinks } from "../lib/site.mjs";
 const year = new Date().getFullYear();
+const social = socialLinks();
 ---
 
 <footer class="site-footer">
@@ -32,9 +33,15 @@ const year = new Date().getFullYear();
           <li><a href="/about">Independence statement</a></li>
           <li><a href="/about#authorisation">Legal authorisation</a></li>
           <li><a href="/about#contact">Contact</a></li>
-          <li>
-            <a href={SOCIAL.facebook} rel="me noopener">Facebook</a>
-          </li>
+          {
+            social.map((s) => (
+              <li>
+                <a href={s.url} rel="me noopener">
+                  {s.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 

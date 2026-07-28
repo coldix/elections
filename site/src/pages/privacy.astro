@@ -1,6 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
-import { SITE, SOCIAL, LEGAL_UPDATED, formatDate } from "../lib/site.mjs";
+import { SITE, socialLinks, LEGAL_UPDATED, formatDate } from "../lib/site.mjs";
+
+const social = socialLinks();
 ---
 
 <Base
@@ -75,12 +77,27 @@ import { SITE, SOCIAL, LEGAL_UPDATED, formatDate } from "../lib/site.mjs";
       to us.
     </p>
 
-    <h2 id="social">Our Facebook page</h2>
+    <h2 id="social">Our social accounts</h2>
     <p>
-      We run a <a href={SOCIAL.facebook} rel="nofollow noopener">Facebook page</a>. If
-      you interact with it, Meta collects information about you under its own policies,
-      which we neither control nor receive. Nothing on this website loads anything from
-      Facebook — no like buttons, no embedded feeds, no pixel.
+      The project maintains only the accounts listed below (Election Tracker brand).
+      Personal or unrelated channels are not part of this site. See the repository
+      document <code>docs/SOCIAL.md</code> for the brand split.
+    </p>
+    <ul>
+      {
+        social.map((s) => (
+          <li>
+            <a href={s.url} rel="nofollow noopener">
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <p>
+      If you interact with those platforms, the platform collects information about you
+      under its own policies, which we neither control nor receive in bulk. Nothing on
+      this website loads third-party social embeds, like buttons, or tracking pixels.
     </p>
 
     <h2 id="candidates">Information about candidates and members</h2>

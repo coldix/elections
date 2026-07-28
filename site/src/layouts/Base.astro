@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE, SOCIAL } from "../lib/site.mjs";
+import { SITE, socialLinks } from "../lib/site.mjs";
 
 const {
   title,
@@ -32,7 +32,7 @@ const graph = [
     logo: new URL("/icon-512.png", SITE.url).href,
     description: SITE.tagline,
     email: SITE.email,
-    sameAs: [SOCIAL.facebook, SITE.repo],
+    sameAs: [...socialLinks().map((s) => s.url), SITE.repo],
     publisher: { "@type": "Organization", name: SITE.publisher, url: SITE.publisherUrl },
   },
   {
