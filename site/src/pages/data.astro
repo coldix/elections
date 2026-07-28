@@ -19,11 +19,49 @@ const files = [
   ["coverage.json", null, "Per-party district coverage, with the counting caveat attached.", null],
   ["summary.json", null, "Headline counts, regenerated on every build.", null],
 ];
+
+// Dataset schema here as well as the homepage: this is the page a researcher or
+// crawler is most likely to land on when looking for the files themselves.
+const schema = {
+  "@type": "Dataset",
+  name: "Victorian state election 2026 candidate ledger",
+  description:
+    "Individually sourced records of announced, endorsed, formally nominated, withdrawn " +
+    "and disendorsed candidates for the 2026 Victorian state election, plus districts, " +
+    "Legislative Council members, parties and confirmed retirements.",
+  url: `${SITE.url}/data`,
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  isAccessibleForFree: true,
+  creator: { "@id": `${SITE.url}/#organization` },
+  temporalCoverage: `2024/${data.election.election_day}`,
+  spatialCoverage: { "@type": "Place", name: "Victoria, Australia" },
+  keywords: [
+    "Australian elections", "Victorian state election", "2026", "candidates",
+    "open data", "electoral districts", "political parties",
+  ],
+  distribution: [
+    ...files
+      .filter(([json]) => json)
+      .map(([json]) => ({
+        "@type": "DataDownload",
+        encodingFormat: "application/json",
+        contentUrl: `${SITE.url}${base}/${json}`,
+      })),
+    ...files
+      .filter(([, csv]) => csv)
+      .map(([, csv]) => ({
+        "@type": "DataDownload",
+        encodingFormat: "text/csv",
+        contentUrl: `${SITE.url}${base}/${csv}`,
+      })),
+  ],
+};
 ---
 
 <Base
   title="Open data"
   description="Download the Australian Election Tracker dataset as JSON or CSV. Free to reuse under CC BY 4.0, regenerated on every build from the public repository."
+  schema={schema}
 >
   <div class="wrap section">
     <p class="eyebrow">Machine-readable</p>

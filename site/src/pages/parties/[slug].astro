@@ -42,6 +42,17 @@ const sittingMLCs = data.councilMembers.filter((m) => m.party === party.slug);
 <Base
   title={party.short_name}
   description={`${party.name}: ${cov.assembly_seats_covered} of ${cov.assembly_seats_total} Legislative Assembly districts have an individually sourced candidate for the 2026 Victorian state election.`}
+  breadcrumbs={[
+    { name: "Parties", href: "/parties" },
+    { name: party.short_name, href: `/parties/${party.slug}` },
+  ]}
+  schema={{
+    "@type": "Organization",
+    name: party.name,
+    alternateName: party.short_name,
+    url: `${SITE.url}/parties/${party.slug}`,
+    description: `${party.name} — candidate coverage and seats held in the Parliament of Victoria.`,
+  }}
 >
   <div class="wrap section">
     <nav aria-label="Breadcrumb" class="crumb">

@@ -41,6 +41,10 @@ const schema = {
   title={`${district.name} — candidates`}
   description={`Candidates recorded for the district of ${district.name} at the 2026 Victorian state election. Sitting member: ${district.incumbent}. Every record individually sourced.`}
   schema={schema}
+  breadcrumbs={[
+    { name: "Districts", href: "/districts" },
+    { name: district.name, href: `/districts/${district.slug}` },
+  ]}
 >
   <div class="wrap section">
     <nav aria-label="Breadcrumb" class="crumb">

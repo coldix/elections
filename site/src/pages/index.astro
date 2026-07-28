@@ -39,7 +39,6 @@ const retireByParty = data.parties
   .sort((a, b) => a.name.localeCompare(b.name));
 
 const schema = {
-  "@context": "https://schema.org",
   "@type": "Dataset",
   name: "Australian Election Tracker — Victorian state election 2026 candidate ledger",
   description:
@@ -48,7 +47,7 @@ const schema = {
   url: SITE.url,
   license: "https://creativecommons.org/licenses/by/4.0/",
   isAccessibleForFree: true,
-  creator: { "@type": "Organization", name: SITE.publisher, url: SITE.publisherUrl },
+  creator: { "@id": `${SITE.url}/#organization` },
   temporalCoverage: `2024/${data.election.election_day}`,
   spatialCoverage: { "@type": "Place", name: "Victoria, Australia" },
   distribution: [

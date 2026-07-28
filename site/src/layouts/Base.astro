@@ -2,13 +2,15 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE } from "../lib/site.mjs";
+import { SITE, SOCIAL } from "../lib/site.mjs";
 
 const {
   title,
   description = SITE.tagline,
-  /** JSON-LD object(s) to embed. Structured data helps machines cite us. */
+  /** Page-specific JSON-LD. Appended to the sitewide graph below. */
   schema = null,
+  /** BreadcrumbList trail: [{ name, href }], innermost last. */
+  breadcrumbs = null,
   noindex = false,
 } = Astro.props;
 
@@ -17,6 +19,49 @@ const canonical = new URL(Astro.url.pathname.replace(/\/$/, "") || "/", SITE.url
 // Absolute URL required — Facebook and other scrapers do not resolve relative
 // paths for og:image.
 const ogImage = new URL("/images/og-image.png", SITE.url).href;
+
+// Sitewide structured data. Emitted on every page as a @graph so search engines
+// and AI systems can identify the publisher and the site without inferring it,
+// and so citations attribute the right organisation.
+const graph = [
+  {
+    "@type": "Organization",
+    "@id": `${SITE.url}/#organization`,
+    name: SITE.name,
+    url: SITE.url,
+    logo: new URL("/icon-512.png", SITE.url).href,
+    description: SITE.tagline,
+    email: SITE.email,
+    sameAs: [SOCIAL.facebook, SITE.repo],
+    publisher: { "@type": "Organization", name: SITE.publisher, url: SITE.publisherUrl },
+  },
+  {
+    "@type": "WebSite",
+    "@id": `${SITE.url}/#website`,
+    url: SITE.url,
+    name: SITE.name,
+    description: SITE.tagline,
+    inLanguage: "en-AU",
+    publisher: { "@id": `${SITE.url}/#organization` },
+    license: "https://creativecommons.org/licenses/by/4.0/",
+  },
+];
+
+if (breadcrumbs?.length) {
+  graph.push({
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((b, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: b.name,
+      item: new URL(b.href, SITE.url).href,
+    })),
+  });
+}
+
+if (schema) graph.push(...(Array.isArray(schema) ? schema : [schema]));
+
+const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 ---
 
 <!doctype html>
@@ -27,7 +72,15 @@ const ogImage = new URL("/images/og-image.png", SITE.url).href;
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {noindex && <meta name="robots" content="noindex" />}
+    {
+      noindex ? (
+        <meta name="robots" content="noindex" />
+      ) : (
+        /* Allow full snippets and large image previews — this site wants to be
+           quoted at length and cited, not teased. */
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      )
+    }
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.name} />
@@ -50,7 +103,9 @@ const ogImage = new URL("/images/og-image.png", SITE.url).href;
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/json" href="/data/index.json" title="Open data index" />
 
-    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Guide for AI systems" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>

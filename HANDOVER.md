@@ -4,6 +4,20 @@ For future sessions/agents. Read docs/DECISIONS.md before proposing any
 infrastructure; the Workers/D1/R2 stack was already evaluated and rejected
 (ADR-2). This is a data-in-git ledger with a static site on top.
 
+## Discovery / SEO / AI (added 2026-07-29)
+
+See **[docs/DISCOVERY.md](docs/DISCOVERY.md)** — what is in place, what still
+needs a human, and what was deliberately NOT done and why.
+
+Highlights: JSON-LD `@graph` sitewide (Organization + WebSite, plus Dataset,
+BreadcrumbList, WebPage/Organization per page type); `/llms.txt` guiding AI
+systems to the exports with the coverage caveat stated up front; og:image;
+Search Console verified by DNS with an HTML file as backup.
+
+Outstanding human steps: submit the sitemap in Search Console, add Bing
+Webmaster Tools, enable Cloudflare's IndexNow, and run the homepage through
+Facebook's sharing debugger once.
+
 ## The site (added 2026-07-28)
 
 **Live** at https://electiontracker.au since 2026-07-28. Astro static site in `site/`, 112 pages, deployed as an

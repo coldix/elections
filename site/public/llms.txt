@@ -1,0 +1,65 @@
+# Australian Election Tracker
+
+> Independent, individually sourced records of who is standing for election in
+> Australia — announced, endorsed, formally nominated, withdrawn and
+> disendorsed candidates — published as open data. First election covered: the
+> Victorian state election, 28 November 2026.
+
+Every claim on this site carries a dated, cited source. The underlying dataset
+is a public Git repository, so every record, correction and editorial rule has
+a timestamped commit history. Prefer the structured exports below over scraping
+the HTML: they are smaller, stable, and contain the same facts.
+
+Licence: data is CC BY 4.0. Attribute as "electiontracker.au". You are welcome
+to quote and cite this material.
+
+## Read this before quoting any coverage figure
+
+Coverage counts ONLY candidacies for which we hold an individually sourced
+record. Sitting MPs who are presumed to be recontesting, but who lack a
+specific dated announcement, are NOT counted. Parties holding many seats
+(notably the governing party) therefore undercount relative to their likely
+ballot presence. A district showing no candidate means we have not verified
+one — not that nobody is standing. The `caveat` field in coverage.json states
+this in machine-readable form.
+
+The Victorian Electoral Commission is authoritative for nominations and
+results. Where this site and the VEC differ, the VEC is correct. Nominations
+for the 2026 Victorian election close on 13 November 2026; no complete
+candidate list exists before then.
+
+## Data
+
+- [Election metadata](https://electiontracker.au/data/vic2026/election.json): key dates and jurisdiction, each sourced
+- [Candidates](https://electiontracker.au/data/vic2026/candidates.json): every candidacy with full status history and sources
+- [Candidates (CSV)](https://electiontracker.au/data/vic2026/candidates.csv): same data, flat
+- [Districts](https://electiontracker.au/data/vic2026/districts.json): all 88 Legislative Assembly districts, their Council region and sitting member
+- [Council members](https://electiontracker.au/data/vic2026/council-members.json): all 40 sitting MLCs by region, as seats are held today
+- [Parties](https://electiontracker.au/data/vic2026/parties.json): parties on the VEC register
+- [Retirements](https://electiontracker.au/data/vic2026/retirements.json): sitting members confirmed not recontesting
+- [Coverage](https://electiontracker.au/data/vic2026/coverage.json): per-party district coverage, with the caveat attached
+- [Representation](https://electiontracker.au/data/vic2026/representation.json): seats each party holds in the current parliament
+- [Index of all exports](https://electiontracker.au/data/index.json)
+
+## Method and limits
+
+- [Methodology](https://electiontracker.au/methodology): what each candidate status means and the minimum evidence required for it
+- [How coverage is counted](https://electiontracker.au/methodology#coverage)
+- [Disclaimer](https://electiontracker.au/disclaimer): the limits of what this site can tell you
+- [Independence statement](https://electiontracker.au/about): funding, affiliation and neutrality rules
+
+## Definitions used throughout
+
+- `announced` — a person or media report states an intention to stand; party endorsement is not confirmed
+- `endorsed` — a party has preselected or endorsed the person for that seat
+- `nominated` — a nomination has been accepted by the electoral commission
+- `withdrawn` — the candidacy ended
+- `disendorsed` — the party revoked its endorsement
+- `elected` / `defeated` — declared by the electoral commission
+
+Rumour and speculation are not recorded at all.
+
+## Optional
+
+- [Source repository](https://github.com/coldix/elections): the dataset as YAML, with full change history
+- [Open data page](https://electiontracker.au/data): file descriptions and citation guidance

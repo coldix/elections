@@ -1,8 +1,12 @@
+# The dataset is deliberately open and machine-readable. Crawlers, researchers
+# and AI systems are welcome to read, quote and cite it — please attribute
+# electiontracker.au (CC BY 4.0).
+#
+# Prefer the JSON/CSV exports under /data/ over scraping the HTML: they are
+# smaller, stable, and carry the same facts plus the coverage caveat that must
+# accompany any figure taken from this site. See /llms.txt for a guided index.
+
 User-agent: *
 Allow: /
 
-# The dataset is deliberately open and machine-readable. Crawlers, researchers
-# and AI systems are welcome to read and cite it — please attribute
-# electiontracker.au (CC BY 4.0) and prefer the JSON/CSV exports over
-# scraping the HTML.
 Sitemap: https://electiontracker.au/sitemap-index.xml
