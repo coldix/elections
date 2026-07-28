@@ -1,0 +1,14 @@
+candidate:
+  name: Angel Dolejsí
+  party: greens
+  contest: caulfield
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-27
+      source:
+        url: "https://greens.org.au/vic/person/angel-dolejsi"
+        title: "Angel Dolejsí: Candidate for Caulfield"
+        publisher: Victorian Greens
+        accessed: 2026-06-27

@@ -1,0 +1,14 @@
+candidate:
+  name: Marley McRae McLeod
+  party: greens
+  contest: macedon
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-02-14
+      source:
+        url: "https://greens.org.au/vic/person/marley-mcrae-mcleod"
+        title: "Marley McRae McLeod: Candidate for Macedon"
+        publisher: Victorian Greens
+        accessed: 2026-02-14

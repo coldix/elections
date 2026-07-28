@@ -1,0 +1,21 @@
+candidate:
+  name: Dinesh Gourisetty
+  party: liberal
+  contest: western-metropolitan
+  chamber: council
+  status: withdrawn
+  history:
+    - status: withdrawn
+      date: 2026-03-30
+      source:
+        url: https://www.theaustralian.com.au/nation/victoria/liberal-candidate-who-ousted-moira-deeming-withdraws-over-child-sex-offender-reference/news-story/92f4a5a38dcfbc1a47c5f5d736b7dd6a
+        title: Lib who ousted Moira Deeming withdraws over pedophile reference
+        publisher: The Australian
+        published: 2026-03-30
+        accessed: 2026-07-28
+      note: >-
+        Withdrew after controversy over providing a character reference for
+        a child sex offender. Had won Liberal preselection for the Western
+        Metropolitan Legislative Council ticket over sitting MLC Moira
+        Deeming in March 2026 (see western-metropolitan--deeming-moira.yaml
+        for her separate, later disendorsement).

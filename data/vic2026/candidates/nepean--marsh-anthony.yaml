@@ -1,0 +1,14 @@
+candidate:
+  name: Anthony Marsh
+  party: liberal
+  contest: nepean
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-03-06
+      source:
+        url: "https://vic.liberal.org.au/team/anthony-marsh"
+        title: "Anthony Marsh: Liberal for Nepean"
+        publisher: Victorian Liberals
+        accessed: 2026-03-06

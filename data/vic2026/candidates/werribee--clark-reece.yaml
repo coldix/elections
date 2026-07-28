@@ -1,0 +1,14 @@
+candidate:
+  name: Reece Clark
+  party: liberal
+  contest: werribee
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-05-28
+      source:
+        url: "https://vic.liberal.org.au/team/reece-clark"
+        title: "Reece Clark: Liberal for Werribee"
+        publisher: Victorian Liberal Party
+        accessed: 2026-05-28

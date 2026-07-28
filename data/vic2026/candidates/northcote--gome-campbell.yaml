@@ -1,0 +1,15 @@
+candidate:
+  name: Campbell Gome
+  party: greens
+  contest: northcote
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2025-09-28
+      source:
+        url: "https://www.heraldsun.com.au/news/victoria/backroom-baz-shortage-of-quality-election-candidates-has-senior-libs-starting-to-panic/news-story/19bca42e3998db7a0a6c052734044345"
+        title: "Backroom Baz: Shortage of quality election candidates has senior Libs starting to panic"
+        publisher: Herald Sun
+        published: 2025-09-28
+        accessed: 2025-10-21

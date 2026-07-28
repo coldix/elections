@@ -1,0 +1,14 @@
+candidate:
+  name: Theresa Slater
+  party: greens
+  contest: lara
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-04-10
+      source:
+        url: "https://greens.org.au/vic/person/theresa-slater"
+        title: "Theresa Slater: Candidate for Lara"
+        publisher: Victorian Greens
+        accessed: 2026-04-10

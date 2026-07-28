@@ -1,0 +1,14 @@
+candidate:
+  name: David Sun
+  party: labor
+  contest: kew
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-02
+      source:
+        url: "https://www.viclabor.org.au/our-team/david-sun?sourcePage=/our-team/david-sun"
+        title: "David Sun: Labor Candidates"
+        publisher: Victorian Labor Party
+        accessed: 2026-06-02

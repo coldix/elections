@@ -1,0 +1,15 @@
+candidate:
+  name: Steve Martin
+  party: liberal
+  contest: benambra
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2025-12-18
+      source:
+        url: "https://www.wangarattachronicle.com.au/news/politics-and-government/libs-choose-steve-martin-for-benambra-tmtzgaqr"
+        title: Libs choose Steve Martin for Benambra
+        publisher: Wangaratta Chronicle
+        published: 2025-12-18
+        accessed: 2026-01-03

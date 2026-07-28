@@ -1,0 +1,14 @@
+candidate:
+  name: Sally Houguet
+  party: liberal
+  contest: box-hill
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-01-30
+      source:
+        url: "https://vic.liberal.org.au/team/sally-houguet"
+        title: "Sally Houguet: Candidate for Box Hill"
+        publisher: Victorian Liberals
+        accessed: 2026-01-30

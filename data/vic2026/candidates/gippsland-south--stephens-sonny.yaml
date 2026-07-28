@@ -1,0 +1,15 @@
+candidate:
+  name: Sonny Stephens
+  party: labor
+  contest: gippsland-south
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-05-05
+      source:
+        url: "https://latrobevalleyexpress.com.au/news/2026/05/05/lund-officially-running-for-labor/"
+        title: Lund officially running for Labor
+        publisher: Latrobe Valley Express
+        published: 2026-05-05
+        accessed: 2026-05-19

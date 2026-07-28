@@ -1,0 +1,14 @@
+candidate:
+  name: Jesse Holden
+  party: greens
+  contest: polwarth
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2025-11-11
+      source:
+        url: "https://greens.org.au/vic/person/jesse-holden"
+        title: "Jesse Holden: Candidate for Polwarth"
+        publisher: Victorian Greens
+        accessed: 2025-11-11

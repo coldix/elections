@@ -1,0 +1,14 @@
+candidate:
+  name: Rachel Busbridge
+  party: greens
+  contest: eltham
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-04-01
+      source:
+        url: "https://greens.org.au/vic/person/rachel-busbridge"
+        title: "Rachel Busbridge: Candidate for Eltham"
+        publisher: Victorian Greens
+        accessed: 2026-04-01

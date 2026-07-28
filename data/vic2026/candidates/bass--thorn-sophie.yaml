@@ -1,0 +1,14 @@
+candidate:
+  name: Sophie Thorn
+  party: greens
+  contest: bass
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-01-03
+      source:
+        url: "https://greens.org.au/vic/person/sophie-thorn"
+        title: "Sophie Thorn: Candidate for Bass"
+        publisher: Victorian Greens
+        accessed: 2026-01-03

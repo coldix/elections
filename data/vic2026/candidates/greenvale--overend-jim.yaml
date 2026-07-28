@@ -1,0 +1,14 @@
+candidate:
+  name: Jim Overend
+  party: liberal
+  contest: greenvale
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-13
+      source:
+        url: "https://vicliberal.org.au/team/jim-overend"
+        title: "Jim Overend: Liberal for Greenvale"
+        publisher: vicliberal.org.au
+        accessed: 2026-07-13

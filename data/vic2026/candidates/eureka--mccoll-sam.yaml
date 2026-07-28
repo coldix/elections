@@ -1,0 +1,14 @@
+candidate:
+  name: Sam McColl
+  party: greens
+  contest: eureka
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-02-03
+      source:
+        url: "https://greens.org.au/vic/person/sam-mccoll"
+        title: "Sam McColl: Candidate for Eureka"
+        publisher: Victorian Greens
+        accessed: 2026-02-03

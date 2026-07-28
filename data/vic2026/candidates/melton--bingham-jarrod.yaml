@@ -1,0 +1,14 @@
+candidate:
+  name: Jarrod Bingham
+  party: liberal
+  contest: melton
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-01-30
+      source:
+        url: "https://vic.liberal.org.au/team/jarrod-bingham"
+        title: "Jarrod Bingham: Candidate for Melton"
+        publisher: Victorian Liberals
+        accessed: 2026-01-30

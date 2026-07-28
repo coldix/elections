@@ -1,0 +1,14 @@
+candidate:
+  name: Paul Lindemann
+  party: liberal
+  contest: williamstown
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-15
+      source:
+        url: "https://vic.liberal.org.au/team/paul-lindemann"
+        title: "Paul Lindemann: Liberal for Williamstown"
+        publisher: Victorian Liberal Party
+        accessed: 2026-07-15

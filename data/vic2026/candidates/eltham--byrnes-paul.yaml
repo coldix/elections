@@ -1,0 +1,14 @@
+candidate:
+  name: Paul Byrnes
+  party: liberal
+  contest: eltham
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-05-23
+      source:
+        url: "https://vic.liberal.org.au/team/paul-byrnes"
+        title: "Paul Byrnes: Candidate for Eltham"
+        publisher: Liberal Party of Victoria
+        accessed: 2026-05-23

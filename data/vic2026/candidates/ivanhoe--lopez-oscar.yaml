@@ -1,0 +1,14 @@
+candidate:
+  name: Oscar Lopez
+  party: liberal
+  contest: ivanhoe
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-30
+      source:
+        url: "https://vic.liberal.org.au/team/oscar-lopez"
+        title: Oscar Lopez Liberal for Ivanhoe
+        publisher: vic.liberal.org.au
+        accessed: 2026-06-30

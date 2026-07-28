@@ -1,0 +1,14 @@
+candidate:
+  name: Clive Crosby
+  party: labor
+  contest: hawthorn
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-21
+      source:
+        url: "https://www.viclabor.org.au/our-team/clive-crosby"
+        title: "Clive Crosby: Labor Candidates"
+        publisher: Victorian Labor
+        accessed: 2026-06-21

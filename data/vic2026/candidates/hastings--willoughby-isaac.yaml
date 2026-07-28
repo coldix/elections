@@ -1,0 +1,14 @@
+candidate:
+  name: Isaac Willoughby
+  party: greens
+  contest: hastings
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-16
+      source:
+        url: "https://greens.org.au/vic/person/isaac-willoughby"
+        title: "Isaac Willoughby: Candidate for Hastings"
+        publisher: Victorian Greens
+        accessed: 2026-06-16

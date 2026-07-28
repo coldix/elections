@@ -1,0 +1,15 @@
+candidate:
+  name: Kate Kendall
+  party: liberal
+  contest: macedon
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-07-21
+      source:
+        url: "https://midlandexpress.com.au/latest-news/2026/07/21/macedon-ranges-mayor-kate-kendall-has-been-announced-the-victorian-liberal-candidate-for-the-seat-of-macedon-at-novembers-state-election/"
+        title: Kendall to contest Macedon seat
+        publisher: Midland Express
+        published: 2026-07-21
+        accessed: 2026-07-22

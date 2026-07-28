@@ -1,0 +1,14 @@
+candidate:
+  name: Nick McGowan
+  party: liberal
+  contest: ringwood
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-03-19
+      source:
+        url: "https://vic.liberal.org.au/media-releases/2026-03-17-victorian-liberal-party-endorses-new-upper-house-candidates?topic="
+        title: Victorian Liberal Party Endorses New Upper House Candidates
+        publisher: vic.liberal.org.au
+        accessed: 2026-03-19

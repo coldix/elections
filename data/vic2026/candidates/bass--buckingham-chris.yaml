@@ -1,0 +1,15 @@
+candidate:
+  name: Chris Buckingham
+  party: labor
+  contest: bass
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2025-11-05
+      source:
+        url: "https://www.sgst.com.au/news/labor-names-chris-buckingham-as-its-candidate-for-bass"
+        title: Labor names Chris Buckingham as its candidate for Bass
+        publisher: South Gippsland Times
+        published: 2025-11-05
+        accessed: 2025-11-11

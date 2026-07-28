@@ -1,0 +1,15 @@
+candidate:
+  name: Amelia Hamer
+  party: liberal
+  contest: malvern
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2025-11-23
+      source:
+        url: "https://www.theage.com.au/politics/victoria/amelia-hamer-holds-off-rivals-to-win-malvern-preselection-20251123-p5nhon.html"
+        title: Amelia Hamer holds off rivals to win Malvern preselection
+        publisher: The Age
+        published: 2025-11-23
+        accessed: 2025-11-23

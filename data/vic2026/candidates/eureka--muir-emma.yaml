@@ -1,0 +1,15 @@
+candidate:
+  name: Emma Muir
+  party: liberal
+  contest: eureka
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-07-15
+      source:
+        url: "https://www.facebook.com/JessWilsonMP/videos/with-emma-muir-on-my-team-here-in-eureka-we-will-deliver-a-5-billion-roads-plan-/27702665569387315/"
+        title: With Emma Muir on my team here in Eureka
+        publisher: Facebook
+        published: 2026-07-15
+        accessed: 2026-07-16

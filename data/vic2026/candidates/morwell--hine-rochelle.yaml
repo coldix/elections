@@ -1,0 +1,14 @@
+candidate:
+  name: Rochelle Hine
+  party: greens
+  contest: morwell
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-03-29
+      source:
+        url: "https://greens.org.au/vic/person/rochelle-hine"
+        title: "Rochelle Hine: Candidate for Morwell"
+        publisher: Victorian Greens
+        accessed: 2026-03-29

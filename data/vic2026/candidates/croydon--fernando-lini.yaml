@@ -1,0 +1,14 @@
+candidate:
+  name: Lini Fernando
+  party: greens
+  contest: croydon
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-02-25
+      source:
+        url: "https://greens.org.au/vic/person/lini-fernando"
+        title: "Lini Fernando: Candidate for Croydon"
+        publisher: Victorian Greens
+        accessed: 2026-02-25

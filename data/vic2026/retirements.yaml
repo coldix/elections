@@ -1,0 +1,237 @@
+# Sitting MPs who announced they will not contest their seat at the 2026
+# general election. Distinct from candidates/*.yaml (which tracks people who
+# ARE standing) — this tracks the opposite fact: confirmed non-contestation.
+# role: MLA (Legislative Assembly) | MLC (Legislative Council)
+# seat: district slug for MLA, region slug for MLC
+retirements:
+  - name: Jackson Taylor
+    party: labor
+    role: MLA
+    seat: bayswater
+    announced: 2025-09-23
+    source:
+      url: https://www.theage.com.au/politics/victoria/retiring-mps-leave-labor-exposed-in-two-marginal-seats-20250923-p5mxck.html
+      title: Retiring MPs leave Labor exposed in two marginal seats
+      publisher: The Age
+      published: 2025-09-23
+      accessed: 2026-07-28
+
+  - name: Steve McGhie
+    party: labor
+    role: MLA
+    seat: melton
+    announced: 2025-09-23
+    source:
+      url: https://www.theage.com.au/politics/victoria/retiring-mps-leave-labor-exposed-in-two-marginal-seats-20250923-p5mxck.html
+      title: Retiring MPs leave Labor exposed in two marginal seats
+      publisher: The Age
+      published: 2025-09-23
+      accessed: 2026-07-28
+
+  - name: Emma Vulin
+    party: labor
+    role: MLA
+    seat: pakenham
+    announced: 2025-09-30
+    source:
+      url: https://pakenhamnews.starcommunity.com.au/news/2025-10-01/vulin-will-not-re-contest-pakenham-seat-in-2026-mp-announces/
+      title: Vulin will not re-contest Pakenham seat in 2026, MP announces
+      publisher: Pakenham & Officer Star News
+      published: 2025-10-01
+      accessed: 2026-07-28
+
+  - name: Jordan Crugnale
+    party: labor
+    role: MLA
+    seat: bass
+    announced: 2025-10-02
+    source:
+      url: https://www.basscoastpost.com/news/crugnale-to-step-down
+      title: Crugnale to step down
+      publisher: Bass Coast Post
+      published: 2025-10-02
+      accessed: 2026-07-28
+
+  - name: Natalie Hutchins
+    party: labor
+    role: MLA
+    seat: sydenham
+    announced: 2025-10-16
+    source:
+      url: https://meltonmoorabool.starweekly.com.au/news/sydenham-mp-to-step-down/
+      title: Sydenham MP to step down
+      publisher: Melton & Moorabool Star Weekly
+      published: 2025-10-17
+      accessed: 2026-07-28
+
+  - name: Shaun Leane
+    party: labor
+    role: MLC
+    seat: north-eastern-metropolitan
+    announced: 2025-12-01
+    source:
+      url: https://x.com/ShaunLeaneMP/status/1995301955300962511?s=20
+      title: Statement from Shaun Leane MLC
+      publisher: x.com (Shaun Leane MP)
+      published: 2025-12-01
+      accessed: 2026-07-28
+
+  - name: Danny Pearson
+    party: labor
+    role: MLA
+    seat: essendon
+    announced: 2026-04-10
+    source:
+      url: https://www.theaustralian.com.au/nation/up-to-four-ministers-to-quit-as-allan-resets-cabinet/news-story/7c9d068e161a642124157dd421008026
+      title: Up to four ministers to quit as Allan resets cabinet
+      publisher: The Australian
+      published: 2026-04-10
+      accessed: 2026-07-28
+
+  - name: Mary-Anne Thomas
+    party: labor
+    role: MLA
+    seat: macedon
+    announced: 2026-04-10
+    source:
+      url: https://www.theaustralian.com.au/nation/up-to-four-ministers-to-quit-as-allan-resets-cabinet/news-story/7c9d068e161a642124157dd421008026
+      title: Up to four ministers to quit as Allan resets cabinet
+      publisher: The Australian
+      published: 2026-04-10
+      accessed: 2026-07-28
+
+  - name: Gayle Tierney
+    party: labor
+    role: MLC
+    seat: western-victoria
+    announced: 2026-04-10
+    source:
+      url: https://www.theaustralian.com.au/nation/up-to-four-ministers-to-quit-as-allan-resets-cabinet/news-story/7c9d068e161a642124157dd421008026
+      title: Up to four ministers to quit as Allan resets cabinet
+      publisher: The Australian
+      published: 2026-04-10
+      accessed: 2026-07-28
+
+  - name: Bill Tilley
+    party: liberal
+    role: MLA
+    seat: benambra
+    announced: 2024-03-13
+    source:
+      url: https://www.heraldsun.com.au/news/victoria/bill-tilley-is-battling-leukaemia/news-story/af7af5fb5186c5e9237d558e40196764
+      title: Bill Tilley announces this will be his last term in office
+      publisher: Herald Sun
+      published: 2024-03-13
+      accessed: 2026-07-28
+
+  - name: David Hodgett
+    party: liberal
+    role: MLA
+    seat: croydon
+    announced: 2025-08-06
+    source:
+      url: https://www.heraldsun.com.au/news/victoria/time-for-me-to-leave-outgoing-senior-victorian-liberal-david-hodgett-throws-support-behind-leader-brad-battin/news-story/7368e382cae2c0465803fefa8df5bcdf
+      title: Senior Victorian Liberal David Hodgett won't seek preselection in state election
+      publisher: Herald Sun
+      published: 2025-08-06
+      accessed: 2026-07-28
+
+  - name: Michael O'Brien
+    party: liberal
+    role: MLA
+    seat: malvern
+    announced: 2025-09-09
+    source:
+      url: https://www.theage.com.au/politics/victoria/former-liberal-leader-michael-o-brien-to-quit-parliament-20250909-p5mtjh.html
+      title: Former Liberal leader Michael O'Brien to quit parliament
+      publisher: The Age
+      published: 2025-09-09
+      accessed: 2026-07-28
+
+  - name: Kim Wells
+    party: liberal
+    role: MLA
+    seat: rowville
+    announced: 2025-09-14
+    source:
+      url: https://www.heraldsun.com.au/news/victoria/longtime-mp-kim-wells-quits-after-three-decades/news-story/79711b53ab0788b303a73aaae4925b20
+      title: Wells joins O'Brien, Hodgett in Liberals exodus
+      publisher: Herald Sun
+      published: 2025-09-14
+      accessed: 2026-07-28
+
+  - name: Wendy Lovell
+    party: liberal
+    role: MLC
+    seat: northern-victoria
+    announced: 2026-01-05
+    source:
+      url: https://www.theage.com.au/national/victoria/liberal-deputy-sam-groth-announces-retirement-20260105-p5nrn8.html
+      title: Second Liberal MP announces retirement following Sam Groth resignation
+      publisher: The Age
+      published: 2026-01-04
+      accessed: 2026-07-28
+
+  - name: Joe McCracken
+    party: liberal
+    role: MLC
+    seat: western-victoria
+    announced: 2026-01-12
+    source:
+      url: https://www.skynews.com.au/australia-news/politics/victorian-liberals-hit-with-another-resignation-as-joe-mccracken-becomes-second-first-term-mp-to-quit-parliament-in-as-many-weeks/news-story/38a44464ec15ee63f432e62356f0684e
+      title: Victorian Liberals hit with another resignation as Joe McCracken becomes second first term MP to quit parliament in as many weeks
+      publisher: Sky News Australia
+      published: 2026-01-12
+      accessed: 2026-07-28
+
+  - name: Peter Walsh
+    party: nationals
+    role: MLA
+    seat: murray-plains
+    announced: 2024-11-26
+    source:
+      url: https://www.abc.net.au/news/2024-11-26/peter-walsh-retires-nationals-leader-victoria/104646474
+      title: Victorian Nationals leader Peter Walsh stands down, Danny O'Brien elected as new party leader
+      publisher: ABC News
+      published: 2024-11-26
+      accessed: 2026-07-28
+
+  - name: Tim Bull
+    party: nationals
+    role: MLA
+    seat: gippsland-east
+    announced: 2026-05-19
+    source:
+      url: https://www.abc.net.au/news/2026-05-19/tim-bull-east-gippsland-mp-victorian-election-nationals-mp/106695848
+      title: Long-time Nationals MP Tim Bull decides not to contest 2026 Victorian election
+      publisher: ABC News
+      published: 2026-05-19
+      accessed: 2026-07-28
+
+  - name: Kim O'Keeffe
+    party: nationals
+    role: MLA
+    seat: shepparton
+    announced: 2026-07-21
+    source:
+      url: https://www.sheppnews.com.au/news/kim-okeeffe-will-not-recontest-her-seat/
+      title: State MP for Shepparton to stand down in November
+      publisher: Shepparton News
+      published: 2026-07-21
+      accessed: 2026-07-28
+
+  - name: Tim Read
+    party: greens
+    role: MLA
+    seat: brunswick
+    announced: 2026-01-29
+    source:
+      url: https://www.abc.net.au/news/2026-01-29/brunswick-greens-mp-tim-read-reveals-cancer-diagnosis/106278032
+      title: Victorian Greens MP Tim Read to retire from state politics to focus on cancer battle
+      publisher: ABC News
+      published: 2026-01-29
+      accessed: 2026-07-28
+    note: >-
+      Announced retirement due to a metastatic cancer diagnosis. The
+      Greens' Brunswick candidacy passed to Gabriel Steger (see
+      brunswick--steger-gabriel.yaml).

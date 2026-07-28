@@ -1,0 +1,15 @@
+candidate:
+  name: Tommy Le Deux
+  party: liberal
+  contest: essendon
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-04-26
+      source:
+        url: "https://www.instagram.com/p/DXkqhxej9JV/"
+        title: "I'm honoured to announce my endorsement as the Liberal candidate for Essendon in the November 2026 Victorian state election"
+        publisher: Instagram
+        published: 2026-04-26
+        accessed: 2026-05-19

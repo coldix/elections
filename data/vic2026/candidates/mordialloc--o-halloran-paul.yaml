@@ -1,0 +1,14 @@
+candidate:
+  name: "Paul O'Halloran"
+  party: liberal
+  contest: mordialloc
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-12
+      source:
+        url: "https://vic.liberal.org.au/team/paul-ohalloran"
+        title: "Paul O'Halloran: Liberal for Mordialloc"
+        publisher: Victorian Liberal Party
+        accessed: 2026-07-12

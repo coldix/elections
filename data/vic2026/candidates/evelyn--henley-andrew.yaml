@@ -1,0 +1,14 @@
+candidate:
+  name: Andrew Henley
+  party: greens
+  contest: evelyn
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-04-01
+      source:
+        url: "https://greens.org.au/vic/person/andrew-henley"
+        title: "Andrew Henley: Candidate for Evelyn"
+        publisher: Victorian Greens
+        accessed: 2026-04-01

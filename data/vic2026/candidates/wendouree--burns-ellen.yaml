@@ -1,0 +1,14 @@
+candidate:
+  name: Ellen Burns
+  party: greens
+  contest: wendouree
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-01
+      source:
+        url: "https://greens.org.au/vic/person/Ellen-Burns"
+        title: "Ellen Burns: Candidate for Wendouree"
+        publisher: Victorian Greens
+        accessed: 2026-07-01

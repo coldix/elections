@@ -1,0 +1,14 @@
+candidate:
+  name: Gabrielle de Vietri
+  party: greens
+  contest: richmond
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-02-03
+      source:
+        url: "https://greens.org.au/vic/candidates"
+        title: Victorian Candidates
+        publisher: Victorian Greens
+        accessed: 2026-02-03

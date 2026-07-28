@@ -1,0 +1,14 @@
+candidate:
+  name: Ash Munro
+  party: greens
+  contest: gippsland-east
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-21
+      source:
+        url: "https://greens.org.au/vic/person/ash-munro"
+        title: "Ash Munro: Candidate for Gippsland East"
+        publisher: Victorian Greens
+        accessed: 2026-06-21

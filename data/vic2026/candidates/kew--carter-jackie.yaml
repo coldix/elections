@@ -1,0 +1,14 @@
+candidate:
+  name: Jackie Carter
+  party: greens
+  contest: kew
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-21
+      source:
+        url: "https://greens.org.au/vic/person/jackie-carter"
+        title: "Jackie Carter: Candidate for Kew"
+        publisher: Victorian Greens
+        accessed: 2026-06-21

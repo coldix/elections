@@ -1,0 +1,15 @@
+candidate:
+  name: Angelica Panopoulos
+  party: greens
+  contest: pascoe-vale
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2025-10-13
+      source:
+        url: "https://brunswickvoice.com.au/greens-lock-in-candidates-for-next-years-state-election/"
+        title: "Greens lock in candidates for next year's state election"
+        publisher: Brunswick Voice
+        published: 2025-10-13
+        accessed: 2025-10-21

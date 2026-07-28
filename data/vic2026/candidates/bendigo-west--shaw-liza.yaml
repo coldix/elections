@@ -1,0 +1,14 @@
+candidate:
+  name: Liza Shaw
+  party: greens
+  contest: bendigo-west
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2025-12-12
+      source:
+        url: "https://greens.org.au/vic/person/liza-shaw"
+        title: "Liza Shaw: Candidate for Bendigo West"
+        publisher: Victorian Greens
+        accessed: 2025-12-12

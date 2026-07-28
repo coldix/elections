@@ -1,0 +1,14 @@
+candidate:
+  name: Izzy Scherrer
+  party: greens
+  contest: south-barwon
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-21
+      source:
+        url: "https://greens.org.au/vic/person/izzy-scherrer"
+        title: "Izzy Scherrer: Candidate for South Barwon"
+        publisher: Victorian Greens
+        accessed: 2026-06-21

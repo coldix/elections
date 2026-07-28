@@ -1,0 +1,15 @@
+candidate:
+  name: Andy Pobjoy
+  party: liberal
+  contest: geelong
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-06-14
+      source:
+        url: "https://timesnewsgroup.com.au/surfcoasttimes/news/new-liberal-challenger-takes-aim-at-bellarine/"
+        title: New Liberal challenger takes aim at Bellarine
+        publisher: Times News Group
+        published: 2026-06-14
+        accessed: 2026-07-16

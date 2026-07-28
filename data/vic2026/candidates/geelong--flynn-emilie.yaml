@@ -1,0 +1,15 @@
+candidate:
+  name: Emilie Flynn
+  party: greens
+  contest: geelong
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-02-13
+      source:
+        url: "https://timesnewsgroup.com.au/geelongtimes/news/greens-lock-in-geelong-challenger/"
+        title: Greens lock in Geelong challenger
+        publisher: Geelong Times
+        published: 2026-02-13
+        accessed: 2026-02-13

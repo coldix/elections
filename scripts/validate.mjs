@@ -61,6 +61,23 @@ for (const election of readdirSync(DATA_DIR)) {
     }
   }
 
+  // retirements (optional file)
+  try {
+    const retirements = load("retirements.yaml").retirements ?? [];
+    for (const r of retirements) {
+      const file = `${election}/retirements.yaml`;
+      if (!r.name) fail(file, "retirement missing name");
+      if (!partySlugs.has(r.party)) fail(file, `${r.name}: unknown party '${r.party}'`);
+      if (!["MLA", "MLC"].includes(r.role)) fail(file, `${r.name}: role must be MLA|MLC`);
+      const validSeats = r.role === "MLC" ? regionSlugs : districtSlugs;
+      if (!validSeats.has(r.seat)) fail(file, `${r.name}: unknown seat '${r.seat}' for role ${r.role}`);
+      if (!isDate(String(r.announced))) fail(file, `${r.name}: announced must be YYYY-MM-DD`);
+      checkSource(file, r.name, r.source);
+    }
+  } catch (e) {
+    if (e.code !== "ENOENT") throw e;
+  }
+
   // candidates
   const candDir = join(dir, "candidates");
   let count = 0;

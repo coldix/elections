@@ -1,0 +1,14 @@
+candidate:
+  name: Toyo White
+  party: greens
+  contest: glen-waverley
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-05-19
+      source:
+        url: "https://greens.org.au/vic/person/toyo-white"
+        title: "Toyo White: Candidate for Glen Waverley"
+        publisher: Victorian Greens
+        accessed: 2026-05-19

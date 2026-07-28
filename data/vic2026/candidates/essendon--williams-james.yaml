@@ -1,0 +1,14 @@
+candidate:
+  name: James Williams
+  party: greens
+  contest: essendon
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2025-12-02
+      source:
+        url: "https://greens.org.au/vic/person/james-williams"
+        title: "Uncle James Williams: Candidate for Essendon"
+        publisher: Victorian Greens
+        accessed: 2025-12-02

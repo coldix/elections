@@ -1,0 +1,14 @@
+candidate:
+  name: David Kitchen
+  party: liberal
+  contest: bayswater
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-05-13
+      source:
+        url: "https://vic.liberal.org.au/team/david-kitchen"
+        title: "David Kitchen: Liberal for Bayswater"
+        publisher: Victorian Liberal Party
+        accessed: 2026-05-13

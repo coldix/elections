@@ -1,0 +1,15 @@
+candidate:
+  name: Richard Farr
+  party: labor
+  contest: croydon
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-04-22
+      source:
+        url: "https://en.wikipedia.org/wiki/Sonja_Terpstra"
+        title: "Great morning at Croydon station with Richard Farr, our Labor candidate for Croydon"
+        publisher: Instagram
+        published: 2026-04-22
+        accessed: 2026-04-26

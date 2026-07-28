@@ -1,0 +1,14 @@
+candidate:
+  name: Ben Hocking
+  party: greens
+  contest: williamstown
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-01
+      source:
+        url: "https://greens.org.au/vic/person/Ben-Hocking"
+        title: "Ben Hocking: Candidate for Williamstown"
+        publisher: Victorian Greens
+        accessed: 2026-07-01

@@ -1,0 +1,14 @@
+candidate:
+  name: Megan Read
+  party: liberal
+  contest: ripon
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-30
+      source:
+        url: "https://vic.liberal.org.au/team/megan-read"
+        title: Megan Read Candidate for Ripon
+        publisher: Victorian Liberal Party
+        accessed: 2026-06-30

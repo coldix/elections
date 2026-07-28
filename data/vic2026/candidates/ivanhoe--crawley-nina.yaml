@@ -1,0 +1,14 @@
+candidate:
+  name: Nina Crawley
+  party: greens
+  contest: ivanhoe
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2025-11-11
+      source:
+        url: "https://greens.org.au/vic/person/nina-crawley"
+        title: "Nina Crawley: Candidate for Ivanhoe"
+        publisher: greens.org.au
+        accessed: 2025-11-11

@@ -1,0 +1,14 @@
+candidate:
+  name: Sarah McKenzie
+  party: labor
+  contest: richmond
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-03-06
+      source:
+        url: "https://en.wikipedia.org/wiki/Harriet_Shing"
+        title: "Sarah McKenzie is Labor's candidate for Richmond"
+        publisher: Instagram
+        accessed: 2026-03-06

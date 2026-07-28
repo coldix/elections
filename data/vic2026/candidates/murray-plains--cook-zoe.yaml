@@ -1,0 +1,14 @@
+candidate:
+  name: Zoe Cook
+  party: greens
+  contest: murray-plains
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-01-03
+      source:
+        url: "https://greens.org.au/vic/person/zoe-cook"
+        title: "Zoe Cook: Candidate for Murray Plains"
+        publisher: Victorian Greens
+        accessed: 2026-01-03

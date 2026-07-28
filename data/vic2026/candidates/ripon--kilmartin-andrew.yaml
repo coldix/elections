@@ -1,0 +1,23 @@
+candidate:
+  name: Andrew Kilmartin
+  party: liberal
+  contest: ripon
+  chamber: assembly
+  status: withdrawn
+  history:
+    - status: withdrawn
+      date: 2025-12-29
+      source:
+        url: https://www.westvicnews.com.au/libs-in-limbo-2025-12-29
+        title: Libs in limbo
+        publisher: West Vic News
+        published: 2025-12-29
+        accessed: 2026-07-28
+      note: >-
+        Withdrew citing a Huntington's disease diagnosis. Liberal
+        preselection for Ripon subsequently went to Megan Read (see
+        ripon--read-megan.yaml), contesting alongside the National Party's
+        Jo Armstrong in a three-cornered Coalition contest.
+  links:
+    - url: https://www.thecourier.com.au/story/9295573/andrew-kilmartin-huntingtons-diagnosis-halts-political-bid/
+      kind: profile

@@ -1,0 +1,14 @@
+candidate:
+  name: Tim Randall
+  party: greens
+  contest: ashwood
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-02-25
+      source:
+        url: "https://greens.org.au/vic/person/tim-randall"
+        title: "Tim Randall: Candidate for Ashwood"
+        publisher: Victorian Greens
+        accessed: 2026-02-25

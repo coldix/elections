@@ -28,11 +28,23 @@ for (const election of readdirSync(DATA_DIR)) {
     .filter((f) => !f.startsWith("_") && f.endsWith(".yaml"))
     .map((f) => parse(readFileSync(join(dir, "candidates", f), "utf8")).candidate);
 
+  let retirements = [];
+  try {
+    retirements = load("retirements.yaml").retirements ?? [];
+  } catch (e) {
+    if (e.code !== "ENOENT") throw e;
+  }
+
   writeFileSync(join(out, "election.json"), JSON.stringify(meta, null, 2));
   writeFileSync(join(out, "districts.json"), JSON.stringify(districts, null, 2));
   writeFileSync(join(out, "regions.json"), JSON.stringify(regions, null, 2));
   writeFileSync(join(out, "parties.json"), JSON.stringify(parties, null, 2));
   writeFileSync(join(out, "candidates.json"), JSON.stringify(candidates, null, 2));
+  writeFileSync(join(out, "retirements.json"), JSON.stringify(retirements, null, 2));
+  writeFileSync(join(out, "retirements.csv"), csv(
+    retirements.map((r) => ({ ...r, source_url: r.source?.url })),
+    ["name", "party", "role", "seat", "announced", "source_url"]
+  ));
 
   writeFileSync(join(out, "districts.csv"), csv(districts, ["slug", "name", "chamber", "region", "incumbent", "incumbent_party"]));
   writeFileSync(join(out, "candidates.csv"), csv(
@@ -47,7 +59,11 @@ for (const election of readdirSync(DATA_DIR)) {
     );
     return { party: p.slug, short_name: p.short_name, family: p.family, assembly_seats_covered: seats.size, assembly_seats_total: districts.length };
   });
-  writeFileSync(join(out, "coverage.json"), JSON.stringify({ generated: new Date().toISOString(), coverage }, null, 2));
+  writeFileSync(join(out, "coverage.json"), JSON.stringify({
+    generated: new Date().toISOString(),
+    caveat: "Counts only candidacies with an individually-sourced record in candidates/. Sitting MPs presumed to be recontesting but lacking a specific dated announcement are NOT counted, so parties with many incumbents (e.g. the governing party) will undercount relative to their true ballot presence until each seat is individually verified. See docs/METHODOLOGY.md.",
+    coverage,
+  }, null, 2));
 
   console.log(`${election}: exported ${candidates.length} candidates to dist/${election}/`);
 }
