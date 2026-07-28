@@ -37,12 +37,28 @@ data/<election>/          one directory per election (vic2026 first)
   districts.yaml          lower-house seats
   regions.yaml            upper-house regions
   parties.yaml            registered parties and party families
+  retirements.yaml        sitting members not recontesting
   candidates/*.yaml       one file per candidacy, with status history
 schema/                   JSON Schemas the data must validate against
+scripts/lib/data.mjs      shared loader + derived figures (site AND exports)
 scripts/validate.mjs      schema + referential-integrity checks (CI-enforced)
-scripts/export.mjs        JSON/CSV export to dist/
-docs/                     scope, methodology, architecture decisions
+scripts/export.mjs        JSON/CSV export to site/public/data/
+site/                     Astro static site (built to site/dist/)
+docs/                     scope, methodology, deployment, architecture decisions
 ```
+
+## Running it
+
+```bash
+npm install
+npm run dev      # validate + export, then serve locally
+npm run build    # validate -> export -> build; fails fast on invalid data
+```
+
+The build is ordered deliberately: data is validated before it is exported, and
+exported before the site is built. A record without a valid source fails step
+one, so it can never reach production. See
+[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
 ## Contributing a candidate or correction
 

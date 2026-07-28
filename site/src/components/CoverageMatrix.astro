@@ -1,0 +1,461 @@
+---
+/**
+ * Coverage Matrix — the flagship data component.
+ *
+ * Every one of the 88 Legislative Assembly districts is a cell. Selecting a
+ * party re-paints the grid to show where that party has an individually
+ * sourced candidate, and at what stage (announced / endorsed / formally
+ * nominated). It answers the project's core question — "how complete is each
+ * party's candidate coverage?" — in one glance.
+ *
+ * Design constraints deliberately met:
+ *  - ZERO JavaScript. The party switcher is radio inputs + CSS sibling
+ *    selectors, so it works with JS disabled and is keyboard accessible for
+ *    free (arrow keys move through a radio group).
+ *  - Every cell is a real link to the district page, with an accessible name
+ *    stating district, party and status — so the meaning never depends on
+ *    colour alone (WCAG 1.4.1) and the content is indexable.
+ *  - A complete data table is provided as a text alternative.
+ *  - Animation is a staggered reveal on the selected panel only, and is
+ *    removed entirely under prefers-reduced-motion.
+ */
+import { LIVE_STATUSES, STATUS_LABELS } from "../../../scripts/lib/data.mjs";
+import { partyColour } from "../lib/site.mjs";
+
+const { data, coverage } = Astro.props;
+
+// Only parties that actually have at least one Assembly candidate get a panel.
+// Rendering all 17 would add ~1,500 cells of markup for mostly-empty grids;
+// the full table below covers every party regardless.
+const shown = coverage
+  .filter((c) => c.by_status.announced + c.by_status.endorsed + c.by_status.nominated > 0)
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const districts = data.districts;
+
+/** status of `party` in `district`, preferring a live candidacy if one exists */
+function cellFor(district, partySlug) {
+  const all = district.candidates.filter((c) => c.party === partySlug);
+  const live = all.find((c) => LIVE_STATUSES.includes(c.status));
+  const chosen = live ?? all[0];
+  return {
+    status: chosen?.status ?? null,
+    name: chosen?.name ?? null,
+  };
+}
+
+const panels = shown.map((p) => ({
+  ...p,
+  colour: partyColour(p.party),
+  cells: districts.map((d) => ({ district: d, ...cellFor(d, p.party) })),
+}));
+
+const defaultParty = panels[0]?.party;
+---
+
+<section class="matrix-section" aria-labelledby="matrix-h">
+  <div class="matrix-head">
+    <div>
+      <p class="eyebrow">Legislative Assembly · {districts.length} districts</p>
+      <h2 id="matrix-h">Candidate coverage by party</h2>
+      <p class="lede">
+        Each square is one district. Choose a party to see where it has an individually
+        sourced candidate, and how far that candidacy has progressed.
+      </p>
+    </div>
+  </div>
+
+  <div class="matrix">
+    {
+      panels.map((p, i) => (
+        <input
+          type="radio"
+          name="coverage-party"
+          id={`cm-${p.party}`}
+          class="visually-hidden cm-radio"
+          checked={p.party === defaultParty}
+        />
+      ))
+    }
+
+    <fieldset class="tabs">
+      <legend class="visually-hidden">Show candidate coverage for party</legend>
+      {
+        panels.map((p) => (
+          <label for={`cm-${p.party}`} data-party={p.party} style={`--party-colour:${p.colour}`}>
+            <span class="swatch" aria-hidden="true" />
+            <span class="tab-name">{p.short_name}</span>
+            <span class="tab-count">
+              {p.assembly_seats_covered}<span class="of">/{p.assembly_seats_total}</span>
+            </span>
+          </label>
+        ))
+      }
+    </fieldset>
+
+    <div class="panels">
+      {
+        panels.map((p) => (
+          <div class="panel" id={`panel-${p.party}`} style={`--party-colour:${p.colour}`}>
+            <p class="panel-summary">
+              <strong>{p.name}</strong> has individually sourced candidates in{" "}
+              <strong>
+                {p.assembly_seats_covered} of {p.assembly_seats_total}
+              </strong>{" "}
+              districts ({p.pct}%).
+              {p.by_status.endorsed > 0 && <> {p.by_status.endorsed} endorsed.</>}
+              {p.by_status.announced > 0 && <> {p.by_status.announced} announced only.</>}
+              {p.by_status.nominated > 0 && <> {p.by_status.nominated} formally nominated.</>}
+              {p.ended_count > 0 && (
+                <> {p.ended_count} withdrawn or disendorsed.</>
+              )}
+              {p.commitments.length > 0 && (
+                <span class="claim">
+                  {" "}
+                  The party states it will contest all {p.assembly_seats_total} seats —
+                  a claim recorded from{" "}
+                  <a href={p.commitments[0].source.url}>its own announcement</a>, not a
+                  verified count.
+                </span>
+              )}
+            </p>
+
+            <ul class="grid" role="list">
+              {p.cells.map((cell, idx) => (
+                <li style={`--i:${idx}`}>
+                  <a
+                    href={`/districts/${cell.district.slug}`}
+                    class={`cell cell-${cell.status ?? "none"}`}
+                  >
+                    <span class="visually-hidden">
+                      {cell.district.name}:{" "}
+                      {cell.status
+                        ? `${cell.name}, ${STATUS_LABELS[cell.status]}`
+                        : `no ${p.short_name} candidate identified`}
+                    </span>
+                    <span class="cell-tip" aria-hidden="true">
+                      <b>{cell.district.name}</b>
+                      {cell.status ? (
+                        <>
+                          {cell.name} · {STATUS_LABELS[cell.status]}
+                        </>
+                      ) : (
+                        <>No candidate identified</>
+                      )}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <ul class="legend" role="list">
+      <li><span class="key cell-endorsed" aria-hidden="true"></span> Endorsed by party</li>
+      <li><span class="key cell-announced" aria-hidden="true"></span> Announced only</li>
+      <li><span class="key cell-nominated" aria-hidden="true"></span> Formally nominated</li>
+      <li><span class="key cell-withdrawn" aria-hidden="true"></span> Withdrawn / disendorsed</li>
+      <li><span class="key cell-none" aria-hidden="true"></span> No candidate identified</li>
+    </ul>
+  </div>
+
+  <details class="alt-table">
+    <summary>View this data as a table</summary>
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">
+          Candidate status by district and party, Legislative Assembly
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">District</th>
+            {panels.map((p) => <th scope="col">{p.short_name}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {
+            districts.map((d) => (
+              <tr>
+                <th scope="row">
+                  <a href={`/districts/${d.slug}`}>{d.name}</a>
+                </th>
+                {panels.map((p) => {
+                  const c = cellFor(d, p.party);
+                  return (
+                    <td>
+                      {c.status ? (
+                        <>
+                          {c.name}
+                          <br />
+                          <span class="muted">{STATUS_LABELS[c.status]}</span>
+                        </>
+                      ) : (
+                        <span class="muted">—</span>
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<style>
+  .matrix-section {
+    margin-block: clamp(2rem, 5vw, 3rem);
+  }
+  .matrix-head {
+    margin-bottom: 1.5rem;
+  }
+  .matrix {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  /* ---- party switcher: radios + labels, no JS ---- */
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid var(--rule);
+    background: var(--surface-2);
+  }
+  .tabs label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.8rem 1.05rem;
+    font-size: 0.9rem;
+    font-weight: 560;
+    color: var(--ink-2);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    border-right: 1px solid var(--rule);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .tabs label:hover {
+    background: var(--surface);
+    color: var(--ink);
+  }
+  .tab-count {
+    font-variant-numeric: tabular-nums;
+    font-weight: 680;
+    color: var(--ink);
+  }
+  .tab-count .of {
+    font-weight: 400;
+    color: var(--ink-3);
+  }
+
+  .panel {
+    display: none;
+    padding: clamp(1rem, 3vw, 1.6rem);
+  }
+  .panel-summary {
+    margin: 0 0 1.15rem;
+    font-size: 0.97rem;
+    color: var(--ink-2);
+    max-width: 60rem;
+  }
+  .panel-summary strong {
+    color: var(--ink);
+  }
+  .claim {
+    color: var(--ink-3);
+  }
+
+  /* Wire each radio to its tab + panel via sibling selectors. */
+  .cm-radio:checked + .cm-radio,
+  .cm-radio {
+    position: absolute;
+  }
+
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(2.05rem, 1fr));
+    gap: 0.3rem;
+  }
+  .grid li {
+    aspect-ratio: 1;
+  }
+
+  .cell {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: var(--st-none);
+    border: 1px solid transparent;
+    text-decoration: none;
+    animation: cell-in 0.42s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+    animation-delay: calc(var(--i) * 7ms);
+  }
+  .cell:hover,
+  .cell:focus-visible {
+    transform: scale(1.18);
+    z-index: 5;
+  }
+  .cell-endorsed {
+    background: var(--party-colour);
+  }
+  .cell-announced {
+    background: color-mix(in srgb, var(--party-colour) 34%, var(--surface));
+    border-color: color-mix(in srgb, var(--party-colour) 55%, transparent);
+  }
+  .cell-nominated {
+    background: var(--party-colour);
+    box-shadow: inset 0 0 0 2px var(--surface), inset 0 0 0 4px var(--party-colour);
+  }
+  .cell-withdrawn,
+  .cell-disendorsed,
+  .cell-defeated {
+    background: repeating-linear-gradient(
+      -45deg,
+      var(--st-ended-bg),
+      var(--st-ended-bg) 3px,
+      transparent 3px,
+      transparent 6px
+    );
+    border-color: color-mix(in srgb, var(--st-ended) 45%, transparent);
+  }
+  .cell-none {
+    background: var(--st-none);
+    border-color: var(--rule);
+  }
+
+  @keyframes cell-in {
+    from {
+      opacity: 0;
+      transform: translateY(5px) scale(0.82);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* hover label */
+  .cell-tip {
+    position: absolute;
+    bottom: calc(100% + 7px);
+    left: 50%;
+    translate: -50% 0;
+    display: none;
+    width: max-content;
+    max-width: 15rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 0.76rem;
+    line-height: 1.35;
+    text-align: center;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .cell-tip b {
+    display: block;
+  }
+  .cell:hover .cell-tip,
+  .cell:focus-visible .cell-tip {
+    display: block;
+  }
+
+  .legend {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    margin: 0;
+    padding: 0.9rem clamp(1rem, 3vw, 1.6rem);
+    border-top: 1px solid var(--rule);
+    background: var(--surface-2);
+    font-size: 0.82rem;
+    color: var(--ink-2);
+  }
+  .legend li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .key {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 3px;
+    flex: none;
+    --party-colour: var(--ink-3);
+  }
+
+  .alt-table {
+    margin-top: 1.25rem;
+  }
+  .alt-table summary {
+    cursor: pointer;
+    font-size: 0.92rem;
+    font-weight: 560;
+    color: var(--accent-ink);
+    padding: 0.3rem 0;
+  }
+  .alt-table .table-scroll {
+    margin-top: 0.85rem;
+    max-height: 32rem;
+    overflow-y: auto;
+  }
+
+  @media (max-width: 34rem) {
+    .grid {
+      grid-template-columns: repeat(auto-fill, minmax(1.75rem, 1fr));
+    }
+    .tabs label {
+      padding: 0.7rem 0.8rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cell {
+      animation: none;
+    }
+    .cell:hover,
+    .cell:focus-visible {
+      transform: none;
+      outline: 2px solid var(--ink);
+      outline-offset: 1px;
+    }
+    .tabs label {
+      transition: none;
+    }
+  }
+</style>
+
+{/* Sibling-selector wiring, generated per party so the CSS stays static. */}
+<style is:inline set:html={panels
+  .map(
+    (p) => `
+    #cm-${p.party}:checked ~ .tabs label[for="cm-${p.party}"]{
+      background: var(--surface);
+      color: var(--ink);
+      border-bottom-color: ${p.colour};
+    }
+    #cm-${p.party}:checked ~ .panels #panel-${p.party}{ display:block; }
+    #cm-${p.party}:focus-visible ~ .tabs label[for="cm-${p.party}"]{
+      outline: 3px solid var(--accent); outline-offset:-3px;
+    }`
+  )
+  .join("")} />

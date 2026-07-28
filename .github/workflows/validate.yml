@@ -3,17 +3,38 @@ on:
   push:
     branches: [main]
   pull_request:
+
 jobs:
-  validate:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
       - run: npm ci
-      - run: npm run check
-      - uses: actions/upload-artifact@v4
+
+      # Order matters: data must be valid before it is exported, and exported
+      # before the site is built. Any failure here stops the run, so Cloudflare
+      # Pages never deploys a build made from invalid or unsourced records.
+      - name: Validate data (schema, vocabulary, sources, referential integrity)
+        run: npm run validate
+
+      - name: Generate JSON + CSV exports
+        run: npm run export
+
+      - name: Build site
+        run: npx astro build --root site
+
+      - name: Upload exports
+        uses: actions/upload-artifact@v4
         with:
-          name: exports
-          path: dist/
+          name: data-exports
+          path: site/public/data/
+
+      - name: Upload built site
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site/dist/

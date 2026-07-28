@@ -4,6 +4,41 @@ For future sessions/agents. Read docs/DECISIONS.md before proposing any
 infrastructure; the Workers/D1/R2 stack was already evaluated and rejected
 (ADR-2). This is a data-in-git ledger with a static site on top.
 
+## The site (added 2026-07-28)
+
+Astro static site in `site/`, 112 pages, deployed via Cloudflare Pages.
+**Read [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) before touching build config.**
+
+- `npm run build` = validate → export → astro build, failing fast. An unsourced
+  record cannot reach production; the build dies at step 1.
+- Output conflict resolved: exports now go to `site/public/data/` (served at
+  `/data/<election>/...`), Astro builds to `site/dist/`. Both gitignored.
+- `scripts/lib/data.mjs` is the single source of derived figures — imported by
+  both the exporter and the site, so JSON and page can't disagree (ADR-8). It
+  finds `data/` by walking up the tree because Astro bundles it and
+  `import.meta.url` is wrong once bundled.
+- Pages: `/`, `/districts` + 88 district pages, `/parties` + 17 party pages,
+  `/methodology`, `/about`, `/data`, `/404`.
+- **Zero JavaScript bundles.** The coverage matrix is radio inputs + CSS
+  sibling selectors (ADR-9). The only script is ~8 lines refreshing the
+  countdown, which is already correct in the HTML without it.
+- Measured: homepage 13.6 KB brotli, CSS 2.3 KB gzip, no horizontal overflow at
+  375 px, contrast ≥5.45:1 in dark mode, `prefers-reduced-motion` verified to
+  strip the cell animation and hover transforms.
+- Palette is deliberately non-partisan: red/blue/green/orange/teal all read as
+  an Australian party (teal included — the federal independents). Shell uses
+  ink + sand + plum; party colours appear only inside data visualisation.
+- The coverage caveat lives in `scripts/lib/data.mjs` as `COVERAGE_CAVEAT` and
+  is rendered on the homepage, `/parties`, every party page, `/methodology`
+  **and** inside `coverage.json`. Keep it that way — it is the honest
+  qualification on every number the project publishes.
+
+### Still to do on the site
+- Recent-changes feed derived from `git log` (in SCOPE's MVP, not built).
+- Council (upper house) candidate coverage is thin — only the 2 Western
+  Metropolitan records exist, so region pages aren't built yet.
+- Social preview image (`og:image`) not set; add a static one or generate.
+
 ## Current state (2026-07-28)
 
 Scaffold + core data complete:
@@ -43,6 +78,21 @@ election); ABC coverage will dominate from campaign period; VEC publishes the
 official list after nominations close 13 Nov 2026. The differentiated wedge is
 ONLY: machine-readable open data + party coverage dashboard + evidence ledger.
 Do not expand scope beyond the wedge. Kill criteria in docs/SCOPE.md.
+
+## Blocked on Colin (cannot be done from here)
+
+1. **Create the Cloudflare Pages project** — settings in docs/DEPLOYMENT.md.
+   Needs account access; there is no API token in this environment.
+2. **Confirm the DNS zone.** The account is known to hold `ozol.net.au`, but the
+   site is specified to publish at `elections.oze.net.au` — a different apex.
+   If `oze.net.au` isn't in the account, decide the real hostname, then update
+   `site` in `site/astro.config.mjs`, `SITE.url` in `site/src/lib/site.mjs`, and
+   the `Sitemap:` line in `site/public/robots.txt`.
+3. **Check the authorisation statement.** `/about#authorisation` currently reads
+   "Authorised by C. Dixon, OZE, Victoria." Verify against Electoral Act 2002
+   (Vic) requirements — a fuller address may be required for electoral matter.
+   No address was invented here.
+4. **`elections@oze.net.au`** is referenced on /about — create or redirect it.
 
 ## TODO (priority order)
 

@@ -1,0 +1,373 @@
+/*
+  Australian Election Tracker — design tokens and base styles.
+
+  Palette rationale: the platform identity is deliberately NOT any Australian
+  party's colour. Red, blue, green, orange and teal all read as partisan here
+  (Labor, Liberal, Nationals/Greens, One Nation, and the federal "teal"
+  independents respectively). The shell therefore uses ink, warm sand and a
+  deep plum accent — authoritative and politically unclaimed. Party colours
+  appear ONLY inside party-specific data visualisation, never in chrome.
+*/
+
+:root {
+  color-scheme: light dark;
+
+  /* Neutrals — warm, paper-like rather than clinical grey */
+  --ink: #16161d;
+  --ink-2: #3a3a47;
+  --ink-3: #63636f;
+  --rule: #e3ded4;
+  --rule-strong: #cec7b8;
+  --paper: #fbfaf7;
+  --surface: #ffffff;
+  --surface-2: #f4f1ea;
+
+  /* Accent — deep plum. Not a party colour. */
+  --accent: #5b3a6e;
+  --accent-ink: #452a55;
+  --accent-wash: #f0ebf3;
+
+  /* Status semantics — shape and label carry meaning too, never colour alone */
+  --st-announced: #8a6d1f;
+  --st-announced-bg: #fbf3dc;
+  --st-endorsed: #1f5c3d;
+  --st-endorsed-bg: #e3f2e9;
+  --st-nominated: #1e4a7a;
+  --st-nominated-bg: #e2edf8;
+  --st-ended: #8a2f2f;
+  --st-ended-bg: #f9e6e6;
+  --st-none: #efece5;
+
+  --maxw: 74rem;
+  --radius: 10px;
+  --radius-sm: 6px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --shadow: 0 1px 2px rgb(22 22 29 / 0.04), 0 4px 16px rgb(22 22 29 / 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #ece9e3;
+    --ink-2: #b9b5ad;
+    --ink-3: #8d8981;
+    --rule: #2e2e38;
+    --rule-strong: #43434f;
+    --paper: #101015;
+    --surface: #191920;
+    --surface-2: #21212a;
+
+    --accent: #c2a3d4;
+    --accent-ink: #d9c4e6;
+    --accent-wash: #241c2b;
+
+    --st-announced: #e0c069;
+    --st-announced-bg: #322a12;
+    --st-endorsed: #7fc79f;
+    --st-endorsed-bg: #14291e;
+    --st-nominated: #8fbde8;
+    --st-nominated-bg: #14243a;
+    --st-ended: #e59a9a;
+    --st-ended-bg: #341a1a;
+    --st-none: #24242d;
+
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.35);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4em;
+  font-weight: 640;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.3rem + 3vw, 3.4rem);
+  letter-spacing: -0.035em;
+}
+h2 {
+  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem);
+}
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 1em;
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--accent-ink);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: from-font;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+code,
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* ---------- layout ---------- */
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.wrap-narrow {
+  max-width: 46rem;
+}
+
+.section {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.stack > * + * {
+  margin-top: var(--gap, 1rem);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.7rem 1.1rem;
+  z-index: 100;
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* ---------- shared components ---------- */
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 660;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 0.6rem;
+}
+
+.lede {
+  font-size: clamp(1.05rem, 1rem + 0.4vw, 1.28rem);
+  color: var(--ink-2);
+  max-width: 46rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: clamp(1.1rem, 2.5vw, 1.6rem);
+}
+
+.notice {
+  border: 1px solid var(--rule-strong);
+  border-left: 4px solid var(--accent);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.15rem;
+  font-size: 0.94rem;
+  color: var(--ink-2);
+}
+.notice strong {
+  color: var(--ink);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.15rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 580;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.btn:hover {
+  background: var(--accent-ink);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--accent-ink);
+}
+.btn-ghost:hover {
+  background: var(--accent-wash);
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn {
+    color: #16161d;
+  }
+}
+
+/* status pills — colour PLUS text, never colour alone (WCAG 1.4.1) */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+.pill-announced {
+  color: var(--st-announced);
+  background: var(--st-announced-bg);
+  border-color: color-mix(in srgb, var(--st-announced) 25%, transparent);
+}
+.pill-endorsed {
+  color: var(--st-endorsed);
+  background: var(--st-endorsed-bg);
+  border-color: color-mix(in srgb, var(--st-endorsed) 25%, transparent);
+}
+.pill-nominated {
+  color: var(--st-nominated);
+  background: var(--st-nominated-bg);
+  border-color: color-mix(in srgb, var(--st-nominated) 25%, transparent);
+}
+.pill-withdrawn,
+.pill-disendorsed,
+.pill-defeated {
+  color: var(--st-ended);
+  background: var(--st-ended-bg);
+  border-color: color-mix(in srgb, var(--st-ended) 25%, transparent);
+}
+.pill-elected {
+  color: var(--st-nominated);
+  background: var(--st-nominated-bg);
+  border-color: color-mix(in srgb, var(--st-nominated) 40%, transparent);
+}
+
+/* data tables */
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+table.data th,
+table.data td {
+  text-align: left;
+  padding: 0.62rem 0.85rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+table.data thead th {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  background: var(--surface-2);
+  position: sticky;
+  top: 0;
+}
+table.data tbody tr:last-child td {
+  border-bottom: 0;
+}
+table.data td.num,
+table.data th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.muted {
+  color: var(--ink-3);
+  font-size: 0.88rem;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* party colour swatch — the one place party colours are allowed */
+.swatch {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  border-radius: 2px;
+  background: var(--party-colour, var(--ink-3));
+  flex: none;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}

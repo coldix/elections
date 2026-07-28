@@ -1,0 +1,400 @@
+---
+import Base from "../layouts/Base.astro";
+import Countdown from "../components/Countdown.astro";
+import StatGrid from "../components/StatGrid.astro";
+import CoverageMatrix from "../components/CoverageMatrix.astro";
+import { SITE, partyColour, formatDate } from "../lib/site.mjs";
+import {
+  loadElection,
+  coverageFor,
+  summaryFor,
+  COVERAGE_CAVEAT,
+  STATUS_LABELS,
+} from "../../../scripts/lib/data.mjs";
+
+const data = loadElection("vic2026");
+const coverage = coverageFor(data);
+const summary = summaryFor(data);
+
+const stats = [
+  { value: summary.districts, label: "Legislative Assembly districts" },
+  { value: summary.regions, label: "Legislative Council regions" },
+  { value: summary.registered_parties, label: "Registered parties", note: "VEC register" },
+  { value: summary.candidates, label: "Candidate records", note: "each individually sourced" },
+  { value: summary.retirements, label: "Confirmed retirements", note: "MPs not recontesting" },
+  { value: summary.sources, label: "Distinct sources cited" },
+];
+
+// Retirements grouped by party, for the summary strip.
+const retireByParty = data.parties
+  .map((p) => ({
+    ...p,
+    count: data.retirements.filter((r) => r.party === p.slug).length,
+  }))
+  .filter((p) => p.count > 0)
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name: "Australian Election Tracker — Victorian state election 2026 candidate ledger",
+  description:
+    "Open, individually sourced records of announced, endorsed, formally nominated, " +
+    "withdrawn and disendorsed candidates for the 2026 Victorian state election.",
+  url: SITE.url,
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  isAccessibleForFree: true,
+  creator: { "@type": "Organization", name: SITE.publisher, url: SITE.publisherUrl },
+  temporalCoverage: `2024/${data.election.election_day}`,
+  spatialCoverage: { "@type": "Place", name: "Victoria, Australia" },
+  distribution: [
+    {
+      "@type": "DataDownload",
+      encodingFormat: "application/json",
+      contentUrl: `${SITE.url}/data/vic2026/candidates.json`,
+    },
+    {
+      "@type": "DataDownload",
+      encodingFormat: "text/csv",
+      contentUrl: `${SITE.url}/data/vic2026/candidates.csv`,
+    },
+  ],
+};
+---
+
+<Base
+  title="Victorian state election 2026 candidate tracker"
+  description="Independent, individually sourced tracking of candidates for the 2026 Victorian state election — announced, endorsed, formally nominated, withdrawn and disendorsed. Open JSON and CSV data."
+  schema={schema}
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Independent · Sourced · Machine-readable</p>
+      <h1>Who is standing, where, and what proves it.</h1>
+      <p class="lede">
+        The Australian Election Tracker records every candidate announcement with a
+        dated public source, keeps the full history of every status change, and
+        publishes the whole dataset as open JSON and CSV. Starting with Victoria,
+        November 2026.
+      </p>
+      <p class="hero-actions">
+        <a class="btn" href="#coverage">See candidate coverage</a>
+        <a class="btn btn-ghost" href="/data">Get the data</a>
+      </p>
+
+      <p class="notice prelaunch">
+        <strong>Pre-launch — verification in progress.</strong> Candidate records are being
+        added and verified progressively, so coverage is incomplete by design rather than
+        by accident. This site is not affiliated with the Victorian Electoral Commission,
+        any political party or any candidate.
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <Countdown election={data.election} keyDates={data.election.dates} />
+
+    <section class="section" aria-labelledby="numbers-h">
+      <h2 id="numbers-h" class="visually-hidden">Dataset at a glance</h2>
+      <StatGrid stats={stats} />
+      <p class="muted after-stats">
+        All figures generated from the repository at build time. Last source verification:{" "}
+        <strong>{formatDate(summary.latest_verified)}</strong>. Records currently cover{" "}
+        {summary.districts_with_candidates} of {summary.districts} districts.
+      </p>
+    </section>
+
+    <section id="coverage" class="section" style="padding-top:0">
+      <div class="notice caveat" role="note">
+        <strong>Read the coverage figures carefully.</strong>
+        {" "}{COVERAGE_CAVEAT}{" "}
+        <a href="/methodology#coverage">How we count</a>.
+      </div>
+
+      <CoverageMatrix data={data} coverage={coverage} />
+
+      <h3 class="dash-h">Every registered party</h3>
+      <p class="muted dash-sub">
+        Listed alphabetically. Parties with no individually sourced candidate yet are shown
+        too — absence of a record is not evidence that a party is not standing candidates.
+      </p>
+
+      <div class="table-scroll">
+        <table class="data">
+          <caption class="visually-hidden">
+            Legislative Assembly candidate coverage by party
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Party</th>
+              <th scope="col" class="num">Districts covered</th>
+              <th scope="col">Progress</th>
+              <th scope="col" class="num">Announced</th>
+              <th scope="col" class="num">Endorsed</th>
+              <th scope="col" class="num">Nominated</th>
+              <th scope="col" class="num">Ended</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              coverage.map((c) => (
+                <tr>
+                  <th scope="row">
+                    <a href={`/parties/${c.party}`} class="party-cell">
+                      <span
+                        class="swatch"
+                        style={`--party-colour:${partyColour(c.party)}`}
+                        aria-hidden="true"
+                      />
+                      {c.short_name}
+                    </a>
+                  </th>
+                  <td class="num">
+                    {c.assembly_seats_covered}
+                    <span class="muted"> / {c.assembly_seats_total}</span>
+                  </td>
+                  <td>
+                    <span class="bar" aria-hidden="true">
+                      <span
+                        class="bar-fill"
+                        style={`width:${c.pct}%;--party-colour:${partyColour(c.party)}`}
+                      />
+                    </span>
+                    <span class="visually-hidden">{c.pct}%</span>
+                  </td>
+                  <td class="num">{c.by_status.announced || "—"}</td>
+                  <td class="num">{c.by_status.endorsed || "—"}</td>
+                  <td class="num">{c.by_status.nominated || "—"}</td>
+                  <td class="num">{c.ended_count || "—"}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <p class="muted status-key">
+        <strong>Status meanings.</strong>{" "}
+        {Object.entries(STATUS_LABELS)
+          .filter(([k]) => ["announced", "endorsed", "nominated"].includes(k))
+          .map(([, v]) => v)
+          .join(" → ")}. Nominations for this election do not open until{" "}
+        4 November 2026, so no candidate can yet be formally nominated.{" "}
+        <a href="/methodology">Full definitions</a>.
+      </p>
+    </section>
+
+    <section class="section" style="padding-top:0" aria-labelledby="retire-h">
+      <h2 id="retire-h">Members not recontesting</h2>
+      <p class="lede">
+        {summary.retirements} sitting members have confirmed they will not contest the 2026
+        election — each with a dated source. These seats will be open contests.
+      </p>
+      <ul class="retire-strip" role="list">
+        {
+          retireByParty.map((p) => (
+            <li>
+              <span class="swatch" style={`--party-colour:${partyColour(p.slug)}`} aria-hidden="true" />
+              <span class="rp-count">{p.count}</span>
+              <span class="rp-name">{p.short_name}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="table-scroll retire-table">
+        <table class="data">
+          <caption class="visually-hidden">Members not recontesting the 2026 election</caption>
+          <thead>
+            <tr>
+              <th scope="col">Member</th>
+              <th scope="col">Party</th>
+              <th scope="col">Seat</th>
+              <th scope="col">Announced</th>
+              <th scope="col">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              [...data.retirements]
+                .sort((a, b) => b.announced.localeCompare(a.announced))
+                .map((r) => {
+                  const seat =
+                    r.role === "MLC"
+                      ? data.regions.find((x) => x.slug === r.seat)
+                      : data.districts.find((x) => x.slug === r.seat);
+                  return (
+                    <tr>
+                      <th scope="row">{r.name}</th>
+                      <td>{data.partyBySlug.get(r.party)?.short_name ?? r.party}</td>
+                      <td>
+                        {r.role === "MLC" ? (
+                          <>{seat?.name ?? r.seat} <span class="muted">(Council)</span></>
+                        ) : (
+                          <a href={`/districts/${r.seat}`}>{seat?.name ?? r.seat}</a>
+                        )}
+                      </td>
+                      <td>{formatDate(r.announced)}</td>
+                      <td>
+                        <a href={r.source.url} rel="nofollow">
+                          {r.source.publisher}
+                        </a>
+                      </td>
+                    </tr>
+                  );
+                })
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section trust" style="padding-top:0" aria-labelledby="trust-h">
+      <h2 id="trust-h">How to check our work</h2>
+      <div class="trust-grid">
+        <a class="card trust-card" href="/methodology">
+          <h3>Methodology</h3>
+          <p>What each status means, what evidence we require, and how corrections work.</p>
+        </a>
+        <a class="card trust-card" href="/data">
+          <h3>Open data</h3>
+          <p>Every record as JSON and CSV, free to reuse under CC BY 4.0.</p>
+        </a>
+        <a class="card trust-card" href={SITE.repo}>
+          <h3>Source repository</h3>
+          <p>The dataset is a public Git repository. Every change is a reviewable commit.</p>
+        </a>
+        <a class="card trust-card" href={SITE.issues}>
+          <h3>Submit a correction</h3>
+          <p>Found an error or a missing candidate? Open an issue with a public source.</p>
+        </a>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .hero {
+    padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
+    background:
+      radial-gradient(60rem 22rem at 12% -8%, var(--accent-wash), transparent 70%),
+      var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero h1 {
+    max-width: 20ch;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin: 1.6rem 0 0;
+  }
+  .prelaunch {
+    margin-top: 2rem;
+    max-width: 52rem;
+  }
+  .caveat {
+    margin-bottom: 1.75rem;
+  }
+  .after-stats {
+    margin-top: 0.9rem;
+  }
+  .dash-h {
+    margin-top: 2.75rem;
+  }
+  .dash-sub {
+    margin-top: -0.2rem;
+    max-width: 52rem;
+  }
+  .party-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 560;
+  }
+  .party-cell:hover {
+    text-decoration: underline;
+  }
+  .bar {
+    display: block;
+    width: min(11rem, 26vw);
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--surface-2);
+    overflow: hidden;
+    border: 1px solid var(--rule);
+  }
+  .bar-fill {
+    display: block;
+    height: 100%;
+    background: var(--party-colour);
+    border-radius: 999px;
+  }
+  .status-key {
+    margin-top: 0.9rem;
+    max-width: 60rem;
+  }
+  .retire-strip {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0;
+    margin: 0 0 1.4rem;
+  }
+  .retire-strip li {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 0.9rem;
+  }
+  .rp-count {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rp-name {
+    color: var(--ink-2);
+  }
+  .retire-table {
+    max-height: 30rem;
+    overflow-y: auto;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .trust-card {
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .trust-card h3 {
+    margin-bottom: 0.35rem;
+    color: var(--accent-ink);
+  }
+  .trust-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--ink-2);
+  }
+  .trust-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .trust-card {
+      transition: none;
+    }
+    .trust-card:hover {
+      transform: none;
+    }
+  }
+</style>

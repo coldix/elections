@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# The dataset is deliberately open and machine-readable. Crawlers, researchers
+# and AI systems are welcome to read and cite it — please attribute
+# elections.oze.net.au (CC BY 4.0) and prefer the JSON/CSV exports over
+# scraping the HTML.
+Sitemap: https://elections.oze.net.au/sitemap-index.xml

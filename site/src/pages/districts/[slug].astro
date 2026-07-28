@@ -1,0 +1,295 @@
+---
+import Base from "../../layouts/Base.astro";
+import SourceLink from "../../components/SourceLink.astro";
+import {
+  loadElection,
+  LIVE_STATUSES,
+  STATUS_LABELS,
+} from "../../../../scripts/lib/data.mjs";
+import { SITE, partyColour, formatDate } from "../../lib/site.mjs";
+
+export async function getStaticPaths() {
+  const data = loadElection("vic2026");
+  return data.districts.map((d) => ({ params: { slug: d.slug }, props: { slug: d.slug } }));
+}
+
+const data = loadElection("vic2026");
+const district = data.districts.find((d) => d.slug === Astro.props.slug);
+const region = data.regions.find((r) => r.slug === district.region);
+
+const live = district.candidates
+  .filter((c) => LIVE_STATUSES.includes(c.status))
+  .sort((a, b) => a.name.localeCompare(b.name));
+const ended = district.candidates.filter((c) => !LIVE_STATUSES.includes(c.status));
+
+const partyName = (slug) => data.partyBySlug.get(slug)?.short_name ?? slug;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: `${district.name} — 2026 Victorian state election candidates`,
+  url: `${SITE.url}/districts/${district.slug}`,
+  isPartOf: { "@type": "WebSite", name: SITE.name, url: SITE.url },
+  about: {
+    "@type": "AdministrativeArea",
+    name: `Electoral district of ${district.name}, Victoria`,
+  },
+};
+---
+
+<Base
+  title={`${district.name} — candidates`}
+  description={`Candidates recorded for the district of ${district.name} at the 2026 Victorian state election. Sitting member: ${district.incumbent}. Every record individually sourced.`}
+  schema={schema}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/districts">Districts</a> <span aria-hidden="true">/</span>
+      <span aria-current="page">{district.name}</span>
+    </nav>
+
+    <p class="eyebrow">Legislative Assembly district</p>
+    <h1>{district.name}</h1>
+
+    <dl class="facts">
+      <div>
+        <dt>Sitting member</dt>
+        <dd>
+          <span class="swatch" style={`--party-colour:${partyColour(district.incumbent_party)}`} aria-hidden="true"></span>
+          {district.incumbent}
+          <span class="muted">({partyName(district.incumbent_party)})</span>
+        </dd>
+      </div>
+      <div>
+        <dt>Council region</dt>
+        <dd>{region?.name ?? "—"}</dd>
+      </div>
+      <div>
+        <dt>Candidates recorded</dt>
+        <dd>{live.length}</dd>
+      </div>
+    </dl>
+
+    {
+      district.retirements.length > 0 && (
+        <div class="notice" role="note">
+          {district.retirements.map((r) => (
+            <p style="margin:0">
+              <strong>{r.name} is not recontesting.</strong> Announced{" "}
+              {formatDate(r.announced)} — <SourceLink source={r.source} />
+            </p>
+          ))}
+        </div>
+      )
+    }
+
+    <h2 class="sh">Recorded candidates</h2>
+
+    {
+      live.length === 0 ? (
+        <p class="empty card">
+          No individually sourced candidate has been recorded for {district.name} yet. This
+          means we have not yet verified one — <strong>not</strong> that no candidate exists.
+          Nominations close 13 November 2026.{" "}
+          <a href={SITE.issues}>Know of one? Send us the source.</a>
+        </p>
+      ) : (
+        <ul class="cand-list" role="list">
+          {live.map((c) => (
+            <li class="card cand">
+              <div class="cand-head">
+                <div>
+                  <h3>{c.name}</h3>
+                  <p class="cand-party">
+                    <span
+                      class="swatch"
+                      style={`--party-colour:${partyColour(c.party)}`}
+                      aria-hidden="true"
+                    />
+                    <a href={`/parties/${c.party}`}>{partyName(c.party)}</a>
+                  </p>
+                </div>
+                <span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
+              </div>
+
+              <ol class="history" role="list">
+                {c.history.map((h) => (
+                  <li>
+                    <span class="h-status">{STATUS_LABELS[h.status]}</span>
+                    <span class="muted h-date">{formatDate(h.date)}</span>
+                    <SourceLink source={h.source} />
+                    {h.note && <p class="h-note">{h.note}</p>}
+                  </li>
+                ))}
+              </ol>
+
+              {c.links?.length > 0 && (
+                <p class="cand-links muted">
+                  {c.links.map((l) => (
+                    <a href={l.url} rel="nofollow noopener">
+                      {l.kind ?? "link"}
+                    </a>
+                  ))}
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    {
+      ended.length > 0 && (
+        <>
+          <h2 class="sh">Withdrawn or disendorsed</h2>
+          <ul class="cand-list" role="list">
+            {ended.map((c) => (
+              <li class="card cand">
+                <div class="cand-head">
+                  <div>
+                    <h3>{c.name}</h3>
+                    <p class="cand-party">
+                      <span
+                        class="swatch"
+                        style={`--party-colour:${partyColour(c.party)}`}
+                        aria-hidden="true"
+                      />
+                      {partyName(c.party)}
+                    </p>
+                  </div>
+                  <span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
+                </div>
+                <ol class="history" role="list">
+                  {c.history.map((h) => (
+                    <li>
+                      <span class="h-status">{STATUS_LABELS[h.status]}</span>
+                      <span class="muted h-date">{formatDate(h.date)}</span>
+                      <SourceLink source={h.source} />
+                      {h.note && <p class="h-note">{h.note}</p>}
+                    </li>
+                  ))}
+                </ol>
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    }
+
+    <p class="foot-note muted">
+      Records for this district as data:{" "}
+      <a href="/data/vic2026/candidates.json">candidates.json</a> ·{" "}
+      <a href="/data/vic2026/candidates.csv">candidates.csv</a>. Spotted an error?{" "}
+      <a href={SITE.issues}>Submit a correction</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .crumb {
+    font-size: 0.88rem;
+    color: var(--ink-3);
+    margin-bottom: 1rem;
+  }
+  .crumb span[aria-hidden] {
+    margin-inline: 0.3rem;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 1.5rem 0 2rem;
+  }
+  .facts > div {
+    background: var(--surface);
+    padding: 0.9rem 1.1rem;
+  }
+  .facts dt {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--ink-3);
+    margin-bottom: 0.2rem;
+  }
+  .facts dd {
+    margin: 0;
+    font-weight: 560;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .sh {
+    margin-top: 2.5rem;
+  }
+  .empty {
+    color: var(--ink-2);
+    max-width: 46rem;
+  }
+  .cand-list {
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+  .cand-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .cand h3 {
+    margin: 0 0 0.2rem;
+    font-size: 1.1rem;
+  }
+  .cand-party {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+  }
+  .history {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0 0 0 1rem;
+    border-left: 2px solid var(--rule);
+    display: grid;
+    gap: 0.7rem;
+  }
+  .history li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.6rem;
+    font-size: 0.9rem;
+  }
+  .h-status {
+    font-weight: 620;
+  }
+  .h-date {
+    font-variant-numeric: tabular-nums;
+  }
+  .h-note {
+    flex-basis: 100%;
+    margin: 0.15rem 0 0;
+    font-size: 0.86rem;
+    color: var(--ink-2);
+  }
+  .cand-links {
+    margin: 0.9rem 0 0;
+    display: flex;
+    gap: 0.75rem;
+  }
+  .foot-note {
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>

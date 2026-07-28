@@ -1,0 +1,29 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Page not found" noindex={true}>
+  <div class="wrap wrap-narrow section">
+    <p class="eyebrow">404</p>
+    <h1>That page isn't here</h1>
+    <p class="lede">
+      The link may be out of date, or the record may not exist yet. These are the useful
+      starting points.
+    </p>
+    <ul class="links">
+      <li><a href="/">Victorian election overview</a></li>
+      <li><a href="/districts">All 88 districts</a></li>
+      <li><a href="/parties">All parties</a></li>
+      <li><a href="/data">Open data</a></li>
+      <li><a href="/methodology">Methodology</a></li>
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .links {
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+</style>

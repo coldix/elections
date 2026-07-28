@@ -1,0 +1,171 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE } from "../lib/site.mjs";
+import { COVERAGE_CAVEAT } from "../../../scripts/lib/data.mjs";
+
+const statuses = [
+  ["Announced", "The person or media report an intention to stand. Party endorsement is not confirmed.", "A public statement by the person or party, or a named news report."],
+  ["Endorsed", "The party has preselected or endorsed the person for that seat.", "A party announcement, or a news report citing the party."],
+  ["Formally nominated", "A nomination has been accepted by the electoral commission.", "The commission's nominations list."],
+  ["Withdrawn", "The candidacy ended, before or after nomination.", "A statement or news report. Any published reason is recorded neutrally."],
+  ["Disendorsed", "The party revoked its endorsement.", "A party statement or news report. Wording stays with the sourced fact."],
+  ["Elected", "Declared elected.", "The commission's declaration."],
+  ["Defeated", "Contested and not elected.", "The commission's results."],
+];
+---
+
+<Base
+  title="Methodology"
+  description="How the Australian Election Tracker defines candidate statuses, what evidence each requires, how coverage is counted, and how corrections are handled."
+>
+  <div class="wrap wrap-narrow section">
+    <p class="eyebrow">How this works</p>
+    <h1>Methodology</h1>
+    <p class="lede">
+      One set of published rules, applied identically to every party and every independent.
+      These rules are enforced mechanically: a record without a source fails our automated
+      checks and cannot be published.
+    </p>
+
+    <h2>Candidate statuses</h2>
+    <p>
+      A candidacy holds exactly one current status. Every previous status stays in its
+      history, with the date and the source that supported it. Rumour and speculation are
+      not statuses and are not recorded at all.
+    </p>
+
+    <div class="table-scroll">
+      <table class="data">
+        <thead>
+          <tr>
+            <th scope="col">Status</th>
+            <th scope="col">Meaning</th>
+            <th scope="col">Minimum evidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            statuses.map(([name, meaning, evidence]) => (
+              <tr>
+                <th scope="row">{name}</th>
+                <td>{meaning}</td>
+                <td class="muted">{evidence}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="sourcing">Sourcing rules</h2>
+    <ul>
+      <li>
+        Every status entry requires at least one source, recorded as a structured record:
+        URL, publisher, title, date published and date accessed.
+      </li>
+      <li>
+        Primary sources (electoral commission, party, candidate) are preferred over
+        secondary ones. Secondary sources are named by outlet — never "reports say".
+      </li>
+      <li>
+        Paywalled sources are acceptable if they are publicly citable. An archive link is
+        added where possible.
+      </li>
+      <li>
+        Social media counts only from the verified or official account of the party or
+        candidate.
+      </li>
+    </ul>
+
+    <h2 id="coverage">How coverage is counted</h2>
+    <p>
+      A party "covers" a district when we hold at least one individually sourced record of
+      a live candidacy — announced, endorsed, formally nominated or elected — for that
+      party in that district.
+    </p>
+    <div class="notice" role="note">
+      <strong>The limitation you should know about.</strong> {COVERAGE_CAVEAT}
+    </div>
+    <p>
+      This matters most for sitting members. It is reasonable to assume most incumbents
+      will recontest, but an assumption is not a source, so we do not record one. A party
+      that holds many seats will therefore appear to have lower coverage than it really
+      does until each of those seats is individually verified. We would rather publish a
+      number that understates reality than one we cannot evidence.
+    </p>
+    <p>
+      The inverse also holds: a district with no recorded candidate means we have not
+      verified one, not that nobody is standing. Nominations for the 2026 Victorian state
+      election do not close until 13 November 2026, and the Victorian Electoral Commission
+      is the authoritative source for the final ballot.
+    </p>
+
+    <h2 id="corrections">Corrections</h2>
+    <p>
+      Errors are corrected by a new commit. History is never rewritten — the original
+      record, the correction, and the reason all remain visible in the public Git history.
+    </p>
+    <p>
+      Anyone may request a correction. Requests concerning living people are prioritised.
+      Include a public source if you have one.
+    </p>
+    <p><a class="btn" href={SITE.issues}>Submit a correction</a></p>
+
+    <h2 id="neutrality">Neutrality</h2>
+    <ul>
+      <li>
+        Every registered party and independent receives identical data structure, rules and
+        display treatment.
+      </li>
+      <li>
+        Listings are ordered alphabetically or by seat — never by party preference, size or
+        coverage.
+      </li>
+      <li>
+        Party colours appear only inside party-specific data visualisation. The platform's
+        own identity is deliberately not any party's colour.
+      </li>
+      <li>
+        No payment, sponsorship or advertising can affect coverage, ordering or
+        verification. Any sponsorship would be disclosed on this site.
+      </li>
+    </ul>
+
+    <h2 id="privacy">What is never published</h2>
+    <ul>
+      <li>Unverified submissions.</li>
+      <li>The identity or contact details of anyone who submits information.</li>
+      <li>
+        Personal information about candidates beyond their public candidacy — no home
+        addresses, family details or employers, unless the candidate has published them
+        themselves in that context.
+      </li>
+    </ul>
+
+    <p class="foot muted">
+      This page mirrors <code>docs/METHODOLOGY.md</code> in the
+      <a href={SITE.repo}> public repository</a>, which is the authoritative version and
+      carries its own change history.
+    </p>
+  </div>
+</Base>
+
+<style>
+  h2 {
+    margin-top: 2.5rem;
+  }
+  ul {
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--ink-2);
+  }
+  .notice {
+    margin: 1.25rem 0;
+  }
+  .foot {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>

@@ -68,3 +68,53 @@ title + date published + date accessed. Archive links (Wayback) encouraged.
 
 **Why.** "Every material claim should have a source and date" is the founding
 principle; enforcement must be mechanical, not aspirational.
+
+## ADR-7: Astro, with the exports published inside the site
+
+**Decision.** The site is Astro (`site/`), fully static, no adapter. Generated
+JSON/CSV go to `site/public/data/`, so they are served from the same deploy at
+`/data/<election>/...`. Astro's own output is `site/dist/`, which is the
+Cloudflare Pages output directory.
+
+**Why.** The previous export target (`dist/`) collided with the site build.
+Putting exports inside `public/` means the human-readable and machine-readable
+halves of the project ship together and cannot drift apart — a data change
+rebuilds both or neither. Astro was already the ADR-2 preference: zero client
+JS by default, which suits a document-shaped site.
+
+**Consequences.** `site/public/data/` is generated and gitignored; never edit it
+by hand. `npm run build` = validate → export → build, in that order, failing
+fast, so an unsourced record cannot reach production.
+
+## ADR-8: One shared data module for site and exports
+
+**Decision.** `scripts/lib/data.mjs` loads and derives everything (coverage,
+summary counts, the coverage caveat). Both `scripts/export.mjs` and the Astro
+pages import it.
+
+**Why.** The published figures must be identical in the JSON and on the page. A
+second implementation of "how many seats does a party cover" is a guarantee of
+eventual disagreement between the two.
+
+**Consequences.** The module resolves `data/` by walking up the tree, because
+Astro bundles it and `import.meta.url` is then wrong. Derived values are never
+written back into the YAML.
+
+## ADR-9: The coverage matrix uses no JavaScript
+
+**Decision.** The flagship component — the 88-district coverage matrix — is
+radio inputs plus CSS sibling selectors. Party switching, keyboard navigation
+and focus handling all come from native form controls. The only script on the
+site is a few lines that refresh the countdown, and the countdown is already
+correct without it.
+
+**Why.** The requirement was a component that works on mobile, stays
+lightweight, degrades without JS and respects reduced motion. A CSS-only
+switcher satisfies all four by construction rather than by testing. Every cell
+is also a real link with an accessible name stating district, party and status,
+so meaning never depends on colour (WCAG 1.4.1) and the content is indexable and
+citable by machines — which is the point of the project.
+
+**Consequences.** Only parties with at least one Assembly candidate get a
+rendered panel; the full table below the matrix covers every party. If the panel
+count grows large, reconsider — but do not reach for a framework first.

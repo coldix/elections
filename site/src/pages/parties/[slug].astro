@@ -1,0 +1,319 @@
+---
+import Base from "../../layouts/Base.astro";
+import SourceLink from "../../components/SourceLink.astro";
+import {
+  loadElection,
+  coverageFor,
+  LIVE_STATUSES,
+  STATUS_LABELS,
+  COVERAGE_CAVEAT,
+} from "../../../../scripts/lib/data.mjs";
+import { SITE, partyColour, formatDate } from "../../lib/site.mjs";
+
+export async function getStaticPaths() {
+  const data = loadElection("vic2026");
+  return data.parties.map((p) => ({ params: { slug: p.slug }, props: { slug: p.slug } }));
+}
+
+const data = loadElection("vic2026");
+const party = data.partyBySlug.get(Astro.props.slug);
+const cov = coverageFor(data).find((c) => c.party === party.slug);
+const colour = partyColour(party.slug);
+
+const assembly = data.candidates
+  .filter((c) => c.party === party.slug && c.chamber === "assembly")
+  .sort((a, b) => a.contest.localeCompare(b.contest));
+const council = data.candidates
+  .filter((c) => c.party === party.slug && c.chamber === "council")
+  .sort((a, b) => a.contest.localeCompare(b.contest));
+
+const retirements = data.retirements.filter((r) => r.party === party.slug);
+
+const districtName = (slug) => data.districts.find((d) => d.slug === slug)?.name ?? slug;
+const regionName = (slug) => data.regions.find((r) => r.slug === slug)?.name ?? slug;
+
+const uncovered = data.districts.filter((d) => !cov.covered_districts.includes(d.slug));
+---
+
+<Base
+  title={party.short_name}
+  description={`${party.name}: ${cov.assembly_seats_covered} of ${cov.assembly_seats_total} Legislative Assembly districts have an individually sourced candidate for the 2026 Victorian state election.`}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/parties">Parties</a> <span aria-hidden="true">/</span>
+      <span aria-current="page">{party.short_name}</span>
+    </nav>
+
+    <p class="eyebrow">Victoria 2026 · Party</p>
+    <h1 style={`--party-colour:${colour}`}>
+      <span class="h-swatch" aria-hidden="true"></span>{party.short_name}
+    </h1>
+    <p class="lede">{party.name}</p>
+
+    <div class="cov card" style={`--party-colour:${colour}`}>
+      <div class="cov-num">
+        <span class="cov-value">{cov.assembly_seats_covered}</span>
+        <span class="cov-of">of {cov.assembly_seats_total} districts</span>
+      </div>
+      <div class="cov-body">
+        <span class="p-track" aria-hidden="true">
+          <span class="p-fill" style={`width:${cov.pct}%`}></span>
+        </span>
+        <ul class="cov-breakdown" role="list">
+          <li><strong>{cov.by_status.announced}</strong> announced</li>
+          <li><strong>{cov.by_status.endorsed}</strong> endorsed</li>
+          <li><strong>{cov.by_status.nominated}</strong> formally nominated</li>
+          <li><strong>{cov.ended_count}</strong> withdrawn / disendorsed</li>
+        </ul>
+      </div>
+    </div>
+
+    {
+      cov.commitments.length > 0 && (
+        <div class="notice" role="note">
+          <strong>The party's own claim.</strong>{" "}
+          {cov.commitments.map((c) => (
+            <>
+              {c.claim} — <SourceLink source={c.source} />.{" "}
+            </>
+          ))}
+          Recorded as a claim by the party. It is not a verified candidate count, and
+          nothing on this page assumes it will be met.
+        </div>
+      )
+    }
+
+    <div class="notice muted-notice" role="note">{COVERAGE_CAVEAT}</div>
+
+    <h2 class="sh">Legislative Assembly candidates</h2>
+    {
+      assembly.length === 0 ? (
+        <p class="card empty">No individually sourced candidate recorded yet.</p>
+      ) : (
+        <div class="table-scroll">
+          <table class="data">
+            <caption class="visually-hidden">
+              {party.short_name} Legislative Assembly candidates
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">District</th>
+                <th scope="col">Candidate</th>
+                <th scope="col">Status</th>
+                <th scope="col">Since</th>
+                <th scope="col">Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              {assembly.map((c) => (
+                <tr>
+                  <th scope="row">
+                    <a href={`/districts/${c.contest}`}>{districtName(c.contest)}</a>
+                  </th>
+                  <td>{c.name}</td>
+                  <td>
+                    <span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
+                  </td>
+                  <td class="muted">{formatDate(c.latest_date)}</td>
+                  <td><SourceLink source={c.latest_source} showAccessed={false} /></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+    }
+
+    {
+      council.length > 0 && (
+        <>
+          <h2 class="sh">Legislative Council candidates</h2>
+          <div class="table-scroll">
+            <table class="data">
+              <caption class="visually-hidden">
+                {party.short_name} Legislative Council candidates
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Region</th>
+                  <th scope="col">Candidate</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Since</th>
+                  <th scope="col">Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                {council.map((c) => (
+                  <tr>
+                    <th scope="row">{regionName(c.contest)}</th>
+                    <td>{c.name}</td>
+                    <td>
+                      <span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
+                    </td>
+                    <td class="muted">{formatDate(c.latest_date)}</td>
+                    <td><SourceLink source={c.latest_source} showAccessed={false} /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )
+    }
+
+    {
+      retirements.length > 0 && (
+        <>
+          <h2 class="sh">Members not recontesting</h2>
+          <ul class="retire" role="list">
+            {retirements.map((r) => (
+              <li>
+                <strong>{r.name}</strong>{" "}
+                <span class="muted">
+                  {r.role === "MLC" ? regionName(r.seat) : districtName(r.seat)} ·{" "}
+                  {formatDate(r.announced)}
+                </span>{" "}
+                <SourceLink source={r.source} showAccessed={false} />
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    }
+
+    {
+      uncovered.length > 0 && (
+        <>
+          <h2 class="sh">Districts with no recorded candidate</h2>
+          <p class="muted uncov-note">
+            {uncovered.length} of {cov.assembly_seats_total} districts have no individually
+            sourced {party.short_name} candidate in our dataset. That is a statement about our
+            records, not about the party's intentions.{" "}
+            <a href={SITE.issues}>Send us a source</a> if you know of one.
+          </p>
+          <p class="uncov">
+            {uncovered.map((d, i) => (
+              <>
+                <a href={`/districts/${d.slug}`}>{d.name}</a>
+                {i < uncovered.length - 1 ? ", " : ""}
+              </>
+            ))}
+          </p>
+        </>
+      )
+    }
+  </div>
+</Base>
+
+<style>
+  .crumb {
+    font-size: 0.88rem;
+    color: var(--ink-3);
+    margin-bottom: 1rem;
+  }
+  .crumb span[aria-hidden] {
+    margin-inline: 0.3rem;
+  }
+  h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .h-swatch {
+    width: 0.55em;
+    height: 0.55em;
+    border-radius: 3px;
+    background: var(--party-colour);
+    flex: none;
+  }
+  .cov {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem 2rem;
+    margin: 1.75rem 0 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .cov-num {
+    line-height: 1;
+  }
+  .cov-value {
+    display: block;
+    font-size: clamp(2.4rem, 1.8rem + 2.6vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+    color: var(--party-colour);
+  }
+  .cov-of {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--ink-3);
+  }
+  .cov-body {
+    flex: 1 1 18rem;
+  }
+  .p-track {
+    display: block;
+    height: 0.55rem;
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .p-fill {
+    display: block;
+    height: 100%;
+    background: var(--party-colour);
+  }
+  .cov-breakdown {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    margin: 0.9rem 0 0;
+    padding: 0;
+    font-size: 0.9rem;
+    color: var(--ink-2);
+  }
+  .cov-breakdown strong {
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .notice {
+    margin-bottom: 1.25rem;
+    max-width: 58rem;
+  }
+  .muted-notice {
+    border-left-color: var(--rule-strong);
+    font-size: 0.88rem;
+  }
+  .sh {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .empty {
+    color: var(--ink-2);
+  }
+  .retire {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+  }
+  .uncov-note {
+    max-width: 52rem;
+  }
+  .uncov {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: var(--ink-2);
+    max-width: 62rem;
+  }
+</style>

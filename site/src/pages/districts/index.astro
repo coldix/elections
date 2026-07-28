@@ -1,0 +1,117 @@
+---
+import Base from "../../layouts/Base.astro";
+import { loadElection, LIVE_STATUSES } from "../../../../scripts/lib/data.mjs";
+import { partyColour } from "../../lib/site.mjs";
+
+const data = loadElection("vic2026");
+const districts = [...data.districts].sort((a, b) => a.name.localeCompare(b.name));
+const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<Base
+  title="Legislative Assembly districts"
+  description="All 88 Victorian Legislative Assembly districts for the 2026 state election, with sitting members and individually sourced candidate records."
+>
+  <div class="wrap section">
+    <p class="eyebrow">Victoria 2026</p>
+    <h1>Districts &amp; regions</h1>
+    <p class="lede">
+      The Legislative Assembly has {districts.length} single-member districts. The
+      Legislative Council has {regions.length} regions electing five members each. Boundaries
+      are those set at the 2021 redivision.
+    </p>
+
+    <h2 class="lh">Legislative Assembly</h2>
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">Legislative Assembly districts</caption>
+        <thead>
+          <tr>
+            <th scope="col">District</th>
+            <th scope="col">Council region</th>
+            <th scope="col">Sitting member</th>
+            <th scope="col" class="num">Candidates recorded</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            districts.map((d) => {
+              const live = d.candidates.filter((c) => LIVE_STATUSES.includes(c.status));
+              const region = data.regions.find((r) => r.slug === d.region);
+              const retiring = d.retirements.length > 0;
+              return (
+                <tr>
+                  <th scope="row">
+                    <a href={`/districts/${d.slug}`}>{d.name}</a>
+                  </th>
+                  <td class="muted">{region?.name ?? "—"}</td>
+                  <td>
+                    <span class="member">
+                      <span
+                        class="swatch"
+                        style={`--party-colour:${partyColour(d.incumbent_party)}`}
+                        aria-hidden="true"
+                      />
+                      {d.incumbent}
+                    </span>
+                    {retiring && <span class="pill pill-withdrawn retiring">Not recontesting</span>}
+                  </td>
+                  <td class="num">{live.length || "—"}</td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="lh">Legislative Council regions</h2>
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">Legislative Council regions</caption>
+        <thead>
+          <tr>
+            <th scope="col">Region</th>
+            <th scope="col" class="num">Members elected</th>
+            <th scope="col">Districts contained</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            regions.map((r) => (
+              <tr>
+                <th scope="row">{r.name}</th>
+                <td class="num">{r.seats}</td>
+                <td class="muted district-list">
+                  {data.districts
+                    .filter((d) => d.region === r.slug)
+                    .map((d) => d.name)
+                    .join(", ")}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .lh {
+    margin-top: 2.75rem;
+    margin-bottom: 0.9rem;
+  }
+  .member {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .retiring {
+    margin-left: 0.5rem;
+  }
+  .district-list {
+    max-width: 34rem;
+    font-size: 0.85rem;
+  }
+</style>

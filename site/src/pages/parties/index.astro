@@ -1,0 +1,116 @@
+---
+import Base from "../../layouts/Base.astro";
+import { loadElection, coverageFor, COVERAGE_CAVEAT } from "../../../../scripts/lib/data.mjs";
+import { partyColour } from "../../lib/site.mjs";
+
+const data = loadElection("vic2026");
+const coverage = coverageFor(data);
+---
+
+<Base
+  title="Parties"
+  description="Candidate coverage for every party registered with the Victorian Electoral Commission, plus independents, at the 2026 Victorian state election."
+>
+  <div class="wrap section">
+    <p class="eyebrow">Victoria 2026</p>
+    <h1>Parties</h1>
+    <p class="lede">
+      Every party on the Victorian Electoral Commission's register, listed alphabetically
+      with identical treatment. Independents are grouped for convenience; they are not a
+      party.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>Coverage is a count of our records, not of the ballot paper.</strong>{" "}
+      {COVERAGE_CAVEAT}
+    </div>
+
+    <ul class="party-grid" role="list">
+      {
+        coverage.map((c) => (
+          <li>
+            <a class="card p-card" href={`/parties/${c.party}`} style={`--party-colour:${partyColour(c.party)}`}>
+              <span class="p-bar" aria-hidden="true" />
+              <h2>{c.short_name}</h2>
+              <p class="p-full muted">{c.name}</p>
+              <p class="p-count">
+                <strong>{c.assembly_seats_covered}</strong>
+                <span class="muted"> / {c.assembly_seats_total} districts</span>
+              </p>
+              <span class="p-track" aria-hidden="true">
+                <span class="p-fill" style={`width:${c.pct}%`} />
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .notice {
+    margin: 1.5rem 0 2rem;
+    max-width: 58rem;
+  }
+  .party-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1rem;
+  }
+  .p-card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    transition: border-color 0.15s ease;
+  }
+  .p-card:hover {
+    border-color: var(--party-colour);
+  }
+  .p-bar {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: var(--party-colour);
+  }
+  .p-card h2 {
+    font-size: 1.05rem;
+    margin: 0 0 0.15rem;
+  }
+  .p-full {
+    font-size: 0.8rem;
+    margin: 0 0 0.9rem;
+  }
+  .p-count {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+  }
+  .p-count strong {
+    font-size: 1.35rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .p-track {
+    display: block;
+    height: 0.4rem;
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .p-fill {
+    display: block;
+    height: 100%;
+    background: var(--party-colour);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .p-card {
+      transition: none;
+    }
+  }
+</style>

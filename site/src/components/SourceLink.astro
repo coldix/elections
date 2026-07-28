@@ -1,0 +1,43 @@
+---
+/** A citation. Always shows publisher + dates so the evidence is legible
+ *  without following the link. rel="nofollow" because we cite sources rather
+ *  than endorse them. */
+import { formatDate } from "../lib/site.mjs";
+const { source, showAccessed = true } = Astro.props;
+---
+
+{
+  source && (
+    <span class="src">
+      <a href={source.url} rel="nofollow noopener" title={source.title}>
+        {source.publisher}
+      </a>
+      {source.published && (
+        <>
+          {" "}
+          <span class="muted">· published {formatDate(source.published)}</span>
+        </>
+      )}
+      {showAccessed && source.accessed && (
+        <>
+          {" "}
+          <span class="muted">· verified {formatDate(source.accessed)}</span>
+        </>
+      )}
+      {source.archive_url && (
+        <>
+          {" "}
+          <a href={source.archive_url} rel="nofollow noopener" class="muted">
+            archived
+          </a>
+        </>
+      )}
+    </span>
+  )
+}
+
+<style>
+  .src {
+    font-size: 0.85rem;
+  }
+</style>

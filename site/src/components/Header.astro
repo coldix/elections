@@ -1,0 +1,132 @@
+---
+import { SITE } from "../lib/site.mjs";
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const nav = [
+  { href: "/districts", label: "Districts" },
+  { href: "/parties", label: "Parties" },
+  { href: "/data", label: "Open data" },
+  { href: "/methodology", label: "Methodology" },
+  { href: "/about", label: "About" },
+];
+const isCurrent = (href) => path === href || path.startsWith(href + "/");
+---
+
+<header class="site-header no-print">
+  <div class="wrap bar">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round">
+          <path d="M3 20h18" />
+          <path d="M6 20V11" />
+          <path d="M12 20V4" />
+          <path d="M18 20v-6" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>Australian Election Tracker</strong>
+        <span class="brand-sub">by {SITE.publisher}</span>
+      </span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul>
+        {
+          nav.map((item) => (
+            <li>
+              <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--rule);
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    padding-block: 0.7rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 7px;
+    background: var(--accent);
+    color: #fff;
+    flex: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    .brand-mark {
+      color: #16161d;
+    }
+  }
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+  .brand-text strong {
+    font-size: 0.98rem;
+    letter-spacing: -0.015em;
+    font-weight: 660;
+  }
+  .brand-sub {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    display: block;
+    padding: 0.25rem 0;
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 520;
+    border-bottom: 2px solid transparent;
+  }
+  nav a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--rule-strong);
+  }
+  nav a[aria-current="page"] {
+    color: var(--ink);
+    border-bottom-color: var(--accent);
+  }
+  @media (max-width: 30rem) {
+    .brand-text strong {
+      font-size: 0.9rem;
+    }
+  }
+</style>

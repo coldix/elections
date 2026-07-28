@@ -1,0 +1,74 @@
+---
+import { SITE } from "../lib/site.mjs";
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <p class="eyebrow">Australian Election Tracker</p>
+        <p class="muted">
+          {SITE.tagline}. Published by {SITE.publisher}. Not affiliated with the Victorian
+          Electoral Commission, any political party or any candidate.
+        </p>
+      </div>
+
+      <div>
+        <p class="eyebrow">Data &amp; method</p>
+        <ul>
+          <li><a href="/methodology">Methodology &amp; source standards</a></li>
+          <li><a href="/data">Open data (JSON &amp; CSV)</a></li>
+          <li><a href={SITE.repo}>Source repository</a></li>
+          <li><a href={SITE.issues}>Submit a correction</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="eyebrow">About</p>
+        <ul>
+          <li><a href="/about">Independence statement</a></li>
+          <li><a href="/about#authorisation">Legal authorisation</a></li>
+          <li><a href="/about#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="licence muted">
+      Code MIT-licensed. Election data published under
+      <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a> —
+      free to reuse with attribution to elections.oze.net.au. © {year} {SITE.publisher}.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--rule);
+    background: var(--surface-2);
+    padding-block: clamp(2rem, 5vw, 3.25rem) 2rem;
+    margin-top: 4rem;
+  }
+  .cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.75rem 2.5rem;
+  }
+  .cols p.muted {
+    max-width: 32rem;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.92rem;
+  }
+  .licence {
+    margin: 2.25rem 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.83rem;
+  }
+</style>

@@ -1,69 +1,102 @@
 #!/usr/bin/env node
-// Export public data to dist/<election>/ as JSON and CSV.
-// Also emits coverage.json: per-party count of assembly seats with a live candidacy.
-import { readFileSync, readdirSync, statSync, mkdirSync, writeFileSync } from "node:fs";
+// Export public data as JSON and CSV.
+//
+// Output goes to site/public/data/<election>/ so the Astro build serves the
+// exports directly at https://elections.oze.net.au/data/<election>/... — the
+// machine-readable half of the project is published by the same deploy as the
+// human-readable half, and can never drift out of sync with it.
+//
+// site/public/data/ is generated and gitignored. The YAML in data/ is the
+// source of truth; these files are build artefacts. Astro's own output is
+// site/dist/, so the two no longer collide.
+import { mkdirSync, writeFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { parse } from "yaml";
+import {
+  listElections,
+  loadElection,
+  coverageFor,
+  summaryFor,
+  COVERAGE_CAVEAT,
+} from "./lib/data.mjs";
 
-const DATA_DIR = new URL("../data/", import.meta.url).pathname;
-const DIST_DIR = new URL("../dist/", import.meta.url).pathname;
-const LIVE = new Set(["announced", "endorsed", "nominated", "elected"]);
+const OUT_ROOT = new URL("../site/public/data/", import.meta.url).pathname;
 
 const csv = (rows, cols) =>
-  [cols.join(","), ...rows.map((r) => cols.map((c) => `"${String(r[c] ?? "").replaceAll('"', '""')}"`).join(","))].join("\n") + "\n";
+  [
+    cols.join(","),
+    ...rows.map((r) => cols.map((c) => `"${String(r[c] ?? "").replaceAll('"', '""')}"`).join(",")),
+  ].join("\n") + "\n";
 
-for (const election of readdirSync(DATA_DIR)) {
-  const dir = join(DATA_DIR, election);
-  if (!statSync(dir).isDirectory()) continue;
-  const out = join(DIST_DIR, election);
+rmSync(OUT_ROOT, { recursive: true, force: true });
+
+const index = { generated: new Date().toISOString(), elections: [] };
+
+for (const id of listElections()) {
+  const data = loadElection(id);
+  const out = join(OUT_ROOT, id);
   mkdirSync(out, { recursive: true });
 
-  const load = (name) => parse(readFileSync(join(dir, name), "utf8"));
-  const districts = load("districts.yaml").districts;
-  const regions = load("regions.yaml").regions;
-  const parties = load("parties.yaml").parties;
-  const meta = load("election.yaml").election;
+  const write = (name, obj) => writeFileSync(join(out, name), JSON.stringify(obj, null, 2));
 
-  const candidates = readdirSync(join(dir, "candidates"))
-    .filter((f) => !f.startsWith("_") && f.endsWith(".yaml"))
-    .map((f) => parse(readFileSync(join(dir, "candidates", f), "utf8")).candidate);
+  // Strip the derived convenience fields back out of the published records so
+  // the export mirrors the repository files rather than our internal shape.
+  const candidates = data.candidates.map(({ file, latest_source, latest_date, verified, ...c }) => c);
+  const districts = data.districts.map(({ candidates, retirements, ...d }) => d);
+  const regions = data.regions.map(({ candidates, retirements, ...r }) => r);
 
-  let retirements = [];
-  try {
-    retirements = load("retirements.yaml").retirements ?? [];
-  } catch (e) {
-    if (e.code !== "ENOENT") throw e;
-  }
-
-  writeFileSync(join(out, "election.json"), JSON.stringify(meta, null, 2));
-  writeFileSync(join(out, "districts.json"), JSON.stringify(districts, null, 2));
-  writeFileSync(join(out, "regions.json"), JSON.stringify(regions, null, 2));
-  writeFileSync(join(out, "parties.json"), JSON.stringify(parties, null, 2));
-  writeFileSync(join(out, "candidates.json"), JSON.stringify(candidates, null, 2));
-  writeFileSync(join(out, "retirements.json"), JSON.stringify(retirements, null, 2));
-  writeFileSync(join(out, "retirements.csv"), csv(
-    retirements.map((r) => ({ ...r, source_url: r.source?.url })),
-    ["name", "party", "role", "seat", "announced", "source_url"]
-  ));
-
-  writeFileSync(join(out, "districts.csv"), csv(districts, ["slug", "name", "chamber", "region", "incumbent", "incumbent_party"]));
-  writeFileSync(join(out, "candidates.csv"), csv(
-    candidates.map((c) => ({ ...c, first_source: c.history[0]?.source?.url, first_date: c.history[0]?.date })),
-    ["name", "party", "contest", "chamber", "status", "first_date", "first_source"]
-  ));
-
-  // Party coverage: assembly seats with a live (not withdrawn/disendorsed/defeated) candidacy.
-  const coverage = parties.map((p) => {
-    const seats = new Set(
-      candidates.filter((c) => c.party === p.slug && c.chamber === "assembly" && LIVE.has(c.status)).map((c) => c.contest)
-    );
-    return { party: p.slug, short_name: p.short_name, family: p.family, assembly_seats_covered: seats.size, assembly_seats_total: districts.length };
-  });
-  writeFileSync(join(out, "coverage.json"), JSON.stringify({
+  write("election.json", data.election);
+  write("districts.json", districts);
+  write("regions.json", regions);
+  write("parties.json", data.parties);
+  write("candidates.json", candidates);
+  write("retirements.json", data.retirements);
+  write("summary.json", { generated: new Date().toISOString(), ...summaryFor(data) });
+  write("coverage.json", {
     generated: new Date().toISOString(),
-    caveat: "Counts only candidacies with an individually-sourced record in candidates/. Sitting MPs presumed to be recontesting but lacking a specific dated announcement are NOT counted, so parties with many incumbents (e.g. the governing party) will undercount relative to their true ballot presence until each seat is individually verified. See docs/METHODOLOGY.md.",
-    coverage,
-  }, null, 2));
+    caveat: COVERAGE_CAVEAT,
+    coverage: coverageFor(data),
+  });
 
-  console.log(`${election}: exported ${candidates.length} candidates to dist/${election}/`);
+  writeFileSync(
+    join(out, "districts.csv"),
+    csv(districts, ["slug", "name", "chamber", "region", "incumbent", "incumbent_party"])
+  );
+  writeFileSync(
+    join(out, "candidates.csv"),
+    csv(
+      data.candidates.map((c) => ({
+        ...c,
+        source_url: c.latest_source?.url,
+        source_publisher: c.latest_source?.publisher,
+        status_date: c.latest_date,
+        verified: c.verified,
+      })),
+      ["name", "party", "contest", "chamber", "status", "status_date", "verified", "source_publisher", "source_url"]
+    )
+  );
+  writeFileSync(
+    join(out, "retirements.csv"),
+    csv(
+      data.retirements.map((r) => ({ ...r, source_url: r.source?.url })),
+      ["name", "party", "role", "seat", "announced", "source_url"]
+    )
+  );
+
+  const summary = summaryFor(data);
+  index.elections.push({
+    id,
+    name: data.election.name,
+    election_day: data.election.election_day,
+    candidates: summary.candidates,
+    files: [
+      "election.json", "districts.json", "regions.json", "parties.json",
+      "candidates.json", "retirements.json", "summary.json", "coverage.json",
+      "districts.csv", "candidates.csv", "retirements.csv",
+    ],
+  });
+
+  console.log(`${id}: exported ${summary.candidates} candidates -> site/public/data/${id}/`);
 }
+
+writeFileSync(join(OUT_ROOT, "index.json"), JSON.stringify(index, null, 2));
+console.log(`wrote site/public/data/index.json (${index.elections.length} election(s))`);

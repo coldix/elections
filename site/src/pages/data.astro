@@ -1,0 +1,177 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, formatDate } from "../lib/site.mjs";
+import { loadElection, summaryFor } from "../../../scripts/lib/data.mjs";
+
+const data = loadElection("vic2026");
+const summary = summaryFor(data);
+const base = "/data/vic2026";
+
+const files = [
+  ["candidates.json", "candidates.csv", "Every candidacy record, with its full status history and sources.", summary.candidates],
+  ["districts.json", "districts.csv", "All 88 Legislative Assembly districts, their Council region and sitting member.", summary.districts],
+  ["retirements.json", "retirements.csv", "Sitting members who have confirmed they will not recontest.", summary.retirements],
+  ["parties.json", null, "Parties on the VEC register, with any public commitment they have made.", summary.registered_parties],
+  ["regions.json", null, "The 8 Legislative Council regions.", summary.regions],
+  ["election.json", null, "Key dates and jurisdiction metadata, each with a source.", null],
+  ["coverage.json", null, "Per-party district coverage, with the counting caveat attached.", null],
+  ["summary.json", null, "Headline counts, regenerated on every build.", null],
+];
+---
+
+<Base
+  title="Open data"
+  description="Download the Australian Election Tracker dataset as JSON or CSV. Free to reuse under CC BY 4.0, regenerated on every build from the public repository."
+>
+  <div class="wrap section">
+    <p class="eyebrow">Machine-readable</p>
+    <h1>Open data</h1>
+    <p class="lede">
+      Everything on this site is generated from a public Git repository, and published here
+      as JSON and CSV. No key, no login, no rate limit. Free to reuse with attribution.
+    </p>
+
+    <div class="quick">
+      <a class="btn" href={`${base}/candidates.json`}>candidates.json</a>
+      <a class="btn btn-ghost" href={`${base}/candidates.csv`}>candidates.csv</a>
+      <a class="btn btn-ghost" href="/data/index.json">index.json</a>
+    </div>
+
+    <p class="muted">
+      Last generated from source data verified {formatDate(summary.latest_verified)}.
+      Files rebuild automatically whenever the dataset changes.
+    </p>
+
+    <h2>Victorian state election 2026</h2>
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">Available data files</caption>
+        <thead>
+          <tr>
+            <th scope="col">File</th>
+            <th scope="col">Contents</th>
+            <th scope="col" class="num">Records</th>
+            <th scope="col">Formats</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            files.map(([json, csv, desc, count]) => (
+              <tr>
+                <th scope="row"><code>{json.replace(".json", "")}</code></th>
+                <td>{desc}</td>
+                <td class="num">{count ?? "—"}</td>
+                <td class="fmt">
+                  <a href={`${base}/${json}`}>JSON</a>
+                  {csv && <a href={`${base}/${csv}`}>CSV</a>}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Using the data</h2>
+    <div class="cols">
+      <div class="card">
+        <h3>Licence</h3>
+        <p>
+          Data is licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.
+          You may reuse and adapt it, including commercially, provided you attribute it.
+        </p>
+        <p class="muted">Site and tooling code are MIT-licensed.</p>
+      </div>
+      <div class="card">
+        <h3>How to cite</h3>
+        <p class="cite mono">
+          Australian Election Tracker (OZE), <em>Victorian state election 2026 candidate
+          ledger</em>, elections.oze.net.au, accessed {formatDate(summary.latest_verified)}.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Read the caveats first</h3>
+        <p>
+          <code>coverage.json</code> carries a <code>caveat</code> field explaining exactly
+          what the coverage counts do and do not include. Please carry it through into any
+          reuse.
+        </p>
+        <p><a href="/methodology#coverage">How coverage is counted</a></p>
+      </div>
+      <div class="card">
+        <h3>Source of truth</h3>
+        <p>
+          These files are build artefacts. The authoritative records are the YAML files in
+          the <a href={SITE.repo}>public repository</a>, where every change has a commit,
+          an author and a date.
+        </p>
+      </div>
+    </div>
+
+    <h2>Schema notes</h2>
+    <ul class="schema-notes">
+      <li>
+        Every candidate record carries <code>status</code> (current) and{" "}
+        <code>history</code> (every prior status with its own dated source). Read{" "}
+        <code>history</code> if you need to know when something changed.
+      </li>
+      <li>
+        <code>contest</code> is a district slug when <code>chamber</code> is{" "}
+        <code>assembly</code>, and a region slug when it is <code>council</code>.
+      </li>
+      <li>
+        Source objects always carry <code>url</code>, <code>publisher</code> and{" "}
+        <code>accessed</code>; <code>title</code>, <code>published</code> and{" "}
+        <code>archive_url</code> appear when known.
+      </li>
+      <li>
+        Dates are ISO <code>YYYY-MM-DD</code>. Slugs are stable identifiers — names are for
+        display.
+      </li>
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .quick {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.5rem 0 0.75rem;
+  }
+  h2 {
+    margin-top: 2.75rem;
+  }
+  .fmt a {
+    margin-right: 0.6rem;
+    font-size: 0.85rem;
+  }
+  .cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .cols h3 {
+    margin-bottom: 0.4rem;
+  }
+  .cols p {
+    font-size: 0.92rem;
+    color: var(--ink-2);
+  }
+  .cols p:last-child {
+    margin-bottom: 0;
+  }
+  .cite {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .schema-notes {
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.6rem;
+    color: var(--ink-2);
+    max-width: 54rem;
+    margin-top: 1.25rem;
+  }
+</style>

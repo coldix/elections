@@ -1,0 +1,138 @@
+---
+/**
+ * Election countdown. The day count is rendered at BUILD time so the page is
+ * correct and indexable with JavaScript disabled; a small inline script then
+ * keeps it accurate for long-lived tabs and for pages served from cache.
+ * No layout shift: the script only replaces text inside pre-sized slots.
+ */
+import { daysUntil } from "../../../scripts/lib/data.mjs";
+import { formatDateLong } from "../lib/site.mjs";
+
+const { election, keyDates = [] } = Astro.props;
+const days = daysUntil(election.election_day);
+const iso = election.election_day;
+---
+
+<div class="countdown card">
+  <div class="cd-main">
+    <p class="eyebrow">Next election</p>
+    <h2 class="cd-title">{election.name}</h2>
+    <p class="cd-date">
+      <time datetime={iso}>{formatDateLong(iso)}</time>
+    </p>
+  </div>
+
+  <div class="cd-num" role="group" aria-labelledby="cd-label">
+    <span class="cd-value" data-countdown={iso}>{days}</span>
+    <span class="cd-unit" id="cd-label">days to go</span>
+  </div>
+
+  {
+    keyDates.length > 0 && (
+      <ol class="cd-dates">
+        {keyDates.map((d) => {
+          const past = daysUntil(d.date) < 0;
+          return (
+            <li class={past ? "past" : undefined}>
+              <time datetime={d.date}>{formatDateLong(d.date)}</time>
+              <span>{d.event}</span>
+            </li>
+          );
+        })}
+      </ol>
+    )
+  }
+</div>
+
+<script is:inline>
+  // Progressive enhancement only — the value is already correct in the HTML.
+  (function () {
+    var el = document.querySelector("[data-countdown]");
+    if (!el) return;
+    var target = new Date(el.getAttribute("data-countdown") + "T00:00:00+11:00");
+    var days = Math.ceil((target - new Date()) / 86400000);
+    if (isFinite(days) && String(days) !== el.textContent.trim()) {
+      el.textContent = days;
+    }
+  })();
+</script>
+
+<style>
+  .countdown {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.25rem 2rem;
+    align-items: start;
+    box-shadow: var(--shadow);
+  }
+  .cd-title {
+    margin: 0 0 0.25rem;
+    font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.7rem);
+  }
+  .cd-date {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 1rem;
+  }
+  .cd-num {
+    text-align: right;
+    line-height: 1;
+  }
+  .cd-value {
+    display: block;
+    font-size: clamp(2.6rem, 1.6rem + 4.2vw, 4.4rem);
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent-ink);
+  }
+  .cd-unit {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .cd-dates {
+    grid-column: 1 / -1;
+    list-style: none;
+    margin: 0;
+    padding: 1.1rem 0 0;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 0.75rem 1.5rem;
+    font-size: 0.88rem;
+  }
+  .cd-dates li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding-left: 0.7rem;
+    border-left: 2px solid var(--accent);
+  }
+  .cd-dates li.past {
+    border-left-color: var(--rule-strong);
+    color: var(--ink-3);
+  }
+  .cd-dates time {
+    font-weight: 620;
+  }
+  .cd-dates span {
+    color: var(--ink-3);
+  }
+  .cd-dates li.past time {
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+  }
+
+  @media (max-width: 34rem) {
+    .countdown {
+      grid-template-columns: 1fr;
+    }
+    .cd-num {
+      text-align: left;
+    }
+  }
+</style>

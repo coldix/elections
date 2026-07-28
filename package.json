@@ -6,9 +6,14 @@
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "export": "node scripts/export.mjs",
-    "check": "npm run validate && npm run export"
+    "check": "npm run validate && npm run export",
+    "dev": "npm run check && astro dev --root site",
+    "build": "npm run validate && npm run export && astro build --root site",
+    "preview": "astro preview --root site"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^5.18.2",
     "yaml": "^2.5.0"
   }
 }
