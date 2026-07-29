@@ -9,7 +9,8 @@
     "check": "npm run validate && npm run export",
     "dev": "npm run check && astro dev --root site",
     "build": "npm run validate && npm run export && astro build --root site",
-    "preview": "astro preview --root site"
+    "preview": "astro preview --root site",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

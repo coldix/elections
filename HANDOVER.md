@@ -11,19 +11,18 @@ See **[docs/DISCOVERY.md](docs/DISCOVERY.md)** for the full checklist.
 **In code:** JSON-LD, sitemap (~118 URLs), open `/llms.txt` (includes `/voting`,
 `/polls`, poll JSON), `robots.txt` allows major AI bots, og:image, GSC DNS verify.
 
-**Critical human steps (dashboard — do today):**
+**Verified live (2026-07-29):** open `robots.txt` (no CF AI Disallow inject);
+GPTBot/ClaudeBot get 200; `/llms.txt` includes voting + polls.
+
+**Automated:** IndexNow key + GH Action after main push; `_headers` for cache;
+sitemap lastmod/priority.
+
+**Still human (GSC / Bing / social):**
 
 1. GSC → Sitemaps → submit `https://electiontracker.au/sitemap-index.xml`
-2. GSC → Request indexing only for priority hubs (listed in DISCOVERY.md)
-3. Cloudflare → **turn OFF** “block training in robots.txt” / managed AI robots
-   and **Allow** GPTBot, ClaudeBot, Google-Extended, etc. in AI Crawl Control
-   (live robots was injecting Disallow — conflicts with open-data citation goal)
-4. Cloudflare → enable **IndexNow**
-5. Bing Webmaster → import from GSC
-6. Facebook Sharing Debugger once on the homepage
-
-Verify AI unblock: `curl -sL https://electiontracker.au/robots.txt | head -80`
-should not Disallow GPTBot.
+2. GSC → Request indexing only for priority hubs (DISCOVERY.md)
+3. Bing Webmaster → import from GSC (IndexNow helps after that)
+4. Facebook Sharing Debugger once on the homepage
 
 ## The site (added 2026-07-28)
 

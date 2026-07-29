@@ -1,0 +1,26 @@
+# Notify Bing/IndexNow partners of priority URLs after main deploys.
+# Cloudflare Workers Builds usually finishes within ~1–2 minutes of a push.
+name: indexnow
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Wait for Cloudflare edge deploy
+        run: sleep 120
+      - name: Confirm IndexNow key is public
+        run: |
+          KEY=$(tr -d '[:space:]' < scripts/indexnow.key)
+          code=$(curl -sS -o /dev/null -w "%{http_code}" "https://electiontracker.au/${KEY}.txt")
+          echo "key file HTTP $code"
+          test "$code" = "200"
+      - name: Submit priority URLs to IndexNow
+        run: node scripts/indexnow.mjs

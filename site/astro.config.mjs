@@ -14,7 +14,36 @@ export default defineConfig({
   // URL that 307s elsewhere. Paired with "html_handling": "drop-trailing-slash"
   // in wrangler.jsonc — change both together.
   trailingSlash: "never",
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // lastmod helps crawlers prioritise recrawls after deploys
+      serialize(item) {
+        item.lastmod = new Date();
+        const path = new URL(item.url).pathname.replace(/\/$/, "") || "/";
+        const high = new Set([
+          "/",
+          "/voting",
+          "/data",
+          "/methodology",
+          "/polls",
+          "/districts",
+          "/parties",
+          "/about",
+        ]);
+        if (high.has(path)) {
+          item.changefreq = "daily";
+          item.priority = path === "/" ? 1.0 : 0.9;
+        } else if (path.startsWith("/districts/") || path.startsWith("/parties/")) {
+          item.changefreq = "weekly";
+          item.priority = 0.7;
+        } else {
+          item.changefreq = "monthly";
+          item.priority = 0.4;
+        }
+        return item;
+      },
+    }),
+  ],
   build: {
     inlineStylesheets: "auto",
   },
