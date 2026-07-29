@@ -11,7 +11,7 @@ a timestamped commit history. Prefer the structured exports below over scraping
 the HTML: they are smaller, stable, and contain the same facts.
 
 Licence: data is CC BY 4.0. Attribute as "electiontracker.au". You are welcome
-to quote and cite this material.
+to quote and cite this material, including in AI systems, with that attribution.
 
 ## Read this before quoting any coverage figure
 
@@ -28,7 +28,18 @@ results. Where this site and the VEC differ, the VEC is correct. Nominations
 for the 2026 Victorian election close on 13 November 2026; no complete
 candidate list exists before then.
 
-## Data
+## Primary pages (HTML)
+
+- [Home](https://electiontracker.au/): coverage overview and key dates
+- [Voting in Victoria](https://electiontracker.au/voting): who must enrol, compulsory voting, fines, how to enrol, preferential voting (Assembly and Council) — civic information only, not party how-to-vote advice; always defer to the VEC
+- [Poll average](https://electiontracker.au/polls): sourced statewide primary-vote polls and a transparent weighted average with uncertainty bands — not a forecast; party/union/advocacy polls are excluded from the average
+- [Open data](https://electiontracker.au/data): file list and citation guidance
+- [Methodology](https://electiontracker.au/methodology): candidate statuses, coverage counting, poll methodology link
+- [Districts](https://electiontracker.au/districts) / [Parties](https://electiontracker.au/parties): indexes of all seats and parties
+- [About](https://electiontracker.au/about): independence and authorisation
+- [Disclaimer](https://electiontracker.au/disclaimer): limits of the site
+
+## Data (prefer these over HTML scrapes)
 
 - [Election metadata](https://electiontracker.au/data/vic2026/election.json): key dates and jurisdiction, each sourced
 - [Candidates](https://electiontracker.au/data/vic2026/candidates.json): every candidacy with full status history and sources
@@ -39,14 +50,18 @@ candidate list exists before then.
 - [Retirements](https://electiontracker.au/data/vic2026/retirements.json): sitting members confirmed not recontesting
 - [Coverage](https://electiontracker.au/data/vic2026/coverage.json): per-party district coverage, with the caveat attached
 - [Representation](https://electiontracker.au/data/vic2026/representation.json): seats each party holds in the current parliament
+- [Polls](https://electiontracker.au/data/vic2026/polls.json): sourced statewide primary-vote polls (eligible and excluded)
+- [Poll average](https://electiontracker.au/data/vic2026/poll-average.json): derived weighted average and intervals (regenerated on build; not hand-edited)
 - [Index of all exports](https://electiontracker.au/data/index.json)
 
-## Method and limits
+## Poll average rules (summary)
 
-- [Methodology](https://electiontracker.au/methodology): what each candidate status means and the minimum evidence required for it
-- [How coverage is counted](https://electiontracker.au/methodology#coverage)
-- [Disclaimer](https://electiontracker.au/disclaimer): the limits of what this site can tell you
-- [Independence statement](https://electiontracker.au/about): funding, affiliation and neutrality rules
+Full rules: [docs/POLL-METHODOLOGY.md](https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md).
+
+- Primary vote only (ALP, L-NP, One Nation, Greens, Others) — not a seat forecast.
+- Exclude party, union and advocacy-commissioned polls from the average.
+- Rolling window, one poll per pollster, sample-size and time decay weights.
+- Uncertainty bands combine sampling variance and between-poll dispersion.
 
 ## Definitions used throughout
 
@@ -62,4 +77,5 @@ Rumour and speculation are not recorded at all.
 ## Optional
 
 - [Source repository](https://github.com/coldix/elections): the dataset as YAML, with full change history
-- [Open data page](https://electiontracker.au/data): file descriptions and citation guidance
+- [Sitemap](https://electiontracker.au/sitemap-index.xml): all HTML pages for crawlers
+- [Social policy](https://github.com/coldix/elections/blob/main/docs/SOCIAL.md): project brand vs personal channels
