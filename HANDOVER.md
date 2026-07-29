@@ -4,6 +4,17 @@ For future sessions/agents. Read docs/DECISIONS.md before proposing any
 infrastructure; the Workers/D1/R2 stack was already evaluated and rejected
 (ADR-2). This is a data-in-git ledger with a static site on top.
 
+## Operations / keeping data current (2026-07-29)
+
+**[docs/OPS.md](docs/OPS.md)** — scan cadence, watch list, candidacy procedure,
+agent vs human rules. Site updates when valid YAML hits `main`; no separate
+“site update” cron.
+
+- Manual verification required before merge (especially statuses about named people).
+- `npm run report:coverage` / `npm run check:sources` — report only, never publish.
+- Weekly GitHub Action `source-health` (Monday UTC + manual).
+- Issue template: **New candidacy / status change**.
+
 ## Discovery / SEO / AI (updated 2026-07-29)
 
 See **[docs/DISCOVERY.md](docs/DISCOVERY.md)** for the full checklist.

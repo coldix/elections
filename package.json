@@ -7,6 +7,8 @@
     "validate": "node scripts/validate.mjs",
     "export": "node scripts/export.mjs",
     "check": "npm run validate && npm run export",
+    "check:sources": "node scripts/check-sources.mjs",
+    "report:coverage": "node scripts/report-coverage.mjs",
     "dev": "npm run check && astro dev --root site",
     "build": "npm run validate && npm run export && astro build --root site",
     "preview": "astro preview --root site",

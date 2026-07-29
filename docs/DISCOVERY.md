@@ -157,6 +157,7 @@ point at redirecting URLs, fix those two files together.
 ## Related
 
 - [CHANGELOG.md](CHANGELOG.md) — product + discovery work since the polls module  
+- [OPS.md](OPS.md) — data monitoring cadence (not a site cron)  
 - [SOCIAL.md](SOCIAL.md) — social brand split (Facebook + YouTube live)  
 - [DEPLOYMENT.md](DEPLOYMENT.md) — Cloudflare project settings  
 - [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) — poll average rules for AI quoters  

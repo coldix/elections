@@ -1,0 +1,75 @@
+name: New candidacy / status change
+description: Propose a sourced candidacy or status update for the ledger
+title: "[data] "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every material claim needs a **public source**. Rumour is not recorded.
+        See `docs/METHODOLOGY.md` and `docs/OPS.md`. Do not put private tipster
+        details here if they must stay confidential — email instead.
+  - type: input
+    id: name
+    attributes:
+      label: Candidate name
+    validations:
+      required: true
+  - type: input
+    id: seat
+    attributes:
+      label: Seat (district or region slug or name)
+      description: e.g. pakenham or Western Metropolitan
+    validations:
+      required: true
+  - type: dropdown
+    id: chamber
+    attributes:
+      label: Chamber
+      options:
+        - assembly
+        - council
+    validations:
+      required: true
+  - type: input
+    id: party
+    attributes:
+      label: Party (or independent)
+      description: Registered party name/slug if known
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Claimed status
+      options:
+        - announced
+        - endorsed
+        - nominated
+        - withdrawn
+        - disendorsed
+        - elected
+        - defeated
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Public source URL
+    validations:
+      required: true
+  - type: input
+    id: source_date
+    attributes:
+      label: Source date published (YYYY-MM-DD if known)
+  - type: input
+    id: publisher
+    attributes:
+      label: Publisher / outlet
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Optional context. Do not paste private contact details.

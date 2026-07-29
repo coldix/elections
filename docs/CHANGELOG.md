@@ -93,6 +93,13 @@ Done outside git (dashboards). Tick against [DISCOVERY.md](DISCOVERY.md) as need
 
 ---
 
+## 2026-07-29 — Ops runbook + source health
+
+- [OPS.md](OPS.md) — human cadence, watch list, encode→merge→deploy loop; agents draft only
+- `npm run check:sources` + weekly `.github/workflows/source-health.yml` (report only)
+- `npm run report:coverage` — same coverage rules as the site
+- Issue template: New candidacy / status change
+
 ## Not done in this window
 
 - Explainer video published on the project YouTube (channel exists; content TBD)
@@ -100,11 +107,13 @@ Done outside git (dashboards). Tick against [DISCOVERY.md](DISCOVERY.md) as need
 - Analytics / tracking (deliberately never)
 - Forecast / 2PP / seat models
 - Personal channels in footer or `sameAs`
+- Phase 2: scheduled news digests / auto draft-PRs
 
 ---
 
 ## Related
 
+- [OPS.md](OPS.md) — monitor cadence, agent rules, source-health automation  
 - [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md)  
 - [DISCOVERY.md](DISCOVERY.md)  
 - [SOCIAL.md](SOCIAL.md)  

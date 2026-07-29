@@ -54,17 +54,23 @@ scripts/lib/data.mjs      shared loader + derived figures (site AND exports)
 scripts/lib/polls.mjs     poll load + tracker average
 scripts/validate.mjs      schema, vocabulary, sources, referential integrity
 scripts/export.mjs        JSON/CSV export to site/public/data/
+scripts/check-sources.mjs weekly URL reachability (report only)
+scripts/report-coverage.mjs  party coverage snapshot (report only)
 site/                     Astro static site (built to site/dist/)
-docs/                     scope, methodology, deployment, architecture decisions
+docs/                     scope, methodology, ops, deployment, decisions
 ```
 
 ## Running it
 
 ```bash
 npm install
-npm run dev      # validate + export, then serve locally
-npm run build    # full production build
+npm run dev              # validate + export, then serve locally
+npm run build            # full production build
+npm run report:coverage  # party coverage snapshot (does not publish)
+npm run check:sources    # source URL health (does not publish)
 ```
+
+Editorial cadence and agent rules: [docs/OPS.md](docs/OPS.md).
 
 The build is ordered deliberately — **validate → export → build** — and fails
 fast. A record without a valid source stops the build before the site is
@@ -82,9 +88,11 @@ it before proposing infrastructure.
 
 ## Contributing a candidate or correction
 
-Open a GitHub Issue with: candidate name, seat, party, claimed status, and a
-**public source URL with its date**. Or send a PR editing the candidate file —
-CI validates schema and sources on every push and pull request.
+Open a GitHub Issue with the **New candidacy / status change** template
+(candidate name, seat, party, claimed status, public source URL + date). Or
+send a PR editing the candidate file — CI validates schema and sources on every
+push and pull request. Unattended bots must not merge people-data PRs
+([docs/OPS.md](docs/OPS.md)).
 
 Corrections concerning living people are prioritised above all other work.
 History is never rewritten: a correction is a new commit, and the original

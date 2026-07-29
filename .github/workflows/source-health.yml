@@ -1,0 +1,27 @@
+# Weekly reachability check for URLs cited as sources in data/.
+# Report-only: never mutates the ledger or deploys. Failures mean fix/archive
+# a dead source URL — see docs/OPS.md.
+name: source-health
+
+on:
+  schedule:
+    # Monday 20:00 UTC ≈ Tuesday morning AEST
+    - cron: "0 20 * * 1"
+  workflow_dispatch:
+
+jobs:
+  check-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Coverage snapshot
+        run: npm run report:coverage
+
+      - name: Source URL health
+        run: npm run check:sources
