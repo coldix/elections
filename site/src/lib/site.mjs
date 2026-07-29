@@ -38,7 +38,7 @@ export const ATTRIBUTION = SITE.domain;
  */
 export const SOCIAL = {
   facebook: "https://www.facebook.com/election.tracker.au/",
-  // youtube: "https://www.youtube.com/@…",  // project channel when created
+  youtube: "https://www.youtube.com/@electiontrackerau",
 };
 
 /** Display labels for SOCIAL keys (footer, privacy). */

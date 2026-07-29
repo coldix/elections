@@ -126,6 +126,7 @@ zone (belt-and-braces).
 New domains index faster with a few real links:
 
 - Facebook Page post linking the homepage and `/voting`.
+- Project YouTube: [youtube.com/@electiontrackerau](https://www.youtube.com/@electiontrackerau) (channel live; listed with Google and Bing).
 - GitHub repo README (already points at the live site).
 - oze.au portfolio link if appropriate.
 
@@ -155,6 +156,7 @@ point at redirecting URLs, fix those two files together.
 
 ## Related
 
-- [SOCIAL.md](SOCIAL.md) — social brand split  
+- [CHANGELOG.md](CHANGELOG.md) — product + discovery work since the polls module  
+- [SOCIAL.md](SOCIAL.md) — social brand split (Facebook + YouTube live)  
 - [DEPLOYMENT.md](DEPLOYMENT.md) — Cloudflare project settings  
 - [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) — poll average rules for AI quoters  

@@ -27,7 +27,7 @@ List only channels you actually maintain. Dead icons hurt trust.
 | Channel | Status | Role |
 |---|---|---|
 | Facebook Page | Live — `facebook.com/election.tracker.au` | Primary social distribution |
-| YouTube (project) | Create when the voting explainer is ready | Canonical long-form video home |
+| YouTube (project) | Live — [youtube.com/@electiontrackerau](https://www.youtube.com/@electiontrackerau) (listed with Google and Bing) | Canonical long-form video home |
 | Facebook Group | **Do not create** | High moderation; becomes partisan |
 | Instagram / X / TikTok / Bluesky | Optional later | Only if posting regularly |
 
