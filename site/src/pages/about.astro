@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { SITE, ATTRIBUTION } from "../lib/site.mjs";
+import { SITE, ATTRIBUTION, MAINTAINER } from "../lib/site.mjs";
 ---
 
 <Base
@@ -87,13 +87,25 @@ import { SITE, ATTRIBUTION } from "../lib/site.mjs";
     <h2 id="contact">Contact</h2>
     <p>
       Corrections and additions are best raised in public so the reasoning stays on the
-      record: <a href={SITE.issues}>open an issue</a> with a source. For anything else —
-      including matters concerning a named individual that you would prefer not to raise
-      publicly — write to
+      record: <a href={SITE.issues}>open a GitHub issue</a> with a public source URL and
+      date. You can also tip via X
+      (<a href={MAINTAINER.x} rel="noopener">{MAINTAINER.xHandle}</a>) — still include a
+      source; tips are verified before anything is added to the ledger.
+    </p>
+    <p>
+      For private matters — including concerns about a named individual that you would
+      prefer not to raise publicly — write to
       <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    </p>
+    <p>
+      Maintainer: {MAINTAINER.name}. Professional profile on
+      <a href={MAINTAINER.linkedin} rel="noopener">LinkedIn</a>.
+      Published by <a href={SITE.publisherUrl} rel="noopener">{SITE.publisher}</a>.
     </p>
     <p class="muted">
       Requests for correction concerning living people are prioritised over all other work.
+      Project channels (Facebook Page, YouTube) are listed in the footer; they are the
+      Election Tracker brand, not personal accounts.
     </p>
 
     <h2 id="licence">Reuse</h2>

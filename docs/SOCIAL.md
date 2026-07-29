@@ -29,7 +29,17 @@ List only channels you actually maintain. Dead icons hurt trust.
 | Facebook Page | Live — `facebook.com/election.tracker.au` | Primary social distribution |
 | YouTube (project) | Live — [youtube.com/@electiontrackerau](https://www.youtube.com/@electiontrackerau) (listed with Google and Bing) | Canonical long-form video home |
 | Facebook Group | **Do not create** | High moderation; becomes partisan |
-| Instagram / X / TikTok / Bluesky | Optional later | Only if posting regularly |
+| Instagram / X / TikTok / Bluesky (project handles) | Optional later | Only if posting regularly as the product |
+
+### Maintainer contacts (not product brand)
+
+Listed on **`/about` only** via `MAINTAINER` in `site.mjs` — not footer project icons,
+not Organization `sameAs`, not privacy “we run these accounts as the tracker.”
+
+| Channel | URL | Role |
+|---|---|---|
+| X | [x.com/colindixon](https://x.com/colindixon) | Maintainer tips + sparse ship notes (public sources still required) |
+| LinkedIn | [linkedin.com/in/colindixon](https://www.linkedin.com/in/colindixon/) | Professional / publisher contact |
 
 **Never** put a personal political/lifestyle channel (e.g. `@mallacoota2020`) in:
 
@@ -38,6 +48,8 @@ List only channels you actually maintain. Dead icons hurt trust.
 - privacy “we run” list as a tracker property  
 
 That wires personal politics into the product for search and AI citation.
+`@colindixon` and LinkedIn are maintainer identity, deliberately kept off product
+`sameAs` for the same reason.
 
 ## Soft cross-promotion from personal channels (allowed)
 
@@ -78,8 +90,26 @@ When a project URL is real:
 3. Update the privacy page “Our social accounts” section.  
 4. Optional: “Watch the explainer” CTA on `/voting`.
 
+## Suggested X bio (@colindixon)
+
+Paste into the X profile (160-character class; adjust if X’s limit moves):
+
+```text
+Independent election data at electiontracker.au · tips with sources welcome · East Gippsland tech & media · @OzeAuMusic · Mallacoota VIC
+```
+
+Shorter alternative:
+
+```text
+Maintainer of electiontracker.au (sourced candidate ledger). Tips + public URLs welcome. East Gippsland · Mallacoota VIC
+```
+
+Keep `@mallacoota2020` out of the tracker site chrome; soft-link personal work
+elsewhere if needed.
+
 ## Related
 
+- [OPS.md](OPS.md) — tips still need human verification before merge  
 - [SCOPE.md](SCOPE.md) — no how-to-vote advice  
 - [METHODOLOGY.md](METHODOLOGY.md) — neutrality  
 - Site: `/voting`, `/about`, `/privacy`

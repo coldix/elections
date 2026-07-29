@@ -33,8 +33,8 @@ export const ATTRIBUTION = SITE.domain;
 
 /**
  * Project social presence only (Election Tracker brand).
- * Do NOT add personal channels (e.g. mallacoota2020) — see docs/SOCIAL.md.
- * Add a key only when the account exists and is actively maintained.
+ * Footer + privacy + JSON-LD sameAs. Do NOT put personal channels here
+ * (e.g. mallacoota2020) — see docs/SOCIAL.md.
  */
 export const SOCIAL = {
   facebook: "https://www.facebook.com/election.tracker.au/",
@@ -47,6 +47,19 @@ export const SOCIAL_LABELS = {
   youtube: "YouTube",
   instagram: "Instagram",
   x: "X",
+};
+
+/**
+ * Maintainer / publisher identity (Colin), not product brand channels.
+ * Linked from /about only — not footer project icons, not Organization sameAs.
+ * Tips with public sources welcome on X; LinkedIn is professional contact.
+ */
+export const MAINTAINER = {
+  name: "Colin Dixon",
+  x: "https://x.com/colindixon",
+  xHandle: "@colindixon",
+  linkedin: "https://www.linkedin.com/in/colindixon/",
+  publisherUrl: SITE.publisherUrl,
 };
 
 /** Ordered list of { key, label, url } for defined project social links. */
