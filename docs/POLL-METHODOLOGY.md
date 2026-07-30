@@ -64,15 +64,16 @@ A poll enters the **eligible set** only if every row holds:
 | D | **Sample size** published and **n ≥ 800** for statewide primaries. Rare exception only if n ≥ 500 **and** design is clearly superior (document case-by-case); default floor is 800. | Small samples dominate averages |
 | E | **Primary series** reports at least ALP, L-NP (or Lib+Nat), and Greens, with One Nation and residual Others when published. All five series must be usable after [comparability](#comparability) rules. | Comparable multi-party vector |
 | F | **Public topline** with a citable source (URL, publisher, title, date published, date accessed) — same discipline as candidates. | Project DNA |
-| G | **Commissioner** is a media outlet, the pollster themselves, or a neutral academic / public-interest body **without** a campaign, party, or union stake in the Victorian result. | Bias control |
+| G | **Commissioner** is a media outlet, the pollster themselves, or a neutral academic / public-interest body **without** a campaign, party, or union stake in the Victorian result — **or** a documented [case-by-case exception](#case-by-case-exceptions) with `eligibility_exception`. | Bias control |
 | H | **Mode** stated: online panel, SMS, phone (CATI/mobile), or mixed. | Opaque “research” excluded |
 | I | **Statewide** frame (not a single seat or single region as the only result). | Apples to apples |
 | J | **One sample, one row** — no partial re-release that double-counts the same fieldwork. | Independence of observations |
 
 ### Hard exclusions (out of the average)
 
-1. **Party, candidate, union, or advocacy-commissioned** polls — including
-   large-n public releases (e.g. RedBridge for Victorian Trades Hall).
+1. **Party, candidate, union, or advocacy-commissioned** polls — **default**.
+   Large *n* does not override. See [case-by-case exceptions](#case-by-case-exceptions)
+   for the only path into the average.
 2. **Internal or leaked** polls without full public methodology and sample.
 3. **Push polls**, fundraising surveys, or non–voting-intention questions.
 4. **Sub-state only** polls (seat/region). May be a separate series later.
@@ -81,8 +82,35 @@ A poll enters the **eligible set** only if every row holds:
    source; prefer pollster PDF or commissioning masthead).
 7. Polls that **omit sample size or fieldwork dates**.
 
-Advocacy / party / union polls may appear later in a labelled “not in
-average” catalogue. They never enter the weighted mean.
+Advocacy / party / union polls are still recorded in the ledger with
+`eligible_for_average: false` and an `exclusion_reason` unless a documented
+exception applies.
+
+### Case-by-case exceptions
+
+Party / union / advocacy commissioners remain **out by default**. A single
+poll may enter the average only when all of the following hold:
+
+1. **Allowlisted pollster** with a public statewide method (not opaque
+   internal research).
+2. **Full public topline** meeting rules A–F and H–J (dates, *n*, five-way
+   primaries, citable source).
+3. **Written justification** in the YAML field `eligibility_exception`
+   (non-empty). CI requires this field when
+   `commissioner_type` is party / union / candidate / excluded_advocacy **and**
+   `eligible_for_average: true`.
+4. **Maintainer decision** recorded in the poll file and, for non-obvious
+   cases, a one-line note in [polls-inventory.md](polls-inventory.md) or
+   [CHANGELOG.md](CHANGELOG.md).
+
+Exceptions are **per poll record**, not a standing waiver for the
+commissioner. The next union- or party-funded release starts excluded again.
+Do not invent exceptions to chase a preferred narrative; the bar is
+transparent method + independent corroboration where possible.
+
+**Current exception (Vic 2026):** `redbridge-2026-07-trades-hall` — RedBridge
+for Victorian Trades Hall; large public sample; primaries track the
+media-commissioned RedBridge/Accent AFR wave.
 
 ### Pollster allowlist
 
@@ -95,7 +123,7 @@ Quality-gated, not open to any brand. Start set for Vic 2026 statewide VI:
 | Freshwater Strategy | Herald Sun / AFR / others | Statewide VI with n and dates |
 | YouGov | Various | When statewide state VI |
 | Essential | Guardian / others | Rare for state; same rules |
-| RedBridge / Accent | Media only | **Exclude** party / union / advocacy |
+| RedBridge / Accent | Media preferred | Party / union / advocacy **default exclude**; rare exception only with `eligibility_exception` |
 | Roy Morgan | Self-published | Include if state VI + method public |
 | DemosAU | Various | After first verified full metadata |
 | Ipsos, Spectre, others | Case-by-case | Add via allowlist edit, not ad hoc |
@@ -310,8 +338,11 @@ between-poll \(s^{2}_w \approx 1.26\) (above the 1.0 floor);
 combined \(\mathrm{SE} \approx 1.27\) pp → roughly **26.0 ± 2.5** at 95%
 (illustrative; recompute exactly in code).
 
-Trades Hall / advocacy RedBridge polls are **not** in this table even if
-larger-n.
+The worked table above is the **pre-exception** illustration (media/self only).
+With the documented Trades Hall RedBridge exception, the live average also
+includes that record (distinct `pollster: redbridge` key; not de-duplicated
+against `redbridge-accent`). Recompute via `scripts/lib/polls.mjs` / the
+`/polls` page — do not treat this section as the live number.
 
 ---
 
@@ -342,6 +373,7 @@ primaries:
 undecided_handling: allocated
 eligible_for_average: true
 exclusion_reason: null
+eligibility_exception: null   # required string only for party/union/advocacy exceptions
 sources:
   - url: https://example.com/article
     publisher: The Age

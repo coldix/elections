@@ -72,11 +72,13 @@ kill/success criteria on candidate coverage.
 
 - Forecast language, 2PP/seat models derived without published preference
   assumptions, or ordering candidates/parties by polling
-- Treating advocacy/party/union polls as equal inputs to the average (they may
-  be recorded with `eligible_for_average: false`)
+- Treating advocacy/party/union polls as **equal by default** inputs to the
+  average (they may be recorded with `eligible_for_average: false`, or enter
+  only via a documented case-by-case exception)
 
-Party/union/advocacy-commissioned polls are excluded from the average
-(see poll methodology).
+Party/union/advocacy-commissioned polls are **excluded from the average by
+default** (see poll methodology). Rare exceptions require
+`eligibility_exception` and do not waive the rule for the next release.
 
 ## Success / kill criteria
 

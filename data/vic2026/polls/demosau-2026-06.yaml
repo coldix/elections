@@ -1,0 +1,31 @@
+id: demosau-2026-06
+pollster: demosau
+commissioner: premier-national
+commissioner_type: media
+fieldwork_start: 2026-06-07
+fieldwork_end: 2026-06-11
+sample_size: 1056
+design_effect: 1.615
+mode: online
+population: victorian-electors
+question_notes: "DemosAU/Premier National Victoria state poll. Design effect from published effective n 654. Remaining undecided after leaner excluded from totals."
+primaries:
+  alp: 21
+  lnp: 30
+  onp: 23
+  grn: 15
+  others: 11
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://demosau.com/wp-content/uploads/2026/06/DemosAU-Vic-Poll-June-2026.pdf
+    publisher: DemosAU
+    title: DemosAU/Premier National Victoria Poll (June 2026)
+    published: 2026-06-12
+    accessed: 2026-07-30
+  - url: https://www.pollbludger.net/2026/06/12/demosau-labor-21-coalition-30-one-nation-23-in-victoria/
+    publisher: The Poll Bludger
+    title: "DemosAU: Labor 21, Coalition 30, One Nation 23 in Victoria"
+    published: 2026-06-12
+    accessed: 2026-07-30

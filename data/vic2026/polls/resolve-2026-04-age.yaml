@@ -1,0 +1,31 @@
+id: resolve-2026-04-age
+pollster: resolve
+commissioner: the-age
+commissioner_type: media
+fieldwork_start: 2026-03-17
+fieldwork_end: 2026-04-18
+sample_size: 1047
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Resolve Political Monitor twin surveys in March and April for The Age; first full series with One Nation broken out of Others. Fieldwork span approximate. Greens/Others from secondary compilations consistent with published majors."
+primaries:
+  alp: 27
+  lnp: 29
+  onp: 21
+  grn: 10
+  others: 13
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theage.com.au/politics/victoria/one-nation-entrenched-as-third-force-as-victorians-adopt-drain-the-swamp-mentality-20260421-p5zps9.html
+    publisher: The Age
+    title: One Nation entrenched as third force as Victorians adopt 'drain the swamp' mentality
+    published: 2026-04-21
+    accessed: 2026-07-30
+  - url: https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Victorian_state_election
+    publisher: Wikipedia
+    title: Opinion polling for the 2026 Victorian state election (discovery index for sample/Greens)
+    published: 2026-04-22
+    accessed: 2026-07-30

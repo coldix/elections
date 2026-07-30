@@ -92,8 +92,9 @@ const sortedPolls = [...polls].sort((a, b) =>
     <h2 id="polls">Polls in the ledger</h2>
     <p>
       Every row is a sourced record in the repository. Polls marked
-      <strong> not in average</strong> fail inclusion rules (for example advocacy
-      commissioners) and are kept for transparency.
+      <strong>Excluded</strong> fail inclusion rules and are kept for transparency.
+      <strong>In*</strong> means the poll is in the average under a documented
+      case-by-case exception (hover for the reason).
     </p>
     <div class="table-scroll">
       <table class="data">
@@ -129,9 +130,19 @@ const sortedPolls = [...polls].sort((a, b) =>
                 <td class="num mono">{p.primaries.others}</td>
                 <td>
                   {included.has(p.id) ? (
-                    <span class="pill in">In</span>
+                    <span
+                      class="pill in"
+                      title={p.eligibility_exception ?? undefined}
+                    >
+                      {p.eligibility_exception ? "In*" : "In"}
+                    </span>
                   ) : p.eligible_for_average ? (
-                    <span class="pill out">Window</span>
+                    <span
+                      class="pill out"
+                      title={p.eligibility_exception ?? undefined}
+                    >
+                      {p.eligibility_exception ? "Window*" : "Window"}
+                    </span>
                   ) : (
                     <span class="pill out" title={p.exclusion_reason ?? ""}>
                       Excluded
@@ -150,8 +161,9 @@ const sortedPolls = [...polls].sort((a, b) =>
       <li>Victorian <strong>state</strong> Assembly voting intention only (not federal).</li>
       <li>Published fieldwork dates and sample size (n ≥ 800).</li>
       <li>
-        Commissioner is media, the pollster, or neutral academic — not party, union or
-        advocacy.
+        Commissioner is media, the pollster, or neutral academic by default — party,
+        union or advocacy are out unless a documented case-by-case exception applies
+        (<span class="mono">In*</span> in the table).
       </li>
       <li>
         Rolling window (45 days, extendable to 60), one poll per pollster, at least two

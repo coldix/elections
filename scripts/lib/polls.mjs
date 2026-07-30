@@ -30,7 +30,7 @@ export const POLL_CAVEAT =
   "Bands reflect sampling uncertainty and disagreement among recent polls, " +
   "not a forecast of election day. They do not model preference flows, " +
   "turnout, or late swings. Party, union and advocacy-commissioned polls " +
-  "are excluded from the average.";
+  "are excluded from the average by default; rare documented exceptions only.";
 
 const DEFAULT_DEFF = 1.3;
 const HALF_LIFE_DAYS = 21;

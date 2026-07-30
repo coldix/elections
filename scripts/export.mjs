@@ -94,13 +94,14 @@ for (const id of listElections()) {
         grn: p.primaries?.grn,
         others: p.primaries?.others,
         eligible_for_average: p.eligible_for_average,
+        eligibility_exception: p.eligibility_exception ?? "",
         source_url: p.sources?.[0]?.url,
       })),
       [
         "id", "pollster", "commissioner", "commissioner_type",
         "fieldwork_start", "fieldwork_end", "sample_size",
         "alp", "lnp", "onp", "grn", "others",
-        "eligible_for_average", "source_url",
+        "eligible_for_average", "eligibility_exception", "source_url",
       ]
     )
   );

@@ -82,7 +82,12 @@
     },
     "eligible_for_average": { "type": "boolean" },
     "exclusion_reason": {
-      "type": ["string", "null"]
+      "type": ["string", "null"],
+      "description": "Required when eligible_for_average is false"
+    },
+    "eligibility_exception": {
+      "type": ["string", "null"],
+      "description": "Required when eligible_for_average is true despite party/union/advocacy/excluded_advocacy commissioner_type. Documents the case-by-case exception under POLL-METHODOLOGY.md."
     },
     "sources": {
       "type": "array",

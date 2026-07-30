@@ -32,7 +32,7 @@ candidate list exists before then.
 
 - [Home](https://electiontracker.au/): coverage overview and key dates
 - [Voting in Victoria](https://electiontracker.au/voting): who must enrol, compulsory voting, fines, how to enrol, preferential voting (Assembly and Council) — civic information only, not party how-to-vote advice; always defer to the VEC
-- [Poll average](https://electiontracker.au/polls): sourced statewide primary-vote polls and a transparent weighted average with uncertainty bands — not a forecast; party/union/advocacy polls are excluded from the average
+- [Poll average](https://electiontracker.au/polls): sourced statewide primary-vote polls and a transparent weighted average with uncertainty bands — not a forecast; party/union/advocacy polls excluded by default (documented exceptions only)
 - [Open data](https://electiontracker.au/data): file list and citation guidance
 - [Methodology](https://electiontracker.au/methodology): candidate statuses, coverage counting, poll methodology link
 - [Districts](https://electiontracker.au/districts) / [Parties](https://electiontracker.au/parties): indexes of all seats and parties
@@ -59,7 +59,7 @@ candidate list exists before then.
 Full rules: [docs/POLL-METHODOLOGY.md](https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md).
 
 - Primary vote only (ALP, L-NP, One Nation, Greens, Others) — not a seat forecast.
-- Exclude party, union and advocacy-commissioned polls from the average.
+- Exclude party, union and advocacy-commissioned polls from the average by default; rare documented exceptions require eligibility_exception.
 - Rolling window, one poll per pollster, sample-size and time decay weights.
 - Uncertainty bands combine sampling variance and between-poll dispersion.
 

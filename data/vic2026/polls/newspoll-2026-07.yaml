@@ -1,0 +1,31 @@
+id: newspoll-2026-07
+pollster: newspoll
+commissioner: the-australian
+commissioner_type: media
+fieldwork_start: 2026-07-23
+fieldwork_end: 2026-07-26
+sample_size: 1035
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Victorian state voting intention for The Australian. Fieldwork Thursday–Sunday before 27 July publication."
+primaries:
+  alp: 28
+  lnp: 31
+  onp: 19
+  grn: 13
+  others: 9
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theaustralian.com.au/nation/newspoll-shows-victorian-coalition-with-lead-as-jacinta-allan-faces-leadership-challenge/news-story/4ac504abe32030837be16ec669cb9b94
+    publisher: The Australian
+    title: "Faceless Ben coup: Daniel Andrews and Jacinta Allan Victorian Labor era implodes (Newspoll)"
+    published: 2026-07-27
+    accessed: 2026-07-30
+  - url: https://www.pollbludger.net/2026/07/28/victorian-newspoll-and-labor-leadership-spill/
+    publisher: The Poll Bludger
+    title: Victorian Newspoll and Labor leadership spill
+    published: 2026-07-28
+    accessed: 2026-07-30

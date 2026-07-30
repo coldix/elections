@@ -1,0 +1,27 @@
+id: redbridge-accent-2026-02-afr
+pollster: redbridge-accent
+commissioner: australian-financial-review
+commissioner_type: media
+fieldwork_start: 2026-02-18
+fieldwork_end: 2026-02-27
+sample_size: 2165
+design_effect: 1.25
+mode: online
+population: victorian-electors
+question_notes: "AFR / RedBridge Group / Accent Research Victorian Public Opinion Snapshot. Design effect from published weight efficiency 80% (effective n 1741). First AFR series wave with One Nation broken out."
+primaries:
+  alp: 25
+  lnp: 28
+  onp: 24
+  grn: 13
+  others: 10
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://web.archive.org/web/20260308055403/https://6b72024e-077a-44e2-88f5-dc1a0ed81099.usrfiles.com/ugd/b86980_eb49b08b5fa14e63b41cd68cf9bf10ca.pdf
+    publisher: RedBridge Group / Accent Research
+    title: AFR, RedBridge Group and Accent Research Victorian Public Opinion Snapshot (March 2026)
+    published: 2026-03-04
+    accessed: 2026-07-30
+    archive_url: https://web.archive.org/web/20260308055403/https://6b72024e-077a-44e2-88f5-dc1a0ed81099.usrfiles.com/ugd/b86980_eb49b08b5fa14e63b41cd68cf9bf10ca.pdf

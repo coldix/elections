@@ -192,8 +192,34 @@ for (const election of readdirSync(DATA_DIR)) {
       if (typeof p.eligible_for_average !== "boolean") {
         fail(file, "eligible_for_average must be boolean");
       }
+      // Party/union/advocacy default out of the average. A case-by-case exception
+      // is allowed only with a non-empty eligibility_exception justification
+      // (see docs/POLL-METHODOLOGY.md).
       if (EXCLUDED_TYPES.has(p.commissioner_type) && p.eligible_for_average) {
-        fail(file, "eligible_for_average must be false for party/union/advocacy commissioner");
+        const exc = p.eligibility_exception;
+        if (typeof exc !== "string" || !exc.trim()) {
+          fail(
+            file,
+            "party/union/advocacy commissioner requires eligibility_exception when eligible_for_average is true"
+          );
+        }
+      }
+      if (
+        p.eligibility_exception != null &&
+        p.eligibility_exception !== "" &&
+        !p.eligible_for_average
+      ) {
+        fail(file, "eligibility_exception only valid when eligible_for_average is true");
+      }
+      if (
+        p.eligibility_exception != null &&
+        p.eligibility_exception !== "" &&
+        !EXCLUDED_TYPES.has(p.commissioner_type)
+      ) {
+        fail(
+          file,
+          "eligibility_exception only for party/union/advocacy/excluded_advocacy commissioners"
+        );
       }
       if (!p.eligible_for_average && !p.exclusion_reason) {
         fail(file, "exclusion_reason required when not eligible for average");

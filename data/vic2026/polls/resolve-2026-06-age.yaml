@@ -1,0 +1,31 @@
+id: resolve-2026-06-age
+pollster: resolve
+commissioner: the-age
+commissioner_type: media
+fieldwork_start: 2026-05-12
+fieldwork_end: 2026-06-12
+sample_size: 1100
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Resolve Political Monitor twin surveys in May and June for The Age; published result is the average. Fieldwork span approximate from article (second wave 'last week' before 15 June). Greens 12% confirmed via July Resolve (Greens steady)."
+primaries:
+  alp: 26
+  lnp: 26
+  onp: 24
+  grn: 12
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theage.com.au/politics/victoria/end-of-days-labor-s-own-supporters-say-time-s-up-for-allan-government-20260614-p606m1.html
+    publisher: The Age
+    title: "'End of days': Labor's own supporters say time's up for Allan government"
+    published: 2026-06-15
+    accessed: 2026-07-30
+  - url: https://www.pollbludger.net/2026/07/14/resolve-strategic-labor-27-coalition-27-one-nation-22-in-victoria/
+    publisher: The Poll Bludger
+    title: "Resolve Strategic: Labor 27, Coalition 27, One Nation 22 in Victoria (prior wave context)"
+    published: 2026-07-14
+    accessed: 2026-07-30

@@ -91,6 +91,9 @@ for later.
 1. Add YAML under `data/<election>/polls/` matching existing files and
    [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md).
 2. Set `eligible_for_average` honestly (party/union/advocacy → usually `false`).
+   To exception a party/union/advocacy poll into the average, set
+   `eligible_for_average: true` **and** a non-empty `eligibility_exception`
+   justification (CI-enforced; see POLL-METHODOLOGY case-by-case exceptions).
 3. `npm run check` → merge.
 4. Update inventory notes if useful.
 

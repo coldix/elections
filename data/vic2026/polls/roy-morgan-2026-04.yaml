@@ -1,0 +1,26 @@
+id: roy-morgan-2026-04
+pollster: roy-morgan
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-04-22
+fieldwork_end: 2026-04-24
+sample_size: 1707
+design_effect: null
+mode: sms
+population: victorian-electors
+question_notes: "Special SMS Roy Morgan survey of Victorian state voting intention. Others = other parties (4%) + independents (8.5%)."
+primaries:
+  alp: 25.5
+  lnp: 24
+  onp: 24.5
+  grn: 13.5
+  others: 12.5
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10203-victorian-state-voting-intention-april-2026
+    publisher: Roy Morgan Research
+    title: "Victorian State Voting Intention: ALP (25.5%) holds ground and now leads One Nation (24.5%) and L-NP Coalition (24%) on primary vote in the week before the Nepean by-election"
+    published: 2026-04-27
+    accessed: 2026-07-30

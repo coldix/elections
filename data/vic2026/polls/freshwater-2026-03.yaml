@@ -1,0 +1,31 @@
+id: freshwater-2026-03
+pollster: freshwater
+commissioner: herald-sun
+commissioner_type: media
+fieldwork_start: 2026-03-19
+fieldwork_end: 2026-03-23
+sample_size: 1062
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Herald Sun–Freshwater Strategy Vic polling. Primaries from published data tables (squeezed & valid); one decimal from table percentages."
+primaries:
+  alp: 27.1
+  lnp: 29.6
+  onp: 20.4
+  grn: 13.8
+  others: 9.1
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-230326.xlsx
+    publisher: Freshwater Strategy
+    title: Herald Sun–Freshwater Strategy Vic Polling data tables (19–23 March 2026)
+    published: 2026-03-24
+    accessed: 2026-07-30
+  - url: https://www.heraldsun.com.au/news/victoria/jacinta-allan-faces-leadership-crisis-as-new-poll-reveals-catastrophic-slump/news-story/f649d3f7132e57f78d130e4ec834fe15
+    publisher: Herald Sun
+    title: Jacinta Allan faces leadership crisis as new poll reveals catastrophic slump
+    published: 2026-03-24
+    accessed: 2026-07-30

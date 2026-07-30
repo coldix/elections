@@ -145,7 +145,11 @@ prevent ad hoc “which polls count” decisions under campaign pressure.
 **Rules locked for v1**
 
 - Average **primary vote only** (ALP, L-NP, ONP, GRN, Others).
-- **Exclude** party / union / advocacy commissioners from the average.
+- **Default exclude** party / union / advocacy commissioners from the average.
+- **Case-by-case exception** only: allowlisted pollster, full public metadata,
+  non-empty `eligibility_exception` on the YAML, and CI-enforced. Exceptions
+  are per record, not a standing waiver for the commissioner
+  (see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md#case-by-case-exceptions)).
 - Window + one-poll-per-pollster + inverse-effective-n × exponential time decay
   (21-day half-life); default design effect 1.3; no house effects; no
   subjective pollster grades.

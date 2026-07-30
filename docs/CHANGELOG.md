@@ -4,6 +4,35 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-07-30 — Case-by-case poll average exception
+
+- Party / union / advocacy commissioners remain **out of the average by default**.
+- New optional field `eligibility_exception`: required by CI when those
+  commissioner types are marked `eligible_for_average: true`.
+- First use: **RedBridge for Victorian Trades Hall** (`redbridge-2026-07-trades-hall`)
+  enters the average with a written justification (credible pollster; tracks
+  independent media RedBridge/Accent series). Per-record only — not a standing
+  waiver.
+- Docs: [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md#case-by-case-exceptions),
+  ADR-10, inventory, SCOPE, OPS.
+
+## 2026-07-30 — Expand Vic 2026 poll ledger
+
+Added verified statewide Assembly primary rows (sources re-checked):
+
+| id | Pollster | Fieldwork end |
+|---|---|---|
+| `newspoll-2026-07` | Newspoll (*Australian*) | 26 Jul 2026 |
+| `demosau-2026-06` | DemosAU / Premier National | 11 Jun 2026 |
+| `resolve-2026-06-age` | Resolve (*Age*) | ~12 Jun 2026 |
+| `roy-morgan-2026-04` | Roy Morgan | 24 Apr 2026 |
+| `resolve-2026-04-age` | Resolve (*Age*) | ~18 Apr 2026 |
+| `freshwater-2026-03` | Freshwater (Herald Sun) | 23 Mar 2026 |
+| `redbridge-accent-2026-02-afr` | RedBridge/Accent (AFR) | 27 Feb 2026 |
+| `freshwater-2026-02` | Freshwater (Herald Sun) | 23 Feb 2026 |
+
+Inventory updated to mark ledger status. Average window now includes Newspoll as the newest media series.
+
 ## 2026-07-29 — Polls module (baseline)
 
 **Commit:** `d9861da` — *feat: sourced poll ledger and transparent primary-vote average*
@@ -18,7 +47,7 @@ ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 | Policy | [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md), [polls-inventory.md](polls-inventory.md), ADR in [DECISIONS.md](DECISIONS.md), [SCOPE.md](SCOPE.md) polling section |
 | Copy | about / methodology / disclaimer / data pages updated so polling is in-product, not aspirational |
 
-**Guardrails (unchanged):** no seat forecasts; no 2PP without published preference assumptions; party/union/advocacy polls may be recorded with `eligible_for_average: false`.
+**Guardrails (unchanged):** no seat forecasts; no 2PP without published preference assumptions; party/union/advocacy polls default to `eligible_for_average: false` (exceptions only with `eligibility_exception`).
 
 Initial ledger (examples): Freshwater, RedBridge (+ Accent/AFR), Resolve Strategic, Roy Morgan.
 

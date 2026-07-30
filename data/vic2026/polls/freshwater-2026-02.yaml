@@ -1,0 +1,32 @@
+id: freshwater-2026-02
+pollster: freshwater
+commissioner: herald-sun
+commissioner_type: media
+fieldwork_start: 2026-02-19
+fieldwork_end: 2026-02-23
+sample_size: 1030
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Herald Sun–Freshwater Strategy Vic polling. Primaries from published data tables (squeezed & valid); one decimal from table percentages."
+primaries:
+  alp: 27.6
+  lnp: 26.8
+  onp: 22.6
+  grn: 13.1
+  others: 9.9
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-230226.xlsx
+    publisher: Freshwater Strategy
+    title: Herald Sun–Freshwater Strategy Vic Polling data tables (19–23 February 2026)
+    published: 2026-03-04
+    accessed: 2026-07-30
+    archive_url: https://web.archive.org/web/20260311101825/https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-230226.xlsx
+  - url: https://www.heraldsun.com.au/news/victoria/jess-wilson-ahead-as-preferred-premier-amid-rejection-of-jacinta-allans-leadership-new-poll-shows/news-story/3d56d368cce42fcad760055e40a11924
+    publisher: Herald Sun
+    title: Jess Wilson ahead as preferred premier amid rejection of Jacinta Allan's leadership, new poll shows
+    published: 2026-03-04
+    accessed: 2026-07-30
