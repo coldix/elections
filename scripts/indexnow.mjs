@@ -26,6 +26,7 @@ const PRIORITY = [
   `https://${HOST}/about`,
   `https://${HOST}/llms.txt`,
   `https://${HOST}/robots.txt`,
+  `https://${HOST}/sitemap.xml`,
   `https://${HOST}/sitemap-index.xml`,
 ];
 

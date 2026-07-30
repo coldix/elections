@@ -89,5 +89,5 @@ Rumour and speculation are not recorded at all.
 ## Optional
 
 - [Source repository](https://github.com/coldix/elections): the dataset as YAML, with full change history
-- [Sitemap](https://electiontracker.au/sitemap-index.xml): all HTML pages for crawlers
+- [Sitemap](https://electiontracker.au/sitemap.xml): all HTML pages for crawlers (also `sitemap-index.xml`)
 - [Social policy](https://github.com/coldix/elections/blob/main/docs/SOCIAL.md): project brand vs personal channels

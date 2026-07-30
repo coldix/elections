@@ -58,11 +58,30 @@ AI blocks.
 ### 1. Google Search Console — sitemap
 
 1. Open [Google Search Console](https://search.google.com/search-console) for
-   `electiontracker.au` (domain property).
+   `electiontracker.au` (domain property — not a URL-prefix property on
+   `www` or `.com.au`).
 2. Left nav → **Sitemaps**.
-3. Add: `https://electiontracker.au/sitemap-index.xml`
-4. Submit. Wait until status is **Success** (can take hours–days).
-5. Do **not** request indexing for every district (quota). Prefer hubs below.
+3. Prefer submitting: `https://electiontracker.au/sitemap.xml`
+   (single urlset, ~130 pages). The index at
+   `https://electiontracker.au/sitemap-index.xml` is also valid.
+4. Submit. Wait until status is **Success** (can take hours–days on a new
+   domain; **“Couldn't fetch”** often clears on its own once Googlebot
+   retries — confirm the URL returns HTTP 200 in a browser first).
+5. Do **not** use **URL Inspection → Request indexing** on the sitemap XML
+   itself. Sitemaps are crawl guides; they are **not** meant to appear as
+   Google search results (“URL is not on Google” for a sitemap is normal).
+6. Do **not** request indexing for every district (quota). Prefer hubs below.
+
+#### Sitemap troubleshooting
+
+| Symptom | Meaning |
+|---|---|
+| URL Inspection → “URL is not on Google” on `/sitemap.xml` | Expected. XML sitemaps are not indexed as pages. |
+| Sitemaps → “Couldn't fetch” | Google has not successfully processed it yet, or a transient fetch failed. Live check: `curl -sI https://electiontracker.au/sitemap.xml` should be `200` + `application/xml`. Wait 24–72h, or remove and re-add the sitemap. |
+| Browser shows raw XML tree | Normal — no XSL stylesheet. Content is fine. |
+
+Also check Cloudflare **Security → Bots**: Super Bot Fight Mode / AI scrapers
+must not challenge **Googlebot**. Pause Bot Fight briefly if fetch keeps failing.
 
 ### 2. Google Search Console — priority URL inspection
 
@@ -142,8 +161,9 @@ Do not buy links. One honest Page post is enough to start.
 
 ```bash
 curl -sI https://electiontracker.au/ | head -5
-curl -sL https://electiontracker.au/robots.txt | head -40
-curl -sL https://electiontracker.au/sitemap-index.xml
+curl -sL https://electiontracker.au/robots.txt | tail -10
+curl -sI https://electiontracker.au/sitemap.xml | head -15
+curl -sL https://electiontracker.au/sitemap.xml | head -20
 curl -sL https://electiontracker.au/llms.txt | head -30
 ```
 

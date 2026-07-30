@@ -86,4 +86,6 @@ User-agent: meta-externalagent
 Allow: /
 
 # Canonical host is electiontracker.au (electiontracker.com.au 301s here).
+# Prefer the single-file sitemap; index is kept for compatibility.
+Sitemap: https://electiontracker.au/sitemap.xml
 Sitemap: https://electiontracker.au/sitemap-index.xml
