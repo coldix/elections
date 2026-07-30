@@ -4,65 +4,49 @@ import { loadElection, LIVE_STATUSES } from "../../../../scripts/lib/data.mjs";
 import { partyColour } from "../../lib/site.mjs";
 
 const data = loadElection("vic2026");
-const districts = [...data.districts].sort((a, b) => a.name.localeCompare(b.name));
 const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <Base
-  title="Legislative Assembly districts"
-  description="All 88 Victorian Legislative Assembly districts for the 2026 state election, with sitting members and individually sourced candidate records."
+  title="Legislative Council regions"
+  description="Victorian Legislative Council regions for the 2026 state election: sitting members and individually sourced upper-house candidates."
 >
   <div class="wrap section">
-    <p class="eyebrow">Victoria 2026</p>
-    <h1>Districts &amp; regions</h1>
+    <p class="eyebrow">Victoria 2026 · Upper house</p>
+    <h1>Legislative Council regions</h1>
     <p class="lede">
-      The Legislative Assembly has {districts.length} single-member districts. The
-      Legislative Council has {regions.length} regions electing five members each. Boundaries
-      are those set at the 2021 redivision.
+      Victoria’s upper house has {regions.length} regions electing five members each by
+      proportional representation (40 seats total). Sitting members are who holds the seat
+      <strong>now</strong>; 2026 candidacies are recorded only with an individual source.
+    </p>
+    <p class="muted">
+      Assembly districts: <a href="/districts">/districts</a>.
     </p>
 
-    <h2 class="lh">Legislative Assembly</h2>
     <div class="table-scroll">
       <table class="data">
-        <caption class="visually-hidden">Legislative Assembly districts</caption>
+        <caption class="visually-hidden">Legislative Council regions</caption>
         <thead>
           <tr>
-            <th scope="col">District</th>
-            <th scope="col">Council region</th>
-            <th scope="col">Sitting member</th>
+            <th scope="col">Region</th>
+            <th scope="col" class="num">Seats</th>
             <th scope="col" class="num">Candidates recorded</th>
+            <th scope="col" class="num">Districts</th>
           </tr>
         </thead>
         <tbody>
           {
-            districts.map((d) => {
-              const live = d.candidates.filter((c) => LIVE_STATUSES.includes(c.status));
-              const region = data.regions.find((r) => r.slug === d.region);
-              const retiring = d.retirements.length > 0;
+            regions.map((r) => {
+              const live = r.candidates.filter((c) => LIVE_STATUSES.includes(c.status));
+              const districtCount = data.districts.filter((d) => d.region === r.slug).length;
               return (
                 <tr>
                   <th scope="row">
-                    <a href={`/districts/${d.slug}`}>{d.name}</a>
+                    <a href={`/regions/${r.slug}`}>{r.name}</a>
                   </th>
-                  <td class="muted">
-                    {region ? (
-                      <a href={`/regions/${region.slug}`}>{region.name}</a>
-                    ) : (
-                      "—"
-                    )}
-                  </td>
-                  <td>
-                    <span class="member">
-                      <span
-                        class="swatch"
-                        style={`--party-colour:${partyColour(d.incumbent_party)}`}
-                        aria-hidden="true"
-                      />
-                      {d.incumbent}
-                    </span>
-                    {retiring && <span class="pill pill-withdrawn retiring">Not recontesting</span>}
-                  </td>
+                  <td class="num">{r.seats}</td>
                   <td class="num">{live.length || "—"}</td>
+                  <td class="num">{districtCount}</td>
                 </tr>
               );
             })
@@ -71,14 +55,11 @@ const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
       </table>
     </div>
 
-    <h2 class="lh" id="council">Legislative Council regions</h2>
+    <h2 class="lh">Sitting members by region</h2>
     <p class="muted section-note">
-      Each region elects five members by proportional representation. Full region pages
-      (sitting members + 2026 candidates): <a href="/regions">/regions</a>. Listed below are
-      members who <strong>currently hold</strong> each seat. Sitting here does not make
-      someone a 2026 candidate.
+      Mid-term replacements and party changes are included. A sitting MLC is not automatically a
+      2026 candidate.
     </p>
-
     <ul class="regions" role="list">
       {
         regions.map((r) => (
@@ -89,7 +70,6 @@ const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
               </h3>
               <span class="muted">{r.seats} members</span>
             </div>
-
             <ul class="members" role="list">
               {r.members.map((m) => {
                 const retiring = data.retirements.some(
@@ -107,23 +87,10 @@ const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
                       {data.partyBySlug.get(m.party)?.short_name ?? m.party}
                     </span>
                     {retiring && <span class="pill pill-withdrawn">Not recontesting</span>}
-                    {m.note && (
-                      <span class="m-note muted" title={m.note}>
-                        ⓘ<span class="visually-hidden"> {m.note}</span>
-                      </span>
-                    )}
                   </li>
                 );
               })}
             </ul>
-
-            <p class="muted region-districts">
-              <strong>Districts:</strong>{" "}
-              {data.districts
-                .filter((d) => d.region === r.slug)
-                .map((d) => d.name)
-                .join(", ")}
-            </p>
           </li>
         ))
       }
@@ -135,18 +102,6 @@ const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
   .lh {
     margin-top: 2.75rem;
     margin-bottom: 0.9rem;
-  }
-  .member {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  .retiring {
-    margin-left: 0.5rem;
-  }
-  .district-list {
-    max-width: 34rem;
-    font-size: 0.85rem;
   }
   .section-note {
     max-width: 54rem;
@@ -199,15 +154,5 @@ const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
   }
   .m-party {
     font-size: 0.85rem;
-  }
-  .m-note {
-    cursor: help;
-  }
-  .region-districts {
-    margin: 0.95rem 0 0;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--rule);
-    font-size: 0.82rem;
-    line-height: 1.55;
   }
 </style>

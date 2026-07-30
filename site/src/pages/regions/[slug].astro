@@ -10,91 +10,118 @@ import { SITE, partyColour, formatDate } from "../../lib/site.mjs";
 
 export async function getStaticPaths() {
   const data = loadElection("vic2026");
-  return data.districts.map((d) => ({ params: { slug: d.slug }, props: { slug: d.slug } }));
+  return data.regions.map((r) => ({ params: { slug: r.slug }, props: { slug: r.slug } }));
 }
 
 const data = loadElection("vic2026");
-const district = data.districts.find((d) => d.slug === Astro.props.slug);
-const region = data.regions.find((r) => r.slug === district.region);
+const region = data.regions.find((r) => r.slug === Astro.props.slug);
+const districts = data.districts
+  .filter((d) => d.region === region.slug)
+  .sort((a, b) => a.name.localeCompare(b.name));
 
-const live = district.candidates
+const live = region.candidates
   .filter((c) => LIVE_STATUSES.includes(c.status))
   .sort((a, b) => a.name.localeCompare(b.name));
-const ended = district.candidates.filter((c) => !LIVE_STATUSES.includes(c.status));
-
+const ended = region.candidates.filter((c) => !LIVE_STATUSES.includes(c.status));
 const partyName = (slug) => data.partyBySlug.get(slug)?.short_name ?? slug;
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: `${district.name} — 2026 Victorian state election candidates`,
-  url: `${SITE.url}/districts/${district.slug}`,
+  name: `${region.name} — Legislative Council · 2026 Victorian election`,
+  url: `${SITE.url}/regions/${region.slug}`,
   isPartOf: { "@type": "WebSite", name: SITE.name, url: SITE.url },
-  about: {
-    "@type": "AdministrativeArea",
-    name: `Electoral district of ${district.name}, Victoria`,
-  },
 };
 ---
 
 <Base
-  title={`${district.name} — candidates`}
-  description={`Candidates recorded for the district of ${district.name} at the 2026 Victorian state election. Sitting member: ${district.incumbent}. Every record individually sourced.`}
+  title={`${region.name} — Legislative Council`}
+  description={`Sitting members and recorded 2026 candidates for the ${region.name} region of the Victorian Legislative Council.`}
   schema={schema}
   breadcrumbs={[
-    { name: "Districts", href: "/districts" },
-    { name: district.name, href: `/districts/${district.slug}` },
+    { name: "Regions", href: "/regions" },
+    { name: region.name, href: `/regions/${region.slug}` },
   ]}
 >
   <div class="wrap section">
     <nav aria-label="Breadcrumb" class="crumb">
-      <a href="/districts">Districts</a> <span aria-hidden="true">/</span>
-      <span aria-current="page">{district.name}</span>
+      <a href="/regions">Regions</a> <span aria-hidden="true">/</span>
+      <span>{region.name}</span>
     </nav>
 
-    <p class="eyebrow">Legislative Assembly district</p>
-    <h1>{district.name}</h1>
+    <p class="eyebrow">Legislative Council · 5 members</p>
+    <h1>{region.name}</h1>
+    <p class="lede">
+      Upper-house region electing five members by proportional representation. Sitting
+      members below are who holds the seats <strong>today</strong>; 2026 ticket candidacies
+      are listed only when individually sourced.
+    </p>
 
     <dl class="facts">
       <div>
-        <dt>Sitting member</dt>
-        <dd>
-          <span class="swatch" style={`--party-colour:${partyColour(district.incumbent_party)}`} aria-hidden="true"></span>
-          {district.incumbent}
-          <span class="muted">({partyName(district.incumbent_party)})</span>
-        </dd>
+        <dt>Chamber</dt>
+        <dd>Legislative Council</dd>
       </div>
       <div>
-        <dt>Council region</dt>
-        <dd>{region?.name ?? "—"}</dd>
+        <dt>Seats</dt>
+        <dd>{region.seats}</dd>
       </div>
       <div>
-        <dt>Candidates recorded</dt>
-        <dd>{live.length}</dd>
+        <dt>Assembly districts</dt>
+        <dd>{districts.length}</dd>
+      </div>
+      <div>
+        <dt>2026 candidates recorded</dt>
+        <dd>{live.length || "—"}</dd>
       </div>
     </dl>
 
-    {
-      district.retirements.length > 0 && (
-        <div class="notice" role="note">
-          {district.retirements.map((r) => (
-            <p style="margin:0">
-              <strong>{r.name} is not recontesting.</strong> Announced{" "}
-              {formatDate(r.announced)} — <SourceLink source={r.source} />
-            </p>
-          ))}
-        </div>
-      )
-    }
+    <h2 class="sh">Sitting members now</h2>
+    <p class="muted sub">
+      Not a 2026 ticket. Mid-term replacements and party changes are included. See
+      <a href="/methodology">methodology</a>.
+    </p>
+    <ul class="mlc-list" role="list">
+      {
+        region.members.map((m) => {
+          const retiring = data.retirements.some(
+            (x) => x.role === "MLC" && x.name === m.name
+          );
+          return (
+            <li class="card mlc">
+              <div class="mlc-head">
+                <div>
+                  <h3>{m.name}</h3>
+                  <p class="cand-party">
+                    <span
+                      class="swatch"
+                      style={`--party-colour:${partyColour(m.party)}`}
+                      aria-hidden="true"
+                    />
+                    {partyName(m.party)}
+                  </p>
+                </div>
+                {retiring && <span class="pill pill-withdrawn">Not recontesting</span>}
+              </div>
+              {m.note && <p class="muted m-note">{m.note}</p>}
+              {m.source && (
+                <p class="muted">
+                  <SourceLink source={m.source} showAccessed={false} />
+                </p>
+              )}
+            </li>
+          );
+        })
+      }
+    </ul>
 
-    <h2 class="sh">Recorded candidates</h2>
-
+    <h2 class="sh">Recorded 2026 candidates</h2>
     {
       live.length === 0 ? (
         <p class="empty card">
-          No individually sourced candidate has been recorded for {district.name} yet. This
-          means we have not yet verified one — <strong>not</strong> that no candidate exists.
-          Nominations close 13 November 2026.{" "}
+          No individually sourced Legislative Council candidacy has been recorded for{" "}
+          {region.name} yet. That means we have not verified a ticket entry —{" "}
+          <strong>not</strong> that no one will stand.{" "}
           <a href={SITE.issues}>Know of one? Send us the source.</a>
         </p>
       ) : (
@@ -122,7 +149,6 @@ const schema = {
                 </div>
                 <span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
               </div>
-
               <ol class="history" role="list">
                 {c.history.map((h) => (
                   <li>
@@ -133,7 +159,6 @@ const schema = {
                   </li>
                 ))}
               </ol>
-
               {c.links?.length > 0 && (
                 <p class="cand-links muted">
                   {c.links.map((l) => (
@@ -191,10 +216,22 @@ const schema = {
       )
     }
 
+    <h2 class="sh">Assembly districts in this region</h2>
+    <ul class="dist-links">
+      {
+        districts.map((d) => (
+          <li>
+            <a href={`/districts/${d.slug}`}>{d.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+
     <p class="foot-note muted">
-      Records for this district as data:{" "}
-      <a href="/data/vic2026/candidates.json">candidates.json</a> ·{" "}
-      <a href="/data/vic2026/candidates.csv">candidates.csv</a>. Spotted an error?{" "}
+      Machine-readable:{" "}
+      <a href="/data/vic2026/regions.json">regions.json</a> ·{" "}
+      <a href="/data/vic2026/council-members.json">council-members.json</a> ·{" "}
+      <a href="/data/vic2026/candidates.json">candidates.json</a>.{" "}
       <a href={SITE.issues}>Submit a correction</a>.
     </p>
   </div>
@@ -233,18 +270,19 @@ const schema = {
   .facts dd {
     margin: 0;
     font-weight: 560;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    flex-wrap: wrap;
   }
   .sh {
     margin-top: 2.5rem;
+  }
+  .sub {
+    max-width: 46rem;
+    margin-bottom: 1rem;
   }
   .empty {
     color: var(--ink-2);
     max-width: 46rem;
   }
+  .mlc-list,
   .cand-list {
     list-style: none;
     margin: 1.25rem 0 0;
@@ -252,14 +290,16 @@ const schema = {
     display: grid;
     gap: 1rem;
   }
-  .cand-head {
+  .cand-head,
+  .mlc-head {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 1rem;
     flex-wrap: wrap;
   }
-  .cand h3 {
+  .cand h3,
+  .mlc h3 {
     margin: 0 0 0.2rem;
     font-size: 1.1rem;
   }
@@ -269,6 +309,14 @@ const schema = {
     align-items: center;
     gap: 0.4rem;
     font-size: 0.9rem;
+  }
+  .cand-bio {
+    margin: 0.35rem 0 0;
+    font-size: 0.88rem;
+  }
+  .m-note {
+    margin: 0.6rem 0 0;
+    font-size: 0.88rem;
   }
   .history {
     list-style: none;
@@ -297,15 +345,22 @@ const schema = {
     font-size: 0.86rem;
     color: var(--ink-2);
   }
-  .cand-bio {
-    margin: 0.45rem 0 0;
-    font-size: 0.88rem;
-  }
   .cand-links {
     margin: 0.9rem 0 0;
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+  .dist-links {
+    columns: 2;
+    gap: 1.5rem;
+    max-width: 40rem;
+    padding-left: 1.15rem;
+  }
+  @media (max-width: 40rem) {
+    .dist-links {
+      columns: 1;
+    }
   }
   .foot-note {
     margin-top: 2.5rem;

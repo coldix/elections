@@ -187,7 +187,9 @@ const sittingMLCs = data.councilMembers.filter((m) => m.party === party.slug);
               <tbody>
                 {council.map((c) => (
                   <tr>
-                    <th scope="row">{regionName(c.contest)}</th>
+                    <th scope="row">
+                      <a href={`/regions/${c.contest}`}>{regionName(c.contest)}</a>
+                    </th>
                     <td>{c.name}</td>
                     <td>
                       <span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>

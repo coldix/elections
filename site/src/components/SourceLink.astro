@@ -9,7 +9,12 @@ const { source, showAccessed = true } = Astro.props;
 {
   source && (
     <span class="src">
-      <a href={source.url} rel="nofollow noopener" title={source.title}>
+      <a
+        href={source.url}
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        title={source.title}
+      >
         {source.publisher}
       </a>
       {source.published && (
@@ -27,7 +32,12 @@ const { source, showAccessed = true } = Astro.props;
       {source.archive_url && (
         <>
           {" "}
-          <a href={source.archive_url} rel="nofollow noopener" class="muted">
+          <a
+            href={source.archive_url}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            class="muted"
+          >
             archived
           </a>
         </>

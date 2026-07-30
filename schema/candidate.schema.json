@@ -58,6 +58,14 @@
               "kind": { "type": "string" }
             }
           }
+        },
+        "occupation": {
+          "type": "string",
+          "description": "Optional short public occupation (e.g. lawyer, publican). Only when already public in a campaign/political context."
+        },
+        "background": {
+          "type": "string",
+          "description": "Optional one-line public background note. Not family, sex, or private life."
         }
       }
     }

@@ -27,6 +27,8 @@ candidate:
         accessed: 2026-09-11
       note: ""                 # optional, neutral wording only
   corrections: []              # entries: {date, was, now, reason, source}
+  occupation: "Teacher"        # optional; public occupation only
+  background: "Former school principal"  # optional one-liner; not family/sex
   links:                       # optional public campaign links
     - url: https://example.com/janecitizen
       kind: campaign-site

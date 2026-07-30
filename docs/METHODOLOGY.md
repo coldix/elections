@@ -30,6 +30,23 @@ Rumour and speculation are **not** statuses and are not recorded.
 - Social media posts count only from verified/official accounts of the party
   or candidate.
 
+## Optional profile fields
+
+Candidacy YAML may include short public context fields. They are **optional**
+and never required for a valid record.
+
+| Field | Use | Do not use for |
+|---|---|---|
+| `occupation` | Public job or role (e.g. lawyer, teacher, publican) | Guesswork |
+| `background` | One-line public career note | Family, sex, health, private life |
+
+**Out of scope permanently (or without a new decision):** sex/gender as a
+required field, marital status, children, home address, personal contact
+details. Privacy policy: only what is already public in a political context.
+
+If occupation/background is filled, it should be checkable against a public
+source (campaign bio, party page, news profile).
+
 ## Corrections
 
 - Errors are corrected by a new commit; history is never rewritten. The

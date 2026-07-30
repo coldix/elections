@@ -239,9 +239,9 @@ Resolved 2026-07-28:
    in review batches (Fresh Start Tour + other named sources). Do **not** use
    Wikipedia blanket footnotes. Live list:
    [docs/incumbent-gap.md](docs/incumbent-gap.md).
-2. **Legislative Council tickets** — region-by-region (Wikipedia + party
-   sources). Assembly minor-party columns largely done (Socialists/AJP/etc.);
-   LC grids remain. Per-region pages only after tickets exist.
+2. **Legislative Council tickets** — region-by-region (party sources). Gap
+   list: [docs/council-gap.md](docs/council-gap.md). Region pages live at
+   `/regions` and `/regions/<slug>` (sitting MLCs + recorded candidacies).
 3. ~~Static site~~ — live at electiontracker.au (Workers Builds).
 4. ~~Authorisation / legal pages~~ — `/about` authorisation + privacy/terms/
    disclaimer (not lawyer-reviewed; do that before campaign heat).
