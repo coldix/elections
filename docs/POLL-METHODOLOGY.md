@@ -33,6 +33,28 @@ Headline outputs:
 Not in v1 average: preferred premier, approvals, 2PP/3PP headlines, MRP,
 seat projections, invented preference flows.
 
+### Display-only two-bloc grouping
+
+The `/polls` page may show a **Left / Right** graphic derived from the same
+primary average:
+
+| Bloc | Composition |
+|---|---|
+| **Left bloc** | Labor + Greens |
+| **Right bloc** | Coalition (L-NP) + One Nation |
+| **Others** | Residual minor parties and independents |
+
+**Others handling (two options shown):**
+
+1. **Residual** — leave Others as a third slice (three-way pie).
+2. **Proportional split** — allocate Others into Left and Right in proportion
+   to each bloc’s share of the four-party core (ALP+GRN vs LNP+ONP). An even
+   50/50 split of Others is also reported as a sensitivity check in
+   `poll-average.json` (`bloc_split.other_split_even`).
+
+This is **not** a two-party preferred result, preference flow, or forecast.
+It is only a primary-vote grouping for readability.
+
 ---
 
 ## Scope

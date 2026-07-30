@@ -51,6 +51,70 @@ export const PARTY_LABELS = {
   others: "Others",
 };
 
+/**
+ * Illustrative two-bloc grouping of primary shares (not preference-flow 2PP).
+ * Left = Labor + Greens; Right = Coalition + One Nation.
+ * Others is either left residual or split into the two blocs.
+ *
+ * @param {{ alp: number, lnp: number, onp: number, grn: number, others: number }} primaries
+ * @returns {object | null}
+ */
+export function computeBlocSplit(primaries) {
+  if (!primaries) return null;
+  const leftCore = Number(primaries.alp) + Number(primaries.grn);
+  const rightCore = Number(primaries.lnp) + Number(primaries.onp);
+  const other = Number(primaries.others);
+  const coreTotal = leftCore + rightCore;
+  if (!(coreTotal > 0) || !Number.isFinite(other)) return null;
+
+  const leftShare = leftCore / coreTotal;
+  const rightShare = rightCore / coreTotal;
+  const leftFromOther = other * leftShare;
+  const rightFromOther = other * rightShare;
+
+  const round1 = (x) => Math.round(x * 10) / 10;
+
+  return {
+    // Neutral labels for display (not a formal ideology score)
+    labels: {
+      left: "Labor + Greens",
+      right: "Coalition + One Nation",
+      other: "Others",
+      short_left: "Left bloc",
+      short_right: "Right bloc",
+    },
+    definition: {
+      left: ["alp", "grn"],
+      right: ["lnp", "onp"],
+      other: ["others"],
+    },
+    caveat:
+      "Primary-vote groupings only. Not a two-party preferred result, seat model, " +
+      "or preference forecast. Others are minor parties and independents combined.",
+    core: {
+      left: round1(leftCore),
+      right: round1(rightCore),
+      other: round1(other),
+    },
+    /** Two-way after allocating Others in proportion to the core blocs. */
+    other_split_proportional: {
+      method: "proportional_to_core_blocs",
+      left: round1(leftCore + leftFromOther),
+      right: round1(rightCore + rightFromOther),
+      left_from_other: round1(leftFromOther),
+      right_from_other: round1(rightFromOther),
+    },
+    /** Two-way after splitting Others evenly (sensitivity check). */
+    other_split_even: {
+      method: "even_split",
+      left: round1(leftCore + other / 2),
+      right: round1(rightCore + other / 2),
+      left_from_other: round1(other / 2),
+      right_from_other: round1(other / 2),
+    },
+  };
+}
+
 function daysBetween(isoA, isoB) {
   const a = Date.parse(`${isoA}T00:00:00Z`);
   const b = Date.parse(`${isoB}T00:00:00Z`);
@@ -277,5 +341,6 @@ export function computePollAverage(polls, options = {}) {
   }));
   base.primaries = primaries;
   base.intervals = intervals;
+  base.bloc_split = computeBlocSplit(primaries);
   return base;
 }

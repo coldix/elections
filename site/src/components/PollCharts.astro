@@ -1,0 +1,580 @@
+---
+/**
+ * Primary-vote and two-bloc charts for the poll average.
+ * Pure SVG + CSS radio switcher (no client JS). 3D-style pie via ellipse + depth band.
+ */
+const { primaries, blocs } = Astro.props;
+
+const PARTY_SEGMENTS = [
+  { key: "alp", label: "Labor", color: "#C8102E" },
+  { key: "lnp", label: "Coalition (L-NP)", color: "#1B4F9C" },
+  { key: "onp", label: "One Nation", color: "#E8730C" },
+  { key: "grn", label: "Greens", color: "#1E9E43" },
+  { key: "others", label: "Others", color: "#6E6E7A" },
+];
+
+const LEFT_COLOR = "#B01E3A";
+const RIGHT_COLOR = "#1A4A8C";
+const OTHER_COLOR = "#6E6E7A";
+
+function buildSlices(items) {
+  const total = items.reduce((s, it) => s + it.value, 0);
+  if (!(total > 0)) return [];
+  let angle = -90; // start at top
+  return items
+    .filter((it) => it.value > 0)
+    .map((it) => {
+      const sweep = (it.value / total) * 360;
+      const start = angle;
+      const end = angle + sweep;
+      angle = end;
+      return { ...it, start, end, sweep, pct: (it.value / total) * 100 };
+    });
+}
+
+/** Point on an ellipse centred at (cx, cy). Angles in degrees, 0 = right, CCW; we pass SVG pie angles from -90. */
+function ellipsePoint(cx, cy, rx, ry, deg) {
+  const rad = (deg * Math.PI) / 180;
+  return {
+    x: cx + rx * Math.cos(rad),
+    y: cy + ry * Math.sin(rad),
+  };
+}
+
+function arcPath(cx, cy, rx, ry, start, end) {
+  const s = ellipsePoint(cx, cy, rx, ry, start);
+  const e = ellipsePoint(cx, cy, rx, ry, end);
+  const large = end - start > 180 ? 1 : 0;
+  return {
+    s,
+    e,
+    d: `M ${cx} ${cy} L ${s.x} ${s.y} A ${rx} ${ry} 0 ${large} 1 ${e.x} ${e.y} Z`,
+  };
+}
+
+/**
+ * 3D-style pie: top ellipse faces + thickness on the front rim.
+ * Returns { tops, sides, labels, width, height, cx, cy }
+ */
+function pie3d(slices, opts = {}) {
+  const rx = opts.rx ?? 150;
+  const ry = opts.ry ?? 78;
+  const depth = opts.depth ?? 22;
+  const cx = opts.cx ?? 180;
+  const cy = opts.cy ?? 100;
+  const width = opts.width ?? 360;
+  const height = opts.height ?? 210;
+
+  // Side faces only where the outer rim faces the camera (bottom half of ellipse).
+  // Draw sides first (back-to-front by mid-angle).
+  const sides = [];
+  for (const sl of slices) {
+    // Sample the arc for a side ribbon when it intersects the front (y > cy)
+    const steps = Math.max(4, Math.ceil(sl.sweep / 6));
+    const ptsTop = [];
+    const ptsBot = [];
+    for (let i = 0; i <= steps; i++) {
+      const a = sl.start + (sl.sweep * i) / steps;
+      const p = ellipsePoint(cx, cy, rx, ry, a);
+      // only keep front-ish points (lower half)
+      if (p.y >= cy - 1) {
+        ptsTop.push(p);
+        ptsBot.push({ x: p.x, y: p.y + depth });
+      }
+    }
+    if (ptsTop.length >= 2) {
+      const topLine = ptsTop.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
+      const botLine = [...ptsBot]
+        .reverse()
+        .map((p, i) => `${i === 0 ? "L" : "L"} ${p.x} ${p.y}`)
+        .join(" ");
+      const d = `${topLine} ${botLine} Z`;
+      // darken for side
+      sides.push({
+        d,
+        color: sl.color,
+        mid: (sl.start + sl.end) / 2,
+      });
+    }
+  }
+  sides.sort((a, b) => {
+    // draw sides further back first (mid-angle closer to -90 / top is back... actually front is +90)
+    const frontness = (m) => Math.sin((m * Math.PI) / 180);
+    return frontness(a.mid) - frontness(b.mid);
+  });
+
+  const tops = slices.map((sl) => {
+    const { d } = arcPath(cx, cy, rx, ry, sl.start, sl.end);
+    const mid = (sl.start + sl.end) / 2;
+    const labelR = Math.min(rx, ry) * 0.62;
+    // label on top face, then shift for ellipse
+    const lp = ellipsePoint(cx, cy, labelR * (rx / 150), labelR * (ry / 78) * 0.95, mid);
+    return {
+      ...sl,
+      d,
+      labelX: lp.x,
+      labelY: lp.y,
+      showLabel: sl.sweep >= 18,
+    };
+  });
+
+  return { tops, sides, width, height, cx, cy, depth };
+}
+
+const primaryItems = PARTY_SEGMENTS.map((s) => ({
+  ...s,
+  value: Number(primaries[s.key]),
+}));
+const primarySlices = buildSlices(primaryItems);
+const primaryPie = pie3d(primarySlices);
+
+const threeWayItems = [
+  { key: "left", label: blocs.labels.left, short: blocs.labels.short_left, color: LEFT_COLOR, value: blocs.core.left },
+  { key: "right", label: blocs.labels.right, short: blocs.labels.short_right, color: RIGHT_COLOR, value: blocs.core.right },
+  { key: "other", label: blocs.labels.other, short: "Others", color: OTHER_COLOR, value: blocs.core.other },
+];
+const threeWaySlices = buildSlices(threeWayItems);
+const threeWayPie = pie3d(threeWaySlices);
+
+const twoWayItems = [
+  {
+    key: "left",
+    label: blocs.labels.left,
+    short: blocs.labels.short_left,
+    color: LEFT_COLOR,
+    value: blocs.other_split_proportional.left,
+  },
+  {
+    key: "right",
+    label: blocs.labels.right,
+    short: blocs.labels.short_right,
+    color: RIGHT_COLOR,
+    value: blocs.other_split_proportional.right,
+  },
+];
+const twoWaySlices = buildSlices(twoWayItems);
+const twoWayPie = pie3d(twoWaySlices);
+
+function fmt(n) {
+  return Number(n).toFixed(1);
+}
+---
+
+<section class="poll-charts" aria-labelledby="charts-heading">
+  <h2 id="charts-heading">At a glance</h2>
+  <p class="muted charts-intro">
+    Charts use the tracker average above. The two-bloc views group primary vote only —
+    <strong>not</strong> a two-party preferred result or preference forecast.
+  </p>
+
+  <div class="chart-switcher">
+    <input type="radio" name="poll-chart-view" id="view-primary" checked />
+    <input type="radio" name="poll-chart-view" id="view-three" />
+    <input type="radio" name="poll-chart-view" id="view-two" />
+
+    <div class="chart-tabs" role="tablist" aria-label="Chart view">
+      <label for="view-primary" class="chart-tab">Primary vote</label>
+      <label for="view-three" class="chart-tab">Left / Right + Others</label>
+      <label for="view-two" class="chart-tab">Left / Right (Others split)</label>
+    </div>
+
+    <!-- Primary five-way -->
+    <div class="chart-panel" data-panel="primary">
+      <div class="chart-grid">
+        <figure class="pie-figure">
+          <svg
+            class="pie-svg"
+            viewBox={`0 0 ${primaryPie.width} ${primaryPie.height}`}
+            role="img"
+            aria-label={`Primary vote pie: ${primarySlices.map((s) => `${s.label} ${fmt(s.value)} percent`).join(", ")}`}
+          >
+            <defs>
+              <filter id="pie-shadow" x="-20%" y="-20%" width="140%" height="160%">
+                <feDropShadow dx="0" dy="6" stdDeviation="5" flood-opacity="0.18" />
+              </filter>
+              <linearGradient id="pie-sheen" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fff" stop-opacity="0.22" />
+                <stop offset="55%" stop-color="#fff" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <g filter="url(#pie-shadow)">
+              {
+                primaryPie.sides.map((s) => (
+                  <path d={s.d} fill={s.color} class="pie-side" />
+                ))
+              }
+              {
+                primaryPie.tops.map((s) => (
+                  <path d={s.d} fill={s.color} class="pie-top" stroke="var(--surface)" stroke-width="1.2" />
+                ))
+              }
+              <ellipse
+                cx={primaryPie.cx}
+                cy={primaryPie.cy}
+                rx="150"
+                ry="78"
+                fill="url(#pie-sheen)"
+                pointer-events="none"
+              />
+            </g>
+            {
+              primaryPie.tops.map(
+                (s) =>
+                  s.showLabel && (
+                    <text
+                      x={s.labelX}
+                      y={s.labelY}
+                      class="pie-label"
+                      text-anchor="middle"
+                      dominant-baseline="middle"
+                    >
+                      {fmt(s.value)}%
+                    </text>
+                  )
+              )
+            }
+          </svg>
+          <figcaption class="visually-hidden">
+            Five-way primary vote share from the tracker average.
+          </figcaption>
+        </figure>
+        <ul class="chart-legend">
+          {
+            primarySlices.map((s) => (
+              <li>
+                <span class="swatch" style={`background:${s.color}`} aria-hidden="true" />
+                <span class="leg-label">{s.label}</span>
+                <span class="leg-val mono">{fmt(s.value)}%</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Three-way: left / right / other -->
+    <div class="chart-panel" data-panel="three">
+      <div class="chart-grid">
+        <figure class="pie-figure">
+          <svg
+            class="pie-svg"
+            viewBox={`0 0 ${threeWayPie.width} ${threeWayPie.height}`}
+            role="img"
+            aria-label={`Two-bloc pie with others residual: Labor plus Greens ${fmt(blocs.core.left)} percent, Coalition plus One Nation ${fmt(blocs.core.right)} percent, Others ${fmt(blocs.core.other)} percent`}
+          >
+            <defs>
+              <filter id="pie-shadow-3" x="-20%" y="-20%" width="140%" height="160%">
+                <feDropShadow dx="0" dy="6" stdDeviation="5" flood-opacity="0.18" />
+              </filter>
+            </defs>
+            <g filter="url(#pie-shadow-3)">
+              {
+                threeWayPie.sides.map((s) => (
+                  <path d={s.d} fill={s.color} class="pie-side" />
+                ))
+              }
+              {
+                threeWayPie.tops.map((s) => (
+                  <path d={s.d} fill={s.color} class="pie-top" stroke="var(--surface)" stroke-width="1.2" />
+                ))
+              }
+            </g>
+            {
+              threeWayPie.tops.map(
+                (s) =>
+                  s.showLabel && (
+                    <text
+                      x={s.labelX}
+                      y={s.labelY}
+                      class="pie-label"
+                      text-anchor="middle"
+                      dominant-baseline="middle"
+                    >
+                      {fmt(s.value)}%
+                    </text>
+                  )
+              )
+            }
+          </svg>
+        </figure>
+        <div class="bloc-copy">
+          <ul class="chart-legend">
+            {
+              threeWaySlices.map((s) => (
+                <li>
+                  <span class="swatch" style={`background:${s.color}`} aria-hidden="true" />
+                  <span class="leg-label">
+                    <strong>{s.short ?? s.label}</strong>
+                    <span class="muted block-sm">{s.label}</span>
+                  </span>
+                  <span class="leg-val mono">{fmt(s.value)}%</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="muted method-note">
+            <strong>Left bloc</strong> = Labor + Greens.
+            <strong> Right bloc</strong> = Coalition (L-NP) + One Nation.
+            <strong> Others</strong> stay unallocated (independents and remaining minor parties).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two-way: others split proportionally -->
+    <div class="chart-panel" data-panel="two">
+      <div class="chart-grid">
+        <figure class="pie-figure">
+          <svg
+            class="pie-svg"
+            viewBox={`0 0 ${twoWayPie.width} ${twoWayPie.height}`}
+            role="img"
+            aria-label={`Two-way pie with others split proportionally: Labor plus Greens ${fmt(blocs.other_split_proportional.left)} percent, Coalition plus One Nation ${fmt(blocs.other_split_proportional.right)} percent`}
+          >
+            <defs>
+              <filter id="pie-shadow-2" x="-20%" y="-20%" width="140%" height="160%">
+                <feDropShadow dx="0" dy="6" stdDeviation="5" flood-opacity="0.18" />
+              </filter>
+            </defs>
+            <g filter="url(#pie-shadow-2)">
+              {
+                twoWayPie.sides.map((s) => (
+                  <path d={s.d} fill={s.color} class="pie-side" />
+                ))
+              }
+              {
+                twoWayPie.tops.map((s) => (
+                  <path d={s.d} fill={s.color} class="pie-top" stroke="var(--surface)" stroke-width="1.2" />
+                ))
+              }
+            </g>
+            {
+              twoWayPie.tops.map((s) => (
+                <text
+                  x={s.labelX}
+                  y={s.labelY}
+                  class="pie-label"
+                  text-anchor="middle"
+                  dominant-baseline="middle"
+                >
+                  {fmt(s.value)}%
+                </text>
+              ))
+            }
+          </svg>
+        </figure>
+        <div class="bloc-copy">
+          <ul class="chart-legend">
+            {
+              twoWaySlices.map((s) => (
+                <li>
+                  <span class="swatch" style={`background:${s.color}`} aria-hidden="true" />
+                  <span class="leg-label">
+                    <strong>{s.short ?? s.label}</strong>
+                    <span class="muted block-sm">{s.label}</span>
+                  </span>
+                  <span class="leg-val mono">{fmt(s.value)}%</span>
+                </li>
+              ))
+            }
+          </ul>
+          <div class="split-detail card-soft">
+            <p class="split-title">How Others is split</p>
+            <p class="muted">
+              Others ({fmt(blocs.core.other)}%) is allocated <strong>in proportion</strong> to the
+              two core blocs (not preference flows):
+            </p>
+            <ul class="split-math muted">
+              <li>
+                → Left: +{fmt(blocs.other_split_proportional.left_from_other)} pp from Others
+              </li>
+              <li>
+                → Right: +{fmt(blocs.other_split_proportional.right_from_other)} pp from Others
+              </li>
+            </ul>
+            <p class="muted">
+              Even split sensitivity: Left {fmt(blocs.other_split_even.left)}% · Right{" "}
+              {fmt(blocs.other_split_even.right)}%.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="muted charts-foot">
+    {blocs.caveat}
+  </p>
+</section>
+
+<style>
+  .poll-charts {
+    margin: 1.75rem 0 0.5rem;
+  }
+  .charts-intro {
+    margin-bottom: 1rem;
+  }
+  .charts-foot {
+    margin-top: 1rem;
+  }
+
+  .chart-switcher {
+    position: relative;
+  }
+  .chart-switcher > input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .chart-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .chart-tab {
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+    background: var(--surface);
+    color: var(--ink-2);
+    user-select: none;
+  }
+  .chart-tab:hover {
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+
+  #view-primary:checked ~ .chart-tabs label[for="view-primary"],
+  #view-three:checked ~ .chart-tabs label[for="view-three"],
+  #view-two:checked ~ .chart-tabs label[for="view-two"] {
+    background: var(--accent-wash);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .chart-panel {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: clamp(1rem, 2.5vw, 1.4rem);
+    box-shadow: var(--shadow);
+  }
+  #view-primary:checked ~ .chart-panel[data-panel="primary"],
+  #view-three:checked ~ .chart-panel[data-panel="three"],
+  #view-two:checked ~ .chart-panel[data-panel="two"] {
+    display: block;
+  }
+
+  .chart-grid {
+    display: grid;
+    gap: 1.25rem;
+    align-items: center;
+  }
+  @media (min-width: 640px) {
+    .chart-grid {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  .pie-figure {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .pie-svg {
+    width: min(100%, 22rem);
+    height: auto;
+    overflow: visible;
+  }
+  .pie-side {
+    opacity: 0.78;
+  }
+  .pie-top {
+    transition: filter 0.15s ease;
+  }
+  .pie-label {
+    fill: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    paint-order: stroke;
+    stroke: rgb(0 0 0 / 0.35);
+    stroke-width: 2.5px;
+    pointer-events: none;
+  }
+
+  .chart-legend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .chart-legend li {
+    display: grid;
+    grid-template-columns: 0.85rem 1fr auto;
+    gap: 0.55rem;
+    align-items: start;
+    font-size: 0.92rem;
+  }
+  .swatch {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 3px;
+    margin-top: 0.28rem;
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12);
+  }
+  .leg-val {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+  .block-sm {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  .method-note {
+    margin: 1rem 0 0;
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+  .card-soft {
+    margin-top: 0.85rem;
+    padding: 0.75rem 0.9rem;
+    background: var(--surface-2);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--rule);
+  }
+  .split-title {
+    margin: 0 0 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .split-math {
+    margin: 0.4rem 0 0.6rem;
+    padding-left: 1.1rem;
+    font-size: 0.86rem;
+  }
+  .split-detail p {
+    margin-bottom: 0.4rem;
+  }
+  .split-detail p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pie-top {
+      transition: none;
+    }
+  }
+</style>

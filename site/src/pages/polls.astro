@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import PollCharts from "../components/PollCharts.astro";
 import { formatDate } from "../lib/site.mjs";
 import { listElections } from "../../../scripts/lib/data.mjs";
 import {
@@ -24,7 +25,7 @@ const sortedPolls = [...polls].sort((a, b) =>
   title="Poll average"
   description="Sourced Victorian statewide primary-vote polls and a transparent weighted average with uncertainty bands. Not a forecast."
 >
-  <div class="wrap wrap-narrow section">
+  <div class="wrap wrap-polls section">
     <p class="eyebrow">Statewide voting intention</p>
     <h1>Poll average</h1>
     <p class="lede">
@@ -77,6 +78,11 @@ const sortedPolls = [...polls].sort((a, b) =>
             · machine-readable
             <a href={`/data/${electionId}/poll-average.json`}>poll-average.json</a>.
           </p>
+          {
+            average.bloc_split && (
+              <PollCharts primaries={average.primaries} blocs={average.bloc_split} />
+            )
+          }
         </section>
       ) : (
         <section aria-labelledby="avg-heading">
@@ -190,6 +196,9 @@ const sortedPolls = [...polls].sort((a, b) =>
 </Base>
 
 <style>
+  .wrap-polls {
+    max-width: 52rem;
+  }
   h2 {
     margin-top: 2.5rem;
   }
