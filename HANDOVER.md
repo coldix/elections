@@ -234,23 +234,23 @@ Resolved 2026-07-28:
 
 ## TODO (priority order)
 
-1. Close the 67-incumbent gap: find an individual, dated source for each
-   presumed-recontesting Labor/Liberal/Nationals/Greens incumbent (party
-   candidate page, local paper, social post) rather than leaving them
-   unrecorded. List is in the "did NOT record" note above — cross-reference
-   districts.yaml incumbents against candidates/ to regenerate it.
-2. Minor parties + independents + Legislative Council tickets: same Wikipedia
-   page has Socialists/AJP/Libertarian/independent columns per Assembly seat
-   and full LC ticket tables per region — not entered yet (out of this pass's
-   "major parties" scope). LC ticket tables are messy multi-party grids in
-   plain-text form; parse carefully or fetch region-by-region.
-3. Static site: Astro on Cloudflare Pages, custom domain electiontracker.au.
-   First page = party coverage grid from dist/vic2026/coverage.json, WITH the
-   caveat text surfaced prominently, not buried. Follow the oze playbook
-   header/versioning conventions if adopting Aurora styling.
-4. Authorisation statement page — check Electoral Act 2002 (Vic) requirements
-   for authorisation of electoral matter before launch.
-5. GitHub Issue templates for candidate submissions / corrections.
+1. **Close the incumbent gap** (~70 seats as of 2026-07-30): find an
+   individual, dated source for each presumed-recontesting MLA not yet in
+   `candidates/` (mostly Labor 47, then Liberal 15, Nationals 6, independents
+   2). Do **not** use Wikipedia blanket footnotes. Live list:
+   [docs/incumbent-gap.md](docs/incumbent-gap.md). Regenerate by comparing
+   `districts.yaml` incumbents vs `candidates/` minus `retirements.yaml`.
+2. **Legislative Council tickets** — region-by-region (Wikipedia + party
+   sources). Assembly minor-party columns largely done (Socialists/AJP/etc.);
+   LC grids remain. Per-region pages only after tickets exist.
+3. ~~Static site~~ — live at electiontracker.au (Workers Builds).
+4. ~~Authorisation / legal pages~~ — `/about` authorisation + privacy/terms/
+   disclaimer (not lawyer-reviewed; do that before campaign heat).
+5. ~~Issue templates~~ — New candidacy / status change template in place.
+6. **Recent-changes feed** from `git log` over `data/` (still in SCOPE MVP).
+7. **Discovery operator checklist** — GSC sitemap + hub indexing, Bing import
+   (see [docs/DISCOVERY.md](docs/DISCOVERY.md)); GitHub repo homepage set to
+   electiontracker.au; empty Wiki **disabled** (product is not a wiki).
 
 ## Re-running the Wikipedia extraction
 
