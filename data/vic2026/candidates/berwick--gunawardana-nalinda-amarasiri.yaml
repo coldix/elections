@@ -4,6 +4,8 @@ candidate:
   contest: berwick
   chamber: assembly
   status: endorsed
+  occupation: "Engineer"
+  background: "I’m a civil engineer by profession and a member of Engineers Australia."
   history:
     - status: endorsed
       date: 2026-03-19
@@ -12,3 +14,6 @@ candidate:
         title: "Nalinda Amarasiri Gunawardana: Candidate for Berwick"
         publisher: Victorian Socialists
         accessed: 2026-03-19
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/nalinda-amarasiri-gunawardana
+      kind: party-profile

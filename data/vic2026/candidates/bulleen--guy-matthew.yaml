@@ -5,7 +5,7 @@ candidate:
   chamber: assembly
   status: announced
   occupation: "Member of Parliament"
-  background: "MLA for Bulleen; former Victorian Liberal leader and planning minister"
+  background: "MLA for Bulleen; former Liberal leader and planning minister"
   history:
     - status: announced
       date: 2026-07-16
@@ -22,3 +22,5 @@ candidate:
   links:
     - url: https://www.parliament.vic.gov.au/members/matthew-guy/
       kind: parliament
+    - url: https://en.wikipedia.org/wiki/Matthew_Guy
+      kind: wikipedia

@@ -4,6 +4,8 @@ candidate:
   contest: wendouree
   chamber: assembly
   status: endorsed
+  occupation: "Community organiser"
+  background: "I am running for politics because we deserve leadership that takes the serious issues seriously: climate action, the housing crisis, food security and community"
   history:
     - status: endorsed
       date: 2026-07-01
@@ -12,3 +14,6 @@ candidate:
         title: "Ellen Burns: Candidate for Wendouree"
         publisher: Victorian Greens
         accessed: 2026-07-01
+  links:
+    - url: https://greens.org.au/vic/person/ellen-burns
+      kind: party-profile

@@ -28,5 +28,9 @@ candidate:
         published: 2026-07-12
         accessed: 2026-07-30
   links:
-    - url: https://www.bradbattin.com.au/
+    - url: https://www.bradbattin.com.au
       kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/brad-battin/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Brad_Battin
+      kind: wikipedia

@@ -17,3 +17,10 @@ candidate:
         title: "Sandringham locals know Victoria needs a fresh start, and with Brad Rowswell on my team…"
         published: 2026-07-09
         accessed: 2026-07-30
+  links:
+    - url: https://bradrowswell.com.au/
+      kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/brad-rowswell/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Brad_Rowswell
+      kind: wikipedia

@@ -4,6 +4,8 @@ candidate:
   contest: preston
   chamber: assembly
   status: endorsed
+  occupation: "Unionist"
+  background: "I work in the mental health sector, and I’m an activist and a unionist."
   history:
     - status: endorsed
       date: 2026-06-01
@@ -12,3 +14,6 @@ candidate:
         title: Serena Ashmore – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-01
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/serena-ashmore
+      kind: party-profile

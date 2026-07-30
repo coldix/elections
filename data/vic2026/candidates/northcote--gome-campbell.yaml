@@ -4,6 +4,8 @@ candidate:
   contest: northcote
   chamber: assembly
   status: announced
+  occupation: "Teacher"
+  background: "As a local and teacher, I'm going to take this fight up to Labor and into our Parliament."
   history:
     - status: announced
       date: 2025-09-28
@@ -13,3 +15,6 @@ candidate:
         publisher: Herald Sun
         published: 2025-09-28
         accessed: 2025-10-21
+  links:
+    - url: https://greens.org.au/vic/person/campbell-gome
+      kind: party-profile

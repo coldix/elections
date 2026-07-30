@@ -4,6 +4,8 @@ candidate:
   contest: caulfield
   chamber: assembly
   status: endorsed
+  occupation: "Student"
+  background: "I have a background in healthcare and am currently a history student at Monash University."
   history:
     - status: endorsed
       date: 2026-06-01
@@ -12,3 +14,6 @@ candidate:
         title: Malak Ababneh – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-01
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/malak-ababneh
+      kind: party-profile

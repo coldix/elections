@@ -5,7 +5,7 @@ candidate:
   chamber: assembly
   status: announced
   occupation: "Member of Parliament"
-  background: "MLA for Mornington (Liberal)"
+  background: "MLA for Mornington (Liberal); former federal MP"
   history:
     - status: announced
       date: 2026-07-09
@@ -17,3 +17,10 @@ candidate:
         title: "Mornington locals know Victoria needs a fresh start, and with Chris Crewther on my team…"
         published: 2026-07-09
         accessed: 2026-07-30
+  links:
+    - url: https://www.chriscrewther.com.au
+      kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/chris-crewther/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Chris_Crewther
+      kind: wikipedia

@@ -17,3 +17,10 @@ candidate:
         title: "Mildura locals know Victoria needs a fresh start, and with Jade Benham on my team…"
         published: 2026-06-30
         accessed: 2026-07-30
+  links:
+    - url: https://www.jadebenham.com.au
+      kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/jade-benham/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Jade_Benham
+      kind: wikipedia

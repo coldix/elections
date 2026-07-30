@@ -4,6 +4,8 @@ candidate:
   contest: albert-park
   chamber: assembly
   status: endorsed
+  occupation: "Nurse"
+  background: "I was born and raised in Dandenong to a mum who was a nurse, and a Dad who was an architect-turned teacher."
   history:
     - status: endorsed
       date: 2026-04-19
@@ -12,3 +14,6 @@ candidate:
         title: "Sonya Semmens: Candidate for Albert Park"
         publisher: Victorian Greens
         accessed: 2026-04-19
+  links:
+    - url: https://greens.org.au/vic/person/sonya-semmens
+      kind: party-profile

@@ -4,6 +4,7 @@ candidate:
   contest: pakenham
   chamber: assembly
   status: endorsed
+  occupation: "Builder"
   history:
     - status: endorsed
       date: 2026-07-01
@@ -12,3 +13,6 @@ candidate:
         title: Stephanie Grigg – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-07-01
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/stephanie-grigg
+      kind: party-profile

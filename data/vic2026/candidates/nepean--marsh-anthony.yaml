@@ -4,6 +4,8 @@ candidate:
   contest: nepean
   chamber: assembly
   status: endorsed
+  occupation: "Member of Parliament"
+  background: "MLA for Nepean (Liberal)"
   history:
     - status: endorsed
       date: 2026-03-06
@@ -12,3 +14,10 @@ candidate:
         title: "Anthony Marsh: Liberal for Nepean"
         publisher: Victorian Liberals
         accessed: 2026-03-06
+  links:
+    - url: https://www.anthonymarsh.com.au
+      kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/anthony-marsh/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Anthony_Marsh_(politician)
+      kind: wikipedia

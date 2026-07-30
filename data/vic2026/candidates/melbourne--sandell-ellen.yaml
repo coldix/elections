@@ -4,8 +4,8 @@ candidate:
   contest: melbourne
   chamber: assembly
   status: endorsed
-  occupation: "Member of Parliament"
-  background: "MLA for Melbourne; Leader of the Victorian Greens"
+  occupation: "Climate advocate"
+  background: "Former CEO of Australian Youth Climate Coalition; MLA for Melbourne; Greens leader"
   history:
     - status: endorsed
       date: 2026-02-03
@@ -14,3 +14,10 @@ candidate:
         title: Victorian Candidates
         publisher: Victorian Greens
         accessed: 2026-02-03
+  links:
+    - url: https://www.ellensandell.com
+      kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/ellen-sandell/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Ellen_Sandell
+      kind: wikipedia

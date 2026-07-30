@@ -4,6 +4,7 @@ candidate:
   contest: prahran
   chamber: assembly
   status: endorsed
+  occupation: "Engineer"
   history:
     - status: endorsed
       date: 2025-10-21
@@ -12,3 +13,6 @@ candidate:
         title: "Local Environmental Engineer is Back to Take on the Divided Liberals in Prahran, Offering a Strong, Local Alternative"
         publisher: greens.org.au
         accessed: 2025-10-21
+  links:
+    - url: https://greens.org.au/vic/person/angelica-di-camillo
+      kind: party-profile

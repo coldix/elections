@@ -4,6 +4,8 @@ candidate:
   contest: sunbury
   chamber: assembly
   status: endorsed
+  occupation: "Teacher"
+  background: "I’m a proud socialist, teacher, unionist and dad."
   history:
     - status: endorsed
       date: 2026-06-16
@@ -12,3 +14,6 @@ candidate:
         title: "Adam Bremner: Candidate for Sunbury"
         publisher: Victorian Socialists
         accessed: 2026-06-16
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/adam-bremner
+      kind: party-profile

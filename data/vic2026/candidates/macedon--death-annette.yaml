@@ -4,6 +4,8 @@ candidate:
   contest: macedon
   chamber: assembly
   status: endorsed
+  occupation: "Nurse"
+  background: "She was the first in her family to go to university, inspired by her mum, who worked night shifts caring for others as an aged-care nurse."
   history:
     - status: endorsed
       date: 2026-06-21
@@ -12,3 +14,6 @@ candidate:
         title: "Annette Death: Labor Candidates"
         publisher: Victorian Labor
         accessed: 2026-06-21
+  links:
+    - url: https://www.viclabor.org.au/our-team/annette-death
+      kind: party-profile

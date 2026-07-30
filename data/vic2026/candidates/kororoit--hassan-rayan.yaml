@@ -4,6 +4,8 @@ candidate:
   contest: kororoit
   chamber: assembly
   status: endorsed
+  occupation: "Unionist"
+  background: "I’m a proud activist and ASU unionist."
   history:
     - status: endorsed
       date: 2026-06-01
@@ -12,3 +14,6 @@ candidate:
         title: Rayan Hassan – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-01
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/rayan-hassan
+      kind: party-profile

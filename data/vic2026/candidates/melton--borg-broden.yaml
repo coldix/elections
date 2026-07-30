@@ -4,6 +4,8 @@ candidate:
   contest: melton
   chamber: assembly
   status: announced
+  occupation: "Teacher"
+  background: "He became a teacher to give back to the community he grew up in."
   history:
     - status: announced
       date: 2026-03-16
@@ -13,3 +15,6 @@ candidate:
         publisher: Facebook
         published: 2026-03-16
         accessed: 2026-03-19
+  links:
+    - url: https://www.viclabor.org.au/our-team/broden-borg
+      kind: party-profile

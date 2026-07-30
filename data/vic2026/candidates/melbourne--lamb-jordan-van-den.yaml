@@ -4,6 +4,8 @@ candidate:
   contest: melbourne
   chamber: assembly
   status: announced
+  occupation: "Climate campaigner"
+  background: "It’s a lie that we can’t afford decent housing, a genuine climate transition, or properly funded schools, hospitals and public transport."
   history:
     - status: announced
       date: 2026-02-05
@@ -12,3 +14,6 @@ candidate:
         title: "Socialist 'purple pingers' aiming to take Green's seat at state election"
         publisher: Herald Sun
         accessed: 2026-02-05
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/jordan-van-den-lamb
+      kind: party-profile

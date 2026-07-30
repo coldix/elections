@@ -5,7 +5,7 @@ candidate:
   chamber: assembly
   status: announced
   occupation: "Academic"
-  background: "Dr Meghan Hopper (public title on Labor candidate announcement)"
+  background: "Dr Meghan Hopper; Labor candidate for Prahran"
   history:
     - status: announced
       date: 2026-03-11
@@ -15,3 +15,6 @@ candidate:
         publisher: Facebook
         published: 2026-03-11
         accessed: 2026-03-12
+  links:
+    - url: https://www.viclabor.org.au/our-team/meghan-hopper
+      kind: party-profile

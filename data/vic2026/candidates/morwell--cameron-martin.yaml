@@ -4,8 +4,8 @@ candidate:
   contest: morwell
   chamber: assembly
   status: announced
-  occupation: "Member of Parliament"
-  background: "MLA for Morwell (Nationals)"
+  occupation: "Plumber"
+  background: "Plumber and gasfitter before parliament; MLA for Morwell"
   history:
     - status: announced
       date: 2026-07-09
@@ -17,3 +17,8 @@ candidate:
         title: "Morwell locals know Victoria needs a fresh start, and with Martin Cameron on my team…"
         published: 2026-07-09
         accessed: 2026-07-30
+  links:
+    - url: https://www.parliament.vic.gov.au/members/martin-cameron/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Martin_Cameron_(politician)
+      kind: wikipedia

@@ -4,6 +4,7 @@ candidate:
   contest: ringwood
   chamber: assembly
   status: endorsed
+  occupation: "Disability support worker"
   history:
     - status: endorsed
       date: 2026-02-25
@@ -12,3 +13,6 @@ candidate:
         title: "Amy Mills: Candidate for Ringwood"
         publisher: Victorian Greens
         accessed: 2026-02-25
+  links:
+    - url: https://greens.org.au/vic/person/amy-mills
+      kind: party-profile

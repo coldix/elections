@@ -4,6 +4,8 @@ candidate:
   contest: clarinda
   chamber: assembly
   status: endorsed
+  occupation: "Student"
+  background: "I've helped organise student campaigns for our universities and governments to cut ties with the genocide in Palestine and to kick the military off campus."
   history:
     - status: endorsed
       date: 2026-06-16
@@ -12,3 +14,6 @@ candidate:
         title: Kit Message – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-16
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/kit-message
+      kind: party-profile

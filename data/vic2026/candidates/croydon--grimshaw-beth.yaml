@@ -4,6 +4,8 @@ candidate:
   contest: croydon
   chamber: assembly
   status: endorsed
+  occupation: "Disability support worker"
+  background: "I’m a mother of three, a disability support worker, and have been a renter in the outer-eastern suburbs my entire life."
   history:
     - status: endorsed
       date: 2026-07-22
@@ -12,3 +14,6 @@ candidate:
         title: Beth Grimshaw – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-07-22
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/beth-grimshaw
+      kind: party-profile

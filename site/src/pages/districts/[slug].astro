@@ -136,15 +136,27 @@ const schema = {
 
               {c.links?.length > 0 && (
                 <p class="cand-links muted">
-                  {c.links.map((l) => (
-                    <a
-                      href={l.url}
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                    >
-                      {l.kind ?? "link"}
-                    </a>
-                  ))}
+                  {c.links.map((l) => {
+                    const labels = {
+                      "campaign-site": "Website",
+                      "campaign-page": "Campaign",
+                      parliament: "Parliament",
+                      wikipedia: "Wikipedia",
+                      "party-profile": "Party profile",
+                      "candidate-profile": "Profile",
+                      profile: "Profile",
+                    };
+                    const label = labels[l.kind] ?? l.kind ?? "link";
+                    return (
+                      <a
+                        href={l.url}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                      >
+                        {label}
+                      </a>
+                    );
+                  })}
                 </p>
               )}
             </li>

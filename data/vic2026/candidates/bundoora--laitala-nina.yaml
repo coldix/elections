@@ -4,6 +4,8 @@ candidate:
   contest: bundoora
   chamber: assembly
   status: endorsed
+  occupation: "Student"
+  background: "Previously, I spent seven years as CEO of the Victorian Student Representative Council, advocating for strong public education."
   history:
     - status: endorsed
       date: 2026-02-12
@@ -12,3 +14,6 @@ candidate:
         title: "Nina Laitala: Candidate for Bundoora"
         publisher: Victorian Greens
         accessed: 2026-02-12
+  links:
+    - url: https://greens.org.au/vic/person/nina-laitala
+      kind: party-profile

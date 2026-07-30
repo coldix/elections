@@ -17,3 +17,10 @@ candidate:
         title: "Narracan locals know Victoria needs a fresh start, and with Wayne Farnham on my team…"
         published: 2026-06-30
         accessed: 2026-07-30
+  links:
+    - url: https://www.waynefarnham.com.au
+      kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/wayne-farnham/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Wayne_Farnham
+      kind: wikipedia

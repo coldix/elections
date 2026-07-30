@@ -4,6 +4,8 @@ candidate:
   contest: essendon
   chamber: assembly
   status: endorsed
+  occupation: "Lawyer"
+  background: "I'm a community lawyer and every day I help people stand up to police and other government authorities."
   history:
     - status: endorsed
       date: 2026-06-01
@@ -12,3 +14,6 @@ candidate:
         title: Michal Kedem – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-01
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/michal-kedem
+      kind: party-profile

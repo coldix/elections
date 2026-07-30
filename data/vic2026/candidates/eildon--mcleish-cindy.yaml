@@ -4,8 +4,8 @@ candidate:
   contest: eildon
   chamber: assembly
   status: announced
-  occupation: "Member of Parliament"
-  background: "MLA for Eildon (Liberal)"
+  occupation: "Consultant"
+  background: "Senior organisational consultant before parliament; MLA for Eildon"
   history:
     - status: announced
       date: 2026-07-09
@@ -17,3 +17,8 @@ candidate:
         title: "Eildon locals know Victoria needs a fresh start, and with Cindy McLeish on my team…"
         published: 2026-07-09
         accessed: 2026-07-30
+  links:
+    - url: https://www.parliament.vic.gov.au/members/cindy-mcleish/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Cindy_McLeish
+      kind: wikipedia

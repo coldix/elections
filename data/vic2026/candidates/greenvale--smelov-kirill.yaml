@@ -4,6 +4,8 @@ candidate:
   contest: greenvale
   chamber: assembly
   status: endorsed
+  occupation: "Union organiser"
+  background: "I’m a local IT worker and union member with experience organising workers to fight for better wages and conditions."
   history:
     - status: endorsed
       date: 2026-06-01
@@ -12,3 +14,6 @@ candidate:
         title: Kirill Smelov – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-01
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/kirill-smelov
+      kind: party-profile

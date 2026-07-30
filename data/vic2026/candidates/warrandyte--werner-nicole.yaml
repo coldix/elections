@@ -4,8 +4,8 @@ candidate:
   contest: warrandyte
   chamber: assembly
   status: announced
-  occupation: "Member of Parliament"
-  background: "MLA for Warrandyte (Liberal)"
+  occupation: "Youth worker"
+  background: "Former youth worker; MLA for Warrandyte"
   history:
     - status: announced
       date: 2026-07-09
@@ -17,3 +17,8 @@ candidate:
         title: "Warrandyte locals know Victoria needs a fresh start, and with Nicole Werner on my team…"
         published: 2026-07-09
         accessed: 2026-07-30
+  links:
+    - url: https://www.parliament.vic.gov.au/members/nicole-werner/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Nicole_Werner
+      kind: wikipedia

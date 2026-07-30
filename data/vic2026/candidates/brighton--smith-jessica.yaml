@@ -4,6 +4,8 @@ candidate:
   contest: brighton
   chamber: assembly
   status: endorsed
+  occupation: "Teacher"
+  background: "I've been a Hampton local for more than a decade, and worked as a teacher in a number of our area's primary schools."
   history:
     - status: endorsed
       date: 2026-06-01
@@ -12,3 +14,6 @@ candidate:
         title: Jessica Smith – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-01
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/jessica-smith
+      kind: party-profile

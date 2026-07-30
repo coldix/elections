@@ -4,6 +4,8 @@ candidate:
   contest: niddrie
   chamber: assembly
   status: endorsed
+  occupation: "Teacher"
+  background: "It is no secret that the public education system is in crisis – Victoria currently has the lowest funding with the lowest paid teachers and education support st"
   history:
     - status: endorsed
       date: 2026-07-02
@@ -12,3 +14,6 @@ candidate:
         title: Brendan Laws – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-07-02
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/brendan-laws
+      kind: party-profile

@@ -4,6 +4,7 @@ candidate:
   contest: nepean
   chamber: assembly
   status: endorsed
+  occupation: "Hospitality worker"
   history:
     - status: endorsed
       date: 2026-03-06
@@ -12,3 +13,6 @@ candidate:
         title: "Sianan Healy: Candidate for Nepean"
         publisher: Victorian Greens
         accessed: 2026-03-06
+  links:
+    - url: https://greens.org.au/vic/person/sianan-healy
+      kind: party-profile

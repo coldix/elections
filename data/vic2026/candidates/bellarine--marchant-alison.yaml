@@ -4,8 +4,8 @@ candidate:
   contest: bellarine
   chamber: assembly
   status: announced
-  occupation: "Member of Parliament"
-  background: "MLA for Bellarine (Labor)"
+  occupation: "Teacher"
+  background: "Primary school teacher before parliament; MLA for Bellarine"
   history:
     - status: announced
       date: 2026-07-14
@@ -19,3 +19,5 @@ candidate:
   links:
     - url: https://www.parliament.vic.gov.au/members/alison-marchant/
       kind: parliament
+    - url: https://en.wikipedia.org/wiki/Alison_Marchant
+      kind: wikipedia

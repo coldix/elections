@@ -17,5 +17,9 @@ candidate:
         published: 2026-03-21
         accessed: 2026-07-30
   links:
+    - url: https://www.jesswilsonkew.com.au/
+      kind: campaign-site
     - url: https://www.parliament.vic.gov.au/members/jess-wilson/
       kind: parliament
+    - url: https://en.wikipedia.org/wiki/Jess_Wilson
+      kind: wikipedia

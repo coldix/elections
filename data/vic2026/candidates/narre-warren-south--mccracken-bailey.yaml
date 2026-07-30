@@ -4,6 +4,8 @@ candidate:
   contest: narre-warren-south
   chamber: assembly
   status: endorsed
+  occupation: "Unionist"
+  background: "Volunteer for Bailey Hi, I'm Bailey—a boilermaker, a unionist, and a proud socialist."
   history:
     - status: endorsed
       date: 2026-06-30
@@ -12,3 +14,6 @@ candidate:
         title: Bailey McCracken – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-30
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/bailey-mccracken
+      kind: party-profile

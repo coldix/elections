@@ -4,6 +4,8 @@ candidate:
   contest: yan-yean
   chamber: assembly
   status: endorsed
+  occupation: "Student"
+  background: "I am running for Yan Yean to unrig the system, and to fight for you, your family, and your job just as hard as I fought for those students."
   history:
     - status: endorsed
       date: 2026-04-21
@@ -12,3 +14,6 @@ candidate:
         title: "Gufran Mohammed: Candidate for Yan Yean"
         publisher: Victorian Greens
         accessed: 2026-04-21
+  links:
+    - url: https://greens.org.au/vic/person/gufran-mohammed
+      kind: party-profile

@@ -4,6 +4,8 @@ candidate:
   contest: footscray
   chamber: assembly
   status: endorsed
+  occupation: "Unionist"
+  background: "I’m a community organiser, a lighting technician, and a proud trade unionist."
   history:
     - status: endorsed
       date: 2026-06-01
@@ -12,3 +14,6 @@ candidate:
         title: Jasmine Duff – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-01
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/jasmine-duff
+      kind: party-profile

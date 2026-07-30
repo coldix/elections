@@ -20,5 +20,7 @@ candidate:
         published: 2026-07-27
         accessed: 2026-07-30
   links:
-    - url: https://www.facebook.com/EmmaKealyForLowan
-      kind: campaign-page
+    - url: https://www.parliament.vic.gov.au/members/emma-kealy/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Emma_Kealy
+      kind: wikipedia

@@ -4,6 +4,8 @@ candidate:
   contest: ringwood
   chamber: assembly
   status: endorsed
+  occupation: "Student"
+  background: "I’m a local bartender, and a language student at Deakin University."
   history:
     - status: endorsed
       date: 2026-06-01
@@ -12,3 +14,6 @@ candidate:
         title: Candidates – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-01
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/jack-gardner
+      kind: party-profile

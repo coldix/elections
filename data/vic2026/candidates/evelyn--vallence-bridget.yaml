@@ -4,8 +4,8 @@ candidate:
   contest: evelyn
   chamber: assembly
   status: announced
-  occupation: "Member of Parliament"
-  background: "MLA for Evelyn (Liberal)"
+  occupation: "Automotive industry"
+  background: "16 years in automotive industry before parliament; MLA for Evelyn"
   history:
     - status: announced
       date: 2026-07-09
@@ -17,3 +17,10 @@ candidate:
         title: "Evelyn locals know Victoria needs a fresh start, and with Bridget Vallence on my team…"
         published: 2026-07-09
         accessed: 2026-07-30
+  links:
+    - url: https://www.bridgetvallence.com.au
+      kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/bridget-vallence/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Bridget_Vallence
+      kind: wikipedia

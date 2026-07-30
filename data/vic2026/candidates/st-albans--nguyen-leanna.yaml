@@ -4,6 +4,8 @@ candidate:
   contest: st-albans
   chamber: assembly
   status: endorsed
+  occupation: "Student"
+  background: "I’ve helped organise student protests for Palestine, demanding our government and universities cut ties to Israel."
   history:
     - status: endorsed
       date: 2026-06-01
@@ -12,3 +14,6 @@ candidate:
         title: Leanna Nguyen – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-01
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/leanna-nguyen
+      kind: party-profile

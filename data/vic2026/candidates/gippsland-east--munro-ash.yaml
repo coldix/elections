@@ -4,6 +4,7 @@ candidate:
   contest: gippsland-east
   chamber: assembly
   status: endorsed
+  occupation: "Carer"
   history:
     - status: endorsed
       date: 2026-06-21
@@ -12,3 +13,6 @@ candidate:
         title: "Ash Munro: Candidate for Gippsland East"
         publisher: Victorian Greens
         accessed: 2026-06-21
+  links:
+    - url: https://greens.org.au/vic/person/ash-munro
+      kind: party-profile

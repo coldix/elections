@@ -4,8 +4,8 @@ candidate:
   contest: richmond
   chamber: assembly
   status: endorsed
-  occupation: "Member of Parliament"
-  background: "MLA for Richmond (Greens)"
+  occupation: "Artist"
+  background: "Former Mayor of Yarra and contemporary artist; MLA for Richmond"
   history:
     - status: endorsed
       date: 2026-02-03
@@ -14,3 +14,8 @@ candidate:
         title: Victorian Candidates
         publisher: Victorian Greens
         accessed: 2026-02-03
+  links:
+    - url: https://www.parliament.vic.gov.au/members/gabrielle-de-vietri/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Gabrielle_de_Vietri
+      kind: wikipedia

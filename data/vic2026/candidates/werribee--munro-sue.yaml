@@ -4,6 +4,8 @@ candidate:
   contest: werribee
   chamber: assembly
   status: endorsed
+  occupation: "Nurse"
+  background: "I’m a mum to two, a nurse and activist of more than 20 years."
   history:
     - status: endorsed
       date: 2026-06-19
@@ -12,3 +14,6 @@ candidate:
         title: Sue Munro – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-19
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/sue-munro
+      kind: party-profile

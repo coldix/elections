@@ -4,6 +4,8 @@ candidate:
   contest: western-metropolitan
   chamber: council
   status: disendorsed
+  occupation: "Teacher"
+  background: "Former high school teacher; MLC for Western Metropolitan"
   history:
     - status: disendorsed
       date: 2026-03-24
@@ -31,3 +33,10 @@ candidate:
         accessed: 2026-07-28
       note: >-
         Disendorsed after falsely accusing fellow MP Matthew Guy of assault.
+  links:
+    - url: https://moiradeemingmp.com/
+      kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/moira-deeming/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Moira_Deeming
+      kind: wikipedia

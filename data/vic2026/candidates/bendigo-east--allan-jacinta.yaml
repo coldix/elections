@@ -26,5 +26,9 @@ candidate:
         published: 2026-07-28
         accessed: 2026-07-30
   links:
+    - url: https://www.jacintaallan.com
+      kind: campaign-site
     - url: https://www.parliament.vic.gov.au/members/jacinta-allan/
       kind: parliament
+    - url: https://en.wikipedia.org/wiki/Jacinta_Allan
+      kind: wikipedia

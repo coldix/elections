@@ -17,3 +17,8 @@ candidate:
         title: "Prahran locals know Victoria needs a fresh start, and with Rachel Westaway on my team…"
         published: 2026-07-09
         accessed: 2026-07-30
+  links:
+    - url: https://www.parliament.vic.gov.au/members/rachel-westaway/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Rachel_Westaway
+      kind: wikipedia

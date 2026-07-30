@@ -4,6 +4,7 @@ candidate:
   contest: preston
   chamber: assembly
   status: endorsed
+  occupation: "Engineer"
   history:
     - status: endorsed
       date: 2025-11-18
@@ -12,3 +13,6 @@ candidate:
         title: "Loki Sangarya: Candidate for Preston"
         publisher: Victorian Greens
         accessed: 2025-11-18
+  links:
+    - url: https://greens.org.au/vic/person/loki-sangarya
+      kind: party-profile

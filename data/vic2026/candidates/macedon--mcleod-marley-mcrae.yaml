@@ -4,6 +4,8 @@ candidate:
   contest: macedon
   chamber: assembly
   status: endorsed
+  occupation: "Student"
+  background: "As a student, I focused my studies in Global and Australian Politics which further shaped my commitment to progressive change."
   history:
     - status: endorsed
       date: 2026-02-14
@@ -12,3 +14,6 @@ candidate:
         title: "Marley McRae McLeod: Candidate for Macedon"
         publisher: Victorian Greens
         accessed: 2026-02-14
+  links:
+    - url: https://greens.org.au/vic/person/marley-mcrae-mcleod
+      kind: party-profile

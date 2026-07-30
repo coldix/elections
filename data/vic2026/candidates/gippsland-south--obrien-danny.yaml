@@ -32,3 +32,5 @@ candidate:
   links:
     - url: https://www.parliament.vic.gov.au/members/danny-obrien/
       kind: parliament
+    - url: https://en.wikipedia.org/wiki/Danny_O%27Brien_(politician)
+      kind: wikipedia

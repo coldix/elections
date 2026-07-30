@@ -4,6 +4,8 @@ candidate:
   contest: polwarth
   chamber: assembly
   status: endorsed
+  occupation: "Farmer"
+  background: "I want to hear from farmers, families, young people, retirees and business owners alike, making sure every voice counts, is included and respected."
   history:
     - status: endorsed
       date: 2025-11-11
@@ -12,3 +14,6 @@ candidate:
         title: "Jesse Holden: Candidate for Polwarth"
         publisher: Victorian Greens
         accessed: 2025-11-11
+  links:
+    - url: https://greens.org.au/vic/person/jesse-holden
+      kind: party-profile

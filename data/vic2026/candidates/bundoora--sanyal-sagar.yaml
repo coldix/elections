@@ -4,6 +4,8 @@ candidate:
   contest: bundoora
   chamber: assembly
   status: endorsed
+  occupation: "Unionist"
+  background: "I have been an active unionist in the NTEU and AMWU, because it’s only when we fight for our pay and conditions that the bosses ever give an inch."
   history:
     - status: endorsed
       date: 2026-06-21
@@ -12,3 +14,6 @@ candidate:
         title: Sagar Sanyal – Victorian Socialists
         publisher: Victorian Socialists
         accessed: 2026-06-21
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/sagar-sanyal
+      kind: party-profile

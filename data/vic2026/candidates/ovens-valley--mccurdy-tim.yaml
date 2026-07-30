@@ -4,8 +4,8 @@ candidate:
   contest: ovens-valley
   chamber: assembly
   status: announced
-  occupation: "Member of Parliament"
-  background: "MLA for Ovens Valley (Nationals)"
+  occupation: "Farmer"
+  background: "Former dairy farmer and real estate agent; MLA for Ovens Valley"
   history:
     - status: announced
       date: 2026-07-06
@@ -17,3 +17,10 @@ candidate:
         title: "Ovens Valley locals know Victoria needs a fresh start, and with Tim McCurdy on my team…"
         published: 2026-07-06
         accessed: 2026-07-30
+  links:
+    - url: https://www.timmccurdy.com.au
+      kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/tim-mccurdy/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Tim_McCurdy
+      kind: wikipedia

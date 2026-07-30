@@ -4,6 +4,8 @@ candidate:
   contest: ivanhoe
   chamber: assembly
   status: endorsed
+  occupation: "Teacher"
+  background: "From my work as a teacher to my human rights advocacy, I’ve seen the power of people coming together to create real change."
   history:
     - status: endorsed
       date: 2025-11-11
@@ -12,3 +14,6 @@ candidate:
         title: "Nina Crawley: Candidate for Ivanhoe"
         publisher: greens.org.au
         accessed: 2025-11-11
+  links:
+    - url: https://greens.org.au/vic/person/nina-crawley
+      kind: party-profile

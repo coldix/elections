@@ -4,6 +4,8 @@ candidate:
   contest: narracan
   chamber: assembly
   status: endorsed
+  occupation: "Engineer"
+  background: "Born in Iran and an engineer by trade, I studied and worked in Japan, China, and New Zealand before settling in Australia 13 years ago."
   history:
     - status: endorsed
       date: 2026-06-16
@@ -12,3 +14,6 @@ candidate:
         title: Moss Page – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-16
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/moss-page
+      kind: party-profile

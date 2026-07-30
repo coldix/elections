@@ -4,6 +4,8 @@ candidate:
   contest: tarneit
   chamber: assembly
   status: endorsed
+  occupation: "Unionist"
+  background: "As a long-time unionist, Rifai has personally recruited over 1,600 members and organised numerous campaigns to improve conditions for workers in the tertiary ed"
   history:
     - status: endorsed
       date: 2025-11-11
@@ -12,3 +14,6 @@ candidate:
         title: "Rifai Raheem: Candidate for Tarneit"
         publisher: Victorian Greens
         accessed: 2025-11-11
+  links:
+    - url: https://greens.org.au/vic/person/rifai-raheem
+      kind: party-profile

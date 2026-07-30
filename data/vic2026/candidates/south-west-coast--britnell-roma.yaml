@@ -4,8 +4,8 @@ candidate:
   contest: south-west-coast
   chamber: assembly
   status: announced
-  occupation: "Member of Parliament"
-  background: "MLA for South-West Coast (Liberal)"
+  occupation: "Nurse"
+  background: "Registered nurse for more than 30 years before parliament; MLA for South-West Coast"
   history:
     - status: announced
       date: 2026-07-27
@@ -19,5 +19,9 @@ candidate:
         published: 2026-07-27
         accessed: 2026-07-30
   links:
-    - url: https://www.facebook.com/RomaBritnellMP
-      kind: campaign-page
+    - url: https://romabritnell.com.au/
+      kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/roma-britnell/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Roma_Britnell
+      kind: wikipedia

@@ -4,6 +4,8 @@ candidate:
   contest: point-cook
   chamber: assembly
   status: endorsed
+  occupation: "Community organiser"
+  background: "Together I look forward to building a campaign in Point Cook which is welcoming, empowering and driven by real conversations, community care and collective acti"
   history:
     - status: endorsed
       date: 2025-12-11
@@ -12,3 +14,6 @@ candidate:
         title: "Ponraj Krishna Pandi: Candidate for Point Cook"
         publisher: Victorian Greens
         accessed: 2025-12-11
+  links:
+    - url: https://greens.org.au/vic/person/ponraj-krishna-pandi
+      kind: party-profile

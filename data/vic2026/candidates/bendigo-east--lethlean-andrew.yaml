@@ -15,3 +15,6 @@ candidate:
         publisher: ABC News
         published: 2026-04-04
         accessed: 2026-04-04
+  links:
+    - url: https://vic.nationals.org.au/candidates-andrew-lethlean/
+      kind: party-profile

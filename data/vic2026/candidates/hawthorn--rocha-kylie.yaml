@@ -4,6 +4,8 @@ candidate:
   contest: hawthorn
   chamber: assembly
   status: endorsed
+  occupation: "Engineer"
+  background: "A new approach I’m an engineer who has worked across energy and manufacturing."
   history:
     - status: endorsed
       date: 2026-03-06
@@ -12,3 +14,6 @@ candidate:
         title: "Kylie Rocha: Candidate for Hawthorn"
         publisher: Victorian Greens
         accessed: 2026-03-06
+  links:
+    - url: https://greens.org.au/vic/person/kylie-rocha
+      kind: party-profile

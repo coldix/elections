@@ -4,6 +4,7 @@ candidate:
   contest: frankston
   chamber: assembly
   status: endorsed
+  occupation: "Retail worker"
   history:
     - status: endorsed
       date: 2026-06-09
@@ -12,3 +13,6 @@ candidate:
         title: "Katie Goulas: Candidate for Frankston"
         publisher: Victorian Greens
         accessed: 2026-06-09
+  links:
+    - url: https://greens.org.au/vic/person/katie-goulas
+      kind: party-profile

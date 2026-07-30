@@ -4,6 +4,7 @@ candidate:
   contest: brighton
   chamber: assembly
   status: endorsed
+  occupation: "Academic"
   history:
     - status: endorsed
       date: 2026-05-13
@@ -12,3 +13,6 @@ candidate:
         title: "Ebony Bain: Candidate for Brighton"
         publisher: greens.org.au
         accessed: 2026-05-13
+  links:
+    - url: https://greens.org.au/vic/person/ebony-bain
+      kind: party-profile

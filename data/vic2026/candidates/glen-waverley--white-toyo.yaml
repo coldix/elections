@@ -4,6 +4,8 @@ candidate:
   contest: glen-waverley
   chamber: assembly
   status: endorsed
+  occupation: "Community organiser"
+  background: "My parents raised me to live by community-minded values: to share what we have, be compassionate to others, and to fight for what I believe in."
   history:
     - status: endorsed
       date: 2026-05-19
@@ -12,3 +14,6 @@ candidate:
         title: "Toyo White: Candidate for Glen Waverley"
         publisher: Victorian Greens
         accessed: 2026-05-19
+  links:
+    - url: https://greens.org.au/vic/person/toyo-white
+      kind: party-profile

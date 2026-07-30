@@ -4,6 +4,8 @@ candidate:
   contest: kalkallo
   chamber: assembly
   status: endorsed
+  occupation: "Teacher"
+  background: "I'm a proud public-school teacher, unionist and Craigieburn local."
   history:
     - status: endorsed
       date: 2026-06-01
@@ -12,3 +14,6 @@ candidate:
         title: Courtney Millett – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-01
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/courtney-millett
+      kind: party-profile

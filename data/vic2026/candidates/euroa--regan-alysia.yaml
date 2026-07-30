@@ -4,6 +4,8 @@ candidate:
   contest: euroa
   chamber: assembly
   status: endorsed
+  occupation: "Farmer"
+  background: "Climate impacts — from drought to extreme weather — are hitting farmers and communities hard, and too often the support isn’t there when it’s needed most."
   history:
     - status: endorsed
       date: 2026-06-16
@@ -12,3 +14,6 @@ candidate:
         title: "Alysia Regan: Candidate for Euroa"
         publisher: Victorian Greens
         accessed: 2026-06-16
+  links:
+    - url: https://greens.org.au/vic/person/alysia-regan
+      kind: party-profile

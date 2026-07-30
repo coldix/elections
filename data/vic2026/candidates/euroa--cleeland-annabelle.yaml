@@ -4,8 +4,8 @@ candidate:
   contest: euroa
   chamber: assembly
   status: announced
-  occupation: "Member of Parliament"
-  background: "MLA for Euroa (Nationals)"
+  occupation: "Journalist"
+  background: "Former Fairfax Media agricultural journalist; MLA for Euroa"
   history:
     - status: announced
       date: 2026-05-31
@@ -19,5 +19,9 @@ candidate:
         published: 2026-05-31
         accessed: 2026-07-30
   links:
-    - url: https://www.facebook.com/Annabelle4Euroa
-      kind: campaign-page
+    - url: https://www.annabellecleeland.com.au
+      kind: campaign-site
+    - url: https://www.parliament.vic.gov.au/members/annabelle-cleeland/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Annabelle_Cleeland
+      kind: wikipedia

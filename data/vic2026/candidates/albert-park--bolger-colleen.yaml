@@ -4,6 +4,8 @@ candidate:
   contest: albert-park
   chamber: assembly
   status: endorsed
+  occupation: "Lawyer"
+  background: "I'm a socialist, a union delegate, and a lawyer for people with asbestosis and other occupational diseases."
   history:
     - status: endorsed
       date: 2026-06-19
@@ -12,3 +14,6 @@ candidate:
         title: Colleen Bolger – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-19
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/colleen-bolger
+      kind: party-profile
