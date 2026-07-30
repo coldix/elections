@@ -42,13 +42,13 @@ const schema = {
   description={`Candidates recorded for the district of ${district.name} at the 2026 Victorian state election. Sitting member: ${district.incumbent}. Every record individually sourced.`}
   schema={schema}
   breadcrumbs={[
-    { name: "Districts", href: "/districts" },
+    { name: "Assembly", href: "/assembly" },
     { name: district.name, href: `/districts/${district.slug}` },
   ]}
 >
   <div class="wrap section">
     <nav aria-label="Breadcrumb" class="crumb">
-      <a href="/districts">Districts</a> <span aria-hidden="true">/</span>
+      <a href="/assembly">Assembly</a> <span aria-hidden="true">/</span>
       <span aria-current="page">{district.name}</span>
     </nav>
 

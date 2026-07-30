@@ -1,0 +1,211 @@
+---
+import Base from "../../layouts/Base.astro";
+import VicRegionMap from "../../components/VicRegionMap.astro";
+import { loadElection, LIVE_STATUSES } from "../../../../scripts/lib/data.mjs";
+import { partyColour } from "../../lib/site.mjs";
+
+const data = loadElection("vic2026");
+const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
+
+// 8 regions × 11 Assembly districts = 88
+const byRegion = regions.map((r) => {
+  const districts = data.districts
+    .filter((d) => d.region === r.slug)
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map((d) => {
+      const live = d.candidates.filter((c) => LIVE_STATUSES.includes(c.status));
+      return {
+        ...d,
+        liveCount: live.length,
+        retiring: d.retirements.length > 0,
+      };
+    });
+  return { region: r, districts };
+});
+
+const totalDistricts = data.districts.length;
+---
+
+<Base
+  title="Legislative Assembly"
+  description="All 88 Victorian Legislative Assembly districts for the 2026 state election — arranged by Legislative Council region, with sitting members and sourced candidates."
+>
+  <div class="wrap section">
+    <header class="page-head">
+      <div class="page-head-copy">
+        <p class="eyebrow">Victoria 2026 · Lower house</p>
+        <h1>Legislative Assembly</h1>
+        <p class="lede">
+          The Assembly has <strong>{totalDistricts} single-member districts</strong>
+          (seats). They sit inside the same <strong>8 Legislative Council regions</strong>
+          used for the upper house: <span class="mono">8 × 11 = 88</span>.
+        </p>
+        <p class="muted house-switch">
+          Upper house (regions, 8 × 5 = 40): <a href="/regions">Legislative Council</a>
+          {" · "}
+          <a href="/districts">District atlas</a>
+        </p>
+        <nav class="jump" aria-label="Jump to region">
+          {
+            byRegion.map(({ region, districts }) => (
+              <a href={`#region-${region.slug}`}>
+                {region.name}
+                <span class="muted">({districts.length})</span>
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+      <div class="page-head-map">
+        <VicRegionMap mode="assembly" compact />
+      </div>
+    </header>
+
+    {
+      byRegion.map(({ region, districts }) => (
+        <section class="region-block" id={`region-${region.slug}`} aria-labelledby={`h-${region.slug}`}>
+          <header class="region-block-head">
+            <h2 id={`h-${region.slug}`}>
+              <a href={`/regions/${region.slug}`}>{region.name}</a>
+            </h2>
+            <p class="muted">
+              {districts.length} Assembly districts ·{" "}
+              <a href={`/regions/${region.slug}`}>Council seats →</a>
+            </p>
+          </header>
+
+          <div class="table-scroll">
+            <table class="data">
+              <caption class="visually-hidden">
+                Legislative Assembly districts in {region.name}
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">District</th>
+                  <th scope="col">Sitting member</th>
+                  <th scope="col" class="num">Candidates</th>
+                </tr>
+              </thead>
+              <tbody>
+                {districts.map((d) => (
+                  <tr>
+                    <th scope="row">
+                      <a href={`/districts/${d.slug}`}>{d.name}</a>
+                    </th>
+                    <td>
+                      <span class="member">
+                        <span
+                          class="swatch"
+                          style={`--party-colour:${partyColour(d.incumbent_party)}`}
+                          aria-hidden="true"
+                        />
+                        {d.incumbent}
+                      </span>
+                      {d.retiring && (
+                        <span class="pill pill-withdrawn retiring">Not recontesting</span>
+                      )}
+                    </td>
+                    <td class="num mono">{d.liveCount || "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ))
+    }
+
+    <p class="foot muted">
+      Boundaries from the 2021 redivision. Map is schematic (not survey geometry) and matches
+      the same 8 regions as the <a href="/regions">Legislative Council</a> pages.
+      {" "}
+      For a map-first view and short historical notes, see the
+      <a href="/districts">district atlas</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .mono {
+    font-variant-numeric: tabular-nums;
+  }
+  .page-head {
+    display: grid;
+    gap: 1.25rem 2rem;
+    margin-bottom: 2rem;
+    align-items: start;
+  }
+  @media (min-width: 880px) {
+    .page-head {
+      grid-template-columns: minmax(0, 1fr) minmax(15rem, 20rem);
+    }
+  }
+  .page-head-copy .lede {
+    margin-bottom: 0.65rem;
+  }
+  .house-switch {
+    margin: 0 0 0.85rem;
+  }
+  .jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+  }
+  .jump a {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+    background: var(--surface);
+    color: var(--ink-2);
+    text-decoration: none;
+  }
+  .jump a:hover {
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+  .region-block {
+    margin-bottom: 2.25rem;
+    scroll-margin-top: 5rem;
+  }
+  .region-block-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 2px solid var(--rule);
+  }
+  .region-block-head h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  .region-block-head h2 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .region-block-head h2 a:hover {
+    color: var(--accent-ink);
+    text-decoration: underline;
+  }
+  .region-block-head p {
+    margin: 0;
+    font-size: 0.88rem;
+  }
+  .member {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .retiring {
+    margin-left: 0.45rem;
+  }
+  .foot {
+    margin-top: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>

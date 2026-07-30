@@ -1,221 +1,303 @@
 ---
 import Base from "../../layouts/Base.astro";
 import VicRegionMap from "../../components/VicRegionMap.astro";
-import { loadElection, LIVE_STATUSES } from "../../../../scripts/lib/data.mjs";
-import { partyColour } from "../../lib/site.mjs";
+import { loadElection } from "../../../../scripts/lib/data.mjs";
 
 const data = loadElection("vic2026");
 const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
+const districts = [...data.districts].sort((a, b) => a.name.localeCompare(b.name));
+const totalDistricts = districts.length;
 
-// 8 regions × 11 Assembly districts = 88
-const byRegion = regions.map((r) => {
-  const districts = data.districts
-    .filter((d) => d.region === r.slug)
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .map((d) => {
-      const live = d.candidates.filter((c) => LIVE_STATUSES.includes(c.status));
-      return {
-        ...d,
-        liveCount: live.length,
-        retiring: d.retirements.length > 0,
-      };
-    });
-  return { region: r, districts };
-});
-
-const totalDistricts = data.districts.length;
+const byRegion = regions.map((r) => ({
+  region: r,
+  districts: districts.filter((d) => d.region === r.slug),
+}));
 ---
 
 <Base
-  title="Legislative Assembly districts"
-  description="All 88 Victorian Legislative Assembly districts for the 2026 state election — arranged by Legislative Council region, with sitting members and sourced candidates."
+  title="Victorian electoral districts"
+  description="Map and short history of Victoria’s 88 Legislative Assembly districts — how they sit in 8 Council regions, the 2021 redivision, and a few seats with notable past figures. Candidate lists live on the Assembly page."
 >
   <div class="wrap section">
-    <p class="eyebrow">Victoria 2026 · Lower house</p>
-    <h1>Legislative Assembly</h1>
-    <p class="lede">
-      The Assembly has <strong>{totalDistricts} single-member districts</strong>
-      (seats). They sit inside the same <strong>8 Legislative Council regions</strong>
-      used for the upper house: <span class="mono">8 × 11 = 88</span>.
-    </p>
-    <p class="muted house-switch">
-      Upper house (regions, 8 × 5 = 40): <a href="/regions">Legislative Council</a>
-    </p>
-
-    <div class="layout-split">
-      <div class="map-col">
-        <h2 class="map-h">Find a region</h2>
-        <p class="muted map-note">
-          Schematic map of the 8 regions. Jump to a region’s Assembly districts below, or open
-          the Council page for that region.
+    <header class="page-head">
+      <div class="page-head-copy">
+        <p class="eyebrow">Victoria · District atlas</p>
+        <h1>Electoral districts</h1>
+        <p class="lede">
+          Victoria’s lower house is divided into
+          <strong>{totalDistricts} single-member districts</strong>. Each elects one member of
+          the Legislative Assembly by preferential voting. The same geography is nested inside
+          <strong>8 Legislative Council regions</strong> (<span class="mono">8 × 11 = 88</span>).
         </p>
-        <VicRegionMap mode="districts" />
-        <nav class="jump" aria-label="Jump to region">
-          {
-            byRegion.map(({ region, districts }) => (
-              <a href={`#region-${region.slug}`}>
-                {region.name}
-                <span class="muted">({districts.length})</span>
-              </a>
-            ))
-          }
-        </nav>
+        <p class="muted house-switch">
+          Candidate lists &amp; sitting members:
+          <a href="/assembly">Legislative Assembly</a>
+          {" · "}
+          <a href="/regions">Legislative Council</a>
+        </p>
+        <p class="muted atlas-note">
+          This page is a map-first atlas with short historical notes — not linked from the main
+          menu. For 2026 candidacies, use the Assembly index.
+        </p>
       </div>
+      <div class="page-head-map">
+        <VicRegionMap mode="assembly" compact />
+      </div>
+    </header>
 
-      <div class="list-col">
+    <section class="prose-block" aria-labelledby="how-h">
+      <h2 id="how-h">How the map works</h2>
+      <p>
+        Click a region on the schematic map to jump to that region’s districts on the
+        <a href="/assembly">Assembly</a> page (or open the matching
+        <a href="/regions">Council</a> region for the five upper-house seats). Boundaries are
+        from the <strong>2021 redivision</strong> by the Electoral Boundaries Commission; the
+        map itself is a navigation diagram, not survey geometry.
+      </p>
+      <p>
+        Since the mid-1980s the Assembly has had 88 seats. Region names and the exact set of
+        11 districts per region change when boundaries are redrawn, but the
+        <span class="mono">8 × 11</span> pattern for the lower house and
+        <span class="mono">8 × 5 = 40</span> for the Council has been stable since the Council
+        moved to multi-member regions in 2006.
+      </p>
+    </section>
+
+    <section class="prose-block" aria-labelledby="hist-h">
+      <h2 id="hist-h">Past figures and notable seats</h2>
+      <p class="muted section-lead">
+        A few districts and former divisions are remembered for the people who held them or the
+        roles those members later took. This is not a complete parliamentary history — only
+        pointers while the atlas is young. District names below match current or recent usage
+        where possible.
+      </p>
+      <ul class="figures" role="list">
+        <li>
+          <strong><a href="/districts/mulgrave">Mulgrave</a></strong>
+          — long associated with Daniel Andrews (Premier 2014–2023), who held the seat from its
+          recreation in 2002 until his resignation from Parliament.
+        </li>
+        <li>
+          <strong><a href="/districts/broadmeadows">Broadmeadows</a></strong>
+          — a long-standing Labor seat in Melbourne’s north; John Brumby held Broadmeadows
+          while Treasurer and as Premier (2007–2010).
+        </li>
+        <li>
+          <strong><a href="/districts/hawthorn">Hawthorn</a></strong>
+          and
+          <strong><a href="/districts/kew">Kew</a></strong>
+          — inner-eastern seats that have produced Liberal leadership figures over the decades;
+          Kew was held by Ted Baillieu before and during his premiership (2010–2013).
+        </li>
+        <li>
+          <strong><a href="/districts/williamstown">Williamstown</a></strong>
+          — waterfront Labor seat historically linked to senior party figures; Joan Kirner
+          represented Williamstown before and while Premier (1990–1992).
+        </li>
+        <li>
+          <strong><a href="/districts/richmond">Richmond</a></strong>
+          and
+          <strong><a href="/districts/melbourne">Melbourne</a></strong>
+          — inner-city seats that have been early testing grounds for minor-party and
+          independent challenges alongside major-party contests.
+        </li>
+        <li>
+          <strong><a href="/districts/mildura">Mildura</a></strong>
+          ,
+          <strong><a href="/districts/shepparton">Shepparton</a></strong>
+          and other regional seats — often the focus of Nationals–Liberal and independent
+          contests, reflecting different country and regional coalitions over time.
+        </li>
+        <li>
+          <strong>Abolished or renamed divisions</strong>
+          — redivisions retire names (for example older suburban and rural labels) and mint
+          new ones (such as Eureka, Greenvale, Kalkallo after the 2021 review). Sitting members
+          sometimes follow their communities into a renamed seat rather than “lose” in a simple
+          sense.
+        </li>
+      </ul>
+      <p class="muted fine-print">
+        Biographical notes are for orientation only. For authoritative past results and
+        official maps, use the Victorian Electoral Commission and the Parliament of Victoria
+        records. This site’s district pages track <em>sourced 2026 candidacies</em>, not full
+        historical member rolls.
+      </p>
+    </section>
+
+    <section aria-labelledby="all-h">
+      <h2 id="all-h">All {totalDistricts} districts</h2>
+      <p class="muted section-lead">
+        A–Z index. Each link opens the district page (sitting member and any recorded 2026
+        candidates). Grouped view by region:
+        <a href="/assembly">Assembly index</a>.
+      </p>
+
+      <div class="az">
         {
-          byRegion.map(({ region, districts }) => (
-            <section class="region-block" id={`region-${region.slug}`} aria-labelledby={`h-${region.slug}`}>
-              <header class="region-block-head">
-                <h2 id={`h-${region.slug}`}>
-                  <a href={`/regions/${region.slug}`}>{region.name}</a>
-                </h2>
-                <p class="muted">
-                  {districts.length} Assembly districts ·{" "}
-                  <a href={`/regions/${region.slug}`}>Council seats →</a>
-                </p>
-              </header>
-
-              <div class="table-scroll">
-                <table class="data">
-                  <caption class="visually-hidden">
-                    Legislative Assembly districts in {region.name}
-                  </caption>
-                  <thead>
-                    <tr>
-                      <th scope="col">District</th>
-                      <th scope="col">Sitting member</th>
-                      <th scope="col" class="num">Candidates</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {districts.map((d) => (
-                      <tr>
-                        <th scope="row">
-                          <a href={`/districts/${d.slug}`}>{d.name}</a>
-                        </th>
-                        <td>
-                          <span class="member">
-                            <span
-                              class="swatch"
-                              style={`--party-colour:${partyColour(d.incumbent_party)}`}
-                              aria-hidden="true"
-                            />
-                            {d.incumbent}
-                          </span>
-                          {d.retiring && (
-                            <span class="pill pill-withdrawn retiring">Not recontesting</span>
-                          )}
-                        </td>
-                        <td class="num mono">{d.liveCount || "—"}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
+          districts.map((d) => (
+            <a href={`/districts/${d.slug}`} class="az-item">
+              {d.name}
+            </a>
           ))
         }
       </div>
-    </div>
+
+      <h3 class="subh">By Council region</h3>
+      <ul class="region-lists" role="list">
+        {
+          byRegion.map(({ region, districts: ds }) => (
+            <li class="card region-card">
+              <h4>
+                <a href={`/regions/${region.slug}`}>{region.name}</a>
+                <span class="muted count">{ds.length}</span>
+              </h4>
+              <ul class="mini" role="list">
+                {ds.map((d) => (
+                  <li>
+                    <a href={`/districts/${d.slug}`}>{d.name}</a>
+                  </li>
+                ))}
+              </ul>
+              <p class="muted card-foot">
+                <a href={`/assembly#region-${region.slug}`}>Assembly table →</a>
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
 
     <p class="foot muted">
-      Boundaries from the 2021 redivision. Map is schematic (not survey geometry) and matches
-      the same 8 regions as the <a href="/regions">Legislative Council</a> pages.
+      Schematic map only. Official boundaries: Electoral Boundaries Commission / VEC.
+      {" "}
+      Main 2026 candidate index: <a href="/assembly">Legislative Assembly</a>.
     </p>
   </div>
 </Base>
 
 <style>
-  .house-switch {
-    margin: 0 0 1.5rem;
-  }
   .mono {
     font-variant-numeric: tabular-nums;
   }
-  .layout-split {
+  .page-head {
     display: grid;
-    gap: 2rem;
+    gap: 1.25rem 2rem;
+    margin-bottom: 2rem;
+    align-items: start;
   }
-  @media (min-width: 960px) {
-    .layout-split {
-      grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr);
-      align-items: start;
-      gap: 2.5rem;
-    }
-    .map-col {
-      position: sticky;
-      top: 4.5rem;
+  @media (min-width: 880px) {
+    .page-head {
+      grid-template-columns: minmax(0, 1fr) minmax(15rem, 20rem);
     }
   }
-  .map-h {
-    font-size: 1.05rem;
-    margin: 0 0 0.35rem;
+  .page-head-copy .lede {
+    margin-bottom: 0.65rem;
   }
-  .map-note {
-    margin: 0 0 0.75rem;
+  .house-switch {
+    margin: 0 0 0.5rem;
+  }
+  .atlas-note {
+    margin: 0;
     font-size: 0.88rem;
+    max-width: 36rem;
   }
-  .jump {
+  .prose-block {
+    max-width: 48rem;
+    margin-bottom: 2rem;
+  }
+  .prose-block h2 {
+    margin: 0 0 0.65rem;
+    font-size: 1.25rem;
+  }
+  .prose-block p {
+    margin: 0 0 0.85rem;
+    line-height: 1.55;
+  }
+  .section-lead {
+    margin: 0 0 1rem;
+    max-width: 44rem;
+  }
+  .figures {
+    margin: 0 0 1rem;
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.75rem;
+    line-height: 1.5;
+  }
+  .figures li strong a {
+    font-weight: 650;
+  }
+  .fine-print {
+    font-size: 0.86rem;
+  }
+  .az {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem 0.5rem;
-    margin-top: 0.75rem;
+    gap: 0.35rem 0.45rem;
+    margin: 0 0 1.75rem;
   }
-  .jump a {
-    font-size: 0.78rem;
-    font-weight: 600;
-    padding: 0.25rem 0.55rem;
+  .az-item {
+    font-size: 0.82rem;
+    font-weight: 560;
+    padding: 0.28rem 0.55rem;
     border-radius: 999px;
-    border: 1px solid var(--rule-strong);
+    border: 1px solid var(--rule);
     background: var(--surface);
     color: var(--ink-2);
     text-decoration: none;
   }
-  .jump a:hover {
+  .az-item:hover {
     border-color: var(--accent);
     color: var(--accent-ink);
   }
-  .region-block {
-    margin-bottom: 2.25rem;
-    scroll-margin-top: 5rem;
+  .subh {
+    margin: 0 0 0.85rem;
+    font-size: 1.05rem;
   }
-  .region-block-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.5rem 1rem;
-    margin-bottom: 0.65rem;
-    padding-bottom: 0.45rem;
-    border-bottom: 2px solid var(--rule);
-  }
-  .region-block-head h2 {
+  .region-lists {
+    list-style: none;
     margin: 0;
-    font-size: 1.2rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
   }
-  .region-block-head h2 a {
+  .region-card h4 {
+    margin: 0 0 0.55rem;
+    font-size: 0.98rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+  .region-card h4 a {
     color: inherit;
     text-decoration: none;
   }
-  .region-block-head h2 a:hover {
+  .region-card h4 a:hover {
     color: var(--accent-ink);
     text-decoration: underline;
   }
-  .region-block-head p {
+  .count {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .mini {
+    list-style: none;
     margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.28rem;
     font-size: 0.88rem;
   }
-  .member {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  .retiring {
-    margin-left: 0.45rem;
+  .card-foot {
+    margin: 0.75rem 0 0;
+    padding-top: 0.55rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.82rem;
   }
   .foot {
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding-top: 1.25rem;
     border-top: 1px solid var(--rule);
   }

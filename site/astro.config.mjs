@@ -26,6 +26,8 @@ export default defineConfig({
           "/data",
           "/methodology",
           "/polls",
+          "/assembly",
+          "/regions",
           "/districts",
           "/parties",
           "/about",
@@ -33,7 +35,11 @@ export default defineConfig({
         if (high.has(path)) {
           item.changefreq = "daily";
           item.priority = path === "/" ? 1.0 : 0.9;
-        } else if (path.startsWith("/districts/") || path.startsWith("/parties/")) {
+        } else if (
+          path.startsWith("/districts/") ||
+          path.startsWith("/regions/") ||
+          path.startsWith("/parties/")
+        ) {
           item.changefreq = "weekly";
           item.priority = 0.7;
         } else {

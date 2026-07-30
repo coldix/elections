@@ -2,11 +2,14 @@
 /**
  * Schematic, clickable map of Victoria’s 8 Legislative Council regions.
  * Not survey-accurate boundaries — a clear navigation diagram for 8×11 Assembly
- * districts and 8×5 Council seats. Each path links to /regions/<slug>.
+ * districts and 8×5 Council seats.
  */
-const { mode = "regions", activeSlug = null } = Astro.props;
-// mode: "regions" → /regions/<slug>
-// mode: "districts" → jump to #region-<slug> on the Assembly page
+const { mode = "regions", activeSlug = null, compact = false } = Astro.props;
+// mode: "regions"  → /regions/<slug>
+// mode: "assembly" → /assembly#region-<slug> (or #region- if already on Assembly)
+// mode: "districts" kept as alias of "assembly" for older call sites
+
+const isAssembly = mode === "assembly" || mode === "districts";
 
 const regions = [
   {
@@ -71,13 +74,12 @@ const labels = {
   "south-eastern-metropolitan": [268, 210],
 };
 
-const aria =
-  mode === "districts"
-    ? "Map of Victoria’s Legislative Council regions. Select a region to jump to its Assembly districts."
-    : "Map of Victoria’s Legislative Council regions. Select a region for upper-house seats.";
+const aria = isAssembly
+  ? "Map of Victoria’s Legislative Council regions. Select a region to jump to its Assembly districts."
+  : "Map of Victoria’s Legislative Council regions. Select a region for upper-house seats.";
 ---
 
-<figure class="vic-map">
+<figure class:list={["vic-map", { compact }]}>
   <svg
     viewBox="0 0 440 310"
     role="img"
@@ -100,12 +102,11 @@ const aria =
       regions.map((r) => {
         const [lx, ly] = labels[r.slug];
         const active = activeSlug === r.slug;
-        const href =
-          mode === "districts" ? `#region-${r.slug}` : `/regions/${r.slug}`;
-        const label =
-          mode === "districts"
-            ? `${r.name}: jump to Assembly districts`
-            : `${r.name}: Legislative Council region`;
+        // Absolute path so the map works from /districts atlas as well as /assembly
+        const href = isAssembly ? `/assembly#region-${r.slug}` : `/regions/${r.slug}`;
+        const label = isAssembly
+          ? `${r.name}: jump to Assembly districts`
+          : `${r.name}: Legislative Council region`;
         return (
           <a href={href} class:list={["region-link", { active }]} aria-label={label}>
             <path class="region-shape" d={r.d} data-slug={r.slug} />
@@ -122,8 +123,8 @@ const aria =
     </text>
   </svg>
   <figcaption class="visually-hidden">
-    Click a region to open its Legislative Council page. Districts are grouped by these
-    same regions on the Assembly districts page.
+    Click a region to open its page. Assembly mode jumps to that region’s districts on the
+    Legislative Assembly index; Council mode opens the region’s upper-house page.
   </figcaption>
 </figure>
 
@@ -136,12 +137,19 @@ const aria =
     border-radius: var(--radius);
     box-shadow: var(--shadow);
   }
+  .vic-map.compact {
+    margin: 0;
+    padding: 0.5rem 0.35rem 0.15rem;
+  }
   .vic-map-svg {
     width: 100%;
     max-width: 36rem;
     height: auto;
     display: block;
     margin-inline: auto;
+  }
+  .vic-map.compact .vic-map-svg {
+    max-width: none;
   }
   .state-outline {
     stroke: var(--rule-strong);

@@ -21,141 +21,128 @@ const totalSeats = regions.reduce((s, r) => s + (r.seats || 5), 0);
   description="Victorian Legislative Council: 8 regions electing 5 members each (40 seats). Sitting members and sourced 2026 upper-house candidates."
 >
   <div class="wrap section">
-    <p class="eyebrow">Victoria 2026 · Upper house</p>
-    <h1>Legislative Council</h1>
-    <p class="lede">
-      The Council has <strong>{regions.length} multi-member regions</strong>, each electing
-      <strong>5 members</strong> by proportional representation —
-      <span class="mono">8 × 5 = {totalSeats}</span> seats. The same regions group the
-      Assembly’s 88 districts (<span class="mono">8 × 11</span>).
-    </p>
-    <p class="muted house-switch">
-      Lower house (districts, 8 × 11 = 88): <a href="/districts">Legislative Assembly</a>
-    </p>
-
-    <div class="layout-split">
-      <div class="map-col">
-        <h2 class="map-h">Select a region</h2>
-        <p class="muted map-note">
-          Click the map to open a region: sitting MLCs and any recorded 2026 ticket
-          candidacies.
+    <header class="page-head">
+      <div class="page-head-copy">
+        <p class="eyebrow">Victoria 2026 · Upper house</p>
+        <h1>Legislative Council</h1>
+        <p class="lede">
+          The Council has <strong>{regions.length} multi-member regions</strong>, each electing
+          <strong>5 members</strong> by proportional representation —
+          <span class="mono">8 × 5 = {totalSeats}</span> seats. The same regions group the
+          Assembly’s 88 districts (<span class="mono">8 × 11</span>).
         </p>
-        <VicRegionMap mode="regions" />
+        <p class="muted house-switch">
+          Lower house (districts, 8 × 11 = 88): <a href="/assembly">Legislative Assembly</a>
+        </p>
       </div>
+      <div class="page-head-map">
+        <VicRegionMap mode="regions" compact />
+      </div>
+    </header>
 
-      <div class="list-col">
-        <div class="table-scroll">
-          <table class="data">
-            <caption class="visually-hidden">Legislative Council regions</caption>
-            <thead>
-              <tr>
-                <th scope="col">Region</th>
-                <th scope="col" class="num">Council seats</th>
-                <th scope="col" class="num">Assembly districts</th>
-                <th scope="col" class="num">2026 candidates</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                cards.map(({ region, liveCount, districtCount }) => (
-                  <tr>
-                    <th scope="row">
-                      <a href={`/regions/${region.slug}`}>{region.name}</a>
-                    </th>
-                    <td class="num mono">{region.seats}</td>
-                    <td class="num mono">{districtCount}</td>
-                    <td class="num mono">{liveCount || "—"}</td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
-        </div>
-
-        <h2 class="lh">Sitting members (40)</h2>
-        <p class="muted section-note">
-          Who holds each Council seat <strong>today</strong>, including mid-term replacements.
-          Not a 2026 ticket — candidacies are recorded separately with sources.
-        </p>
-
-        <ul class="regions" role="list">
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">Legislative Council regions</caption>
+        <thead>
+          <tr>
+            <th scope="col">Region</th>
+            <th scope="col" class="num">Council seats</th>
+            <th scope="col" class="num">Assembly districts</th>
+            <th scope="col" class="num">2026 candidates</th>
+          </tr>
+        </thead>
+        <tbody>
           {
-            regions.map((r) => (
-              <li class="card region" id={`card-${r.slug}`}>
-                <div class="region-head">
-                  <h3>
-                    <a href={`/regions/${r.slug}`}>{r.name}</a>
-                  </h3>
-                  <span class="muted">{r.seats} members</span>
-                </div>
-                <ul class="members" role="list">
-                  {r.members.map((m) => {
-                    const retiring = data.retirements.some(
-                      (x) => x.role === "MLC" && x.name === m.name
-                    );
-                    return (
-                      <li>
-                        <span
-                          class="swatch"
-                          style={`--party-colour:${partyColour(m.party)}`}
-                          aria-hidden="true"
-                        />
-                        <span class="m-name">{m.name}</span>
-                        <span class="muted m-party">
-                          {data.partyBySlug.get(m.party)?.short_name ?? m.party}
-                        </span>
-                        {retiring && <span class="pill pill-withdrawn">Not recontesting</span>}
-                      </li>
-                    );
-                  })}
-                </ul>
-                <p class="muted region-foot">
-                  <a href={`/regions/${r.slug}`}>Open region page</a>
-                  {" · "}
-                  <a href={`/districts#region-${r.slug}`}>Assembly districts</a>
-                </p>
-              </li>
+            cards.map(({ region, liveCount, districtCount }) => (
+              <tr>
+                <th scope="row">
+                  <a href={`/regions/${region.slug}`}>{region.name}</a>
+                </th>
+                <td class="num mono">{region.seats}</td>
+                <td class="num mono">{districtCount}</td>
+                <td class="num mono">{liveCount || "—"}</td>
+              </tr>
             ))
           }
-        </ul>
-      </div>
+        </tbody>
+      </table>
     </div>
+
+    <h2 class="lh">Sitting members (40)</h2>
+    <p class="muted section-note">
+      Who holds each Council seat <strong>today</strong>, including mid-term replacements.
+      Not a 2026 ticket — candidacies are recorded separately with sources.
+    </p>
+
+    <ul class="regions" role="list">
+      {
+        regions.map((r) => (
+          <li class="card region" id={`card-${r.slug}`}>
+            <div class="region-head">
+              <h3>
+                <a href={`/regions/${r.slug}`}>{r.name}</a>
+              </h3>
+              <span class="muted">{r.seats} members</span>
+            </div>
+            <ul class="members" role="list">
+              {r.members.map((m) => {
+                const retiring = data.retirements.some(
+                  (x) => x.role === "MLC" && x.name === m.name
+                );
+                return (
+                  <li>
+                    <span
+                      class="swatch"
+                      style={`--party-colour:${partyColour(m.party)}`}
+                      aria-hidden="true"
+                    />
+                    <span class="m-name">{m.name}</span>
+                    <span class="muted m-party">
+                      {data.partyBySlug.get(m.party)?.short_name ?? m.party}
+                    </span>
+                    {retiring && <span class="pill pill-withdrawn">Not recontesting</span>}
+                  </li>
+                );
+              })}
+            </ul>
+            <p class="muted region-foot">
+              <a href={`/regions/${r.slug}`}>Open region page</a>
+              {" · "}
+              <a href={`/assembly#region-${r.slug}`}>Assembly districts</a>
+            </p>
+          </li>
+        ))
+      }
+    </ul>
 
     <p class="foot muted">
       Map is schematic (not survey geometry). Boundaries from the 2021 redivision.
+      {" "}
+      District atlas: <a href="/districts">map &amp; short history</a>.
     </p>
   </div>
 </Base>
 
 <style>
-  .house-switch {
-    margin: 0 0 1.5rem;
-  }
   .mono {
     font-variant-numeric: tabular-nums;
   }
-  .layout-split {
+  .page-head {
     display: grid;
-    gap: 2rem;
+    gap: 1.25rem 2rem;
+    margin-bottom: 1.75rem;
+    align-items: start;
   }
-  @media (min-width: 960px) {
-    .layout-split {
-      grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr);
-      align-items: start;
-      gap: 2.5rem;
-    }
-    .map-col {
-      position: sticky;
-      top: 4.5rem;
+  @media (min-width: 880px) {
+    .page-head {
+      grid-template-columns: minmax(0, 1fr) minmax(15rem, 20rem);
     }
   }
-  .map-h {
-    font-size: 1.05rem;
-    margin: 0 0 0.35rem;
+  .page-head-copy .lede {
+    margin-bottom: 0.65rem;
   }
-  .map-note {
-    margin: 0 0 0.75rem;
-    font-size: 0.88rem;
+  .house-switch {
+    margin: 0;
   }
   .lh {
     margin-top: 2.25rem;

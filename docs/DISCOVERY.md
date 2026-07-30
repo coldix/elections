@@ -72,9 +72,11 @@ Use **URL Inspection** → **Request indexing** only for:
 | 3 | `https://electiontracker.au/data` |
 | 4 | `https://electiontracker.au/methodology` |
 | 5 | `https://electiontracker.au/polls` |
-| 6 | `https://electiontracker.au/districts` |
-| 7 | `https://electiontracker.au/parties` |
-| 8 | `https://electiontracker.au/about` |
+| 6 | `https://electiontracker.au/assembly` |
+| 7 | `https://electiontracker.au/regions` |
+| 8 | `https://electiontracker.au/districts` |
+| 9 | `https://electiontracker.au/parties` |
+| 10 | `https://electiontracker.au/about` |
 
 A brand-new domain can show **“URL is not on Google”** for days after a
 successful request — that is normal, not a technical failure.
