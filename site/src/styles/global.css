@@ -9,8 +9,9 @@
   appear ONLY inside party-specific data visualisation, never in chrome.
 */
 
-:root {
-  color-scheme: light dark;
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
 
   /* Neutrals — warm, paper-like rather than clinical grey */
   --ink: #16161d;
@@ -50,8 +51,41 @@
   --shadow: 0 1px 2px rgb(22 22 29 / 0.04), 0 4px 16px rgb(22 22 29 / 0.05);
 }
 
+/* Explicit user choice (toggle) or FOUC script default from system preference */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ink: #ece9e3;
+  --ink-2: #b9b5ad;
+  --ink-3: #8d8981;
+  --rule: #2e2e38;
+  --rule-strong: #43434f;
+  --paper: #101015;
+  --surface: #191920;
+  --surface-2: #21212a;
+
+  --accent: #c2a3d4;
+  --accent-ink: #d9c4e6;
+  --accent-wash: #241c2b;
+
+  --st-announced: #e0c069;
+  --st-announced-bg: #322a12;
+  --st-endorsed: #7fc79f;
+  --st-endorsed-bg: #14291e;
+  --st-nominated: #8fbde8;
+  --st-nominated-bg: #14243a;
+  --st-ended: #e59a9a;
+  --st-ended-bg: #341a1a;
+  --st-none: #24242d;
+
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.35);
+}
+
+/* System preference only when no explicit data-theme yet (noscript / first paint) */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+
     --ink: #ece9e3;
     --ink-2: #b9b5ad;
     --ink-3: #8d8981;
@@ -255,8 +289,11 @@ code,
   background: var(--accent-wash);
 }
 
+:root[data-theme="dark"] .btn {
+  color: #16161d;
+}
 @media (prefers-color-scheme: dark) {
-  .btn {
+  :root:not([data-theme]) .btn {
     color: #16161d;
   }
 }

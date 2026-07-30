@@ -32,21 +32,75 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
       </span>
     </a>
 
-    <nav aria-label="Primary">
-      <ul>
-        {
-          nav.map((item) => (
-            <li>
-              <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
-                {item.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <div class="header-end">
+      <nav aria-label="Primary">
+        <ul>
+          {
+            nav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <button
+        type="button"
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Switch to dark theme"
+        title="Toggle light / dark theme"
+      >
+        <span class="theme-icon" aria-hidden="true">
+          <!-- Sun (shown in dark mode → click for light) -->
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <!-- Moon (shown in light mode → click for dark) -->
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3a7 7 0 1 0 11.5 11.5z"></path>
+          </svg>
+        </span>
+        <span class="theme-label" data-theme-label>Dark</span>
+      </button>
+    </div>
   </div>
 </header>
+
+<script is:inline>
+  (function () {
+    var KEY = "aet-theme";
+    var btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+
+    function current() {
+      var t = document.documentElement.getAttribute("data-theme");
+      if (t === "light" || t === "dark") return t;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+
+    function apply(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      try {
+        localStorage.setItem(KEY, theme);
+      } catch (e) {}
+      var next = theme === "dark" ? "light" : "dark";
+      var label = btn.querySelector("[data-theme-label]");
+      if (label) label.textContent = next === "dark" ? "Dark" : "Light";
+      btn.setAttribute("aria-label", "Switch to " + next + " theme");
+      btn.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+    }
+
+    apply(current());
+    btn.addEventListener("click", function () {
+      apply(current() === "dark" ? "light" : "dark");
+    });
+  })();
+</script>
 
 <style>
   .site-header {
@@ -94,6 +148,13 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
     text-transform: uppercase;
     color: var(--ink-3);
   }
+  .header-end {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem 1.1rem;
+    margin-left: auto;
+  }
   nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -119,6 +180,66 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
     color: var(--ink);
     border-bottom-color: var(--accent);
   }
+
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0.28rem 0.7rem 0.28rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+    background: var(--surface);
+    color: var(--ink-2);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    flex: none;
+  }
+  .theme-toggle:hover {
+    color: var(--ink);
+    border-color: var(--accent);
+    background: var(--accent-wash);
+  }
+  .theme-icon {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+  }
+  .theme-icon svg {
+    position: absolute;
+    inset: 0;
+    width: 1rem;
+    height: 1rem;
+  }
+  /* In light mode show moon + "Dark"; in dark mode show sun + "Light" */
+  .icon-sun {
+    display: none;
+  }
+  .icon-moon {
+    display: block;
+  }
+  :global(:root[data-theme="dark"]) .icon-sun {
+    display: block;
+  }
+  :global(:root[data-theme="dark"]) .icon-moon {
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme])) .icon-sun {
+      display: block;
+    }
+    :global(:root:not([data-theme])) .icon-moon {
+      display: none;
+    }
+  }
+
   @media (max-width: 30rem) {
     .brand-text strong {
       font-size: 0.9rem;

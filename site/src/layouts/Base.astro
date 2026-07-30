@@ -69,6 +69,20 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Apply saved / system theme before paint to avoid a flash of the wrong palette. */}
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem("aet-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />

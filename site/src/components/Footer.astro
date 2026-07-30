@@ -55,11 +55,26 @@ const social = socialLinks();
       </div>
     </div>
 
-    <p class="licence muted">
-      Code MIT-licensed. Election data published under
-      <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a> —
-      free to reuse with attribution to {ATTRIBUTION}. © {year} {SITE.publisher}.
-    </p>
+    <div class="footer-bottom">
+      <p class="licence muted">
+        Code MIT-licensed. Election data published under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a> —
+        free to reuse with attribution to {ATTRIBUTION}. © {year} {SITE.publisher}.
+      </p>
+
+      <a class="design-credit" href="https://oze.au" rel="noopener">
+        <span class="design-credit-text">Website design</span>
+        <img
+          class="design-credit-logo"
+          src="/images/oze-logo.png"
+          alt="Oze"
+          width="88"
+          height="41"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    </div>
   </div>
 </footer>
 
@@ -86,10 +101,45 @@ const social = socialLinks();
     gap: 0.4rem;
     font-size: 0.92rem;
   }
-  .licence {
+  .footer-bottom {
     margin: 2.25rem 0 0;
     padding-top: 1.25rem;
     border-top: 1px solid var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 1.5rem;
+  }
+  .licence {
+    margin: 0;
     font-size: 0.83rem;
+    flex: 1 1 16rem;
+    max-width: 42rem;
+  }
+  .design-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    text-decoration: none;
+    color: var(--ink-3);
+    font-size: 0.8rem;
+    font-weight: 520;
+    flex: none;
+  }
+  .design-credit:hover {
+    color: var(--ink);
+  }
+  .design-credit:hover .design-credit-logo {
+    opacity: 1;
+  }
+  .design-credit-text {
+    letter-spacing: 0.01em;
+  }
+  .design-credit-logo {
+    width: 4.4rem;
+    height: auto;
+    opacity: 0.92;
+    transition: opacity 0.15s ease;
   }
 </style>
