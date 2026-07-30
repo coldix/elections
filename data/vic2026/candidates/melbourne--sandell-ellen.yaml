@@ -4,6 +4,8 @@ candidate:
   contest: melbourne
   chamber: assembly
   status: endorsed
+  occupation: "Member of Parliament"
+  background: "MLA for Melbourne; Leader of the Victorian Greens"
   history:
     - status: endorsed
       date: 2026-02-03

@@ -4,6 +4,8 @@ candidate:
   contest: brighton
   chamber: assembly
   status: announced
+  occupation: "Member of Parliament"
+  background: "MLA for Brighton; Liberal frontbencher"
   history:
     - status: announced
       date: 2026-07-09

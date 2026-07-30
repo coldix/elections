@@ -4,6 +4,8 @@ candidate:
   contest: narracan
   chamber: assembly
   status: announced
+  occupation: "Member of Parliament"
+  background: "MLA for Narracan (Liberal)"
   history:
     - status: announced
       date: 2026-06-30

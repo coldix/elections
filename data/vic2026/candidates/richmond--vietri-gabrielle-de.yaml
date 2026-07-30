@@ -4,6 +4,8 @@ candidate:
   contest: richmond
   chamber: assembly
   status: endorsed
+  occupation: "Member of Parliament"
+  background: "MLA for Richmond (Greens)"
   history:
     - status: endorsed
       date: 2026-02-03

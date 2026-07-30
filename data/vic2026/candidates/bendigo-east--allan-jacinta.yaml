@@ -4,6 +4,8 @@ candidate:
   contest: bendigo-east
   chamber: assembly
   status: announced
+  occupation: "Member of Parliament"
+  background: "MLA for Bendigo East since 1999; former Premier of Victoria"
   history:
     - status: announced
       date: 2026-04-04

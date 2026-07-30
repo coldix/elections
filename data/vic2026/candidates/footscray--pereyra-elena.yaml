@@ -4,6 +4,8 @@ candidate:
   contest: footscray
   chamber: assembly
   status: endorsed
+  occupation: "Councillor"
+  background: "Maribyrnong City councillor; Greens candidate for Footscray"
   history:
     - status: endorsed
       date: 2026-02-18

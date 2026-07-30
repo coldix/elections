@@ -4,6 +4,8 @@ candidate:
   contest: warrandyte
   chamber: assembly
   status: announced
+  occupation: "Member of Parliament"
+  background: "MLA for Warrandyte (Liberal)"
   history:
     - status: announced
       date: 2026-07-09

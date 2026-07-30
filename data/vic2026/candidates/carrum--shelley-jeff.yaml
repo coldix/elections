@@ -4,6 +4,8 @@ candidate:
   contest: carrum
   chamber: assembly
   status: endorsed
+  occupation: "Charity CEO"
+  background: "Managing director/CEO of children's book charity 123Read2Me"
   history:
     - status: endorsed
       date: 2026-07-13

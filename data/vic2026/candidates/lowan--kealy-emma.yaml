@@ -4,6 +4,8 @@ candidate:
   contest: lowan
   chamber: assembly
   status: announced
+  occupation: "Member of Parliament"
+  background: "MLA for Lowan; Deputy Leader of The Nationals (Victoria)"
   history:
     - status: announced
       date: 2026-07-27

@@ -4,6 +4,8 @@ candidate:
   contest: kew
   chamber: assembly
   status: announced
+  occupation: "Councillor"
+  background: "Former Mayor of Boroondara; independent candidate for Kew"
   history:
     - status: announced
       date: 2026-03-20

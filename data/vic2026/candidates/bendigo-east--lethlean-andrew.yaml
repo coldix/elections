@@ -4,6 +4,8 @@ candidate:
   contest: bendigo-east
   chamber: assembly
   status: announced
+  occupation: "Publican"
+  background: "Bendigo hospitality business owner; former federal Nationals candidate for Bendigo"
   history:
     - status: announced
       date: 2026-04-04

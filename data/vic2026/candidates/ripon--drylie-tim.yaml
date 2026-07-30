@@ -4,6 +4,8 @@ candidate:
   contest: ripon
   chamber: assembly
   status: endorsed
+  occupation: "Councillor"
+  background: "Hepburn Shire councillor; Greens candidate for Ripon"
   history:
     - status: endorsed
       date: 2026-03-19
