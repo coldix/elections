@@ -7,7 +7,7 @@ Generated for the verification backlog. Sitting MLAs who are **not** in
 Do **not** record these with Wikipedia blanket footnotes. Each needs an
 individual dated source (party page, local paper, social post, etc.).
 
-**Count:** 60 seats (was 70; batch of 10 added 2026-07-30 — review in git)
+**Count:** 46 seats (Liberal/Nationals gap closed 2026-07-30 — batch for review)
 
 | Party | Seat | Incumbent |
 |---|---|---|
@@ -57,20 +57,6 @@ individual dated source (party page, local paper, social post, etc.).
 | labor | [Werribee](https://electiontracker.au/districts/werribee) (`werribee`) | John Lister |
 | labor | [Williamstown](https://electiontracker.au/districts/williamstown) (`williamstown`) | Melissa Horne |
 | labor | [Yan Yean](https://electiontracker.au/districts/yan-yean) (`yan-yean`) | Lauren Kathage |
-| liberal | [Berwick](https://electiontracker.au/districts/berwick) (`berwick`) | Brad Battin |
-| liberal | [Brighton](https://electiontracker.au/districts/brighton) (`brighton`) | James Newbury |
-| liberal | [Caulfield](https://electiontracker.au/districts/caulfield) (`caulfield`) | David Southwick |
-| liberal | [Eildon](https://electiontracker.au/districts/eildon) (`eildon`) | Cindy McLeish |
-| liberal | [Evelyn](https://electiontracker.au/districts/evelyn) (`evelyn`) | Bridget Vallence |
-| liberal | [Hawthorn](https://electiontracker.au/districts/hawthorn) (`hawthorn`) | John Pesutto |
-| liberal | [Mornington](https://electiontracker.au/districts/mornington) (`mornington`) | Chris Crewther |
-| liberal | [Narracan](https://electiontracker.au/districts/narracan) (`narracan`) | Wayne Farnham |
-| liberal | [Prahran](https://electiontracker.au/districts/prahran) (`prahran`) | Rachel Westaway |
-| liberal | [Sandringham](https://electiontracker.au/districts/sandringham) (`sandringham`) | Brad Rowswell |
-| liberal | [Warrandyte](https://electiontracker.au/districts/warrandyte) (`warrandyte`) | Nicole Werner |
-| nationals | [Mildura](https://electiontracker.au/districts/mildura) (`mildura`) | Jade Benham |
-| nationals | [Morwell](https://electiontracker.au/districts/morwell) (`morwell`) | Martin Cameron |
-| nationals | [Ovens Valley](https://electiontracker.au/districts/ovens-valley) (`ovens-valley`) | Tim McCurdy |
 
 ## How to clear a row
 

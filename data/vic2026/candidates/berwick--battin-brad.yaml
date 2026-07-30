@@ -1,0 +1,30 @@
+candidate:
+  name: Brad Battin
+  party: liberal
+  contest: berwick
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-06-30
+      note: >-
+        Sitting Liberal MLA. Opposition Leader Jess Wilson Fresh Start Tour video names Battin as on her team in Berwick for the campaign.
+      source:
+        url: https://www.instagram.com/reel/DaFfeFDBJN0/
+        publisher: Instagram (Jess Wilson MP)
+        title: "Berwick locals know Victoria needs a fresh start, and with Brad Battin on my team…"
+        published: 2026-06-30
+        accessed: 2026-07-30
+    - status: announced
+      date: 2026-07-12
+      note: >-
+        Third-party report of Battin campaign launch (July 2026).
+      source:
+        url: https://www.threads.com/@shawnmendislawyer/post/DasosLNk2Lk/it-was-great-to-attend-brad-battin-m-ps-campaign-launch-and-catch-up-with-so/
+        publisher: Threads
+        title: "It was great to attend Brad Battin MP's campaign launch…"
+        published: 2026-07-12
+        accessed: 2026-07-30
+  links:
+    - url: https://www.bradbattin.com.au/
+      kind: campaign-site
