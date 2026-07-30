@@ -27,6 +27,7 @@ export default defineConfig({
           "/methodology",
           "/polls",
           "/assembly",
+          "/council",
           "/regions",
           "/districts",
           "/parties",

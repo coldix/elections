@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import VicGeoMap from "../../components/VicGeoMap.astro";
 import VicRegionMap from "../../components/VicRegionMap.astro";
 import { loadElection } from "../../../../scripts/lib/data.mjs";
 
@@ -8,15 +9,48 @@ const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
 const districts = [...data.districts].sort((a, b) => a.name.localeCompare(b.name));
 const totalDistricts = districts.length;
 
-const byRegion = regions.map((r) => ({
-  region: r,
-  districts: districts.filter((d) => d.region === r.slug),
+const withArea = districts.filter((d) => d.area_km2 != null);
+const totalArea = withArea.reduce((s, d) => s + d.area_km2, 0);
+const smallest = withArea.slice().sort((a, b) => a.area_km2 - b.area_km2)[0];
+const largest = withArea.slice().sort((a, b) => b.area_km2 - a.area_km2)[0];
+const medianArea = (() => {
+  const sorted = withArea.map((d) => d.area_km2).sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[mid] : Math.round((sorted[mid - 1] + sorted[mid]) / 2);
+})();
+
+// “Population” for electoral purposes is about equal electors; land area varies.
+// Metro = districts in *metropolitan* regions.
+const metro = withArea.filter((d) => d.region.includes("metropolitan"));
+const country = withArea.filter((d) => !d.region.includes("metropolitan"));
+const metroArea = metro.reduce((s, d) => s + d.area_km2, 0);
+const countryArea = country.reduce((s, d) => s + d.area_km2, 0);
+
+const byRegion = regions.map((r) => {
+  const ds = districts.filter((d) => d.region === r.slug);
+  const area = ds.reduce((s, d) => s + (d.area_km2 || 0), 0);
+  return { region: r, districts: ds, area };
+});
+
+const byArea = withArea.slice().sort((a, b) => b.area_km2 - a.area_km2);
+const fmt = (n) => n.toLocaleString("en-AU");
+
+const formedBuckets = [
+  { label: "Before 1900", test: (y) => y < 1900 },
+  { label: "1900–1949", test: (y) => y >= 1900 && y < 1950 },
+  { label: "1950–1999", test: (y) => y >= 1950 && y < 2000 },
+  { label: "2000–2021", test: (y) => y >= 2000 && y < 2022 },
+  { label: "2022 redivision (new names)", test: (y) => y === 2022 },
+];
+const ageRows = formedBuckets.map((b) => ({
+  label: b.label,
+  count: districts.filter((d) => d.formed != null && b.test(d.formed)).length,
 }));
 ---
 
 <Base
   title="Victorian electoral districts"
-  description="Map and short history of Victoria’s 88 Legislative Assembly districts — how they sit in 8 Council regions, the 2021 redivision, and a few seats with notable past figures. Candidate lists live on the Assembly page."
+  description="Map of Victoria’s 88 Legislative Assembly districts, land-area and population notes, and short history. Candidate lists live on the Assembly page."
 >
   <div class="wrap section">
     <header class="page-head">
@@ -33,11 +67,13 @@ const byRegion = regions.map((r) => ({
           Candidate lists &amp; sitting members:
           <a href="/assembly">Legislative Assembly</a>
           {" · "}
-          <a href="/regions">Legislative Council</a>
+          <a href="/council">Legislative Council</a>
+          {" · "}
+          <a href="/regions">Region atlas</a>
         </p>
         <p class="muted atlas-note">
-          This page is a map-first atlas with short historical notes — not linked from the main
-          menu. For 2026 candidacies, use the Assembly index.
+          Map-first atlas with area and history — not linked from the main menu. For 2026
+          candidacies, use the Assembly index.
         </p>
       </div>
       <div class="page-head-map">
@@ -45,31 +81,181 @@ const byRegion = regions.map((r) => ({
       </div>
     </header>
 
-    <section class="prose-block" aria-labelledby="how-h">
-      <h2 id="how-h">How the map works</h2>
-      <p>
-        Click a region on the schematic map to jump to that region’s districts on the
-        <a href="/assembly">Assembly</a> page (or open the matching
-        <a href="/regions">Council</a> region for the five upper-house seats). Boundaries are
-        from the <strong>2021 redivision</strong> by the Electoral Boundaries Commission; the
-        map itself is a navigation diagram, not survey geometry.
+    <section aria-labelledby="map-h">
+      <h2 id="map-h">Map of Victoria’s districts</h2>
+      <p class="muted section-lead">
+        Geographic map of the 88 Assembly districts at the 2022 state election (same boundaries
+        for 2026). Colours show 2022 party results, which makes district outlines easy to see;
+        this is not a forecast for 2026.
       </p>
-      <p>
-        Since the mid-1980s the Assembly has had 88 seats. Region names and the exact set of
-        11 districts per region change when boundaries are redrawn, but the
-        <span class="mono">8 × 11</span> pattern for the lower house and
-        <span class="mono">8 × 5 = 40</span> for the Council has been stable since the Council
-        moved to multi-member regions in 2006.
+      <VicGeoMap
+        src="/images/maps/vic-assembly-districts-2022.png"
+        alt="Map of Victoria showing Legislative Assembly electoral districts and 2022 election results by seat"
+        caption="Legislative Assembly districts (2022 boundaries), coloured by 2022 result."
+        attributionHtml={`Map: <a href="https://commons.wikimedia.org/wiki/File:2022_Victoria_State_Election_(Assembly).svg" rel="noopener">Wikimedia Commons</a> (see file page for author and licence). Official maps: <a href="https://www.vec.vic.gov.au/electoral-boundaries/state-districts" rel="noopener">VEC</a>.`}
+      />
+    </section>
+
+    <section aria-labelledby="pop-h">
+      <h2 id="pop-h">Population and area</h2>
+      <p class="section-lead">
+        For elections, the important “population” is <strong>enrolled electors</strong>, not
+        census residents. The Electoral Boundaries Commission draws the 88 districts so each
+        has roughly the same number of electors (one vote, one value). Enrolment changes every
+        month; live figures sit with the
+        <a href="https://www.vec.vic.gov.au/" rel="noopener">Victorian Electoral Commission</a>
+        — we do not mirror a full enrolment table here.
       </p>
+      <p class="muted section-lead">
+        What we do publish is <strong>land area</strong> (km²) and when each district name was
+        first used. Rural seats can be thousands of times larger than inner-Melbourne seats
+        while still having a similar elector quota.
+      </p>
+
+      <ul class="stat-grid" role="list">
+        <li class="card stat">
+          <span class="stat-val mono">{totalDistricts}</span>
+          <span class="stat-lab">Districts (equal elector design)</span>
+        </li>
+        <li class="card stat">
+          <span class="stat-val mono">{fmt(totalArea)}</span>
+          <span class="stat-lab">Total land area (km²)</span>
+        </li>
+        <li class="card stat">
+          <span class="stat-val mono">{fmt(medianArea)}</span>
+          <span class="stat-lab">Median district area (km²)</span>
+        </li>
+        <li class="card stat">
+          <span class="stat-val mono">{fmt(smallest.area_km2)}</span>
+          <span class="stat-lab">
+            Smallest: <a href={`/districts/${smallest.slug}`}>{smallest.name}</a>
+          </span>
+        </li>
+        <li class="card stat">
+          <span class="stat-val mono">{fmt(largest.area_km2)}</span>
+          <span class="stat-lab">
+            Largest: <a href={`/districts/${largest.slug}`}>{largest.name}</a>
+          </span>
+        </li>
+        <li class="card stat">
+          <span class="stat-val mono">
+            {((countryArea / totalArea) * 100).toFixed(0)}%
+          </span>
+          <span class="stat-lab">
+            Land in non-metro regions ({country.length} of {totalDistricts} seats)
+          </span>
+        </li>
+      </ul>
+
+      <div class="table-scroll">
+        <table class="data">
+          <caption class="visually-hidden">Land area by Council region</caption>
+          <thead>
+            <tr>
+              <th scope="col">Council region</th>
+              <th scope="col" class="num">Districts</th>
+              <th scope="col" class="num">Land area (km²)</th>
+              <th scope="col" class="num">Share of land</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              byRegion
+                .slice()
+                .sort((a, b) => b.area - a.area)
+                .map(({ region, districts: ds, area }) => (
+                  <tr>
+                    <th scope="row">
+                      <a href={`/regions/${region.slug}`}>{region.name}</a>
+                    </th>
+                    <td class="num mono">{ds.length}</td>
+                    <td class="num mono">{fmt(area)}</td>
+                    <td class="num mono">
+                      {totalArea ? ((area / totalArea) * 100).toFixed(1) : "—"}%
+                    </td>
+                  </tr>
+                ))
+            }
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">All Victoria</th>
+              <td class="num mono">{totalDistricts}</td>
+              <td class="num mono">{fmt(totalArea)}</td>
+              <td class="num mono">100%</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="muted fine-print">
+        Metro regions: {metro.length} districts, {fmt(metroArea)} km² (
+        {((metroArea / totalArea) * 100).toFixed(1)}% of land). Non-metro: {country.length}{" "}
+        districts, {fmt(countryArea)} km² (
+        {((countryArea / totalArea) * 100).toFixed(1)}% of land).
+      </p>
+    </section>
+
+    <section aria-labelledby="area-h">
+      <h2 id="area-h">Largest and smallest by land area</h2>
+      <div class="split-tables">
+        <div class="table-scroll">
+          <table class="data">
+            <caption class="visually-hidden">Ten largest districts by land area</caption>
+            <thead>
+              <tr>
+                <th scope="col">Largest (km²)</th>
+                <th scope="col" class="num">Area</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                byArea.slice(0, 10).map((d) => (
+                  <tr>
+                    <th scope="row">
+                      <a href={`/districts/${d.slug}`}>{d.name}</a>
+                    </th>
+                    <td class="num mono">{fmt(d.area_km2)}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <div class="table-scroll">
+          <table class="data">
+            <caption class="visually-hidden">Ten smallest districts by land area</caption>
+            <thead>
+              <tr>
+                <th scope="col">Smallest (km²)</th>
+                <th scope="col" class="num">Area</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                byArea
+                  .slice()
+                  .reverse()
+                  .slice(0, 10)
+                  .map((d) => (
+                    <tr>
+                      <th scope="row">
+                        <a href={`/districts/${d.slug}`}>{d.name}</a>
+                      </th>
+                      <td class="num mono">{fmt(d.area_km2)}</td>
+                    </tr>
+                  ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
 
     <section class="prose-block" aria-labelledby="hist-h">
       <h2 id="hist-h">Past figures and notable seats</h2>
       <p class="muted section-lead">
-        A few districts and former divisions are remembered for the people who held them or the
-        roles those members later took. This is not a complete parliamentary history — only
-        pointers while the atlas is young. District names below match current or recent usage
-        where possible.
+        A few districts are remembered for the people who held them. This is not a complete
+        parliamentary history — only pointers while the atlas is young.
       </p>
       <ul class="figures" role="list">
         <li>
@@ -86,89 +272,96 @@ const byRegion = regions.map((r) => ({
           <strong><a href="/districts/hawthorn">Hawthorn</a></strong>
           and
           <strong><a href="/districts/kew">Kew</a></strong>
-          — inner-eastern seats that have produced Liberal leadership figures over the decades;
-          Kew was held by Ted Baillieu before and during his premiership (2010–2013).
+          — inner-eastern seats that have produced Liberal leadership figures; Kew was held by
+          Ted Baillieu before and during his premiership (2010–2013).
         </li>
         <li>
           <strong><a href="/districts/williamstown">Williamstown</a></strong>
-          — waterfront Labor seat historically linked to senior party figures; Joan Kirner
-          represented Williamstown before and while Premier (1990–1992).
+          — Joan Kirner represented Williamstown before and while Premier (1990–1992).
         </li>
         <li>
           <strong><a href="/districts/richmond">Richmond</a></strong>
           and
           <strong><a href="/districts/melbourne">Melbourne</a></strong>
           — inner-city seats that have been early testing grounds for minor-party and
-          independent challenges alongside major-party contests.
+          independent challenges.
         </li>
         <li>
-          <strong><a href="/districts/mildura">Mildura</a></strong>
-          ,
-          <strong><a href="/districts/shepparton">Shepparton</a></strong>
-          and other regional seats — often the focus of Nationals–Liberal and independent
-          contests, reflecting different country and regional coalitions over time.
-        </li>
-        <li>
-          <strong>Abolished or renamed divisions</strong>
-          — redivisions retire names (for example older suburban and rural labels) and mint
-          new ones (such as Eureka, Greenvale, Kalkallo after the 2021 review). Sitting members
-          sometimes follow their communities into a renamed seat rather than “lose” in a simple
-          sense.
+          <strong>2021 redivision</strong>
+          — nine names abolished (including Altona, Burwood, Yuroke) and nine created or
+          restored (including Ashwood, Eureka, Greenvale, Kalkallo, Point Cook). Boundaries
+          took effect for the 2022 election.
         </li>
       </ul>
-      <p class="muted fine-print">
-        Biographical notes are for orientation only. For authoritative past results and
-        official maps, use the Victorian Electoral Commission and the Parliament of Victoria
-        records. This site’s district pages track <em>sourced 2026 candidacies</em>, not full
-        historical member rolls.
-      </p>
+
+      <h3 class="subh">When district names first appeared</h3>
+      <div class="table-scroll">
+        <table class="data">
+          <caption class="visually-hidden">Districts by first year of name</caption>
+          <thead>
+            <tr>
+              <th scope="col">First formed (name)</th>
+              <th scope="col" class="num">Districts</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              ageRows.map((r) => (
+                <tr>
+                  <th scope="row">{r.label}</th>
+                  <td class="num mono">{r.count}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section aria-labelledby="all-h">
       <h2 id="all-h">All {totalDistricts} districts</h2>
       <p class="muted section-lead">
-        A–Z index. Each link opens the district page (sitting member and any recorded 2026
-        candidates). Grouped view by region:
+        A–Z with land area. Candidate detail:
         <a href="/assembly">Assembly index</a>.
       </p>
 
-      <div class="az">
-        {
-          districts.map((d) => (
-            <a href={`/districts/${d.slug}`} class="az-item">
-              {d.name}
-            </a>
-          ))
-        }
+      <div class="table-scroll">
+        <table class="data">
+          <caption class="visually-hidden">All Assembly districts with land area</caption>
+          <thead>
+            <tr>
+              <th scope="col">District</th>
+              <th scope="col">Region</th>
+              <th scope="col" class="num">Area (km²)</th>
+              <th scope="col" class="num">Formed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              districts.map((d) => {
+                const region = data.regions.find((r) => r.slug === d.region);
+                return (
+                  <tr>
+                    <th scope="row">
+                      <a href={`/districts/${d.slug}`}>{d.name}</a>
+                    </th>
+                    <td>
+                      <a href={`/regions/${d.region}`}>{region?.name ?? d.region}</a>
+                    </td>
+                    <td class="num mono">{d.area_km2 != null ? fmt(d.area_km2) : "—"}</td>
+                    <td class="num mono">{d.formed ?? "—"}</td>
+                  </tr>
+                );
+              })
+            }
+          </tbody>
+        </table>
       </div>
-
-      <h3 class="subh">By Council region</h3>
-      <ul class="region-lists" role="list">
-        {
-          byRegion.map(({ region, districts: ds }) => (
-            <li class="card region-card">
-              <h4>
-                <a href={`/regions/${region.slug}`}>{region.name}</a>
-                <span class="muted count">{ds.length}</span>
-              </h4>
-              <ul class="mini" role="list">
-                {ds.map((d) => (
-                  <li>
-                    <a href={`/districts/${d.slug}`}>{d.name}</a>
-                  </li>
-                ))}
-              </ul>
-              <p class="muted card-foot">
-                <a href={`/assembly#region-${region.slug}`}>Assembly table →</a>
-              </p>
-            </li>
-          ))
-        }
-      </ul>
     </section>
 
     <p class="foot muted">
-      Schematic map only. Official boundaries: Electoral Boundaries Commission / VEC.
+      Area and formed year: Wikipedia «Electoral districts of Victoria» (accessed 2026-07-30).
+      Official boundaries and enrolment: Electoral Boundaries Commission / VEC.
       {" "}
       Main 2026 candidate index: <a href="/assembly">Legislative Assembly</a>.
     </p>
@@ -201,103 +394,75 @@ const byRegion = regions.map((r) => ({
     font-size: 0.88rem;
     max-width: 36rem;
   }
-  .prose-block {
-    max-width: 48rem;
-    margin-bottom: 2rem;
+  section {
+    margin-bottom: 2.25rem;
   }
-  .prose-block h2 {
+  section > h2 {
     margin: 0 0 0.65rem;
     font-size: 1.25rem;
   }
-  .prose-block p {
-    margin: 0 0 0.85rem;
-    line-height: 1.55;
-  }
   .section-lead {
     margin: 0 0 1rem;
-    max-width: 44rem;
+    max-width: 48rem;
+    line-height: 1.55;
+  }
+  .stat-grid {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+    gap: 0.75rem;
+  }
+  .stat {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.85rem 1rem;
+  }
+  .stat-val {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .stat-lab {
+    font-size: 0.82rem;
+    color: var(--ink-3);
+    line-height: 1.35;
+  }
+  .fine-print {
+    font-size: 0.86rem;
+    margin-top: 0.75rem;
+  }
+  .split-tables {
+    display: grid;
+    gap: 1.25rem;
+  }
+  @media (min-width: 720px) {
+    .split-tables {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .prose-block {
+    max-width: 48rem;
   }
   .figures {
-    margin: 0 0 1rem;
+    margin: 0 0 1.25rem;
     padding-left: 1.15rem;
     display: grid;
     gap: 0.75rem;
     line-height: 1.5;
   }
-  .figures li strong a {
-    font-weight: 650;
-  }
-  .fine-print {
-    font-size: 0.86rem;
-  }
-  .az {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem 0.45rem;
-    margin: 0 0 1.75rem;
-  }
-  .az-item {
-    font-size: 0.82rem;
-    font-weight: 560;
-    padding: 0.28rem 0.55rem;
-    border-radius: 999px;
-    border: 1px solid var(--rule);
-    background: var(--surface);
-    color: var(--ink-2);
-    text-decoration: none;
-  }
-  .az-item:hover {
-    border-color: var(--accent);
-    color: var(--accent-ink);
-  }
   .subh {
-    margin: 0 0 0.85rem;
+    margin: 1.25rem 0 0.65rem;
     font-size: 1.05rem;
   }
-  .region-lists {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1rem;
-  }
-  .region-card h4 {
-    margin: 0 0 0.55rem;
-    font-size: 0.98rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 0.5rem;
-    align-items: baseline;
-  }
-  .region-card h4 a {
-    color: inherit;
-    text-decoration: none;
-  }
-  .region-card h4 a:hover {
-    color: var(--accent-ink);
-    text-decoration: underline;
-  }
-  .count {
-    font-size: 0.8rem;
-    font-weight: 500;
-  }
-  .mini {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 0.28rem;
-    font-size: 0.88rem;
-  }
-  .card-foot {
-    margin: 0.75rem 0 0;
-    padding-top: 0.55rem;
-    border-top: 1px solid var(--rule);
-    font-size: 0.82rem;
+  tfoot th,
+  tfoot td {
+    font-weight: 600;
+    border-top: 2px solid var(--rule);
   }
   .foot {
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding-top: 1.25rem;
     border-top: 1px solid var(--rule);
   }

@@ -1,0 +1,270 @@
+# Geographic and historical stats for Legislative Assembly districts.
+# area_km2 and formed year: Wikipedia «Electoral districts of Victoria»
+# (Current districts table), accessed 2026-07-30. Area is land area (km²), not population.
+# Enrolment (electors) is maintained by the VEC and changes monthly — not mirrored here.
+# Source: https://en.wikipedia.org/wiki/Electoral_districts_of_Victoria
+district_stats:
+  - slug: albert-park
+    formed: 1889
+    area_km2: 21
+  - slug: ashwood
+    formed: 2022
+    area_km2: 29
+  - slug: bass
+    formed: 2002
+    area_km2: 1358
+  - slug: bayswater
+    formed: 1992
+    area_km2: 39
+  - slug: bellarine
+    formed: 1967
+    area_km2: 356
+  - slug: benambra
+    formed: 1877
+    area_km2: 9147
+  - slug: bendigo-east
+    formed: 1904
+    area_km2: 2711
+  - slug: bendigo-west
+    formed: 1904
+    area_km2: 1524
+  - slug: bentleigh
+    formed: 1967
+    area_km2: 25
+  - slug: berwick
+    formed: 1976
+    area_km2: 99
+  - slug: box-hill
+    formed: 1945
+    area_km2: 29
+  - slug: brighton
+    formed: 1856
+    area_km2: 20
+  - slug: broadmeadows
+    formed: 1955
+    area_km2: 47
+  - slug: brunswick
+    formed: 1904
+    area_km2: 14
+  - slug: bulleen
+    formed: 1985
+    area_km2: 39
+  - slug: bundoora
+    formed: 1976
+    area_km2: 35
+  - slug: carrum
+    formed: 1976
+    area_km2: 87
+  - slug: caulfield
+    formed: 1927
+    area_km2: 17
+  - slug: clarinda
+    formed: 2014
+    area_km2: 45
+  - slug: cranbourne
+    formed: 1992
+    area_km2: 63
+  - slug: croydon
+    formed: 2014
+    area_km2: 42
+  - slug: dandenong
+    formed: 1904
+    area_km2: 58
+  - slug: eildon
+    formed: 2014
+    area_km2: 10061
+  - slug: eltham
+    formed: 1992
+    area_km2: 73
+  - slug: essendon
+    formed: 1904
+    area_km2: 24
+  - slug: eureka
+    formed: 2022
+    area_km2: 3915
+  - slug: euroa
+    formed: 2014
+    area_km2: 11452
+  - slug: evelyn
+    formed: 1859
+    area_km2: 255
+  - slug: footscray
+    formed: 1877
+    area_km2: 23
+  - slug: frankston
+    formed: 1967
+    area_km2: 43
+  - slug: geelong
+    formed: 1856
+    area_km2: 328
+  - slug: gippsland-east
+    formed: 1889
+    area_km2: 27544
+  - slug: gippsland-south
+    formed: 1859
+    area_km2: 8232
+  - slug: glen-waverley
+    formed: 1985
+    area_km2: 36
+  - slug: greenvale
+    formed: 2022
+    area_km2: 60
+  - slug: hastings
+    formed: 2002
+    area_km2: 395
+  - slug: hawthorn
+    formed: 1889
+    area_km2: 21
+  - slug: ivanhoe
+    formed: 1945
+    area_km2: 31
+  - slug: kalkallo
+    formed: 2022
+    area_km2: 262
+  - slug: kew
+    formed: 1927
+    area_km2: 31
+  - slug: kororoit
+    formed: 2002
+    area_km2: 124
+  - slug: lara
+    formed: 2002
+    area_km2: 702
+  - slug: laverton
+    formed: 2022
+    area_km2: 87
+  - slug: lowan
+    formed: 1889
+    area_km2: 41858
+  - slug: macedon
+    formed: 2002
+    area_km2: 3366
+  - slug: malvern
+    formed: 1945
+    area_km2: 20
+  - slug: melbourne
+    formed: 1856
+    area_km2: 25
+  - slug: melton
+    formed: 1992
+    area_km2: 332
+  - slug: mildura
+    formed: 1927
+    area_km2: 37529
+  - slug: mill-park
+    formed: 1992
+    area_km2: 42
+  - slug: monbulk
+    formed: 1967
+    area_km2: 459
+  - slug: mordialloc
+    formed: 1992
+    area_km2: 56
+  - slug: mornington
+    formed: 1859
+    area_km2: 155
+  - slug: morwell
+    formed: 1955
+    area_km2: 908
+  - slug: mulgrave
+    formed: 1958
+    area_km2: 36
+  - slug: murray-plains
+    formed: 2014
+    area_km2: 11921
+  - slug: narracan
+    formed: 1967
+    area_km2: 4503
+  - slug: narre-warren-north
+    formed: 2002
+    area_km2: 70
+  - slug: narre-warren-south
+    formed: 2002
+    area_km2: 40
+  - slug: nepean
+    formed: 2002
+    area_km2: 387
+  - slug: niddrie
+    formed: 1976
+    area_km2: 39
+  - slug: northcote
+    formed: 1927
+    area_km2: 21
+  - slug: oakleigh
+    formed: 1927
+    area_km2: 32
+  - slug: ovens-valley
+    formed: 2014
+    area_km2: 10558
+  - slug: pakenham
+    formed: 1992
+    area_km2: 226
+  - slug: pascoe-vale
+    formed: 1955
+    area_km2: 21
+  - slug: point-cook
+    formed: 2022
+    area_km2: 88
+  - slug: polwarth
+    formed: 1889
+    area_km2: 8860
+  - slug: prahran
+    formed: 1889
+    area_km2: 11
+  - slug: preston
+    formed: 1945
+    area_km2: 27
+  - slug: richmond
+    formed: 1856
+    area_km2: 13
+  - slug: ringwood
+    formed: 1958
+    area_km2: 35
+  - slug: ripon
+    formed: 1945
+    area_km2: 14444
+  - slug: rowville
+    formed: 2014
+    area_km2: 62
+  - slug: sandringham
+    formed: 1955
+    area_km2: 24
+  - slug: shepparton
+    formed: 1945
+    area_km2: 3289
+  - slug: south-barwon
+    formed: 1976
+    area_km2: 361
+  - slug: south-west-coast
+    formed: 2002
+    area_km2: 6576
+  - slug: st-albans
+    formed: 1985
+    area_km2: 35
+  - slug: sunbury
+    formed: 2014
+    area_km2: 340
+  - slug: sydenham
+    formed: 2014
+    area_km2: 96
+  - slug: tarneit
+    formed: 2002
+    area_km2: 76
+  - slug: thomastown
+    formed: 1985
+    area_km2: 91
+  - slug: warrandyte
+    formed: 1976
+    area_km2: 107
+  - slug: wendouree
+    formed: 2014
+    area_km2: 64
+  - slug: werribee
+    formed: 1976
+    area_km2: 339
+  - slug: williamstown
+    formed: 1856
+    area_km2: 52
+  - slug: yan-yean
+    formed: 1992
+    area_km2: 611

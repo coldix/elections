@@ -1,0 +1,75 @@
+---
+/**
+ * Hosted PNG of real Victorian electoral geography (from Wikimedia Commons).
+ * Not a schematic — used on atlas pages with attribution.
+ */
+const {
+  src,
+  alt,
+  caption,
+  attributionHtml = null,
+  linkHref = null,
+} = Astro.props;
+---
+
+<figure class="geo-map">
+  {
+    linkHref ? (
+      <a href={linkHref} class="geo-map-link">
+        <img src={src} alt={alt} loading="lazy" decoding="async" width="1280" height="800" />
+      </a>
+    ) : (
+      <img src={src} alt={alt} loading="lazy" decoding="async" width="1280" height="800" />
+    )
+  }
+  {
+    (caption || attributionHtml) && (
+      <figcaption>
+        {caption && <span class="cap">{caption}</span>}
+        {attributionHtml && (
+          <span class="attr" set:html={attributionHtml} />
+        )}
+      </figcaption>
+    )
+  }
+</figure>
+
+<style>
+  .geo-map {
+    margin: 0 0 1.75rem;
+    padding: 0;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .geo-map img {
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+  .geo-map-link {
+    display: block;
+  }
+  .geo-map-link:hover img {
+    opacity: 0.96;
+  }
+  figcaption {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.65rem 0.85rem 0.75rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--ink-3);
+    line-height: 1.4;
+  }
+  .cap {
+    color: var(--ink-2);
+    font-weight: 520;
+  }
+  .attr :global(a) {
+    color: inherit;
+  }
+</style>

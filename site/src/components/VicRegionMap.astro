@@ -4,10 +4,9 @@
  * Not survey-accurate boundaries — a clear navigation diagram for 8×11 Assembly
  * districts and 8×5 Council seats.
  */
-const { mode = "regions", activeSlug = null, compact = false } = Astro.props;
-// mode: "regions"  → /regions/<slug>
-// mode: "assembly" → /assembly#region-<slug> (or #region- if already on Assembly)
-// mode: "districts" kept as alias of "assembly" for older call sites
+const { mode = "council", activeSlug = null, compact = false } = Astro.props;
+// mode: "council" | "regions" → /regions/<slug> (individual region pages)
+// mode: "assembly" | "districts" → /assembly#region-<slug>
 
 const isAssembly = mode === "assembly" || mode === "districts";
 

@@ -91,6 +91,9 @@ export function loadElection(id) {
   const parties = load(dir, "parties.yaml").parties;
   const retirements = loadOptional(dir, "retirements.yaml", "retirements");
   const councilMembers = loadOptional(dir, "council-members.yaml", "council_members");
+  // Optional geographic stats (area_km2, formed year) for atlas pages.
+  const districtStats = loadOptional(dir, "district-stats.yaml", "district_stats");
+  const statsBySlug = new Map(districtStats.map((s) => [s.slug, s]));
 
   const candidates = readdirSync(join(dir, "candidates"))
     .filter((f) => !f.startsWith("_") && f.endsWith(".yaml"))
@@ -120,11 +123,17 @@ export function loadElection(id) {
     retirements,
     candidates,
     councilMembers,
-    districts: districts.map((d) => ({
-      ...d,
-      candidates: byContest(d.slug, "assembly"),
-      retirements: retirements.filter((r) => r.role === "MLA" && r.seat === d.slug),
-    })),
+    districtStats,
+    districts: districts.map((d) => {
+      const stats = statsBySlug.get(d.slug) ?? null;
+      return {
+        ...d,
+        area_km2: stats?.area_km2 ?? null,
+        formed: stats?.formed ?? null,
+        candidates: byContest(d.slug, "assembly"),
+        retirements: retirements.filter((r) => r.role === "MLA" && r.seat === d.slug),
+      };
+    }),
     regions: regions.map((r) => ({
       ...r,
       candidates: byContest(r.slug, "council"),

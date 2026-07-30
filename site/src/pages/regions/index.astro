@@ -1,124 +1,202 @@
 ---
 import Base from "../../layouts/Base.astro";
+import VicGeoMap from "../../components/VicGeoMap.astro";
 import VicRegionMap from "../../components/VicRegionMap.astro";
-import { loadElection, LIVE_STATUSES } from "../../../../scripts/lib/data.mjs";
-import { partyColour } from "../../lib/site.mjs";
+import { loadElection } from "../../../../scripts/lib/data.mjs";
 
 const data = loadElection("vic2026");
 const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
 
-const cards = regions.map((r) => {
-  const live = r.candidates.filter((c) => LIVE_STATUSES.includes(c.status));
-  const districtCount = data.districts.filter((d) => d.region === r.slug).length;
-  return { region: r, liveCount: live.length, districtCount };
-});
+const metro = regions.filter((r) => r.slug.includes("metropolitan"));
+const country = regions.filter((r) => !r.slug.includes("metropolitan"));
 
-const totalSeats = regions.reduce((s, r) => s + (r.seats || 5), 0);
+// Land area by region from district stats (sum of 11 districts)
+const areaByRegion = Object.fromEntries(
+  regions.map((r) => {
+    const area = data.districts
+      .filter((d) => d.region === r.slug)
+      .reduce((s, d) => s + (d.area_km2 || 0), 0);
+    return [r.slug, area];
+  })
+);
+const totalArea = Object.values(areaByRegion).reduce((s, a) => s + a, 0);
+const fmt = (n) => n.toLocaleString("en-AU");
 ---
 
 <Base
-  title="Legislative Council regions"
-  description="Victorian Legislative Council: 8 regions electing 5 members each (40 seats). Sitting members and sourced 2026 upper-house candidates."
+  title="Victorian electoral regions"
+  description="Map and short history of Victoria’s 8 Legislative Council regions — from pre-2006 provinces to today’s 8 × 5 proportional model. Sitting members and 2026 candidacies live on the Council page."
 >
   <div class="wrap section">
     <header class="page-head">
       <div class="page-head-copy">
-        <p class="eyebrow">Victoria 2026 · Upper house</p>
-        <h1>Legislative Council</h1>
+        <p class="eyebrow">Victoria · Region atlas</p>
+        <h1>Electoral regions</h1>
         <p class="lede">
-          The Council has <strong>{regions.length} multi-member regions</strong>, each electing
-          <strong>5 members</strong> by proportional representation —
-          <span class="mono">8 × 5 = {totalSeats}</span> seats. The same regions group the
-          Assembly’s 88 districts (<span class="mono">8 × 11</span>).
+          The upper house is divided into <strong>8 regions</strong>. Each elects
+          <strong>5 members</strong> by proportional representation
+          (<span class="mono">8 × 5 = 40</span>). Every region contains
+          <strong>11 Assembly districts</strong> (<span class="mono">8 × 11 = 88</span>).
         </p>
         <p class="muted house-switch">
-          Lower house (districts, 8 × 11 = 88): <a href="/assembly">Legislative Assembly</a>
+          Candidate lists &amp; sitting members:
+          <a href="/council">Legislative Council</a>
+          {" · "}
+          <a href="/assembly">Legislative Assembly</a>
+          {" · "}
+          <a href="/districts">District atlas</a>
+        </p>
+        <p class="muted atlas-note">
+          Map-first atlas with history — not linked from the main menu. For 2026 candidacies,
+          use the Council index.
         </p>
       </div>
       <div class="page-head-map">
-        <VicRegionMap mode="regions" compact />
+        <VicRegionMap mode="council" compact />
       </div>
     </header>
 
-    <div class="table-scroll">
-      <table class="data">
-        <caption class="visually-hidden">Legislative Council regions</caption>
-        <thead>
-          <tr>
-            <th scope="col">Region</th>
-            <th scope="col" class="num">Council seats</th>
-            <th scope="col" class="num">Assembly districts</th>
-            <th scope="col" class="num">2026 candidates</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            cards.map(({ region, liveCount, districtCount }) => (
-              <tr>
-                <th scope="row">
-                  <a href={`/regions/${region.slug}`}>{region.name}</a>
-                </th>
-                <td class="num mono">{region.seats}</td>
-                <td class="num mono">{districtCount}</td>
-                <td class="num mono">{liveCount || "—"}</td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
-    </div>
+    <section aria-labelledby="map-h">
+      <h2 id="map-h">Map of Victoria’s regions</h2>
+      <p class="muted section-lead">
+        Geographic map of the eight Legislative Council regions (2022 boundaries, in force for
+        2026). Colours mark regions; the schematic diagram above is for quick navigation only.
+      </p>
+      <VicGeoMap
+        src="/images/maps/vic-council-regions-2022.png"
+        alt="Map of Victoria showing the eight Legislative Council electoral regions"
+        caption="Legislative Council regions, 2022 boundaries."
+        attributionHtml={`Map: <a href="https://commons.wikimedia.org/wiki/File:Regions_of_the_Victorian_Legislative_Council_(2022).svg" rel="noopener">Wikimedia Commons</a> (see file page for author and licence). Official maps: <a href="https://www.vec.vic.gov.au/electoral-boundaries/state-regions" rel="noopener">VEC</a>.`}
+      />
+    </section>
 
-    <h2 class="lh">Sitting members (40)</h2>
-    <p class="muted section-note">
-      Who holds each Council seat <strong>today</strong>, including mid-term replacements.
-      Not a 2026 ticket — candidacies are recorded separately with sources.
-    </p>
+    <section class="prose-block" aria-labelledby="hist-h">
+      <h2 id="hist-h">How the regions came about</h2>
+      <p>
+        For most of its history the Legislative Council was organised differently — as
+        <strong>provinces</strong> with staggered terms and, for long periods, a restricted
+        franchise. Reform in the early 2000s replaced that system.
+      </p>
+      <p>
+        From the <strong>2006</strong> state election, Victoria has used
+        <strong>eight multi-member regions</strong>, each returning five members at a
+        general election by proportional representation (group voting tickets were later
+        abolished; today’s ballots use optional preferential above-the-line voting under
+        current law — always check the <a href="https://www.vec.vic.gov.au/" rel="noopener">VEC</a>
+        for the rules in force).
+      </p>
+      <p>
+        The pattern is fixed: five metro regions covering greater Melbourne and three large
+        country regions (Northern, Eastern and Western Victoria). The
+        <strong>2021 redivision</strong> redrew district lines inside those regions and
+        adjusted region edges so each still holds eleven Assembly seats; one region name was
+        updated in that process. Those boundaries applied at the 2022 election and remain in
+        force for 2026.
+      </p>
+      <ul class="figures" role="list">
+        <li>
+          <strong>Five metropolitan regions</strong>
+          — denser population, small land area: Northern, Southern, North-Eastern,
+          South-Eastern and Western Metropolitan.
+        </li>
+        <li>
+          <strong>Three non-metropolitan regions</strong>
+          — Northern, Eastern and Western Victoria: most of the state’s land mass, including
+          regional cities and vast rural districts such as Mildura, Lowan and Gippsland East.
+        </li>
+        <li>
+          <strong>Equal seats, unequal land</strong>
+          — every region elects five MLCs, but country regions cover far more square
+          kilometres. Representation is by enrolled electors, not by area.
+        </li>
+      </ul>
+    </section>
 
-    <ul class="regions" role="list">
-      {
-        regions.map((r) => (
-          <li class="card region" id={`card-${r.slug}`}>
-            <div class="region-head">
+    <section aria-labelledby="stats-h">
+      <h2 id="stats-h">Land area by region</h2>
+      <p class="muted section-lead">
+        Sum of the land area of the 11 Assembly districts in each region (Wikipedia district
+        areas, not census population). Enrolment is rebalanced at each redivision so regions
+        have similar numbers of electors even when area differs.
+      </p>
+      <div class="table-scroll">
+        <table class="data">
+          <caption class="visually-hidden">Land area of Legislative Council regions</caption>
+          <thead>
+            <tr>
+              <th scope="col">Region</th>
+              <th scope="col">Type</th>
+              <th scope="col" class="num">Land area (km²)</th>
+              <th scope="col" class="num">Share of state</th>
+              <th scope="col" class="num">Council seats</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              regions
+                .slice()
+                .sort((a, b) => (areaByRegion[b.slug] || 0) - (areaByRegion[a.slug] || 0))
+                .map((r) => {
+                  const area = areaByRegion[r.slug] || 0;
+                  const pct = totalArea ? ((area / totalArea) * 100).toFixed(1) : "—";
+                  const type = r.slug.includes("metropolitan") ? "Metropolitan" : "Non-metropolitan";
+                  return (
+                    <tr>
+                      <th scope="row">
+                        <a href={`/regions/${r.slug}`}>{r.name}</a>
+                      </th>
+                      <td>{type}</td>
+                      <td class="num mono">{fmt(area)}</td>
+                      <td class="num mono">{pct}%</td>
+                      <td class="num mono">{r.seats}</td>
+                    </tr>
+                  );
+                })
+            }
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Victoria (88 districts)</th>
+              <td>{metro.length} metro · {country.length} country</td>
+              <td class="num mono">{fmt(totalArea)}</td>
+              <td class="num mono">100%</td>
+              <td class="num mono">40</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="list-h">
+      <h2 id="list-h">All 8 regions</h2>
+      <ul class="region-cards" role="list">
+        {
+          regions.map((r) => (
+            <li class="card">
               <h3>
                 <a href={`/regions/${r.slug}`}>{r.name}</a>
               </h3>
-              <span class="muted">{r.seats} members</span>
-            </div>
-            <ul class="members" role="list">
-              {r.members.map((m) => {
-                const retiring = data.retirements.some(
-                  (x) => x.role === "MLC" && x.name === m.name
-                );
-                return (
-                  <li>
-                    <span
-                      class="swatch"
-                      style={`--party-colour:${partyColour(m.party)}`}
-                      aria-hidden="true"
-                    />
-                    <span class="m-name">{m.name}</span>
-                    <span class="muted m-party">
-                      {data.partyBySlug.get(m.party)?.short_name ?? m.party}
-                    </span>
-                    {retiring && <span class="pill pill-withdrawn">Not recontesting</span>}
-                  </li>
-                );
-              })}
-            </ul>
-            <p class="muted region-foot">
-              <a href={`/regions/${r.slug}`}>Open region page</a>
-              {" · "}
-              <a href={`/assembly#region-${r.slug}`}>Assembly districts</a>
-            </p>
-          </li>
-        ))
-      }
-    </ul>
+              <p class="muted">
+                5 MLCs · 11 Assembly districts · {fmt(areaByRegion[r.slug] || 0)} km²
+              </p>
+              <p class="card-links">
+                <a href={`/regions/${r.slug}`}>Region page</a>
+                {" · "}
+                <a href={`/council#card-${r.slug}`}>Council sitting members</a>
+                {" · "}
+                <a href={`/assembly#region-${r.slug}`}>Assembly districts</a>
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
 
     <p class="foot muted">
-      Map is schematic (not survey geometry). Boundaries from the 2021 redivision.
+      Area figures from district land areas on Wikipedia’s electoral districts list (accessed
+      2026-07-30). Official boundary maps and live enrolment: VEC.
       {" "}
-      District atlas: <a href="/districts">map &amp; short history</a>.
+      Main 2026 upper-house index: <a href="/council">Legislative Council</a>.
     </p>
   </div>
 </Base>
@@ -130,7 +208,7 @@ const totalSeats = regions.reduce((s, r) => s + (r.seats || 5), 0);
   .page-head {
     display: grid;
     gap: 1.25rem 2rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
     align-items: start;
   }
   @media (min-width: 880px) {
@@ -142,72 +220,75 @@ const totalSeats = regions.reduce((s, r) => s + (r.seats || 5), 0);
     margin-bottom: 0.65rem;
   }
   .house-switch {
+    margin: 0 0 0.5rem;
+  }
+  .atlas-note {
     margin: 0;
+    font-size: 0.88rem;
+    max-width: 36rem;
   }
-  .lh {
-    margin-top: 2.25rem;
-    margin-bottom: 0.5rem;
-  }
-  .section-note {
+  .section-lead {
+    margin: 0 0 1rem;
     max-width: 48rem;
-    margin-bottom: 1.15rem;
   }
-  .regions {
+  .prose-block {
+    max-width: 48rem;
+    margin-bottom: 2rem;
+  }
+  .prose-block h2,
+  section > h2 {
+    margin: 0 0 0.65rem;
+    font-size: 1.25rem;
+  }
+  .prose-block p {
+    margin: 0 0 0.85rem;
+    line-height: 1.55;
+  }
+  .figures {
+    margin: 0 0 1rem;
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.75rem;
+    line-height: 1.5;
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+  tfoot th,
+  tfoot td {
+    font-weight: 600;
+    border-top: 2px solid var(--rule);
+  }
+  .region-cards {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: 1rem;
   }
-  .region-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    padding-bottom: 0.55rem;
-    border-bottom: 1px solid var(--rule);
-  }
-  .region-head h3 {
-    margin: 0;
+  .region-cards h3 {
+    margin: 0 0 0.35rem;
     font-size: 1.02rem;
   }
-  .region-head a {
+  .region-cards h3 a {
     color: inherit;
     text-decoration: none;
   }
-  .region-head a:hover {
+  .region-cards h3 a:hover {
     color: var(--accent-ink);
     text-decoration: underline;
   }
-  .members {
-    list-style: none;
-    margin: 0.75rem 0 0;
-    padding: 0;
-    display: grid;
-    gap: 0.4rem;
+  .region-cards .muted {
+    margin: 0 0 0.55rem;
+    font-size: 0.88rem;
   }
-  .members li {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    font-size: 0.9rem;
-  }
-  .m-name {
-    font-weight: 560;
-  }
-  .m-party {
-    font-size: 0.82rem;
-  }
-  .region-foot {
-    margin: 0.85rem 0 0;
-    padding-top: 0.65rem;
-    border-top: 1px solid var(--rule);
-    font-size: 0.82rem;
+  .card-links {
+    margin: 0;
+    font-size: 0.84rem;
   }
   .foot {
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding-top: 1.25rem;
     border-top: 1px solid var(--rule);
   }

@@ -1,0 +1,218 @@
+---
+import Base from "../../layouts/Base.astro";
+import VicRegionMap from "../../components/VicRegionMap.astro";
+import { loadElection, LIVE_STATUSES } from "../../../../scripts/lib/data.mjs";
+import { partyColour } from "../../lib/site.mjs";
+
+const data = loadElection("vic2026");
+const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
+
+const cards = regions.map((r) => {
+  const live = r.candidates.filter((c) => LIVE_STATUSES.includes(c.status));
+  const districtCount = data.districts.filter((d) => d.region === r.slug).length;
+  return { region: r, liveCount: live.length, districtCount };
+});
+
+const totalSeats = regions.reduce((s, r) => s + (r.seats || 5), 0);
+---
+
+<Base
+  title="Legislative Council"
+  description="Victorian Legislative Council: 8 regions electing 5 members each (40 seats). Sitting members and sourced 2026 upper-house candidates."
+>
+  <div class="wrap section">
+    <header class="page-head">
+      <div class="page-head-copy">
+        <p class="eyebrow">Victoria 2026 · Upper house</p>
+        <h1>Legislative Council</h1>
+        <p class="lede">
+          The Council has <strong>{regions.length} multi-member regions</strong>, each electing
+          <strong>5 members</strong> by proportional representation —
+          <span class="mono">8 × 5 = {totalSeats}</span> seats. The same regions group the
+          Assembly’s 88 districts (<span class="mono">8 × 11</span>).
+        </p>
+        <p class="muted house-switch">
+          Lower house (districts, 8 × 11 = 88): <a href="/assembly">Legislative Assembly</a>
+          {" · "}
+          <a href="/regions">Region atlas</a>
+        </p>
+      </div>
+      <div class="page-head-map">
+        <VicRegionMap mode="council" compact />
+      </div>
+    </header>
+
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">Legislative Council regions</caption>
+        <thead>
+          <tr>
+            <th scope="col">Region</th>
+            <th scope="col" class="num">Council seats</th>
+            <th scope="col" class="num">Assembly districts</th>
+            <th scope="col" class="num">2026 candidates</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            cards.map(({ region, liveCount, districtCount }) => (
+              <tr>
+                <th scope="row">
+                  <a href={`/regions/${region.slug}`}>{region.name}</a>
+                </th>
+                <td class="num mono">{region.seats}</td>
+                <td class="num mono">{districtCount}</td>
+                <td class="num mono">{liveCount || "—"}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="lh">Sitting members (40)</h2>
+    <p class="muted section-note">
+      Who holds each Council seat <strong>today</strong>, including mid-term replacements.
+      Not a 2026 ticket — candidacies are recorded separately with sources.
+    </p>
+
+    <ul class="regions" role="list">
+      {
+        regions.map((r) => (
+          <li class="card region" id={`card-${r.slug}`}>
+            <div class="region-head">
+              <h3>
+                <a href={`/regions/${r.slug}`}>{r.name}</a>
+              </h3>
+              <span class="muted">{r.seats} members</span>
+            </div>
+            <ul class="members" role="list">
+              {r.members.map((m) => {
+                const retiring = data.retirements.some(
+                  (x) => x.role === "MLC" && x.name === m.name
+                );
+                return (
+                  <li>
+                    <span
+                      class="swatch"
+                      style={`--party-colour:${partyColour(m.party)}`}
+                      aria-hidden="true"
+                    />
+                    <span class="m-name">{m.name}</span>
+                    <span class="muted m-party">
+                      {data.partyBySlug.get(m.party)?.short_name ?? m.party}
+                    </span>
+                    {retiring && <span class="pill pill-withdrawn">Not recontesting</span>}
+                  </li>
+                );
+              })}
+            </ul>
+            <p class="muted region-foot">
+              <a href={`/regions/${r.slug}`}>Open region page</a>
+              {" · "}
+              <a href={`/assembly#region-${r.slug}`}>Assembly districts</a>
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="foot muted">
+      Schematic navigation map. Boundaries from the 2021 redivision.
+      {" "}
+      Geographic map and history: <a href="/regions">region atlas</a>.
+      {" "}
+      District atlas: <a href="/districts">map &amp; area stats</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .mono {
+    font-variant-numeric: tabular-nums;
+  }
+  .page-head {
+    display: grid;
+    gap: 1.25rem 2rem;
+    margin-bottom: 1.75rem;
+    align-items: start;
+  }
+  @media (min-width: 880px) {
+    .page-head {
+      grid-template-columns: minmax(0, 1fr) minmax(15rem, 20rem);
+    }
+  }
+  .page-head-copy .lede {
+    margin-bottom: 0.65rem;
+  }
+  .house-switch {
+    margin: 0;
+  }
+  .lh {
+    margin-top: 2.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-note {
+    max-width: 48rem;
+    margin-bottom: 1.15rem;
+  }
+  .regions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1rem;
+  }
+  .region-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .region-head h3 {
+    margin: 0;
+    font-size: 1.02rem;
+  }
+  .region-head a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .region-head a:hover {
+    color: var(--accent-ink);
+    text-decoration: underline;
+  }
+  .members {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+  .members li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+  }
+  .m-name {
+    font-weight: 560;
+  }
+  .m-party {
+    font-size: 0.82rem;
+  }
+  .region-foot {
+    margin: 0.85rem 0 0;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.82rem;
+  }
+  .foot {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>

@@ -17,6 +17,7 @@ const PRIORITY = [
   `https://${HOST}/methodology`,
   `https://${HOST}/polls`,
   `https://${HOST}/assembly`,
+  `https://${HOST}/council`,
   `https://${HOST}/regions`,
   `https://${HOST}/districts`,
   `https://${HOST}/parties`,

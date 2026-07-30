@@ -36,8 +36,9 @@ candidate list exists before then.
 - [Open data](https://electiontracker.au/data): file list and citation guidance
 - [Methodology](https://electiontracker.au/methodology): candidate statuses, coverage counting, poll methodology link
 - [Legislative Assembly](https://electiontracker.au/assembly): 88 lower-house districts by region, sitting members and sourced candidates
-- [Legislative Council](https://electiontracker.au/regions): 8 upper-house regions × 5 seats
-- [District atlas](https://electiontracker.au/districts): map-first index and short historical notes (not primary nav)
+- [Legislative Council](https://electiontracker.au/council): 8 upper-house regions × 5 seats, sitting members
+- [District atlas](https://electiontracker.au/districts): geographic map, land-area stats, short history (not primary nav)
+- [Region atlas](https://electiontracker.au/regions): geographic map of 8 Council regions and history (not primary nav)
 - [Parties](https://electiontracker.au/parties): indexes of parties
 - [About](https://electiontracker.au/about): independence and authorisation
 - [Disclaimer](https://electiontracker.au/disclaimer): limits of the site
