@@ -1,0 +1,19 @@
+candidate:
+  name: Jess Wilson
+  party: liberal
+  contest: kew
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-03-21
+      note: Sitting Liberal MLA and Opposition Leader; Age reports she will face independent Sophie Torney in Kew at the 2026 election.
+      source:
+        url: https://www.theage.com.au/politics/victoria/wilson-faces-fresh-teal-threat-as-voters-abandon-major-parties-20260319-p5qb6e.html
+        publisher: The Age
+        title: "State election, Kew: Jess Wilson to face challenge from Sophie Torney"
+        published: 2026-03-21
+        accessed: 2026-07-30
+  links:
+    - url: https://www.parliament.vic.gov.au/members/jess-wilson/
+      kind: parliament

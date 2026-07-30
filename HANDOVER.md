@@ -234,10 +234,10 @@ Resolved 2026-07-28:
 
 ## TODO (priority order)
 
-1. **Close the incumbent gap** (~70 seats as of 2026-07-30): find an
-   individual, dated source for each presumed-recontesting MLA not yet in
-   `candidates/` (mostly Labor 47, then Liberal 15, Nationals 6, independents
-   2). Do **not** use Wikipedia blanket footnotes. Live list:
+1. **Close the incumbent gap** (~60 seats as of 2026-07-30 after a first
+   batch of 10): find an individual, dated source for each
+   presumed-recontesting MLA not yet in `candidates/` (still mostly Labor).
+   Do **not** use Wikipedia blanket footnotes. Live list:
    [docs/incumbent-gap.md](docs/incumbent-gap.md). Regenerate by comparing
    `districts.yaml` incumbents vs `candidates/` minus `retirements.yaml`.
 2. **Legislative Council tickets** — region-by-region (Wikipedia + party

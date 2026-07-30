@@ -1,0 +1,21 @@
+candidate:
+  name: Annabelle Cleeland
+  party: nationals
+  contest: euroa
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-05-31
+      note: >-
+        Sitting Nationals MLA. Official campaign Facebook post seeks volunteers,
+        donors and support "ahead of November" with Nationals donate-to-euroa link.
+      source:
+        url: https://www.facebook.com/Annabelle4Euroa/posts/it-truly-takes-a-village-there-are-so-many-people-who-make-this-job-possible-who/967778249389089/
+        publisher: Facebook (Annabelle Cleeland MP / Annabelle4Euroa)
+        title: Campaign support ask ahead of November (Euroa)
+        published: 2026-05-31
+        accessed: 2026-07-30
+  links:
+    - url: https://www.facebook.com/Annabelle4Euroa
+      kind: campaign-page

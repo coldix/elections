@@ -1,0 +1,28 @@
+candidate:
+  name: Jacinta Allan
+  party: labor
+  contest: bendigo-east
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-04-04
+      note: Sitting Labor MLA; media reports treat her as recontesting Bendigo East at the 2026 state election (including after she left the premiership).
+      source:
+        url: https://www.abc.net.au/news/2026-04-04/andrew-lethlean-to-challenge-jacinta-allan-victorian-election/106531610
+        publisher: ABC News
+        title: Andrew Lethlean to challenge Jacinta Allan in Bendigo East
+        published: 2026-04-04
+        accessed: 2026-07-30
+    - status: announced
+      date: 2026-07-28
+      note: Local report after she left the premiership — "will face voters in four months at the state election".
+      source:
+        url: https://timesnewsgroup.com.au/surfcoasttimes/news/allan-faces-battle-to-hold-onto-once-safe-bendigo-east-seat/
+        publisher: Times News Group (Surf Coast Times / Bendigo coverage)
+        title: Allan faces battle to hold onto once-safe Bendigo East seat
+        published: 2026-07-28
+        accessed: 2026-07-30
+  links:
+    - url: https://www.parliament.vic.gov.au/members/jacinta-allan/
+      kind: parliament

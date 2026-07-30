@@ -7,7 +7,7 @@ Generated for the verification backlog. Sitting MLAs who are **not** in
 Do **not** record these with Wikipedia blanket footnotes. Each needs an
 individual dated source (party page, local paper, social post, etc.).
 
-**Count:** 70 seats
+**Count:** 60 seats (was 70; batch of 10 added 2026-07-30 — review in git)
 
 | Party | Seat | Incumbent |
 |---|---|---|
@@ -15,8 +15,6 @@ individual dated source (party page, local paper, social post, etc.).
 | independent | [South Barwon](https://electiontracker.au/districts/south-barwon) (`south-barwon`) | Darren Cheeseman |
 | labor | [Albert Park](https://electiontracker.au/districts/albert-park) (`albert-park`) | Nina Taylor |
 | labor | [Ashwood](https://electiontracker.au/districts/ashwood) (`ashwood`) | Matt Fregon |
-| labor | [Bellarine](https://electiontracker.au/districts/bellarine) (`bellarine`) | Alison Marchant |
-| labor | [Bendigo East](https://electiontracker.au/districts/bendigo-east) (`bendigo-east`) | Jacinta Allan |
 | labor | [Bendigo West](https://electiontracker.au/districts/bendigo-west) (`bendigo-west`) | Maree Edwards |
 | labor | [Bentleigh](https://electiontracker.au/districts/bentleigh) (`bentleigh`) | Nick Staikos |
 | labor | [Box Hill](https://electiontracker.au/districts/box-hill) (`box-hill`) | Paul Hamer |
@@ -54,7 +52,6 @@ individual dated source (party page, local paper, social post, etc.).
 | labor | [Ripon](https://electiontracker.au/districts/ripon) (`ripon`) | Martha Haylett |
 | labor | [St Albans](https://electiontracker.au/districts/st-albans) (`st-albans`) | Natalie Suleyman |
 | labor | [Sunbury](https://electiontracker.au/districts/sunbury) (`sunbury`) | Josh Bull |
-| labor | [Tarneit](https://electiontracker.au/districts/tarneit) (`tarneit`) | Dylan Wight |
 | labor | [Thomastown](https://electiontracker.au/districts/thomastown) (`thomastown`) | Bronwyn Halfpenny |
 | labor | [Wendouree](https://electiontracker.au/districts/wendouree) (`wendouree`) | Juliana Addison |
 | labor | [Werribee](https://electiontracker.au/districts/werribee) (`werribee`) | John Lister |
@@ -62,22 +59,15 @@ individual dated source (party page, local paper, social post, etc.).
 | labor | [Yan Yean](https://electiontracker.au/districts/yan-yean) (`yan-yean`) | Lauren Kathage |
 | liberal | [Berwick](https://electiontracker.au/districts/berwick) (`berwick`) | Brad Battin |
 | liberal | [Brighton](https://electiontracker.au/districts/brighton) (`brighton`) | James Newbury |
-| liberal | [Bulleen](https://electiontracker.au/districts/bulleen) (`bulleen`) | Matthew Guy |
 | liberal | [Caulfield](https://electiontracker.au/districts/caulfield) (`caulfield`) | David Southwick |
 | liberal | [Eildon](https://electiontracker.au/districts/eildon) (`eildon`) | Cindy McLeish |
 | liberal | [Evelyn](https://electiontracker.au/districts/evelyn) (`evelyn`) | Bridget Vallence |
 | liberal | [Hawthorn](https://electiontracker.au/districts/hawthorn) (`hawthorn`) | John Pesutto |
-| liberal | [Kew](https://electiontracker.au/districts/kew) (`kew`) | Jess Wilson |
 | liberal | [Mornington](https://electiontracker.au/districts/mornington) (`mornington`) | Chris Crewther |
 | liberal | [Narracan](https://electiontracker.au/districts/narracan) (`narracan`) | Wayne Farnham |
-| liberal | [Polwarth](https://electiontracker.au/districts/polwarth) (`polwarth`) | Richard Riordan |
 | liberal | [Prahran](https://electiontracker.au/districts/prahran) (`prahran`) | Rachel Westaway |
 | liberal | [Sandringham](https://electiontracker.au/districts/sandringham) (`sandringham`) | Brad Rowswell |
-| liberal | [South-West Coast](https://electiontracker.au/districts/south-west-coast) (`south-west-coast`) | Roma Britnell |
 | liberal | [Warrandyte](https://electiontracker.au/districts/warrandyte) (`warrandyte`) | Nicole Werner |
-| nationals | [Euroa](https://electiontracker.au/districts/euroa) (`euroa`) | Annabelle Cleeland |
-| nationals | [Gippsland South](https://electiontracker.au/districts/gippsland-south) (`gippsland-south`) | Danny O'Brien |
-| nationals | [Lowan](https://electiontracker.au/districts/lowan) (`lowan`) | Emma Kealy |
 | nationals | [Mildura](https://electiontracker.au/districts/mildura) (`mildura`) | Jade Benham |
 | nationals | [Morwell](https://electiontracker.au/districts/morwell) (`morwell`) | Martin Cameron |
 | nationals | [Ovens Valley](https://electiontracker.au/districts/ovens-valley) (`ovens-valley`) | Tim McCurdy |

@@ -1,0 +1,19 @@
+candidate:
+  name: Alison Marchant
+  party: labor
+  contest: bellarine
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-07-14
+      note: Sitting Labor MLA; Liberal preselection coverage frames a November contest with Marchant as the incumbent Labor opponent.
+      source:
+        url: https://timesnewsgroup.com.au/surfcoasttimes/news/new-liberal-challenger-takes-aim-at-bellarine/
+        publisher: Times News Group (Surf Coast Times)
+        title: New Liberal challenger takes aim at Bellarine
+        published: 2026-07-14
+        accessed: 2026-07-30
+  links:
+    - url: https://www.parliament.vic.gov.au/members/alison-marchant/
+      kind: parliament

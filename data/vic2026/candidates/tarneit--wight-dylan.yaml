@@ -1,0 +1,21 @@
+candidate:
+  name: Dylan Wight
+  party: labor
+  contest: tarneit
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2025-10-19
+      note: >-
+        Age reports Wight is renominating for Tarneit (quashing rumours of an
+        upper-house move).
+      source:
+        url: https://www.theage.com.au/politics/victoria/cookie-monster-union-how-a-backroom-deal-for-victoria-s-upper-house-got-pushed-out-to-2026-20251009-p5n1ga.html
+        publisher: The Age
+        title: "'Cookie Monster union': How a backroom deal for Victoria's upper house got pushed out to 2026"
+        published: 2025-10-19
+        accessed: 2026-07-30
+  links:
+    - url: https://www.parliament.vic.gov.au/members/dylan-wight/
+      kind: parliament

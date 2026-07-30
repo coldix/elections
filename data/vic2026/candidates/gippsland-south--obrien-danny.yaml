@@ -1,0 +1,32 @@
+candidate:
+  name: Danny O'Brien
+  party: nationals
+  contest: gippsland-south
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-04-14
+      note: >-
+        Sitting Nationals MLA and party leader. Bendigo Times coverage of the
+        Bendigo East Nationals launch identifies him as Nationals Victoria leader
+        endorsing the candidate for the 2026 state election while remaining the
+        member for Gippsland South (see also party media bylines).
+      source:
+        url: https://timesnewsgroup.com.au/bendigotimes/news/lethlean-stands-for-state-bendigo-east-seat/
+        publisher: Times News Group (Bendigo Times)
+        title: Lethlean stands for state Bendigo East seat
+        published: 2026-04-14
+        accessed: 2026-07-30
+    - status: announced
+      date: 2026-06-23
+      note: Party media release byline still identifies him as Nationals Member for Gippsland South during the 2026 campaign period.
+      source:
+        url: https://vic.nationals.org.au/media-releases/danny-obrien-mp-lte-gemma-ready-to-fight-for-gippsland-east/
+        publisher: The Nationals Victoria
+        title: "Danny O'Brien MP — Gemma Ready to Fight for Gippsland East"
+        published: 2026-06-23
+        accessed: 2026-07-30
+  links:
+    - url: https://www.parliament.vic.gov.au/members/danny-obrien/
+      kind: parliament

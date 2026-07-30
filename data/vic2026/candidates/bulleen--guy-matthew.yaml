@@ -1,0 +1,22 @@
+candidate:
+  name: Matthew Guy
+  party: liberal
+  contest: bulleen
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-07-16
+      note: >-
+        Sitting Liberal MLA. Opposition Leader Jess Wilson campaign video in
+        Bulleen promotes Guy as part of the Liberal team delivering a "fresh
+        start" for the November election (~2 weeks before access date).
+      source:
+        url: https://www.instagram.com/reel/DambMqnM2lW/
+        publisher: Instagram (Jess Wilson MP)
+        title: Bulleen locals know Victoria needs a fresh start, and with Matthew Guy…
+        published: 2026-07-16
+        accessed: 2026-07-30
+  links:
+    - url: https://www.parliament.vic.gov.au/members/matthew-guy/
+      kind: parliament
