@@ -57,7 +57,8 @@ redirected. Fixed; if you change one, change the other.
   both the exporter and the site, so JSON and page can't disagree (ADR-8). It
   finds `data/` by walking up the tree because Astro bundles it and
   `import.meta.url` is wrong once bundled.
-- Pages: `/`, `/districts` + 88 district pages, `/parties` + 17 party pages,
+- Pages: `/`, `/assembly`, `/council`, atlases `/districts` + `/regions`,
+  88 district pages, 8 region pages, `/parties` + party pages,
   `/methodology`, `/about`, `/data`, `/404`.
 - **Zero JavaScript bundles.** The coverage matrix is radio inputs + CSS
   sibling selectors (ADR-9). The only script is ~8 lines refreshing the
@@ -240,8 +241,9 @@ Resolved 2026-07-28:
    Wikipedia blanket footnotes. Live list:
    [docs/incumbent-gap.md](docs/incumbent-gap.md).
 2. **Legislative Council tickets** — region-by-region (party sources). Gap
-   list: [docs/council-gap.md](docs/council-gap.md). Region pages live at
-   `/regions` and `/regions/<slug>` (sitting MLCs + recorded candidacies).
+   list: [docs/council-gap.md](docs/council-gap.md). Council index at
+   `/council`; region pages at `/regions/<slug>` (sitting MLCs + candidacies);
+   `/regions` is the map/history atlas.
 3. ~~Static site~~ — live at electiontracker.au (Workers Builds).
 4. ~~Authorisation / legal pages~~ — `/about` authorisation + privacy/terms/
    disclaimer (not lawyer-reviewed; do that before campaign heat).

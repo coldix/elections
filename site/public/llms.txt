@@ -30,18 +30,26 @@ candidate list exists before then.
 
 ## Primary pages (HTML)
 
+Main nav (candidates and civic):
+
 - [Home](https://electiontracker.au/): coverage overview and key dates
-- [Voting in Victoria](https://electiontracker.au/voting): who must enrol, compulsory voting, fines, how to enrol, preferential voting (Assembly and Council) — civic information only, not party how-to-vote advice; always defer to the VEC
-- [Poll average](https://electiontracker.au/polls): sourced statewide primary-vote polls and a transparent weighted average with uncertainty bands — not a forecast; party/union/advocacy polls excluded by default (documented exceptions only)
+- [Legislative Assembly](https://electiontracker.au/assembly): 88 lower-house districts by region, sitting members and sourced 2026 candidates
+- [Legislative Council](https://electiontracker.au/council): 8 upper-house regions × 5 seats, sitting members and sourced candidacies
+- [Parties](https://electiontracker.au/parties): party indexes
+- [Voting in Victoria](https://electiontracker.au/voting): enrolment, compulsory voting, preferential rules — civic only; always defer to the VEC
+- [Poll average](https://electiontracker.au/polls): sourced statewide primary-vote polls and a transparent weighted average — not a forecast
 - [Open data](https://electiontracker.au/data): file list and citation guidance
-- [Methodology](https://electiontracker.au/methodology): candidate statuses, coverage counting, poll methodology link
-- [Legislative Assembly](https://electiontracker.au/assembly): 88 lower-house districts by region, sitting members and sourced candidates
-- [Legislative Council](https://electiontracker.au/council): 8 upper-house regions × 5 seats, sitting members
-- [District atlas](https://electiontracker.au/districts): geographic map, land-area stats, short history (not primary nav)
-- [Region atlas](https://electiontracker.au/regions): geographic map of 8 Council regions and history (not primary nav)
-- [Parties](https://electiontracker.au/parties): indexes of parties
-- [About](https://electiontracker.au/about): independence and authorisation
-- [Disclaimer](https://electiontracker.au/disclaimer): limits of the site
+- [Methodology](https://electiontracker.au/methodology): candidate statuses, coverage counting, poll rules
+- [About](https://electiontracker.au/about): independence, authorisation, links to atlases
+
+Secondary atlases (not in top nav — maps, population/area context, history):
+
+- [District atlas](https://electiontracker.au/districts): geographic map of 88 seats, population vs land-area stats, short history
+- [Region atlas](https://electiontracker.au/regions): geographic map of 8 Council regions, land area by region, system history
+
+Detail pages: `/districts/<slug>` (Assembly seat), `/regions/<slug>` (Council region), `/parties/<slug>`.
+
+Legal: [Disclaimer](https://electiontracker.au/disclaimer), [Privacy](https://electiontracker.au/privacy), [Terms](https://electiontracker.au/terms).
 
 ## Data (prefer these over HTML scrapes)
 

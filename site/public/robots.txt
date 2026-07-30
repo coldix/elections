@@ -3,7 +3,24 @@
 # Policy: crawlers, researchers and AI systems are welcome to read, quote and
 # cite this site. Attribute as "electiontracker.au" (data: CC BY 4.0).
 #
-# Prefer JSON/CSV under /data/ over scraping HTML. Guided AI index: /llms.txt
+# Prefer JSON/CSV under /data/ over scraping HTML.
+# Guided AI index: /llms.txt
+# Full HTML inventory: /sitemap-index.xml
+#
+# Primary HTML hubs (also listed in the sitemap with high priority):
+#   /                  home
+#   /assembly          Legislative Assembly candidates (88 districts)
+#   /council           Legislative Council candidates (8 × 5 seats)
+#   /districts         district atlas (map, population/area, history) — not main nav
+#   /regions           region atlas (map, history) — not main nav
+#   /parties           parties index
+#   /voting            civic voting guide
+#   /polls             poll average
+#   /data              open data
+#   /methodology       methodology
+#   /about             independence & maps/atlases links
+#
+# Detail pages: /districts/<slug>, /regions/<slug>, /parties/<slug>
 #
 # IMPORTANT — Cloudflare "managed robots.txt" / AI training block:
 # If the live robots.txt still shows Disallow for GPTBot, ClaudeBot,
@@ -68,4 +85,5 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
+# Canonical host is electiontracker.au (electiontracker.com.au 301s here).
 Sitemap: https://electiontracker.au/sitemap-index.xml

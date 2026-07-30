@@ -10,6 +10,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const HOST = "electiontracker.au";
 const KEY_PATH = join(__dirname, "indexnow.key");
 
+// Keep aligned with sitemap main hubs + atlases in site/astro.config.mjs
+// and the GSC priority list in docs/DISCOVERY.md.
 const PRIORITY = [
   `https://${HOST}/`,
   `https://${HOST}/voting`,
@@ -18,11 +20,12 @@ const PRIORITY = [
   `https://${HOST}/polls`,
   `https://${HOST}/assembly`,
   `https://${HOST}/council`,
-  `https://${HOST}/regions`,
-  `https://${HOST}/districts`,
   `https://${HOST}/parties`,
+  `https://${HOST}/districts`,
+  `https://${HOST}/regions`,
   `https://${HOST}/about`,
   `https://${HOST}/llms.txt`,
+  `https://${HOST}/robots.txt`,
   `https://${HOST}/sitemap-index.xml`,
 ];
 

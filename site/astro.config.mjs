@@ -16,26 +16,38 @@ export default defineConfig({
   trailingSlash: "never",
   integrations: [
     sitemap({
-      // lastmod helps crawlers prioritise recrawls after deploys
+      // lastmod helps crawlers prioritise recrawls after deploys.
+      // Priority tiers:
+      //   1.0  home
+      //   0.9  main nav / high-traffic hubs (Assembly, Council, parties, …)
+      //   0.8  secondary atlases (not in top nav)
+      //   0.7  per-district / per-region / per-party detail pages
+      //   0.4  legal / static
       serialize(item) {
         item.lastmod = new Date();
         const path = new URL(item.url).pathname.replace(/\/$/, "") || "/";
-        const high = new Set([
-          "/",
+
+        const mainHubs = new Set([
           "/voting",
           "/data",
           "/methodology",
           "/polls",
           "/assembly",
           "/council",
-          "/regions",
-          "/districts",
           "/parties",
           "/about",
         ]);
-        if (high.has(path)) {
+        const atlases = new Set(["/districts", "/regions"]);
+
+        if (path === "/") {
           item.changefreq = "daily";
-          item.priority = path === "/" ? 1.0 : 0.9;
+          item.priority = 1.0;
+        } else if (mainHubs.has(path)) {
+          item.changefreq = "daily";
+          item.priority = 0.9;
+        } else if (atlases.has(path)) {
+          item.changefreq = "weekly";
+          item.priority = 0.8;
         } else if (
           path.startsWith("/districts/") ||
           path.startsWith("/regions/") ||
