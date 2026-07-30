@@ -1,0 +1,193 @@
+---
+/**
+ * Schematic, clickable map of Victoria’s 8 Legislative Council regions.
+ * Not survey-accurate boundaries — a clear navigation diagram for 8×11 Assembly
+ * districts and 8×5 Council seats. Each path links to /regions/<slug>.
+ */
+const { mode = "regions", activeSlug = null } = Astro.props;
+// mode: "regions" → /regions/<slug>
+// mode: "districts" → jump to #region-<slug> on the Assembly page
+
+const regions = [
+  {
+    slug: "northern-victoria",
+    name: "Northern Victoria",
+    short: "N Vic",
+    d: "M 48 38 L 195 22 L 340 38 L 355 95 L 320 115 L 200 105 L 80 115 L 40 95 Z",
+  },
+  {
+    slug: "western-victoria",
+    name: "Western Victoria",
+    short: "W Vic",
+    d: "M 28 100 L 95 110 L 120 175 L 115 250 L 70 280 L 35 240 L 22 160 Z",
+  },
+  {
+    slug: "eastern-victoria",
+    name: "Eastern Victoria",
+    short: "E Vic",
+    d: "M 310 110 L 365 95 L 400 140 L 415 220 L 390 285 L 330 270 L 305 200 L 300 145 Z",
+  },
+  {
+    slug: "western-metropolitan",
+    name: "Western Metropolitan",
+    short: "W Metro",
+    d: "M 100 125 L 165 125 L 170 185 L 130 195 L 100 170 Z",
+  },
+  {
+    slug: "northern-metropolitan",
+    name: "Northern Metropolitan",
+    short: "N Metro",
+    d: "M 170 118 L 235 118 L 240 165 L 175 170 Z",
+  },
+  {
+    slug: "north-eastern-metropolitan",
+    name: "North-Eastern Metropolitan",
+    short: "NE Metro",
+    d: "M 238 120 L 300 120 L 305 175 L 245 175 Z",
+  },
+  {
+    slug: "southern-metropolitan",
+    name: "Southern Metropolitan",
+    short: "S Metro",
+    d: "M 155 175 L 230 170 L 235 220 L 175 230 L 145 205 Z",
+  },
+  {
+    slug: "south-eastern-metropolitan",
+    name: "South-Eastern Metropolitan",
+    short: "SE Metro",
+    d: "M 235 178 L 300 178 L 310 240 L 250 250 L 230 220 Z",
+  },
+];
+
+// Label positions (cx, cy)
+const labels = {
+  "northern-victoria": [200, 62],
+  "western-victoria": [62, 185],
+  "eastern-victoria": [360, 185],
+  "western-metropolitan": [135, 155],
+  "northern-metropolitan": [202, 142],
+  "north-eastern-metropolitan": [270, 145],
+  "southern-metropolitan": [190, 200],
+  "south-eastern-metropolitan": [268, 210],
+};
+
+const aria =
+  mode === "districts"
+    ? "Map of Victoria’s Legislative Council regions. Select a region to jump to its Assembly districts."
+    : "Map of Victoria’s Legislative Council regions. Select a region for upper-house seats.";
+---
+
+<figure class="vic-map">
+  <svg
+    viewBox="0 0 440 310"
+    role="img"
+    aria-label={aria}
+    class="vic-map-svg"
+  >
+    <title>Victoria — electoral regions (schematic)</title>
+    <desc>
+      Simplified map of the eight Legislative Council regions. Not official boundary geometry.
+    </desc>
+
+    <!-- subtle state outline backdrop -->
+    <path
+      class="state-outline"
+      d="M 40 40 L 200 18 L 360 40 L 410 130 L 420 230 L 380 290 L 250 300 L 120 290 L 40 250 L 22 150 Z"
+      fill="none"
+    />
+
+    {
+      regions.map((r) => {
+        const [lx, ly] = labels[r.slug];
+        const active = activeSlug === r.slug;
+        const href =
+          mode === "districts" ? `#region-${r.slug}` : `/regions/${r.slug}`;
+        const label =
+          mode === "districts"
+            ? `${r.name}: jump to Assembly districts`
+            : `${r.name}: Legislative Council region`;
+        return (
+          <a href={href} class:list={["region-link", { active }]} aria-label={label}>
+            <path class="region-shape" d={r.d} data-slug={r.slug} />
+            <text class="region-label" x={lx} y={ly} text-anchor="middle">
+              {r.short}
+            </text>
+          </a>
+        );
+      })
+    }
+
+    <text class="map-caption" x="220" y="300" text-anchor="middle">
+      Schematic · 8 regions · not survey boundaries
+    </text>
+  </svg>
+  <figcaption class="visually-hidden">
+    Click a region to open its Legislative Council page. Districts are grouped by these
+    same regions on the Assembly districts page.
+  </figcaption>
+</figure>
+
+<style>
+  .vic-map {
+    margin: 0 0 1.75rem;
+    padding: 0.75rem 0.5rem 0.25rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .vic-map-svg {
+    width: 100%;
+    max-width: 36rem;
+    height: auto;
+    display: block;
+    margin-inline: auto;
+  }
+  .state-outline {
+    stroke: var(--rule-strong);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 3;
+    opacity: 0.55;
+  }
+  .region-link {
+    cursor: pointer;
+    outline: none;
+  }
+  .region-shape {
+    fill: var(--accent-wash);
+    stroke: var(--accent);
+    stroke-width: 1.25;
+    transition: fill 0.15s ease, stroke-width 0.15s ease;
+  }
+  .region-link:hover .region-shape,
+  .region-link:focus-visible .region-shape {
+    fill: color-mix(in srgb, var(--accent) 28%, var(--surface));
+    stroke-width: 2;
+  }
+  .region-link.active .region-shape {
+    fill: color-mix(in srgb, var(--accent) 40%, var(--surface));
+    stroke-width: 2.25;
+  }
+  .region-label {
+    fill: var(--ink);
+    font-size: 11px;
+    font-weight: 650;
+    pointer-events: none;
+    font-family: var(--font-sans);
+  }
+  .map-caption {
+    fill: var(--ink-3);
+    font-size: 10px;
+    font-family: var(--font-sans);
+  }
+  @media (prefers-color-scheme: dark) {
+    .region-shape {
+      fill: color-mix(in srgb, var(--accent) 18%, var(--surface-2));
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .region-shape {
+      transition: none;
+    }
+  }
+</style>
