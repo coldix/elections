@@ -4,6 +4,42 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-07-30 — Assembly / Council URLs, atlases, maps, SEO
+
+Chamber indexes now use chamber names in the URL; map/history atlases sit off
+the main nav. Sitemap/GSC guidance updated; GSC accepted `sitemap.xml`.
+
+**Commits (newest first):** `5e87cab` … `0f7f91b` (also data commits for
+incumbents, occupations, Council bios earlier in the day — see git log).
+
+| Area | What shipped |
+|---|---|
+| **Assembly** | Primary index at **`/assembly`** (nav **Assembly**). 88 districts by region, sitting members, candidates. Map **top-right** in header (no sticky left column). |
+| **Council** | Primary index at **`/council`** (nav **Council**). 8 × 5 = 40 seats, sitting MLCs, candidacies. Same header map layout. |
+| **District atlas** | **`/districts`** — not in top nav. Geographic Vic map (2022 results colouring), population context (equal electors vs land area), area stats, notable seats, full A–Z with km² / formed year. |
+| **Region atlas** | **`/regions`** — not in top nav. Geographic map of 8 Council regions, history (provinces → 2006 PR → 2021 redivision), land area by region. |
+| **Detail URLs** | Unchanged: `/districts/<slug>`, `/regions/<slug>`. Breadcrumbs → Assembly / Council. |
+| **Data** | `data/vic2026/district-stats.yaml` (area_km2, formed); maps under `site/public/images/maps/`. |
+| **About** | **Maps & atlases** — two buttons only: District atlas, Region atlas. |
+| **SEO** | `robots.txt` hub list; sitemap priorities (hubs 0.9, atlases 0.8); `llms.txt` + IndexNow; post-build **`/sitemap.xml`** (`scripts/finalize-sitemap.mjs`); `_headers` XML content-type. |
+| **GSC** | Sitemap **Success** on `https://electiontracker.au/sitemap.xml`. Sitemap XML is not a searchable page (“not on Google” for the XML URL is expected). |
+
+**Public surfaces**
+
+| URL | Role |
+|---|---|
+| https://electiontracker.au/assembly | Lower house candidates (main nav) |
+| https://electiontracker.au/council | Upper house candidates (main nav) |
+| https://electiontracker.au/districts | District atlas (map, population/area, history) |
+| https://electiontracker.au/regions | Region atlas (map, history) |
+| https://electiontracker.au/sitemap.xml | Preferred crawl inventory |
+
+Also earlier same day: incumbent-gap batches, Council region pages + bio fields,
+occupation/background + personal links, poll charts / ledger expansion (see
+commits below and prior changelog sections).
+
+---
+
 ## 2026-07-30 — Case-by-case poll average exception
 
 - Party / union / advocacy commissioners remain **out of the average by default**.
@@ -97,7 +133,7 @@ Done outside git (dashboards). Tick against [DISCOVERY.md](DISCOVERY.md) as need
 | Item | Status | Notes |
 |---|---|---|
 | GSC property | Verified earlier (`sc-domain:electiontracker.au`) | HTML meta backup in `site.mjs` |
-| GSC sitemap submit | In progress / operator | `https://electiontracker.au/sitemap-index.xml` is live and valid |
+| GSC sitemap submit | **Success** (2026-07-30) | Prefer `https://electiontracker.au/sitemap.xml` (also index) |
 | GSC request indexing (hubs only) | Operator | Prefer `/`, `/voting`, `/data`, `/methodology`, `/polls`, … — not all districts |
 | Bing Webmaster | Operator | Prefer import from GSC; IndexNow already automated |
 | Facebook Sharing Debugger | Done (homepage) | OG tags OK; ignore `fb:app_id` warning unless a FB App is wanted for Insights |
@@ -112,11 +148,16 @@ Done outside git (dashboards). Tick against [DISCOVERY.md](DISCOVERY.md) as need
 
 | URL | Role |
 |---|---|
+| https://electiontracker.au/assembly | Legislative Assembly candidates (main nav) |
+| https://electiontracker.au/council | Legislative Council candidates (main nav) |
+| https://electiontracker.au/districts | District atlas — map, area/population, history |
+| https://electiontracker.au/regions | Region atlas — map, history |
 | https://electiontracker.au/polls | Primary-vote average + sourced ledger |
 | https://electiontracker.au/voting | Civic voting explainer |
 | https://electiontracker.au/data | Open exports (includes poll JSON/CSV) |
 | https://electiontracker.au/llms.txt | AI-oriented site map |
-| https://electiontracker.au/sitemap-index.xml | Crawl index |
+| https://electiontracker.au/sitemap.xml | Crawl inventory (preferred) |
+| https://electiontracker.au/sitemap-index.xml | Crawl index (compat) |
 | https://www.youtube.com/@electiontrackerau | Project long-form video home |
 | https://www.facebook.com/election.tracker.au/ | Primary social distribution |
 
