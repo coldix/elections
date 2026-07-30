@@ -108,6 +108,22 @@ import { SITE, ATTRIBUTION, MAINTAINER } from "../lib/site.mjs";
       Election Tracker brand, not personal accounts.
     </p>
 
+    <h2 id="maps">Maps &amp; atlases</h2>
+    <p>
+      The main menu links to the live candidate indexes for each house. These atlas pages are
+      not in the top nav — map-first views with geography, land-area stats and short history.
+    </p>
+    <p class="btn-row">
+      <a class="btn" href="/assembly">Assembly (candidates)</a>
+      <a class="btn" href="/council">Council (candidates)</a>
+      <a class="btn btn-ghost" href="/districts">District atlas</a>
+      <a class="btn btn-ghost" href="/regions">Region atlas</a>
+    </p>
+    <p class="muted">
+      District atlas: geographic map of the 88 seats, area stats and notable past figures.
+      Region atlas: map of the 8 upper-house regions and how the current system was introduced.
+    </p>
+
     <h2 id="licence">Reuse</h2>
     <p>
       The election data is published under
@@ -140,4 +156,11 @@ import { SITE, ATTRIBUTION, MAINTAINER } from "../lib/site.mjs";
     display: inline-block;
     font-size: 0.9rem;
   }
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 0.65rem;
+    margin: 1rem 0 0.75rem;
+  }
 </style>
+
