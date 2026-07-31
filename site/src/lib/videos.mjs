@@ -10,6 +10,13 @@ export const YOUTUBE_CHANNEL = "https://www.youtube.com/@electiontrackerau";
 
 /** @type {Record<string, ExplainerVideo>} */
 export const VIDEOS = {
+  /** What the tracker is — homepage / about */
+  tracker: {
+    id: "oKkD0mOhT9g",
+    title: "What is Australian Election Tracker?",
+    blurb:
+      "Sourced candidate tracking for Victoria 2026 — 88 districts, 8 Council regions, open data, coverage caveats, and why the VEC stays authoritative for enrolment and voting.",
+  },
   /** Preferential ballot numbering — primary for /voting */
   ballot: {
     id: "FNPDWVxz6Jo",

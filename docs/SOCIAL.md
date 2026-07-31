@@ -89,6 +89,7 @@ after the visitor presses play:
 
 | Video key | Page |
 |---|---|
+| `tracker` | `/` (homepage) |
 | `ballot` | `/voting` |
 | `localSeat` | `/assembly` |
 | `regions` | `/regions` (linked from `/council`) |

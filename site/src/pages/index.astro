@@ -3,7 +3,9 @@ import Base from "../layouts/Base.astro";
 import Countdown from "../components/Countdown.astro";
 import StatGrid from "../components/StatGrid.astro";
 import CoverageMatrix from "../components/CoverageMatrix.astro";
+import YouTubeLite from "../components/YouTubeLite.astro";
 import { SITE, partyColour, formatDate } from "../lib/site.mjs";
+import { VIDEOS } from "../lib/videos.mjs";
 import {
   loadElection,
   coverageFor,
@@ -100,6 +102,19 @@ const schema = {
 
   <div class="wrap">
     <Countdown election={data.election} keyDates={data.election.dates} />
+
+    <section class="section video-home" aria-labelledby="video-home-h">
+      <h2 id="video-home-h">Watch: how this tracker works</h2>
+      <p class="muted video-home-lead">
+        A short tour of the project — proof over predictions, open data, and what the coverage
+        numbers do and don’t mean. Not a forecast. Not how-to-vote advice.
+      </p>
+      <YouTubeLite
+        id={VIDEOS.tracker.id}
+        title={VIDEOS.tracker.title}
+        blurb={VIDEOS.tracker.blurb}
+      />
+    </section>
 
     <section class="section paths" aria-labelledby="paths-h">
       <h2 id="paths-h">Start here</h2>
@@ -359,6 +374,18 @@ const schema = {
   .prelaunch {
     margin-top: 2rem;
     max-width: 52rem;
+  }
+  .video-home {
+    padding-top: 1.75rem;
+    padding-bottom: 0.5rem;
+  }
+  .video-home h2 {
+    margin: 0 0 0.45rem;
+    font-size: 1.25rem;
+  }
+  .video-home-lead {
+    margin: 0 0 0.85rem;
+    max-width: 40rem;
   }
   .paths {
     padding-top: 1.75rem;
