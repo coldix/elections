@@ -1,0 +1,21 @@
+candidate:
+  name: Graham Parton
+  party: greens
+  contest: benambra
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-31
+      source:
+        url: https://greens.org.au/vic/person/graham-parton
+        publisher: Australian Greens Victoria
+        title: "Graham Parton, Candidate for Benambra"
+        accessed: 2026-07-31
+      note: >-
+        Listed as a Victorian Greens candidate on the party's official
+        candidates/person pages (accessed 2026-07-31). Page does not show a
+        separate endorsement publish date.
+  links:
+    - url: https://greens.org.au/vic/person/graham-parton
+      kind: party-profile

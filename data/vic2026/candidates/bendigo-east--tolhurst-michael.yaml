@@ -1,0 +1,21 @@
+candidate:
+  name: Michael Tolhurst
+  party: greens
+  contest: bendigo-east
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-31
+      source:
+        url: https://greens.org.au/vic/person/michael-tolhurst
+        publisher: Australian Greens Victoria
+        title: "Michael Tolhurst, Candidate for Bendigo East"
+        accessed: 2026-07-31
+      note: >-
+        Listed as a Victorian Greens candidate on the party's official
+        candidates/person pages (accessed 2026-07-31). Page does not show a
+        separate endorsement publish date.
+  links:
+    - url: https://greens.org.au/vic/person/michael-tolhurst
+      kind: party-profile

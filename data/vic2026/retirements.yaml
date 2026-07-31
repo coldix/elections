@@ -235,3 +235,33 @@ retirements:
       Announced retirement due to a metastatic cancer diagnosis. The
       Greens' Brunswick candidacy passed to Gabriel Steger (see
       brunswick--steger-gabriel.yaml).
+
+  - name: Lily D'Ambrosio
+    party: labor
+    role: MLA
+    seat: mill-park
+    announced: 2026-07-30
+    source:
+      url: https://www.abc.net.au/news/2026-07-30/victorian-mp-harriet-shing-retirement/106977588
+      title: Victorian ministers Harriet Shing and Lily D'Ambrosio announce retirement
+      publisher: ABC News
+      published: 2026-07-30
+      accessed: 2026-07-31
+    note: >-
+      Announced she will not recontest Mill Park at the November 2026 election;
+      stepped down from cabinet. Represented Mill Park for 24 years.
+
+  - name: Harriet Shing
+    party: labor
+    role: MLC
+    seat: eastern-victoria
+    announced: 2026-07-30
+    source:
+      url: https://www.abc.net.au/news/2026-07-30/victorian-mp-harriet-shing-retirement/106977588
+      title: Victorian ministers Harriet Shing and Lily D'Ambrosio announce retirement
+      publisher: ABC News
+      published: 2026-07-30
+      accessed: 2026-07-31
+    note: >-
+      Announced she will not recontest her Eastern Victoria Legislative Council
+      seat at the November 2026 election; stepped down from cabinet.

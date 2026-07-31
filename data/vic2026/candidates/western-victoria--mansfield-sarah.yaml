@@ -1,0 +1,21 @@
+candidate:
+  name: Sarah Mansfield
+  party: greens
+  contest: western-victoria
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-31
+      source:
+        url: https://greens.org.au/vic/person/sarah-mansfield
+        publisher: Australian Greens Victoria
+        title: "Sarah Mansfield, Deputy Leader of the Victorian Greens, MLC for Western Victoria"
+        accessed: 2026-07-31
+      note: >-
+        Listed as a Victorian Greens candidate on the party's official
+        candidates/person pages (accessed 2026-07-31). Page does not show a
+        separate endorsement publish date.
+  links:
+    - url: https://greens.org.au/vic/person/sarah-mansfield
+      kind: party-profile

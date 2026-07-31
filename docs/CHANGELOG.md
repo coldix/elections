@@ -4,7 +4,7 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
-## 2026-07-31 — Homepage countdown, videos, buttons, Tyrrell
+## 2026-07-31 — Homepage countdown, videos, buttons, launch scrape
 
 | Area | What shipped |
 |---|---|
@@ -12,10 +12,8 @@ ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 | **Homepage** | “Start here” path cards (Assembly, voting, regions, polls); poll average in hero buttons. |
 | **YouTube** | Click-to-load embeds (`YouTubeLite` + `lib/videos.mjs`) on `/voting` (ballot), `/assembly` (local seat), `/regions` (8 regions); poster/iframe fill fixes; privacy disclosure. |
 | **CTAs** | Global `btn-sm` / `btn-row`; video and house-switch links as buttons, not bare underlines. |
-| **Data** | **Rikkie-Lee Tyrrell** (One Nation) endorsed for **Northern Victoria** Council — party post 30 Jul 2026 (`northern-victoria--tyrrell-rikkie-lee.yaml`). Week scan: no other newly *named* individuals. |
+| **Data (launch scrape)** | **Tyrrell** (One Nation, Northern Victoria). **20 Greens** missing from ledger (12 Assembly + 8 Council region leads/MLCs) from [greens.org.au/vic/candidates](https://greens.org.au/vic/candidates). **Liberal Council:** Xavier Boffa (Southern Metro), Steve Brooks (Northern Victoria). **Retirements 30 Jul:** Lily D’Ambrosio (Mill Park MLA), Harriet Shing (Eastern Victoria MLC) — [ABC](https://www.abc.net.au/news/2026-07-30/victorian-mp-harriet-shing-retirement/106977588). Ledger **250** candidacies after scrape. |
 | **Theme** | Site-wide light/dark toggle + Oze footer credit (earlier same window). |
-
-**Commits (examples):** `daed51b`, `309179a`, `dfd95c9`, `084b764`, `292d973`, `5d8d8ca`.
 
 Deploy: push to `main` → Cloudflare Workers Builds (~1 min).
 

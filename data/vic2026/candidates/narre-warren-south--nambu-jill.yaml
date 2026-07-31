@@ -1,0 +1,21 @@
+candidate:
+  name: Jill Nambu
+  party: greens
+  contest: narre-warren-south
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-31
+      source:
+        url: https://greens.org.au/vic/person/jill-nambu
+        publisher: Australian Greens Victoria
+        title: "Jill Nambu, Candidate for Narre Warren South"
+        accessed: 2026-07-31
+      note: >-
+        Listed as a Victorian Greens candidate on the party's official
+        candidates/person pages (accessed 2026-07-31). Page does not show a
+        separate endorsement publish date.
+  links:
+    - url: https://greens.org.au/vic/person/jill-nambu
+      kind: party-profile

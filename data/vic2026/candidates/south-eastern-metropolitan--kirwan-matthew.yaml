@@ -1,0 +1,21 @@
+candidate:
+  name: Matthew Kirwan
+  party: greens
+  contest: south-eastern-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-31
+      source:
+        url: https://greens.org.au/vic/person/matthew-kirwan
+        publisher: Australian Greens Victoria
+        title: "Matthew Kirwan, Lead Candidate for South-Eastern Metropolitan Region"
+        accessed: 2026-07-31
+      note: >-
+        Listed as a Victorian Greens candidate on the party's official
+        candidates/person pages (accessed 2026-07-31). Page does not show a
+        separate endorsement publish date.
+  links:
+    - url: https://greens.org.au/vic/person/matthew-kirwan
+      kind: party-profile
