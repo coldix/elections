@@ -15,31 +15,31 @@ agent vs human rules. Site updates when valid YAML hits `main`; no separate
 - Weekly GitHub Action `source-health` (Monday UTC + manual).
 - Issue template: **New candidacy / status change**.
 
-## Discovery / SEO / AI (updated 2026-07-29)
+## Discovery / SEO / AI (updated 2026-07-31)
 
 See **[docs/DISCOVERY.md](docs/DISCOVERY.md)** for the full checklist.
 
-**In code:** JSON-LD, sitemap (~118 URLs), open `/llms.txt` (includes `/voting`,
-`/polls`, poll JSON), `robots.txt` allows major AI bots, og:image, GSC DNS verify.
+**In code:** JSON-LD, `/sitemap.xml` (preferred) + index, open `/llms.txt`,
+`robots.txt` allows major AI bots, og:image, GSC DNS verify.
 
-**Verified live (2026-07-29):** open `robots.txt` (no CF AI Disallow inject);
-GPTBot/ClaudeBot get 200; `/llms.txt` includes voting + polls.
+**Verified:** GSC sitemap **Success** on `https://electiontracker.au/sitemap.xml`
+(2026-07-30). Prefer that URL over the index alone.
 
 **Automated:** IndexNow key + GH Action after main push; `_headers` for cache;
 sitemap lastmod/priority.
 
 **Still human (GSC / Bing / social):**
 
-1. GSC → Sitemaps → submit `https://electiontracker.au/sitemap-index.xml`
-2. GSC → Request indexing only for priority hubs (DISCOVERY.md)
+1. GSC → keep `sitemap.xml` healthy; re-submit only if fetch fails
+2. GSC → Request indexing only for priority hubs (DISCOVERY.md) — not the sitemap XML
 3. Bing Webmaster → import from GSC (IndexNow helps after that)
 4. Facebook Sharing Debugger once on the homepage
 
 ## The site (added 2026-07-28)
 
-**Live** at https://electiontracker.au since 2026-07-28. Astro static site in `site/`, 112 pages, deployed as an
-assets-only Worker via Workers Builds — a push to `main` builds and deploys
-itself.
+**Live** at https://electiontracker.au since 2026-07-28. Astro static site in `site/`
+(~130 pages), deployed as an assets-only Worker via Workers Builds — a **push to
+`main` builds and deploys** (~1 min). No separate deploy step after merge.
 
 URL shape is no-trailing-slash, enforced in two places that must stay in step:
 `trailingSlash: "never"` (astro.config.mjs) and `"html_handling":
@@ -58,11 +58,15 @@ redirected. Fixed; if you change one, change the other.
   finds `data/` by walking up the tree because Astro bundles it and
   `import.meta.url` is wrong once bundled.
 - Pages: `/`, `/assembly`, `/council`, atlases `/districts` + `/regions`,
-  88 district pages, 8 region pages, `/parties` + party pages,
-  `/methodology`, `/about`, `/data`, `/404`.
-- **Zero JavaScript bundles.** The coverage matrix is radio inputs + CSS
-  sibling selectors (ADR-9). The only script is ~8 lines refreshing the
-  countdown, which is already correct in the HTML without it.
+  88 district pages, 8 region pages, `/parties` + party pages, `/voting`,
+  `/polls`, `/methodology`, `/about`, `/data`, legal pages, `/404`.
+- **Minimal JavaScript (inline only, no bundles):** coverage matrix is
+  radio + CSS (ADR-9); countdown ticks `ddd:hh:mm:ss` client-side (SSR
+  seed for no-JS); YouTubeLite injects iframe **only after play**; theme
+  toggle. See [docs/SOCIAL.md](docs/SOCIAL.md) for video keys.
+- **Latest data note (2026-07-31):** Rikkie-Lee Tyrrell endorsed One Nation
+  Northern Victoria Council; [docs/council-gap.md](docs/council-gap.md) gap
+  list updated. Product log: [docs/CHANGELOG.md](docs/CHANGELOG.md).
 - Measured: homepage 13.6 KB brotli, CSS 2.3 KB gzip, no horizontal overflow at
   375 px, contrast ≥5.45:1 in dark mode, `prefers-reduced-motion` verified to
   strip the cell animation and hover transforms.

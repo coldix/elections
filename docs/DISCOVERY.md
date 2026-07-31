@@ -165,7 +165,11 @@ curl -sL https://electiontracker.au/robots.txt | tail -10
 curl -sI https://electiontracker.au/sitemap.xml | head -15
 curl -sL https://electiontracker.au/sitemap.xml | head -20
 curl -sL https://electiontracker.au/llms.txt | head -30
+curl -sI https://electiontracker.au/regions/northern-victoria | head -5
 ```
+
+After data deploys, optional hub re-check: `/assembly`, `/council`,
+`/regions/northern-victoria` (Tyrrell 2026 candidacy).
 
 ## Deliberately not done
 

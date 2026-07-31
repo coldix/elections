@@ -4,6 +4,23 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-07-31 — Homepage countdown, videos, buttons, Tyrrell
+
+| Area | What shipped |
+|---|---|
+| **Countdown** | Live **`ddd:hh:mm:ss`** until indicative election-day polls open (28 Nov 2026, 08:00 Melbourne); unit labels under each digit; VEC caveat for hours / early voting. |
+| **Homepage** | “Start here” path cards (Assembly, voting, regions, polls); poll average in hero buttons. |
+| **YouTube** | Click-to-load embeds (`YouTubeLite` + `lib/videos.mjs`) on `/voting` (ballot), `/assembly` (local seat), `/regions` (8 regions); poster/iframe fill fixes; privacy disclosure. |
+| **CTAs** | Global `btn-sm` / `btn-row`; video and house-switch links as buttons, not bare underlines. |
+| **Data** | **Rikkie-Lee Tyrrell** (One Nation) endorsed for **Northern Victoria** Council — party post 30 Jul 2026 (`northern-victoria--tyrrell-rikkie-lee.yaml`). Week scan: no other newly *named* individuals. |
+| **Theme** | Site-wide light/dark toggle + Oze footer credit (earlier same window). |
+
+**Commits (examples):** `daed51b`, `309179a`, `dfd95c9`, `084b764`, `292d973`, `5d8d8ca`.
+
+Deploy: push to `main` → Cloudflare Workers Builds (~1 min).
+
+---
+
 ## 2026-07-30 — Assembly / Council URLs, atlases, maps, SEO
 
 Chamber indexes now use chamber names in the URL; map/history atlases sit off

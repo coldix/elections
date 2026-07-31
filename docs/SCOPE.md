@@ -29,7 +29,7 @@ Data layer (this repo):
 
 Site (static, after data layer works):
 - [ ] Party coverage grid (the shareable artefact) — seats filled per party
-- [ ] Election countdown + key dates
+- [x] Election countdown + key dates (`ddd:hh:mm:ss` to polls open + key-date list)
 - [ ] District pages (incumbent, declared candidates, sources)
 - [ ] Recent changes feed (derived from git history)
 - [ ] Methodology + editorial independence + authorisation pages

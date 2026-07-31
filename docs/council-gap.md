@@ -4,9 +4,9 @@
 Assembly-style rule: do not treat a sitting member as a 2026 candidate without an
 individual dated source. Region pages: `/regions/<slug>`.
 
-**Sitting MLCs with no 2026 candidacy record:** 35 of 40
+**Sitting MLCs with no 2026 candidacy record:** 34 of 40
 **Confirmed MLC retirements (in retirements.yaml):** 4
-**Council candidacy files:** 2 names on file
+**Council candidacy files:** 3+ names on file (includes Tyrrell 2026-07-30)
 
 ## Gap (sitting MLC, not retired, no candidacy YAML)
 
@@ -29,7 +29,6 @@ individual dated source. Region pages: `/regions/<slug>`.
 | northern-victoria | nationals | Gaelle Broad |
 | northern-victoria | animal-justice | Georgie Purcell |
 | northern-victoria | labor | Jaclyn Symes |
-| northern-victoria | one-nation | Rikkie-Lee Tyrrell |
 | south-eastern-metropolitan | liberal | Ann-Marie Hermans |
 | south-eastern-metropolitan | libertarian | David Limbrick |
 | south-eastern-metropolitan | labor | Lee Tarlamis |
