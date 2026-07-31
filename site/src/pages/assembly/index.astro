@@ -1,8 +1,10 @@
 ---
 import Base from "../../layouts/Base.astro";
 import VicRegionMap from "../../components/VicRegionMap.astro";
+import YouTubeLite from "../../components/YouTubeLite.astro";
 import { loadElection, LIVE_STATUSES } from "../../../../scripts/lib/data.mjs";
 import { partyColour } from "../../lib/site.mjs";
+import { VIDEOS } from "../../lib/videos.mjs";
 
 const data = loadElection("vic2026");
 const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
@@ -62,6 +64,19 @@ const totalDistricts = data.districts.length;
         <VicRegionMap mode="assembly" compact />
       </div>
     </header>
+
+    <section class="video-block" aria-labelledby="video-local-h">
+      <h2 id="video-local-h">Watch: your local seat</h2>
+      <p class="muted video-lead">
+        Why the Assembly is 88 local races, and how this site records who is standing —
+        with sources, not party press claims alone.
+      </p>
+      <YouTubeLite
+        id={VIDEOS.localSeat.id}
+        title={VIDEOS.localSeat.title}
+        blurb={VIDEOS.localSeat.blurb}
+      />
+    </section>
 
     {
       byRegion.map(({ region, districts }) => (
@@ -148,6 +163,19 @@ const totalDistricts = data.districts.length;
   }
   .house-switch {
     margin: 0 0 0.85rem;
+  }
+  .video-block {
+    margin: 0 0 2.25rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .video-block h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1.2rem;
+  }
+  .video-lead {
+    margin: 0 0 0.75rem;
+    max-width: 40rem;
   }
   .jump {
     display: flex;

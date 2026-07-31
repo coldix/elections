@@ -81,6 +81,21 @@ That wires personal politics into the product for search and AI citation.
    - Authorisation: *Authorised by Colin Dixon, 2 Fern Court, Mallacoota VIC 3892*  
    - “Not the VEC. Not advice for any party or candidate.”
 
+## On-site video embeds (2026-07)
+
+Explainers live on the project YouTube channel. A curated set is embedded with
+**click-to-load** (`YouTubeLite.astro` + `lib/videos.mjs`) so YouTube only loads
+after the visitor presses play:
+
+| Video key | Page |
+|---|---|
+| `ballot` | `/voting` |
+| `localSeat` | `/assembly` |
+| `regions` | `/regions` (linked from `/council`) |
+
+Other channel videos stay as outbound links only. Privacy page discloses the
+click-to-load behaviour.
+
 ## Wiring a new channel into the site
 
 When a project URL is real:
@@ -88,7 +103,7 @@ When a project URL is real:
 1. Add it to `SOCIAL` in `site/src/lib/site.mjs` (and `SOCIAL_LABELS` if needed).  
 2. Footer and JSON-LD `sameAs` pick it up via `socialLinks()`.  
 3. Update the privacy page “Our social accounts” section.  
-4. Optional: “Watch the explainer” CTA on `/voting`.
+4. Add an entry to `site/src/lib/videos.mjs` and a `YouTubeLite` on the matching page.
 
 ## Suggested X bio (@colindixon)
 

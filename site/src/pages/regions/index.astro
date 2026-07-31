@@ -2,7 +2,9 @@
 import Base from "../../layouts/Base.astro";
 import VicGeoMap from "../../components/VicGeoMap.astro";
 import VicRegionMap from "../../components/VicRegionMap.astro";
+import YouTubeLite from "../../components/YouTubeLite.astro";
 import { loadElection } from "../../../../scripts/lib/data.mjs";
+import { VIDEOS } from "../../lib/videos.mjs";
 
 const data = loadElection("vic2026");
 const regions = [...data.regions].sort((a, b) => a.name.localeCompare(b.name));
@@ -67,6 +69,17 @@ const fmt = (n) => n.toLocaleString("en-AU");
         alt="Map of Victoria showing the eight Legislative Council electoral regions"
         caption="Legislative Council regions, 2022 boundaries."
         attributionHtml={`Map: <a href="https://commons.wikimedia.org/wiki/File:Regions_of_the_Victorian_Legislative_Council_(2022).svg" rel="noopener">Wikimedia Commons</a> (see file page for author and licence). Official maps: <a href="https://www.vec.vic.gov.au/electoral-boundaries/state-regions" rel="noopener">VEC</a>.`}
+      />
+
+      <h3 id="video-regions" class="video-h">Watch: eight regions</h3>
+      <p class="muted section-lead">
+        Geography and communities across the five metropolitan and three country regions —
+        and how each elects five Legislative Council members.
+      </p>
+      <YouTubeLite
+        id={VIDEOS.regions.id}
+        title={VIDEOS.regions.title}
+        blurb={VIDEOS.regions.blurb}
       />
     </section>
 
@@ -230,6 +243,10 @@ const fmt = (n) => n.toLocaleString("en-AU");
   .section-lead {
     margin: 0 0 1rem;
     max-width: 48rem;
+  }
+  .video-h {
+    margin: 1.75rem 0 0.5rem;
+    font-size: 1.1rem;
   }
   .prose-block {
     max-width: 48rem;

@@ -1,6 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
+import YouTubeLite from "../components/YouTubeLite.astro";
 import { SITE, formatDate, formatDateLong } from "../lib/site.mjs";
+import { VIDEOS, YOUTUBE_CHANNEL, watchUrl } from "../lib/videos.mjs";
 import { loadElection } from "../../../scripts/lib/data.mjs";
 
 const data = loadElection("vic2026");
@@ -244,6 +246,24 @@ const links = [
       correctly (a <em>formal</em> vote).
     </p>
 
+    <h3 id="video-ballot">Watch: numbering the ballot</h3>
+    <p class="muted">
+      Short civic explainer (not how-to-vote advice). Authoritative rules stay with the VEC.
+    </p>
+    <YouTubeLite
+      id={VIDEOS.ballot.id}
+      title={VIDEOS.ballot.title}
+      blurb={VIDEOS.ballot.blurb}
+    />
+    <p class="muted more-videos">
+      More explainers:
+      <a href={watchUrl(VIDEOS.spoiler.id)} rel="noopener">{VIDEOS.spoiler.title}</a>
+      {" · "}
+      <a href={watchUrl(VIDEOS.machinery.id)} rel="noopener">{VIDEOS.machinery.title}</a>
+      {" · "}
+      <a href={YOUTUBE_CHANNEL} rel="noopener">YouTube channel</a>
+    </p>
+
     <h3 id="assembly">Legislative Assembly (lower house)</h3>
     <p>
       One member is elected per district. Full preferential voting applies: you must
@@ -387,6 +407,10 @@ const links = [
   h3 {
     margin-top: 1.5rem;
     font-size: 1.1rem;
+  }
+  .more-videos {
+    margin: -0.5rem 0 1.25rem;
+    font-size: 0.88rem;
   }
   ul,
   ol {
