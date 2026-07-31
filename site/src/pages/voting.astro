@@ -203,19 +203,16 @@ const links = [
       Victoria works with the AEC so you enrol once for federal, state and local council
       elections.
     </p>
-    <ul>
-      <li>
-        <a href="https://www.aec.gov.au/enrol/" rel="noopener">Enrol or update online (AEC)</a>
-      </li>
-      <li>
-        <a href="https://check.aec.gov.au/" rel="noopener">Check your enrolment (AEC)</a>
-      </li>
-      <li>
-        <a href="https://www.aec.gov.au/enrol/form.htm" rel="noopener">
-          Download a paper enrolment form (AEC)</a>
-        {" "}— or call the VEC on <a href="tel:131832">131 832</a> to have a form posted.
-      </li>
-    </ul>
+    <p class="btn-row">
+      <a class="btn" href="https://www.aec.gov.au/enrol/" rel="noopener">Enrol or update online (AEC)</a>
+      <a class="btn btn-ghost" href="https://check.aec.gov.au/" rel="noopener">Check your enrolment (AEC)</a>
+      <a class="btn btn-ghost" href="https://www.aec.gov.au/enrol/form.htm" rel="noopener">
+        Paper enrolment form (AEC)
+      </a>
+    </p>
+    <p class="muted">
+      Or call the VEC on <a href="tel:131832">131 832</a> to have a form posted.
+    </p>
     <p>
       When you move house, you need to have lived at the new address for about 30 days
       before updating, then update within 21 days (VEC guidance). Keep your name and
@@ -255,14 +252,16 @@ const links = [
       title={VIDEOS.ballot.title}
       blurb={VIDEOS.ballot.blurb}
     />
-    <p class="muted more-videos">
-      More explainers:
-      <a href={watchUrl(VIDEOS.spoiler.id)} rel="noopener">{VIDEOS.spoiler.title}</a>
-      {" · "}
-      <a href={watchUrl(VIDEOS.machinery.id)} rel="noopener">{VIDEOS.machinery.title}</a>
-      {" · "}
-      <a href={YOUTUBE_CHANNEL} rel="noopener">YouTube channel</a>
-    </p>
+    <div class="btn-row more-videos">
+      <span class="btn-row-label muted">More explainers</span>
+      <a class="btn btn-ghost btn-sm" href={watchUrl(VIDEOS.spoiler.id)} rel="noopener">
+        Preferential &amp; spoiler effect
+      </a>
+      <a class="btn btn-ghost btn-sm" href={watchUrl(VIDEOS.machinery.id)} rel="noopener">
+        How a state election works
+      </a>
+      <a class="btn btn-ghost btn-sm" href={YOUTUBE_CHANNEL} rel="noopener">YouTube channel</a>
+    </div>
 
     <h3 id="assembly">Legislative Assembly (lower house)</h3>
     <p>
@@ -344,12 +343,13 @@ const links = [
       post, and assistance for people who need it. Details (dates, locations, eligibility)
       change each election — use the official guide rather than a third-party summary.
     </p>
-    <p>
-      <a href="https://www.vec.vic.gov.au/voting/2026-state-election" rel="noopener">
-        VEC — 2026 state election</a>
-      ·{" "}
-      <a href="https://www.vec.vic.gov.au/voting/how-voting-works" rel="noopener">
-        How voting works</a>.
+    <p class="btn-row">
+      <a class="btn btn-ghost" href="https://www.vec.vic.gov.au/voting/2026-state-election" rel="noopener">
+        VEC — 2026 state election
+      </a>
+      <a class="btn btn-ghost" href="https://www.vec.vic.gov.au/voting/how-voting-works" rel="noopener">
+        How voting works (VEC)
+      </a>
     </p>
 
     <h2 id="links">Official links</h2>
@@ -387,15 +387,17 @@ const links = [
         Not a substitute for the VEC or AEC. If anything here differs from a commission
         publication, the commission is correct.
       </li>
-      <li>
-        Not about who is standing — for candidates and sources, start at the
-        <a href="/">homepage</a> or <a href="/assembly">Assembly districts</a>.
-      </li>
+      <li>Not about who is standing — use the candidate indexes below.</li>
     </ul>
+    <p class="btn-row">
+      <a class="btn" href="/assembly">Assembly districts</a>
+      <a class="btn btn-ghost" href="/">Homepage</a>
+      <a class="btn btn-ghost" href="/disclaimer">Disclaimer</a>
+      <a class="btn btn-ghost" href="/about">About</a>
+    </p>
 
     <p class="foot muted">
-      Reviewed against public VEC and AEC pages as of 29 July 2026. See also the site
-      <a href="/disclaimer">disclaimer</a> and <a href="/about">independence statement</a>.
+      Reviewed against public VEC and AEC pages as of 29 July 2026.
     </p>
   </div>
 </Base>
@@ -409,8 +411,7 @@ const links = [
     font-size: 1.1rem;
   }
   .more-videos {
-    margin: -0.5rem 0 1.25rem;
-    font-size: 0.88rem;
+    margin: 0.25rem 0 1.5rem;
   }
   ul,
   ol {

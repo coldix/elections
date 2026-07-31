@@ -31,12 +31,10 @@ const totalSeats = regions.reduce((s, r) => s + (r.seats || 5), 0);
           <span class="mono">8 × 5 = {totalSeats}</span> seats. The same regions group the
           Assembly’s 88 districts (<span class="mono">8 × 11</span>).
         </p>
-        <p class="muted house-switch">
-          Lower house (districts, 8 × 11 = 88): <a href="/assembly">Legislative Assembly</a>
-          {" · "}
-          <a href="/regions">Region atlas</a>
-          {" · "}
-          <a href="/regions#video-regions">Watch: 8 regions</a>
+        <p class="btn-row house-switch">
+          <a class="btn btn-ghost btn-sm" href="/assembly">Legislative Assembly</a>
+          <a class="btn btn-ghost btn-sm" href="/regions">Region atlas</a>
+          <a class="btn btn-sm" href="/regions#video-regions">Watch: 8 regions</a>
         </p>
       </div>
       <div class="page-head-map">

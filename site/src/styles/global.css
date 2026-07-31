@@ -268,7 +268,10 @@ code,
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
   padding: 0.7rem 1.15rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--accent);
@@ -276,10 +279,14 @@ code,
   color: #fff;
   font-weight: 580;
   font-size: 0.95rem;
+  line-height: 1.25;
   text-decoration: none;
+  text-align: center;
+  cursor: pointer;
 }
 .btn:hover {
   background: var(--accent-ink);
+  text-decoration: none;
 }
 .btn-ghost {
   background: transparent;
@@ -288,12 +295,38 @@ code,
 .btn-ghost:hover {
   background: var(--accent-wash);
 }
+/* Compact CTAs (video links, house switches, secondary actions) */
+.btn-sm {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+  margin: 0.75rem 0 1rem;
+  align-items: center;
+}
+.btn-row > .muted,
+.btn-row-label {
+  flex: 0 0 100%;
+  margin: 0;
+  font-size: 0.88rem;
+}
+@media (min-width: 36rem) {
+  .btn-row > .muted,
+  .btn-row-label {
+    flex: 0 0 auto;
+    margin-right: 0.25rem;
+  }
+}
 
-:root[data-theme="dark"] .btn {
+:root[data-theme="dark"] .btn:not(.btn-ghost) {
   color: #16161d;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) .btn {
+  :root:not([data-theme]) .btn:not(.btn-ghost) {
     color: #16161d;
   }
 }

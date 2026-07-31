@@ -10,23 +10,15 @@ import Base from "../layouts/Base.astro";
       The link may be out of date, or the record may not exist yet. These are the useful
       starting points.
     </p>
-    <ul class="links">
-      <li><a href="/">Victorian election overview</a></li>
-      <li><a href="/assembly">Assembly (88 districts)</a></li>
-      <li><a href="/council">Council (8 regions)</a></li>
-      <li><a href="/parties">All parties</a></li>
-      <li><a href="/voting">Voting in Victoria</a></li>
-      <li><a href="/polls">Poll average</a></li>
-      <li><a href="/data">Open data</a></li>
-      <li><a href="/methodology">Methodology</a></li>
-    </ul>
+    <p class="btn-row">
+      <a class="btn" href="/">Victorian election overview</a>
+      <a class="btn btn-ghost" href="/assembly">Assembly</a>
+      <a class="btn btn-ghost" href="/council">Council</a>
+      <a class="btn btn-ghost" href="/parties">Parties</a>
+      <a class="btn btn-ghost" href="/voting">Voting</a>
+      <a class="btn btn-ghost" href="/polls">Polls</a>
+      <a class="btn btn-ghost" href="/data">Open data</a>
+      <a class="btn btn-ghost" href="/methodology">Methodology</a>
+    </p>
   </div>
 </Base>
-
-<style>
-  .links {
-    padding-left: 1.15rem;
-    display: grid;
-    gap: 0.5rem;
-  }
-</style>

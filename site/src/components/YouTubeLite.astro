@@ -58,13 +58,13 @@ const uid = `yt-${id}`;
   <figcaption>
     <strong class="yt-cap-title">{title}</strong>
     {blurb && <span class="yt-cap-blurb">{blurb}</span>}
-    <span class="yt-cap-meta muted">
+    <p class="muted yt-cap-note">
       Opens YouTube only after you press play (youtube-nocookie.com).
-      {" "}
-      <a href={watch} rel="noopener">Watch on YouTube</a>
-      {" · "}
-      <a href={SOCIAL.youtube} rel="noopener">Channel</a>
-    </span>
+    </p>
+    <p class="btn-row yt-cap-actions">
+      <a class="btn btn-sm" href={watch} rel="noopener">Watch on YouTube</a>
+      <a class="btn btn-ghost btn-sm" href={SOCIAL.youtube} rel="noopener">Channel</a>
+    </p>
   </figcaption>
 </figure>
 
@@ -197,10 +197,11 @@ const uid = `yt-${id}`;
   .yt-cap-blurb {
     color: var(--ink-2);
   }
-  .yt-cap-meta {
+  .yt-cap-note {
+    margin: 0;
     font-size: 0.82rem;
   }
-  .yt-cap-meta a {
-    font-weight: 560;
+  .yt-cap-actions {
+    margin: 0.35rem 0 0;
   }
 </style>
