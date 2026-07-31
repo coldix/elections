@@ -57,5 +57,7 @@ export function embedUrl(id) {
 }
 
 export function thumbUrl(id) {
-  return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+  // Prefer maxres (16:9) when YouTube has it; hqdefault is often 4:3 with bars.
+  // maxresdefault 404s on some videos — poster still works via browser if we use sddefault fallback later.
+  return `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
 }

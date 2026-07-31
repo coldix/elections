@@ -17,6 +17,7 @@ const {
 const watch = watchUrl(id);
 const embed = embedUrl(id);
 const thumb = poster || thumbUrl(id);
+const thumbFallback = poster || `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 const uid = `yt-${id}`;
 ---
 
@@ -39,6 +40,8 @@ const uid = `yt-${id}`;
         height="720"
         loading="lazy"
         decoding="async"
+        data-fallback={thumbFallback}
+        onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback){this.src=this.dataset.fallback}else{this.onerror=null}"
       />
       <span class="yt-play-badge" aria-hidden="true">
         <svg viewBox="0 0 68 48" width="68" height="48">
@@ -93,10 +96,13 @@ const uid = `yt-${id}`;
 <style>
   .yt-lite {
     margin: 1.25rem 0 1.75rem;
-    max-width: 40rem;
+    /* Fill the content column (wrap-narrow is ~40rem; full wrap can be wider) */
+    width: 100%;
+    max-width: 100%;
   }
   .yt-frame {
     position: relative;
+    width: 100%;
     aspect-ratio: 16 / 9;
     background: var(--surface-2, #122744);
     border: 1px solid var(--rule);
@@ -111,25 +117,34 @@ const uid = `yt-${id}`;
     height: 100%;
     border: 0;
   }
+  /* Absolute fill — global img { height: auto } would otherwise shrink the poster */
   .yt-play {
+    position: absolute;
+    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
+    margin: 0;
     padding: 0;
     border: 0;
     cursor: pointer;
     background: #0b1f3a;
-    position: relative;
   }
   .yt-poster {
+    position: absolute;
+    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
+    max-width: none;
+    max-height: none;
     object-fit: cover;
+    object-position: center;
   }
   .yt-play-badge {
     position: absolute;
     inset: 0;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
