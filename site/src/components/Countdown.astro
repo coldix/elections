@@ -1,30 +1,74 @@
 ---
 /**
- * Election countdown. The day count is rendered at BUILD time so the page is
- * correct and indexable with JavaScript disabled; a small inline script then
- * keeps it accurate for long-lived tabs and for pages served from cache.
- * No layout shift: the script only replaces text inside pre-sized slots.
+ * Live countdown to election-day polls open (indicative 8:00 AEDT/AEST Melbourne).
+ * Days/hours/minutes/seconds rendered at BUILD for no-JS; inline script ticks every second.
+ * Label is careful: VEC is authoritative for poll hours and early voting.
  */
 import { daysUntil } from "../../../scripts/lib/data.mjs";
 import { formatDateLong } from "../lib/site.mjs";
 
 const { election, keyDates = [] } = Astro.props;
-const days = daysUntil(election.election_day);
 const iso = election.election_day;
+// Typical Victorian election-day poll opening; confirm with VEC nearer the day.
+const targetIso = `${iso}T08:00:00+11:00`;
+const targetMs = new Date(targetIso).getTime();
+
+function partsFromMs(ms) {
+  const total = Math.max(0, Math.floor(ms / 1000));
+  const d = Math.floor(total / 86400);
+  const h = Math.floor((total % 86400) / 3600);
+  const m = Math.floor((total % 3600) / 60);
+  const s = total % 60;
+  const pad = (n, w = 2) => String(n).padStart(w, "0");
+  return {
+    d: pad(d, 3),
+    h: pad(h),
+    m: pad(m),
+    s: pad(s),
+    totalDays: Math.ceil(ms / 86400000),
+  };
+}
+
+const initial = partsFromMs(targetMs - Date.now());
+const daysLabel = daysUntil(iso);
 ---
 
 <div class="countdown card">
   <div class="cd-main">
-    <p class="eyebrow">Next election</p>
+    <p class="eyebrow">Countdown</p>
     <h2 class="cd-title">{election.name}</h2>
     <p class="cd-date">
       <time datetime={iso}>{formatDateLong(iso)}</time>
+      <span class="cd-date-sub"> · election day</span>
+    </p>
+    <p class="muted cd-note">
+      Clock to <strong>polls open</strong> (indicative 8:00 Melbourne time). Early voting and
+      exact hours: always check the
+      <a href="https://www.vec.vic.gov.au/voting/2026-state-election" rel="noopener">VEC</a>.
     </p>
   </div>
 
-  <div class="cd-num" role="group" aria-labelledby="cd-label">
-    <span class="cd-value" data-countdown={iso}>{days}</span>
-    <span class="cd-unit" id="cd-label">days to go</span>
+  <div
+    class="cd-clock"
+    role="timer"
+    aria-live="polite"
+    aria-atomic="true"
+    data-countdown-clock
+    data-target={targetIso}
+  >
+    <p class="cd-clock-label" id="cd-clock-label">Until polls open</p>
+    <p class="cd-digits mono" aria-labelledby="cd-clock-label">
+      <span class="cd-part" data-cd="d">{initial.d}</span><span class="cd-sep" aria-hidden="true">:</span>
+      <span class="cd-part" data-cd="h">{initial.h}</span><span class="cd-sep" aria-hidden="true">:</span>
+      <span class="cd-part" data-cd="m">{initial.m}</span><span class="cd-sep" aria-hidden="true">:</span>
+      <span class="cd-part" data-cd="s">{initial.s}</span>
+    </p>
+    <p class="cd-units muted" aria-hidden="true">
+      <span>days</span><span>hrs</span><span>min</span><span>sec</span>
+    </p>
+    <p class="visually-hidden" data-cd-spoken>
+      {daysLabel} days until election day
+    </p>
   </div>
 
   {
@@ -45,15 +89,56 @@ const iso = election.election_day;
 </div>
 
 <script is:inline>
-  // Progressive enhancement only — the value is already correct in the HTML.
   (function () {
-    var el = document.querySelector("[data-countdown]");
-    if (!el) return;
-    var target = new Date(el.getAttribute("data-countdown") + "T00:00:00+11:00");
-    var days = Math.ceil((target - new Date()) / 86400000);
-    if (isFinite(days) && String(days) !== el.textContent.trim()) {
-      el.textContent = days;
+    var root = document.querySelector("[data-countdown-clock]");
+    if (!root) return;
+    var target = new Date(root.getAttribute("data-target")).getTime();
+    if (!isFinite(target)) return;
+
+    function pad(n, w) {
+      w = w || 2;
+      var s = String(Math.max(0, n | 0));
+      while (s.length < w) s = "0" + s;
+      return s;
     }
+
+    function tick() {
+      var ms = target - Date.now();
+      if (ms < 0) ms = 0;
+      var total = Math.floor(ms / 1000);
+      var d = Math.floor(total / 86400);
+      var h = Math.floor((total % 86400) / 3600);
+      var m = Math.floor((total % 3600) / 60);
+      var s = total % 60;
+      var set = function (key, val) {
+        var el = root.querySelector('[data-cd="' + key + '"]');
+        if (el) el.textContent = val;
+      };
+      set("d", pad(d, 3));
+      set("h", pad(h, 2));
+      set("m", pad(m, 2));
+      set("s", pad(s, 2));
+      var spoken = root.querySelector("[data-cd-spoken]");
+      if (spoken) {
+        spoken.textContent =
+          d +
+          " days, " +
+          h +
+          " hours, " +
+          m +
+          " minutes, " +
+          s +
+          " seconds until polls open";
+      }
+      if (ms === 0 && root.getAttribute("data-done") !== "1") {
+        root.setAttribute("data-done", "1");
+        var lab = root.querySelector(".cd-clock-label");
+        if (lab) lab.textContent = "Election day";
+      }
+    }
+
+    tick();
+    setInterval(tick, 1000);
   })();
 </script>
 
@@ -70,29 +155,62 @@ const iso = election.election_day;
     font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.7rem);
   }
   .cd-date {
-    margin: 0;
+    margin: 0 0 0.5rem;
     color: var(--ink-2);
     font-size: 1rem;
   }
-  .cd-num {
+  .cd-date-sub {
+    color: var(--ink-3);
+  }
+  .cd-note {
+    margin: 0;
+    max-width: 28rem;
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+  .cd-clock {
     text-align: right;
-    line-height: 1;
+    min-width: min(100%, 18rem);
   }
-  .cd-value {
-    display: block;
-    font-size: clamp(2.6rem, 1.6rem + 4.2vw, 4.4rem);
-    font-weight: 700;
-    letter-spacing: -0.045em;
-    font-variant-numeric: tabular-nums;
-    color: var(--accent-ink);
-  }
-  .cd-unit {
-    display: block;
-    margin-top: 0.35rem;
+  .cd-clock-label {
+    margin: 0 0 0.45rem;
     font-size: 0.78rem;
+    font-weight: 660;
     letter-spacing: 0.09em;
     text-transform: uppercase;
     color: var(--ink-3);
+  }
+  .cd-digits {
+    margin: 0;
+    font-size: clamp(1.65rem, 1.1rem + 2.2vw, 2.55rem);
+    font-weight: 720;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent-ink);
+    line-height: 1.1;
+  }
+  .cd-part {
+    display: inline-block;
+    min-width: 1.7ch;
+  }
+  .cd-part[data-cd="d"] {
+    min-width: 2.6ch;
+  }
+  .cd-sep {
+    opacity: 0.45;
+    margin: 0 0.05em;
+    font-weight: 500;
+  }
+  .cd-units {
+    display: grid;
+    grid-template-columns: 2.8ch 2.2ch 2.2ch 2.2ch;
+    justify-content: end;
+    column-gap: 0.55em;
+    margin: 0.35rem 0 0;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
   }
   .cd-dates {
     grid-column: 1 / -1;
@@ -127,12 +245,16 @@ const iso = election.election_day;
     text-decoration-thickness: 1px;
   }
 
-  @media (max-width: 34rem) {
+  @media (max-width: 40rem) {
     .countdown {
       grid-template-columns: 1fr;
     }
-    .cd-num {
+    .cd-clock {
       text-align: left;
+      min-width: 0;
+    }
+    .cd-units {
+      justify-content: start;
     }
   }
 </style>

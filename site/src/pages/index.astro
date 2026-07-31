@@ -85,6 +85,7 @@ const schema = {
         <a class="btn btn-ghost" href="/assembly">Assembly</a>
         <a class="btn btn-ghost" href="/council">Council</a>
         <a class="btn btn-ghost" href="/voting">Voting guide</a>
+        <a class="btn btn-ghost" href="/polls">Poll average</a>
         <a class="btn btn-ghost" href="/data">Get the data</a>
       </p>
 
@@ -99,6 +100,28 @@ const schema = {
 
   <div class="wrap">
     <Countdown election={data.election} keyDates={data.election.dates} />
+
+    <section class="section paths" aria-labelledby="paths-h">
+      <h2 id="paths-h">Start here</h2>
+      <div class="path-grid">
+        <a class="card path-card" href="/assembly">
+          <h3>Who is standing?</h3>
+          <p>88 Assembly districts — sitting members and sourced 2026 candidates.</p>
+        </a>
+        <a class="card path-card" href="/voting">
+          <h3>How do I vote?</h3>
+          <p>Enrolment, compulsory voting, and preferential numbering — with a short video.</p>
+        </a>
+        <a class="card path-card" href="/regions">
+          <h3>What is my Council region?</h3>
+          <p>Eight upper-house regions, maps, and how they elect 40 members.</p>
+        </a>
+        <a class="card path-card" href="/polls">
+          <h3>What are the polls saying?</h3>
+          <p>Sourced statewide primaries and a transparent weighted average — not a forecast.</p>
+        </a>
+      </div>
+    </section>
 
     <section class="section" aria-labelledby="numbers-h">
       <h2 id="numbers-h" class="visually-hidden">Dataset at a glance</h2>
@@ -336,6 +359,38 @@ const schema = {
   .prelaunch {
     margin-top: 2rem;
     max-width: 52rem;
+  }
+  .paths {
+    padding-top: 1.75rem;
+  }
+  .paths h2 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+  }
+  .path-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr));
+    gap: 1rem;
+  }
+  .path-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .path-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+  }
+  .path-card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+  }
+  .path-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--ink-2);
+    line-height: 1.45;
   }
   .caveat {
     margin-bottom: 1.75rem;
