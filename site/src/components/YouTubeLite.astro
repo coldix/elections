@@ -83,6 +83,11 @@ const uid = `yt-${id}`;
     iframe.allowFullscreen = true;
     iframe.loading = "lazy";
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    // Inline styles: Astro scoped CSS does not apply to JS-created nodes.
+    iframe.setAttribute(
+      "style",
+      "position:absolute;inset:0;width:100%;height:100%;max-width:none;border:0;display:block"
+    );
     frame.dataset.loaded = "1";
     frame.replaceChildren(iframe);
   }
@@ -110,12 +115,15 @@ const uid = `yt-${id}`;
     overflow: hidden;
     box-shadow: var(--shadow);
   }
-  .yt-frame iframe {
+  /* :global so a JS-injected iframe still matches after play */
+  .yt-frame :global(iframe) {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
+    max-width: none;
     border: 0;
+    display: block;
   }
   /* Absolute fill — global img { height: auto } would otherwise shrink the poster */
   .yt-play {
