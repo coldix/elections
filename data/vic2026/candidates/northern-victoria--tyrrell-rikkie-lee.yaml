@@ -1,0 +1,29 @@
+candidate:
+  name: Rikkie-Lee Tyrrell
+  party: one-nation
+  contest: northern-victoria
+  chamber: council
+  status: endorsed
+  occupation: "Member of the Legislative Council"
+  background: "Sitting One Nation MLC for Northern Victoria; first elected 2022 (first One Nation MP in the Victorian Parliament). Former dairy farmer and emergency services volunteer."
+  history:
+    - status: endorsed
+      date: 2026-07-30
+      source:
+        url: https://x.com/OneNationVic/status/2082716466894524685
+        publisher: One Nation Victoria
+        title: "We are proud to introduce Rikkie-Lee Tyrrell as our candidate for Northern Victoria region in the 2026 Victorian state election in November."
+        published: 2026-07-30
+        accessed: 2026-07-31
+      note: >-
+        Party announcement naming Tyrrell as One Nation's candidate for the
+        Northern Victoria Legislative Council region at the November 2026
+        state election. She already holds a Northern Victoria Council seat
+        (elected 2022). Cross-posted on the party's Facebook and Instagram.
+  links:
+    - url: https://vic.onenation.org.au/rikkie-lee-tyrrell
+      kind: party-profile
+    - url: https://www.parliament.vic.gov.au/members/rikkielee-tyrrell/
+      kind: parliament
+    - url: https://en.wikipedia.org/wiki/Rikkie-Lee_Tyrrell
+      kind: wikipedia
