@@ -57,15 +57,27 @@ const daysLabel = daysUntil(iso);
     data-target={targetIso}
   >
     <p class="cd-clock-label" id="cd-clock-label">Until polls open</p>
-    <p class="cd-digits mono" aria-labelledby="cd-clock-label">
-      <span class="cd-part" data-cd="d">{initial.d}</span><span class="cd-sep" aria-hidden="true">:</span>
-      <span class="cd-part" data-cd="h">{initial.h}</span><span class="cd-sep" aria-hidden="true">:</span>
-      <span class="cd-part" data-cd="m">{initial.m}</span><span class="cd-sep" aria-hidden="true">:</span>
-      <span class="cd-part" data-cd="s">{initial.s}</span>
-    </p>
-    <p class="cd-units muted" aria-hidden="true">
-      <span>days</span><span>hrs</span><span>min</span><span>sec</span>
-    </p>
+    <div class="cd-grid mono" aria-labelledby="cd-clock-label">
+      <div class="cd-cell">
+        <span class="cd-part" data-cd="d">{initial.d}</span>
+        <span class="cd-unit">days</span>
+      </div>
+      <span class="cd-sep" aria-hidden="true">:</span>
+      <div class="cd-cell">
+        <span class="cd-part" data-cd="h">{initial.h}</span>
+        <span class="cd-unit">hrs</span>
+      </div>
+      <span class="cd-sep" aria-hidden="true">:</span>
+      <div class="cd-cell">
+        <span class="cd-part" data-cd="m">{initial.m}</span>
+        <span class="cd-unit">min</span>
+      </div>
+      <span class="cd-sep" aria-hidden="true">:</span>
+      <div class="cd-cell">
+        <span class="cd-part" data-cd="s">{initial.s}</span>
+        <span class="cd-unit">sec</span>
+      </div>
+    </div>
     <p class="visually-hidden" data-cd-spoken>
       {daysLabel} days until election day
     </p>
@@ -170,47 +182,60 @@ const daysLabel = daysUntil(iso);
   }
   .cd-clock {
     text-align: right;
-    min-width: min(100%, 18rem);
+    min-width: min(100%, 20rem);
   }
   .cd-clock-label {
-    margin: 0 0 0.45rem;
-    font-size: 0.78rem;
+    margin: 0 0 0.55rem;
+    font-size: 0.8rem;
     font-weight: 660;
-    letter-spacing: 0.09em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--ink-3);
+    color: var(--ink-2);
   }
-  .cd-digits {
+  .cd-grid {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.15rem 0.2rem;
     margin: 0;
-    font-size: clamp(1.65rem, 1.1rem + 2.2vw, 2.55rem);
+  }
+  .cd-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    min-width: 2.75rem;
+  }
+  .cd-cell:first-child {
+    min-width: 3.35rem;
+  }
+  .cd-part {
+    display: block;
+    font-size: clamp(1.7rem, 1.15rem + 2.2vw, 2.6rem);
     font-weight: 720;
     letter-spacing: 0.02em;
     font-variant-numeric: tabular-nums;
     color: var(--accent-ink);
-    line-height: 1.1;
+    line-height: 1;
   }
-  .cd-part {
-    display: inline-block;
-    min-width: 1.7ch;
-  }
-  .cd-part[data-cd="d"] {
-    min-width: 2.6ch;
+  .cd-unit {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    line-height: 1.2;
   }
   .cd-sep {
-    opacity: 0.45;
-    margin: 0 0.05em;
+    align-self: flex-start;
+    padding-top: 0.15em;
+    font-size: clamp(1.5rem, 1rem + 2vw, 2.2rem);
     font-weight: 500;
-  }
-  .cd-units {
-    display: grid;
-    grid-template-columns: 2.8ch 2.2ch 2.2ch 2.2ch;
-    justify-content: end;
-    column-gap: 0.55em;
-    margin: 0.35rem 0 0;
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-align: center;
+    color: var(--ink-2);
+    opacity: 0.55;
+    line-height: 1;
   }
   .cd-dates {
     grid-column: 1 / -1;
@@ -253,8 +278,8 @@ const daysLabel = daysUntil(iso);
       text-align: left;
       min-width: 0;
     }
-    .cd-units {
-      justify-content: start;
+    .cd-grid {
+      justify-content: flex-start;
     }
   }
 </style>
