@@ -30,10 +30,13 @@ function cellFor(region, partySlug) {
     .sort((a, b) => (STATUS_RANK[b.status] ?? 0) - (STATUS_RANK[a.status] ?? 0))[0];
   const fallback = ended[0];
   const chosen = best ?? fallback;
+  const names = (live.length ? live : ended).map((c) => c.name);
   return {
     status: chosen?.status ?? null,
-    names: (live.length ? live : ended).map((c) => c.name),
+    names,
     liveCount: live.length,
+    /** Display count: live candidacies, or ended-only names if nothing live. */
+    count: live.length || ended.length,
   };
 }
 
@@ -171,24 +174,24 @@ function shortLabel(name) {
                         <span class="visually-hidden">
                           {cell.region.name}:{" "}
                           {cell.status
-                            ? `${cell.names.join(", ")}, ${STATUS_LABELS[cell.status]}${
-                                cell.liveCount > 1 ? ` (${cell.liveCount} candidates)` : ""
-                              }`
+                            ? `${cell.count} candidate${cell.count === 1 ? "" : "s"} — ${cell.names.join(", ")}, ${STATUS_LABELS[cell.status]}`
                             : `no ${p.short_name} candidate identified`}
                         </span>
-                        <span class="cell-label" aria-hidden="true">
-                          {shortLabel(cell.region.name)}
-                        </span>
-                        {cell.liveCount > 1 && (
-                          <span class="cell-n" aria-hidden="true">
-                            {cell.liveCount}
+                        <span class="cell-stack" aria-hidden="true">
+                          <span class="cell-label">{shortLabel(cell.region.name)}</span>
+                          <span class="cell-n">
+                            {cell.count > 0 ? cell.count : "—"}
                           </span>
-                        )}
+                        </span>
                         <span class="cell-tip" aria-hidden="true">
                           <b>{cell.region.name}</b>
                           {cell.status ? (
                             <>
-                              {cell.names.join(" · ")} · {STATUS_LABELS[cell.status]}
+                              {cell.count} candidate{cell.count === 1 ? "" : "s"}
+                              {" · "}
+                              {cell.names.join(" · ")}
+                              {" · "}
+                              {STATUS_LABELS[cell.status]}
                             </>
                           ) : (
                             <>No candidate identified</>
@@ -248,7 +251,7 @@ function shortLabel(name) {
                         <td>
                           {c.status ? (
                             <>
-                              {c.names.join(", ")}
+                              {c.count} · {c.names.join(", ")}
                               <br />
                               <span class="muted">{STATUS_LABELS[c.status]}</span>
                             </>
@@ -340,17 +343,19 @@ function shortLabel(name) {
     position: absolute;
   }
 
-  /* 8 regions → fixed 4×2 (or 2×4 on narrow), larger labelled cells */
+  /* 8 regions → 1×8 on wide screens; stack count under label */
   .grid {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 6.5rem));
-    gap: 0.45rem;
-    max-width: 28rem;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 0.4rem;
+    width: 100%;
+    max-width: 52rem;
   }
   .grid li {
+    min-width: 0;
     aspect-ratio: 1;
   }
 
@@ -365,44 +370,52 @@ function shortLabel(name) {
     background: var(--st-none);
     border: 1px solid transparent;
     text-decoration: none;
-    padding: 0.25rem;
+    padding: 0.3rem 0.2rem;
     animation: cell-in 0.42s cubic-bezier(0.2, 0.7, 0.3, 1) both;
     animation-delay: calc(var(--i) * 12ms);
   }
   .cell:hover,
   .cell:focus-visible {
-    transform: scale(1.08);
+    transform: scale(1.06);
     z-index: 5;
   }
-  .cell-label {
-    font-size: 0.68rem;
-    font-weight: 680;
-    line-height: 1.15;
+  .cell-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
     text-align: center;
+    line-height: 1.1;
+  }
+  .cell-label {
+    font-size: clamp(0.58rem, 1.1vw, 0.72rem);
+    font-weight: 680;
     color: var(--ink-2);
     word-break: break-word;
   }
-  .cell-endorsed .cell-label,
-  .cell-nominated .cell-label {
-    color: var(--paper);
-    text-shadow: 0 1px 1px color-mix(in srgb, var(--ink) 35%, transparent);
-  }
-  .cell-announced .cell-label {
-    color: var(--ink);
-  }
   .cell-n {
-    position: absolute;
-    top: 0.2rem;
-    right: 0.25rem;
-    font-size: 0.65rem;
-    font-weight: 700;
+    font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+    font-weight: 760;
     font-variant-numeric: tabular-nums;
-    color: inherit;
-    opacity: 0.85;
+    color: var(--ink-2);
+    line-height: 1;
   }
+  .cell-endorsed .cell-label,
+  .cell-nominated .cell-label,
   .cell-endorsed .cell-n,
   .cell-nominated .cell-n {
     color: var(--paper);
+    text-shadow: 0 1px 1px color-mix(in srgb, var(--ink) 35%, transparent);
+  }
+  .cell-announced .cell-label,
+  .cell-announced .cell-n {
+    color: var(--ink);
+  }
+  .cell-none .cell-n {
+    color: var(--ink-3);
+    font-weight: 560;
+    font-size: clamp(0.85rem, 1.5vw, 1.05rem);
   }
   .cell-endorsed {
     background: var(--party-colour);
@@ -510,6 +523,12 @@ function shortLabel(name) {
     overflow-y: auto;
   }
 
+  @media (max-width: 52rem) {
+    .grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      max-width: 28rem;
+    }
+  }
   @media (max-width: 34rem) {
     .grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
