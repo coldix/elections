@@ -1,0 +1,40 @@
+# Watch sources for `npm run scan:leads`.
+# These are discovery signals only — never auto-merge. Human verifies before YAML.
+#
+# Types:
+#   wikipedia-parse — MediaWiki API wikitext (stable, good for bulk tables)
+#   html            — party candidate list pages
+#   rss             — headline feeds (Google News, etc.)
+
+user_agent: ElectionTrackerBot/1.0 (+https://electiontracker.au; ledger discovery; not a full crawler)
+
+sources:
+  - id: wiki-candidates
+    type: wikipedia-parse
+    page: Candidates_of_the_2026_Victorian_state_election
+    note: Discovery index; prefer original URLs when encoding.
+
+  - id: greens-vic
+    type: html-greens
+    url: https://greens.org.au/vic/candidates
+    note: Official Victorian Greens candidate list.
+
+  - id: onenation-vic
+    type: html-onenation
+    url: https://vic.onenation.org.au/candidates
+    note: Party list; often thin until bulk announce.
+
+  - id: gnews-vic-candidates
+    type: rss
+    url: "https://news.google.com/rss/search?q=%22Victorian%22+(candidate+OR+preselected+OR+endorsed+OR+retirement)+election+2026&hl=en-AU&gl=AU&ceid=AU:en"
+    note: Headlines only; open the article before encoding.
+
+  - id: gnews-vic-retire
+    type: rss
+    url: "https://news.google.com/rss/search?q=Victorian+(retire+OR+retirement+OR+%22will+not+recontest%22+OR+%22not+contesting%22)+MP+OR+MLA+OR+MLC+2026&hl=en-AU&gl=AU&ceid=AU:en"
+    note: Retirement leads.
+
+  - id: gnews-vic-polls
+    type: rss
+    url: "https://news.google.com/rss/search?q=Victoria+(poll+OR+Newspoll+OR+Resolve+OR+RedBridge+OR+Freshwater)+%22state%22+2026&hl=en-AU&gl=AU&ceid=AU:en"
+    note: Statewide poll discovery (still encode by hand).

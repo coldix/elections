@@ -124,7 +124,41 @@ for later.
 | Validate + export + site build | `npm run build`; CI on every PR/`main` | No — only gates ship |
 | Source link health | `npm run check:sources`; weekly GitHub Action | **No** — report only |
 | Coverage snapshot | `npm run report:coverage` | **No** — stdout summary |
+| **Lead scan (discovery)** | `npm run scan:leads` | **No** — digest only |
 | IndexNow | after deploy | Notifies search engines of URLs |
+
+### Lead scan (efficient discovery)
+
+```bash
+npm run scan:leads          # incremental: skip unchanged sources + known people
+npm run scan:leads:full     # re-parse everything (still de-dupes ledger + seen)
+npm run scan:leads:report   # print last digest only (no network — cheap for agents)
+```
+
+**What it does**
+
+1. Fetches sources listed in [`data/vic2026/watch-sources.yaml`](../data/vic2026/watch-sources.yaml)
+   (Wikipedia candidates table, Greens/One Nation lists, Google News RSS).
+2. Caches bodies by **content hash** under `.cache/scan/` — if a page did not
+   change, it is **not** re-parsed.
+3. Diffs extracts against the YAML ledger (`candidates/` + `retirements.yaml`).
+4. Remembers lead fingerprints so the same headline is not re-printed next run.
+5. Writes a compact digest:
+   - `.cache/scan/leads-latest.md` (human)
+   - `.cache/scan/leads-latest.json` (agents)
+
+**What it never does:** write candidate YAML, merge to `main`, or treat RSS as proof.
+
+**Agent workflow (save tokens)**
+
+```text
+1. npm run scan:leads          # once per session / day
+2. npm run scan:leads:report   # re-read digest without re-fetching
+3. Only open source URLs for items in new_leads[]
+4. Draft YAML; human merges
+```
+
+Do **not** paste full HTML into chat or re-scrape party pages manually every turn.
 
 ### Source health
 
