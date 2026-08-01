@@ -24,8 +24,11 @@ const unregistered = coverage.filter((c) => data.partyBySlug.get(c.party)?.regis
     </p>
 
     <div class="notice" role="note">
-      <strong>Coverage is a count of our records, not of the ballot paper.</strong>{" "}
-      {COVERAGE_CAVEAT}
+      <strong>Two different numbers.</strong> Cards show seats held in the sitting
+      parliament <em>and</em> how many of the 88 Assembly districts have a sourced 2026
+      candidacy for that party. A low coverage figure for a major party (especially Labor)
+      usually means missing public recontest sources — not that the party is absent from
+      the ballot. {COVERAGE_CAVEAT}
     </div>
 
     {unregistered.length > 0 && (

@@ -26,6 +26,9 @@ const byRegion = regions.map((r) => {
 });
 
 const totalDistricts = data.districts.length;
+const emptyDistricts = data.districts.filter(
+  (d) => !d.candidates.some((c) => LIVE_STATUSES.includes(c.status))
+);
 ---
 
 <Base
@@ -40,7 +43,9 @@ const totalDistricts = data.districts.length;
         <p class="lede">
           The Assembly has <strong>{totalDistricts} single-member districts</strong>
           (seats). They sit inside the same <strong>8 Legislative Council regions</strong>
-          used for the upper house: <span class="mono">8 × 11 = 88</span>.
+          used for the upper house: <span class="mono">8 × 11 = 88</span>. Coverage counts
+          only <em>sourced</em> 2026 candidacies — a party with many seats today can look
+          “empty” until each recontest is individually verified.
         </p>
         <p class="btn-row house-switch">
           <a class="btn btn-ghost btn-sm" href="/council">Legislative Council</a>
@@ -75,6 +80,23 @@ const totalDistricts = data.districts.length;
         blurb={VIDEOS.localSeat.blurb}
       />
     </section>
+
+    {
+      emptyDistricts.length > 0 && (
+        <p class="notice empty-note" role="note">
+          <strong>{emptyDistricts.length} district{emptyDistricts.length === 1 ? "" : "s"}</strong>{" "}
+          still have no sourced 2026 candidacy:{" "}
+          {emptyDistricts.map((d, i) => (
+            <>
+              {i > 0 && ", "}
+              <a href={`/districts/${d.slug}`}>{d.name}</a>
+            </>
+          ))}
+          . That means we have not verified one yet — not that nobody is standing.{" "}
+          <a href="https://github.com/coldix/elections/issues/new">Tip a source</a>.
+        </p>
+      )
+    }
 
     {
       byRegion.map(({ region, districts }) => (
@@ -174,6 +196,9 @@ const totalDistricts = data.districts.length;
   .video-lead {
     margin: 0 0 0.75rem;
     max-width: 40rem;
+  }
+  .empty-note {
+    margin: 0 0 1.75rem;
   }
   .jump {
     display: flex;

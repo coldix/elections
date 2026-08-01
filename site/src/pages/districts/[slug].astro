@@ -92,10 +92,11 @@ const schema = {
     {
       live.length === 0 ? (
         <p class="empty card">
-          No individually sourced candidate has been recorded for {district.name} yet. This
-          means we have not yet verified one — <strong>not</strong> that no candidate exists.
-          Nominations close 13 November 2026.{" "}
-          <a href={SITE.issues}>Know of one? Send us the source.</a>
+          No individually sourced 2026 candidacy has been recorded for {district.name} yet.
+          That means we have not verified one — <strong>not</strong> that nobody is standing.
+          Sitting members are only listed when recontesting is individually sourced. Formal
+          nominations close closer to the election (see key dates).{" "}
+          <a class="btn btn-sm" href={SITE.issues}>Tip a public source</a>
         </p>
       ) : (
         <ul class="cand-list" role="list">
