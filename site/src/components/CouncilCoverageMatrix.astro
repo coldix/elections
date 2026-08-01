@@ -40,6 +40,8 @@ function cellFor(region, partySlug) {
   };
 }
 
+const totalCouncilSeats = data.regions.reduce((n, r) => n + (r.seats || 5), 0);
+
 // Parties with any Council candidacy on file (live or ended).
 const partyStats = data.parties
   .map((p) => {
@@ -56,21 +58,24 @@ const partyStats = data.parties
         live.filter((c) => c.status === s).length,
       ])
     );
+    const seatsCovered = live.length;
     return {
       party: p.slug,
       name: p.name,
       short_name: p.short_name,
       colour: partyColour(p.slug),
+      seats_covered: seatsCovered,
+      seats_total: totalCouncilSeats,
       regions_covered: regionsCovered.size,
       regions_total: totalRegions,
-      pct: totalRegions ? Math.round((regionsCovered.size / totalRegions) * 100) : 0,
+      pct: totalCouncilSeats ? Math.round((seatsCovered / totalCouncilSeats) * 100) : 0,
       by_status: byStatus,
       ended_count: ended.length,
       live_count: live.length,
     };
   })
   .filter((p) => p.live_count + p.ended_count > 0)
-  .sort((a, b) => b.regions_covered - a.regions_covered || a.name.localeCompare(b.name));
+  .sort((a, b) => b.seats_covered - a.seats_covered || a.name.localeCompare(b.name));
 
 const panels = partyStats.map((p) => ({
   ...p,
@@ -96,11 +101,11 @@ function shortLabel(name) {
 <section class="matrix-section" aria-labelledby="council-matrix-h">
   <div class="matrix-head">
     <div>
-      <p class="eyebrow">Legislative Council · {totalRegions} regions</p>
+      <p class="eyebrow">Legislative Council · {totalCouncilSeats} seats · {totalRegions} regions</p>
       <h2 id="council-matrix-h">Candidate coverage by party</h2>
       <p class="lede">
-        Each square is one multi-member region (5 seats). Choose a party to see where it
-        has an individually sourced upper-house candidacy — not group-ticket claims alone.
+        Each square is one multi-member region (5 seats). Tab counts are sourced candidacies
+        out of {totalCouncilSeats} Council seats. Not group-ticket claims alone.
       </p>
     </div>
   </div>
@@ -135,8 +140,8 @@ function shortLabel(name) {
                 <span class="swatch" aria-hidden="true" />
                 <span class="tab-name">{p.short_name}</span>
                 <span class="tab-count">
-                  {p.regions_covered}
-                  <span class="of">/{p.regions_total}</span>
+                  {p.seats_covered}
+                  <span class="of">/{p.seats_total}</span>
                 </span>
               </label>
             ))}
@@ -146,15 +151,15 @@ function shortLabel(name) {
             {panels.map((p) => (
               <div class="panel" id={`cpanel-${p.party}`} style={`--party-colour:${p.colour}`}>
                 <p class="panel-summary">
-                  <strong>{p.name}</strong> has individually sourced Council candidates in{" "}
+                  <strong>{p.name}</strong> has{" "}
                   <strong>
-                    {p.regions_covered} of {p.regions_total}
+                    {p.seats_covered} of {p.seats_total}
                   </strong>{" "}
-                  regions ({p.pct}%)
-                  {p.live_count > 0 && (
+                  Council seats with a sourced candidacy ({p.pct}%)
+                  {p.regions_covered > 0 && (
                     <>
                       {" "}
-                      — {p.live_count} live candidac{p.live_count === 1 ? "y" : "ies"}
+                      across {p.regions_covered} of {p.regions_total} regions
                     </>
                   )}
                   .

@@ -39,7 +39,7 @@ const coverageTeaser = coverage
     (c) =>
       c.current.total > 0 ||
       c.assembly_seats_covered > 0 ||
-      c.council_regions_covered > 0
+      c.council_seats_covered > 0
   )
   .slice(0, 8);
 
@@ -163,9 +163,9 @@ const schema = {
       <div class="notice caveat" role="note">
         <strong>Two different numbers.</strong>{" "}
         <em>Seats held now</em> is today’s Parliament (Assembly + Council).{" "}
-        <em>2026 covered</em> is only contests where we have a sourced candidacy for that
-        party — Assembly districts (of 88) and Council regions (of 8) — not vote share, not
-        a prediction.{" "}
+        <em>2026 covered</em> is only seats where we have a sourced candidacy for that
+        party — Assembly (of 88) and Council (of 40) — not vote share, not a prediction.
+        The progress bar is both houses combined (of 128).{" "}
         {COVERAGE_CAVEAT}{" "}
         <a href="/methodology#coverage">How we count</a>.
       </div>
@@ -181,7 +181,7 @@ const schema = {
               <th scope="col" class="num">Seats held now</th>
               <th scope="col" class="num">2026 Assembly</th>
               <th scope="col" class="num">2026 Council</th>
-              <th scope="col" class="sub">Assembly progress</th>
+              <th scope="col" class="sub">Progress (of 128)</th>
             </tr>
           </thead>
           <tbody>
@@ -216,24 +216,19 @@ const schema = {
                     <span class="muted"> / {c.assembly_seats_total}</span>
                   </td>
                   <td class="num mono">
-                    {c.council_regions_covered}
-                    <span class="muted"> / {c.council_regions_total}</span>
-                    {c.council_candidates > c.council_regions_covered && (
-                      <span class="muted council-n">
-                        {" "}
-                        · {c.council_candidates} cand.
-                      </span>
-                    )}
+                    {c.council_seats_covered}
+                    <span class="muted"> / {c.council_seats_total}</span>
                   </td>
                   <td>
                     <span class="bar" aria-hidden="true">
                       <span
                         class="bar-fill"
-                        style={`width:${c.pct}%;--party-colour:${partyColour(c.party)}`}
+                        style={`width:${c.combined_pct}%;--party-colour:${partyColour(c.party)}`}
                       />
                     </span>
                     <span class="visually-hidden">
-                      Assembly {c.pct}%; Council {c.council_pct}%
+                      {c.combined_seats_covered} of {c.combined_seats_total} seats covered
+                      ({c.combined_pct}%)
                     </span>
                   </td>
                 </tr>
@@ -244,8 +239,8 @@ const schema = {
       </div>
       <p class="btn-row">
         <a class="btn" href="/parties">Full party coverage</a>
-        <a class="btn btn-ghost" href="/assembly">All 88 districts</a>
-        <a class="btn btn-ghost" href="/council">Council regions</a>
+        <a class="btn btn-ghost" href="/assembly">All 88 Assembly seats</a>
+        <a class="btn btn-ghost" href="/council">All 40 Council seats</a>
         <a class="btn btn-ghost" href="/polls">Poll average</a>
       </p>
     </section>
@@ -386,10 +381,6 @@ const schema = {
     margin-bottom: 1rem;
   }
   .held-split {
-    font-size: 0.82em;
-    font-weight: 400;
-  }
-  .council-n {
     font-size: 0.82em;
     font-weight: 400;
   }

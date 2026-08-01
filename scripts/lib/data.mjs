@@ -170,9 +170,12 @@ export function representationFor(data) {
 }
 
 /**
- * Per-party coverage for both houses: how many of the 88 Assembly districts
- * and 8 Council regions have a live candidacy for that party, plus status
- * breakdowns for Assembly (the denser chamber).
+ * Per-party coverage for both houses:
+ *  - Assembly: how many of the 88 single-member districts have a live candidacy
+ *  - Council: how many live candidacies (each of the 40 seats is multi-member;
+ *    one sourced name = one seat covered until more ticket members are recorded)
+ *
+ * Combined progress is over 128 (= 88 + 40).
  *
  * Ordering: by seats currently held in the Parliament (both houses), largest
  * first, then alphabetically. That is an objective, externally verifiable fact
@@ -181,7 +184,8 @@ export function representationFor(data) {
  */
 export function coverageFor(data) {
   const totalDistricts = data.districts.length;
-  const totalRegions = data.regions.length;
+  const totalCouncilSeats = data.regions.reduce((n, r) => n + (r.seats || 5), 0);
+  const totalBoth = totalDistricts + totalCouncilSeats;
   const rep = representationFor(data);
 
   const rows = data.parties.map((p) => {
@@ -204,6 +208,9 @@ export function coverageFor(data) {
     );
     const seats = new Set(live.map((c) => c.contest));
     const councilRegions = new Set(councilLive.map((c) => c.contest));
+    // Multi-member: each live candidacy counts as one of 40 seats covered.
+    const councilSeats = councilLive.length;
+    const combined = seats.size + councilSeats;
     return {
       party: p.slug,
       name: p.name,
@@ -211,13 +218,20 @@ export function coverageFor(data) {
       family: p.family ?? null,
       assembly_seats_covered: seats.size,
       assembly_seats_total: totalDistricts,
+      // Assembly-only fill (kept for charts that are district-scoped).
       pct: totalDistricts ? Math.round((seats.size / totalDistricts) * 100) : 0,
-      council_regions_covered: councilRegions.size,
-      council_regions_total: totalRegions,
-      council_pct: totalRegions
-        ? Math.round((councilRegions.size / totalRegions) * 100)
+      council_seats_covered: councilSeats,
+      council_seats_total: totalCouncilSeats,
+      council_pct: totalCouncilSeats
+        ? Math.round((councilSeats / totalCouncilSeats) * 100)
         : 0,
-      council_candidates: councilLive.length,
+      // Regions with ≥1 live Council candidacy (for maps/grids).
+      council_regions_covered: councilRegions.size,
+      council_regions_total: data.regions.length,
+      combined_seats_covered: combined,
+      combined_seats_total: totalBoth,
+      // Progress over both houses (88 + 40 = 128).
+      combined_pct: totalBoth ? Math.round((combined / totalBoth) * 100) : 0,
       by_status: byStatus,
       ended_count: ended.length,
       covered_districts: [...seats].sort(),
