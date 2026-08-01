@@ -6,102 +6,186 @@ import { partyColour } from "../../lib/site.mjs";
 const data = loadElection("vic2026");
 const coverage = coverageFor(data);
 const unregistered = coverage.filter((c) => data.partyBySlug.get(c.party)?.registered === false);
+const withCoverage = coverage.filter(
+  (c) => c.assembly_seats_covered > 0 || c.council_seats_covered > 0
+);
 ---
 
 <Base
   title="Parties"
-  description="Candidate coverage for every party contesting the 2026 Victorian state election — registered and unregistered — plus independents."
+  description="Candidate coverage for every party contesting the 2026 Victorian state election — Assembly districts, Council seats and regions, registered and unregistered — plus independents."
 >
   <div class="wrap section">
-    <p class="eyebrow">Victoria 2026</p>
-    <h1>Parties</h1>
-    <p class="lede">
-      Every party on the Victorian Electoral Commission's register, plus any unregistered
-      party with publicly announced candidates, all given identical treatment. Ordered by
-      seats currently held in the Parliament of Victoria — an objective fact about the
-      sitting parliament, not a ranking by prominence. Independents are grouped for
-      convenience; they are not a party.
-    </p>
+    <header class="page-head">
+      <p class="eyebrow">Victoria 2026</p>
+      <h1>Parties</h1>
+      <p class="lede">
+        Every party on the Victorian Electoral Commission’s register, plus any unregistered
+        party with publicly announced candidates — identical treatment. Ordered by seats
+        currently held in the Parliament of Victoria (an objective fact about the sitting
+        parliament, not a ranking by prominence). Independents are grouped for convenience;
+        they are not a party.
+      </p>
+      <p class="btn-row">
+        <a class="btn btn-ghost btn-sm" href="/assembly">All 88 Assembly seats</a>
+        <a class="btn btn-ghost btn-sm" href="/council">All 40 Council seats</a>
+        <a class="btn btn-ghost btn-sm" href="/methodology#coverage">How we count</a>
+      </p>
+    </header>
 
     <div class="notice" role="note">
-      <strong>Two different numbers.</strong> Cards show seats held in the sitting
-      parliament <em>and</em> how many of the 88 Assembly districts have a sourced 2026
-      candidacy for that party. A low coverage figure for a major party (especially Labor)
-      usually means missing public recontest sources — not that the party is absent from
-      the ballot. {COVERAGE_CAVEAT}
+      <strong>Two different numbers.</strong> Cards show seats held in the sitting parliament
+      <em>and</em> sourced 2026 coverage: Assembly districts (of 88), Council seats (of 40),
+      and Council regions with at least one candidacy (of 8). Progress is both houses
+      combined (of 128). A low coverage figure for a major party usually means missing public
+      recontest sources — not absence from the ballot. {COVERAGE_CAVEAT}
     </div>
 
-    {unregistered.length > 0 && (
-      <div class="notice unreg-notice" role="note">
-        <strong>{unregistered.length} of these are not on the VEC register.</strong>{" "}
-        We list them because they have publicly announced candidates, but a party that
-        is not registered when nominations close has no party name printed beside its
-        candidates on the ballot — those candidates appear ungrouped. Registration
-        status is shown on each party's page.
-      </div>
-    )}
+    {
+      unregistered.length > 0 && (
+        <div class="notice unreg-notice" role="note">
+          <strong>{unregistered.length} of these are not on the VEC register.</strong>{" "}
+          We list them because they have publicly announced candidates, but a party that is
+          not registered when nominations close has no party name printed beside its
+          candidates on the ballot — those candidates appear ungrouped. Registration status
+          is shown on each party’s page.
+        </div>
+      )
+    }
+
+    <p class="summary muted">
+      <strong>{coverage.length}</strong> parties and groups ·{" "}
+      <strong>{withCoverage.length}</strong> with at least one sourced 2026 candidacy
+    </p>
 
     <ul class="party-grid" role="list">
       {
-        coverage.map((c) => (
-          <li>
-            <a class="card p-card" href={`/parties/${c.party}`} style={`--party-colour:${partyColour(c.party)}`}>
-              <span class="p-bar" aria-hidden="true" />
-              <h2>{c.short_name}</h2>
-              <p class="p-full muted">{c.name}</p>
-              {data.partyBySlug.get(c.party)?.registered === false && (
-                <p class="unreg">Not on the VEC register</p>
-              )}
+        coverage.map((c) => {
+          const reg = data.partyBySlug.get(c.party)?.registered;
+          return (
+            <li>
+              <a
+                class="card p-card"
+                href={`/parties/${c.party}`}
+                style={`--party-colour:${partyColour(c.party)}`}
+              >
+                <span class="p-bar" aria-hidden="true" />
 
-              <p class="p-seats">
-                <span class="p-seats-n">{c.current.total}</span>
-                <span class="muted">
-                  {c.current.total === 1 ? "seat" : "seats"} held now
-                  {c.current.total > 0 && (
-                    <> ({c.current.assembly} Assembly, {c.current.council} Council)</>
-                  )}
-                </span>
-              </p>
+                <header class="p-head">
+                  <h2>{c.short_name}</h2>
+                  <p class="p-full muted">{c.name}</p>
+                  {reg === false && <p class="unreg">Not on the VEC register</p>}
+                </header>
 
-              <p class="p-count">
-                <strong>{c.assembly_seats_covered}</strong>
-                <span class="muted"> / {c.assembly_seats_total} districts covered for 2026</span>
-              </p>
-              <span class="p-track" aria-hidden="true">
-                <span class="p-fill" style={`width:${c.pct}%`} />
-              </span>
-            </a>
-          </li>
-        ))
+                <p class="p-seats">
+                  <span class="p-seats-n">{c.current.total}</span>
+                  <span class="muted">
+                    {c.current.total === 1 ? "seat" : "seats"} held now
+                    {c.current.total > 0 && (
+                      <>
+                        {" "}
+                        <span class="held-split">
+                          ({c.current.assembly}A · {c.current.council}C)
+                        </span>
+                      </>
+                    )}
+                  </span>
+                </p>
+
+                <dl class="p-stats">
+                  <div>
+                    <dt>Assembly</dt>
+                    <dd>
+                      <strong>{c.assembly_seats_covered}</strong>
+                      <span class="muted">/{c.assembly_seats_total}</span>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Council seats</dt>
+                    <dd>
+                      <strong>{c.council_seats_covered}</strong>
+                      <span class="muted">/{c.council_seats_total}</span>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Regions covered</dt>
+                    <dd>
+                      <strong>{c.council_regions_covered}</strong>
+                      <span class="muted">/{c.council_regions_total}</span>
+                    </dd>
+                  </div>
+                </dl>
+
+                <div class="p-progress">
+                  <div class="p-progress-meta">
+                    <span class="muted">2026 progress</span>
+                    <span class="mono">
+                      {c.combined_seats_covered}
+                      <span class="muted">/{c.combined_seats_total}</span>
+                    </span>
+                  </div>
+                  <span class="p-track" aria-hidden="true">
+                    <span class="p-fill" style={`width:${c.combined_pct}%`} />
+                  </span>
+                </div>
+              </a>
+            </li>
+          );
+        })
       }
     </ul>
   </div>
 </Base>
 
 <style>
+  .page-head {
+    margin-bottom: 0.25rem;
+  }
+  .page-head .lede {
+    max-width: 48rem;
+    margin-bottom: 0.85rem;
+  }
+  .page-head .btn-row {
+    margin: 0 0 0.25rem;
+  }
   .notice {
-    margin: 1.5rem 0 2rem;
+    margin: 1.25rem 0 1rem;
     max-width: 58rem;
+  }
+  .unreg-notice {
+    border-left-color: var(--st-announced);
+    margin-top: 0;
+  }
+  .summary {
+    margin: 0 0 1.15rem;
+    font-size: 0.9rem;
+  }
+  .summary strong {
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
   }
   .party-grid {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
     gap: 1rem;
   }
   .p-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
     height: 100%;
-    transition: border-color 0.15s ease;
+    padding: 1.05rem 1.1rem 1.1rem 1.2rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
   }
   .p-card:hover {
     border-color: var(--party-colour);
+    box-shadow: var(--shadow);
   }
   .p-bar {
     position: absolute;
@@ -109,46 +193,89 @@ const unregistered = coverage.filter((c) => data.partyBySlug.get(c.party)?.regis
     width: 3px;
     background: var(--party-colour);
   }
+  .p-head {
+    margin-bottom: 0.65rem;
+  }
   .p-card h2 {
-    font-size: 1.05rem;
-    margin: 0 0 0.15rem;
+    font-size: 1.08rem;
+    margin: 0 0 0.12rem;
+    line-height: 1.25;
   }
   .p-full {
-    font-size: 0.8rem;
-    margin: 0 0 0.5rem;
+    font-size: 0.78rem;
+    margin: 0;
+    line-height: 1.35;
   }
   .unreg {
-    margin: 0 0 0.7rem;
-    font-size: 0.72rem;
+    margin: 0.4rem 0 0;
+    font-size: 0.7rem;
     font-weight: 620;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--st-announced);
   }
-  .unreg-notice {
-    border-left-color: var(--st-announced);
-  }
   .p-seats {
-    margin: 0 0 0.6rem;
-    padding-bottom: 0.6rem;
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.65rem;
     border-bottom: 1px solid var(--rule);
     font-size: 0.82rem;
     display: flex;
     align-items: baseline;
-    gap: 0.4rem;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.45rem;
   }
   .p-seats-n {
-    font-size: 1.05rem;
-    font-weight: 680;
+    font-size: 1.15rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  .held-split {
     font-variant-numeric: tabular-nums;
   }
-  .p-count {
-    margin: 0 0 0.5rem;
+  .p-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem 0.65rem;
+    margin: 0 0 0.85rem;
+  }
+  .p-stats div {
+    min-width: 0;
+  }
+  .p-stats dt {
+    margin: 0 0 0.15rem;
+    font-size: 0.68rem;
+    font-weight: 620;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    line-height: 1.2;
+  }
+  .p-stats dd {
+    margin: 0;
     font-size: 0.95rem;
-  }
-  .p-count strong {
-    font-size: 1.35rem;
     font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+  }
+  .p-stats strong {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .p-progress {
+    margin-top: auto;
+  }
+  .p-progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.78rem;
+  }
+  .mono {
+    font-variant-numeric: tabular-nums;
+    font-weight: 620;
   }
   .p-track {
     display: block;
@@ -162,6 +289,7 @@ const unregistered = coverage.filter((c) => data.partyBySlug.get(c.party)?.regis
     display: block;
     height: 100%;
     background: var(--party-colour);
+    border-radius: inherit;
   }
   @media (prefers-reduced-motion: reduce) {
     .p-card {
