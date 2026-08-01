@@ -212,13 +212,21 @@ service (ADR-2).
 
 ## Quick checklist (copy for a scan session)
 
-- [ ] Major party candidate pages scanned  
+- [ ] `npm run scan:leads` (or `:report` if already ran)  
+- [ ] Major party candidate pages scanned (esp. Labor recontest — [labor-gap.md](labor-gap.md))  
 - [ ] News alerts / tips triaged  
 - [ ] New or changed candidacies encoded with sources  
 - [ ] New polls encoded (if any)  
 - [ ] `npm run check` clean  
 - [ ] Merged / deployed  
 - [ ] (Weekly) skim source-health Action or run `npm run check:sources`  
+
+### Build identity
+
+Every production build writes a **Melbourne-time stamp + git short hash**, e.g.
+`20260801.1552-aest+05d210a`, displayed in the site footer and at
+`/build-meta.json`. This is a **deploy fingerprint**, not semantic versioning
+(data products change continuously).
 
 ---
 

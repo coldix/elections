@@ -1,7 +1,14 @@
 ---
 import { SITE, ATTRIBUTION, socialLinks } from "../lib/site.mjs";
+import buildMeta from "../generated/build-meta.json";
+
 const year = new Date().getFullYear();
 const social = socialLinks();
+const versionLabel = buildMeta?.version ?? "dev";
+const builtAest = buildMeta?.built_at_aest ?? null;
+const repoCommit = buildMeta?.git_sha_full
+  ? `${SITE.repo}/commit/${buildMeta.git_sha_full}`
+  : SITE.repo;
 ---
 
 <footer class="site-footer">
@@ -20,6 +27,7 @@ const social = socialLinks();
         <ul>
           <li><a href="/methodology">Methodology &amp; source standards</a></li>
           <li><a href="/polls">Poll average</a></li>
+          <li><a href="/open-seats">Open seats &amp; retirements</a></li>
           <li><a href="/data">Open data (JSON &amp; CSV)</a></li>
           <li><a href={SITE.repo}>Source repository</a></li>
           <li><a href={SITE.issues}>Submit a correction</a></li>
@@ -56,11 +64,27 @@ const social = socialLinks();
     </div>
 
     <div class="footer-bottom">
-      <p class="licence muted">
-        Code MIT-licensed. Election data published under
-        <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a> —
-        free to reuse with attribution to {ATTRIBUTION}. © {year} {SITE.publisher}.
-      </p>
+      <div class="footer-meta">
+        <p class="licence muted">
+          Code MIT-licensed. Election data published under
+          <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a> —
+          free to reuse with attribution to {ATTRIBUTION}. © {year} {SITE.publisher}.
+        </p>
+        <p class="build-stamp muted">
+          <span class="build-label">Build</span>
+          <a class="build-ver" href={repoCommit} rel="noopener" title="Git commit for this deploy">
+            {versionLabel}</a
+          >
+          {
+            builtAest && (
+              <>
+                <span class="build-sep" aria-hidden="true">·</span>
+                <time datetime={buildMeta.built_at_utc}>{builtAest}</time>
+              </>
+            )
+          }
+        </p>
+      </div>
 
       <a class="design-credit" href="https://oze.au" rel="noopener">
         <span class="design-credit-text">Website design</span>
@@ -111,11 +135,43 @@ const social = socialLinks();
     justify-content: space-between;
     gap: 1rem 1.5rem;
   }
+  .footer-meta {
+    flex: 1 1 16rem;
+    max-width: 44rem;
+    display: grid;
+    gap: 0.35rem;
+  }
   .licence {
     margin: 0;
     font-size: 0.83rem;
-    flex: 1 1 16rem;
-    max-width: 42rem;
+  }
+  .build-stamp {
+    margin: 0;
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.4;
+  }
+  .build-label {
+    font-weight: 620;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-right: 0.35rem;
+    color: var(--ink-3);
+  }
+  .build-ver {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 560;
+    color: var(--ink-2);
+    text-decoration: none;
+  }
+  .build-ver:hover {
+    color: var(--accent-ink);
+    text-decoration: underline;
+  }
+  .build-sep {
+    margin: 0 0.35rem;
+    opacity: 0.5;
   }
   .design-credit {
     display: inline-flex;

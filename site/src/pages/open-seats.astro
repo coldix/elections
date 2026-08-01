@@ -1,0 +1,178 @@
+---
+import Base from "../layouts/Base.astro";
+import { loadElection } from "../../../scripts/lib/data.mjs";
+import { SITE, partyColour, formatDate, formatDateLong } from "../lib/site.mjs";
+
+const data = loadElection("vic2026");
+const retirements = [...data.retirements].sort((a, b) =>
+  b.announced.localeCompare(a.announced)
+);
+const mla = retirements.filter((r) => r.role === "MLA");
+const mlc = retirements.filter((r) => r.role === "MLC");
+
+const byParty = data.parties
+  .map((p) => ({
+    ...p,
+    count: retirements.filter((r) => r.party === p.slug).length,
+  }))
+  .filter((p) => p.count > 0)
+  .sort((a, b) => b.count - a.count);
+---
+
+<Base
+  title="Open seats and retirements"
+  description={`Sitting Victorian MPs confirmed not recontesting the 2026 election (${retirements.length} records). Open Assembly contests and Council vacancies with dated sources.`}
+>
+  <div class="wrap section">
+    <p class="eyebrow">Victoria 2026</p>
+    <h1>Open seats &amp; retirements</h1>
+    <p class="lede">
+      <strong>{retirements.length}</strong> sitting members have confirmed they will not contest
+      the 2026 election — <strong>{mla.length}</strong> Assembly (MLA) and{" "}
+      <strong>{mlc.length}</strong> Council (MLC). Each row has a dated public source.
+    </p>
+    <p class="muted">
+      This is not a list of every open seat after preferences or redistributions — only
+      confirmed non-recontestations we have verified.{" "}
+      <a href="/methodology">Methodology</a>.
+    </p>
+
+    <p class="btn-row">
+      <a
+        class="btn btn-ghost"
+        href="https://www.vec.vic.gov.au/electoral-boundaries/which-boundaries-cover-where-i-live"
+        rel="noopener"
+      >
+        Find my district (VEC)
+      </a>
+      <a class="btn btn-ghost" href="/assembly">All Assembly seats</a>
+      <a class="btn btn-ghost" href="/data/vic2026/retirements.json">retirements.json</a>
+    </p>
+
+    <ul class="party-strip" role="list">
+      {
+        byParty.map((p) => (
+          <li>
+            <span class="swatch" style={`--party-colour:${partyColour(p.slug)}`} aria-hidden="true" />
+            <strong class="mono">{p.count}</strong>
+            <span class="muted">{p.short_name}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2 id="assembly">Assembly — not recontesting ({mla.length})</h2>
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">MLAs not recontesting 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Member</th>
+            <th scope="col">Party</th>
+            <th scope="col">District</th>
+            <th scope="col">Announced</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            mla.map((r) => {
+              const seat = data.districts.find((d) => d.slug === r.seat);
+              return (
+                <tr>
+                  <th scope="row">{r.name}</th>
+                  <td>{data.partyBySlug.get(r.party)?.short_name ?? r.party}</td>
+                  <td>
+                    <a href={`/districts/${r.seat}`}>{seat?.name ?? r.seat}</a>
+                  </td>
+                  <td class="mono">{formatDate(r.announced)}</td>
+                  <td>
+                    <a href={r.source.url} rel="noopener">
+                      {r.source.publisher}
+                    </a>
+                  </td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="council">Council — not recontesting ({mlc.length})</h2>
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">MLCs not recontesting 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Member</th>
+            <th scope="col">Party</th>
+            <th scope="col">Region</th>
+            <th scope="col">Announced</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            mlc.map((r) => {
+              const seat = data.regions.find((x) => x.slug === r.seat);
+              return (
+                <tr>
+                  <th scope="row">{r.name}</th>
+                  <td>{data.partyBySlug.get(r.party)?.short_name ?? r.party}</td>
+                  <td>
+                    <a href={`/regions/${r.seat}`}>{seat?.name ?? r.seat}</a>
+                  </td>
+                  <td class="mono">{formatDate(r.announced)}</td>
+                  <td>
+                    <a href={r.source.url} rel="noopener">
+                      {r.source.publisher}
+                    </a>
+                  </td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <p class="foot muted">
+      Election day: {formatDateLong(data.election.election_day)}. Tips with sources:{" "}
+      <a href={SITE.issues}>open an issue</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .lede {
+    max-width: 44rem;
+  }
+  .party-strip {
+    list-style: none;
+    margin: 1.25rem 0 2rem;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.25rem;
+  }
+  .party-strip li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.92rem;
+  }
+  .mono {
+    font-variant-numeric: tabular-nums;
+  }
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+  }
+  .foot {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>

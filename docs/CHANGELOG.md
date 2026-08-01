@@ -4,6 +4,20 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-08-01 — Slim home, open seats, build stamp, ops scan
+
+| Area | What shipped |
+|---|---|
+| **Homepage** | Slimmed (~560 KB → ~36 KB HTML): compact coverage teaser, dual-metric caveat, open-contest strip; full matrix stays on `/parties`. |
+| **Open seats** | New **`/open-seats`** — full retirement tables (MLA/MLC) with sources; linked from footer + home. |
+| **Find my seat** | VEC boundary lookup buttons on Assembly, voting, open-seats. |
+| **Build version** | Each deploy stamps `YYYYMMDD.HHmm-aest+githash` (Australia/Melbourne) via `scripts/write-build-meta.mjs`; shown in **footer** + `/build-meta.json`. |
+| **Dates** | `/voting` key dates list derived from `election.yaml` (not hard-coded roll-close prose alone). |
+| **Ops** | `npm run scan:leads` incremental discovery (see [leads/README.md](leads/README.md)). |
+| **Labor gap** | Documented in [labor-gap.md](labor-gap.md) — ~43 sitting Labor MLAs still need individual recontest sources (no bulk wiki import). |
+
+---
+
 ## 2026-07-31 — Homepage countdown, videos, buttons, launch scrape
 
 | Area | What shipped |

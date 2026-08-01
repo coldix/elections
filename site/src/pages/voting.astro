@@ -1,15 +1,18 @@
 ---
 import Base from "../layouts/Base.astro";
 import YouTubeLite from "../components/YouTubeLite.astro";
-import { SITE, formatDate, formatDateLong } from "../lib/site.mjs";
+import { SITE, formatDateLong } from "../lib/site.mjs";
 import { VIDEOS, YOUTUBE_CHANNEL, watchUrl } from "../lib/videos.mjs";
 import { loadElection } from "../../../scripts/lib/data.mjs";
 
 const data = loadElection("vic2026");
 const electionDay = data.election.election_day;
-const rollClose = data.election.dates?.find((d) =>
-  /roll closes|electoral roll/i.test(d.event ?? "")
+const keyDates = [...(data.election.dates || [])].sort((a, b) =>
+  a.date.localeCompare(b.date)
 );
+const rollClose = keyDates.find((d) => /roll closes|electoral roll/i.test(d.event ?? ""));
+const nominationsOpen = keyDates.find((d) => /nominations open/i.test(d.event ?? ""));
+const nominationsClose = keyDates.find((d) => /nominations close/i.test(d.event ?? ""));
 const rollCloseDate = rollClose?.date;
 
 const links = [
@@ -110,8 +113,30 @@ const links = [
     <p class="muted">
       Official election page:{" "}
       <a href="https://www.vec.vic.gov.au/voting/2026-state-election" rel="noopener">
-        VEC — 2026 state election</a>.
+        VEC — 2026 state election</a
+      >.{" "}
+      <a
+        href="https://www.vec.vic.gov.au/electoral-boundaries/which-boundaries-cover-where-i-live"
+        rel="noopener"
+      >
+        Find my district (VEC)</a
+      >.
     </p>
+
+    <h2 id="dates">Key dates</h2>
+    <p class="muted">
+      From this site’s election record (cross-check the VEC before you act — commissions
+      can amend times).
+    </p>
+    <ul class="key-dates">
+      {
+        keyDates.map((d) => (
+          <li>
+            <strong>{formatDateLong(d.date)}</strong> — {d.event}
+          </li>
+        ))
+      }
+    </ul>
 
     <h2 id="eligibility">Who must enrol</h2>
     <p>
@@ -219,15 +244,30 @@ const links = [
       postal address current so election material reaches you.
     </p>
     <p>
-      <strong>For the 2026 state election:</strong> enrol or update by{" "}
-      <strong>8 pm on Tuesday 3 November 2026</strong>
-      {rollCloseDate && rollCloseDate !== "2026-11-03" && (
-        <> (key dates file currently lists {formatDate(rollCloseDate)} — treat the VEC date as correct)</>
-      )}
-      , according to the VEC. Always re-check the{" "}
+      <strong>For the 2026 state election:</strong>
+      {
+        rollClose ? (
+          <>
+            {" "}
+            enrol or update by <strong>{formatDateLong(rollClose.date)}</strong>
+            {" "}({rollClose.event})
+          </>
+        ) : (
+          <> check the VEC for the enrolment deadline before election day</>
+        )
+      }
+      . Always re-check the{" "}
       <a href="https://www.vec.vic.gov.au/enrolment/enrol-to-vote" rel="noopener">
         VEC enrol page</a>{" "}
-      before the deadline.
+      before the deadline
+      {nominationsClose && (
+        <>
+          . Formal nominations close{" "}
+          <strong>{formatDateLong(nominationsClose.date)}</strong>
+          {nominationsOpen && <> (open {formatDateLong(nominationsOpen.date)})</>}
+        </>
+      )}
+      .
     </p>
     <p>
       Free reminders:{" "}
@@ -412,6 +452,13 @@ const links = [
   }
   .more-videos {
     margin: 0.25rem 0 1.5rem;
+  }
+  .key-dates {
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.45rem;
+    margin: 0 0 1.5rem;
+    color: var(--ink-2);
   }
   ul,
   ol {
