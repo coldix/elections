@@ -33,15 +33,14 @@ const stats = [
   { value: summary.sources, label: "Distinct sources cited" },
 ];
 
-// Top parties by seats held (majors first in practice) — compact teaser only
-const coverageTeaser = coverage
-  .filter(
-    (c) =>
-      c.current.total > 0 ||
-      c.assembly_seats_covered > 0 ||
-      c.council_seats_covered > 0
-  )
-  .slice(0, 8);
+// Every party with seats held now and/or any sourced 2026 coverage.
+// Order is seats held (both houses), then alphabetically — not a campaign ranking.
+const coverageTeaser = coverage.filter(
+  (c) =>
+    c.current.total > 0 ||
+    c.assembly_seats_covered > 0 ||
+    c.council_seats_covered > 0
+);
 
 const retireByParty = data.parties
   .map((p) => ({
