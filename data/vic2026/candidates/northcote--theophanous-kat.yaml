@@ -1,0 +1,25 @@
+candidate:
+  name: Kat Theophanous
+  party: labor
+  contest: northcote
+  chamber: assembly
+  status: announced
+  occupation: "Member of Parliament"
+  background: "MLA for Northcote"
+  history:
+    - status: announced
+      date: 2026-02-11
+      note: >-
+        Sitting Labor MLA; media frames the 2026 Northcote contest as
+        against Labor's Kat Theophanous (Libertarian preselection coverage).
+      source:
+        url: https://www.heraldsun.com.au/news/victoria/jim-penman-endorsed-by-the-libertarian-party-to-run-in-northcote-against-labors-kat-theophanous/news-story/c80ab81c34973a867edfa0525272e2a5
+        publisher: Herald Sun
+        title: "Jim Penman endorsed by the Libertarian Party to run in Northcote against Labor's Kat Theophanous"
+        published: 2026-02-11
+        accessed: 2026-08-01
+  links:
+    - url: https://www.viclabor.org.au/our-team/kat-theophanous
+      kind: party-profile
+    - url: https://www.parliament.vic.gov.au/members/kat-theophanous/
+      kind: parliament

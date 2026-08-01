@@ -9,9 +9,9 @@ replacement) is standing in 2026. Wikipedia “incumbent” columns are **not** 
 | | n |
 |---|---|
 | Labor-held Assembly seats | 54 |
-| With sourced Labor 2026 candidacy | ~10 |
-| Labor MLA retirements (open seats) | 8 (incl. Mill Park / D’Ambrosio) |
-| **Gap — sitting Labor MLA, no sourced recontest** | **~43** |
+| Labor MLA retirements (open seats) | 9 (incl. Mill Park / D’Ambrosio, Narre Warren South / Maas) |
+| Labor-held seats with sourced Labor 2026 candidacy | 5 |
+| **Gap — sitting Labor MLA, no sourced recontest** | **40** |
 
 A blank Labor cell is usually **missing public recontest source**, not “Labor not standing.”
 
@@ -20,6 +20,16 @@ A blank Labor cell is usually **missing public recontest source**, not “Labor 
 1. Party / media announcement that the sitting member is recontesting (or a named successor).
 2. Encode `data/vic2026/candidates/<district>--<slug>.yaml` with `party: labor`.
 3. Prefer primary URLs over Wikipedia.
+4. **Also valid:** challenger coverage that explicitly frames the sitting MLA as seeking
+   re-election or as Labor’s 2026 opponent (same bar as Jacinta Allan / Alison Marchant).
+
+## What does **not** count alone
+
+- Wikipedia “incumbent” / candidates tables
+- `viclabor.org.au/our-team` **“Candidate for …”** labels on the index, or **“State Member for …”**
+  profile pages — the same roster still lists announced retirees (Vulin, Pearson, Maas,
+  D’Ambrosio, etc.) as if they were candidates. Treat as MP directory, not a 2026 slate.
+- Emily’s List “seeking re-election” lists that still include known retirees
 
 ## Gap list (sitting Labor MLA, not in retirements, no live Labor candidacy)
 

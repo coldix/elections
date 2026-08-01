@@ -7,7 +7,7 @@ Generated for the verification backlog. Sitting MLAs who are **not** in
 Do **not** record these with Wikipedia blanket footnotes. Each needs an
 individual dated source (party page, local paper, social post, etc.).
 
-**Count:** 46 seats (Liberal/Nationals gap closed 2026-07-30 — batch for review)
+**Count:** 42 seats (as of 2026-08-01 — Maas retired; Cianflone + Theophanous encoded)
 
 | Party | Seat | Incumbent |
 |---|---|---|
@@ -37,16 +37,12 @@ individual dated source (party page, local paper, social post, etc.).
 | labor | [Kororoit](https://electiontracker.au/districts/kororoit) (`kororoit`) | Luba Grigorovitch |
 | labor | [Lara](https://electiontracker.au/districts/lara) (`lara`) | Ella George |
 | labor | [Laverton](https://electiontracker.au/districts/laverton) (`laverton`) | Sarah Connolly |
-| labor | [Mill Park](https://electiontracker.au/districts/mill-park) (`mill-park`) | Lily D'Ambrosio |
 | labor | [Monbulk](https://electiontracker.au/districts/monbulk) (`monbulk`) | Daniela De Martino |
 | labor | [Mordialloc](https://electiontracker.au/districts/mordialloc) (`mordialloc`) | Tim Richardson |
 | labor | [Mulgrave](https://electiontracker.au/districts/mulgrave) (`mulgrave`) | Eden Foster |
 | labor | [Narre Warren North](https://electiontracker.au/districts/narre-warren-north) (`narre-warren-north`) | Belinda Wilson |
-| labor | [Narre Warren South](https://electiontracker.au/districts/narre-warren-south) (`narre-warren-south`) | Gary Maas |
 | labor | [Niddrie](https://electiontracker.au/districts/niddrie) (`niddrie`) | Ben Carroll |
-| labor | [Northcote](https://electiontracker.au/districts/northcote) (`northcote`) | Kat Theophanous |
 | labor | [Oakleigh](https://electiontracker.au/districts/oakleigh) (`oakleigh`) | Steve Dimopoulos |
-| labor | [Pascoe Vale](https://electiontracker.au/districts/pascoe-vale) (`pascoe-vale`) | Anthony Cianflone |
 | labor | [Point Cook](https://electiontracker.au/districts/point-cook) (`point-cook`) | Mathew Hilakari |
 | labor | [Preston](https://electiontracker.au/districts/preston) (`preston`) | Nathan Lambert |
 | labor | [Ripon](https://electiontracker.au/districts/ripon) (`ripon`) | Martha Haylett |

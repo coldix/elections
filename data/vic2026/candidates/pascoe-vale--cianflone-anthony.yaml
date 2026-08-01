@@ -1,0 +1,25 @@
+candidate:
+  name: Anthony Cianflone
+  party: labor
+  contest: pascoe-vale
+  chamber: assembly
+  status: announced
+  occupation: "Member of Parliament"
+  background: "MLA for Pascoe Vale; Parliamentary Secretary for Community Safety"
+  history:
+    - status: announced
+      date: 2025-10-13
+      note: >-
+        Sitting Labor MLA; local media states he will be seeking re-election
+        in Pascoe Vale at the 2026 state election (Greens preselection coverage).
+      source:
+        url: https://brunswickvoice.com.au/greens-lock-in-candidates-for-next-years-state-election/
+        publisher: Brunswick Voice
+        title: Greens lock in candidates for next year's state election
+        published: 2025-10-13
+        accessed: 2026-08-01
+  links:
+    - url: https://www.viclabor.org.au/our-team/anthony-cianflone
+      kind: party-profile
+    - url: https://www.parliament.vic.gov.au/members/anthony-cianflone/
+      kind: parliament

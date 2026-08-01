@@ -4,6 +4,14 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-08-01 — Labor gap progress + Maas open seat
+
+| Area | What shipped |
+|---|---|
+| **Retirement** | **Gary Maas** (Labor, Narre Warren South) — will not recontest 2026; [own statement](https://www.garymaas.org.au/media-releases/statement-by-gary-maas-mp) 5 Jun 2026. |
+| **Labor recontest** | **Anthony Cianflone** (Pascoe Vale) — [Brunswick Voice](https://brunswickvoice.com.au/greens-lock-in-candidates-for-next-years-state-election/) “seeking re-election”. **Kat Theophanous** (Northcote) — Herald Sun frames contest “against Labor’s Kat Theophanous”. |
+| **Labor gap** | [labor-gap.md](labor-gap.md) updated: ~41 remaining; **do not** use Vic Labor Our Team alone (retirees still listed as “Candidate for …”). |
+
 ## 2026-08-01 — Slim home, open seats, build stamp, ops scan
 
 | Area | What shipped |
@@ -14,7 +22,7 @@ ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 | **Build version** | Each deploy stamps `YYYYMMDD.HHmm-aest+githash` (Australia/Melbourne) via `scripts/write-build-meta.mjs`; shown in **footer** + `/build-meta.json`. |
 | **Dates** | `/voting` key dates list derived from `election.yaml` (not hard-coded roll-close prose alone). |
 | **Ops** | `npm run scan:leads` incremental discovery (see [leads/README.md](leads/README.md)). |
-| **Labor gap** | Documented in [labor-gap.md](labor-gap.md) — ~43 sitting Labor MLAs still need individual recontest sources (no bulk wiki import). |
+| **Labor gap** | Documented in [labor-gap.md](labor-gap.md) — sitting Labor MLAs need individual recontest sources (no bulk wiki import). |
 
 ---
 
