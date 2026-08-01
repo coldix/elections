@@ -24,6 +24,10 @@ jobs:
       - name: Generate JSON + CSV exports
         run: npm run export
 
+      # Footer imports generated/build-meta.json; must match npm run build.
+      - name: Write build meta
+        run: node scripts/write-build-meta.mjs
+
       - name: Build site
         run: npx astro build --root site
 
