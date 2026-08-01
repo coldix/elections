@@ -35,7 +35,12 @@ const stats = [
 
 // Top parties by seats held (majors first in practice) — compact teaser only
 const coverageTeaser = coverage
-  .filter((c) => c.current.total > 0 || c.assembly_seats_covered > 0)
+  .filter(
+    (c) =>
+      c.current.total > 0 ||
+      c.assembly_seats_covered > 0 ||
+      c.council_regions_covered > 0
+  )
   .slice(0, 8);
 
 const retireByParty = data.parties
@@ -157,9 +162,10 @@ const schema = {
       <h2 id="coverage-h">Coverage snapshot</h2>
       <div class="notice caveat" role="note">
         <strong>Two different numbers.</strong>{" "}
-        <em>Seats held now</em> is today’s Parliament.{" "}
-        <em>2026 districts covered</em> is only seats where we have a sourced candidacy for
-        that party — not vote share, not a prediction.{" "}
+        <em>Seats held now</em> is today’s Parliament (Assembly + Council).{" "}
+        <em>2026 covered</em> is only contests where we have a sourced candidacy for that
+        party — Assembly districts (of 88) and Council regions (of 8) — not vote share, not
+        a prediction.{" "}
         {COVERAGE_CAVEAT}{" "}
         <a href="/methodology#coverage">How we count</a>.
       </div>
@@ -167,14 +173,15 @@ const schema = {
       <div class="table-scroll">
         <table class="data teaser">
           <caption class="visually-hidden">
-            Party seats held now versus sourced 2026 Assembly coverage
+            Party seats held now versus sourced 2026 Assembly and Council coverage
           </caption>
           <thead>
             <tr>
               <th scope="col">Party</th>
               <th scope="col" class="num">Seats held now</th>
-              <th scope="col" class="num">2026 Assembly districts covered</th>
-              <th scope="col" class="sub">Progress</th>
+              <th scope="col" class="num">2026 Assembly</th>
+              <th scope="col" class="num">2026 Council</th>
+              <th scope="col" class="sub">Assembly progress</th>
             </tr>
           </thead>
           <tbody>
@@ -191,10 +198,32 @@ const schema = {
                       {c.short_name}
                     </a>
                   </th>
-                  <td class="num mono">{c.current.total || "—"}</td>
+                  <td class="num mono held-now">
+                    {c.current.total ? (
+                      <>
+                        <span class="held-total">{c.current.total}</span>
+                        <span class="muted held-split">
+                          {" "}
+                          ({c.current.assembly}A · {c.current.council}C)
+                        </span>
+                      </>
+                    ) : (
+                      "—"
+                    )}
+                  </td>
                   <td class="num mono">
                     {c.assembly_seats_covered}
                     <span class="muted"> / {c.assembly_seats_total}</span>
+                  </td>
+                  <td class="num mono">
+                    {c.council_regions_covered}
+                    <span class="muted"> / {c.council_regions_total}</span>
+                    {c.council_candidates > c.council_regions_covered && (
+                      <span class="muted council-n">
+                        {" "}
+                        · {c.council_candidates} cand.
+                      </span>
+                    )}
                   </td>
                   <td>
                     <span class="bar" aria-hidden="true">
@@ -203,7 +232,9 @@ const schema = {
                         style={`width:${c.pct}%;--party-colour:${partyColour(c.party)}`}
                       />
                     </span>
-                    <span class="visually-hidden">{c.pct}%</span>
+                    <span class="visually-hidden">
+                      Assembly {c.pct}%; Council {c.council_pct}%
+                    </span>
                   </td>
                 </tr>
               ))
@@ -214,6 +245,7 @@ const schema = {
       <p class="btn-row">
         <a class="btn" href="/parties">Full party coverage</a>
         <a class="btn btn-ghost" href="/assembly">All 88 districts</a>
+        <a class="btn btn-ghost" href="/council">Council regions</a>
         <a class="btn btn-ghost" href="/polls">Poll average</a>
       </p>
     </section>
@@ -352,6 +384,14 @@ const schema = {
   }
   .teaser {
     margin-bottom: 1rem;
+  }
+  .held-split {
+    font-size: 0.82em;
+    font-weight: 400;
+  }
+  .council-n {
+    font-size: 0.82em;
+    font-weight: 400;
   }
   .party-cell {
     display: inline-flex;

@@ -170,8 +170,9 @@ export function representationFor(data) {
 }
 
 /**
- * Per-party Legislative Assembly coverage: how many of the 88 districts have a
- * live candidacy for that party, broken down by status.
+ * Per-party coverage for both houses: how many of the 88 Assembly districts
+ * and 8 Council regions have a live candidacy for that party, plus status
+ * breakdowns for Assembly (the denser chamber).
  *
  * Ordering: by seats currently held in the Parliament (both houses), largest
  * first, then alphabetically. That is an objective, externally verifiable fact
@@ -180,6 +181,7 @@ export function representationFor(data) {
  */
 export function coverageFor(data) {
   const totalDistricts = data.districts.length;
+  const totalRegions = data.regions.length;
   const rep = representationFor(data);
 
   const rows = data.parties.map((p) => {
@@ -188,6 +190,9 @@ export function coverageFor(data) {
     );
     const ended = data.candidates.filter(
       (c) => c.party === p.slug && c.chamber === "assembly" && ENDED_STATUSES.includes(c.status)
+    );
+    const councilLive = data.candidates.filter(
+      (c) => c.party === p.slug && c.chamber === "council" && LIVE_STATUSES.includes(c.status)
     );
     const byStatus = Object.fromEntries(
       ALL_STATUSES.map((s) => [
@@ -198,6 +203,7 @@ export function coverageFor(data) {
       ])
     );
     const seats = new Set(live.map((c) => c.contest));
+    const councilRegions = new Set(councilLive.map((c) => c.contest));
     return {
       party: p.slug,
       name: p.name,
@@ -206,9 +212,16 @@ export function coverageFor(data) {
       assembly_seats_covered: seats.size,
       assembly_seats_total: totalDistricts,
       pct: totalDistricts ? Math.round((seats.size / totalDistricts) * 100) : 0,
+      council_regions_covered: councilRegions.size,
+      council_regions_total: totalRegions,
+      council_pct: totalRegions
+        ? Math.round((councilRegions.size / totalRegions) * 100)
+        : 0,
+      council_candidates: councilLive.length,
       by_status: byStatus,
       ended_count: ended.length,
       covered_districts: [...seats].sort(),
+      covered_regions: [...councilRegions].sort(),
       // Seats held in the CURRENT parliament — context for the coverage
       // figure, and the basis for listing order.
       current: rep[p.slug] ?? { assembly: 0, council: 0, total: 0 },
