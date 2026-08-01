@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import VicRegionMap from "../../components/VicRegionMap.astro";
+import CouncilCoverageMatrix from "../../components/CouncilCoverageMatrix.astro";
 import { loadElection, LIVE_STATUSES } from "../../../../scripts/lib/data.mjs";
 import { partyColour } from "../../lib/site.mjs";
 
@@ -29,19 +30,31 @@ const totalSeats = regions.reduce((s, r) => s + (r.seats || 5), 0);
           The Council has <strong>{regions.length} multi-member regions</strong>, each electing
           <strong>5 members</strong> by proportional representation —
           <span class="mono">8 × 5 = {totalSeats}</span> seats. The same regions group the
-          Assembly’s 88 districts (<span class="mono">8 × 11</span>).
+          Assembly’s 88 districts (<span class="mono">8 × 11</span>). Coverage counts only
+          <em>sourced</em> 2026 candidacies — a party with many seats today can look empty
+          until each recontest is individually verified.
         </p>
         <p class="btn-row house-switch">
           <a class="btn btn-ghost btn-sm" href="/assembly">Legislative Assembly</a>
           <a class="btn btn-ghost btn-sm" href="/regions">Region atlas</a>
           <a class="btn btn-sm" href="/regions#video-regions">Watch: 8 regions</a>
         </p>
+        <nav class="jump" aria-label="Jump to section">
+          <a href="#coverage-matrix">Coverage grid</a>
+          <a href="#region-summary">Region summary</a>
+          <a href="#sitting-members">Sitting members</a>
+        </nav>
       </div>
       <div class="page-head-map">
         <VicRegionMap mode="council" compact />
       </div>
     </header>
 
+    <div id="coverage-matrix" class="matrix-anchor">
+      <CouncilCoverageMatrix data={data} />
+    </div>
+
+    <h2 id="region-summary" class="lh region-summary-h">Region summary</h2>
     <div class="table-scroll">
       <table class="data">
         <caption class="visually-hidden">Legislative Council regions</caption>
@@ -70,7 +83,7 @@ const totalSeats = regions.reduce((s, r) => s + (r.seats || 5), 0);
       </table>
     </div>
 
-    <h2 class="lh">Sitting members (40)</h2>
+    <h2 id="sitting-members" class="lh">Sitting members (40)</h2>
     <p class="muted section-note">
       Who holds each Council seat <strong>today</strong>, including mid-term replacements.
       Not a 2026 ticket — candidacies are recorded separately with sources.
@@ -146,11 +159,37 @@ const totalSeats = regions.reduce((s, r) => s + (r.seats || 5), 0);
     margin-bottom: 0.65rem;
   }
   .house-switch {
-    margin: 0;
+    margin: 0 0 0.85rem;
+  }
+  .jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+  }
+  .jump a {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+    background: var(--surface);
+    color: var(--ink-2);
+    text-decoration: none;
+  }
+  .jump a:hover {
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+  .matrix-anchor {
+    scroll-margin-top: 5rem;
   }
   .lh {
     margin-top: 2.25rem;
     margin-bottom: 0.5rem;
+    scroll-margin-top: 5rem;
+  }
+  .region-summary-h {
+    margin-top: 0.5rem;
   }
   .section-note {
     max-width: 48rem;
