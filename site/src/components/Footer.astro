@@ -64,17 +64,20 @@ const repoCommit = buildMeta?.git_sha_full
     </div>
 
     <div class="footer-bottom">
-      <div class="footer-meta">
-        <p class="licence muted">
+      <p class="footer-meta muted">
+        <span class="licence">
           Code MIT-licensed. Election data published under
           <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a> —
-          free to reuse with attribution to {ATTRIBUTION}. © {year} {SITE.publisher}.
-        </p>
-        <p class="build-stamp muted">
+          free to reuse with attribution to {ATTRIBUTION}.
+        </span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span class="copyright">© {year} {SITE.publisher}.</span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span class="build-stamp">
           <span class="build-label">Build</span>
           <a class="build-ver" href={repoCommit} rel="noopener" title="Git commit for this deploy">
-            {versionLabel}</a
-          >
+            {versionLabel}
+          </a>
           {
             builtAest && (
               <>
@@ -83,8 +86,8 @@ const repoCommit = buildMeta?.git_sha_full
               </>
             )
           }
-        </p>
-      </div>
+        </span>
+      </p>
 
       <a class="design-credit" href="https://oze.au" rel="noopener">
         <span class="design-credit-text">Website design</span>
@@ -133,30 +136,30 @@ const repoCommit = buildMeta?.git_sha_full
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem 1.5rem;
+    gap: 0.75rem 1.5rem;
   }
   .footer-meta {
-    flex: 1 1 16rem;
-    max-width: 44rem;
-    display: grid;
-    gap: 0.35rem;
-  }
-  .licence {
+    flex: 1 1 18rem;
     margin: 0;
-    font-size: 0.83rem;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    max-width: 52rem;
+  }
+  .meta-sep {
+    margin: 0 0.4rem;
+    opacity: 0.45;
   }
   .build-stamp {
-    margin: 0;
-    font-size: 0.75rem;
     font-variant-numeric: tabular-nums;
-    line-height: 1.4;
+    white-space: nowrap;
   }
   .build-label {
     font-weight: 620;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    margin-right: 0.35rem;
+    margin-right: 0.3rem;
     color: var(--ink-3);
+    font-size: 0.72rem;
   }
   .build-ver {
     font-family: var(--font-mono);
@@ -170,8 +173,13 @@ const repoCommit = buildMeta?.git_sha_full
     text-decoration: underline;
   }
   .build-sep {
-    margin: 0 0.35rem;
+    margin: 0 0.3rem;
     opacity: 0.5;
+  }
+  @media (max-width: 40rem) {
+    .build-stamp {
+      white-space: normal;
+    }
   }
   .design-credit {
     display: inline-flex;

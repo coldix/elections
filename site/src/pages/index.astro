@@ -100,14 +100,13 @@ const schema = {
 
       <p class="notice prelaunch">
         <strong>Live since July 2026.</strong> Coverage is incomplete by design: we only count
-        sourced records. A blank cell (especially for Labor) usually means
-        <em>no public recontest source yet</em>, not “no candidate.”{" "}
+        sourced records.{" "}
         <a href="/methodology#coverage">How we count</a>.
       </p>
     </div>
   </section>
 
-  <div class="wrap">
+  <div class="wrap home-body">
     <Countdown election={data.election} keyDates={data.election.dates} />
 
     <section class="section paths" aria-labelledby="paths-h">
@@ -154,7 +153,7 @@ const schema = {
       </p>
     </section>
 
-    <section id="coverage" class="section" style="padding-top:0" aria-labelledby="coverage-h">
+    <section id="coverage" class="section" aria-labelledby="coverage-h">
       <h2 id="coverage-h">Coverage snapshot</h2>
       <div class="notice caveat" role="note">
         <strong>Two different numbers.</strong>{" "}
@@ -219,7 +218,7 @@ const schema = {
       </p>
     </section>
 
-    <section class="section" style="padding-top:0" aria-labelledby="retire-h">
+    <section class="section" aria-labelledby="retire-h">
       <h2 id="retire-h">Open contests</h2>
       <p class="lede">
         <strong>{summary.retirements}</strong> sitting members have confirmed they will not
@@ -243,7 +242,7 @@ const schema = {
       </p>
     </section>
 
-    <section class="section video-home" style="padding-top:0" aria-labelledby="video-home-h">
+    <section class="section video-home" aria-labelledby="video-home-h">
       <h2 id="video-home-h">How this tracker works</h2>
       <p class="muted video-home-lead">
         Optional explainer. Figures in the video are a snapshot — live numbers on this site
@@ -256,7 +255,7 @@ const schema = {
       />
     </section>
 
-    <section class="section trust" style="padding-top:0" aria-labelledby="trust-h">
+    <section class="section trust" aria-labelledby="trust-h">
       <h2 id="trust-h">How to check our work</h2>
       <div class="trust-grid">
         <a class="card trust-card" href="/methodology">
@@ -305,12 +304,19 @@ const schema = {
     margin-top: 1.75rem;
     max-width: 48rem;
   }
-  .paths {
-    padding-top: 1.75rem;
+  /* Even vertical rhythm: countdown + sections share one spacing scale */
+  .home-body {
+    padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .home-body :global(.countdown) {
+    margin-top: clamp(1.5rem, 3vw, 2rem);
+  }
+  .home-body > .section {
+    padding-block: clamp(1.75rem, 3.5vw, 2.5rem);
   }
   .paths h2,
   .section > h2 {
-    margin: 0 0 1rem;
+    margin: 0 0 0.85rem;
     font-size: 1.25rem;
   }
   .path-grid {
