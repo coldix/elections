@@ -9,8 +9,9 @@ ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 | Area | What shipped |
 |---|---|
 | **Retirement** | **Gary Maas** (Labor, Narre Warren South) — will not recontest 2026; [own statement](https://www.garymaas.org.au/media-releases/statement-by-gary-maas-mp) 5 Jun 2026. |
-| **Labor recontest** | **Anthony Cianflone** (Pascoe Vale) — [Brunswick Voice](https://brunswickvoice.com.au/greens-lock-in-candidates-for-next-years-state-election/) “seeking re-election”. **Kat Theophanous** (Northcote) — Herald Sun frames contest “against Labor’s Kat Theophanous”. |
-| **Labor gap** | [labor-gap.md](labor-gap.md) updated: ~41 remaining; **do not** use Vic Labor Our Team alone (retirees still listed as “Candidate for …”). |
+| **Labor recontest** | **Anthony Cianflone** (Pascoe Vale) — Brunswick Voice “seeking re-election”. **Kat Theophanous** (Northcote) — Herald Sun “against Labor’s Kat Theophanous”. **Christine Couzens** (Geelong) + **Ella George** (Lara) — Geelong Times “incumbents … will also contest” / Pobjoy “challenging Labor MP Christine Couzens”. |
+| **Council** | **Bev McArthur** (Liberal, Western Victoria) — Geelong Times: again top of Liberal upper-house ticket. |
+| **Labor gap** | [labor-gap.md](labor-gap.md): **~38** remaining; Vic Labor Our Team alone is **not** a bulk recontest source. |
 
 ## 2026-08-01 — Slim home, open seats, build stamp, ops scan
 

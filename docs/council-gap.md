@@ -4,7 +4,7 @@
 Assembly-style rule: do not treat a sitting member as a 2026 candidate without an
 individual dated source. Region pages: `/regions/<slug>`.
 
-**Sitting MLCs with no 2026 candidacy record:** ~28 of 40 (re-count after 2026-07-31 scrape)
+**Sitting MLCs with no 2026 candidacy record:** ~27 of 40 (re-count after McArthur 2026-08-01)
 **Confirmed MLC retirements (in retirements.yaml):** includes Shing 2026-07-30
 **Council candidacy files:** expanded 2026-07-31 (Greens region leads + Tyrrell + Liberal Brooks/Boffa)
 
@@ -39,7 +39,6 @@ individual dated source. Region pages: `/regions/<slug>`.
 | western-metropolitan | labor | Ingrid Stitt |
 | western-metropolitan | labor | Lizzie Blandthorn |
 | western-metropolitan | liberal | Trung Luu |
-| western-victoria | liberal | Bev McArthur |
 | western-victoria | labor | Jacinta Ermacora |
 
 ## How to close

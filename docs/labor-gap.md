@@ -10,8 +10,8 @@ replacement) is standing in 2026. Wikipedia “incumbent” columns are **not** 
 |---|---|
 | Labor-held Assembly seats | 54 |
 | Labor MLA retirements (open seats) | 9 (incl. Mill Park / D’Ambrosio, Narre Warren South / Maas) |
-| Labor-held seats with sourced Labor 2026 candidacy | 5 |
-| **Gap — sitting Labor MLA, no sourced recontest** | **40** |
+| Labor-held seats with sourced Labor 2026 candidacy | 7 |
+| **Gap — sitting Labor MLA, no sourced recontest** | **38** |
 
 A blank Labor cell is usually **missing public recontest source**, not “Labor not standing.”
 

@@ -1,0 +1,25 @@
+candidate:
+  name: Ella George
+  party: labor
+  contest: lara
+  chamber: assembly
+  status: announced
+  occupation: "Member of Parliament"
+  background: "MLA for Lara"
+  history:
+    - status: announced
+      date: 2026-06-04
+      note: >-
+        Sitting Labor MLA; local media states Geelong-region Labor incumbents
+        including Ella George in Lara will contest the 2026 state election.
+      source:
+        url: https://timesnewsgroup.com.au/geelongtimes/news/the-election-field-is-taking-shape-the-liberal-ticket-isnt/
+        publisher: Geelong Times (Times News Group)
+        title: The election field is taking shape – the Liberal ticket isn't
+        published: 2026-06-04
+        accessed: 2026-08-01
+  links:
+    - url: https://www.viclabor.org.au/our-team/ella-george
+      kind: party-profile
+    - url: https://www.parliament.vic.gov.au/members/ella-george/
+      kind: parliament

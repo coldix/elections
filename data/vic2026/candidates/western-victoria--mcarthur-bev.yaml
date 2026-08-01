@@ -1,0 +1,24 @@
+candidate:
+  name: Bev McArthur
+  party: liberal
+  contest: western-victoria
+  chamber: council
+  status: announced
+  occupation: "Member of Parliament"
+  background: "MLC for Western Victoria; Liberal lead candidate on the region ticket"
+  history:
+    - status: announced
+      date: 2026-06-04
+      note: >-
+        Sitting Liberal MLC; local media reports Liberals finalised Western
+        Victoria upper-house ticket with incumbent Bev McArthur again securing
+        the top position for the 2026 election.
+      source:
+        url: https://timesnewsgroup.com.au/geelongtimes/news/the-election-field-is-taking-shape-the-liberal-ticket-isnt/
+        publisher: Geelong Times (Times News Group)
+        title: The election field is taking shape – the Liberal ticket isn't
+        published: 2026-06-04
+        accessed: 2026-08-01
+  links:
+    - url: https://www.parliament.vic.gov.au/members/bev-mcarthur/
+      kind: parliament

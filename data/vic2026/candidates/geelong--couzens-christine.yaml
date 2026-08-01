@@ -1,0 +1,36 @@
+candidate:
+  name: Christine Couzens
+  party: labor
+  contest: geelong
+  chamber: assembly
+  status: announced
+  occupation: "Member of Parliament"
+  background: "MLA for Geelong since 2014; Parliamentary Secretary for First Peoples"
+  history:
+    - status: announced
+      date: 2026-06-04
+      note: >-
+        Sitting Labor MLA; local media states Geelong-region Labor incumbents
+        including Couzens will contest the 2026 state election.
+      source:
+        url: https://timesnewsgroup.com.au/geelongtimes/news/the-election-field-is-taking-shape-the-liberal-ticket-isnt/
+        publisher: Geelong Times (Times News Group)
+        title: The election field is taking shape – the Liberal ticket isn't
+        published: 2026-06-04
+        accessed: 2026-08-01
+    - status: announced
+      date: 2026-07-07
+      note: >-
+        Liberal preselection coverage frames Andy Pobjoy as challenging Labor
+        MP Christine Couzens at November's state election.
+      source:
+        url: https://timesnewsgroup.com.au/geelongtimes/news/liberals-finally-name-geelong-candidate/
+        publisher: Geelong Times (Times News Group)
+        title: Liberals pick well-known name to contest Geelong seat
+        published: 2026-07-07
+        accessed: 2026-08-01
+  links:
+    - url: https://www.viclabor.org.au/our-team/chris-couzens
+      kind: party-profile
+    - url: https://www.parliament.vic.gov.au/members/chris-couzens/
+      kind: parliament

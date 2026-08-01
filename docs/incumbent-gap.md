@@ -7,7 +7,7 @@ Generated for the verification backlog. Sitting MLAs who are **not** in
 Do **not** record these with Wikipedia blanket footnotes. Each needs an
 individual dated source (party page, local paper, social post, etc.).
 
-**Count:** 42 seats (as of 2026-08-01 — Maas retired; Cianflone + Theophanous encoded)
+**Count:** 40 seats (as of 2026-08-01 — also Couzens + George encoded)
 
 | Party | Seat | Incumbent |
 |---|---|---|
@@ -28,14 +28,12 @@ individual dated source (party page, local paper, social post, etc.).
 | labor | [Eureka](https://electiontracker.au/districts/eureka) (`eureka`) | Michaela Settle |
 | labor | [Footscray](https://electiontracker.au/districts/footscray) (`footscray`) | Katie Hall |
 | labor | [Frankston](https://electiontracker.au/districts/frankston) (`frankston`) | Paul Edbrooke |
-| labor | [Geelong](https://electiontracker.au/districts/geelong) (`geelong`) | Christine Couzens |
 | labor | [Glen Waverley](https://electiontracker.au/districts/glen-waverley) (`glen-waverley`) | John Mullahy |
 | labor | [Greenvale](https://electiontracker.au/districts/greenvale) (`greenvale`) | Iwan Walters |
 | labor | [Hastings](https://electiontracker.au/districts/hastings) (`hastings`) | Paul Mercurio |
 | labor | [Ivanhoe](https://electiontracker.au/districts/ivanhoe) (`ivanhoe`) | Anthony Carbines |
 | labor | [Kalkallo](https://electiontracker.au/districts/kalkallo) (`kalkallo`) | Ros Spence |
 | labor | [Kororoit](https://electiontracker.au/districts/kororoit) (`kororoit`) | Luba Grigorovitch |
-| labor | [Lara](https://electiontracker.au/districts/lara) (`lara`) | Ella George |
 | labor | [Laverton](https://electiontracker.au/districts/laverton) (`laverton`) | Sarah Connolly |
 | labor | [Monbulk](https://electiontracker.au/districts/monbulk) (`monbulk`) | Daniela De Martino |
 | labor | [Mordialloc](https://electiontracker.au/districts/mordialloc) (`mordialloc`) | Tim Richardson |
