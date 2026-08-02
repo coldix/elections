@@ -1,0 +1,37 @@
+# Australian Labor Party (Victorian Branch) — Climate & Biodiversity
+policy:
+  party: labor
+  issue: climate-biodiversity
+  headline: Climate Change Strategy 2026–30
+  claims:
+    - id: labor-climate-strategy
+      statement: >-
+        Victoria’s Climate Change Strategy 2026–30 “focuses on what matters to
+        Victorians and is backed by over $8.5 billion. This builds on the almost
+        $2 billion that was announced with the Climate Change Strategy 2021–25.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Not specified"
+        amount_aud: 8500000000
+        amount_display: "over $8.5 billion"
+        timeframe: "Climate Change Strategy 2026–30"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.climatechange.vic.gov.au/victorias-climate-change-strategy
+        publisher: Victorian Government (climatechange.vic.gov.au)
+        title: Victoria's Climate Change Strategy
+        published: 2026-01-22
+        accessed: 2026-08-02
+    - id: labor-climate-energy-quote
+      statement: >-
+        Energy Minister messaging in Budget 2026/27 cost-of-living release: “Cheaper,
+        cleaner power isn’t just good for the environment – it’s good for the
+        household budget.”
+      kind: position
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
+        publisher: Premier of Victoria
+        title: Labor Delivers Real Help To Ease The Cost Of Living
+        published: 2026-05-05
+        accessed: 2026-08-02

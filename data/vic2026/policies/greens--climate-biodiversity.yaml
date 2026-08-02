@@ -1,0 +1,47 @@
+# Victorian Greens — Climate & Biodiversity
+policy:
+  party: greens
+  issue: climate-biodiversity
+  headline: Climate resilience funds; ban new coal and gas
+  claims:
+    - id: greens-climate-ban-new
+      statement: >-
+        “The Greens are also calling for an immediate ban on all new coal and gas
+        projects.”
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-call-urgent-implementation-climate-resilience-inquiry-report-after
+        publisher: Australian Greens Victoria
+        title: Greens call for urgent implementation of climate resilience inquiry report
+        published: 2026-01-16
+        accessed: 2026-08-02
+    - id: greens-climate-fund
+      statement: >-
+        “Victoria urgently needs a dedicated fund to support communities with local,
+        practical solutions, whether that means restoring coastal wetlands or building
+        energy efficient homes. Big coal and gas companies should be forced to pay
+        into this fund – they cannot continue to drive up emissions, reap huge
+        profits, and take no responsibility for the consequences.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: mixed
+        pbo_status: uncosted
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-call-urgent-implementation-climate-resilience-inquiry-report-after
+        publisher: Australian Greens Victoria
+        title: Greens call for urgent implementation of climate resilience inquiry report
+        published: 2026-01-16
+        accessed: 2026-08-02
+    - id: greens-climate-labor-approvals
+      statement: >-
+        “This Labor government has waved through five new coal and gas approvals in
+        the last nine months while residents in my community are forced to plan for
+        the worst and are fearing for their safety.”
+      kind: opposition_to
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-call-urgent-implementation-climate-resilience-inquiry-report-after
+        publisher: Australian Greens Victoria
+        title: Greens call for urgent implementation of climate resilience inquiry report
+        published: 2026-01-16
+        accessed: 2026-08-02

@@ -1,0 +1,21 @@
+# National Party of Australia - Victoria — Aboriginal Affairs
+policy:
+  party: nationals
+  issue: aboriginal-affairs
+  headline: Coalition scrap treaty commitment
+  claims:
+    - id: nationals-treaty-scrap
+      statement: >-
+        As part of the Liberal–Nationals opposition plan stated in Parliament:
+        “scrap Labor’s divisive treaty, saving $1 billion.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: unspecified
+        pbo_status: uncosted
+      source:
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
+        publisher: Parliament of Victoria (Hansard)
+        title: Appropriation (2026–2027) Bill 2026 — 12 May
+        published: 2026-05-12
+        accessed: 2026-08-02

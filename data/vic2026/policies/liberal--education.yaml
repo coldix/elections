@@ -1,0 +1,22 @@
+# Liberal Party of Australia – Victorian Division — Education
+policy:
+  party: liberal
+  issue: education
+  headline: Scrap payroll tax on schools
+  claims:
+    - id: liberal-edu-payroll-tax
+      statement: >-
+        Opposition economic commitments include “to scrap the payroll tax on GPs and
+        all schools,” framed as reducing costs for families with children in
+        non-government schools among other tax relief measures.
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
+        publisher: Parliament of Victoria (Hansard)
+        title: Appropriation (2026–2027) Bill 2026 — 12 May
+        published: 2026-05-12
+        accessed: 2026-08-02

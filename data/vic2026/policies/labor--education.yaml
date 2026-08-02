@@ -1,0 +1,74 @@
+# Australian Labor Party (Victorian Branch) — Education
+policy:
+  party: labor
+  issue: education
+  headline: Free Kinder, Free TAFE, $5.5bn education investment
+  claims:
+    - id: labor-edu-5-5b
+      statement: >-
+        “That’s why the Victorian Budget 2026/27 delivers an investment of over
+        $5.5 billion in our children’s future. Labor is delivering better schools,
+        more kinders and Free TAFE for more Victorians – no matter where they live.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Not specified"
+        amount_aud: 5500000000
+        amount_display: "over $5.5 billion"
+        timeframe: "Budget 2026/27"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-our-childrens-future
+        publisher: Premier of Victoria
+        title: Labor Delivers For Our Children's Future
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-edu-free-kinder
+      statement: >-
+        “Victoria has one of the highest rates of kinder enrolment in Australia, and
+        Free Kinder is saving families up to $2,700 a year per child on fees.” Last
+        year “we invested an additional $846 million on Free Kinder for the next 3
+        years, bringing our total spend to over $2.5 billion.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_display: "over $2.5 billion total Free Kinder (government figure)"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.budget.vic.gov.au/realising-potential-our-kids
+        publisher: Victorian Budget 2026/27
+        title: Realising the potential of our kids
+        published: 2026-05-02
+        accessed: 2026-08-02
+    - id: labor-edu-free-tafe
+      statement: >-
+        “At least 70 per cent of vocational education and training funding will go to
+        TAFE, including Free TAFE which has already saved more than 245,000 students
+        an average of more than $3,300 each. Labor will always back Free TAFE. That’s
+        why we’ve passed the Free TAFE Guarantee – protecting it for the future.”
+      kind: pledge
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-our-childrens-future
+        publisher: Premier of Victoria
+        title: Labor Delivers For Our Children's Future
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-edu-disability
+      statement: >-
+        “More than $2.1 billion continues Victoria’s nation-leading Disability
+        Inclusion reforms – helping students with disability get the support they need
+        in government schools.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_aud: 2100000000
+        amount_display: "more than $2.1 billion"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-our-childrens-future
+        publisher: Premier of Victoria
+        title: Labor Delivers For Our Children's Future
+        published: 2026-05-05
+        accessed: 2026-08-02

@@ -1,0 +1,21 @@
+# National Party of Australia - Victoria — Education
+policy:
+  party: nationals
+  issue: education
+  headline: Coalition scrap payroll tax on schools
+  claims:
+    - id: nationals-edu-payroll-tax
+      statement: >-
+        As part of the Liberal–Nationals opposition economic plan stated in
+        Parliament: scrap “the payroll tax on GPs and all schools.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
+        publisher: Parliament of Victoria (Hansard)
+        title: Appropriation (2026–2027) Bill 2026 — 12 May
+        published: 2026-05-12
+        accessed: 2026-08-02

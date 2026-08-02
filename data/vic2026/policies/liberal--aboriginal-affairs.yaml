@@ -1,0 +1,21 @@
+# Liberal Party of Australia – Victorian Division — Aboriginal Affairs
+policy:
+  party: liberal
+  issue: aboriginal-affairs
+  headline: Scrap Victorian treaty
+  claims:
+    - id: liberal-treaty-scrap
+      statement: >-
+        Opposition economic plan commitments in Hansard include “our commitment to
+        scrap Labor’s divisive treaty, saving $1 billion.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: unspecified
+        pbo_status: uncosted
+      source:
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
+        publisher: Parliament of Victoria (Hansard)
+        title: Appropriation (2026–2027) Bill 2026 — 12 May
+        published: 2026-05-12
+        accessed: 2026-08-02

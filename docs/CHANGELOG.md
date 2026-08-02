@@ -4,6 +4,17 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-08-02 — Policy matrix wave 4 (education, climate, forests, treaty, integrity)
+
+| Area | What shipped |
+|---|---|
+| **Education** | Labor Free Kinder/TAFE/$5.5bn; Coalition scrap payroll tax on schools. |
+| **Climate** | Labor Climate Strategy $8.5bn; Greens ban new coal/gas + resilience fund. |
+| **Environment** | Greens native forest loophole-closure bill. |
+| **Aboriginal affairs** | Coalition scrap treaty (Hansard). |
+| **Corruption** | Coalition $15bn capital-works “corruption payments” claim (Hansard). |
+| **Totals** | **34/70** cells · **79** claims. Still empty: One Nation column; immigration; gender-social. |
+
 ## 2026-08-02 — Policy matrix wave 3 (crime, infrastructure)
 
 | Area | What shipped |

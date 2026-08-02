@@ -1,0 +1,22 @@
+# Liberal Party of Australia – Victorian Division — Corruption
+policy:
+  party: liberal
+  issue: corruption
+  headline: Eliminate alleged Big Build corruption payments
+  claims:
+    - id: liberal-corruption-15b
+      statement: >-
+        Opposition economic plan commitments include “to eliminate the $15 billion
+        and counting of corruption payments that are baked into spending on the
+        government’s capital spend program.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: unspecified
+        pbo_status: uncosted
+      source:
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
+        publisher: Parliament of Victoria (Hansard)
+        title: Appropriation (2026–2027) Bill 2026 — 12 May
+        published: 2026-05-12
+        accessed: 2026-08-02
