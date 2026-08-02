@@ -1,0 +1,41 @@
+# The Nationals Victoria — Firearms Policy
+policy:
+  party: nationals
+  issue: firearms-policy
+  headline: Target criminal access while protecting licensed farmers, hunters and sporting shooters
+  claims:
+  - id: nationals-firearms-no-cap
+    statement: Oppose numerical caps on firearms held by compliant licence holders, arguing that caps would burden farmers, hunters, sporting shooters and clubs without addressing criminal access.
+    kind: opposition_to
+    source:
+      url: https://vic.nationals.org.au/media-releases/emma-kealy-mp-kealy-welcomes-common-sense-reaction-on-firearm-caps/
+      publisher: The Nationals Victoria
+      title: Kealy welcomes common sense reaction on firearm caps
+      published: '2026-06-01'
+      accessed: '2026-08-02'
+  - id: nationals-firearms-evidence
+    statement: Require evidence-led reform and genuine consultation with licensed owners and shooting organisations rather than rushed or blanket restrictions.
+    kind: position
+    source:
+      url: https://vic.nationals.org.au/media-releases/melina-bath-mp-petition-secures-parliamentary-debate-on-victorian-firearm-laws/
+      publisher: The Nationals Victoria
+      title: Petition secures parliamentary debate on Victorian firearm laws
+      published: '2026-02-23'
+      accessed: '2026-08-02'
+  - id: nationals-firearms-trafficking
+    statement: Support tougher penalties and intelligence-led enforcement against firearms trafficking, theft, illegal possession and extremist or criminal access.
+    kind: position
+    source:
+      url: https://vic.nationals.org.au/media-releases/melina-bath-mp-petition-secures-parliamentary-debate-on-victorian-firearm-laws/
+      publisher: The Nationals Victoria
+      title: Petition secures parliamentary debate on Victorian firearm laws
+      published: '2026-02-23'
+      accessed: '2026-08-02'
+  - id: nationals-firearms-register
+    statement: Support a national firearms register and citizenship limits for firearms licences while opposing broader restrictions considered disproportionate.
+    kind: position
+    source:
+      url: https://vic.nationals.org.au/support-law-abiding-gun-users/
+      publisher: The Nationals Victoria
+      title: Fighting for law-abiding gun users
+      accessed: '2026-08-02'
