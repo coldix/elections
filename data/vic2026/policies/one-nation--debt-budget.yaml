@@ -12,7 +12,6 @@ policy:
       kind: pledge
       fiscal:
         taxpayer_label: Not specified
-        financing: savings
         pbo_status: uncosted
       source:
         url: https://vic.onenation.org.au/economic-recovery
