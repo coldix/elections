@@ -21,11 +21,10 @@ const files = [
   ["polls.json", "polls.csv", "Sourced statewide primary-vote polls (eligible and excluded).", null],
   ["poll-average.json", null, "Weighted primary-vote average with uncertainty bands (not a forecast).", null],
   ["issues.json", null, "Policy issue taxonomy and jurisdiction notes for the comparison matrix.", null],
+  ["coalitions.json", null, "Reversible display relationships for combined Coalition matrix columns; registered parties remain separate.", null],
   ["policies.json", "policies.csv", "Sourced party policy claims by issue (sparse ledger; no ratings).", null],
 ];
 
-// Dataset schema here as well as the homepage: this is the page a researcher or
-// crawler is most likely to land on when looking for the files themselves.
 const schema = {
   "@type": "Dataset",
   name: "Victorian state election 2026 candidate ledger",
@@ -33,7 +32,8 @@ const schema = {
     "Individually sourced records of announced, endorsed, formally nominated, withdrawn " +
     "and disendorsed candidates for the 2026 Victorian state election, plus districts, " +
     "Legislative Council members, parties, confirmed retirements, a sourced statewide " +
-    "poll ledger with a transparent primary-vote average, and a policy issues / claims ledger.",
+    "poll ledger with a transparent primary-vote average, and a policy issues, Coalition " +
+    "display relationships and party-claims ledger.",
   url: `${SITE.url}/data`,
   license: "https://creativecommons.org/licenses/by/4.0/",
   isAccessibleForFree: true,
@@ -43,7 +43,7 @@ const schema = {
   keywords: [
     "Australian elections", "Victorian state election", "2026", "candidates",
     "open data", "electoral districts", "political parties", "opinion polls",
-    "policy comparison", "party policies",
+    "policy comparison", "party policies", "Coalition policies",
   ],
   distribution: [
     ...files
@@ -169,6 +169,11 @@ const schema = {
         Source objects always carry <code>url</code>, <code>publisher</code> and{" "}
         <code>accessed</code>; <code>title</code>, <code>published</code> and{" "}
         <code>archive_url</code> appear when known.
+      </li>
+      <li>
+        <code>coalitions.json</code> affects presentation only. Liberal and Nationals
+        remain separate registered parties in <code>parties.json</code>, separate policy
+        records in <code>policies.json</code>, and separate rows in <code>policies.csv</code>.
       </li>
       <li>
         Dates are ISO <code>YYYY-MM-DD</code>. Slugs are stable identifiers — names are for
