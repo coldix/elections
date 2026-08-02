@@ -11,7 +11,7 @@ const schema = {
   "@type": "WebPage",
   name: "Policy comparison matrix — Victorian state election 2026",
   description:
-    "Side-by-side, sourced party positions on key issues for the 2026 Victorian state election, with links to readable issue-by-issue comparisons and a reversible Liberal–Nationals Coalition view.",
+    "Side-by-side, sourced party positions on key issues for the 2026 Victorian state election, with links to readable issue-by-issue comparisons, whole-party profiles and a reversible Liberal–Nationals Coalition view.",
   url: `${SITE.url}/parties/matrix`,
   isPartOf: { "@id": `${SITE.url}/#website` },
 };
@@ -19,7 +19,7 @@ const schema = {
 
 <Base
   title="Policy matrix"
-  description="Compare Greens, Labor, Liberal–Nationals and One Nation positions, or open any issue for a dedicated sourced comparison page."
+  description="Compare Greens, Labor, Liberal–Nationals and One Nation positions, or open any issue or party for a dedicated sourced policy profile."
   schema={schema}
 >
   <div class="wrap wrap-wide section">
@@ -34,6 +34,7 @@ const schema = {
       </p>
       <p class="btn-row">
         <a class="btn" href="/policies">Browse 15 policy pages</a>
+        <a class="btn" href="/parties/policies">Party policy profiles</a>
         <a class="btn btn-ghost btn-sm" href="/parties/issues">Jurisdiction guide</a>
         <a class="btn btn-ghost btn-sm" href="/parties">All parties</a>
         <a class="btn btn-ghost btn-sm" href="/methodology#policy-matrix">How we record positions</a>
