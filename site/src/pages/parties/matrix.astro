@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import PolicyMatrix from "../../components/PolicyMatrix.astro";
+import PolicyIssueLinkStyles from "../../components/PolicyIssueLinkStyles.astro";
 import { matrixFor } from "../../../../scripts/lib/policies.mjs";
 import { SITE } from "../../lib/site.mjs";
 
@@ -42,6 +43,7 @@ const schema = {
       </p>
     </header>
 
+    <PolicyIssueLinkStyles />
     <PolicyMatrix matrix={matrix} />
   </div>
 </Base>
