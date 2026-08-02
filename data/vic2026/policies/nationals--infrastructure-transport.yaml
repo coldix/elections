@@ -1,43 +1,39 @@
-# National Party of Australia - Victoria — Infrastructure & Transport
+# The Nationals Victoria — Infrastructure & Transport
 policy:
   party: nationals
   issue: infrastructure-transport
-  headline: $5bn roads plan; Fair Share Guarantee for regions
+  headline: $5bn roads program, regional Fair Share Guarantee and a pause on the SRL
   claims:
-    - id: nationals-infra-obrien-roads
-      statement: >-
-        Nationals Leader and Shadow Minister for Roads and Road Safety, Danny
-        O’Brien, said the roads plan forms a broader commitment to regional Victoria
-        through the Fair Share Guarantee. “Roads have been falling apart all across
-        Victoria and Victorians are fed-up with half-hearted patch up jobs that
-        quickly fall apart.” “Under Labor, our regions receive less than 12 per cent
-        of infrastructure spending despite making up 25 per cent of the state’s
-        population.” He said 25 per cent of the state’s infrastructure spending will
-        be directed to the regions.
-      kind: pledge
-      source:
-        url: https://www.abc.net.au/news/2026-07-13/vic-road-maintenance-funding-liberal-national-election-promise/106906820
-        publisher: ABC News
-        title: Victorian Liberals and Nationals promise multi-billion dollar road repair
-        published: 2026-07-13
-        accessed: 2026-08-02
-    - id: nationals-infra-5b
-      statement: >-
-        The Victorian Coalition will invest $5 billion to repair and rebuild the
-        state’s roads if elected in November, including a plan to eliminate one
-        million potholes and a $5 billion investment in road maintenance over four
-        years.
-      kind: costed_measure
-      fiscal:
-        taxpayer_label: "Upfront capital"
-        amount_aud: 5000000000
-        amount_display: "$5 billion"
-        timeframe: "over four years"
-        financing: taxpayer
-        pbo_status: uncosted
-      source:
-        url: https://www.abc.net.au/news/2026-07-13/vic-road-maintenance-funding-liberal-national-election-promise/106906820
-        publisher: ABC News
-        title: Victorian Liberals and Nationals promise multi-billion dollar road repair
-        published: 2026-07-13
-        accessed: 2026-08-02
+  - id: nationals-infra-roads
+    statement: Invest $5 billion over four years in road maintenance, establish Better Roads Victoria and target one million potholes.
+    kind: costed_measure
+    fiscal:
+      taxpayer_label: Upfront capital
+      amount_aud: 5000000000
+      amount_display: $5 billion
+      timeframe: over four years
+      financing: taxpayer
+      pbo_status: uncosted
+    source:
+      url: https://www.abc.net.au/news/2026-07-13/vic-road-maintenance-funding-liberal-national-election-promise/106906820
+      publisher: ABC News
+      title: Victorian Liberals and Nationals promise multi-billion dollar road repair
+      published: '2026-07-13'
+      accessed: '2026-08-02'
+  - id: nationals-infra-fair-share
+    statement: Guarantee that 25 per cent of all new Victorian government infrastructure expenditure is allocated to regional Victoria.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/media-releases/2026-05-22-a-fair-share-for-regional-victorians-guaranteed?topic=leader-of-the-liberal-party%2Ctreasurer
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: A fair share for regional Victorians — guaranteed
+      published: '2026-05-22'
+      accessed: '2026-08-02'
+  - id: nationals-infra-srl
+    statement: Pause the Suburban Rail Loop as part of the Coalition’s reprioritisation of infrastructure and budget spending.
+    kind: pledge
+    source:
+      url: https://vic.nationals.org.au/policy/
+      publisher: The Nationals Victoria
+      title: Policies
+      accessed: '2026-08-02'

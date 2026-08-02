@@ -1,22 +1,42 @@
-# Liberal Party of Australia – Victorian Division — Corruption
+# Liberal Victoria — Corruption and Integrity
 policy:
   party: liberal
   issue: corruption
-  headline: Eliminate alleged Big Build corruption payments
+  headline: Royal commission, stronger IBAC powers and a construction-sector watchdog
   claims:
-    - id: liberal-corruption-15b
-      statement: >-
-        Opposition economic plan commitments include “to eliminate the $15 billion
-        and counting of corruption payments that are baked into spending on the
-        government’s capital spend program.”
-      kind: pledge
-      fiscal:
-        taxpayer_label: "Not specified"
-        financing: unspecified
-        pbo_status: uncosted
-      source:
-        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
-        publisher: Parliament of Victoria (Hansard)
-        title: Appropriation (2026–2027) Bill 2026 — 12 May
-        published: 2026-05-12
-        accessed: 2026-08-02
+  - id: liberal-corruption-royal-commission
+    statement: Establish a royal commission into alleged CFMEU misconduct on Victorian government major projects, including the flow of public money to organised crime and political organisations.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2026-02-15-strong-action-to-stamp-out-labors-major-project-misconduct-media-release-and-attachment
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Strong action to stamp out major project misconduct
+      published: '2026-02-14'
+      accessed: '2026-08-02'
+  - id: liberal-corruption-ibac-money
+    statement: Give IBAC stronger ‘follow the money’ powers to investigate public funds paid through third parties and pursue misappropriated taxpayer money.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2026-02-17-new-powers-to-chase-down-every-cent-lost-to-labors-major-project-corruption
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: New powers to chase down every cent lost to major project corruption
+      published: '2026-02-17'
+      accessed: '2026-08-02'
+  - id: liberal-corruption-watchdog
+    statement: Create Construction Enforcement Victoria and apply mandatory background checks designed to exclude organised-crime and outlaw-motorcycle-gang links from government-funded worksites.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2026-03-02-liberals-and-nationals-unveil-sweeping-anti-corruption-plan
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Liberals and Nationals unveil sweeping anti-corruption plan
+      published: '2026-03-02'
+      accessed: '2026-08-02'
+  - id: liberal-corruption-racketeering
+    statement: Introduce anti-racketeering measures aimed at crime bosses and organised criminal networks operating around major projects.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2026-03-02-liberals-and-nationals-unveil-sweeping-anti-corruption-plan
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Liberals and Nationals unveil sweeping anti-corruption plan
+      published: '2026-03-02'
+      accessed: '2026-08-02'

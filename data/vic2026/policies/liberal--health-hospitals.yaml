@@ -1,38 +1,39 @@
-# Liberal Party of Australia – Victorian Division — Health & Hospitals
+# Liberal Victoria — Health & Hospitals
 policy:
   party: liberal
   issue: health-hospitals
-  headline: West Gippsland hospital $850m commitment
+  headline: $850m West Gippsland hospital, free MenB vaccination and repeal of the GP tax
   claims:
-    - id: liberal-health-west-gippsland
-      statement: >-
-        “West Gippsland is a rapidly growing region, but under Labor basic
-        infrastructure needs are not being met or keeping pace.” Opposition Leader
-        Jess Wilson said a Coalition government would invest $850 million to build a
-        new West Gippsland hospital, including 230 beds and treatment spaces, an
-        emergency department with 33 treatment spaces, 60 residential care beds, and
-        accommodation for healthcare workers.
-      kind: costed_measure
-      fiscal:
-        taxpayer_label: "Upfront capital"
-        amount_aud: 850000000
-        amount_display: "$850 million"
-        financing: taxpayer
-        pbo_status: uncosted
-      source:
-        url: https://www.abc.net.au/news/2026-07-23/liberals-nationals-election-promise-new-west-gippsland-hospital/106944170
-        publisher: ABC News
-        title: Victorian opposition promises $850 million for new West Gippsland hospital
-        published: 2026-07-23
-        accessed: 2026-08-02
-    - id: liberal-health-priority
-      statement: >-
-        Ms Wilson said ensuring Victorians have access to quality healthcare is “a
-        top priority for my team.”
-      kind: position
-      source:
-        url: https://www.abc.net.au/news/2026-07-23/liberals-nationals-election-promise-new-west-gippsland-hospital/106944170
-        publisher: ABC News
-        title: Victorian opposition promises $850 million for new West Gippsland hospital
-        published: 2026-07-23
-        accessed: 2026-08-02
+  - id: liberal-health-west-gippsland
+    statement: Invest $850 million in a new West Gippsland hospital with 230 beds and treatment spaces, a larger emergency department, residential aged-care beds and healthcare-worker accommodation.
+    kind: costed_measure
+    fiscal:
+      taxpayer_label: Upfront capital
+      amount_aud: 850000000
+      amount_display: $850 million
+      financing: taxpayer
+      pbo_status: uncosted
+    source:
+      url: https://www.abc.net.au/news/2026-07-23/liberals-nationals-election-promise-new-west-gippsland-hospital/106944170
+      publisher: ABC News
+      title: Victorian opposition promises $850 million for new West Gippsland hospital
+      published: '2026-07-23'
+      accessed: '2026-08-02'
+  - id: liberal-health-menb
+    statement: Fund meningococcal B vaccination for infants and Year 10 students, with catch-up programs for young children and people aged 15 to 19.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2025-12-08-a-new-plan-to-better-protect-young-victorians-against-meningococcal-b
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: A new plan to better protect young Victorians against meningococcal B
+      published: '2025-12-08'
+      accessed: '2026-08-02'
+  - id: liberal-health-gp-tax
+    statement: Abolish the state payroll-tax treatment described by the Coalition as a health or GP tax.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/media-releases/2026-05-12-labor-scraps-promised-20-million-industry-development-fund?topic=leader-of-the-liberal-party%2Ctreasurer%2Cindustry
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Liberals and Nationals comprehensive 10-year economic plan
+      published: '2026-05-12'
+      accessed: '2026-08-02'

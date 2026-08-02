@@ -1,19 +1,24 @@
-# National Party — Immigration (federal Coalition policy)
+# Federal Coalition policy — Immigration
 policy:
   party: nationals
   issue: immigration
-  headline: "Federal policy — Coalition migration linked to housing"
+  headline: Federal Coalition policy — cap migration by housing supply and tighten visa standards
   claims:
-    - id: nationals-imm-housing-cap
-      statement: >-
-        [Federal Coalition policy] The Coalition will “directly link Australia’s
-        temporary immigration intake to the number of new homes built around the
-        country, using housing completion figures as a hard ceiling for overseas
-        arrivals,” with Taylor stating migration “has run miles ahead of housing.”
-      kind: pledge
-      source:
-        url: https://www.theguardian.com/australia-news/2026/may/13/coalition-immigration-policy-housing-budget-reply-angus-taylor
-        publisher: The Guardian
-        title: Coalition to link immigration limits to new builds
-        published: 2026-05-13
-        accessed: 2026-08-02
+  - id: nationals-imm-housing-cap
+    statement: '[Federal Coalition policy] Cap annual net overseas migration at the number of new homes completed in Australia, with migration initially set below that ceiling while housing supply catches up.'
+    kind: pledge
+    source:
+      url: https://www.liberal.org.au/2026/05/14/coalition-plan-to-restore-living-standards-and-protect-australians-way-of-life
+      publisher: Liberal Party of Australia
+      title: Coalition Plan to Restore Living Standards and Protect Australians’ Way of Life
+      published: '2026-05-14'
+      accessed: '2026-08-02'
+  - id: nationals-imm-values
+    statement: '[Federal Coalition policy] Make adherence to the Australian Values Statement an enforceable visa condition, restore temporary protection visas, strengthen security screening and fund removal of unlawful non-citizens.'
+    kind: pledge
+    source:
+      url: https://www.liberal.org.au/2026/04/14/coalition-launches-first-wave-of-australian-values-migration-plan
+      publisher: Liberal Party of Australia
+      title: Coalition launches first wave of Australian Values Migration Plan
+      published: '2026-04-14'
+      accessed: '2026-08-02'

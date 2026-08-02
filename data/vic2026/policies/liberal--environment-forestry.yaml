@@ -1,19 +1,33 @@
-# Liberal Party — Environment / energy landscape (federal offshore wind)
+# Liberal Victoria — Environment & Forestry
 policy:
   party: liberal
   issue: environment-forestry
-  headline: "Federal policy — scrap four of six offshore wind zones"
+  headline: Agricultural impact tests, landholder protections and a bushfire inquiry
   claims:
-    - id: liberal-env-offshore-wind
-      statement: >-
-        [Federal party policy] Liberal energy plan includes “maintaining our commitment
-        to scrap four of the six offshore wind zones announced by Labor,” alongside a
-        developer Code of Conduct for electricity infrastructure and putting
-        “communities at the centre” of decision-making.
-      kind: pledge
-      source:
-        url: https://www.liberal.org.au/2025/11/13/affordable-and-responsible-the-liberal-plan-for-affordable-energy-and-lower-emissions
-        publisher: Liberal Party of Australia
-        title: Affordable and Responsible — Liberal plan for affordable energy and lower emissions
-        published: 2025-11-13
-        accessed: 2026-08-02
+  - id: liberal-env-ag-audits
+    statement: Require independent agricultural and economic impact assessments for major renewable-energy and transmission proposals to protect prime farmland and food production.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2026-02-12-liberals-and-nationals-stand-up-for-victorian-farmers
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Liberals and Nationals stand up for Victorian farmers
+      published: '2026-02-11'
+      accessed: '2026-08-02'
+  - id: liberal-env-landholder-rights
+    statement: Pause VNI West and the Western Renewables Link during a transmission-plan review and reverse compulsory-acquisition measures affecting landholders.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/media-releases/2026-05-06-driving-down-energy-costs-and-protecting-farmer-rights?topic=energy-and-emissions-reduction
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Driving down energy costs and protecting farmer rights
+      published: '2026-05-06'
+      accessed: '2026-08-02'
+  - id: liberal-env-bushfire-inquiry
+    statement: Establish a parliamentary inquiry into the causes, preparedness, response and land-management lessons arising from Victoria’s 2025–26 bushfires.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/media-releases/2026-02-02-liberals-and-nationals-call-for-parliamentary-inquiry-into-victorian-bushfires?topic=emergency-services
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Liberals and Nationals call for parliamentary inquiry into Victorian bushfires
+      published: '2026-02-02'
+      accessed: '2026-08-02'

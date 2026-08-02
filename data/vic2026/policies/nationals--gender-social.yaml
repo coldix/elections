@@ -1,0 +1,33 @@
+# The Nationals Victoria — Gender Equality & Social Policy
+policy:
+  party: nationals
+  issue: gender-social
+  headline: Criminalise coercive control and establish a domestic-violence disclosure scheme
+  claims:
+  - id: nationals-gender-coercive-control
+    statement: Support a standalone coercive-control offence covering sustained intimidation, isolation, humiliation, manipulation and control, based on the New South Wales model.
+    kind: pledge
+    source:
+      url: https://vic.nationals.org.au/media-releases/gaelle-broad-mp-coercive-control-bill-a-major-step-forward/
+      publisher: The Nationals Victoria
+      title: Coercive control Bill a major step forward
+      published: '2025-12-05'
+      accessed: '2026-08-02'
+  - id: nationals-gender-seven-years
+    statement: Support a maximum seven-year prison term for the proposed coercive-control offence.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2025-12-02-new-laws-to-protect-victorians-by-criminalising-coercive-control
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: New laws to protect Victorians by criminalising coercive control
+      published: '2025-12-02'
+      accessed: '2026-08-02'
+  - id: nationals-gender-disclosure
+    statement: Support the Coalition’s ‘Right to Ask, Right to Know’ domestic-violence disclosure scheme.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2025-12-02-new-laws-to-protect-victorians-by-criminalising-coercive-control
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: New laws to protect Victorians by criminalising coercive control
+      published: '2025-12-02'
+      accessed: '2026-08-02'

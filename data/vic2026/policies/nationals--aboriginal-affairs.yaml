@@ -1,21 +1,37 @@
-# National Party of Australia - Victoria — Aboriginal Affairs
+# The Nationals Victoria — Aboriginal Affairs & Reconciliation
 policy:
   party: nationals
   issue: aboriginal-affairs
-  headline: Coalition scrap treaty commitment
+  headline: Repeal the Statewide Treaty framework within 100 days
   claims:
-    - id: nationals-treaty-scrap
-      statement: >-
-        As part of the Liberal–Nationals opposition plan stated in Parliament:
-        “scrap Labor’s divisive treaty, saving $1 billion.”
-      kind: pledge
-      fiscal:
-        taxpayer_label: "Not specified"
-        financing: unspecified
-        pbo_status: uncosted
-      source:
-        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
-        publisher: Parliament of Victoria (Hansard)
-        title: Appropriation (2026–2027) Bill 2026 — 12 May
-        published: 2026-05-12
-        accessed: 2026-08-02
+  - id: nationals-treaty-repeal
+    statement: Introduce legislation within the first 100 days of government to repeal Victoria’s Statewide Treaty framework.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/media-releases/2026-05-01-repealing-treaty-to-save-taxpayers-1-billion?topic=leader-of-the-liberal-party%2Ctreasurer%2Cleader-of-the-nationals
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Repealing Treaty to save taxpayers $1 billion
+      published: '2026-05-01'
+      accessed: '2026-08-02'
+  - id: nationals-treaty-cost
+    statement: The Coalition cites a Parliamentary Budget Office estimate that repeal would avoid $948.3 million in treaty-related expenditure over ten years.
+    kind: costed_measure
+    fiscal:
+      taxpayer_label: Ongoing operational
+      amount_aud: 948300000
+      amount_display: $948.3 million estimated saving
+      timeframe: over ten years
+      financing: taxpayer
+      pbo_status: pbo_costed
+      pbo_ref:
+        url: https://vic.liberal.org.au/media-releases/2026-05-01-repealing-treaty-to-save-taxpayers-1-billion?topic=leader-of-the-liberal-party%2Ctreasurer%2Cleader-of-the-nationals
+        publisher: Liberal Victoria (joint Liberal–Nationals statement)
+        title: Repealing Treaty to save taxpayers $1 billion
+        published: '2026-05-01'
+        accessed: '2026-08-02'
+    source:
+      url: https://vic.liberal.org.au/media-releases/2026-05-01-repealing-treaty-to-save-taxpayers-1-billion?topic=leader-of-the-liberal-party%2Ctreasurer%2Cleader-of-the-nationals
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Repealing Treaty to save taxpayers $1 billion
+      published: '2026-05-01'
+      accessed: '2026-08-02'

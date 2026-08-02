@@ -1,0 +1,42 @@
+# Victorian Greens — Firearms Policy
+policy:
+  party: greens
+  issue: firearms-policy
+  headline: Ownership limits, tighter licence checks and restrictions on high-risk firearms
+  claims:
+  - id: greens-firearms-cap
+    statement: Introduce strict limits on the number of firearms an individual may own.
+    kind: pledge
+    source:
+      url: https://greens.org.au/vic/news/media-release/victorian-greens-back-calls-urgent-comprehensive-gun-reform-keep-community
+      publisher: Victorian Greens
+      title: Victorian Greens back calls for urgent comprehensive gun reform
+      published: '2025-12-17'
+      accessed: '2026-08-02'
+  - id: greens-firearms-high-risk
+    statement: Ban rapid-fire and high-powered weapons beyond the existing category restrictions advocated by the party.
+    kind: pledge
+    source:
+      url: https://greens.org.au/vic/news/media-release/victorian-greens-back-calls-urgent-comprehensive-gun-reform-keep-community
+      publisher: Victorian Greens
+      title: Victorian Greens back calls for urgent comprehensive gun reform
+      published: '2025-12-17'
+      accessed: '2026-08-02'
+  - id: greens-firearms-licences
+    statement: Use time-limited licences with repeated character, family-violence and risk checks.
+    kind: pledge
+    source:
+      url: https://greens.org.au/vic/news/media-release/victorian-greens-back-calls-urgent-comprehensive-gun-reform-keep-community
+      publisher: Victorian Greens
+      title: Victorian Greens back calls for urgent comprehensive gun reform
+      published: '2025-12-17'
+      accessed: '2026-08-02'
+  - id: greens-firearms-buyback
+    statement: Support a buyback for firearms made unlawful by stronger regulation and require prompt reporting of lost or stolen firearms.
+    kind: pledge
+    source:
+      url: https://greens.org.au/vic/news/media-release/victorian-greens-back-calls-urgent-comprehensive-gun-reform-keep-community
+      publisher: Victorian Greens
+      title: Victorian Greens back calls for urgent comprehensive gun reform
+      published: '2025-12-17'
+      accessed: '2026-08-02'
