@@ -11,9 +11,11 @@ coverage ledger (see [SCOPE.md](SCOPE.md)).
 
 - A **jurisdiction guide** (`/parties/issues`) explaining State vs Federal vs
   Local responsibility for each issue area.
-- A **comparison matrix** (`/parties/matrix`) of **sourced** party positions
-  for a fixed set of parties and issues.
-- Machine-readable exports: `issues.json`, `policies.json`, `policies.csv`.
+- A **comparison matrix** (`/parties/matrix`) of **sourced** party positions.
+- A default combined view that may consolidate a formally documented Coalition
+  relationship for readability while preserving every underlying party record.
+- Machine-readable exports: `issues.json`, `coalitions.json`, `policies.json`,
+  `policies.csv`.
 
 ## What this is not
 
@@ -30,14 +32,18 @@ coverage ledger (see [SCOPE.md](SCOPE.md)).
    party press releases, Hansard, or Parliamentary Budget Office (PBO)
    costings. Short neutral headlines for scannability are optional and must not
    editorialize.
-3. **Identical structure** for every party in the matrix. No party-specific
-   display treatment beyond conventional party colours in column chrome.
-4. **Empty cells are honest.** “No sourced position recorded” means the ledger
+3. **Identical underlying structure** for every party in the matrix. No
+   party-specific display treatment beyond conventional party colours in
+   column chrome.
+4. **Coalition display is reversible.** Combining party columns never merges,
+   deletes or rewrites their source records. A separate-party view must remain
+   available.
+5. **Empty cells are honest.** “No sourced position recorded” means the ledger
    has no qualifying source yet — not silence, weakness, or irrelevance.
 
-## v1 matrix parties
+## Underlying matrix parties
 
-Fixed columns (left to right):
+The source ledger keeps five separate party columns (left to right):
 
 | Order | Slug | Label |
 |---|---|---|
@@ -47,21 +53,52 @@ Fixed columns (left to right):
 | 4 | `nationals` | Nationals |
 | 5 | `one-nation` | One Nation |
 
-Users may toggle columns on/off for pairwise comparison. Expanding the column
-set requires a methodology update (not an ad hoc UI change).
+Users may toggle columns on/off for focused comparison. Expanding the source
+column set requires a methodology update, not an ad hoc UI change.
 
-**Coalition joint announcements:** record under the party that issued the
-statement, or duplicate with separate sources if both parties claim it. There
-is no sixth “Coalition” column.
+## Coalition display relationships
 
-**Federal policies (One Nation and shared fields):** Where a matrix party has
-no Victorian-specific public position, a **national party policy** may be
-recorded if it is relevant to the issue and clearly labelled as **federal**
-(headline and/or statement). Prefer party websites and dated primary sources.
-This is especially appropriate for `federal_primary` issues (e.g. immigration)
-and for parties whose Victorian branch has not yet published a state manifesto
-on that topic. Federal claims do **not** become state law commitments unless a
-Victorian source says so.
+Coalition relationships live in:
+
+```text
+data/<election>/coalitions.yaml
+```
+
+This is a **display relationship ledger**, not a party-policy source. Liberal
+and Nationals policy claims remain in their own files and exports. The default
+Victorian view presents four display columns — Greens, Labor,
+Liberal–Nationals, and One Nation — with a one-click five-party view.
+
+Each issue relationship uses one of these scopes:
+
+| Scope | Meaning | Combined display |
+|---|---|---|
+| `coalition_shared` | The available records describe the same joint commitment | Show once with a “Shared Coalition policy” badge and provide a separate-record drill-down |
+| `mixed` | A joint core platform exists alongside party-specific material | Show both party records within the Coalition column |
+| `party_specific` | No qualifying shared position is recorded | Show each member’s position, including an honest empty state where applicable |
+
+`shared_policy_id` is required for `coalition_shared` and `mixed` relationships.
+It is a stable identifier for the shared policy family; it does not replace
+claim IDs or sources. `representative_party` selects which complete policy
+record is shown in the collapsed shared cell. Both original records remain
+available in the drill-down and separate-party view.
+
+Validation requires a default combined coalition to classify every issue. A
+shared relationship must have an underlying policy record for every member;
+`mixed` requires at least two member records; `party_specific` requires at
+least one.
+
+## Federal policies
+
+Where a matrix party has no Victorian-specific public position, a **national
+party policy** may be recorded if it is relevant to the issue and clearly
+labelled as **federal** (headline and/or statement). Prefer party websites and
+dated primary sources.
+
+This is especially appropriate for `federal_primary` issues such as
+immigration and for parties whose Victorian branch has not yet published a
+state manifesto on that topic. Federal claims do **not** become state-law
+commitments unless a Victorian source says so.
 
 ## Issues taxonomy
 
@@ -129,8 +166,12 @@ GitHub Issues.
 Published on every successful build under `/data/<election>/`:
 
 - `issues.json` — taxonomy and jurisdiction notes
-- `policies.json` — full claims with sources and stats
-- `policies.csv` — flattened claims for spreadsheets
+- `coalitions.json` — reversible display relationships between separate parties
+- `policies.json` — full claims, sources, matrix metadata and display views
+- `policies.csv` — flattened underlying party claims for spreadsheets
+
+The CSV deliberately remains party-level: a virtual Coalition display column
+must never create duplicate policy claims in the source export.
 
 Licence: CC BY 4.0 (see `data/LICENSE`).
 
