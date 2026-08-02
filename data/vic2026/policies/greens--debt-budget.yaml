@@ -1,42 +1,59 @@
-# Victorian Greens — Debt & Budget (revenue measures funding housing plan)
+# Victorian Greens — Debt & Budget
 policy:
   party: greens
   issue: debt-budget
-  headline: Ultra-wealth land tax; PBO-costed revenue
+  headline: Progressive property and bank taxes, public financing and a wellbeing budget
   claims:
-    - id: greens-debt-ultra-wealth
-      statement: >-
-        “Introduce an ‘ultra-wealth’ tax to pay for it: increase land tax to 5.3% for
-        property investors that own more than $5 million in residential investment
-        properties, raising $6.4 billion over the decade.”
+    - id: greens-budget-ultra-wealth
+      statement: Increase land tax to 5.3% for investors holding more than $5 million in residential investment property, with the Greens reporting $6.4 billion in revenue over a decade.
       kind: costed_measure
       fiscal:
-        taxpayer_label: "Not specified"
+        taxpayer_label: Not specified
         amount_aud: 6400000000
-        amount_display: "$6.4 billion revenue over decade"
-        timeframe: "over the decade from policy start"
+        amount_display: $6.4 billion revenue
+        timeframe: over a decade
         financing: taxpayer
         pbo_status: pbo_costed
         pbo_ref:
           url: https://greens.org.au/vic/news/media-release/greens-unveil-bold-housing-plan-bring-down-cost-buying-home-abolishing-stamp
-          publisher: Australian Greens Victoria (citing PBO costing reported with policy)
-          title: Greens unveil bold housing plan — ultra-wealth tax and stamp duty cuts
-          published: 2026-07-09
-          accessed: 2026-08-02
+          publisher: Australian Greens Victoria (reporting Parliamentary Budget Office costing)
+          title: Greens unveil bold housing plan to bring down the cost of buying a home
+          published: '2026-07-09'
+          accessed: '2026-08-02'
       source:
         url: https://greens.org.au/vic/news/media-release/greens-unveil-bold-housing-plan-bring-down-cost-buying-home-abolishing-stamp
         publisher: Australian Greens Victoria
         title: Greens unveil bold housing plan to bring down the cost of buying a home
-        published: 2026-07-09
-        accessed: 2026-08-02
-    - id: greens-debt-sandell-quote
-      statement: >-
-        “People who have more than $5m in investment homes that they don’t even live
-        in can afford to pay a little bit extra so that everyone can afford a home.”
+        published: '2026-07-09'
+        accessed: '2026-08-02'
+    - id: greens-budget-bank-levy
+      statement: Apply a 0.05% levy to major banks operating in Victoria, which the Greens estimate would raise more than $1 billion a year and $16.5 billion over a decade.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Not specified
+        amount_aud: 16500000000
+        amount_display: $16.5 billion revenue
+        timeframe: over a decade
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://greens.org.au/vic/campaigns/tax-big-banks
+        publisher: Australian Greens Victoria
+        title: Tax the big banks
+        accessed: '2026-08-02'
+    - id: greens-budget-wellbeing
+      statement: Introduce a wellbeing budget that reports environmental health, equality, public services, infrastructure and community participation alongside conventional financial measures.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/platform/economy
+        publisher: Australian Greens Victoria
+        title: Economy for people
+        accessed: '2026-08-02'
+    - id: greens-budget-public-finance
+      statement: Prefer direct public financing and delivery of infrastructure, abolish public-private partnerships and bring outsourced core services back into the public sector.
       kind: position
       source:
-        url: https://www.theguardian.com/australia-news/2026/jun/29/victoria-green-party-mamdani-policy-playbook-combat-rising-rightwing-populism
-        publisher: The Guardian
-        title: Victorian Greens ultra-wealth tax and housing plan
-        published: 2026-06-29
-        accessed: 2026-08-02
+        url: https://greens.org.au/vic/policies/finance-and-public-administration-policy
+        publisher: Australian Greens Victoria
+        title: Finance and Public Administration Policy
+        accessed: '2026-08-02'
