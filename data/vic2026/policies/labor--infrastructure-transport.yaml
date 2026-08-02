@@ -1,60 +1,81 @@
 # Australian Labor Party (Victorian Branch) — Infrastructure & Transport
+# Incumbent government delivery and 2026–27 Budget measures.
 policy:
   party: labor
   issue: infrastructure-transport
-  headline: Road blitz and rail investment
+  headline: Roads blitz, locally built trains and regional freight maintenance
   claims:
-    - id: labor-infra-roads-1b
+    - id: labor-infra-roads-blitz
       statement: >-
-        “This Budget invests more than $1 billion to repair and rebuild our roads –
-        the biggest investment ever. That means fixed potholes, resurfaced roads and
-        safer streets for every Victorian.”
+        Invest $1.04 billion in road rebuilding, resurfacing and maintenance, with
+        70 per cent of the program directed to regional Victoria and works described
+        as equivalent to repairing around 200,000 potholes.
       kind: costed_measure
       fiscal:
-        taxpayer_label: "Upfront capital"
-        amount_aud: 1000000000
-        amount_display: "more than $1 billion"
-        timeframe: "Budget 2026/27"
-        financing: taxpayer
-        pbo_status: uncosted
-      source:
-        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
-        publisher: Premier of Victoria
-        title: Labor Delivers Real Help To Ease The Cost Of Living
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-infra-regional-roads-share
-      statement: >-
-        Guardian Australia budget winners/losers: the budget includes $1.04bn to
-        rebuild, repair and resurface roads in what the government promised will be
-        the “biggest roads blitz in the state’s history” – with 70% of the funding
-        allocated to regional Victoria.
-      kind: costed_measure
-      fiscal:
-        taxpayer_label: "Upfront capital"
+        taxpayer_label: Upfront capital
         amount_aud: 1040000000
-        amount_display: "$1.04 billion"
+        amount_display: $1.04 billion
+        timeframe: 2026–27 Budget
         financing: taxpayer
         pbo_status: uncosted
       source:
-        url: https://www.theguardian.com/australia-news/2026/may/05/victoria-budget-2026-labor-winners-losers
-        publisher: The Guardian
-        title: Winners and losers — Victoria’s 2026 budget
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-infra-xtrapolis
+        url: https://www.premier.vic.gov.au/record-roads-blitz-target-potholes-and-graffiti
+        publisher: Premier of Victoria
+        title: Record Roads Blitz To Target Potholes And Graffiti
+        published: '2026-04-27'
+        accessed: '2026-08-02'
+    - id: labor-infra-xtrapolis-trains
       statement: >-
-        “This Budget invests $673.6 million in 25 locally built X’Trapolis 2.0 trains.”
+        Purchase 25 additional locally built X'Trapolis 2.0 trains, supporting about
+        750 manufacturing and supply-chain jobs and expanding capacity on Melbourne's
+        rail network.
       kind: costed_measure
       fiscal:
-        taxpayer_label: "Upfront capital"
+        taxpayer_label: Upfront capital
         amount_aud: 673600000
-        amount_display: "$673.6 million"
+        amount_display: $673.6 million
+        timeframe: 2026–27 Budget
         financing: taxpayer
         pbo_status: uncosted
       source:
-        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
+        url: https://www.premier.vic.gov.au/more-trains-and-more-services-and-pt-cheaper-all-year
         publisher: Premier of Victoria
-        title: Labor Delivers Real Help To Ease The Cost Of Living
-        published: 2026-05-05
-        accessed: 2026-08-02
+        title: More Trains And More Services — And PT Cheaper All Year
+        published: '2026-04-20'
+        accessed: '2026-08-02'
+    - id: labor-infra-extra-services
+      statement: >-
+        Fund additional metropolitan and regional train and bus services, including
+        services enabled by the Metro Tunnel and expanded regional timetables.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 77500000
+        amount_display: $77.5 million
+        timeframe: 2026–27 Budget
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/more-trains-and-more-services-and-pt-cheaper-all-year
+        publisher: Premier of Victoria
+        title: More Trains And More Services — And PT Cheaper All Year
+        published: '2026-04-20'
+        accessed: '2026-08-02'
+    - id: labor-infra-rail-freight
+      statement: >-
+        Invest $127 million in maintenance and renewal of the regional rail freight
+        network, including track, bridges and other infrastructure used by agricultural
+        and industrial freight.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Upfront capital
+        amount_aud: 127000000
+        amount_display: $127 million
+        timeframe: 2026–27 Budget
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/keeping-victorias-rail-freight-track
+        publisher: Premier of Victoria
+        title: Keeping Victoria's Rail Freight On Track
+        accessed: '2026-08-02'
