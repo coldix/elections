@@ -1,35 +1,55 @@
-# Australian Labor Party — Immigration (federal government settings)
+# Australian Labor Party — Immigration (federal government policy)
 policy:
   party: labor
   issue: immigration
-  headline: "Federal policy — permanent Migration Program 185,000 places"
+  headline: Federal policy — 185,000 permanent places with an onshore and skilled focus
   claims:
-    - id: labor-imm-185k
+    - id: labor-imm-2026-program
       statement: >-
-        [Federal government policy] The Albanese Labor Government “will maintain the
-        2025-26 Permanent Migration Program at the same level and settings as the
-        2024-2025 Program, 185,000,” following consultation with states and territories
-        that recommended maintaining size and composition “with a focus on skilled
-        migration.”
+        [Federal government policy] Set the 2026–27 permanent Migration Program at
+        185,000 places, unchanged in total size, with approximately 71 per cent in
+        the skilled stream and 28 per cent in the family stream.
       kind: position
       source:
-        url: https://eiglaw.com/australias-permanent-migration-program-for-2025-2026-stability-and-skilled-focus-continue/
-        publisher: EIG Law (summarising government announcement)
-        title: Australia’s Permanent Migration Program for 2025-2026
-        published: 2025-09-02
-        accessed: 2026-08-02
-    - id: labor-imm-skilled
+        url: https://immi.homeaffairs.gov.au/what-we-do/migration-program-planning-levels
+        publisher: Australian Department of Home Affairs
+        title: Permanent Migration Program planning levels
+        published: '2026-05-12'
+        accessed: '2026-08-02'
+    - id: labor-imm-onshore-focus
       statement: >-
-        [Federal government framing] Assistant Minister for Immigration (ABC Perth
-        Drive, April 2026): “our aim is around 185,000 new permanent migrants per year.
-        The majority of those, three quarters of them will be skilled migrants coming
-        to Australia… That’s what we believe is sustainable, to ensure that we get the
-        skilled migrants that we need to build the homes, to look after our elderly and
-        to care for those with disabilities.”
+        [Federal government policy] Prioritise 129,590 permanent places for migrants
+        already living in Australia, while the remaining offshore allocation focuses
+        on highly skilled applicants intended to address productivity and long-term
+        workforce needs.
       kind: position
       source:
-        url: https://minister.homeaffairs.gov.au/MattThistlethwaite/Pages/abc-perth-drive-radio-interview-15042026.aspx
-        publisher: Assistant Minister for Immigration (Home Affairs)
-        title: ABC Perth Drive — radio interview
-        published: 2026-04-15
-        accessed: 2026-08-02
+        url: https://immi.homeaffairs.gov.au/what-we-do/migration-program-planning-levels
+        publisher: Australian Department of Home Affairs
+        title: Permanent Migration Program planning levels
+        published: '2026-05-12'
+        accessed: '2026-08-02'
+    - id: labor-imm-program-composition
+      statement: >-
+        [Federal government policy] Allocate 132,240 skilled places, including
+        employer-sponsored and state or territory nominated visas, and 52,460 family
+        places, predominantly partner visas.
+      kind: position
+      source:
+        url: https://immi.homeaffairs.gov.au/what-we-do/migration-program-planning-levels
+        publisher: Australian Department of Home Affairs
+        title: Permanent Migration Program planning levels
+        published: '2026-05-12'
+        accessed: '2026-08-02'
+    - id: labor-imm-nom-reduction
+      statement: >-
+        [Federal government framing] Continue reducing net overseas migration while
+        retaining skilled migration, with Home Affairs reporting annual net overseas
+        migration to December 2025 was more than 45 per cent below the 2023 peak.
+      kind: position
+      source:
+        url: https://minister.homeaffairs.gov.au/TonyBurke/Pages/net-overseas-migration-continues-to-fall.aspx
+        publisher: Minister for Home Affairs
+        title: Net Overseas Migration continues to fall
+        published: '2026-06-18'
+        accessed: '2026-08-02'
