@@ -1,0 +1,40 @@
+# Liberal Party of Australia – Victorian Division — Infrastructure & Transport
+policy:
+  party: liberal
+  issue: infrastructure-transport
+  headline: $5 billion road maintenance; fix one million potholes
+  claims:
+    - id: liberal-infra-5b-roads
+      statement: >-
+        “While $15 billion has been lost to corruption on the Big Build, our roads
+        are littered with dangerous potholes that are causing untold damage to
+        vehicles — leaving motorists thousands of dollars out of pocket.” The
+        Liberal and Nationals plan includes a $5 billion investment in road
+        maintenance over four years and establishing Better Roads Victoria as a
+        standalone division within the Department of Transport and Planning.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Upfront capital"
+        amount_aud: 5000000000
+        amount_display: "$5 billion"
+        timeframe: "over four years"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.abc.net.au/news/2026-07-13/vic-road-maintenance-funding-liberal-national-election-promise/106906820
+        publisher: ABC News
+        title: Victorian Liberals and Nationals promise multi-billion dollar road repair
+        published: 2026-07-13
+        accessed: 2026-08-02
+    - id: liberal-infra-million-potholes
+      statement: >-
+        On Monday, the Liberal and Nationals announced a plan to eliminate one
+        million potholes and “re-establish a proper, planned system of preventative
+        road maintenance.”
+      kind: pledge
+      source:
+        url: https://www.abc.net.au/news/2026-07-13/vic-road-maintenance-funding-liberal-national-election-promise/106906820
+        publisher: ABC News
+        title: Victorian Liberals and Nationals promise multi-billion dollar road repair
+        published: 2026-07-13
+        accessed: 2026-08-02

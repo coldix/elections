@@ -1,0 +1,32 @@
+# National Party of Australia - Victoria — Crime & Justice
+policy:
+  party: nationals
+  issue: crime-justice
+  headline: Coalition Safer Communities Plan (shared with Liberals)
+  claims:
+    - id: nationals-crime-safer-plan
+      statement: >-
+        Community safety will be restored under a tough new bail and sentencing
+        policy announced by Jess Wilson’s Liberal and Nationals team, including
+        genuine Adult Crime, Adult Time expansion, a one-strike bail rule for
+        uplifted serious offences, and hiring 3,000 more police as part of the
+        Safer Communities Plan.
+      kind: pledge
+      source:
+        url: https://jamesnewbury.com.au/joint-statement-tougher-bail-and-sentencing-laws-to-keep-victorians-safe/
+        publisher: James Newbury MP (joint statement — Liberals and Nationals)
+        title: Joint Statement — Tougher bail and sentencing laws to keep Victorians safe
+        published: 2026-04-15
+        accessed: 2026-08-02
+    - id: nationals-crime-armstrong
+      statement: >-
+        Nationals Ripon candidate Jo Armstrong: “We have a plan that will scrap taxes
+        and deliver cost-of-living relief, crack down on crime, improve our roads,
+        and build more houses.”
+      kind: position
+      source:
+        url: https://vic.nationals.org.au/media-releases/jo-armstrong-selected-as-nationals-candidate-for-ripon/
+        publisher: The Nationals Victoria
+        title: Jo Armstrong selected as Nationals' candidate for Ripon
+        published: 2026-04-14
+        accessed: 2026-08-02

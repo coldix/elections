@@ -1,0 +1,44 @@
+# Victorian Greens — Crime & Justice
+policy:
+  party: greens
+  issue: crime-justice
+  headline: Oppose overcrowding from bail laws; invest in prevention
+  claims:
+    - id: greens-crime-bail-crisis
+      statement: >-
+        “Labor ignored the evidence and ignored the warnings. Instead of investing
+        in the things we know improve community safety, they chose reactionary
+        politics and now we’re facing a dangerous overcrowding crisis in both police
+        cells and prisons.”
+      kind: position
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-introduce-decanting-laws-calling-action-dangerously-overflowing
+        publisher: Australian Greens Victoria
+        title: Greens introduce ‘decanting’ laws for overcrowded police cells
+        published: 2026-06-17
+        accessed: 2026-08-02
+    - id: greens-crime-custody-bill
+      statement: >-
+        The Greens’ ‘Better Rights in Police Custody Bill’ would “provide a mechanism
+        to safely reduce the time a person can be held in police cells, cease
+        decanting across different police stations, as well as ensuring those in
+        police custody have the same rights to health care and visitors.”
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-introduce-decanting-laws-calling-action-dangerously-overflowing
+        publisher: Australian Greens Victoria
+        title: Greens introduce ‘decanting’ laws for overcrowded police cells
+        published: 2026-06-17
+        accessed: 2026-08-02
+    - id: greens-crime-what-works
+      statement: >-
+        “We need immediate action to reduce overcrowding and prevent deaths in
+        custody, and we need the government to start investing in the things that
+        actually make communities safer.”
+      kind: position
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-introduce-decanting-laws-calling-action-dangerously-overflowing
+        publisher: Australian Greens Victoria
+        title: Greens introduce ‘decanting’ laws for overcrowded police cells
+        published: 2026-06-17
+        accessed: 2026-08-02

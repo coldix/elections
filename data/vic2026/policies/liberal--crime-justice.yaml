@@ -1,0 +1,62 @@
+# Liberal Party of Australia – Victorian Division — Crime & Justice
+policy:
+  party: liberal
+  issue: crime-justice
+  headline: Safer Communities Plan — police, bail, Adult Crime Adult Time
+  claims:
+    - id: liberal-crime-safer-communities
+      statement: >-
+        “Only my Liberal and Nationals team has a plan to end Labor’s crime crisis
+        and keep Victorians safe. Labor’s weak laws and revolving-door bail system
+        are putting dangerous offenders back on the street and continuing the cycle
+        of crime. The system must change.”
+      kind: position
+      source:
+        url: https://jamesnewbury.com.au/joint-statement-tougher-bail-and-sentencing-laws-to-keep-victorians-safe/
+        publisher: James Newbury MP (joint statement with Jess Wilson)
+        title: Joint Statement — Tougher bail and sentencing laws to keep Victorians safe
+        published: 2026-04-15
+        accessed: 2026-08-02
+    - id: liberal-crime-adult-time-expand
+      statement: >-
+        Under the Liberals and Nationals’ Safer Communities Plan, a future Jess
+        Wilson-led Government will: “Implement genuine Adult Crime, Adult Time laws
+        by expanding the number of serious offences uplifted to the County Court by
+        adding a further twelve offences, including burglary, serious assault and
+        attempted murder.”
+      kind: pledge
+      source:
+        url: https://jamesnewbury.com.au/joint-statement-tougher-bail-and-sentencing-laws-to-keep-victorians-safe/
+        publisher: James Newbury MP (joint statement with Jess Wilson)
+        title: Joint Statement — Tougher bail and sentencing laws to keep Victorians safe
+        published: 2026-04-15
+        accessed: 2026-08-02
+    - id: liberal-crime-one-strike
+      statement: >-
+        “Introduce a strict one-strike bail rule for these uplifted serious offences,
+        meaning offenders on bail who re-offend will be automatically denied bail.”
+      kind: pledge
+      source:
+        url: https://jamesnewbury.com.au/joint-statement-tougher-bail-and-sentencing-laws-to-keep-victorians-safe/
+        publisher: James Newbury MP (joint statement with Jess Wilson)
+        title: Joint Statement — Tougher bail and sentencing laws to keep Victorians safe
+        published: 2026-04-15
+        accessed: 2026-08-02
+    - id: liberal-crime-3000-police
+      statement: >-
+        These bail and sentencing reforms are part of the Liberals and Nationals’
+        Safer Communities Plan, “which includes hiring 3,000 more police, 200 new
+        PSOs, reopening more than 40 police stations and returning PSOs to 120 train
+        stations, as well as investing in crime prevention and rehabilitation
+        initiatives.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://jamesnewbury.com.au/joint-statement-tougher-bail-and-sentencing-laws-to-keep-victorians-safe/
+        publisher: James Newbury MP (joint statement with Jess Wilson)
+        title: Joint Statement — Tougher bail and sentencing laws to keep Victorians safe
+        published: 2026-04-15
+        accessed: 2026-08-02

@@ -1,0 +1,75 @@
+# Australian Labor Party (Victorian Branch) — Crime & Justice
+policy:
+  party: labor
+  issue: crime-justice
+  headline: Bail investment, PSOs, police reservists, Violence Reduction Unit
+  claims:
+    - id: labor-crime-1-7b
+      statement: >-
+        “Victoria has the most police in Australia, the nation’s toughest bail laws
+        and a nation-first Violence Reduction Unit. The Victorian Budget 2026/27
+        continues to back police, the justice system and emergency services with
+        $1.7 billion – building on Labor’s strong record.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_aud: 1700000000
+        amount_display: "$1.7 billion"
+        timeframe: "Budget 2026/27"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-what-we-need-keep-victorians-safe-0
+        publisher: Premier of Victoria
+        title: Labor Delivers What We Need To Keep Victorians Safe
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-crime-bail-397m
+      statement: >-
+        “This Budget continues the progress we’ve made with tougher bail laws with
+        a $397 million investment to keep the community safe,” including capacity in
+        corrections and youth justice.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_aud: 397000000
+        amount_display: "$397 million"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.budget.vic.gov.au/keeping-communities-safe
+        publisher: Victorian Budget 2026/27
+        title: Keeping communities safe
+        published: 2026-05-02
+        accessed: 2026-08-02
+    - id: labor-crime-pso-reservists
+      statement: >-
+        “We’re boosting police resources even further, with $44 million in this
+        year’s Budget to deliver 50 additional PSOs. It also includes $62 million to
+        recruit up to 200 reservists for administrative duties. This will free up
+        frontline officers – putting more police back in the community where they’re
+        needed most.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_display: "$44m PSOs + $62m reservists"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-what-we-need-keep-victorians-safe-0
+        publisher: Premier of Victoria
+        title: Labor Delivers What We Need To Keep Victorians Safe
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-crime-adult-time
+      statement: >-
+        “Adult Time for Violent Crime laws mean children charged with serious violent
+        offences will face adult courts, where the chance of jail is stronger, and
+        sentences are longer.”
+      kind: position
+      source:
+        url: https://www.budget.vic.gov.au/keeping-communities-safe
+        publisher: Victorian Budget 2026/27
+        title: Keeping communities safe
+        published: 2026-05-02
+        accessed: 2026-08-02

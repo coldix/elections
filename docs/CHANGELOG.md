@@ -4,6 +4,14 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-08-02 — Policy matrix wave 3 (crime, infrastructure)
+
+| Area | What shipped |
+|---|---|
+| **Crime & justice** | Labor ($1.7b safety package, bail, PSOs); Coalition Safer Communities (3,000 police, Adult Crime Adult Time); Greens custody/bail overcrowding bill. |
+| **Infrastructure & transport** | Labor $1bn+ roads blitz + X’Trapolis trains; Coalition $5bn / 1m potholes + Nationals Fair Share Guarantee. |
+| **Totals** | Climbing matrix fill; One Nation still empty pending Vic sources. |
+
 ## 2026-08-02 — Policy matrix wave 2 (energy, health, debt)
 
 | Area | What shipped |
