@@ -1,41 +1,47 @@
-# Pauline Hanson's One Nation — Cost of Living (federal party policy)
+# One Nation Victoria — Cost of Living
 policy:
   party: one-nation
   issue: cost-of-living
-  headline: "Federal policy — lower energy costs; ease housing cost via migration and build costs"
+  headline: Remove insurance duty, end renewable subsidies and redirect wasteful spending
   claims:
-    - id: onp-col-net-zero-prices
+    - id: onp-col-insurance-duty
       statement: >-
-        [Federal party policy] “Net-zero is driving up power and fuel prices, costing
-        jobs, making our industries uncompetitive… Back real Australian energy, coal,
-        gas, hydro and nuclear, to bring prices down, secure supply, and put our
-        national interest first.”
-      kind: position
-      source:
-        url: https://www.onenation.org.au/abolish-net-zero-policy
-        publisher: Pauline Hanson's One Nation
-        title: Abolish Net Zero by 2050 Policy
-        accessed: 2026-08-02
-    - id: onp-col-housing-gst
-      statement: >-
-        [Federal party policy] “Eliminating GST on building materials will immediately
-        reduce costs for new home construction… More Australians will be able to enter
-        the housing market without excessive government-imposed costs.”
+        One Nation Victoria says it will remove the state government tax on insurance
+        premiums to reduce a major household and business expense.
       kind: pledge
       source:
-        url: https://www.onenation.org.au/new-housing
-        publisher: Pauline Hanson's One Nation
-        title: New Housing
+        url: https://vic.onenation.org.au/cost-of-living
+        publisher: One Nation Victoria
+        title: Cost of Living
         accessed: 2026-08-02
-    - id: onp-col-migration
+    - id: onp-col-energy-subsidies
       statement: >-
-        [Federal party policy] “Our population has surged past 27 million, overwhelming
-        housing, infrastructure, and essential services. Wages are stagnating,
-        homeownership is slipping out of reach, and Australians are being forced to
-        compete with cheap foreign labour.”
+        The party says it will end taxpayer subsidies for wind and solar generation and
+        support new coal and gas generation to pursue lower, more reliable power prices.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/cost-of-living
+        publisher: One Nation Victoria
+        title: Cost of Living
+        accessed: 2026-08-02
+    - id: onp-col-spending-housing
+      statement: >-
+        One Nation Victoria proposes ending major “vanity” projects and redirecting
+        public resources towards releasing land and easing housing costs.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/cost-of-living
+        publisher: One Nation Victoria
+        title: Cost of Living
+        accessed: 2026-08-02
+    - id: onp-col-supermarkets
+      statement: >-
+        The party says supermarkets should be held accountable for price gouging and
+        that government should promote fair dealing with farmers and stronger grocery
+        competition.
       kind: position
       source:
-        url: https://www.onenation.org.au/immigration
-        publisher: Pauline Hanson's One Nation
-        title: Immigration — Immigration Reform for a Stronger Australia
+        url: https://vic.onenation.org.au/cost-of-living
+        publisher: One Nation Victoria
+        title: Cost of Living
         accessed: 2026-08-02
