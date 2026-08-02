@@ -1,20 +1,64 @@
 # Victorian Greens — Gender Equality & Social Policy
-# Use education inquiry equity framing for disadvantaged cohorts including disability
 policy:
   party: greens
   issue: gender-social
-  headline: Equity for disadvantaged students; public school support
+  headline: Reproductive leave, family-violence services and LGBTIQA+ protections
   claims:
-    - id: greens-gender-equity-students
-      statement: >-
-        Greens-secured public school funding inquiry “revealed the ripple effects…
-        on students with disability, migrant and refugee, First Nation students and
-        students taking alternative learning… who are being left behind by this
-        government’s decision to cut funding.”
-      kind: position
+    - id: greens-gender-reproductive-leave
+      statement: Provide five additional days of reproductive health and wellbeing leave for Victorian public-sector employees.
+      kind: pledge
       source:
-        url: https://greens.org.au/vic/news/media-release/greens-say-labor-notice-reinstate-24-billion-public-schools-after-damning
+        url: https://greens.org.au/vic/platform/gender
         publisher: Australian Greens Victoria
-        title: Greens say Labor is on notice to reinstate $2.4 billion for public schools
-        published: 2026-05-14
-        accessed: 2026-08-02
+        title: Gender Equality
+        accessed: '2026-08-02'
+    - id: greens-gender-womens-health
+      statement: Invest $10 million in publicly funded homebirth programs, $15 million to expand abortion access and additional clinical services for trans, gender-diverse and non-binary Victorians.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Upfront capital
+        amount_display: $25 million plus additional clinical-service funding
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://greens.org.au/vic/platform/gender
+        publisher: Australian Greens Victoria
+        title: Gender Equality
+        accessed: '2026-08-02'
+    - id: greens-gender-refuges
+      statement: Provide $40 million for multicultural women's family-violence refuges and $20 million for specialised community legal services supporting victim-survivors.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Upfront capital
+        amount_aud: 60000000
+        amount_display: $60 million
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://greens.org.au/vic/platform/community-services
+        publisher: Australian Greens Victoria
+        title: Community services
+        accessed: '2026-08-02'
+    - id: greens-social-lgbtiqa-inquiry
+      statement: Establish a parliamentary inquiry into anti-LGBTIQA+ hate crimes, online hate networks, prevention measures and support for victim-survivors.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/news/media-release/victorian-greens-move-establish-inquiry-lgbtqia-hate-crimes
+        publisher: Australian Greens Victoria
+        title: Victorian Greens move to establish an inquiry into LGBTQIA+ hate crimes
+        published: '2026-02-18'
+        accessed: '2026-08-02'
+    - id: greens-social-rainbow-fund
+      statement: Establish a $200 million Rainbow State Fund for community-controlled LGBTIQA+ mental health, homelessness, sexual-health, youth, clinical and conversion-practice survivor services.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Upfront capital
+        amount_aud: 200000000
+        amount_display: $200 million
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://greens.org.au/vic/platform/lgbtqia
+        publisher: Australian Greens Victoria
+        title: Rainbow State Action Plan
+        accessed: '2026-08-02'
