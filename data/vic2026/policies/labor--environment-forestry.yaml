@@ -1,0 +1,18 @@
+# Australian Labor Party (Victorian Branch) — Environment & Forestry
+policy:
+  party: labor
+  issue: environment-forestry
+  headline: Native forest logging ban (2024) — contested by Greens on loopholes
+  claims:
+    - id: labor-forest-ban
+      statement: >-
+        Greens Victoria (describing Labor government policy): “Native forest logging
+        was banned in Victoria at the start of 2024 after decades of campaigning from
+        the Greens, environmental and First Nations groups.”
+      kind: position
+      source:
+        url: https://greens.org.au/vic/news/media-release/victorian-greens-will-introduce-new-laws-close-loopholes-native-forest
+        publisher: Australian Greens Victoria (characterising government ban)
+        title: Victorian Greens will introduce new laws to close loopholes in native forest logging
+        published: 2026-06-23
+        accessed: 2026-08-02

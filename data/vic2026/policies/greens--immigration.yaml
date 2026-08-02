@@ -1,0 +1,37 @@
+# Australian Greens — Immigration (federal party policy)
+policy:
+  party: greens
+  issue: immigration
+  headline: "Federal policy — expand humanitarian intake; prioritise family reunion"
+  claims:
+    - id: greens-imm-humanitarian
+      statement: >-
+        [Federal party policy] “Expand Australia’s humanitarian intake to 50,000 places
+        per year, providing safety and a new start for those fleeing persecution and
+        conflict.”
+      kind: pledge
+      source:
+        url: https://greens.org.au/portfolios/immigration
+        publisher: Australian Greens
+        title: Immigration | Policy Portfolio
+        accessed: 2026-08-02
+    - id: greens-imm-detention
+      statement: >-
+        [Federal party policy] “End indefinite immigration detention by introducing a
+        7-day cap for people held in immigration detention.”
+      kind: pledge
+      source:
+        url: https://greens.org.au/portfolios/immigration
+        publisher: Australian Greens
+        title: Immigration | Policy Portfolio
+        accessed: 2026-08-02
+    - id: greens-imm-program
+      statement: >-
+        [Federal party policy] “A permanent migration program for refugees and migrants
+        to Australia that prioritises family reunion and humanitarian programs.”
+      kind: position
+      source:
+        url: https://greens.org.au/policies/immigration-and-refugees
+        publisher: Australian Greens
+        title: Immigration and Refugees
+        accessed: 2026-08-02

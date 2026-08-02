@@ -1,0 +1,18 @@
+# Victorian Greens — Infrastructure & Transport
+policy:
+  party: greens
+  issue: infrastructure-transport
+  headline: Extend free public transport
+  claims:
+    - id: greens-infra-free-pt
+      statement: >-
+        “The Greens say Labor has no excuse to make Victorians pay for public transport
+        at the end of May and should extend free public transport” beyond the temporary
+        free/half-price period announced in Budget 2026/27.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-say-labor-has-no-excuse-make-victorians-pay-more-public-transport-end
+        publisher: Australian Greens Victoria
+        title: Greens say Labor has no excuse to make Victorians pay more for public transport
+        published: 2026-05-22
+        accessed: 2026-08-02

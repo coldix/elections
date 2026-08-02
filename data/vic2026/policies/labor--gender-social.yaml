@@ -1,0 +1,42 @@
+# Australian Labor Party (Victorian Branch) — Gender Equality & Social Policy
+policy:
+  party: labor
+  issue: gender-social
+  headline: Family violence funding; Gender Equality Act framework
+  claims:
+    - id: labor-gender-fv-100m
+      statement: >-
+        “This Budget delivers $100 million to continue Labor’s nation-leading work in
+        preventing family violence. This includes delivering refuges and crisis
+        accommodation and expanding the Personal Safety Initiative.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_aud: 100000000
+        amount_display: "$100 million"
+        timeframe: "Budget 2026/27"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-what-we-need-keep-victorians-safe-0
+        publisher: Premier of Victoria
+        title: Labor Delivers What We Need To Keep Victorians Safe
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-gender-cip
+      statement: >-
+        “More than $23 million will continue the work of the Central Information Point,
+        sharing information between agencies about perpetrators.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_aud: 23000000
+        amount_display: "more than $23 million"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-what-we-need-keep-victorians-safe-0
+        publisher: Premier of Victoria
+        title: Labor Delivers What We Need To Keep Victorians Safe
+        published: 2026-05-05
+        accessed: 2026-08-02

@@ -1,0 +1,33 @@
+# Australian Labor Party (Victorian Branch) — Aboriginal Affairs
+policy:
+  party: labor
+  issue: aboriginal-affairs
+  headline: Statewide Treaty signed into law
+  claims:
+    - id: labor-treaty-chapter
+      statement: >-
+        Premier Jacinta Allan said the Statewide Treaty signing marked a “new chapter”
+        in Victoria’s history. “A chapter that brings together the oldest continuing
+        cultures on earth with the more modern institutions of our state… It is a
+        chapter that is founded on truth, guided by respect and carried forward through
+        partnership… That’s what treaty means.”
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2025-11-13/australia-first-treaty-agreement-signed-law-victoria/106002730
+        publisher: ABC News
+        title: Australia's first treaty with Aboriginal people signed in Victoria
+        published: 2025-11-13
+        accessed: 2026-08-02
+    - id: labor-treaty-law
+      statement: >-
+        ABC News: the binding Statewide Treaty agreement was formally signed by the
+        co-chairs of Victoria’s First Peoples’ Assembly, the premier and the minister
+        for treaty; Royal Assent made the Statewide Treaty Act law — Australia’s first
+        modern statewide treaty with First Peoples.
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2025-11-13/australia-first-treaty-agreement-signed-law-victoria/106002730
+        publisher: ABC News
+        title: Australia's first treaty with Aboriginal people signed in Victoria
+        published: 2025-11-13
+        accessed: 2026-08-02

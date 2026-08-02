@@ -1,8 +1,9 @@
 # Australian Labor Party (Victorian Branch) — Energy
+# Restoring/expanding with renewable targets + prior claims
 policy:
   party: labor
   issue: energy
-  headline: Renewables investment and energy bill support programs
+  headline: Renewable energy targets; renewables investment
   claims:
     - id: labor-energy-renewables
       statement: >-
@@ -63,4 +64,16 @@ policy:
         publisher: Premier of Victoria
         title: Labor Delivers Real Help To Ease The Cost Of Living
         published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-energy-targets
+      statement: >-
+        Victorian Government renewable electricity generation targets: 40% by 2025
+        (achieved), 65% by 2030, 95% by 2035, with offshore wind generation targets
+        published alongside energy storage targets.
+      kind: position
+      source:
+        url: https://www.energy.vic.gov.au/renewable-energy/victorian-renewable-energy-and-storage-targets
+        publisher: Victorian Government (energy.vic.gov.au)
+        title: Victorian renewable energy and storage targets
+        published: 2026-02-17
         accessed: 2026-08-02

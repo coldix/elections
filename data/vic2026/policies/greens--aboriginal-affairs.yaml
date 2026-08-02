@@ -1,0 +1,34 @@
+# Victorian Greens — Aboriginal Affairs
+policy:
+  party: greens
+  issue: aboriginal-affairs
+  headline: Supported Statewide Treaty legislation
+  claims:
+    - id: greens-treaty-vote
+      statement: >-
+        The Statewide Treaty Bill passed the Victorian Parliament with the support of
+        Labor and progressive crossbench parties including the Greens (Liberals and
+        Nationals opposed). Wikipedia’s legislative summary of the Statewide Treaty Act
+        2025 records: “Labor, the Greens, the Animal Justice Party and Legalise Cannabis
+        Victoria voted in favour of the bill while the Liberals and Nationals… and One
+        Nation voted against,” and notes Greens leader Ellen Sandell described passage as
+        a “historic moment” inviting Victorians to walk with First Peoples.
+      kind: position
+      source:
+        url: https://en.wikipedia.org/wiki/Statewide_Treaty_Act_2025
+        publisher: Wikipedia
+        title: Statewide Treaty Act 2025 (parliamentary vote summary)
+        accessed: 2026-08-02
+    - id: greens-treaty-context
+      statement: >-
+        ABC News reporting on treaty becoming law notes the Liberal opposition pledged
+        to scrap the deal if it wins the 2026 election, while the Labor government
+        supported and signed the treaty — establishing the contrast in which Greens
+        parliamentary support for the bill sits.
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2025-11-13/australia-first-treaty-agreement-signed-law-victoria/106002730
+        publisher: ABC News
+        title: Australia's first treaty with Aboriginal people signed in Victoria
+        published: 2025-11-13
+        accessed: 2026-08-02

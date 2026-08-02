@@ -4,6 +4,17 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-08-02 — Policy matrix wave 5 (treaty, gender, energy, immigration, PT)
+
+| Area | What shipped |
+|---|---|
+| **Treaty** | Labor + Greens Aboriginal affairs (Statewide Treaty); Coalition scrap already on file. |
+| **Gender/social** | Labor family-violence $100m package. |
+| **Energy** | Labor renewable targets; Greens ban new coal/gas. |
+| **Immigration** | Federal Greens humanitarian expansion. |
+| **Transport** | Greens extend free public transport call. |
+| **Environment** | Labor native forest ban (2024) characterisation. |
+
 ## 2026-08-02 — Policy matrix: One Nation federal policies + methodology
 
 | Area | What shipped |
