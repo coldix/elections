@@ -2,74 +2,83 @@
 policy:
   party: labor
   issue: crime-justice
-  headline: Bail investment, PSOs, police reservists, Violence Reduction Unit
+  headline: Tougher bail and youth sentencing alongside permanent violence prevention
   claims:
-    - id: labor-crime-1-7b
+    - id: labor-crime-safety-budget
       statement: >-
-        “Victoria has the most police in Australia, the nation’s toughest bail laws
-        and a nation-first Violence Reduction Unit. The Victorian Budget 2026/27
-        continues to back police, the justice system and emergency services with
-        $1.7 billion – building on Labor’s strong record.”
+        The 2026–27 Budget provides $1.7 billion for police, courts, corrections,
+        youth justice and emergency services, including additional PSOs and police
+        reservists intended to return sworn officers to frontline duties.
       kind: costed_measure
       fiscal:
-        taxpayer_label: "Ongoing operational"
+        taxpayer_label: Ongoing operational
         amount_aud: 1700000000
-        amount_display: "$1.7 billion"
-        timeframe: "Budget 2026/27"
+        amount_display: $1.7 billion
+        timeframe: 2026–27 Budget
         financing: taxpayer
         pbo_status: uncosted
       source:
         url: https://www.premier.vic.gov.au/labor-delivers-what-we-need-keep-victorians-safe-0
         publisher: Premier of Victoria
         title: Labor Delivers What We Need To Keep Victorians Safe
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-crime-bail-397m
+        published: '2026-05-05'
+        accessed: '2026-08-02'
+    - id: labor-crime-tougher-bail
       statement: >-
-        “This Budget continues the progress we’ve made with tougher bail laws with
-        a $397 million investment to keep the community safe,” including capacity in
-        corrections and youth justice.
-      kind: costed_measure
-      fiscal:
-        taxpayer_label: "Ongoing operational"
-        amount_aud: 397000000
-        amount_display: "$397 million"
-        financing: taxpayer
-        pbo_status: uncosted
-      source:
-        url: https://www.budget.vic.gov.au/keeping-communities-safe
-        publisher: Victorian Budget 2026/27
-        title: Keeping communities safe
-        published: 2026-05-02
-        accessed: 2026-08-02
-    - id: labor-crime-pso-reservists
-      statement: >-
-        “We’re boosting police resources even further, with $44 million in this
-        year’s Budget to deliver 50 additional PSOs. It also includes $62 million to
-        recruit up to 200 reservists for administrative duties. This will free up
-        frontline officers – putting more police back in the community where they’re
-        needed most.”
-      kind: costed_measure
-      fiscal:
-        taxpayer_label: "Ongoing operational"
-        amount_display: "$44m PSOs + $62m reservists"
-        financing: taxpayer
-        pbo_status: uncosted
-      source:
-        url: https://www.premier.vic.gov.au/labor-delivers-what-we-need-keep-victorians-safe-0
-        publisher: Premier of Victoria
-        title: Labor Delivers What We Need To Keep Victorians Safe
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-crime-adult-time
-      statement: >-
-        “Adult Time for Violent Crime laws mean children charged with serious violent
-        offences will face adult courts, where the chance of jail is stronger, and
-        sentences are longer.”
+        Continue the tougher bail regime brought fully into effect on 31 March 2026,
+        supported by additional prison and youth-justice capacity and seven additional
+        magistrates.
       kind: position
       source:
-        url: https://www.budget.vic.gov.au/keeping-communities-safe
-        publisher: Victorian Budget 2026/27
-        title: Keeping communities safe
-        published: 2026-05-02
-        accessed: 2026-08-02
+        url: https://www.premier.vic.gov.au/victorias-tough-bail-laws-full-effect
+        publisher: Premier of Victoria
+        title: Victoria's Tough Bail Laws In Full Effect
+        published: '2026-03-30'
+        accessed: '2026-08-02'
+    - id: labor-crime-adult-time
+      statement: >-
+        Apply Adult Time for Violent Crime to children aged 14 and over charged with
+        specified serious violent offences, transferring those matters to adult courts
+        where community safety and victim impact receive greater weight.
+      kind: position
+      source:
+        url: https://www.premier.vic.gov.au/adult-time-violent-crime-now-effect
+        publisher: Premier of Victoria
+        title: Adult Time For Violent Crime Is Now In Effect
+        published: '2026-02-27'
+        accessed: '2026-08-02'
+    - id: labor-crime-vru
+      statement: >-
+        Make the Violence Reduction Unit a permanent part of the justice system,
+        combining early intervention with police and justice responses to youth and
+        violent crime.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 30000000
+        amount_display: $30 million
+        timeframe: 2026–27 Budget
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/violence-reduction-unit-here-stay
+        publisher: Premier of Victoria
+        title: The Violence Reduction Unit Is Here To Stay
+        accessed: '2026-08-02'
+    - id: labor-crime-sentencing-review
+      statement: >-
+        Commission an independent review and rewrite of Victoria's sentencing laws,
+        aimed at clearer, more consistent sentencing aligned with community
+        expectations.
+      kind: pledge
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 3000000
+        amount_display: nearly $3 million
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/sentencing-must-meet-community-expectations
+        publisher: Premier of Victoria
+        title: Sentencing Must Meet Community Expectations
+        accessed: '2026-08-02'

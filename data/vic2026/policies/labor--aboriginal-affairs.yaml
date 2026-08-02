@@ -1,33 +1,56 @@
-# Australian Labor Party (Victorian Branch) — Aboriginal Affairs
+# Australian Labor Party (Victorian Branch) — Aboriginal Affairs & Reconciliation
 policy:
   party: labor
   issue: aboriginal-affairs
-  headline: Statewide Treaty signed into law
+  headline: Implement Victoria's Statewide Treaty and Gellung Warl institutions
   claims:
-    - id: labor-treaty-chapter
-      statement: >-
-        Premier Jacinta Allan said the Statewide Treaty signing marked a “new chapter”
-        in Victoria’s history. “A chapter that brings together the oldest continuing
-        cultures on earth with the more modern institutions of our state… It is a
-        chapter that is founded on truth, guided by respect and carried forward through
-        partnership… That’s what treaty means.”
-      kind: position
-      source:
-        url: https://www.abc.net.au/news/2025-11-13/australia-first-treaty-agreement-signed-law-victoria/106002730
-        publisher: ABC News
-        title: Australia's first treaty with Aboriginal people signed in Victoria
-        published: 2025-11-13
-        accessed: 2026-08-02
     - id: labor-treaty-law
       statement: >-
-        ABC News: the binding Statewide Treaty agreement was formally signed by the
-        co-chairs of Victoria’s First Peoples’ Assembly, the premier and the minister
-        for treaty; Royal Assent made the Statewide Treaty Act law — Australia’s first
-        modern statewide treaty with First Peoples.
+        Maintain and implement the Statewide Treaty Act 2025 and the binding Treaty
+        agreement signed between the Victorian Government and the First Peoples'
+        Assembly. The Act received Royal Assent on 13 November 2025 and Treaty
+        commenced on 12 December 2025.
       kind: position
       source:
-        url: https://www.abc.net.au/news/2025-11-13/australia-first-treaty-agreement-signed-law-victoria/106002730
-        publisher: ABC News
-        title: Australia's first treaty with Aboriginal people signed in Victoria
-        published: 2025-11-13
-        accessed: 2026-08-02
+        url: https://www.premier.vic.gov.au/victorias-treaty-becomes-law
+        publisher: Premier of Victoria
+        title: Victoria's Treaty Becomes Law
+        published: '2025-11-13'
+        accessed: '2026-08-02'
+    - id: labor-treaty-gellung-warl
+      statement: >-
+        Support Gellung Warl, established on 1 May 2026, as the permanent First
+        Peoples representative entity comprising an assembly, a truth-telling arm and
+        an independent accountability mechanism.
+      kind: position
+      source:
+        url: https://www.firstpeoplesrelations.vic.gov.au/what-treaty-delivers
+        publisher: First Peoples — State Relations
+        title: What Treaty delivers
+        published: '2026-06-30'
+        accessed: '2026-08-02'
+    - id: labor-treaty-democratic-limits
+      statement: >-
+        The Government states that Gellung Warl operates within parliamentary
+        sovereignty, has no veto over policy or legislation and is subject to
+        oversight by bodies including VAGO, IBAC and the Ombudsman.
+      kind: position
+      source:
+        url: https://www.firstpeoplesrelations.vic.gov.au/information-about-victorias-treaty-and-statewide-treaty-act-2025
+        publisher: First Peoples — State Relations
+        title: Information about Victoria's Treaty and Statewide Treaty Act 2025
+        published: '2026-06-30'
+        accessed: '2026-08-02'
+    - id: labor-treaty-practical-reforms
+      statement: >-
+        Use Treaty institutions to develop practical reforms in areas affecting First
+        Peoples, including health, housing and education, while allowing further
+        statewide and traditional-owner treaty negotiations under the established
+        framework.
+      kind: position
+      source:
+        url: https://www.firstpeoplesrelations.vic.gov.au/what-treaty
+        publisher: First Peoples — State Relations
+        title: What is Treaty?
+        published: '2026-06-30'
+        accessed: '2026-08-02'

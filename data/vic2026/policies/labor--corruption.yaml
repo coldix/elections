@@ -1,32 +1,55 @@
-# Australian Labor Party (Victorian Branch) — Corruption / integrity
+# Australian Labor Party (Victorian Branch) — Corruption and Integrity
 policy:
   party: labor
   issue: corruption
-  headline: IBAC follow-the-money powers overhaul
+  headline: Retrospective follow-the-money powers and broader IBAC reform
   claims:
-    - id: labor-ibac-follow-money
+    - id: labor-integrity-follow-money
       statement: >-
-        Premier Jacinta Allan announced follow-the-money powers for IBAC: “\[These are\]
-        the most far-reaching overhaul of IBAC's powers since it was established in
-        2012… It will see IBAC as a fit-for-purpose agency as part of an integrity
-        system here in Victoria.” The change allows IBAC to pursue taxpayer funds
-        through subcontracting and labour-hire arrangements.
+        Give IBAC follow-the-money powers so it can trace public funds through
+        private contractors, subcontractors and labour-hire arrangements rather than
+        being limited to conduct directly linked to a public officer or body.
       kind: pledge
       source:
-        url: https://www.abc.net.au/news/2026-06-01/extended-powers-for-anti-corruption-ibac-victorian-government/106746190
-        publisher: ABC News
-        title: Victoria's anti-corruption watchdog IBAC to get extended powers
-        published: 2026-06-01
-        accessed: 2026-08-02
-    - id: labor-ibac-retrospective
+        url: https://www.premier.vic.gov.au/ibac-powers-be-expanded
+        publisher: Premier of Victoria
+        title: IBAC Powers To Be Expanded
+        published: '2026-06-01'
+        accessed: '2026-08-02'
+    - id: labor-integrity-retrospective
       statement: >-
-        “Let me be clear, I want the follow-the-money investigative powers to be
-        retrospective… IBAC should be able to examine recent allegations and also work
-        alongside Victoria Police to ensure all criminal behaviour is investigated.”
+        Make the new follow-the-money powers retrospective so IBAC can examine recent
+        allegations and work alongside Victoria Police where criminal conduct may be
+        involved.
       kind: pledge
       source:
-        url: https://www.abc.net.au/news/2026-06-01/extended-powers-for-anti-corruption-ibac-victorian-government/106746190
-        publisher: ABC News
-        title: Victoria's anti-corruption watchdog IBAC to get extended powers
-        published: 2026-06-01
-        accessed: 2026-08-02
+        url: https://www.premier.vic.gov.au/ibac-powers-be-expanded
+        publisher: Premier of Victoria
+        title: IBAC Powers To Be Expanded
+        published: '2026-06-01'
+        accessed: '2026-08-02'
+    - id: labor-integrity-reference-group
+      statement: >-
+        Establish an expert reference group including IBAC, the Ombudsman, Integrity
+        Oversight Victoria and Victoria Police to advise by May 2027, with reform
+        legislation planned by the end of 2027. The Government supports 21 committee
+        recommendations in principle and is reviewing eight others.
+      kind: pledge
+      source:
+        url: https://www.premier.vic.gov.au/ibac-powers-be-expanded
+        publisher: Premier of Victoria
+        title: IBAC Powers To Be Expanded
+        published: '2026-06-01'
+        accessed: '2026-08-02'
+    - id: labor-integrity-existing-reforms
+      statement: >-
+        Retain recently introduced integrity measures including publication of
+        ministerial diaries and the Parliamentary Integrity and Workplace Standards
+        Commission.
+      kind: position
+      source:
+        url: https://www.premier.vic.gov.au/ibac-powers-be-expanded
+        publisher: Premier of Victoria
+        title: IBAC Powers To Be Expanded
+        published: '2026-06-01'
+        accessed: '2026-08-02'

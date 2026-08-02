@@ -1,56 +1,83 @@
 # Australian Labor Party (Victorian Branch) — Cost of Living
+# Incumbent government measures funded or operating during 2026.
 policy:
   party: labor
   issue: cost-of-living
-  headline: Half-price public transport and 20% off vehicle registration
+  headline: Transport rebates, fuel price controls and targeted household concessions
   claims:
-    - id: labor-col-half-price-pt
+    - id: labor-col-rego-rebate
       statement: >-
-        “That’s why Labor will deliver immediate cost of living relief with
-        half-price public transport for the rest of 2026. That means trains, trams
-        and buses – metro and V/Line – will be half-price every day until the end
-        of the year, for every Victorian.”
+        The 2026–27 Budget funds a 20 per cent rebate on eligible light-vehicle
+        registration paid between July 2025 and June 2026, worth up to $186 for one
+        vehicle or $372 for two vehicles.
       kind: costed_measure
       fiscal:
-        taxpayer_label: "Ongoing operational"
-        amount_aud: 432000000
-        amount_display: "$432 million"
-        timeframe: "Budget 2026/27; half-price fares from June 2026 to end of 2026"
+        taxpayer_label: Ongoing operational
+        amount_aud: 759000000
+        amount_display: $759 million
+        timeframe: 2026–27 Budget
         financing: taxpayer
         pbo_status: uncosted
       source:
-        url: https://www.premier.vic.gov.au/labor-delivers-cost-living-help-and-surplus
-        publisher: Premier of Victoria
-        title: Labor Delivers Cost Of Living Help And A Surplus
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-col-half-price-savings
+        url: https://www.2026.budget.vic.gov.au/helping-cost-living
+        publisher: Victorian Budget 2026/27
+        title: Helping with the cost of living
+        published: '2026-05-02'
+        accessed: '2026-08-02'
+    - id: labor-col-half-price-transport
       statement: >-
-        “Half-price fares will: Save the average daily commuter more than $850 from
-        June 1 until the end of 2026.”
-      kind: pledge
-      source:
-        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
-        publisher: Premier of Victoria
-        title: Labor Delivers Real Help To Ease The Cost Of Living
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-col-rego
-      statement: >-
-        “Now, the Victorian Budget 2026/27 invests $758.6 million to slash your
-        rego… We will cut this by 20 per cent. This measure will put up to $186
-        back in people’s pockets.”
+        Public transport fares are halved from June 2026 until 1 January 2027 across
+        metropolitan and regional trains, trams and buses. Free public transport for
+        passengers under 18 commenced on 1 January 2026.
       kind: costed_measure
       fiscal:
-        taxpayer_label: "Ongoing operational"
-        amount_aud: 758600000
-        amount_display: "$758.6 million"
-        timeframe: "Budget 2026/27"
+        taxpayer_label: Ongoing operational
+        amount_aud: 278000000
+        amount_display: $278 million
+        timeframe: June to December 2026
         financing: taxpayer
         pbo_status: uncosted
       source:
-        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
-        publisher: Premier of Victoria
-        title: Labor Delivers Real Help To Ease The Cost Of Living
-        published: 2026-05-05
-        accessed: 2026-08-02
+        url: https://www.2026.budget.vic.gov.au/helping-cost-living
+        publisher: Victorian Budget 2026/27
+        title: Helping with the cost of living
+        published: '2026-05-02'
+        accessed: '2026-08-02'
+    - id: labor-col-fuel-cap
+      statement: >-
+        The Fair Fuel Plan requires retailers to publish a daily maximum fuel price
+        that cannot be increased during the following 24-hour period, with Servo
+        Saver providing statewide price comparisons.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 5000000
+        amount_display: $5 million
+        timeframe: 2026–27 Budget
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.2026.budget.vic.gov.au/helping-cost-living
+        publisher: Victorian Budget 2026/27
+        title: Helping with the cost of living
+        published: '2026-05-02'
+        accessed: '2026-08-02'
+    - id: labor-col-concessions
+      statement: >-
+        The Government will provide around $566 million in energy, rates, water and
+        sewerage concessions during 2026–27, estimated to save an eligible household
+        about $629 on average.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 566000000
+        amount_display: around $566 million
+        timeframe: 2026–27
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.2026.budget.vic.gov.au/helping-cost-living
+        publisher: Victorian Budget 2026/27
+        title: Helping with the cost of living
+        published: '2026-05-02'
+        accessed: '2026-08-02'

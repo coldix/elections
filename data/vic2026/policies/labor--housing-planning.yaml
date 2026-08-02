@@ -2,53 +2,82 @@
 policy:
   party: labor
   issue: housing-planning
-  headline: Social housing fund, stamp duty concessions, supply near transport
+  headline: Social housing investment, activity-centre density and faster approvals
   claims:
-    - id: labor-housing-social-fund
+    - id: labor-housing-social-growth-fund
       statement: >-
-        “A new $860 million investment in the Social Housing Growth Fund will
-        deliver more than 7,000 social housing homes for Victorians who need them
-        most.”
+        Invest a further $860 million over five years in the Social Housing Growth
+        Fund, intended to support more than 7,000 additional social homes over the
+        following decade.
       kind: costed_measure
       fiscal:
-        taxpayer_label: "Upfront capital"
+        taxpayer_label: Upfront capital
         amount_aud: 860000000
-        amount_display: "$860 million"
-        timeframe: "Budget 2026/27; more than 7,000 homes (government statement)"
+        amount_display: $860 million
+        timeframe: five years; homes over the next decade
         financing: taxpayer
         pbo_status: uncosted
       source:
-        url: https://www.premier.vic.gov.au/labor-delivers-cost-living-help-and-surplus
-        publisher: Premier of Victoria
-        title: Labor Delivers Cost Of Living Help And A Surplus
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-housing-stamp-duty
+        url: https://www.2026.budget.vic.gov.au/making-life-more-affordable
+        publisher: Victorian Budget 2026/27
+        title: Making life more affordable
+        published: '2026-05-02'
+        accessed: '2026-08-02'
+    - id: labor-housing-transport-density
       statement: >-
-        “To help slash up-front costs, we are extending stamp duty concessions for
-        buying off-the-plan units, townhouses and apartments until 21 April 2027.”
-      kind: pledge
-      fiscal:
-        taxpayer_label: "Not specified"
-        financing: taxpayer
-        pbo_status: uncosted
-        timeframe: "to 21 April 2027"
-      source:
-        url: https://www.premier.vic.gov.au/labor-delivers-cost-living-help-and-surplus
-        publisher: Premier of Victoria
-        title: Labor Delivers Cost Of Living Help And A Surplus
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-housing-everywhere
-      statement: >-
-        “As premier, I want to get more millennials and young people into homes
-        everywhere… We shouldn’t be in a situation where a line gets drawn through
-        the city of Melbourne… and says to everyone on the south and the eastern
-        side of that line, we’re not going to build homes for you.”
+        Continue concentrating additional housing near train and tram corridors,
+        employment and services rather than returning planning authority entirely to
+        individual councils.
       kind: position
       source:
-        url: https://www.theguardian.com/australia-news/2026/feb/25/victoria-housing-policy-liberal-labor-politics-planning
-        publisher: The Guardian
-        title: Where will Victoria’s new homes be built? Competing Liberal and Labor visions
-        published: 2026-02-26
-        accessed: 2026-08-02
+        url: https://www.2026.budget.vic.gov.au/making-life-more-affordable
+        publisher: Victorian Budget 2026/27
+        title: Making life more affordable
+        published: '2026-05-02'
+        accessed: '2026-08-02'
+    - id: labor-housing-srl
+      statement: >-
+        Proceed with tunnelling for Suburban Rail Loop East, which the Government
+        describes as supporting around 70,000 additional homes over 30 years around
+        the first-stage precincts.
+      kind: position
+      source:
+        url: https://www.2026.budget.vic.gov.au/making-life-more-affordable
+        publisher: Victorian Budget 2026/27
+        title: Making life more affordable
+        published: '2026-05-02'
+        accessed: '2026-08-02'
+    - id: labor-housing-fast-track
+      statement: >-
+        Continue the Development Facilitation Program to fast-track significant
+        housing proposals and unlock land for new supply.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 9800000
+        amount_display: $9.8 million
+        timeframe: 2026–27 Budget
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.2026.budget.vic.gov.au/making-life-more-affordable
+        publisher: Victorian Budget 2026/27
+        title: Making life more affordable
+        published: '2026-05-02'
+        accessed: '2026-08-02'
+    - id: labor-housing-stamp-duty
+      statement: >-
+        Extend the temporary off-the-plan stamp duty concession for eligible units,
+        apartments and townhouses until 21 April 2027.
+      kind: pledge
+      fiscal:
+        taxpayer_label: Not specified
+        timeframe: to 21 April 2027
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.2026.budget.vic.gov.au/making-life-more-affordable
+        publisher: Victorian Budget 2026/27
+        title: Making life more affordable
+        published: '2026-05-02'
+        accessed: '2026-08-02'
