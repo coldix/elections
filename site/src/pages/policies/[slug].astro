@@ -1,0 +1,508 @@
+---
+import Base from "../../layouts/Base.astro";
+import JurisdictionBadge from "../../components/JurisdictionBadge.astro";
+import PolicyCell from "../../components/PolicyCell.astro";
+import CoalitionPolicyCell from "../../components/CoalitionPolicyCell.astro";
+import { matrixFor, POLICY_CAVEAT } from "../../../../scripts/lib/policies.mjs";
+import { SITE, partyColour } from "../../lib/site.mjs";
+
+export async function getStaticPaths() {
+  const matrix = matrixFor("vic2026");
+  return matrix.issues.map((issue) => ({
+    params: { slug: issue.slug },
+    props: { slug: issue.slug },
+  }));
+}
+
+const matrix = matrixFor("vic2026");
+const view = matrix.combined ?? {
+  parties: matrix.parties,
+  rows: matrix.rows,
+};
+const row = view.rows.find(({ issue }) => issue.slug === Astro.props.slug);
+if (!row) throw new Error(`Unknown policy issue: ${Astro.props.slug}`);
+
+const { issue, cells } = row;
+const issueIndex = matrix.issues.findIndex((item) => item.slug === issue.slug);
+const previousIssue = issueIndex > 0 ? matrix.issues[issueIndex - 1] : null;
+const nextIssue = issueIndex < matrix.issues.length - 1 ? matrix.issues[issueIndex + 1] : null;
+const issueBySlug = new Map(matrix.issues.map((item) => [item.slug, item]));
+const relatedIssues = (issue.related ?? [])
+  .map((slug) => issueBySlug.get(slug))
+  .filter(Boolean);
+
+function hasPolicy(party, cell) {
+  return party.slug === "coalition" ? Boolean(cell?.has_policy) : Boolean(cell);
+}
+
+function summaryFor(party, cell) {
+  if (!hasPolicy(party, cell)) return "No sourced position is recorded yet.";
+  if (party.slug !== "coalition") return cell.headline ?? "Sourced position recorded.";
+
+  if (cell.scope === "coalition_shared") {
+    return cell.policy?.headline ?? "Shared Liberal–Nationals position recorded.";
+  }
+
+  const summaries = [
+    ["Liberal", cell.member_policies?.liberal],
+    ["Nationals", cell.member_policies?.nationals],
+  ]
+    .filter(([, policy]) => policy)
+    .map(([label, policy]) => `${label}: ${policy.headline}`);
+
+  return summaries.join(" · ") || "Coalition party positions recorded separately.";
+}
+
+const filled = view.parties.filter((party) => hasPolicy(party, cells[party.slug])).length;
+
+const schema = {
+  "@type": "WebPage",
+  name: `${issue.name} policies compared — Victorian state election 2026`,
+  description: `Compare sourced ${issue.name.toLowerCase()} positions from the Greens, Labor, Liberal–Nationals and One Nation for the 2026 Victorian state election.`,
+  url: `${SITE.url}/policies/${issue.slug}`,
+  isPartOf: { "@id": `${SITE.url}/#website` },
+  about: {
+    "@type": "Thing",
+    name: issue.name,
+    description: issue.summary,
+  },
+};
+---
+
+<Base
+  title={`${issue.name} policies compared`}
+  description={`Compare sourced ${issue.name.toLowerCase()} positions from the Greens, Labor, Liberal–Nationals and One Nation for Victoria's 2026 state election.`}
+  breadcrumbs={[
+    { name: "Policies", href: "/policies" },
+    { name: issue.name, href: `/policies/${issue.slug}` },
+  ]}
+  schema={schema}
+>
+  <div class="wrap section policy-page">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/policies">Policies</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{issue.name}</span>
+    </nav>
+
+    <header class="page-head">
+      <p class="eyebrow">Victoria 2026 · Policy comparison</p>
+      <div class="title-row">
+        <h1>{issue.name}</h1>
+        <JurisdictionBadge jurisdiction={issue.jurisdiction} />
+      </div>
+      <p class="lede">{issue.summary}</p>
+      <p class="coverage-line">
+        <strong>{filled} of {view.parties.length}</strong> comparison columns contain a sourced position.
+      </p>
+      <p class="btn-row">
+        <a class="btn" href={`/parties/matrix#combined-issue-${issue.slug}`}>View in full matrix</a>
+        <a class="btn btn-ghost btn-sm" href={`/parties/issues#${issue.slug}`}>Who controls this policy?</a>
+        <a class="btn btn-ghost btn-sm" href="/methodology#policy-matrix">Methodology</a>
+      </p>
+    </header>
+
+    <div class="notice comparison-note" role="note">
+      <strong>How to read this comparison.</strong> The short cards show each party's recorded approach.
+      The detailed section reproduces the sourced claims underneath. There are no scores, rankings or inferred
+      positions. {POLICY_CAVEAT}
+    </div>
+
+    <section aria-labelledby="glance-heading">
+      <div class="section-head">
+        <p class="eyebrow">Direct comparison</p>
+        <h2 id="glance-heading">At a glance</h2>
+      </div>
+      <div class="glance-grid">
+        {
+          view.parties.map((party) => {
+            const cell = cells[party.slug];
+            const recorded = hasPolicy(party, cell);
+            return (
+              <article
+                class={`glance-card${recorded ? "" : " is-empty"}`}
+                style={`--party-colour:${partyColour(party.slug)}`}
+              >
+                <header class="party-label">
+                  <span class="party-swatch" aria-hidden="true" />
+                  <h3>{party.label}</h3>
+                </header>
+                {party.slug === "coalition" && recorded && (
+                  <p class="scope-label">{cell.scope_label}</p>
+                )}
+                <p>{summaryFor(party, cell)}</p>
+                <a href={`#party-${party.slug}`}>View detailed claims</a>
+              </article>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <section class="details-section" aria-labelledby="details-heading">
+      <div class="section-head">
+        <p class="eyebrow">Sources and detail</p>
+        <h2 id="details-heading">Party positions</h2>
+      </div>
+      <div class="party-panels">
+        {
+          view.parties.map((party) => (
+            <article
+              class="party-panel"
+              id={`party-${party.slug}`}
+              style={`--party-colour:${partyColour(party.slug)}`}
+            >
+              <header class="party-panel-head">
+                <span class="party-swatch" aria-hidden="true" />
+                <h3>{party.label}</h3>
+                <a class="back-link" href="#glance-heading">Back to comparison</a>
+              </header>
+              <div class="party-panel-body">
+                {party.slug === "coalition" ? (
+                  <CoalitionPolicyCell cell={cells.coalition} />
+                ) : (
+                  <PolicyCell policy={cells[party.slug]} partyLabel={party.label} />
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="jurisdiction card" aria-labelledby="jurisdiction-heading">
+      <div class="jurisdiction-head">
+        <h2 id="jurisdiction-heading">Who controls {issue.name.toLowerCase()}?</h2>
+        <JurisdictionBadge jurisdiction={issue.jurisdiction} />
+      </div>
+      <p>{issue.jurisdiction_note}</p>
+      <dl class="role-grid">
+        {issue.state_role && (
+          <div>
+            <dt>Victoria</dt>
+            <dd>{issue.state_role}</dd>
+          </div>
+        )}
+        {issue.federal_role && (
+          <div>
+            <dt>Commonwealth</dt>
+            <dd>{issue.federal_role}</dd>
+          </div>
+        )}
+        {issue.local_role && (
+          <div>
+            <dt>Local councils</dt>
+            <dd>{issue.local_role}</dd>
+          </div>
+        )}
+      </dl>
+    </section>
+
+    {relatedIssues.length > 0 && (
+      <section class="related" aria-labelledby="related-heading">
+        <h2 id="related-heading">Related policy comparisons</h2>
+        <div class="related-links">
+          {relatedIssues.map((related) => (
+            <a class="card" href={`/policies/${related.slug}`}>
+              <strong>{related.name}</strong>
+              <span>{related.summary}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <nav class="policy-nav" aria-label="Previous and next policy comparison">
+      <span>
+        {previousIssue && (
+          <a href={`/policies/${previousIssue.slug}`}>← {previousIssue.name}</a>
+        )}
+      </span>
+      <a href="/policies">All 15 policy comparisons</a>
+      <span>
+        {nextIssue && <a href={`/policies/${nextIssue.slug}`}>{nextIssue.name} →</a>}
+      </span>
+    </nav>
+  </div>
+</Base>
+
+<style>
+  .policy-page {
+    max-width: 78rem;
+  }
+
+  .crumb {
+    margin-bottom: 1rem;
+    color: var(--ink-3);
+    font-size: 0.88rem;
+  }
+
+  .crumb span[aria-hidden] {
+    margin-inline: 0.35rem;
+  }
+
+  .page-head {
+    max-width: 58rem;
+  }
+
+  .title-row,
+  .jurisdiction-head,
+  .party-panel-head,
+  .party-label {
+    display: flex;
+    align-items: center;
+  }
+
+  .title-row {
+    flex-wrap: wrap;
+    gap: 0.55rem 0.8rem;
+  }
+
+  .title-row h1 {
+    margin: 0;
+  }
+
+  .coverage-line {
+    margin: 0.8rem 0 0;
+    color: var(--ink-2);
+  }
+
+  .comparison-note {
+    max-width: 68rem;
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  .section-head {
+    margin-bottom: 1rem;
+  }
+
+  .section-head h2,
+  .section-head .eyebrow {
+    margin-bottom: 0;
+  }
+
+  .glance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: 1rem;
+  }
+
+  .glance-card,
+  .party-panel {
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--party-colour);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .glance-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 13rem;
+    padding: 1rem 1.05rem;
+  }
+
+  .glance-card.is-empty {
+    border-top-style: dashed;
+  }
+
+  .party-label {
+    gap: 0.5rem;
+  }
+
+  .party-label h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .party-swatch {
+    width: 0.72rem;
+    height: 0.72rem;
+    flex: none;
+    border-radius: 3px;
+    background: var(--party-colour);
+  }
+
+  .glance-card > p:not(.scope-label) {
+    flex: 1;
+    margin: 0.75rem 0;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+
+  .glance-card > a {
+    font-size: 0.86rem;
+    font-weight: 700;
+  }
+
+  .scope-label {
+    display: inline-flex;
+    align-self: flex-start;
+    margin: 0.65rem 0 0;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid color-mix(in srgb, var(--party-colour) 45%, var(--rule));
+    border-radius: 999px;
+    color: var(--ink-3);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+  }
+
+  .details-section {
+    margin-top: 3rem;
+  }
+
+  .party-panels {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 64rem) {
+    .party-panels {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+    }
+  }
+
+  .party-panel {
+    min-width: 0;
+    scroll-margin-top: 1rem;
+  }
+
+  .party-panel-head {
+    gap: 0.55rem;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--surface-2);
+  }
+
+  .party-panel-head h3 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .back-link {
+    margin-left: auto;
+    color: var(--ink-3);
+    font-size: 0.75rem;
+  }
+
+  .party-panel-body {
+    padding: 1rem;
+  }
+
+  .jurisdiction {
+    margin-top: 3rem;
+    padding: 1.25rem 1.35rem;
+  }
+
+  .jurisdiction-head {
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .jurisdiction h2 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  .jurisdiction > p {
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+
+  .role-grid {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+  }
+
+  @media (min-width: 42rem) {
+    .role-grid {
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+  }
+
+  .role-grid div {
+    padding: 0.75rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-sm);
+    background: var(--surface-2);
+  }
+
+  .role-grid dt {
+    margin-bottom: 0.25rem;
+    color: var(--ink-3);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .role-grid dd {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .related {
+    margin-top: 2.5rem;
+  }
+
+  .related h2 {
+    font-size: 1.2rem;
+  }
+
+  .related-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: 0.75rem;
+  }
+
+  .related-links a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .related-links a:hover {
+    border-color: var(--accent);
+  }
+
+  .related-links span {
+    color: var(--ink-2);
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .policy-nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.88rem;
+  }
+
+  .policy-nav span:last-child {
+    text-align: right;
+  }
+
+  @media (max-width: 40rem) {
+    .policy-nav {
+      grid-template-columns: 1fr;
+    }
+
+    .policy-nav span:last-child {
+      text-align: left;
+    }
+  }
+</style>
