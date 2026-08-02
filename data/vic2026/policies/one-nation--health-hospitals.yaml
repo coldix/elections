@@ -2,29 +2,47 @@
 policy:
   party: one-nation
   issue: health-hospitals
-  headline: Rosebud Hospital redevelopment via public-private partnership
+  headline: Expand the health workforce and rebuild Rosebud Hospital through a PPP
   claims:
-    - id: onp-health-rosebud-ppp
+    - id: onp-health-gp-incentives
       statement: >-
-        One Nation Victoria: Rosebud Hospital redevelopment will use a PPP model
-        “keeping it publicly owned while fast tracking construction.” The party
-        distinguishes PPP from privatisation: “The hospital stays publicly owned. A
-        private company is contracted to build and finance the project… Clinical
-        services remain public (doctors, nurses, care).”
+        One Nation Victoria proposes financial incentives for GPs to work in outer
+        metropolitan and regional shortage areas, plus grants for medical students
+        completing general-practice specialisation.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/rosebud-rebuild-ppp
+        url: https://vic.onenation.org.au/health
         publisher: One Nation Victoria
-        title: One Nation will redevelop the Rosebud Hospital through PPP
-        published: 2026-04-27
+        title: Health Policy
         accessed: 2026-08-02
-    - id: onp-health-ppp-examples
+    - id: onp-health-nursing
       statement: >-
-        One Nation Victoria cites Victorian PPP hospital precedents including Royal
-        Children’s, Royal Women’s, Victorian Comprehensive Cancer Centre, Bendigo and
-        Casey hospitals as models where private partners handle design, construction,
-        financing and facilities while clinical care stays public.
-      kind: position
+        The party proposes university recruitment partnerships for nursing, more
+        flexible hospital employment, action to reduce burnout and a campaign to attract
+        more men into nursing.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/health
+        publisher: One Nation Victoria
+        title: Health Policy
+        accessed: 2026-08-02
+    - id: onp-health-paramedics
+      statement: >-
+        One Nation Victoria calls for increased specialist and community-care funding,
+        improved paramedic pay, retention measures and stronger mental-health support for
+        frontline ambulance staff.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/health
+        publisher: One Nation Victoria
+        title: Health Policy
+        accessed: 2026-08-02
+    - id: onp-health-rosebud-ppp
+      statement: >-
+        The party pledges to redevelop Rosebud Hospital through a public-private
+        partnership in which the facility and clinical services remain publicly owned
+        and operated while a private partner finances and builds the project.
+      kind: pledge
       source:
         url: https://vic.onenation.org.au/rosebud-rebuild-ppp
         publisher: One Nation Victoria
