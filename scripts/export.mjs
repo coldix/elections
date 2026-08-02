@@ -23,6 +23,7 @@ import { loadPolls, computePollAverage, POLL_CAVEAT } from "./lib/polls.mjs";
 import {
   loadIssues,
   loadPolicies,
+  loadCoalitions,
   flattenPolicyClaims,
   matrixFor,
   POLICY_CAVEAT,
@@ -116,17 +117,28 @@ for (const id of listElections()) {
   // Policy matrix + issues ledger (secondary product; may be sparse)
   const issues = loadIssues(id);
   const policies = loadPolicies(id);
+  const coalitions = loadCoalitions(id);
   const matrix = matrixFor(id);
   write("issues.json", {
     generated: new Date().toISOString(),
     methodology: "docs/POLICY-METHODOLOGY.md",
     issues: issues.map(({ jurisdiction_label, ...rest }) => rest),
   });
+  write("coalitions.json", {
+    generated: new Date().toISOString(),
+    methodology: "docs/POLICY-METHODOLOGY.md",
+    note: "Display relationships only. Registered parties and their policy records remain separate.",
+    coalitions,
+  });
   write("policies.json", {
     generated: new Date().toISOString(),
     caveat: POLICY_CAVEAT,
     methodology: "docs/POLICY-METHODOLOGY.md",
     matrix_parties: matrix.parties,
+    default_view: matrix.default_view,
+    combined_matrix_parties: matrix.combined?.parties ?? [],
+    combined_stats: matrix.combined?.stats ?? null,
+    coalitions,
     stats: matrix.stats,
     policies: policies.map(({ file, claim_count, ...p }) => p),
   });
@@ -186,18 +198,19 @@ for (const id of listElections()) {
       "candidates.json", "retirements.json", "council-members.json",
       "representation.json", "summary.json", "coverage.json",
       "polls.json", "poll-average.json",
-      "issues.json", "policies.json",
+      "issues.json", "coalitions.json", "policies.json",
       "districts.csv", "candidates.csv", "retirements.csv", "council-members.csv",
       "polls.csv", "policies.csv",
     ],
     polls: polls.length,
     poll_average_status: pollAverage.status,
     issues: issues.length,
+    coalitions: coalitions.length,
     policies: policies.length,
   });
 
   console.log(
-    `${id}: exported ${summary.candidates} candidates, ${polls.length} polls, ${issues.length} issues, ${policies.length} policies -> site/public/data/${id}/`
+    `${id}: exported ${summary.candidates} candidates, ${polls.length} polls, ${issues.length} issues, ${coalitions.length} coalition ledger(s), ${policies.length} policies -> site/public/data/${id}/`
   );
 }
 

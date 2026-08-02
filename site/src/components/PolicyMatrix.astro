@@ -1,32 +1,34 @@
 ---
 /**
- * Policy comparison matrix — five fixed party columns with CSS checkbox
- * column toggles (no framework). Desktop: sticky issue + party headers.
- * Mobile: per-issue card stacks that respect the same toggles.
+ * Policy comparison shell.
+ * Default: four-column view with Liberal and Nationals consolidated as a
+ * virtual Coalition column. The five-party view remains available without
+ * changing the underlying records.
  */
-import { partyColour } from "../lib/site.mjs";
-import JurisdictionBadge from "./JurisdictionBadge.astro";
-import PolicyCell from "./PolicyCell.astro";
+import PolicyMatrixView from "./PolicyMatrixView.astro";
 
 const { matrix } = Astro.props;
-const { parties, rows, stats, caveat } = matrix;
-const fillPct = stats.total_cells
-  ? Math.round((stats.filled_cells / stats.total_cells) * 100)
+const separate = {
+  parties: matrix.parties,
+  rows: matrix.rows,
+  stats: matrix.stats,
+};
+const combined = matrix.combined ?? null;
+const defaultView = combined ? matrix.default_view : "separate";
+const activeStats = defaultView === "combined" ? combined.stats : separate.stats;
+const fillPct = activeStats.total_cells
+  ? Math.round((activeStats.filled_cells / activeStats.total_cells) * 100)
   : 0;
-
-function rowFilled(cells) {
-  return parties.filter((p) => cells[p.slug]).length;
-}
 ---
 
-<section class="pm" aria-labelledby="pm-h">
+<section class="pm" aria-labelledby="pm-h" data-policy-matrix data-default-view={defaultView}>
   <div class="pm-intro">
     <p class="eyebrow">Party positions · sourced only</p>
     <h2 id="pm-h">Policy comparison matrix</h2>
     <p class="lede">
-      Side-by-side positions for the five parties in the default comparison set.
-      Toggle columns to compare match-ups. Empty cells mean nothing is in the
-      ledger yet — not an editorial score.
+      The default view consolidates joint Liberal–Nationals commitments into one
+      Coalition column. Switch to the separate-party view whenever their records,
+      emphasis or published positions differ.
     </p>
 
     <div class="pm-progress" aria-hidden="true">
@@ -35,29 +37,31 @@ function rowFilled(cells) {
       </div>
     </div>
     <p class="pm-stats muted">
-      <strong>{stats.filled_cells}</strong> of <strong>{stats.total_cells}</strong> cells
-      have a sourced position
-      ({fillPct}%) · <strong>{stats.claims}</strong> claim{stats.claims === 1 ? "" : "s"} ·{" "}
-      <strong>{stats.issues}</strong> issues
+      <strong>{matrix.stats.policy_records}</strong> underlying party policy records ·{" "}
+      <strong>{matrix.stats.claims}</strong> sourced claim{matrix.stats.claims === 1 ? "" : "s"} ·{" "}
+      <strong>{matrix.stats.issues}</strong> issues
     </p>
   </div>
 
   <div class="notice" role="note">
-    {caveat}{" "}
-    Claims tagged <strong>Federal policy</strong> are national party positions, not
-    Victorian manifesto planks. See{" "}
-    <a href="/methodology#policy-matrix">methodology</a>
-    and the <a href="/parties/issues">jurisdiction guide</a>.
+    {matrix.caveat}{" "}
+    A combined Coalition cell is a display convenience only: Liberal and Nationals
+    remain separate parties and their original records remain available in the
+    separate view and open data. See <a href="/methodology#policy-matrix">methodology</a>.
   </div>
 
   <ul class="pm-legend" aria-label="How to read the matrix">
     <li>
-      <span class="lg-fed">Federal policy</span>
-      <span class="muted">National party policy (not state-only)</span>
+      <span class="lg-shared">Shared Coalition policy</span>
+      <span class="muted">A joint commitment shown once</span>
     </li>
     <li>
-      <span class="lg-kind">Pledge</span>
-      <span class="muted">/ Position / Costed / Opposition — claim type</span>
+      <span class="lg-mixed">Shared + differences</span>
+      <span class="muted">Joint platform with party-specific material</span>
+    </li>
+    <li>
+      <span class="lg-fed">Federal policy</span>
+      <span class="muted">National party position, not a state-only pledge</span>
     </li>
     <li>
       <span class="lg-empty">Empty cell</span>
@@ -65,136 +69,68 @@ function rowFilled(cells) {
     </li>
   </ul>
 
-  <div class="pm-shell">
-    {
-      parties.map((p) => (
-        <input
-          type="checkbox"
-          class="visually-hidden pm-toggle"
-          id={`pm-col-${p.slug}`}
-          name={`pm-col-${p.slug}`}
-          checked
-          data-party={p.slug}
-        />
-      ))
-    }
-
-    <div class="pm-controls" role="group" aria-label="Show or hide party columns">
-      <div class="pm-controls-top">
-        <span class="pm-controls-label">Show parties</span>
-        <span class="pm-controls-tip muted">Tip: uncheck to compare two parties</span>
-      </div>
-      <div class="pm-toggles">
-        {
-          parties.map((p) => (
-            <label
-              class="pm-toggle-label"
-              style={`--party-colour:${partyColour(p.slug)}`}
-              for={`pm-col-${p.slug}`}
-            >
-              <span class="pm-swatch" aria-hidden="true" />
-              <span>{p.label}</span>
-            </label>
-          ))
-        }
-      </div>
+  {combined && (
+    <div class="pm-view-switch" role="tablist" aria-label="Matrix display mode">
+      <button
+        type="button"
+        role="tab"
+        data-view-switch="combined"
+        aria-selected={defaultView === "combined" ? "true" : "false"}
+      >
+        Coalition combined
+        <span>4 columns</span>
+      </button>
+      <button
+        type="button"
+        role="tab"
+        data-view-switch="separate"
+        aria-selected={defaultView === "separate" ? "true" : "false"}
+      >
+        Parties separate
+        <span>5 columns</span>
+      </button>
     </div>
+  )}
 
-    <p class="pm-scroll-hint muted">Scroll sideways on narrow desktop widths to see all columns.</p>
-
-    <div class="pm-table-wrap table-scroll" role="region" aria-label="Policy comparison table" tabindex="0">
-      <table class="pm-table">
-        <caption class="visually-hidden">
-          Policy positions by issue and party. {stats.filled_cells} of {stats.total_cells}
-          cells have a sourced position. Use the party checkboxes above to show or hide columns.
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col" class="pm-issue-col">Issue</th>
-            {
-              parties.map((p) => (
-                <th
-                  scope="col"
-                  class={`pm-party-col pm-col-${p.slug}`}
-                  style={`--party-colour:${partyColour(p.slug)}`}
-                >
-                  <span class="pm-party-name">{p.label}</span>
-                </th>
-              ))
-            }
-          </tr>
-        </thead>
-        <tbody>
-          {
-            rows.map(({ issue, cells }) => {
-              const n = rowFilled(cells);
-              return (
-                <tr id={`issue-${issue.slug}`}>
-                  <th scope="row" class="pm-issue-col">
-                    <div class="pm-issue-cell">
-                      <a class="pm-issue-name" href={`/parties/issues#${issue.slug}`}>
-                        {issue.name}
-                      </a>
-                      <div class="pm-issue-meta">
-                        <JurisdictionBadge jurisdiction={issue.jurisdiction} compact />
-                        <span class="pm-row-fill muted" title={`${n} of ${parties.length} parties have a sourced position`}>
-                          {n}/{parties.length}
-                        </span>
-                      </div>
-                    </div>
-                  </th>
-                  {
-                    parties.map((p) => (
-                      <td class={`pm-party-col pm-col-${p.slug}`}>
-                        <PolicyCell policy={cells[p.slug]} partyLabel={p.label} />
-                      </td>
-                    ))
-                  }
-                </tr>
-              );
-            })
-          }
-        </tbody>
-      </table>
+  {combined && (
+    <div data-view-panel="combined" hidden={defaultView !== "combined"}>
+      <PolicyMatrixView view={combined} mode="combined Coalition" viewId="combined" />
     </div>
+  )}
 
-    <div class="pm-cards" aria-label="Policy comparison by issue">
-      {
-        rows.map(({ issue, cells }) => {
-          const n = rowFilled(cells);
-          return (
-            <article class="pm-card" id={`m-issue-${issue.slug}`}>
-              <header class="pm-card-head">
-                <h3>
-                  <a href={`/parties/issues#${issue.slug}`}>{issue.name}</a>
-                </h3>
-                <JurisdictionBadge jurisdiction={issue.jurisdiction} />
-                <span class="pm-row-fill muted">{n}/{parties.length} parties</span>
-              </header>
-              <p class="pm-swipe muted">Swipe for party columns →</p>
-              <div class="pm-card-parties">
-                {
-                  parties.map((p) => (
-                    <div
-                      class={`pm-card-party pm-col-${p.slug}`}
-                      style={`--party-colour:${partyColour(p.slug)}`}
-                    >
-                      <p class="pm-card-party-name">
-                        <span class="pm-swatch" aria-hidden="true" />
-                        {p.label}
-                      </p>
-                      <PolicyCell policy={cells[p.slug]} partyLabel={p.label} />
-                    </div>
-                  ))
-                }
-              </div>
-            </article>
-          );
-        })
-      }
-    </div>
+  <div data-view-panel="separate" hidden={defaultView !== "separate"}>
+    <PolicyMatrixView view={separate} mode="separate party" viewId="separate" />
   </div>
 </section>
+
+<script>
+  const initialisePolicyMatrixViews = () => {
+    document.querySelectorAll("[data-policy-matrix]").forEach((matrix) => {
+      if (matrix.dataset.viewSwitchReady === "true") return;
+      matrix.dataset.viewSwitchReady = "true";
+
+      const buttons = [...matrix.querySelectorAll("[data-view-switch]")];
+      const panels = [...matrix.querySelectorAll("[data-view-panel]")];
+      if (!buttons.length) return;
+
+      const show = (view) => {
+        buttons.forEach((button) => {
+          button.setAttribute("aria-selected", String(button.dataset.viewSwitch === view));
+        });
+        panels.forEach((panel) => {
+          panel.hidden = panel.dataset.viewPanel !== view;
+        });
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => show(button.dataset.viewSwitch));
+      });
+    });
+  };
+
+  initialisePolicyMatrixViews();
+  document.addEventListener("astro:page-load", initialisePolicyMatrixViews);
+</script>
 
 <style>
   .pm-intro {
@@ -202,20 +138,21 @@ function rowFilled(cells) {
   }
 
   .pm-progress {
-    margin: 0.85rem 0 0.35rem;
     max-width: 22rem;
+    margin: 0.85rem 0 0.35rem;
   }
 
   .pm-progress-bar {
     height: 0.45rem;
+    overflow: hidden;
+    border: 1px solid var(--rule);
     border-radius: 999px;
     background: var(--surface-2);
-    border: 1px solid var(--rule);
-    overflow: hidden;
   }
 
   .pm-progress-fill {
     display: block;
+    min-width: 0.25rem;
     height: 100%;
     border-radius: 999px;
     background: linear-gradient(
@@ -223,7 +160,6 @@ function rowFilled(cells) {
       var(--accent) 0%,
       color-mix(in srgb, var(--accent) 70%, var(--st-endorsed)) 100%
     );
-    min-width: 0.25rem;
   }
 
   .pm-stats {
@@ -232,15 +168,15 @@ function rowFilled(cells) {
   }
 
   .pm-legend {
-    list-style: none;
-    margin: 1rem 0 0;
-    padding: 0.75rem 1rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.65rem 1.25rem;
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
     border: 1px solid var(--rule);
     border-radius: var(--radius);
     background: var(--surface);
+    list-style: none;
     font-size: 0.84rem;
   }
 
@@ -251,341 +187,96 @@ function rowFilled(cells) {
     gap: 0.4rem;
   }
 
+  .lg-shared,
+  .lg-mixed,
   .lg-fed {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding: 0.12rem 0.4rem;
+    padding: 0.14rem 0.42rem;
+    border: 1px solid var(--rule-strong);
     border-radius: 999px;
-    border: 1px solid color-mix(in srgb, var(--st-announced) 45%, var(--rule));
+    font-size: 0.65rem;
+    font-weight: 750;
+    letter-spacing: 0.035em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .lg-shared {
+    border-color: color-mix(in srgb, #315b82 48%, var(--rule));
+    background: color-mix(in srgb, #315b82 9%, var(--surface));
+  }
+
+  .lg-mixed {
+    border-color: color-mix(in srgb, #0b7a4b 42%, var(--rule));
+    background: color-mix(in srgb, #0b7a4b 8%, var(--surface));
+  }
+
+  .lg-fed {
+    border-color: color-mix(in srgb, var(--st-announced) 45%, var(--rule));
     background: var(--st-announced-bg);
     color: var(--st-announced);
   }
 
-  .lg-kind {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-  }
-
   .lg-empty {
+    color: var(--ink-3);
     font-size: 0.8rem;
     font-style: italic;
-    color: var(--ink-3);
   }
 
-  .pm-shell {
-    margin-top: 1.15rem;
-  }
-
-  .pm-shell:has(#pm-col-greens:not(:checked)) :global(.pm-col-greens),
-  .pm-shell:has(#pm-col-labor:not(:checked)) :global(.pm-col-labor),
-  .pm-shell:has(#pm-col-liberal:not(:checked)) :global(.pm-col-liberal),
-  .pm-shell:has(#pm-col-nationals:not(:checked)) :global(.pm-col-nationals),
-  .pm-shell:has(#pm-col-one-nation:not(:checked)) :global(.pm-col-one-nation) {
-    display: none !important;
-  }
-
-  .pm-shell:has(#pm-col-greens:not(:checked)) label[for="pm-col-greens"],
-  .pm-shell:has(#pm-col-labor:not(:checked)) label[for="pm-col-labor"],
-  .pm-shell:has(#pm-col-liberal:not(:checked)) label[for="pm-col-liberal"],
-  .pm-shell:has(#pm-col-nationals:not(:checked)) label[for="pm-col-nationals"],
-  .pm-shell:has(#pm-col-one-nation:not(:checked)) label[for="pm-col-one-nation"] {
-    opacity: 0.42;
-    box-shadow: none;
-    border-style: dashed;
-  }
-
-  /* Active (checked) chips get a party-colour ring */
-  .pm-shell:has(#pm-col-greens:checked) label[for="pm-col-greens"],
-  .pm-shell:has(#pm-col-labor:checked) label[for="pm-col-labor"],
-  .pm-shell:has(#pm-col-liberal:checked) label[for="pm-col-liberal"],
-  .pm-shell:has(#pm-col-nationals:checked) label[for="pm-col-nationals"],
-  .pm-shell:has(#pm-col-one-nation:checked) label[for="pm-col-one-nation"] {
-    border-color: var(--party-colour, var(--rule-strong));
-    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--party-colour) 35%, transparent);
-  }
-
-  .pm-controls {
-    position: sticky;
-    top: 0;
-    z-index: 5;
-    background: color-mix(in srgb, var(--paper) 94%, transparent);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--rule);
-    border-radius: var(--radius);
-    padding: 0.8rem 1rem;
-    margin-bottom: 0.65rem;
-    box-shadow: var(--shadow);
-  }
-
-  .pm-controls-top {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.35rem 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .pm-controls-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--ink-3);
-  }
-
-  .pm-controls-tip {
-    font-size: 0.78rem;
-  }
-
-  .pm-toggles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .pm-toggle-label {
+  .pm-view-switch {
     display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.38rem 0.75rem;
+    gap: 0.3rem;
+    margin: 0.25rem 0 1rem;
+    padding: 0.3rem;
+    border: 1px solid var(--rule);
     border-radius: 999px;
-    border: 1px solid var(--rule-strong);
-    background: var(--surface);
-    font-size: 0.88rem;
-    font-weight: 600;
+    background: var(--surface-2);
+  }
+
+  .pm-view-switch button {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0.48rem 0.8rem;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink-2);
     cursor: pointer;
-    user-select: none;
-    transition: opacity 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 700;
   }
 
-  .pm-toggle-label:hover {
-    border-color: var(--party-colour, var(--accent));
+  .pm-view-switch button span {
+    color: var(--ink-3);
+    font-size: 0.7rem;
+    font-weight: 550;
   }
 
-  .pm-toggle-label:focus-within {
+  .pm-view-switch button[aria-selected="true"] {
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .pm-view-switch button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 
-  .pm-swatch {
-    width: 0.65rem;
-    height: 0.65rem;
-    border-radius: 2px;
-    background: var(--party-colour, var(--ink-3));
-    flex-shrink: 0;
-  }
-
-  .pm-scroll-hint {
-    margin: 0 0 0.5rem;
-    font-size: 0.78rem;
-  }
-
-  @media (max-width: 52rem) {
-    .pm-scroll-hint {
-      display: none;
-    }
-  }
-
-  .pm-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    font-size: 0.9rem;
-    min-width: 56rem;
-  }
-
-  .pm-table thead th {
-    position: sticky;
-    top: 0;
-    z-index: 3;
-    background: var(--surface);
-    border-bottom: 2px solid var(--rule-strong);
-    padding: 0.8rem 0.7rem;
-    text-align: left;
-    vertical-align: bottom;
-  }
-
-  .pm-table thead .pm-party-col {
-    border-top: 3px solid var(--party-colour, var(--rule-strong));
-  }
-
-  .pm-party-name {
-    font-weight: 700;
-    color: var(--ink);
-  }
-
-  .pm-table tbody th,
-  .pm-table tbody td {
-    padding: 0.9rem 0.7rem;
-    border-bottom: 1px solid var(--rule);
-    vertical-align: top;
-    background: var(--surface);
-  }
-
-  .pm-table tbody tr:nth-child(even) th,
-  .pm-table tbody tr:nth-child(even) td {
-    background: var(--surface-2);
-  }
-
-  .pm-table tbody tr:hover th,
-  .pm-table tbody tr:hover td {
-    background: color-mix(in srgb, var(--accent-wash) 55%, var(--surface));
-  }
-
-  .pm-issue-col {
-    position: sticky;
-    left: 0;
-    z-index: 2;
-    min-width: 10.5rem;
-    max-width: 13.5rem;
-    box-shadow: 4px 0 10px -6px rgb(0 0 0 / 0.18);
-  }
-
-  thead .pm-issue-col {
-    z-index: 4;
-  }
-
-  .pm-issue-cell {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35rem;
-  }
-
-  .pm-issue-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.35rem;
-  }
-
-  .pm-row-fill {
-    font-size: 0.72rem;
-    font-variant-numeric: tabular-nums;
-    font-weight: 600;
-  }
-
-  .pm-issue-name {
-    font-weight: 700;
-    color: var(--ink);
-    text-decoration: none;
-    line-height: 1.3;
-  }
-
-  .pm-issue-name:hover {
-    color: var(--accent-ink);
-    text-decoration: underline;
-  }
-
-  .pm-party-col {
-    min-width: 12rem;
-    max-width: 17rem;
-  }
-
-  .pm-cards {
+  [data-view-panel][hidden] {
     display: none;
   }
 
-  @media (max-width: 52rem) {
-    .pm-table-wrap {
-      display: none;
-    }
-
-    .pm-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .pm-card {
-      border: 1px solid var(--rule);
+  @media (max-width: 34rem) {
+    .pm-view-switch {
+      display: grid;
+      width: 100%;
       border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      scroll-margin-top: 5rem;
     }
 
-    .pm-card-head {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.45rem 0.7rem;
-      padding: 0.85rem 1rem;
-      border-bottom: 1px solid var(--rule);
-      background: var(--surface-2);
-    }
-
-    .pm-card-head h3 {
-      margin: 0;
-      font-size: 1.05rem;
-      flex: 1 1 auto;
-    }
-
-    .pm-card-head h3 a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .pm-card-head h3 a:hover {
-      color: var(--accent-ink);
-      text-decoration: underline;
-    }
-
-    .pm-swipe {
-      margin: 0;
-      padding: 0.4rem 1rem 0;
-      font-size: 0.75rem;
-    }
-
-    .pm-card-parties {
-      display: flex;
-      gap: 0.75rem;
-      padding: 0.75rem 0.85rem 1rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-    }
-
-    .pm-card-party {
-      flex: 0 0 min(88%, 19rem);
-      scroll-snap-align: start;
-      border: 1px solid var(--rule);
-      border-top: 3px solid var(--party-colour, var(--rule-strong));
-      border-radius: var(--radius-sm);
-      padding: 0.75rem;
-      background: var(--paper);
-    }
-
-    .pm-card-party-name {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin: 0 0 0.55rem;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .pm-toggle-label {
-      transition: none;
-    }
-
-    .pm-card-parties {
-      scroll-snap-type: none;
-    }
-
-    .pm-table tbody tr:hover th,
-    .pm-table tbody tr:hover td {
-      background: inherit;
+    .pm-view-switch button {
+      justify-content: center;
     }
   }
 </style>

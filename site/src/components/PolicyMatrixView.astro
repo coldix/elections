@@ -1,0 +1,428 @@
+---
+import { partyColour } from "../lib/site.mjs";
+import JurisdictionBadge from "./JurisdictionBadge.astro";
+import PolicyCell from "./PolicyCell.astro";
+import CoalitionPolicyCell from "./CoalitionPolicyCell.astro";
+
+const { view, mode = "separate", viewId = mode } = Astro.props;
+const { parties, rows, stats } = view;
+
+function cellFilled(cell, slug) {
+  return slug === "coalition" ? Boolean(cell?.has_policy) : Boolean(cell);
+}
+
+function rowFilled(cells) {
+  return parties.filter((party) => cellFilled(cells[party.slug], party.slug)).length;
+}
+---
+
+<section class="pm-view" data-policy-view={viewId}>
+  <div class="pm-controls" role="group" aria-label={`Show or hide columns in ${mode} view`}>
+    <div class="pm-controls-top">
+      <span class="pm-controls-label">Show columns</span>
+      <span class="pm-controls-tip muted">Uncheck columns for a focused comparison</span>
+    </div>
+    <div class="pm-toggles">
+      {
+        parties.map((party) => (
+          <label class="pm-toggle-label" style={`--party-colour:${partyColour(party.slug)}`}>
+            <input
+              type="checkbox"
+              checked
+              data-column-toggle
+              data-column={party.slug}
+            />
+            <span class="pm-swatch" aria-hidden="true" />
+            <span>{party.label}</span>
+          </label>
+        ))
+      }
+    </div>
+  </div>
+
+  <p class="pm-scroll-hint muted">Scroll sideways on narrower screens to see all selected columns.</p>
+
+  <div class="pm-table-wrap table-scroll" role="region" aria-label={`${mode} policy comparison table`} tabindex="0">
+    <table class="pm-table">
+      <caption class="visually-hidden">
+        Policy positions by issue and party. {stats.filled_cells} of {stats.total_cells}
+        display cells contain a sourced position.
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col" class="pm-issue-col">Issue</th>
+          {
+            parties.map((party) => (
+              <th
+                scope="col"
+                class="pm-party-col"
+                data-col={party.slug}
+                style={`--party-colour:${partyColour(party.slug)}`}
+              >
+                <span class="pm-party-name">{party.label}</span>
+              </th>
+            ))
+          }
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map(({ issue, cells }) => {
+            const filled = rowFilled(cells);
+            return (
+              <tr id={`${viewId}-issue-${issue.slug}`}>
+                <th scope="row" class="pm-issue-col">
+                  <div class="pm-issue-cell">
+                    <a class="pm-issue-name" href={`/parties/issues#${issue.slug}`}>
+                      {issue.name}
+                    </a>
+                    <div class="pm-issue-meta">
+                      <JurisdictionBadge jurisdiction={issue.jurisdiction} compact />
+                      <span class="pm-row-fill muted" title={`${filled} of ${parties.length} columns have a sourced position`}>
+                        {filled}/{parties.length}
+                      </span>
+                    </div>
+                  </div>
+                </th>
+                {
+                  parties.map((party) => (
+                    <td
+                      class="pm-party-col"
+                      data-col={party.slug}
+                      style={`--party-colour:${partyColour(party.slug)}`}
+                    >
+                      {party.slug === "coalition" ? (
+                        <CoalitionPolicyCell cell={cells.coalition} />
+                      ) : (
+                        <PolicyCell policy={cells[party.slug]} partyLabel={party.label} />
+                      )}
+                    </td>
+                  ))
+                }
+              </tr>
+            );
+          })
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pm-cards" aria-label={`${mode} policy comparison by issue`}>
+    {
+      rows.map(({ issue, cells }) => {
+        const filled = rowFilled(cells);
+        return (
+          <article class="pm-card" id={`${viewId}-mobile-issue-${issue.slug}`}>
+            <header class="pm-card-head">
+              <h3><a href={`/parties/issues#${issue.slug}`}>{issue.name}</a></h3>
+              <JurisdictionBadge jurisdiction={issue.jurisdiction} />
+              <span class="pm-row-fill muted">{filled}/{parties.length} columns</span>
+            </header>
+            <div class="pm-card-parties">
+              {
+                parties.map((party) => (
+                  <section
+                    class="pm-card-party"
+                    data-col={party.slug}
+                    style={`--party-colour:${partyColour(party.slug)}`}
+                  >
+                    <p class="pm-card-party-name">
+                      <span class="pm-swatch" aria-hidden="true" />
+                      {party.label}
+                    </p>
+                    {party.slug === "coalition" ? (
+                      <CoalitionPolicyCell cell={cells.coalition} />
+                    ) : (
+                      <PolicyCell policy={cells[party.slug]} partyLabel={party.label} />
+                    )}
+                  </section>
+                ))
+              }
+            </div>
+          </article>
+        );
+      })
+    }
+  </div>
+</section>
+
+<script>
+  const initPolicyColumnToggles = () => {
+    document.querySelectorAll("[data-policy-view]").forEach((view) => {
+      if (view.dataset.columnTogglesReady === "true") return;
+      view.dataset.columnTogglesReady = "true";
+      view.querySelectorAll("[data-column-toggle]").forEach((toggle) => {
+        toggle.addEventListener("change", () => {
+          const column = toggle.dataset.column;
+          view.querySelectorAll(`[data-col="${column}"]`).forEach((cell) => {
+            cell.hidden = !toggle.checked;
+          });
+          toggle.closest("label")?.classList.toggle("is-off", !toggle.checked);
+        });
+      });
+    });
+  };
+
+  initPolicyColumnToggles();
+  document.addEventListener("astro:page-load", initPolicyColumnToggles);
+</script>
+
+<style>
+  .pm-view {
+    min-width: 0;
+  }
+
+  .pm-controls {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    margin-bottom: 0.65rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--paper) 94%, transparent);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+  }
+
+  .pm-controls-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pm-controls-label {
+    color: var(--ink-3);
+    font-size: 0.75rem;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .pm-controls-tip,
+  .pm-scroll-hint {
+    font-size: 0.78rem;
+  }
+
+  .pm-scroll-hint {
+    margin: 0 0 0.5rem;
+  }
+
+  .pm-toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .pm-toggle-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.38rem 0.7rem;
+    border: 1px solid var(--party-colour, var(--rule-strong));
+    border-radius: 999px;
+    background: var(--surface);
+    cursor: pointer;
+    font-size: 0.86rem;
+    font-weight: 650;
+    user-select: none;
+    transition: opacity 0.15s ease, border-color 0.15s ease;
+  }
+
+  .pm-toggle-label input {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .pm-toggle-label:focus-within {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .pm-toggle-label.is-off {
+    opacity: 0.42;
+    border-style: dashed;
+  }
+
+  .pm-swatch {
+    inline-size: 0.68rem;
+    block-size: 0.68rem;
+    border-radius: 2px;
+    background: var(--party-colour, var(--ink-3));
+    flex: none;
+  }
+
+  .pm-table {
+    width: 100%;
+    min-width: 58rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.9rem;
+  }
+
+  .pm-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    padding: 0.8rem 0.7rem;
+    border-bottom: 2px solid var(--rule-strong);
+    background: var(--surface);
+    text-align: left;
+    vertical-align: bottom;
+  }
+
+  .pm-table thead .pm-party-col {
+    border-top: 3px solid var(--party-colour, var(--rule-strong));
+  }
+
+  .pm-table tbody th,
+  .pm-table tbody td {
+    padding: 0.9rem 0.7rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--surface);
+    vertical-align: top;
+  }
+
+  .pm-table tbody tr:nth-child(even) th,
+  .pm-table tbody tr:nth-child(even) td {
+    background: var(--surface-2);
+  }
+
+  .pm-table tbody tr:hover th,
+  .pm-table tbody tr:hover td {
+    background: color-mix(in srgb, var(--accent-wash) 55%, var(--surface));
+  }
+
+  .pm-issue-col {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    min-width: 10rem;
+    max-width: 13rem;
+  }
+
+  thead .pm-issue-col {
+    z-index: 4;
+  }
+
+  .pm-party-col {
+    min-width: 13.5rem;
+    max-width: 20rem;
+  }
+
+  [data-col="coalition"] {
+    min-width: 18rem;
+    max-width: 29rem;
+  }
+
+  .pm-party-name {
+    color: var(--ink);
+    font-weight: 750;
+  }
+
+  .pm-issue-cell {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .pm-issue-name {
+    color: var(--ink);
+    font-weight: 750;
+    line-height: 1.25;
+    text-decoration: none;
+  }
+
+  .pm-issue-name:hover {
+    color: var(--accent-ink);
+    text-decoration: underline;
+  }
+
+  .pm-issue-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .pm-row-fill {
+    font-size: 0.72rem;
+  }
+
+  .pm-cards {
+    display: none;
+  }
+
+  @media (max-width: 58rem) {
+    .pm-table-wrap,
+    .pm-scroll-hint {
+      display: none;
+    }
+
+    .pm-controls {
+      position: static;
+    }
+
+    .pm-cards {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pm-card {
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pm-card-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem 0.7rem;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--rule);
+      background: var(--surface-2);
+    }
+
+    .pm-card-head h3 {
+      flex: 1 1 100%;
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .pm-card-head a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .pm-card-parties {
+      display: grid;
+    }
+
+    .pm-card-party {
+      padding: 1rem;
+      border-top: 3px solid var(--party-colour, var(--rule-strong));
+    }
+
+    .pm-card-party + .pm-card-party {
+      border-top-width: 1px;
+    }
+
+    .pm-card-party-name {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin: 0 0 0.65rem;
+      font-size: 0.82rem;
+      font-weight: 750;
+    }
+  }
+</style>

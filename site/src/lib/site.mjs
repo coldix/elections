@@ -85,11 +85,15 @@ export const LEGAL_UPDATED = "2026-07-29";
  * Conventional Australian party colours so charts read correctly at a glance;
  * they never appear in site chrome. Parties without a widely recognised colour
  * get a neutral, so the palette can't imply prominence.
+ *
+ * `coalition` is a virtual display column only. Its muted blue distinguishes the
+ * combined view without pretending the Coalition is a sixth registered party.
  */
 export const PARTY_COLOURS = {
   labor: "#C8102E",
   liberal: "#1B4F9C",
   nationals: "#0B7A4B",
+  coalition: "#315B82",
   greens: "#1E9E43",
   "one-nation": "#E8730C",
   "legalise-cannabis": "#4C8C2B",

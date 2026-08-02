@@ -1,0 +1,146 @@
+---
+/**
+ * Virtual Liberal–Nationals display cell.
+ * Underlying policy records remain separate; this component only consolidates
+ * their presentation when the relationship ledger marks an issue as shared.
+ */
+import PolicyCell from "./PolicyCell.astro";
+
+const { cell } = Astro.props;
+const members = cell?.member_policies ?? {};
+const liberal = members.liberal ?? null;
+const nationals = members.nationals ?? null;
+const shared = cell?.scope === "coalition_shared";
+const mixed = cell?.scope === "mixed";
+const empty = !cell?.has_policy;
+---
+
+{
+  empty ? (
+    <div class="coal-cell coal-empty">
+      <p>No sourced Coalition position recorded</p>
+    </div>
+  ) : shared ? (
+    <div class="coal-cell coal-shared">
+      <p class="coal-badge">Shared Coalition policy</p>
+      <PolicyCell policy={cell.policy} partyLabel={cell.label} />
+      <details class="coal-drill">
+        <summary>View separate Liberal and Nationals records</summary>
+        <div class="coal-members">
+          <section>
+            <h4>Liberal</h4>
+            <PolicyCell policy={liberal} partyLabel="Liberal" />
+          </section>
+          <section>
+            <h4>Nationals</h4>
+            <PolicyCell policy={nationals} partyLabel="Nationals" />
+          </section>
+        </div>
+      </details>
+    </div>
+  ) : (
+    <div class={`coal-cell${mixed ? " coal-mixed" : " coal-specific"}`}>
+      <p class="coal-badge">{mixed ? "Shared platform + differences" : "Party-specific positions"}</p>
+      {cell.note && <p class="coal-note">{cell.note}</p>}
+      <div class="coal-members coal-members-open">
+        <section>
+          <h4>Liberal</h4>
+          <PolicyCell policy={liberal} partyLabel="Liberal" />
+        </section>
+        <section>
+          <h4>Nationals</h4>
+          <PolicyCell policy={nationals} partyLabel="Nationals" />
+        </section>
+      </div>
+    </div>
+  )
+}
+
+<style>
+  .coal-cell {
+    min-width: 0;
+  }
+
+  .coal-empty p,
+  .coal-note {
+    margin: 0;
+    color: var(--ink-3);
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .coal-empty p {
+    font-style: italic;
+  }
+
+  .coal-badge {
+    display: inline-flex;
+    margin: 0 0 0.55rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid color-mix(in srgb, var(--party-colour, var(--accent)) 48%, var(--rule));
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--party-colour, var(--accent)) 9%, var(--surface));
+    color: var(--ink-2);
+    font-size: 0.66rem;
+    font-weight: 750;
+    letter-spacing: 0.035em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .coal-note {
+    margin-bottom: 0.65rem;
+  }
+
+  .coal-drill {
+    margin-top: 0.7rem;
+    padding-top: 0.45rem;
+    border-top: 1px dashed var(--rule);
+  }
+
+  .coal-drill summary {
+    cursor: pointer;
+    color: var(--accent-ink);
+    font-size: 0.78rem;
+    font-weight: 650;
+  }
+
+  .coal-members {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 0.75rem;
+  }
+
+  .coal-members-open {
+    margin-top: 0;
+  }
+
+  .coal-members section {
+    min-width: 0;
+    padding: 0.7rem;
+    border: 1px solid var(--rule);
+    border-radius: calc(var(--radius) * 0.8);
+    background: color-mix(in srgb, var(--surface-2) 65%, var(--surface));
+  }
+
+  .coal-members h4 {
+    margin: 0 0 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .coal-members section:first-child h4 {
+    color: #1b4f9c;
+  }
+
+  .coal-members section:last-child h4 {
+    color: #0b7a4b;
+  }
+
+  @media (min-width: 72rem) {
+    .coal-members-open {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
