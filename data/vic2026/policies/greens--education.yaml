@@ -1,0 +1,38 @@
+# Victorian Greens — Education
+policy:
+  party: greens
+  issue: education
+  headline: Reinstate $2.4 billion for public schools
+  claims:
+    - id: greens-edu-24b
+      statement: >-
+        “The Victorian Greens have said Labor is on notice to reinstate the $2.4
+        billion for public schools that was quietly cut last year by Jacinta Allan’s
+        government” (Greens media release title and lead characterisation of their
+        demand).
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_aud: 2400000000
+        amount_display: "$2.4 billion"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-say-labor-notice-reinstate-24-billion-public-schools-after-damning
+        publisher: Australian Greens Victoria
+        title: Greens say Labor is on notice to reinstate $2.4 billion for public schools
+        published: 2026-05-14
+        accessed: 2026-08-02
+    - id: greens-edu-budget-critique
+      statement: >-
+        Greens leader Ellen Sandell on Budget 2026/27: “Under-funded schools, healthcare
+        and public services receive very little in this budget, while Labor continues to
+        give handouts and concessions to property developers, gambling corporations and
+        fossil fuels.”
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2026-05-05/victorian-state-budget-2026-wrap/106638608
+        publisher: ABC News
+        title: Victorian government spruiks first surplus in seven years in 2026 budget
+        published: 2026-05-05
+        accessed: 2026-08-02

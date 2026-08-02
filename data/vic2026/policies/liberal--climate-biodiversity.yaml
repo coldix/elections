@@ -1,0 +1,33 @@
+# Liberal Party — Climate (federal party policy)
+policy:
+  party: liberal
+  issue: climate-biodiversity
+  headline: "Federal policy — remove Net Zero target from legislation"
+  claims:
+    - id: liberal-climate-remove-nz
+      statement: >-
+        [Federal party policy] “The Liberal Party will remove a net zero target from
+        our policy and, if elected, will remove Labor’s 43 per cent 2030 target and
+        its net zero by 2050 target from the Climate Change Act 2022. We remain
+        committed to the Paris Agreement and to doing our fair share to reduce
+        emissions in a way that protects household budgets and keeps our economy
+        strong.”
+      kind: pledge
+      source:
+        url: https://www.liberal.org.au/2025/11/13/affordable-and-responsible-the-liberal-plan-for-affordable-energy-and-lower-emissions
+        publisher: Liberal Party of Australia
+        title: Affordable and Responsible — Liberal plan for affordable energy and lower emissions
+        published: 2025-11-13
+        accessed: 2026-08-02
+    - id: liberal-climate-welcome-outcome
+      statement: >-
+        [Federal party policy] “Whilst it is not our policy to set long-term targets,
+        Net Zero would be a welcome outcome, if achieved through technology, choice and
+        voluntary markets.”
+      kind: position
+      source:
+        url: https://www.liberal.org.au/2025/11/13/affordable-and-responsible-the-liberal-plan-for-affordable-energy-and-lower-emissions
+        publisher: Liberal Party of Australia
+        title: Affordable and Responsible — Liberal plan for affordable energy and lower emissions
+        published: 2025-11-13
+        accessed: 2026-08-02

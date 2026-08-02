@@ -1,0 +1,39 @@
+# National Party of Australia - Victoria — Health & Hospitals
+policy:
+  party: nationals
+  issue: health-hospitals
+  headline: Coalition West Gippsland hospital pledge
+  claims:
+    - id: nationals-health-west-gippsland
+      statement: >-
+        “The Victorian Liberal National Coalition has promised to build a new hospital
+        for the growing West Gippsland region if it wins the November election,” with
+        Opposition Leader Jess Wilson pledging $850 million including 230 beds and
+        treatment spaces, ED capacity, residential care beds and healthcare worker
+        accommodation.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Upfront capital"
+        amount_aud: 850000000
+        amount_display: "$850 million"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.abc.net.au/news/2026-07-23/liberals-nationals-election-promise-new-west-gippsland-hospital/106944170
+        publisher: ABC News
+        title: Victorian opposition promises $850 million for new West Gippsland hospital
+        published: 2026-07-23
+        accessed: 2026-08-02
+    - id: nationals-health-crozier
+      statement: >-
+        Shadow Health Minister Georgie Crozier said the West Gippsland community had
+        waited four years for ground to break: “This community, like many communities,
+        are not getting a government focused on their needs… We will move immediately
+        to get the final planning completed and start to deliver on this commitment.”
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2026-07-23/liberals-nationals-election-promise-new-west-gippsland-hospital/106944170
+        publisher: ABC News
+        title: Victorian opposition promises $850 million for new West Gippsland hospital
+        published: 2026-07-23
+        accessed: 2026-08-02

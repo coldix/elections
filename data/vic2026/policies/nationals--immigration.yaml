@@ -1,0 +1,19 @@
+# National Party — Immigration (federal Coalition policy)
+policy:
+  party: nationals
+  issue: immigration
+  headline: "Federal policy — Coalition migration linked to housing"
+  claims:
+    - id: nationals-imm-housing-cap
+      statement: >-
+        [Federal Coalition policy] The Coalition will “directly link Australia’s
+        temporary immigration intake to the number of new homes built around the
+        country, using housing completion figures as a hard ceiling for overseas
+        arrivals,” with Taylor stating migration “has run miles ahead of housing.”
+      kind: pledge
+      source:
+        url: https://www.theguardian.com/australia-news/2026/may/13/coalition-immigration-policy-housing-budget-reply-angus-taylor
+        publisher: The Guardian
+        title: Coalition to link immigration limits to new builds
+        published: 2026-05-13
+        accessed: 2026-08-02

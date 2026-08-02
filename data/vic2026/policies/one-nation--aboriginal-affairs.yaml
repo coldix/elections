@@ -1,0 +1,18 @@
+# Pauline Hanson's One Nation — Aboriginal Affairs (Victorian vote)
+policy:
+  party: one-nation
+  issue: aboriginal-affairs
+  headline: Voted against Statewide Treaty legislation
+  claims:
+    - id: onp-treaty-vote
+      statement: >-
+        Legislative summary of the Statewide Treaty Act 2025: “Labor, the Greens, the
+        Animal Justice Party and Legalise Cannabis Victoria voted in favour of the bill
+        while the Liberals and Nationals, Shooters, Fishers and Farmers, Libertarian
+        Party and One Nation voted against.”
+      kind: opposition_to
+      source:
+        url: https://en.wikipedia.org/wiki/Statewide_Treaty_Act_2025
+        publisher: Wikipedia
+        title: Statewide Treaty Act 2025 (parliamentary vote summary)
+        accessed: 2026-08-02

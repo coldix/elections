@@ -1,0 +1,33 @@
+# National Party — Climate (federal Coalition alignment)
+policy:
+  party: nationals
+  issue: climate-biodiversity
+  headline: "Federal policy — Coalition dumps Net Zero target"
+  claims:
+    - id: nationals-climate-dump-nz
+      statement: >-
+        [Federal party framing] Reuters: “Australia’s conservative Liberal Party on
+        Thursday walked away from its policy to achieve net zero emissions by 2050…
+        The announcement… aligns the Liberals with the National Party, their rural-based
+        coalition partner.” ABC later reported: “The Liberals and Nationals have both
+        decided to dump net zero.”
+      kind: position
+      source:
+        url: https://www.reuters.com/sustainability/cop/australias-conservative-liberal-party-abandons-net-zero-policy-2025-11-13/
+        publisher: Reuters
+        title: Australia's conservative Liberal Party abandons net zero policy
+        published: 2025-11-13
+        accessed: 2026-08-02
+    - id: nationals-climate-liberal-plan
+      statement: >-
+        [Federal Coalition partner position] Federal Liberal energy plan (adopted
+        alongside Nationals’ earlier dump of net zero) would “scrap Labor’s 43% by 2030
+        target and ‘Net Zero by 2050’ from the Climate Change Act upon being elected to
+        government, and making affordable energy the number one priority in the Act.”
+      kind: pledge
+      source:
+        url: https://www.liberal.org.au/2025/11/13/affordable-and-responsible-the-liberal-plan-for-affordable-energy-and-lower-emissions
+        publisher: Liberal Party of Australia
+        title: Affordable and Responsible — Liberal plan for affordable energy and lower emissions
+        published: 2025-11-13
+        accessed: 2026-08-02

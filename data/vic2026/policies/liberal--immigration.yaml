@@ -1,0 +1,32 @@
+# Liberal Party — Immigration (federal Coalition policy)
+policy:
+  party: liberal
+  issue: immigration
+  headline: "Federal policy — link migration to homes built"
+  claims:
+    - id: liberal-imm-housing-cap
+      statement: >-
+        [Federal party policy] “Under Labor, migration has run miles ahead of housing
+        and that puts pressure on rents, house prices and on every young Australian
+        trying to get ahead,” Angus Taylor will say. Under a Coalition government, the
+        housing minister would report annual new home completions, used as a hard ceiling
+        for net overseas migration; if construction speeds up, the cap would lift.
+      kind: pledge
+      source:
+        url: https://www.theguardian.com/australia-news/2026/may/13/coalition-immigration-policy-housing-budget-reply-angus-taylor
+        publisher: The Guardian
+        title: Coalition to link immigration limits to new builds
+        published: 2026-05-13
+        accessed: 2026-08-02
+    - id: liberal-imm-mass-migration
+      statement: >-
+        [Federal party policy] “This is about mass migration running ahead of the homes,
+        roads, hospitals, schools and services Australia can provide,” Taylor will tell
+        parliament (preview of budget reply speech).
+      kind: position
+      source:
+        url: https://www.theguardian.com/australia-news/2026/may/13/coalition-immigration-policy-housing-budget-reply-angus-taylor
+        publisher: The Guardian
+        title: Coalition to link immigration limits to new builds
+        published: 2026-05-13
+        accessed: 2026-08-02

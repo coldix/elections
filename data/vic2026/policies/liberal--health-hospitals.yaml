@@ -1,0 +1,38 @@
+# Liberal Party of Australia – Victorian Division — Health & Hospitals
+policy:
+  party: liberal
+  issue: health-hospitals
+  headline: West Gippsland hospital $850m commitment
+  claims:
+    - id: liberal-health-west-gippsland
+      statement: >-
+        “West Gippsland is a rapidly growing region, but under Labor basic
+        infrastructure needs are not being met or keeping pace.” Opposition Leader
+        Jess Wilson said a Coalition government would invest $850 million to build a
+        new West Gippsland hospital, including 230 beds and treatment spaces, an
+        emergency department with 33 treatment spaces, 60 residential care beds, and
+        accommodation for healthcare workers.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Upfront capital"
+        amount_aud: 850000000
+        amount_display: "$850 million"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.abc.net.au/news/2026-07-23/liberals-nationals-election-promise-new-west-gippsland-hospital/106944170
+        publisher: ABC News
+        title: Victorian opposition promises $850 million for new West Gippsland hospital
+        published: 2026-07-23
+        accessed: 2026-08-02
+    - id: liberal-health-priority
+      statement: >-
+        Ms Wilson said ensuring Victorians have access to quality healthcare is “a
+        top priority for my team.”
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2026-07-23/liberals-nationals-election-promise-new-west-gippsland-hospital/106944170
+        publisher: ABC News
+        title: Victorian opposition promises $850 million for new West Gippsland hospital
+        published: 2026-07-23
+        accessed: 2026-08-02

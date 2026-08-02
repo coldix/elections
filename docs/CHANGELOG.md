@@ -4,6 +4,16 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-08-02 — Policy matrix wave 6 (health, climate, immigration, education)
+
+| Area | What shipped |
+|---|---|
+| **Health** | Liberal/Nationals $850m West Gippsland hospital (ABC). |
+| **Climate** | Federal Liberal dump Net Zero (liberal.org.au); Nationals alignment. |
+| **Immigration** | Federal Coalition: migration ceiling = homes built (Guardian/Taylor). |
+| **Education** | Greens reinstate $2.4bn public schools demand. |
+| **Treaty** | One Nation voted against Statewide Treaty. |
+
 ## 2026-08-02 — Policy matrix wave 5 (treaty, gender, energy, immigration, PT)
 
 | Area | What shipped |
