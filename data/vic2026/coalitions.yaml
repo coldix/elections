@@ -1,0 +1,68 @@
+coalitions:
+  - id: liberal-nationals
+    label: Liberal–Nationals Coalition
+    short_label: Coalition
+    parties: [liberal, nationals]
+    default_combined: true
+    issues:
+      - issue: cost-of-living
+        scope: coalition_shared
+        shared_policy_id: coalition-cost-of-living-2026
+        representative_party: liberal
+      - issue: energy
+        scope: coalition_shared
+        shared_policy_id: coalition-energy-2026
+        representative_party: liberal
+      - issue: education
+        scope: coalition_shared
+        shared_policy_id: coalition-education-2026
+        representative_party: liberal
+      - issue: immigration
+        scope: coalition_shared
+        shared_policy_id: coalition-immigration-2026
+        representative_party: liberal
+      - issue: crime-justice
+        scope: mixed
+        shared_policy_id: coalition-crime-justice-2026
+        representative_party: liberal
+        note: Shared Safer Communities platform with additional Nationals-specific emphasis.
+      - issue: firearms-policy
+        scope: party_specific
+        note: The Nationals have a published Victorian firearms position; no qualifying Victorian Liberal policy is recorded.
+      - issue: corruption
+        scope: coalition_shared
+        shared_policy_id: coalition-integrity-2026
+        representative_party: liberal
+      - issue: debt-budget
+        scope: coalition_shared
+        shared_policy_id: coalition-budget-2026
+        representative_party: liberal
+      - issue: environment-forestry
+        scope: mixed
+        shared_policy_id: coalition-environment-2026
+        representative_party: liberal
+        note: Shared landholder and transmission commitments with additional Nationals native-forestry policy.
+      - issue: gender-social
+        scope: coalition_shared
+        shared_policy_id: coalition-gender-social-2026
+        representative_party: liberal
+      - issue: climate-biodiversity
+        scope: coalition_shared
+        shared_policy_id: coalition-climate-2026
+        representative_party: liberal
+      - issue: aboriginal-affairs
+        scope: coalition_shared
+        shared_policy_id: coalition-treaty-2026
+        representative_party: liberal
+      - issue: housing-planning
+        scope: coalition_shared
+        shared_policy_id: coalition-housing-2026
+        representative_party: liberal
+      - issue: health-hospitals
+        scope: coalition_shared
+        shared_policy_id: coalition-health-2026
+        representative_party: liberal
+      - issue: infrastructure-transport
+        scope: coalition_shared
+        shared_policy_id: coalition-infrastructure-2026
+        representative_party: liberal
