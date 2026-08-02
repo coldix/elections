@@ -1,6 +1,5 @@
 id: newspoll-2026-07
-pollster: newspoll
-pollster_display: "Newspoll / Pyxis"
+pollster: "Newspoll / Pyxis"
 commissioner: the-australian
 commissioner_type: media
 fieldwork_start: 2026-07-23
