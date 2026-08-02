@@ -1,0 +1,29 @@
+# National Party of Australia - Victoria — Energy
+policy:
+  party: nationals
+  issue: energy
+  headline: Energy choice; reverse gas ban with Liberals
+  claims:
+    - id: nationals-energy-choice
+      statement: >-
+        “There will be a gas ban on your homes. The Nationals certainly support energy
+        choice. We back affordability and we back common sense.”
+      kind: position
+      source:
+        url: https://www.parliament.vic.gov.au/4a204e/globalassets/hansard-daily-pdfs/hansard-974425065-34719/hansard-974425065-34719.pdf
+        publisher: Parliament of Victoria (Hansard PDF)
+        title: Legislative Assembly debates (March 2026) — National Gas / energy choice
+        published: 2026-03-17
+        accessed: 2026-08-02
+    - id: nationals-energy-coalition-gas
+      statement: >-
+        Coalition commitment recorded in Hansard: “only our Liberal and Nationals team
+        has a plan to open the door to new conventional gas exploration and ensure
+        Victoria has sufficient firm energy supplies.”
+      kind: pledge
+      source:
+        url: https://www.parliament.vic.gov.au/4a2421/globalassets/hansard-daily-pdfs/hansard-974425065-36116/hansard-974425065-36116.pdf
+        publisher: Parliament of Victoria (Hansard PDF)
+        title: Legislative Council — energy policy debate (30 July 2026)
+        published: 2026-07-30
+        accessed: 2026-08-02

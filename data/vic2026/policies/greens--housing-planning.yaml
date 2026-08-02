@@ -40,3 +40,36 @@ policy:
         title: Fastest rent hikes in Australia show why Victoria needs rent caps – saving renters $15,590 by 2030
         published: 2026-07-09
         accessed: 2026-08-02
+    - id: greens-housing-public-homes-4b
+      statement: >-
+        “Stop the demolition and build more public housing: more than double the
+        number of public homes - building over 88,000 public homes, maintaining and
+        upgrading existing public housing with an initial investment of $4 billion.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Upfront capital"
+        amount_aud: 4000000000
+        amount_display: "$4 billion initial investment"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-unveil-bold-housing-plan-bring-down-cost-buying-home-abolishing-stamp
+        publisher: Australian Greens Victoria
+        title: Greens unveil bold housing plan — stamp duty cuts and ultra-wealth tax
+        published: 2026-07-09
+        accessed: 2026-08-02
+    - id: greens-housing-stamp-duty-cut
+      statement: >-
+        “Cut stamp duty for owner occupiers: abolishing stamp duty for homes up to
+        $1.1 million, and reduced stamp duty on a sliding scale up to $1.6 million.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-unveil-bold-housing-plan-bring-down-cost-buying-home-abolishing-stamp
+        publisher: Australian Greens Victoria
+        title: Greens unveil bold housing plan — stamp duty cuts and ultra-wealth tax
+        published: 2026-07-09
+        accessed: 2026-08-02

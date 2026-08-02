@@ -1,0 +1,19 @@
+# Victorian Greens — Health & Hospitals
+policy:
+  party: greens
+  issue: health-hospitals
+  headline: Critique of under-funded healthcare in Budget 2026/27
+  claims:
+    - id: greens-health-sandell-budget
+      statement: >-
+        Greens leader Ellen Sandell said the budget showed Labor had “no long-term
+        vision.” “Under-funded schools, healthcare and public services receive very
+        little in this budget, while Labor continues to give handouts and concessions
+        to property developers, gambling corporations and fossil fuels.”
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2026-05-05/victorian-state-budget-2026-wrap/106638608
+        publisher: ABC News
+        title: Victorian government spruiks first surplus in seven years in 2026 budget
+        published: 2026-05-05
+        accessed: 2026-08-02

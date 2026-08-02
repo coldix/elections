@@ -1,0 +1,42 @@
+# Victorian Greens — Debt & Budget (revenue measures funding housing plan)
+policy:
+  party: greens
+  issue: debt-budget
+  headline: Ultra-wealth land tax; PBO-costed revenue
+  claims:
+    - id: greens-debt-ultra-wealth
+      statement: >-
+        “Introduce an ‘ultra-wealth’ tax to pay for it: increase land tax to 5.3% for
+        property investors that own more than $5 million in residential investment
+        properties, raising $6.4 billion over the decade.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Not specified"
+        amount_aud: 6400000000
+        amount_display: "$6.4 billion revenue over decade"
+        timeframe: "over the decade from policy start"
+        financing: taxpayer
+        pbo_status: pbo_costed
+        pbo_ref:
+          url: https://greens.org.au/vic/news/media-release/greens-unveil-bold-housing-plan-bring-down-cost-buying-home-abolishing-stamp
+          publisher: Australian Greens Victoria (citing PBO costing reported with policy)
+          title: Greens unveil bold housing plan — ultra-wealth tax and stamp duty cuts
+          published: 2026-07-09
+          accessed: 2026-08-02
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-unveil-bold-housing-plan-bring-down-cost-buying-home-abolishing-stamp
+        publisher: Australian Greens Victoria
+        title: Greens unveil bold housing plan to bring down the cost of buying a home
+        published: 2026-07-09
+        accessed: 2026-08-02
+    - id: greens-debt-sandell-quote
+      statement: >-
+        “People who have more than $5m in investment homes that they don’t even live
+        in can afford to pay a little bit extra so that everyone can afford a home.”
+      kind: position
+      source:
+        url: https://www.theguardian.com/australia-news/2026/jun/29/victoria-green-party-mamdani-policy-playbook-combat-rising-rightwing-populism
+        publisher: The Guardian
+        title: Victorian Greens ultra-wealth tax and housing plan
+        published: 2026-06-29
+        accessed: 2026-08-02

@@ -1,0 +1,42 @@
+# Australian Labor Party (Victorian Branch) — Debt & Budget
+policy:
+  party: labor
+  issue: debt-budget
+  headline: Operating surplus path; debt stabilising as share of economy
+  claims:
+    - id: labor-debt-surplus
+      statement: >-
+        “This Budget delivers a surplus of $700 million in 2025-26, $1 billion in
+        2026-27, and increasing to $2 billion by the end of the forward estimates.
+        Net debt as a share of the economy will be lower in four years’ time than
+        it is today.”
+      kind: position
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: mixed
+        pbo_status: uncosted
+        timeframe: "Budget 2026/27 forward estimates"
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-cost-living-help-and-surplus
+        publisher: Premier of Victoria
+        title: Labor Delivers Cost Of Living Help And A Surplus
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-debt-forecast
+      statement: >-
+        Budget reporting summarised by Guardian Australia: debt is forecast to grow
+        from $165.3bn in June 2026 to $199.3bn in 2029-30 but stabilises as a
+        proportion of the economy to 24.4% of GSP; interest payments forecast to
+        total $11.82bn — or $32m a day — by then.
+      kind: position
+      fiscal:
+        taxpayer_label: "Debt / interest"
+        financing: borrowing
+        pbo_status: uncosted
+        timeframe: "to 2029-30"
+      source:
+        url: https://www.theguardian.com/australia-news/2026/may/04/victoria-state-budget-2026-surplus
+        publisher: The Guardian
+        title: Victorian budget 2026 — surplus but debt nears $200bn
+        published: 2026-05-05
+        accessed: 2026-08-02

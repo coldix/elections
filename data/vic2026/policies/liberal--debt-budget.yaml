@@ -1,0 +1,48 @@
+# Liberal Party of Australia – Victorian Division — Debt & Budget
+policy:
+  party: liberal
+  issue: debt-budget
+  headline: Cash surplus by 2032; critique of Labor debt path
+  claims:
+    - id: liberal-debt-cash-surplus
+      statement: >-
+        Opposition commitments in the budget debate include repairing the budget
+        “to deliver a cash surplus by 2032, to guarantee the essential services and
+        frontline” services Victorians rely on.
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: unspecified
+        pbo_status: uncosted
+        timeframe: "by 2032"
+      source:
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
+        publisher: Parliament of Victoria (Hansard)
+        title: Appropriation (2026–2027) Bill 2026 — 12 May
+        published: 2026-05-12
+        accessed: 2026-08-02
+    - id: liberal-debt-wilson-budget
+      statement: >-
+        Liberal leader Jess Wilson said the budget “spends big, plans little, and
+        leaves the next generation to pick up the bill.” “Victoria needs a new
+        approach to managing the books — one that is honest about the challenges we
+        face and clear about how we will turn things around together.”
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2026-05-05/victorian-state-budget-2026-wrap/106638608
+        publisher: ABC News
+        title: Victorian government spruiks first surplus in seven years in 2026 budget
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: liberal-debt-no-plan-critique
+      statement: >-
+        Guardian Australia reported Wilson said the government had “no plan” to drive
+        down debt, and that a Coalition government would make “tough decisions” to
+        bring the budget back under control.
+      kind: position
+      source:
+        url: https://www.theguardian.com/australia-news/2026/may/04/victoria-state-budget-2026-surplus
+        publisher: The Guardian
+        title: Victorian budget 2026 — surplus but debt nears $200bn
+        published: 2026-05-05
+        accessed: 2026-08-02

@@ -1,0 +1,56 @@
+# Australian Labor Party (Victorian Branch) — Health & Hospitals
+policy:
+  party: labor
+  issue: health-hospitals
+  headline: Hospital funding certainty and ongoing health investment
+  claims:
+    - id: labor-health-16b
+      statement: >-
+        “A $1.6 billion injection will give every public hospital funding certainty
+        to continue providing the high-quality care Victorians count on.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_aud: 1600000000
+        amount_display: "$1.6 billion"
+        timeframe: "Budget 2026/27"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-cost-living-help-and-surplus
+        publisher: Premier of Victoria
+        title: Labor Delivers Cost Of Living Help And A Surplus
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-health-record
+      statement: >-
+        “We have delivered 11 new hospitals and upgraded 40 more, and we have hired
+        40,000 more doctors, nurses, midwives and healthcare professionals to deliver
+        the best possible healthcare.”
+      kind: position
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-cost-living-help-and-surplus
+        publisher: Premier of Victoria
+        title: Labor Delivers Cost Of Living Help And A Surplus
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-health-1b
+      statement: >-
+        ABC News budget wrap: “The government will also invest $1 billion into health
+        in the coming financial year, including nearly $400 million dedicated to
+        patient care. Ambulance Victoria will receive a $50 million funding boost over
+        the next two years.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_aud: 1000000000
+        amount_display: "$1 billion (health investment, coming financial year)"
+        timeframe: "2026/27 budget year"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.abc.net.au/news/2026-05-05/victorian-state-budget-2026-wrap/106638608
+        publisher: ABC News
+        title: Victorian government spruiks first surplus in seven years in 2026 budget
+        published: 2026-05-05
+        accessed: 2026-08-02

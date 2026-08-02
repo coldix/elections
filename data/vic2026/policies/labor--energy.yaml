@@ -1,0 +1,66 @@
+# Australian Labor Party (Victorian Branch) — Energy
+policy:
+  party: labor
+  issue: energy
+  headline: Renewables investment and energy bill support programs
+  claims:
+    - id: labor-energy-renewables
+      statement: >-
+        “Labor is making sure Victoria has the renewable energy needed to keep the
+        lights on and lower bills for Victorian families and businesses. We’re
+        investing more than $6 million to fast-track renewable energy projects –
+        getting cheaper, cleaner power to more Victorian homes sooner.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Upfront capital"
+        amount_aud: 6000000
+        amount_display: "more than $6 million"
+        timeframe: "Budget 2026/27"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
+        publisher: Premier of Victoria
+        title: Labor Delivers Real Help To Ease The Cost Of Living
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-energy-offshore
+      statement: >-
+        “We’re also investing $124.5 million to progress the Victorian Renewable
+        Energy Terminal at the Port of Hastings to support the construction of
+        Australia’s first offshore wind industry. This will create more than 2,370
+        jobs, generate billions in investment and deliver affordable and reliable
+        power for all Victorians.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Upfront capital"
+        amount_aud: 124500000
+        amount_display: "$124.5 million"
+        timeframe: "Budget 2026/27"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
+        publisher: Premier of Victoria
+        title: Labor Delivers Real Help To Ease The Cost Of Living
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-energy-community-housing
+      statement: >-
+        “We’re helping Victoria’s most vulnerable families with $10 million for
+        community housing renters. It will make their homes more liveable and switch
+        to efficient electric appliances, slashing hundreds of dollars off their
+        energy bills.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Upfront capital"
+        amount_aud: 10000000
+        amount_display: "$10 million"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
+        publisher: Premier of Victoria
+        title: Labor Delivers Real Help To Ease The Cost Of Living
+        published: 2026-05-05
+        accessed: 2026-08-02

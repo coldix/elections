@@ -1,0 +1,35 @@
+# National Party of Australia - Victoria — Debt & Budget
+policy:
+  party: nationals
+  issue: debt-budget
+  headline: Coalition cash surplus target by 2032
+  claims:
+    - id: nationals-debt-cash-surplus
+      statement: >-
+        As part of the Liberal–Nationals opposition plan stated in Parliament:
+        repairing the budget “to deliver a cash surplus by 2032, to guarantee the
+        essential services and frontline” services.
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: unspecified
+        pbo_status: uncosted
+        timeframe: "by 2032"
+      source:
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
+        publisher: Parliament of Victoria (Hansard)
+        title: Appropriation (2026–2027) Bill 2026 — 12 May
+        published: 2026-05-12
+        accessed: 2026-08-02
+    - id: nationals-debt-scrap-taxes
+      statement: >-
+        Nationals Ripon candidate Jo Armstrong: “We have a plan that will scrap taxes
+        and deliver cost-of-living relief, crack down on crime, improve our roads,
+        and build more houses.”
+      kind: position
+      source:
+        url: https://vic.nationals.org.au/media-releases/jo-armstrong-selected-as-nationals-candidate-for-ripon/
+        publisher: The Nationals Victoria
+        title: Jo Armstrong selected as Nationals' candidate for Ripon
+        published: 2026-04-14
+        accessed: 2026-08-02

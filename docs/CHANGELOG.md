@@ -4,6 +4,15 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-08-02 — Policy matrix wave 2 (energy, health, debt)
+
+| Area | What shipped |
+|---|---|
+| **New issues** | **Energy**, **Health & Hospitals**, **Debt & Budget** for Labor/Liberal/Nationals/Greens where sourced. |
+| **Housing boost** | Greens: +$4bn public housing, stamp duty cuts (party media 9 Jul 2026). |
+| **Totals** | **17** policy records · **42** claims · **17/70** matrix cells filled. |
+| **Empty** | One Nation still empty; Greens energy and most health cells sparse until stronger sources. |
+
 ## 2026-08-02 — First policy matrix seed (housing + cost of living)
 
 | Area | What shipped |

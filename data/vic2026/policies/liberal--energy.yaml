@@ -1,0 +1,30 @@
+# Liberal Party of Australia – Victorian Division — Energy
+policy:
+  party: liberal
+  issue: energy
+  headline: Scrap gas ban; reopen conventional gas exploration
+  claims:
+    - id: liberal-energy-gas-ban
+      statement: >-
+        Opposition economic commitments include “to remove the gas ban and reopen
+        Victoria for gas exploration to ensure affordable energy supply for homes and
+        businesses.”
+      kind: pledge
+      source:
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
+        publisher: Parliament of Victoria (Hansard)
+        title: Appropriation (2026–2027) Bill 2026 — 12 May
+        published: 2026-05-12
+        accessed: 2026-08-02
+    - id: liberal-energy-firm-supply
+      statement: >-
+        “A strong economy needs affordable and reliable power, and only our Liberal
+        and Nationals team has a plan to open the door to new conventional gas
+        exploration and ensure Victoria has sufficient firm energy supplies.”
+      kind: position
+      source:
+        url: https://www.parliament.vic.gov.au/4a2421/globalassets/hansard-daily-pdfs/hansard-974425065-36116/hansard-974425065-36116.pdf
+        publisher: Parliament of Victoria (Hansard PDF)
+        title: Legislative Council — energy policy debate (30 July 2026)
+        published: 2026-07-30
+        accessed: 2026-08-02
