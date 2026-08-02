@@ -1,0 +1,19 @@
+# Liberal Party — Environment / energy landscape (federal offshore wind)
+policy:
+  party: liberal
+  issue: environment-forestry
+  headline: "Federal policy — scrap four of six offshore wind zones"
+  claims:
+    - id: liberal-env-offshore-wind
+      statement: >-
+        [Federal party policy] Liberal energy plan includes “maintaining our commitment
+        to scrap four of the six offshore wind zones announced by Labor,” alongside a
+        developer Code of Conduct for electricity infrastructure and putting
+        “communities at the centre” of decision-making.
+      kind: pledge
+      source:
+        url: https://www.liberal.org.au/2025/11/13/affordable-and-responsible-the-liberal-plan-for-affordable-energy-and-lower-emissions
+        publisher: Liberal Party of Australia
+        title: Affordable and Responsible — Liberal plan for affordable energy and lower emissions
+        published: 2025-11-13
+        accessed: 2026-08-02

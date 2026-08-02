@@ -1,0 +1,21 @@
+# National Party — Environment (regional energy infrastructure)
+policy:
+  party: nationals
+  issue: environment-forestry
+  headline: Regional transmission / renewables infrastructure caution (reported)
+  claims:
+    - id: nationals-env-transmission
+      statement: >-
+        Clean Energy Council (characterising Victorian Liberal-Nationals announcement):
+        the Coalition “confirmed they would pursue the Victoria Energy Policy Centre’s
+        ‘Plan B’ proposal as an alternative to the Victorian Transmission Plan,” and
+        that “Halting VNI West and pausing the Western Renewables Link” would restrict
+        new electricity supply as coal plants close — Nationals policy framed as putting
+        “thousands of regional construction and operational jobs at risk.”
+      kind: position
+      source:
+        url: https://cleanenergycouncil.org.au/news-resources/coalition-transmission-backflip-puts-victoria-s-energy-security-at-risk
+        publisher: Clean Energy Council
+        title: Coalition transmission backflip puts Victoria’s energy security at risk
+        published: 2026-05-07
+        accessed: 2026-08-02

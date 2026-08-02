@@ -1,0 +1,33 @@
+# One Nation Victoria — Health & Hospitals
+policy:
+  party: one-nation
+  issue: health-hospitals
+  headline: Rosebud Hospital redevelopment via public-private partnership
+  claims:
+    - id: onp-health-rosebud-ppp
+      statement: >-
+        One Nation Victoria: Rosebud Hospital redevelopment will use a PPP model
+        “keeping it publicly owned while fast tracking construction.” The party
+        distinguishes PPP from privatisation: “The hospital stays publicly owned. A
+        private company is contracted to build and finance the project… Clinical
+        services remain public (doctors, nurses, care).”
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/rosebud-rebuild-ppp
+        publisher: One Nation Victoria
+        title: One Nation will redevelop the Rosebud Hospital through PPP
+        published: 2026-04-27
+        accessed: 2026-08-02
+    - id: onp-health-ppp-examples
+      statement: >-
+        One Nation Victoria cites Victorian PPP hospital precedents including Royal
+        Children’s, Royal Women’s, Victorian Comprehensive Cancer Centre, Bendigo and
+        Casey hospitals as models where private partners handle design, construction,
+        financing and facilities while clinical care stays public.
+      kind: position
+      source:
+        url: https://vic.onenation.org.au/rosebud-rebuild-ppp
+        publisher: One Nation Victoria
+        title: One Nation will redevelop the Rosebud Hospital through PPP
+        published: 2026-04-27
+        accessed: 2026-08-02

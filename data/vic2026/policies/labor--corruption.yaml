@@ -1,0 +1,32 @@
+# Australian Labor Party (Victorian Branch) — Corruption / integrity
+policy:
+  party: labor
+  issue: corruption
+  headline: IBAC follow-the-money powers overhaul
+  claims:
+    - id: labor-ibac-follow-money
+      statement: >-
+        Premier Jacinta Allan announced follow-the-money powers for IBAC: “\[These are\]
+        the most far-reaching overhaul of IBAC's powers since it was established in
+        2012… It will see IBAC as a fit-for-purpose agency as part of an integrity
+        system here in Victoria.” The change allows IBAC to pursue taxpayer funds
+        through subcontracting and labour-hire arrangements.
+      kind: pledge
+      source:
+        url: https://www.abc.net.au/news/2026-06-01/extended-powers-for-anti-corruption-ibac-victorian-government/106746190
+        publisher: ABC News
+        title: Victoria's anti-corruption watchdog IBAC to get extended powers
+        published: 2026-06-01
+        accessed: 2026-08-02
+    - id: labor-ibac-retrospective
+      statement: >-
+        “Let me be clear, I want the follow-the-money investigative powers to be
+        retrospective… IBAC should be able to examine recent allegations and also work
+        alongside Victoria Police to ensure all criminal behaviour is investigated.”
+      kind: pledge
+      source:
+        url: https://www.abc.net.au/news/2026-06-01/extended-powers-for-anti-corruption-ibac-victorian-government/106746190
+        publisher: ABC News
+        title: Victoria's anti-corruption watchdog IBAC to get extended powers
+        published: 2026-06-01
+        accessed: 2026-08-02

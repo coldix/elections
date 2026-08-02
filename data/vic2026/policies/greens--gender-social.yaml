@@ -1,0 +1,20 @@
+# Victorian Greens — Gender Equality & Social Policy
+# Use education inquiry equity framing for disadvantaged cohorts including disability
+policy:
+  party: greens
+  issue: gender-social
+  headline: Equity for disadvantaged students; public school support
+  claims:
+    - id: greens-gender-equity-students
+      statement: >-
+        Greens-secured public school funding inquiry “revealed the ripple effects…
+        on students with disability, migrant and refugee, First Nation students and
+        students taking alternative learning… who are being left behind by this
+        government’s decision to cut funding.”
+      kind: position
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-say-labor-notice-reinstate-24-billion-public-schools-after-damning
+        publisher: Australian Greens Victoria
+        title: Greens say Labor is on notice to reinstate $2.4 billion for public schools
+        published: 2026-05-14
+        accessed: 2026-08-02

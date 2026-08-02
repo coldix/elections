@@ -1,0 +1,35 @@
+# Australian Labor Party — Immigration (federal government settings)
+policy:
+  party: labor
+  issue: immigration
+  headline: "Federal policy — permanent Migration Program 185,000 places"
+  claims:
+    - id: labor-imm-185k
+      statement: >-
+        [Federal government policy] The Albanese Labor Government “will maintain the
+        2025-26 Permanent Migration Program at the same level and settings as the
+        2024-2025 Program, 185,000,” following consultation with states and territories
+        that recommended maintaining size and composition “with a focus on skilled
+        migration.”
+      kind: position
+      source:
+        url: https://eiglaw.com/australias-permanent-migration-program-for-2025-2026-stability-and-skilled-focus-continue/
+        publisher: EIG Law (summarising government announcement)
+        title: Australia’s Permanent Migration Program for 2025-2026
+        published: 2025-09-02
+        accessed: 2026-08-02
+    - id: labor-imm-skilled
+      statement: >-
+        [Federal government framing] Assistant Minister for Immigration (ABC Perth
+        Drive, April 2026): “our aim is around 185,000 new permanent migrants per year.
+        The majority of those, three quarters of them will be skilled migrants coming
+        to Australia… That’s what we believe is sustainable, to ensure that we get the
+        skilled migrants that we need to build the homes, to look after our elderly and
+        to care for those with disabilities.”
+      kind: position
+      source:
+        url: https://minister.homeaffairs.gov.au/MattThistlethwaite/Pages/abc-perth-drive-radio-interview-15042026.aspx
+        publisher: Assistant Minister for Immigration (Home Affairs)
+        title: ABC Perth Drive — radio interview
+        published: 2026-04-15
+        accessed: 2026-08-02

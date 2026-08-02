@@ -1,0 +1,20 @@
+# Victorian Greens — Corruption / integrity
+policy:
+  party: greens
+  issue: corruption
+  headline: Called for broadened IBAC powers on CFMEU / Big Build
+  claims:
+    - id: greens-ibac-powers
+      statement: >-
+        ABC News related coverage notes Greens calls for broadened anti-corruption
+        powers in the context of CFMEU and Big Build scrutiny (February 2026 story
+        titled reporting Greens call for broadened powers for the anti-corruption body
+        regarding CFMEU referrals). Labor later announced follow-the-money powers IBAC
+        had sought.
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2026-02-17/greens-call-broadened-powers-anticorruption-body-cmfeu/106350798
+        publisher: ABC News
+        title: Greens call for broadened powers for anti-corruption body (CFMEU)
+        published: 2026-02-17
+        accessed: 2026-08-02

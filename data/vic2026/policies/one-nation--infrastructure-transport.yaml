@@ -1,0 +1,19 @@
+# One Nation Victoria — Infrastructure (hospital PPP framing)
+policy:
+  party: one-nation
+  issue: infrastructure-transport
+  headline: PPP delivery model for major hospital infrastructure
+  claims:
+    - id: onp-infra-ppp-delivery
+      statement: >-
+        One Nation Victoria argues PPP is “a proven model in Victoria” for major
+        hospital builds, with private partners handling design, construction, financing
+        and facilities management while ownership and clinical services remain public —
+        framed as faster delivery without “privatisation” of the asset.
+      kind: position
+      source:
+        url: https://vic.onenation.org.au/rosebud-rebuild-ppp
+        publisher: One Nation Victoria
+        title: One Nation will redevelop the Rosebud Hospital through PPP
+        published: 2026-04-27
+        accessed: 2026-08-02
