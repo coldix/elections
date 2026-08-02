@@ -2,43 +2,47 @@
 policy:
   party: greens
   issue: crime-justice
-  headline: Oppose overcrowding from bail laws; invest in prevention
+  headline: Justice reinvestment, bail support and stronger rights in police custody
   claims:
-    - id: greens-crime-bail-crisis
-      statement: >-
-        “Labor ignored the evidence and ignored the warnings. Instead of investing
-        in the things we know improve community safety, they chose reactionary
-        politics and now we’re facing a dangerous overcrowding crisis in both police
-        cells and prisons.”
+    - id: greens-crime-prevention
+      statement: Prioritise evidence-based crime prevention and justice reinvestment in communities over politically driven law-and-order campaigns.
       kind: position
       source:
-        url: https://greens.org.au/vic/news/media-release/greens-introduce-decanting-laws-calling-action-dangerously-overflowing
+        url: https://greens.org.au/vic/policies/justice-policy
         publisher: Australian Greens Victoria
-        title: Greens introduce ‘decanting’ laws for overcrowded police cells
-        published: 2026-06-17
-        accessed: 2026-08-02
+        title: Justice Policy
+        accessed: '2026-08-02'
+    - id: greens-crime-alternatives
+      statement: Expand and properly fund community corrections, restorative justice, diversion programs and regional bail-support services, while treating prison as a last resort.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/policies/justice-policy
+        publisher: Australian Greens Victoria
+        title: Justice Policy
+        accessed: '2026-08-02'
     - id: greens-crime-custody-bill
-      statement: >-
-        The Greens’ ‘Better Rights in Police Custody Bill’ would “provide a mechanism
-        to safely reduce the time a person can be held in police cells, cease
-        decanting across different police stations, as well as ensuring those in
-        police custody have the same rights to health care and visitors.”
+      statement: The Better Rights in Police Custody Bill would limit extended detention in police cells, end repeated transfers between stations and give people in police custody equivalent rights to healthcare and visitors.
       kind: pledge
       source:
         url: https://greens.org.au/vic/news/media-release/greens-introduce-decanting-laws-calling-action-dangerously-overflowing
         publisher: Australian Greens Victoria
-        title: Greens introduce ‘decanting’ laws for overcrowded police cells
-        published: 2026-06-17
-        accessed: 2026-08-02
-    - id: greens-crime-what-works
-      statement: >-
-        “We need immediate action to reduce overcrowding and prevent deaths in
-        custody, and we need the government to start investing in the things that
-        actually make communities safer.”
-      kind: position
+        title: Greens introduce decanting laws calling for action for dangerously overflowing police cells
+        published: '2026-06-17'
+        accessed: '2026-08-02'
+    - id: greens-crime-bail-opposition
+      statement: Oppose the Victorian Government's punitive bail changes, arguing they have increased remand and overcrowding without addressing the causes of crime.
+      kind: opposition_to
       source:
         url: https://greens.org.au/vic/news/media-release/greens-introduce-decanting-laws-calling-action-dangerously-overflowing
         publisher: Australian Greens Victoria
-        title: Greens introduce ‘decanting’ laws for overcrowded police cells
-        published: 2026-06-17
-        accessed: 2026-08-02
+        title: Greens introduce decanting laws calling for action for dangerously overflowing police cells
+        published: '2026-06-17'
+        accessed: '2026-08-02'
+    - id: greens-crime-age-14
+      statement: Raise the age of criminal responsibility to at least 14 years.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/policies/justice-policy
+        publisher: Australian Greens Victoria
+        title: Justice Policy
+        accessed: '2026-08-02'
