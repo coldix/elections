@@ -1,0 +1,42 @@
+# Victorian Labor — Firearms Policy
+policy:
+  party: labor
+  issue: firearms-policy
+  headline: Stronger licensing checks, permanent prohibition orders and tougher trafficking penalties
+  claims:
+  - id: labor-firearms-background-checks
+    statement: Require firearms licence applicants and renewing licensees to undergo national AusCheck background checks using criminal and national-security intelligence.
+    kind: pledge
+    source:
+      url: https://www.premier.vic.gov.au/new-firearms-laws-keep-victorians-safe
+      publisher: Victorian Government
+      title: New firearms laws to keep Victorians safe
+      published: '2026-06-17'
+      accessed: '2026-08-02'
+  - id: labor-firearms-citizenship
+    statement: Generally limit firearms licences to Australian citizens, subject to specified exemptions including livelihood needs.
+    kind: pledge
+    source:
+      url: https://www.premier.vic.gov.au/new-firearms-laws-keep-victorians-safe
+      publisher: Victorian Government
+      title: New firearms laws to keep Victorians safe
+      published: '2026-06-17'
+      accessed: '2026-08-02'
+  - id: labor-firearms-trafficking
+    statement: Increase maximum penalties for large-scale firearms trafficking and strengthen offences involving firearm prohibition orders.
+    kind: pledge
+    source:
+      url: https://www.premier.vic.gov.au/new-firearms-laws-keep-victorians-safe
+      publisher: Victorian Government
+      title: New firearms laws to keep Victorians safe
+      published: '2026-06-17'
+      accessed: '2026-08-02'
+  - id: labor-firearms-no-cap
+    statement: Reject a numerical cap on firearms held by an individual licensee while recognising legitimate use by primary producers, hunters and sporting shooters.
+    kind: position
+    source:
+      url: https://www.premier.vic.gov.au/even-harder-gun-fall-wrong-hands
+      publisher: Victorian Government
+      title: Making it even harder for a gun to fall into the wrong hands
+      published: '2026-05-25'
+      accessed: '2026-08-02'
