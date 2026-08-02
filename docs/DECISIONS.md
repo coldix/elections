@@ -159,3 +159,25 @@ prevent ad hoc “which polls count” decisions under campaign pressure.
 **Consequences.** New polls are YAML PRs with sources. Forecasting, MRP and
 seat models remain out of scope (SCOPE.md). Candidate ordering never uses
 polls (METHODOLOGY.md).
+
+## ADR-11: Policy matrix & issues ledger (secondary product)
+
+**Decision.** Ship a **jurisdiction guide** (`/parties/issues`) and a
+**sourced policy comparison matrix** (`/parties/matrix`) as a secondary product
+alongside the candidate ledger. Data lives in YAML (`issues.yaml` +
+`policies/*.yaml`), validated in CI, exported as JSON/CSV. Claims are quotes
+with mandatory sources. **No subjective ratings, stars, or scorecards.**
+
+**v1 matrix columns** are fixed: Greens, Labor, Liberal, Nationals, One Nation
+(user-toggleable). Issues taxonomy is data-driven and editable without code.
+
+**Why.** Voters and journalists need non-partisan comparison and clarity about
+state vs federal responsibility. That fits the evidence-ledger culture of the
+project, but it is not the original wedge (candidate coverage). Treating it as
+secondary keeps the kill criteria on the candidate product intact.
+
+**Consequences.** Empty cells are expected early in the campaign. Expanding
+parties, scoring systems, or candidate-level policy requires a new decision.
+Fiscal chips (taxpayer cost, PBO costed vs uncosted, debt) are labels on
+sourced claims — not independent costings by this project. Full rules:
+[POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md).

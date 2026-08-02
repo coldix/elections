@@ -20,6 +20,13 @@ import {
   COVERAGE_CAVEAT,
 } from "./lib/data.mjs";
 import { loadPolls, computePollAverage, POLL_CAVEAT } from "./lib/polls.mjs";
+import {
+  loadIssues,
+  loadPolicies,
+  flattenPolicyClaims,
+  matrixFor,
+  POLICY_CAVEAT,
+} from "./lib/policies.mjs";
 
 const OUT_ROOT = new URL("../site/public/data/", import.meta.url).pathname;
 
@@ -106,6 +113,36 @@ for (const id of listElections()) {
     )
   );
 
+  // Policy matrix + issues ledger (secondary product; may be sparse)
+  const issues = loadIssues(id);
+  const policies = loadPolicies(id);
+  const matrix = matrixFor(id);
+  write("issues.json", {
+    generated: new Date().toISOString(),
+    methodology: "docs/POLICY-METHODOLOGY.md",
+    issues: issues.map(({ jurisdiction_label, ...rest }) => rest),
+  });
+  write("policies.json", {
+    generated: new Date().toISOString(),
+    caveat: POLICY_CAVEAT,
+    methodology: "docs/POLICY-METHODOLOGY.md",
+    matrix_parties: matrix.parties,
+    stats: matrix.stats,
+    policies: policies.map(({ file, claim_count, ...p }) => p),
+  });
+  writeFileSync(
+    join(out, "policies.csv"),
+    csv(
+      flattenPolicyClaims(policies, issues),
+      [
+        "party", "issue", "issue_name", "claim_id", "kind", "statement", "headline",
+        "taxpayer_label", "amount_aud", "amount_display", "timeframe", "financing",
+        "pbo_status", "source_url", "source_publisher", "source_title",
+        "source_published", "source_accessed",
+      ]
+    )
+  );
+
   writeFileSync(
     join(out, "districts.csv"),
     csv(districts, ["slug", "name", "chamber", "region", "incumbent", "incumbent_party"])
@@ -149,15 +186,18 @@ for (const id of listElections()) {
       "candidates.json", "retirements.json", "council-members.json",
       "representation.json", "summary.json", "coverage.json",
       "polls.json", "poll-average.json",
+      "issues.json", "policies.json",
       "districts.csv", "candidates.csv", "retirements.csv", "council-members.csv",
-      "polls.csv",
+      "polls.csv", "policies.csv",
     ],
     polls: polls.length,
     poll_average_status: pollAverage.status,
+    issues: issues.length,
+    policies: policies.length,
   });
 
   console.log(
-    `${id}: exported ${summary.candidates} candidates, ${polls.length} polls -> site/public/data/${id}/`
+    `${id}: exported ${summary.candidates} candidates, ${polls.length} polls, ${issues.length} issues, ${policies.length} policies -> site/public/data/${id}/`
   );
 }
 

@@ -177,10 +177,46 @@ const statuses = [
       <a href="/data/vic2026/poll-average.json">poll-average.json</a>.
     </p>
 
+    <h2 id="policy-matrix">Policy matrix and issues ledger</h2>
+    <p>
+      A secondary product records <strong>sourced party positions</strong> on a fixed
+      set of issues, plus a plain-language guide to which level of government is
+      responsible for each issue. It is not a scorecard.
+    </p>
+    <ul>
+      <li>
+        No star ratings, 1–5 scales, letter grades or editorial “who is better”
+        commentary. Claims are quotes (or tightly attributed statements) with dated sources.
+      </li>
+      <li>
+        Financial claims may carry taxpayer-cost labels (upfront capital, ongoing
+        operational, debt/interest) and a <strong>PBO costed</strong> vs
+        <strong>Uncosted pledge</strong> badge — never a substitute for reading the source.
+      </li>
+      <li>
+        An empty matrix cell means no sourced position is in the ledger yet, not that
+        the party has no view and not a judgement of importance.
+      </li>
+      <li>
+        v1 comparison columns are fixed: Greens, Labor, Liberal, Nationals, One Nation.
+        Full rules:{" "}
+        <a href="https://github.com/coldix/elections/blob/main/docs/POLICY-METHODOLOGY.md">
+          docs/POLICY-METHODOLOGY.md</a>.
+      </li>
+    </ul>
+    <p>
+      Pages: <a href="/parties/issues">jurisdiction guide</a>,
+      <a href="/parties/matrix">policy matrix</a>. Exports:
+      <a href="/data/vic2026/issues.json">issues.json</a>,
+      <a href="/data/vic2026/policies.json">policies.json</a>,
+      <a href="/data/vic2026/policies.csv">policies.csv</a>.
+    </p>
+
     <p class="foot muted">
       Candidate rules on this page mirror <code>docs/METHODOLOGY.md</code> in the
       <a href={SITE.repo}>public repository</a>. Poll rules live in
-      <code>docs/POLL-METHODOLOGY.md</code>. Both carry their own change history.
+      <code>docs/POLL-METHODOLOGY.md</code>. Policy rules live in
+      <code>docs/POLICY-METHODOLOGY.md</code>. Each carries its own change history.
     </p>
   </div>
 </Base>

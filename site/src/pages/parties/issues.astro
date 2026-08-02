@@ -1,0 +1,268 @@
+---
+import Base from "../../layouts/Base.astro";
+import JurisdictionBadge from "../../components/JurisdictionBadge.astro";
+import {
+  loadIssues,
+  JURISDICTION_LABELS,
+  POLICY_CAVEAT,
+} from "../../../../scripts/lib/policies.mjs";
+import { SITE } from "../../lib/site.mjs";
+
+const issues = loadIssues("vic2026");
+
+const schema = {
+  "@type": "WebPage",
+  name: "Issues & jurisdiction guide — Victorian state election 2026",
+  description:
+    "Which level of government is responsible for key policy areas in Victoria: state, federal, local, or shared.",
+  url: `${SITE.url}/parties/issues`,
+  isPartOf: { "@id": `${SITE.url}/#website` },
+};
+---
+
+<Base
+  title="Issues & jurisdiction"
+  description="Plain-language guide to which level of government is responsible for cost of living, housing, health, immigration and other election issues in Victoria."
+  schema={schema}
+>
+  <div class="wrap section">
+    <header class="page-head">
+      <p class="eyebrow">Victoria 2026</p>
+      <h1>Issues & jurisdiction</h1>
+      <p class="lede">
+        Before comparing party promises, check who actually controls the policy.
+        Many campaign themes mix <strong>state</strong>, <strong>federal</strong> and
+        <strong>local</strong> powers. This guide is educational — not legal advice —
+        and is written to help voters hold the right level of government to account.
+      </p>
+      <p class="btn-row">
+        <a class="btn" href="/parties/matrix">Policy comparison matrix</a>
+        <a class="btn btn-ghost btn-sm" href="/parties">All parties</a>
+        <a class="btn btn-ghost btn-sm" href="/methodology#policy-matrix">Methodology</a>
+      </p>
+    </header>
+
+    <div class="notice" role="note">
+      <strong>How to read this.</strong> Each issue carries a jurisdiction badge:
+      <em>State Primary</em>, <em>Shared Fed/State</em>, <em>Federal Primary</em>,
+      <em>Local</em>, or <em>Shared State/Local</em>. Party positions for these issues
+      appear on the matrix only when a dated public source is in the ledger.
+      {POLICY_CAVEAT}
+    </div>
+
+    <nav class="issue-jump" aria-label="Jump to issue">
+      <p class="issue-jump-label">Jump to</p>
+      <ul>
+        {
+          issues.map((issue) => (
+            <li>
+              <a href={`#${issue.slug}`}>{issue.name}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="issue-list">
+      {
+        issues.map((issue) => (
+          <article class="issue-card card" id={issue.slug}>
+            <header class="issue-card-head">
+              <h2>{issue.name}</h2>
+              <JurisdictionBadge jurisdiction={issue.jurisdiction} />
+            </header>
+            <p class="issue-summary">{issue.summary}</p>
+            <p class="issue-note">{issue.jurisdiction_note}</p>
+
+            <dl class="issue-roles">
+              {issue.state_role && (
+                <div>
+                  <dt>State (Victoria)</dt>
+                  <dd>{issue.state_role}</dd>
+                </div>
+              )}
+              {issue.federal_role && (
+                <div>
+                  <dt>Federal (Commonwealth)</dt>
+                  <dd>{issue.federal_role}</dd>
+                </div>
+              )}
+              {issue.local_role && (
+                <div>
+                  <dt>Local councils</dt>
+                  <dd>{issue.local_role}</dd>
+                </div>
+              )}
+            </dl>
+
+            <p class="issue-actions">
+              <a class="btn btn-ghost btn-sm" href={`/parties/matrix#issue-${issue.slug}`}>
+                Compare parties on {issue.name}
+              </a>
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+    <section class="legend card" aria-labelledby="legend-h">
+      <h2 id="legend-h">Jurisdiction badges</h2>
+      <ul class="legend-list">
+        {
+          Object.entries(JURISDICTION_LABELS).map(([key, label]) => (
+            <li>
+              <JurisdictionBadge jurisdiction={key} />
+              <span class="muted legend-desc">
+                {key === "state_primary" && "Victorian Parliament and government are the primary decision-makers."}
+                {key === "shared_fed_state" && "Both Commonwealth and Victoria have substantial roles."}
+                {key === "federal_primary" && "Primarily a Commonwealth power; state influence is limited or indirect."}
+                {key === "local_primary" && "Primarily local government under state frameworks."}
+                {key === "shared_state_local" && "State sets the framework; councils deliver much day-to-day administration."}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .issue-jump {
+    margin: 1.5rem 0 2rem;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .issue-jump-label {
+    margin: 0 0 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+  }
+
+  .issue-jump ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.75rem;
+  }
+
+  .issue-jump a {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .issue-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+  }
+
+  .issue-card {
+    padding: 1.25rem 1.35rem;
+    scroll-margin-top: 5rem;
+  }
+
+  .issue-card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.85rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .issue-card-head h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    flex: 1 1 auto;
+  }
+
+  .issue-summary {
+    margin: 0 0 0.65rem;
+    font-size: 1.02rem;
+    color: var(--ink);
+  }
+
+  .issue-note {
+    margin: 0 0 1rem;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+
+  .issue-roles {
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 40rem) {
+    .issue-roles {
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+  }
+
+  .issue-roles div {
+    padding: 0.65rem 0.75rem;
+    border-radius: var(--radius-sm);
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+  }
+
+  .issue-roles dt {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+    margin-bottom: 0.25rem;
+  }
+
+  .issue-roles dd {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--ink-2);
+  }
+
+  .issue-actions {
+    margin: 1rem 0 0;
+  }
+
+  .legend {
+    margin-top: 2.5rem;
+    padding: 1.25rem 1.35rem;
+  }
+
+  .legend h2 {
+    margin: 0 0 0.85rem;
+    font-size: 1.1rem;
+  }
+
+  .legend-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .legend-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .legend-desc {
+    font-size: 0.9rem;
+    flex: 1 1 12rem;
+  }
+</style>

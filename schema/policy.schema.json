@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://electiontracker.au/schema/policy.schema.json",
+  "title": "Party policy position for one issue",
+  "type": "object",
+  "required": ["policy"],
+  "properties": {
+    "policy": {
+      "type": "object",
+      "required": ["party", "issue", "claims"],
+      "additionalProperties": false,
+      "properties": {
+        "party": {
+          "type": "string",
+          "description": "Party slug; v1 matrix allowlist is greens, labor, liberal, nationals, one-nation"
+        },
+        "issue": {
+          "type": "string",
+          "description": "Issue slug from issues.yaml"
+        },
+        "headline": {
+          "type": ["string", "null"],
+          "description": "Optional neutral scannable label — not a rating or ranking"
+        },
+        "claims": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "statement", "kind", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "statement": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Verbatim or tightly attributed quote from a primary source"
+              },
+              "kind": {
+                "enum": ["pledge", "position", "costed_measure", "opposition_to"]
+              },
+              "fiscal": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "taxpayer_label": {
+                    "enum": [
+                      "Upfront capital",
+                      "Ongoing operational",
+                      "Debt / interest",
+                      "Not specified"
+                    ]
+                  },
+                  "amount_aud": {
+                    "type": "integer",
+                    "description": "Amount in whole Australian dollars (not cents)"
+                  },
+                  "amount_display": { "type": "string" },
+                  "timeframe": { "type": "string" },
+                  "financing": {
+                    "enum": [
+                      "taxpayer",
+                      "borrowing",
+                      "user_charges",
+                      "mixed",
+                      "unspecified"
+                    ]
+                  },
+                  "pbo_status": {
+                    "enum": ["pbo_costed", "uncosted", "not_applicable"]
+                  },
+                  "pbo_ref": { "$ref": "#/$defs/source" }
+                }
+              },
+              "source": { "$ref": "#/$defs/source" }
+            }
+          }
+        },
+        "corrections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["date", "was", "now", "reason"],
+            "properties": {
+              "date": { "type": "string", "format": "date" },
+              "was": { "type": "string" },
+              "now": { "type": "string" },
+              "reason": { "type": "string" },
+              "source": { "$ref": "#/$defs/source" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["url", "publisher", "accessed"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "publisher": { "type": "string", "minLength": 1 },
+        "title": { "type": "string" },
+        "published": { "type": "string", "format": "date" },
+        "accessed": { "type": "string", "format": "date" },
+        "archive_url": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

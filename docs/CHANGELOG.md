@@ -4,6 +4,16 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-08-02 — Policy matrix & issues jurisdiction guide
+
+| Area | What shipped |
+|---|---|
+| **Issues guide** | New **`/parties/issues`** — 14 issue areas with State / Federal / Local jurisdiction badges and plain-language roles. |
+| **Policy matrix** | New **`/parties/matrix`** — five fixed columns (Greens, Labor, Liberal, Nationals, One Nation) with CSS column toggles; empty cells honest until claims are sourced. |
+| **Data** | `data/vic2026/issues.yaml` + `policies/`; schemas; validate; exports `issues.json`, `policies.json`, `policies.csv`. |
+| **Method** | [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md) + ADR-11: no ratings, quote + source only, taxpayer/PBO/debt chips for fiscal claims. |
+| **Open data** | Catalog on `/data` updated; methodology section for policy ledger. |
+
 ## 2026-08-01 — Labor gap progress + Maas open seat
 
 | Area | What shipped |

@@ -1,0 +1,426 @@
+---
+/**
+ * Policy comparison matrix — five fixed party columns with CSS checkbox
+ * column toggles (no framework). Desktop: sticky issue + party headers.
+ * Mobile: per-issue card stacks that respect the same toggles.
+ */
+import { partyColour } from "../lib/site.mjs";
+import JurisdictionBadge from "./JurisdictionBadge.astro";
+import PolicyCell from "./PolicyCell.astro";
+
+const { matrix } = Astro.props;
+const { parties, rows, stats, caveat } = matrix;
+---
+
+<section class="pm" aria-labelledby="pm-h">
+  <div class="pm-intro">
+    <p class="eyebrow">Party positions · sourced only</p>
+    <h2 id="pm-h">Policy comparison matrix</h2>
+    <p class="lede">
+      Side-by-side positions for the five parties in the default comparison set.
+      Toggle columns to compare match-ups. Empty cells mean nothing is in the
+      ledger yet — not an editorial score.
+    </p>
+    <p class="pm-stats muted">
+      <strong>{stats.filled_cells}</strong> of <strong>{stats.total_cells}</strong> cells
+      have a sourced position
+      ({stats.claims} claim{stats.claims === 1 ? "" : "s"} across {stats.issues} issues)
+    </p>
+  </div>
+
+  <div class="notice" role="note">
+    {caveat}
+    See <a href="/methodology#policy-matrix">methodology</a>
+    and the <a href="/parties/issues">jurisdiction guide</a>.
+  </div>
+
+  <!-- Column toggles: must be siblings before the grid for CSS :has / ~ patterns.
+       We use a wrapper + :has() so toggles can sit in a sticky bar. -->
+  <div class="pm-shell">
+    {
+      parties.map((p) => (
+        <input
+          type="checkbox"
+          class="visually-hidden pm-toggle"
+          id={`pm-col-${p.slug}`}
+          name={`pm-col-${p.slug}`}
+          checked
+          data-party={p.slug}
+        />
+      ))
+    }
+
+    <div class="pm-controls" role="group" aria-label="Show or hide party columns">
+      <span class="pm-controls-label">Show parties</span>
+      <div class="pm-toggles">
+        {
+          parties.map((p) => (
+            <label class="pm-toggle-label" style={`--party-colour:${partyColour(p.slug)}`} for={`pm-col-${p.slug}`}>
+              <span class="pm-swatch" aria-hidden="true" />
+              <span>{p.label}</span>
+            </label>
+          ))
+        }
+      </div>
+      <p class="pm-controls-hint muted">
+        Uncheck parties to compare fewer columns (for example Labor and Liberal only).
+      </p>
+    </div>
+
+    <!-- Desktop / wide: scrollable table -->
+    <div class="pm-table-wrap table-scroll" role="region" aria-label="Policy comparison table" tabindex="0">
+      <table class="pm-table">
+        <caption class="visually-hidden">
+          Policy positions by issue and party. {stats.filled_cells} of {stats.total_cells}
+          cells have a sourced position. Use the party checkboxes above to show or hide columns.
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" class="pm-issue-col">Issue</th>
+            {
+              parties.map((p) => (
+                <th
+                  scope="col"
+                  class={`pm-party-col pm-col-${p.slug}`}
+                  style={`--party-colour:${partyColour(p.slug)}`}
+                >
+                  <span class="pm-party-name">{p.label}</span>
+                </th>
+              ))
+            }
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map(({ issue, cells }) => (
+              <tr id={`issue-${issue.slug}`}>
+                <th scope="row" class="pm-issue-col">
+                  <div class="pm-issue-cell">
+                    <a class="pm-issue-name" href={`/parties/issues#${issue.slug}`}>
+                      {issue.name}
+                    </a>
+                    <JurisdictionBadge jurisdiction={issue.jurisdiction} compact />
+                  </div>
+                </th>
+                {
+                  parties.map((p) => (
+                    <td class={`pm-party-col pm-col-${p.slug}`}>
+                      <PolicyCell policy={cells[p.slug]} partyLabel={p.label} />
+                    </td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile: issue cards with party sub-cards -->
+    <div class="pm-cards" aria-label="Policy comparison by issue">
+      {
+        rows.map(({ issue, cells }) => (
+          <article class="pm-card" id={`m-issue-${issue.slug}`}>
+            <header class="pm-card-head">
+              <h3>
+                <a href={`/parties/issues#${issue.slug}`}>{issue.name}</a>
+              </h3>
+              <JurisdictionBadge jurisdiction={issue.jurisdiction} />
+            </header>
+            <div class="pm-card-parties">
+              {
+                parties.map((p) => (
+                  <div
+                    class={`pm-card-party pm-col-${p.slug}`}
+                    style={`--party-colour:${partyColour(p.slug)}`}
+                  >
+                    <p class="pm-card-party-name">
+                      <span class="pm-swatch" aria-hidden="true" />
+                      {p.label}
+                    </p>
+                    <PolicyCell policy={cells[p.slug]} partyLabel={p.label} />
+                  </div>
+                ))
+              }
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .pm-intro {
+    margin-bottom: 1rem;
+  }
+
+  .pm-stats {
+    margin: 0.5rem 0 0;
+    font-size: 0.92rem;
+  }
+
+  .pm-shell {
+    margin-top: 1.25rem;
+  }
+
+  /* Checkbox state → hide matching columns (CSS-only, ADR-9 spirit) */
+  .pm-shell:has(#pm-col-greens:not(:checked)) :global(.pm-col-greens) {
+    display: none !important;
+  }
+  .pm-shell:has(#pm-col-labor:not(:checked)) :global(.pm-col-labor) {
+    display: none !important;
+  }
+  .pm-shell:has(#pm-col-liberal:not(:checked)) :global(.pm-col-liberal) {
+    display: none !important;
+  }
+  .pm-shell:has(#pm-col-nationals:not(:checked)) :global(.pm-col-nationals) {
+    display: none !important;
+  }
+  .pm-shell:has(#pm-col-one-nation:not(:checked)) :global(.pm-col-one-nation) {
+    display: none !important;
+  }
+
+  /* Visual state of toggle labels when unchecked */
+  .pm-shell:has(#pm-col-greens:not(:checked)) label[for="pm-col-greens"],
+  .pm-shell:has(#pm-col-labor:not(:checked)) label[for="pm-col-labor"],
+  .pm-shell:has(#pm-col-liberal:not(:checked)) label[for="pm-col-liberal"],
+  .pm-shell:has(#pm-col-nationals:not(:checked)) label[for="pm-col-nationals"],
+  .pm-shell:has(#pm-col-one-nation:not(:checked)) label[for="pm-col-one-nation"] {
+    opacity: 0.45;
+    text-decoration: line-through;
+  }
+
+  .pm-controls {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+  }
+
+  .pm-controls-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+    margin-bottom: 0.45rem;
+  }
+
+  .pm-toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .pm-toggle-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+    background: var(--surface);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .pm-toggle-label:hover {
+    border-color: var(--party-colour, var(--accent));
+  }
+
+  .pm-toggle-label:focus-within {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .pm-swatch {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 2px;
+    background: var(--party-colour, var(--ink-3));
+    flex-shrink: 0;
+  }
+
+  .pm-controls-hint {
+    margin: 0.5rem 0 0;
+    font-size: 0.8rem;
+  }
+
+  .pm-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.9rem;
+    min-width: 52rem;
+  }
+
+  .pm-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: var(--surface);
+    border-bottom: 2px solid var(--rule-strong);
+    padding: 0.75rem 0.65rem;
+    text-align: left;
+    vertical-align: bottom;
+  }
+
+  .pm-table thead .pm-party-col {
+    border-top: 3px solid var(--party-colour, var(--rule-strong));
+  }
+
+  .pm-party-name {
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .pm-table tbody th,
+  .pm-table tbody td {
+    padding: 0.85rem 0.65rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    background: var(--surface);
+  }
+
+  .pm-table tbody tr:nth-child(even) th,
+  .pm-table tbody tr:nth-child(even) td {
+    background: var(--surface-2);
+  }
+
+  .pm-issue-col {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    min-width: 10.5rem;
+    max-width: 13rem;
+    box-shadow: 4px 0 8px -6px rgb(0 0 0 / 0.15);
+  }
+
+  thead .pm-issue-col {
+    z-index: 4;
+  }
+
+  .pm-issue-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .pm-issue-name {
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    line-height: 1.3;
+  }
+
+  .pm-issue-name:hover {
+    color: var(--accent-ink);
+    text-decoration: underline;
+  }
+
+  .pm-party-col {
+    min-width: 11rem;
+    max-width: 16rem;
+  }
+
+  /* Mobile cards hidden on wide screens */
+  .pm-cards {
+    display: none;
+  }
+
+  @media (max-width: 52rem) {
+    .pm-table-wrap {
+      display: none;
+    }
+
+    .pm-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pm-card {
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .pm-card-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 0.75rem;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--rule);
+      background: var(--surface-2);
+    }
+
+    .pm-card-head h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      flex: 1 1 auto;
+    }
+
+    .pm-card-head h3 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .pm-card-head h3 a:hover {
+      color: var(--accent-ink);
+      text-decoration: underline;
+    }
+
+    .pm-card-parties {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.85rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .pm-card-party {
+      flex: 0 0 min(85%, 18rem);
+      scroll-snap-align: start;
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--party-colour, var(--rule-strong));
+      border-radius: var(--radius-sm);
+      padding: 0.75rem;
+      background: var(--paper);
+    }
+
+    .pm-card-party-name {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0 0 0.55rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pm-toggle-label {
+      transition: none;
+    }
+
+    .pm-card-parties {
+      scroll-snap-type: none;
+    }
+  }
+</style>

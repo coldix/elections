@@ -1,0 +1,66 @@
+---
+/**
+ * Jurisdiction chip for issue rows — meaning is always in the text label,
+ * never colour alone.
+ */
+import { JURISDICTION_LABELS } from "../../../scripts/lib/policies.mjs";
+
+const { jurisdiction, compact = false } = Astro.props;
+const label = JURISDICTION_LABELS[jurisdiction] ?? jurisdiction;
+const short = {
+  state_primary: "State",
+  shared_fed_state: "Fed/State",
+  federal_primary: "Federal",
+  local_primary: "Local",
+  shared_state_local: "State/Local",
+}[jurisdiction] ?? label;
+---
+
+<span class={`jbadge jbadge-${jurisdiction}`} title={label}>
+  <span class="visually-hidden">Jurisdiction: </span>
+  {compact ? short : label}
+</span>
+
+<style>
+  .jbadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+    background: var(--surface-2);
+    color: var(--ink-2);
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+
+  .jbadge-state_primary {
+    border-color: color-mix(in srgb, var(--st-nominated) 40%, var(--rule-strong));
+    background: var(--st-nominated-bg);
+    color: var(--st-nominated);
+  }
+
+  .jbadge-shared_fed_state,
+  .jbadge-shared_state_local {
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--rule-strong));
+    background: var(--accent-wash);
+    color: var(--accent-ink);
+  }
+
+  .jbadge-federal_primary {
+    border-color: color-mix(in srgb, var(--st-announced) 40%, var(--rule-strong));
+    background: var(--st-announced-bg);
+    color: var(--st-announced);
+  }
+
+  .jbadge-local_primary {
+    border-color: var(--rule-strong);
+    background: var(--surface-2);
+    color: var(--ink-2);
+  }
+</style>

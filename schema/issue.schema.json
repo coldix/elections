@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://electiontracker.au/schema/issue.schema.json",
+  "title": "Issue taxonomy entry",
+  "type": "object",
+  "required": ["slug", "name", "summary", "jurisdiction", "jurisdiction_note"],
+  "additionalProperties": false,
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "jurisdiction": {
+      "enum": [
+        "state_primary",
+        "shared_fed_state",
+        "federal_primary",
+        "local_primary",
+        "shared_state_local"
+      ]
+    },
+    "jurisdiction_note": { "type": "string", "minLength": 1 },
+    "state_role": { "type": "string" },
+    "federal_role": { "type": "string" },
+    "local_role": { "type": "string" },
+    "related": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+    },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["url", "publisher", "accessed"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "publisher": { "type": "string", "minLength": 1 },
+        "title": { "type": "string" },
+        "published": { "type": "string", "format": "date" },
+        "accessed": { "type": "string", "format": "date" },
+        "archive_url": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

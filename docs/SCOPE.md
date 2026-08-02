@@ -54,6 +54,19 @@ fines process, official links, and how preferential numbering works for the
 Assembly and Council. Always defers to the VEC/AEC. Not legal advice and not
 preference recommendations.
 
+## Policy matrix & issues ledger (secondary product — implemented)
+
+The product **wedge** remains machine-readable candidacies + coverage + evidence
+ledger. The policy matrix is a secondary module:
+
+- Jurisdiction guide at `/parties/issues` (state vs federal vs local)
+- Sourced comparison matrix at `/parties/matrix` (v1: five parties, no ratings)
+- YAML ledger + JSON/CSV export (`issues.json`, `policies.json`, `policies.csv`)
+- Rules: [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md)
+
+**Still forbidden:** star ratings, editorial scorecards, how-to-vote advice,
+and treating empty cells as a ranking.
+
 ## Polling (secondary product — implemented)
 
 The product **wedge** remains machine-readable candidacies + coverage + evidence

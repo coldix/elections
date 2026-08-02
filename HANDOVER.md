@@ -58,10 +58,16 @@ redirected. Fixed; if you change one, change the other.
   finds `data/` by walking up the tree because Astro bundles it and
   `import.meta.url` is wrong once bundled.
 - Pages: `/`, `/assembly`, `/council`, atlases `/districts` + `/regions`,
-  88 district pages, 8 region pages, `/parties` + party pages, `/voting`,
-  `/polls`, `/methodology`, `/about`, `/data`, legal pages, `/404`.
+  88 district pages, 8 region pages, `/parties` + party pages,
+  `/parties/issues` + `/parties/matrix` (policy secondary product),
+  `/voting`, `/polls`, `/methodology`, `/about`, `/data`, legal pages, `/404`.
+- **Policy ledger:** `data/vic2026/issues.yaml` + `policies/*.yaml`, loader
+  `scripts/lib/policies.mjs`, exports `issues.json` / `policies.json` /
+  `policies.csv`. Rules: [docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md)
+  (ADR-11). No ratings; empty matrix cells are expected until claims are sourced.
 - **Minimal JavaScript (inline only, no bundles):** coverage matrix is
-  radio + CSS (ADR-9); countdown ticks `ddd:hh:mm:ss` client-side (SSR
+  radio + CSS (ADR-9); policy matrix column toggles are checkbox + CSS
+  `:has()`; countdown ticks `ddd:hh:mm:ss` client-side (SSR
   seed for no-JS); YouTubeLite injects iframe **only after play**; theme
   toggle. See [docs/SOCIAL.md](docs/SOCIAL.md) for video keys.
 - **Latest data note (2026-07-31):** Rikkie-Lee Tyrrell endorsed One Nation

@@ -1,0 +1,92 @@
+---
+/**
+ * One party × issue cell: sourced claims, or honest empty state.
+ */
+import SourceLink from "./SourceLink.astro";
+import FiscalChips from "./FiscalChips.astro";
+
+const { policy, partyLabel } = Astro.props;
+const claims = policy?.claims ?? [];
+const empty = claims.length === 0;
+---
+
+{
+  empty ? (
+    <div class="pcell pcell-empty">
+      <p class="pcell-empty-msg">
+        No sourced position recorded
+        <span class="visually-hidden"> for {partyLabel}</span>
+      </p>
+    </div>
+  ) : (
+    <div class="pcell">
+      {policy.headline && <p class="pcell-head">{policy.headline}</p>}
+      <ul class="pcell-claims" role="list">
+        {claims.map((c) => (
+          <li class="pclaim">
+            <blockquote class="pclaim-quote">
+              <p>{c.statement}</p>
+            </blockquote>
+            <FiscalChips fiscal={c.fiscal} />
+            <p class="pclaim-src">
+              <SourceLink source={c.source} />
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+<style>
+  .pcell {
+    min-height: 4rem;
+    height: 100%;
+  }
+
+  .pcell-empty {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .pcell-empty-msg {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--ink-3);
+    font-style: italic;
+    line-height: 1.35;
+  }
+
+  .pcell-head {
+    margin: 0 0 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+
+  .pcell-claims {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .pclaim-quote {
+    margin: 0;
+    padding: 0 0 0 0.65rem;
+    border-left: 3px solid var(--rule-strong);
+  }
+
+  .pclaim-quote p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+
+  .pclaim-src {
+    margin: 0.35rem 0 0;
+  }
+</style>

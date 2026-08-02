@@ -1,0 +1,121 @@
+---
+/**
+ * Taxpayer-impact micro-tags for a policy claim.
+ * Only renders when fiscal data is present — no empty chrome.
+ */
+const { fiscal } = Astro.props;
+
+const chips = [];
+
+if (fiscal) {
+  if (fiscal.amount_display) {
+    chips.push({
+      key: "amount",
+      label: `${fiscal.amount_display} taxpayer funded`,
+      className: "fchip-amount",
+    });
+  } else if (fiscal.taxpayer_label && fiscal.taxpayer_label !== "Not specified") {
+    chips.push({
+      key: "label",
+      label: fiscal.taxpayer_label,
+      className: "fchip-label",
+    });
+  }
+
+  if (fiscal.pbo_status === "pbo_costed") {
+    chips.push({ key: "pbo", label: "PBO costed", className: "fchip-pbo" });
+  } else if (fiscal.pbo_status === "uncosted") {
+    chips.push({ key: "uncosted", label: "Uncosted pledge", className: "fchip-uncosted" });
+  }
+
+  if (fiscal.financing === "borrowing") {
+    chips.push({
+      key: "debt",
+      label: "Borrowing / debt financed",
+      className: "fchip-debt",
+    });
+  } else if (fiscal.financing === "mixed") {
+    chips.push({ key: "mixed", label: "Mixed financing", className: "fchip-label" });
+  }
+
+  if (fiscal.timeframe) {
+    chips.push({ key: "time", label: fiscal.timeframe, className: "fchip-time" });
+  }
+}
+---
+
+{
+  chips.length > 0 && (
+    <ul class="fchips" role="list">
+      {chips.map((c) => (
+        <li class={`fchip ${c.className}`}>
+          <span class="fchip-bracket" aria-hidden="true">
+            [
+          </span>
+          {c.label}
+          <span class="fchip-bracket" aria-hidden="true">
+            ]
+          </span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+<style>
+  .fchips {
+    list-style: none;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .fchip {
+    font-size: 0.7rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    letter-spacing: 0.01em;
+    padding: 0.15rem 0.4rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--rule);
+    background: var(--surface-2);
+    color: var(--ink-2);
+    line-height: 1.3;
+  }
+
+  .fchip-bracket {
+    opacity: 0.45;
+    font-weight: 400;
+  }
+
+  .fchip-amount {
+    border-color: color-mix(in srgb, var(--st-nominated) 35%, var(--rule));
+    background: var(--st-nominated-bg);
+    color: var(--st-nominated);
+  }
+
+  .fchip-pbo {
+    border-color: color-mix(in srgb, var(--st-endorsed) 40%, var(--rule));
+    background: var(--st-endorsed-bg);
+    color: var(--st-endorsed);
+  }
+
+  .fchip-uncosted {
+    border-color: color-mix(in srgb, var(--st-announced) 40%, var(--rule));
+    background: var(--st-announced-bg);
+    color: var(--st-announced);
+  }
+
+  .fchip-debt {
+    border-color: color-mix(in srgb, var(--st-ended) 35%, var(--rule));
+    background: var(--st-ended-bg);
+    color: var(--st-ended);
+  }
+
+  .fchip-time {
+    font-weight: 500;
+    color: var(--ink-3);
+  }
+</style>
