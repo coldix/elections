@@ -1,5 +1,5 @@
 id: newspoll-2026-07
-pollster: newspoll
+pollster: "Newspoll / Pyxis"
 commissioner: the-australian
 commissioner_type: media
 fieldwork_start: 2026-07-23
@@ -8,7 +8,7 @@ sample_size: 1035
 design_effect: null
 mode: online
 population: victorian-electors
-question_notes: "Victorian state voting intention for The Australian. Fieldwork Thursday–Sunday before 27 July publication."
+question_notes: "Victorian state voting intention conducted by Pyxis Polling & Insights as Newspoll for The Australian. Fieldwork Thursday–Sunday before 27 July publication."
 primaries:
   alp: 28
   lnp: 31
@@ -29,3 +29,7 @@ sources:
     title: Victorian Newspoll and Labor leadership spill
     published: 2026-07-28
     accessed: 2026-07-30
+  - url: https://pyxispolling.com/public-polling/
+    publisher: Pyxis Polling & Insights
+    title: Polling for the Public — Pyxis conducts Newspoll
+    accessed: 2026-08-02
