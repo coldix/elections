@@ -1,39 +1,50 @@
-# Victorian Greens — Cost of Living (rent as household cost pressure)
+# Victorian Greens — Cost of Living
 policy:
   party: greens
   issue: cost-of-living
-  headline: Rent caps framed as renter cost-of-living relief
+  headline: Permanent free public transport, rent caps and action on price gouging
   claims:
+    - id: greens-col-free-pt
+      statement: Make metropolitan and regional trains, trams and buses permanently free, while increasing service frequency.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/campaigns/make-public-transport-free
+        publisher: Australian Greens Victoria
+        title: Make Public Transport Free
+        accessed: '2026-08-02'
+    - id: greens-col-price-gouging
+      statement: Regulate supermarkets to stop price gouging as part of a broader cost-of-living program.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/platform/economy
+        publisher: Australian Greens Victoria
+        title: Economy for people
+        accessed: '2026-08-02'
+    - id: greens-col-rent-caps
+      statement: Freeze rents for two years, then permanently cap increases at wage growth or CPI, whichever is lower.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/news/media-release/fastest-rent-hikes-australia-show-why-victoria-needs-rent-caps-saving
+        publisher: Australian Greens Victoria
+        title: Fastest rent hikes in Australia show why Victoria needs rent caps
+        published: '2026-07-09'
+        accessed: '2026-08-02'
     - id: greens-col-rent-savings
-      statement: >-
-        “Independent modelling by the Parliamentary Budget Office shows that if
-        Victoria froze rents for two years from March 2026 and permanently capped
-        future rent increases to wage growth, the average Victorian renter would
-        save $15,590 by 2030 and more than $120,000 by 2040.”
+      statement: Parliamentary Budget Office modelling commissioned by the Greens estimates the rent policy would save the median Victorian renter $15,590 by 2030 and $120,406 by 2040.
       kind: costed_measure
       fiscal:
-        taxpayer_label: "Not specified"
+        taxpayer_label: Not specified
         pbo_status: pbo_costed
-        timeframe: "to 2030 / 2040 (household savings modelled)"
+        timeframe: to 2030 and 2040
         pbo_ref:
           url: https://greens.org.au/vic/news/media-release/fastest-rent-hikes-australia-show-why-victoria-needs-rent-caps-saving
-          publisher: Australian Greens Victoria (citing Parliamentary Budget Office modelling)
-          title: Fastest rent hikes in Australia show why Victoria needs rent caps – saving renters $15,590 by 2030
-          published: 2026-07-09
-          accessed: 2026-08-02
+          publisher: Australian Greens Victoria (reporting Parliamentary Budget Office modelling)
+          title: Fastest rent hikes in Australia show why Victoria needs rent caps
+          published: '2026-07-09'
+          accessed: '2026-08-02'
       source:
         url: https://greens.org.au/vic/news/media-release/fastest-rent-hikes-australia-show-why-victoria-needs-rent-caps-saving
         publisher: Australian Greens Victoria
-        title: Fastest rent hikes in Australia show why Victoria needs rent caps – saving renters $15,590 by 2030
-        published: 2026-07-09
-        accessed: 2026-08-02
-    - id: greens-col-renters-need-lower-rents
-      statement: >-
-        “Renters don't need more excuses. They need lower rents.”
-      kind: position
-      source:
-        url: https://greens.org.au/vic/news/media-release/fastest-rent-hikes-australia-show-why-victoria-needs-rent-caps-saving
-        publisher: Australian Greens Victoria
-        title: Fastest rent hikes in Australia show why Victoria needs rent caps – saving renters $15,590 by 2030
-        published: 2026-07-09
-        accessed: 2026-08-02
+        title: Fastest rent hikes in Australia show why Victoria needs rent caps
+        published: '2026-07-09'
+        accessed: '2026-08-02'
