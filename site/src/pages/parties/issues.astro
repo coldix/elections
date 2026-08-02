@@ -45,7 +45,8 @@ const schema = {
         and is written to help voters hold the right level of government to account.
       </p>
       <p class="btn-row">
-        <a class="btn" href="/parties/matrix">Policy comparison matrix</a>
+        <a class="btn" href="/policies">Issue-by-issue comparisons</a>
+        <a class="btn btn-ghost btn-sm" href="/parties/matrix">Full policy matrix</a>
         <a class="btn btn-ghost btn-sm" href="/parties">All parties</a>
         <a class="btn btn-ghost btn-sm" href="/methodology#policy-matrix">Methodology</a>
       </p>
@@ -57,10 +58,9 @@ const schema = {
       sourced position so far. {POLICY_CAVEAT}
     </div>
 
-    <!-- CSS filter: checkboxes + :has hide unmatched cards -->
     <div class="jfilter-shell">
       {
-        Object.keys(JURISDICTION_LABELS).map((key, i) => (
+        Object.keys(JURISDICTION_LABELS).map((key) => (
           <input
             type="checkbox"
             class="visually-hidden jfilter-input"
@@ -113,7 +113,7 @@ const schema = {
                 id={issue.slug}
               >
                 <header class="issue-card-head">
-                  <h2>{issue.name}</h2>
+                  <h2><a href={`/policies/${issue.slug}`}>{issue.name}</a></h2>
                   <JurisdictionBadge jurisdiction={issue.jurisdiction} />
                   <span
                     class="fill-pill"
@@ -147,8 +147,11 @@ const schema = {
                 </dl>
 
                 <p class="issue-actions">
-                  <a class="btn btn-ghost btn-sm" href={`/parties/matrix#issue-${issue.slug}`}>
+                  <a class="btn btn-ghost btn-sm" href={`/policies/${issue.slug}`}>
                     Compare parties on {issue.name}
+                  </a>
+                  <a class="matrix-row-link" href={`/parties/matrix#combined-issue-${issue.slug}`}>
+                    View matrix row
                   </a>
                 </p>
               </article>
@@ -186,7 +189,6 @@ const schema = {
 </Base>
 
 <style>
-  /* Jurisdiction filter hide */
   .jfilter-shell:has(#jf-state_primary:not(:checked)) :global(.issue-j-state_primary),
   .jfilter-shell:has(#jf-state_primary:not(:checked)) :global(.jump-j-state_primary),
   .jfilter-shell:has(#jf-shared_fed_state:not(:checked)) :global(.issue-j-shared_fed_state),
@@ -309,6 +311,16 @@ const schema = {
     flex: 1 1 auto;
   }
 
+  .issue-card-head h2 a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .issue-card-head h2 a:hover {
+    color: var(--accent-ink);
+    text-decoration: underline;
+  }
+
   .fill-pill {
     font-size: 0.72rem;
     font-weight: 700;
@@ -369,7 +381,16 @@ const schema = {
   }
 
   .issue-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem 1rem;
     margin: 1rem 0 0;
+  }
+
+  .matrix-row-link {
+    font-size: 0.84rem;
+    font-weight: 650;
   }
 
   .legend {
