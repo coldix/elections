@@ -1,15 +1,36 @@
-# One Nation Victoria — Infrastructure (hospital PPP framing)
+# One Nation Victoria — Infrastructure & Transport
 policy:
   party: one-nation
   issue: infrastructure-transport
-  headline: PPP delivery model for major hospital infrastructure
+  headline: Regional roads and services, restrained major-project spending and PPP delivery
   claims:
-    - id: onp-infra-ppp-delivery
+    - id: onp-infra-regional
       statement: >-
-        One Nation Victoria argues PPP is “a proven model in Victoria” for major
-        hospital builds, with private partners handling design, construction, financing
-        and facilities management while ownership and clinical services remain public —
-        framed as faster delivery without “privatisation” of the asset.
+        One Nation Victoria supports investment in regional roads, telecommunications,
+        hospitals, schools, sporting facilities and water infrastructure to improve
+        services and supply-chain productivity outside Melbourne.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/rebuilding-our-regions
+        publisher: One Nation Victoria
+        title: Rebuilding our Regions
+        accessed: 2026-08-02
+    - id: onp-infra-vanity-projects
+      statement: >-
+        The party proposes capping expenditure on high-profile projects it regards as
+        wasteful and redirecting investment towards essential and productivity-enhancing
+        infrastructure.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/economic-recovery
+        publisher: One Nation Victoria
+        title: Economic Recovery
+        accessed: 2026-08-02
+    - id: onp-infra-ppp
+      statement: >-
+        One Nation Victoria supports public-private partnerships for selected major
+        hospital projects, with private finance and construction but continued public
+        ownership and public clinical services.
       kind: position
       source:
         url: https://vic.onenation.org.au/rosebud-rebuild-ppp
