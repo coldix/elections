@@ -1,30 +1,42 @@
-# Liberal Party of Australia – Victorian Division — Energy
+# Liberal Victoria — Energy
 policy:
   party: liberal
   issue: energy
-  headline: Scrap gas ban; reopen conventional gas exploration
+  headline: Reverse the gas ban; urban solar parks; review major transmission projects
   claims:
-    - id: liberal-energy-gas-ban
-      statement: >-
-        Opposition economic commitments include “to remove the gas ban and reopen
-        Victoria for gas exploration to ensure affordable energy supply for homes and
-        businesses.”
-      kind: pledge
-      source:
-        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
-        publisher: Parliament of Victoria (Hansard)
-        title: Appropriation (2026–2027) Bill 2026 — 12 May
-        published: 2026-05-12
-        accessed: 2026-08-02
-    - id: liberal-energy-firm-supply
-      statement: >-
-        “A strong economy needs affordable and reliable power, and only our Liberal
-        and Nationals team has a plan to open the door to new conventional gas
-        exploration and ensure Victoria has sufficient firm energy supplies.”
-      kind: position
-      source:
-        url: https://www.parliament.vic.gov.au/4a2421/globalassets/hansard-daily-pdfs/hansard-974425065-36116/hansard-974425065-36116.pdf
-        publisher: Parliament of Victoria (Hansard PDF)
-        title: Legislative Council — energy policy debate (30 July 2026)
-        published: 2026-07-30
-        accessed: 2026-08-02
+  - id: liberal-energy-gas
+    statement: Reverse Victoria’s restrictions on new gas connections and reopen the state to conventional gas exploration, presenting household energy choice and additional supply as affordability measures.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2026-01-06-liberals-and-nationals-launch-ad-campaign-against-labors-gas-ban
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Liberals and Nationals campaign against Labor’s gas ban
+      published: '2026-01-06'
+      accessed: '2026-08-02'
+  - id: liberal-energy-urban-solar
+    statement: Establish Urban Solar Parks to encourage solar and battery installations on commercial and industrial rooftops close to electricity demand.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/media-releases/2026-05-06-driving-down-energy-costs-and-protecting-farmer-rights?topic=energy-and-emissions-reduction
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Driving down energy costs and protecting farmer rights
+      published: '2026-05-06'
+      accessed: '2026-08-02'
+  - id: liberal-energy-transmission-review
+    statement: Pause VNI West and the Western Renewables Link while conducting a full cost-benefit review of the Victorian Transmission Plan and its alternatives.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/media-releases/2026-05-06-driving-down-energy-costs-and-protecting-farmer-rights?topic=energy-and-emissions-reduction
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Driving down energy costs and protecting farmer rights
+      published: '2026-05-06'
+      accessed: '2026-08-02'
+  - id: liberal-energy-landholder-rights
+    statement: Reverse compulsory-acquisition provisions and other measures the Coalition says diminish farmers’ rights during transmission development.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/media-releases/2026-05-06-driving-down-energy-costs-and-protecting-farmer-rights?topic=energy-and-emissions-reduction
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Driving down energy costs and protecting farmer rights
+      published: '2026-05-06'
+      accessed: '2026-08-02'
