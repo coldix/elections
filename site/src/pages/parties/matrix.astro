@@ -10,7 +10,7 @@ const schema = {
   "@type": "WebPage",
   name: "Policy comparison matrix — Victorian state election 2026",
   description:
-    "Side-by-side, sourced party positions on key issues for the 2026 Victorian state election. No ratings — quotes and costings only.",
+    "Side-by-side, sourced party positions on key issues for the 2026 Victorian state election, with a reversible Liberal–Nationals Coalition view. No ratings — claims and costings only.",
   url: `${SITE.url}/parties/matrix`,
   isPartOf: { "@id": `${SITE.url}/#website` },
 };
@@ -18,7 +18,7 @@ const schema = {
 
 <Base
   title="Policy matrix"
-  description="Compare Greens, Labor, Liberal, Nationals and One Nation positions on Victorian election issues — sourced quotes and taxpayer-cost chips only, no star ratings."
+  description="Compare Greens, Labor, Liberal–Nationals and One Nation positions, or switch to separate Liberal and Nationals columns. Sourced claims only, with no star ratings."
   schema={schema}
 >
   <div class="wrap wrap-wide section">
@@ -26,15 +26,16 @@ const schema = {
       <p class="eyebrow">Victoria 2026</p>
       <h1>Policy comparison</h1>
       <p class="lede">
-        An evidence-first matrix of party positions. Claims appear only with a dated
-        public source. There are no star ratings, scorecards or editorial rankings —
-        just what parties have said, and how any cost is labelled.
+        Joint Liberal–Nationals commitments are consolidated by default so the matrix
+        stays readable. The five-party view remains available wherever you want to
+        inspect the original Liberal and Nationals records separately.
       </p>
       <p class="btn-row">
         <a class="btn btn-ghost btn-sm" href="/parties/issues">Jurisdiction guide</a>
         <a class="btn btn-ghost btn-sm" href="/parties">All parties</a>
         <a class="btn btn-ghost btn-sm" href="/methodology#policy-matrix">How we record positions</a>
         <a class="btn btn-ghost btn-sm" href="/data/vic2026/policies.json">policies.json</a>
+        <a class="btn btn-ghost btn-sm" href="/data/vic2026/coalitions.json">coalitions.json</a>
         <a class="btn btn-ghost btn-sm" href="/data">All open data</a>
       </p>
     </header>
@@ -44,12 +45,11 @@ const schema = {
 </Base>
 
 <style>
-  /* Wider canvas for the five-column matrix without fighting global .wrap */
   .wrap-wide {
     max-width: min(92rem, 100%);
   }
 
   .page-head {
-    max-width: 48rem;
+    max-width: 52rem;
   }
 </style>
