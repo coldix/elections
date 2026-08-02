@@ -1,45 +1,55 @@
-# Liberal Party of Australia – Victorian Division — Housing & Planning
+# Liberal Victoria — Housing & Planning
 policy:
   party: liberal
   issue: housing-planning
-  headline: Expand Capital City Zone; local planning for middle suburbs
+  headline: Fast-track growth areas, expand inner-city housing and restore local planning input
   claims:
-    - id: liberal-housing-capital-city-zone
-      statement: >-
-        “We will expand the Capital City Zone into the immediate inner city
-        surrounding the CBD to Fishermans Bend, North Melbourne, Fitzroy and
-        Collingwood. This will enable residential growth in the inner-city areas
-        that are already serviced by public transport and strong connectivity.”
-      kind: pledge
-      source:
-        url: https://www.abc.net.au/news/2026-02-25/victorian-opposition-unveils-home-ownership-housing-plan/106387550
-        publisher: ABC News
-        title: Victorian opposition to expand Melbourne's CBD, fast-track growth area homes under housing plan
-        published: 2026-02-25
-        accessed: 2026-08-02
-    - id: liberal-housing-local-councils
-      statement: >-
-        “Our plan will deliver the housing Victoria needs through greater density,
-        where it is council land and supported by local communities… We will work
-        with councils to deliver these plans in a timely manner so local communities
-        have a voice in the future of our state.”
-      kind: position
-      source:
-        url: https://www.abc.net.au/news/2026-02-25/victorian-opposition-unveils-home-ownership-housing-plan/106387550
-        publisher: ABC News
-        title: Victorian opposition to expand Melbourne's CBD, fast-track growth area homes under housing plan
-        published: 2026-02-25
-        accessed: 2026-08-02
-    - id: liberal-housing-scrap-activity-centres
-      statement: >-
-        Opposition leader Jess Wilson said she would scrap Labor’s plan for
-        activity centres that would allow higher-density housing in some middle-ring
-        suburbs with good public transport connections, restoring planning
-        decision-making power to local councils.
-      kind: opposition_to
-      source:
-        url: https://www.abc.net.au/news/2026-02-25/victorian-opposition-unveils-home-ownership-housing-plan/106387550
-        publisher: ABC News
-        title: Victorian opposition to expand Melbourne's CBD, fast-track growth area homes under housing plan
-        published: 2026-02-25
-        accessed: 2026-08-02
+  - id: liberal-housing-psp
+    statement: Clear the backlog of 27 Precinct Structure Plans in identified growth areas to accelerate serviced land and housing construction.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2026-02-25-a-new-plan-to-restore-dreams-of-home-ownership
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: A new plan to restore dreams of home ownership
+      published: '2026-02-24'
+      accessed: '2026-08-02'
+  - id: liberal-housing-ccz
+    statement: Expand the Capital City Zone into nearby inner-city areas to enable additional residential development where transport and services already exist.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2026-02-25-a-new-plan-to-restore-dreams-of-home-ownership
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: A new plan to restore dreams of home ownership
+      published: '2026-02-24'
+      accessed: '2026-08-02'
+  - id: liberal-housing-local-voice
+    statement: Replace Labor’s activity-centre approach with community-led structure plans and restore a stronger role for councils and local communities in middle and outer suburban planning.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/article/2026-05-21-labors-housing-targets-fail-to-deliver-for-victorians
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Labor’s housing targets fail to deliver for Victorians
+      published: '2026-05-21'
+      accessed: '2026-08-02'
+  - id: liberal-housing-regional
+    statement: Work directly with regional councils to support additional housing in regional centres.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2026-02-25-a-new-plan-to-restore-dreams-of-home-ownership
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: A new plan to restore dreams of home ownership
+      published: '2026-02-24'
+      accessed: '2026-08-02'
+  - id: liberal-housing-stamp-duty
+    statement: Abolish stamp duty for eligible first-home buyers on properties valued up to $1 million.
+    kind: pledge
+    fiscal:
+      taxpayer_label: Not specified
+      financing: taxpayer
+      pbo_status: uncosted
+    source:
+      url: https://vic.liberal.org.au/news/2025-05-26-liberals-and-nationals-to-abolish-stamp-duty-for-first-homebuyers
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Liberals and Nationals to abolish stamp duty for first homebuyers
+      published: '2025-05-26'
+      accessed: '2026-08-02'
