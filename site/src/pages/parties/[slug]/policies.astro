@@ -1,0 +1,532 @@
+---
+import Base from "../../../layouts/Base.astro";
+import JurisdictionBadge from "../../../components/JurisdictionBadge.astro";
+import PolicyCell from "../../../components/PolicyCell.astro";
+import CoalitionPolicyCell from "../../../components/CoalitionPolicyCell.astro";
+import { matrixFor, POLICY_CAVEAT } from "../../../../../scripts/lib/policies.mjs";
+import {
+  POLICY_PROFILES,
+  POLICY_PROFILE_BY_SLUG,
+} from "../../../lib/policyProfiles.mjs";
+import { SITE, partyColour } from "../../../lib/site.mjs";
+
+export async function getStaticPaths() {
+  return POLICY_PROFILES.map((profile) => ({
+    params: { slug: profile.slug },
+    props: { slug: profile.slug },
+  }));
+}
+
+const profile = POLICY_PROFILE_BY_SLUG.get(Astro.props.slug);
+if (!profile) throw new Error(`Unknown policy profile: ${Astro.props.slug}`);
+
+const matrix = matrixFor("vic2026");
+const view = matrix.combined ?? { parties: matrix.parties, rows: matrix.rows };
+const colour = partyColour(profile.colourSlug);
+
+function policiesForCell(cell) {
+  if (profile.slug !== "coalition") return cell ? [cell] : [];
+  if (!cell?.has_policy) return [];
+  if (cell.scope === "coalition_shared" && cell.policy) return [cell.policy];
+  return [cell.member_policies?.liberal, cell.member_policies?.nationals].filter(Boolean);
+}
+
+const rows = view.rows.map(({ issue, cells }) => {
+  const cell = cells[profile.slug];
+  const records = policiesForCell(cell);
+  const claims = records.flatMap((record) => record.claims ?? []);
+  return {
+    issue,
+    cell,
+    records,
+    claims,
+    hasPolicy: records.length > 0,
+  };
+});
+
+const claims = rows.flatMap((row) => row.claims);
+const uniqueSources = new Set(
+  claims.map((claim) => claim.source?.url).filter(Boolean)
+);
+const stats = {
+  issues: rows.filter((row) => row.hasPolicy).length,
+  claims: claims.length,
+  pledges: claims.filter((claim) => claim.kind === "pledge").length,
+  costed: claims.filter((claim) => claim.kind === "costed_measure").length,
+  opposition: claims.filter((claim) => claim.kind === "opposition_to").length,
+  sources: uniqueSources.size,
+};
+
+const otherProfiles = POLICY_PROFILES.filter((item) => item.slug !== profile.slug);
+
+const schema = {
+  "@type": "CollectionPage",
+  name: `${profile.label} policy profile — Victorian state election 2026`,
+  description: `${profile.label} policy positions across 15 Victorian election issues, with sourced claims, costed measures and links to the full issue comparisons.`,
+  url: `${SITE.url}/parties/${profile.slug}/policies`,
+  isPartOf: { "@id": `${SITE.url}/#website` },
+  about: {
+    "@type": "Organization",
+    name: profile.fullName,
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: rows.map((row, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: row.issue.name,
+      url: `${SITE.url}/parties/${profile.slug}/policies#${row.issue.slug}`,
+    })),
+  },
+};
+---
+
+<Base
+  title={`${profile.label} policy profile`}
+  description={`Explore ${profile.label} policy positions across all 15 Victorian election issues, with source links and costed measures.`}
+  breadcrumbs={[
+    { name: "Parties", href: "/parties" },
+    { name: "Policy profiles", href: "/parties/policies" },
+    { name: profile.label, href: `/parties/${profile.slug}/policies` },
+  ]}
+  schema={schema}
+>
+  <div class="wrap section party-profile" style={`--party-colour:${colour}`}>
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/parties">Parties</a> <span aria-hidden="true">/</span>
+      <a href="/parties/policies">Policy profiles</a> <span aria-hidden="true">/</span>
+      <span aria-current="page">{profile.label}</span>
+    </nav>
+
+    <header class="profile-head">
+      <p class="eyebrow">Victoria 2026 · Party policy profile</p>
+      <h1><span class="profile-swatch" aria-hidden="true" />{profile.label}</h1>
+      <p class="profile-full">{profile.fullName}</p>
+      <p class="lede">{profile.approach}</p>
+
+      <ul class="theme-list" role="list">
+        {profile.themes.map((theme) => <li>{theme}</li>)}
+      </ul>
+
+      <p class="btn-row">
+        <a class="btn" href="/parties/matrix">Compare with all parties</a>
+        <a class="btn btn-ghost btn-sm" href="/policies">Browse by issue</a>
+        {profile.partyHref && (
+          <a class="btn btn-ghost btn-sm" href={profile.partyHref}>
+            Candidates and seats
+          </a>
+        )}
+        {profile.slug === "coalition" && (
+          <>
+            <a class="btn btn-ghost btn-sm" href="/parties/liberal">Liberal candidates</a>
+            <a class="btn btn-ghost btn-sm" href="/parties/nationals">Nationals candidates</a>
+          </>
+        )}
+        <a class="btn btn-ghost btn-sm" href="/methodology#policy-matrix">Methodology</a>
+      </p>
+    </header>
+
+    <div class="notice profile-note" role="note">
+      <strong>How to read this profile.</strong> The opening paragraph and theme pills are
+      a neutral editorial summary of the recorded positions. The detailed claims below are
+      reproduced from the source-backed policy ledger. {profile.slug === "coalition" && (
+        <>The Liberal–Nationals profile is a combined display, not a separate registered party; Liberal and Nationals records remain distinct where required. </>
+      )}{POLICY_CAVEAT}
+    </div>
+
+    <dl class="profile-stats">
+      <div>
+        <dt>Issues covered</dt>
+        <dd>{stats.issues}<span>/15</span></dd>
+      </div>
+      <div>
+        <dt>Displayed claims</dt>
+        <dd>{stats.claims}</dd>
+      </div>
+      <div>
+        <dt>Pledges</dt>
+        <dd>{stats.pledges}</dd>
+      </div>
+      <div>
+        <dt>Costed measures</dt>
+        <dd>{stats.costed}</dd>
+      </div>
+      <div>
+        <dt>Opposition records</dt>
+        <dd>{stats.opposition}</dd>
+      </div>
+      <div>
+        <dt>Distinct sources</dt>
+        <dd>{stats.sources}</dd>
+      </div>
+    </dl>
+
+    <nav class="issue-jump" aria-label={`Jump to a ${profile.label} policy issue`}>
+      <p>Jump to an issue</p>
+      <ul role="list">
+        {rows.map((row) => (
+          <li>
+            <a href={`#${row.issue.slug}`}>
+              {row.issue.name}
+              <span>{row.claims.length}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="issue-list">
+      {
+        rows.map((row, index) => (
+          <article class="issue-card card" id={row.issue.slug}>
+            <header class="issue-head">
+              <div>
+                <p class="issue-number">{String(index + 1).padStart(2, "0")}</p>
+                <h2>
+                  <a href={`/policies/${row.issue.slug}`}>{row.issue.name}</a>
+                </h2>
+              </div>
+              <div class="issue-meta">
+                <JurisdictionBadge jurisdiction={row.issue.jurisdiction} />
+                <span class="claim-count">
+                  {row.claims.length} claim{row.claims.length === 1 ? "" : "s"}
+                </span>
+              </div>
+            </header>
+
+            <p class="issue-summary">{row.issue.summary}</p>
+
+            <div class="policy-record">
+              {profile.slug === "coalition" ? (
+                <CoalitionPolicyCell cell={row.cell} />
+              ) : (
+                <PolicyCell policy={row.cell} partyLabel={profile.label} />
+              )}
+            </div>
+
+            <p class="issue-actions">
+              <a href={`/policies/${row.issue.slug}`}>
+                Compare all parties on {row.issue.name} →
+              </a>
+              <a href={`/parties/matrix#combined-issue-${row.issue.slug}`}>
+                View matrix row
+              </a>
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+    <nav class="other-profiles card" aria-label="Other party policy profiles">
+      <h2>Other party policy profiles</h2>
+      <ul role="list">
+        {otherProfiles.map((item) => (
+          <li style={`--other-colour:${partyColour(item.colourSlug)}`}>
+            <a href={`/parties/${item.slug}/policies`}>
+              <span aria-hidden="true" />
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</Base>
+
+<style>
+  .party-profile {
+    max-width: 82rem;
+  }
+
+  .crumb {
+    margin-bottom: 1rem;
+    color: var(--ink-3);
+    font-size: 0.88rem;
+  }
+
+  .crumb span[aria-hidden] {
+    margin-inline: 0.3rem;
+  }
+
+  .profile-head {
+    max-width: 62rem;
+  }
+
+  .profile-head h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .profile-swatch {
+    width: 0.58em;
+    height: 0.58em;
+    border-radius: 4px;
+    background: var(--party-colour);
+    flex: none;
+  }
+
+  .profile-full {
+    margin: -0.15rem 0 0.8rem;
+    color: var(--ink-3);
+    font-size: 0.9rem;
+  }
+
+  .theme-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 1.1rem 0 1.2rem;
+    padding: 0;
+  }
+
+  .theme-list li {
+    padding: 0.35rem 0.65rem;
+    border: 1px solid color-mix(in srgb, var(--party-colour) 38%, var(--rule));
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--party-colour) 8%, var(--surface));
+    color: var(--ink-2);
+    font-size: 0.78rem;
+    font-weight: 680;
+  }
+
+  .profile-note {
+    margin: 1.5rem 0 1rem;
+    max-width: 70rem;
+    border-left-color: var(--party-colour);
+  }
+
+  .profile-stats {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1px;
+    margin: 0 0 1.5rem;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--rule);
+  }
+
+  .profile-stats div {
+    min-width: 0;
+    padding: 0.8rem 0.9rem;
+    background: var(--surface);
+  }
+
+  .profile-stats dt {
+    color: var(--ink-3);
+    font-size: 0.65rem;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  .profile-stats dd {
+    margin: 0.2rem 0 0;
+    color: var(--party-colour);
+    font-size: 1.35rem;
+    font-weight: 780;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+
+  .profile-stats dd span {
+    color: var(--ink-3);
+    font-size: 0.75em;
+  }
+
+  .issue-jump {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .issue-jump > p {
+    margin: 0 0 0.6rem;
+    color: var(--ink-3);
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .issue-jump ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .issue-jump a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.38rem 0.62rem;
+    border: 1px solid color-mix(in srgb, var(--party-colour) 30%, var(--rule));
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--party-colour) 5%, var(--surface));
+    color: var(--ink);
+    font-size: 0.78rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .issue-jump a:hover {
+    border-color: var(--party-colour);
+  }
+
+  .issue-jump a span {
+    color: var(--ink-3);
+    font-size: 0.7rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .issue-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .issue-card {
+    scroll-margin-top: 5rem;
+    padding: 1.15rem 1.25rem;
+    border-top: 4px solid color-mix(in srgb, var(--party-colour) 75%, var(--rule));
+  }
+
+  .issue-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .issue-number {
+    margin: 0 0 0.25rem;
+    color: var(--ink-3);
+    font-size: 0.68rem;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+  }
+
+  .issue-head h2 {
+    margin: 0;
+    font-size: 1.35rem;
+  }
+
+  .issue-head h2 a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .issue-head h2 a:hover {
+    color: var(--party-colour);
+    text-decoration: underline;
+  }
+
+  .issue-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.4rem;
+  }
+
+  .claim-count {
+    padding: 0.2rem 0.48rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    color: var(--ink-3);
+    font-size: 0.7rem;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .issue-summary {
+    max-width: 62rem;
+    margin: 0 0 1rem;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+
+  .policy-record {
+    padding: 1rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-sm);
+    background: var(--surface-2);
+  }
+
+  .issue-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 0.85rem 0 0;
+    font-size: 0.82rem;
+    font-weight: 680;
+  }
+
+  .other-profiles {
+    margin-top: 2rem;
+    padding: 1.2rem 1.25rem;
+  }
+
+  .other-profiles h2 {
+    margin: 0 0 0.85rem;
+    font-size: 1.15rem;
+  }
+
+  .other-profiles ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .other-profiles a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    color: var(--ink);
+    font-size: 0.82rem;
+    font-weight: 680;
+    text-decoration: none;
+  }
+
+  .other-profiles a:hover {
+    border-color: var(--other-colour);
+  }
+
+  .other-profiles a span {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 3px;
+    background: var(--other-colour);
+  }
+
+  @media (max-width: 70rem) {
+    .profile-stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 38rem) {
+    .profile-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .issue-meta {
+      justify-content: flex-start;
+    }
+  }
+</style>
