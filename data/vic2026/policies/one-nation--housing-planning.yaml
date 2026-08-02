@@ -1,45 +1,60 @@
-# Pauline Hanson's One Nation — Housing (federal party policy)
+# One Nation Victoria — Housing & Planning
 policy:
   party: one-nation
   issue: housing-planning
-  headline: "Federal policy — GST holiday on building materials; cut housing demand via migration"
+  headline: Reduce demand, release land and cut taxes and planning delays
   claims:
-    - id: onp-housing-gst
+    - id: onp-housing-foreign-ownership
       statement: >-
-        [Federal party policy] “One Nation plans to introduce a five-year moratorium
-        on charging GST on building materials to help reduce the cost of new housing
-        and support the construction industry… A five-year GST moratorium on building
-        materials used in new homes up to a value of $1 million.”
-      kind: pledge
-      fiscal:
-        taxpayer_label: "Not specified"
-        financing: taxpayer
-        pbo_status: uncosted
-        timeframe: "five years; homes up to $1 million"
-      source:
-        url: https://www.onenation.org.au/new-housing
-        publisher: Pauline Hanson's One Nation
-        title: New Housing
-        accessed: 2026-08-02
-    - id: onp-housing-charges
-      statement: >-
-        [Federal party policy] Plan includes “a review of excessive government charges
-        that make up to 44% of the cost of new homes” and “removing mandatory disability
-        compliance requirements for all new homes, allowing Australians to choose their
-        home design without unnecessary cost burdens.”
+        One Nation Victoria advocates a ban on foreign ownership of residential
+        property, with existing foreign owners given time to sell, to increase the stock
+        available to Australian buyers.
       kind: pledge
       source:
-        url: https://www.onenation.org.au/new-housing
-        publisher: Pauline Hanson's One Nation
-        title: New Housing
+        url: https://vic.onenation.org.au/housing-policy
+        publisher: One Nation Victoria
+        title: Housing Policy
         accessed: 2026-08-02
-    - id: onp-housing-migration-demand
+    - id: onp-housing-costs
       statement: >-
-        [Federal party policy] Immigration policy states visa caps are intended “to ease
-        pressure on housing, wages, and infrastructure.”
-      kind: position
+        The party proposes reviewing state fees, taxes, charges and duties with a view
+        to reducing or removing those that increase housing costs, including insurance
+        duty.
+      kind: pledge
       source:
-        url: https://www.onenation.org.au/immigration
-        publisher: Pauline Hanson's One Nation
-        title: Immigration — Immigration Reform for a Stronger Australia
+        url: https://vic.onenation.org.au/housing-policy
+        publisher: One Nation Victoria
+        title: Housing Policy
+        accessed: 2026-08-02
+    - id: onp-housing-granny-flats
+      statement: >-
+        One Nation Victoria would allow tax-free room rental in an owner’s principal
+        residence and remove restrictions preventing granny flats being rented to people
+        other than immediate family.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/housing-policy
+        publisher: One Nation Victoria
+        title: Housing Policy
+        accessed: 2026-08-02
+    - id: onp-housing-land-approvals
+      statement: >-
+        The party proposes faster land releases and building approvals, release of
+        under-used government land, and collaboration with councils to accelerate
+        suitable residential rezoning.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/housing-policy
+        publisher: One Nation Victoria
+        title: Housing Policy
+        accessed: 2026-08-02
+    - id: onp-housing-affordable-partnerships
+      statement: >-
+        One Nation Victoria supports private-sector incentives and community
+        partnerships to increase lower-cost housing for low-income households.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/housing-policy
+        publisher: One Nation Victoria
+        title: Housing Policy
         accessed: 2026-08-02
