@@ -1,0 +1,38 @@
+# National Party of Australia - Victoria — Cost of Living
+policy:
+  party: nationals
+  issue: cost-of-living
+  headline: Scrap emergency services tax with Liberals; cut household mandates
+  claims:
+    - id: nationals-col-scrap-esl
+      statement: >-
+        “Only Liberal and Nationals Government will ease the cost-of-living for all
+        Victorians by scrapping Labor’s emergency services tax and returning to the
+        previous fire services property levy.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: unspecified
+        pbo_status: uncosted
+      source:
+        url: https://vic.nationals.org.au/media-releases/danny-obrien-mp-statement-from-the-leader-of-the-nationals-and-shadow-minister-for-emergency-services/
+        publisher: The Nationals Victoria
+        title: Danny O'Brien MP – Statement from the Leader of The Nationals and Shadow Minister for Emergency Services
+        published: 2025-12-08
+        accessed: 2026-08-02
+    - id: nationals-col-household-saving
+      statement: >-
+        In the Liberal–Nationals opposition economic plan as stated in Parliament:
+        “Under our plan every Victorian household will save an average of $84 a year
+        when we abolish the emergency services tax.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: unspecified
+        pbo_status: uncosted
+      source:
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
+        publisher: Parliament of Victoria (Hansard)
+        title: Appropriation (2026–2027) Bill 2026 — 12 May
+        published: 2026-05-12
+        accessed: 2026-08-02

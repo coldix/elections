@@ -1,0 +1,45 @@
+# Liberal Party of Australia – Victorian Division — Housing & Planning
+policy:
+  party: liberal
+  issue: housing-planning
+  headline: Expand Capital City Zone; local planning for middle suburbs
+  claims:
+    - id: liberal-housing-capital-city-zone
+      statement: >-
+        “We will expand the Capital City Zone into the immediate inner city
+        surrounding the CBD to Fishermans Bend, North Melbourne, Fitzroy and
+        Collingwood. This will enable residential growth in the inner-city areas
+        that are already serviced by public transport and strong connectivity.”
+      kind: pledge
+      source:
+        url: https://www.abc.net.au/news/2026-02-25/victorian-opposition-unveils-home-ownership-housing-plan/106387550
+        publisher: ABC News
+        title: Victorian opposition to expand Melbourne's CBD, fast-track growth area homes under housing plan
+        published: 2026-02-25
+        accessed: 2026-08-02
+    - id: liberal-housing-local-councils
+      statement: >-
+        “Our plan will deliver the housing Victoria needs through greater density,
+        where it is council land and supported by local communities… We will work
+        with councils to deliver these plans in a timely manner so local communities
+        have a voice in the future of our state.”
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2026-02-25/victorian-opposition-unveils-home-ownership-housing-plan/106387550
+        publisher: ABC News
+        title: Victorian opposition to expand Melbourne's CBD, fast-track growth area homes under housing plan
+        published: 2026-02-25
+        accessed: 2026-08-02
+    - id: liberal-housing-scrap-activity-centres
+      statement: >-
+        Opposition leader Jess Wilson said she would scrap Labor’s plan for
+        activity centres that would allow higher-density housing in some middle-ring
+        suburbs with good public transport connections, restoring planning
+        decision-making power to local councils.
+      kind: opposition_to
+      source:
+        url: https://www.abc.net.au/news/2026-02-25/victorian-opposition-unveils-home-ownership-housing-plan/106387550
+        publisher: ABC News
+        title: Victorian opposition to expand Melbourne's CBD, fast-track growth area homes under housing plan
+        published: 2026-02-25
+        accessed: 2026-08-02

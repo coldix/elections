@@ -1,0 +1,56 @@
+# Australian Labor Party (Victorian Branch) — Cost of Living
+policy:
+  party: labor
+  issue: cost-of-living
+  headline: Half-price public transport and 20% off vehicle registration
+  claims:
+    - id: labor-col-half-price-pt
+      statement: >-
+        “That’s why Labor will deliver immediate cost of living relief with
+        half-price public transport for the rest of 2026. That means trains, trams
+        and buses – metro and V/Line – will be half-price every day until the end
+        of the year, for every Victorian.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_aud: 432000000
+        amount_display: "$432 million"
+        timeframe: "Budget 2026/27; half-price fares from June 2026 to end of 2026"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-cost-living-help-and-surplus
+        publisher: Premier of Victoria
+        title: Labor Delivers Cost Of Living Help And A Surplus
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-col-half-price-savings
+      statement: >-
+        “Half-price fares will: Save the average daily commuter more than $850 from
+        June 1 until the end of 2026.”
+      kind: pledge
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
+        publisher: Premier of Victoria
+        title: Labor Delivers Real Help To Ease The Cost Of Living
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-col-rego
+      statement: >-
+        “Now, the Victorian Budget 2026/27 invests $758.6 million to slash your
+        rego… We will cut this by 20 per cent. This measure will put up to $186
+        back in people’s pockets.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Ongoing operational"
+        amount_aud: 758600000
+        amount_display: "$758.6 million"
+        timeframe: "Budget 2026/27"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
+        publisher: Premier of Victoria
+        title: Labor Delivers Real Help To Ease The Cost Of Living
+        published: 2026-05-05
+        accessed: 2026-08-02

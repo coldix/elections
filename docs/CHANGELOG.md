@@ -4,6 +4,15 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-08-02 — First policy matrix seed (housing + cost of living)
+
+| Area | What shipped |
+|---|---|
+| **Policies** | 8 party×issue files for **Housing & Planning** and **Cost of Living** (Greens, Labor, Liberal, Nationals). |
+| **Sources** | Premier budget releases, ABC/Guardian, Hansard, Greens Victoria media, Nationals media. |
+| **Empty** | **One Nation** cells left empty — no qualifying Victorian state position source found in this pass. |
+| **Exports** | Matrix filled_cells updates on next build via `policies.json`. |
+
 ## 2026-08-02 — Policy matrix & issues jurisdiction guide
 
 | Area | What shipped |

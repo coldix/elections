@@ -1,0 +1,37 @@
+# National Party of Australia - Victoria — Housing & Planning
+# Coalition opposition housing plan is led publicly by the Liberal leader;
+# regional housing emphasis recorded where Nationals candidates state it.
+policy:
+  party: nationals
+  issue: housing-planning
+  headline: Coalition density in the inner city; regional housing shortage focus
+  claims:
+    - id: nationals-housing-coalition-inner-city
+      statement: >-
+        As part of the Liberal–Nationals opposition housing plan, Opposition Leader
+        Jess Wilson said: “We will expand the Capital City Zone into the immediate
+        inner city surrounding the CBD to Fishermans Bend, North Melbourne, Fitzroy
+        and Collingwood,” enabling residential growth “already serviced by public
+        transport and strong connectivity.”
+      kind: pledge
+      source:
+        url: https://www.abc.net.au/news/2026-02-25/victorian-opposition-unveils-home-ownership-housing-plan/106387550
+        publisher: ABC News
+        title: Victorian opposition to expand Melbourne's CBD, fast-track growth area homes under housing plan
+        published: 2026-02-25
+        accessed: 2026-08-02
+    - id: nationals-housing-regional
+      statement: >-
+        Nationals Ripon candidate Jo Armstrong: “With the rising cost of living,
+        increasing crime, roads riddled with potholes, and a worsening housing
+        shortage… The Nationals are the only party that is solely dedicated to
+        fighting for regional Victorians. We have a plan that will scrap taxes and
+        deliver cost-of-living relief, crack down on crime, improve our roads, and
+        build more houses.”
+      kind: position
+      source:
+        url: https://vic.nationals.org.au/media-releases/jo-armstrong-selected-as-nationals-candidate-for-ripon/
+        publisher: The Nationals Victoria
+        title: Jo Armstrong selected as Nationals' candidate for Ripon
+        published: 2026-04-14
+        accessed: 2026-08-02

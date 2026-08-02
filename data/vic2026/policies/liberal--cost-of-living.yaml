@@ -1,0 +1,37 @@
+# Liberal Party of Australia – Victorian Division — Cost of Living
+policy:
+  party: liberal
+  issue: cost-of-living
+  headline: Scrap emergency services tax; cut housing entry costs
+  claims:
+    - id: liberal-col-scrap-esl
+      statement: >-
+        “Under our plan every Victorian household will save an average of $84 a
+        year when we abolish the emergency services tax.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: unspecified
+        pbo_status: uncosted
+      source:
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
+        publisher: Parliament of Victoria (Hansard)
+        title: Appropriation (2026–2027) Bill 2026 — 12 May
+        published: 2026-05-12
+        accessed: 2026-08-02
+    - id: liberal-col-stamp-duty-first-home
+      statement: >-
+        Opposition commitments cited in the same budget debate include “to reduce
+        stamp duty for first home buyers on homes less than $1 million to put home
+        ownership back in reach for young people.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
+        publisher: Parliament of Victoria (Hansard)
+        title: Appropriation (2026–2027) Bill 2026 — 12 May
+        published: 2026-05-12
+        accessed: 2026-08-02

@@ -1,0 +1,54 @@
+# Australian Labor Party (Victorian Branch) — Housing & Planning
+policy:
+  party: labor
+  issue: housing-planning
+  headline: Social housing fund, stamp duty concessions, supply near transport
+  claims:
+    - id: labor-housing-social-fund
+      statement: >-
+        “A new $860 million investment in the Social Housing Growth Fund will
+        deliver more than 7,000 social housing homes for Victorians who need them
+        most.”
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: "Upfront capital"
+        amount_aud: 860000000
+        amount_display: "$860 million"
+        timeframe: "Budget 2026/27; more than 7,000 homes (government statement)"
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-cost-living-help-and-surplus
+        publisher: Premier of Victoria
+        title: Labor Delivers Cost Of Living Help And A Surplus
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-housing-stamp-duty
+      statement: >-
+        “To help slash up-front costs, we are extending stamp duty concessions for
+        buying off-the-plan units, townhouses and apartments until 21 April 2027.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: taxpayer
+        pbo_status: uncosted
+        timeframe: "to 21 April 2027"
+      source:
+        url: https://www.premier.vic.gov.au/labor-delivers-cost-living-help-and-surplus
+        publisher: Premier of Victoria
+        title: Labor Delivers Cost Of Living Help And A Surplus
+        published: 2026-05-05
+        accessed: 2026-08-02
+    - id: labor-housing-everywhere
+      statement: >-
+        “As premier, I want to get more millennials and young people into homes
+        everywhere… We shouldn’t be in a situation where a line gets drawn through
+        the city of Melbourne… and says to everyone on the south and the eastern
+        side of that line, we’re not going to build homes for you.”
+      kind: position
+      source:
+        url: https://www.theguardian.com/australia-news/2026/feb/25/victoria-housing-policy-liberal-labor-politics-planning
+        publisher: The Guardian
+        title: Where will Victoria’s new homes be built? Competing Liberal and Labor visions
+        published: 2026-02-26
+        accessed: 2026-08-02
