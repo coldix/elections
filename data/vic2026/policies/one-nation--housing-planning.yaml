@@ -1,0 +1,45 @@
+# Pauline Hanson's One Nation — Housing (federal party policy)
+policy:
+  party: one-nation
+  issue: housing-planning
+  headline: "Federal policy — GST holiday on building materials; cut housing demand via migration"
+  claims:
+    - id: onp-housing-gst
+      statement: >-
+        [Federal party policy] “One Nation plans to introduce a five-year moratorium
+        on charging GST on building materials to help reduce the cost of new housing
+        and support the construction industry… A five-year GST moratorium on building
+        materials used in new homes up to a value of $1 million.”
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: taxpayer
+        pbo_status: uncosted
+        timeframe: "five years; homes up to $1 million"
+      source:
+        url: https://www.onenation.org.au/new-housing
+        publisher: Pauline Hanson's One Nation
+        title: New Housing
+        accessed: 2026-08-02
+    - id: onp-housing-charges
+      statement: >-
+        [Federal party policy] Plan includes “a review of excessive government charges
+        that make up to 44% of the cost of new homes” and “removing mandatory disability
+        compliance requirements for all new homes, allowing Australians to choose their
+        home design without unnecessary cost burdens.”
+      kind: pledge
+      source:
+        url: https://www.onenation.org.au/new-housing
+        publisher: Pauline Hanson's One Nation
+        title: New Housing
+        accessed: 2026-08-02
+    - id: onp-housing-migration-demand
+      statement: >-
+        [Federal party policy] Immigration policy states visa caps are intended “to ease
+        pressure on housing, wages, and infrastructure.”
+      kind: position
+      source:
+        url: https://www.onenation.org.au/immigration
+        publisher: Pauline Hanson's One Nation
+        title: Immigration — Immigration Reform for a Stronger Australia
+        accessed: 2026-08-02

@@ -1,0 +1,28 @@
+# Pauline Hanson's One Nation — Crime & Justice (federal party policy)
+policy:
+  party: one-nation
+  issue: crime-justice
+  headline: "Federal policy — deport visa holders who offend"
+  claims:
+    - id: onp-crime-visa
+      statement: >-
+        [Federal party policy] “Deport any visa holder who breaks the law. Weak law
+        enforcement policies have put Australians in danger for too long. If you
+        commit a crime, you lose your visa and the right to stay.”
+      kind: pledge
+      source:
+        url: https://www.onenation.org.au/immigration
+        publisher: Pauline Hanson's One Nation
+        title: Immigration — Immigration Reform for a Stronger Australia
+        accessed: 2026-08-02
+    - id: onp-crime-deport-illegal
+      statement: >-
+        [Federal party policy] “Deport 75,000 illegal migrants because Australia’s
+        immigration laws must be enforced, not ignored. Visa overstayers, illegal
+        workers, and unlawful non-residents undermine national security…”
+      kind: pledge
+      source:
+        url: https://www.onenation.org.au/immigration
+        publisher: Pauline Hanson's One Nation
+        title: Immigration — Immigration Reform for a Stronger Australia
+        accessed: 2026-08-02

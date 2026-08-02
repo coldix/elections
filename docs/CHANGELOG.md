@@ -4,6 +4,14 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-08-02 — Policy matrix: One Nation federal policies + methodology
+
+| Area | What shipped |
+|---|---|
+| **One Nation** | Federal policies added for immigration, housing, cost of living, energy, climate, education, crime, debt-budget, gender-social — labelled **[Federal party policy]**. |
+| **Method** | POLICY-METHODOLOGY: federal positions allowed when Vic source missing, with clear labelling. |
+| **Sources** | onenation.org.au (immigration, housing, education, net zero); Guardian gas equity report. |
+
 ## 2026-08-02 — Policy matrix wave 4 (education, climate, forests, treaty, integrity)
 
 | Area | What shipped |

@@ -1,0 +1,41 @@
+# Pauline Hanson's One Nation — Cost of Living (federal party policy)
+policy:
+  party: one-nation
+  issue: cost-of-living
+  headline: "Federal policy — lower energy costs; ease housing cost via migration and build costs"
+  claims:
+    - id: onp-col-net-zero-prices
+      statement: >-
+        [Federal party policy] “Net-zero is driving up power and fuel prices, costing
+        jobs, making our industries uncompetitive… Back real Australian energy, coal,
+        gas, hydro and nuclear, to bring prices down, secure supply, and put our
+        national interest first.”
+      kind: position
+      source:
+        url: https://www.onenation.org.au/abolish-net-zero-policy
+        publisher: Pauline Hanson's One Nation
+        title: Abolish Net Zero by 2050 Policy
+        accessed: 2026-08-02
+    - id: onp-col-housing-gst
+      statement: >-
+        [Federal party policy] “Eliminating GST on building materials will immediately
+        reduce costs for new home construction… More Australians will be able to enter
+        the housing market without excessive government-imposed costs.”
+      kind: pledge
+      source:
+        url: https://www.onenation.org.au/new-housing
+        publisher: Pauline Hanson's One Nation
+        title: New Housing
+        accessed: 2026-08-02
+    - id: onp-col-migration
+      statement: >-
+        [Federal party policy] “Our population has surged past 27 million, overwhelming
+        housing, infrastructure, and essential services. Wages are stagnating,
+        homeownership is slipping out of reach, and Australians are being forced to
+        compete with cheap foreign labour.”
+      kind: position
+      source:
+        url: https://www.onenation.org.au/immigration
+        publisher: Pauline Hanson's One Nation
+        title: Immigration — Immigration Reform for a Stronger Australia
+        accessed: 2026-08-02

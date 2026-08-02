@@ -1,0 +1,17 @@
+# Pauline Hanson's One Nation — Gender Equality & Social Policy (federal; curriculum)
+policy:
+  party: one-nation
+  issue: gender-social
+  headline: "Federal policy — oppose gender/identity curriculum framing in schools"
+  claims:
+    - id: onp-gender-classroom
+      statement: >-
+        [Federal party policy] “There should be no room for Western, white, gender,
+        guilt shaming in any classroom and instead children should be taught the
+        benefits of a merit-based, free-thinking society.”
+      kind: position
+      source:
+        url: https://www.onenation.org.au/education
+        publisher: Pauline Hanson's One Nation
+        title: Education
+        accessed: 2026-08-02

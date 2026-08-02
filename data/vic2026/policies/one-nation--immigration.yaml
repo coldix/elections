@@ -1,0 +1,47 @@
+# Pauline Hanson's One Nation — Immigration (federal party policy)
+policy:
+  party: one-nation
+  issue: immigration
+  headline: "Federal policy — cut visas; deport unlawful non-residents"
+  claims:
+    - id: onp-imm-cap
+      statement: >-
+        [Federal party policy] “Cut immigration by over 570,000 people from current
+        Labor levels by capping visas at 130,000 per year to ease pressure on housing,
+        wages, and infrastructure.”
+      kind: pledge
+      source:
+        url: https://www.onenation.org.au/immigration
+        publisher: Pauline Hanson's One Nation
+        title: Immigration — Immigration Reform for a Stronger Australia
+        accessed: 2026-08-02
+    - id: onp-imm-deport
+      statement: >-
+        [Federal party policy] “Deport 75,000 illegal migrants because Australia’s
+        immigration laws must be enforced, not ignored.”
+      kind: pledge
+      source:
+        url: https://www.onenation.org.au/immigration
+        publisher: Pauline Hanson's One Nation
+        title: Immigration — Immigration Reform for a Stronger Australia
+        accessed: 2026-08-02
+    - id: onp-imm-crime-visa
+      statement: >-
+        [Federal party policy] “Deport any visa holder who breaks the law… If you
+        commit a crime, you lose your visa and the right to stay.”
+      kind: pledge
+      source:
+        url: https://www.onenation.org.au/immigration
+        publisher: Pauline Hanson's One Nation
+        title: Immigration — Immigration Reform for a Stronger Australia
+        accessed: 2026-08-02
+    - id: onp-imm-citizenship
+      statement: >-
+        [Federal party policy] “Introduce an eight-year waiting period for citizenship
+        and welfare, ensuring new arrivals contribute before they take.”
+      kind: pledge
+      source:
+        url: https://www.onenation.org.au/immigration
+        publisher: Pauline Hanson's One Nation
+        title: Immigration — Immigration Reform for a Stronger Australia
+        accessed: 2026-08-02

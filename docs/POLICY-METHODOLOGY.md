@@ -54,6 +54,15 @@ set requires a methodology update (not an ad hoc UI change).
 statement, or duplicate with separate sources if both parties claim it. There
 is no sixth “Coalition” column.
 
+**Federal policies (One Nation and shared fields):** Where a matrix party has
+no Victorian-specific public position, a **national party policy** may be
+recorded if it is relevant to the issue and clearly labelled as **federal**
+(headline and/or statement). Prefer party websites and dated primary sources.
+This is especially appropriate for `federal_primary` issues (e.g. immigration)
+and for parties whose Victorian branch has not yet published a state manifesto
+on that topic. Federal claims do **not** become state law commitments unless a
+Victorian source says so.
+
 ## Issues taxonomy
 
 Issues live in `data/<election>/issues.yaml`. Order in that file is display

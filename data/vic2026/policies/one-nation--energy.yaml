@@ -1,0 +1,36 @@
+# Pauline Hanson's One Nation — Energy (federal party policy)
+policy:
+  party: one-nation
+  issue: energy
+  headline: "Federal policy — coal, gas, hydro, nuclear; Norway-style gas equity"
+  claims:
+    - id: onp-energy-real
+      statement: >-
+        [Federal party policy] Petitioners ask the Senate to “Back real Australian
+        energy, coal, gas, hydro and nuclear, to bring prices down, secure supply,
+        and put our national interest first” and to “Abolish Australia’s Net Zero by
+        2050 policy, along with any associated subsidies, mandates, or legislation.”
+      kind: pledge
+      source:
+        url: https://www.onenation.org.au/abolish-net-zero-policy
+        publisher: Pauline Hanson's One Nation
+        title: Abolish Net Zero by 2050 Policy
+        accessed: 2026-08-02
+    - id: onp-energy-gas-equity
+      statement: >-
+        [Federal party policy] Guardian Australia reports Pauline Hanson announced a
+        Norway-inspired gas policy: government would offer “a 30% rebate on the cost
+        of exploration in commonwealth waters in exchange for taking an equity stake
+        of up to 30% in the operation,” with profits for a sovereign wealth fund;
+        abolish the PRRT for new projects and introduce a royalty regime.
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: mixed
+        pbo_status: uncosted
+      source:
+        url: https://www.theguardian.com/australia-news/2026/may/21/pauline-hanson-announces-norway-inspired-gas-policy-as-she-decries-25-export-tax-as-economic-vandalism
+        publisher: The Guardian
+        title: Pauline Hanson announces Norway-inspired gas policy
+        published: 2026-05-21
+        accessed: 2026-08-02

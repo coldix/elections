@@ -1,0 +1,23 @@
+# Pauline Hanson's One Nation — Debt & Budget (federal party policy)
+policy:
+  party: one-nation
+  issue: debt-budget
+  headline: "Federal policy — gas royalties and sovereign wealth fund framing"
+  claims:
+    - id: onp-debt-sovereign
+      statement: >-
+        [Federal party policy] Guardian Australia reports Hanson’s gas policy would
+        acquire equity stakes “and stash the profits in a sovereign wealth fund,”
+        aiming for “vastly greater returns” for Australian taxpayers from oil and gas,
+        while abolishing the PRRT for new projects and introducing a royalty regime.
+      kind: pledge
+      fiscal:
+        taxpayer_label: "Not specified"
+        financing: mixed
+        pbo_status: uncosted
+      source:
+        url: https://www.theguardian.com/australia-news/2026/may/21/pauline-hanson-announces-norway-inspired-gas-policy-as-she-decries-25-export-tax-as-economic-vandalism
+        publisher: The Guardian
+        title: Pauline Hanson announces Norway-inspired gas policy
+        published: 2026-05-21
+        accessed: 2026-08-02

@@ -1,0 +1,28 @@
+# Pauline Hanson's One Nation — Education (federal party policy)
+policy:
+  party: one-nation
+  issue: education
+  headline: "Federal policy — back-to-basics curriculum"
+  claims:
+    - id: onp-edu-basics
+      statement: >-
+        [Federal party policy] “One Nation will restore critical thinking in the
+        classroom and reinstate the cornerstone of education with reading, writing,
+        arithmetic, and discipline.”
+      kind: position
+      source:
+        url: https://www.onenation.org.au/education
+        publisher: Pauline Hanson's One Nation
+        title: Education
+        accessed: 2026-08-02
+    - id: onp-edu-merit
+      statement: >-
+        [Federal party policy] “There should be no room for Western, white, gender,
+        guilt shaming in any classroom and instead children should be taught the
+        benefits of a merit-based, free-thinking society.”
+      kind: position
+      source:
+        url: https://www.onenation.org.au/education
+        publisher: Pauline Hanson's One Nation
+        title: Education
+        accessed: 2026-08-02

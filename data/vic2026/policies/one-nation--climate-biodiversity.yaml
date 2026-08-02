@@ -1,0 +1,29 @@
+# Pauline Hanson's One Nation — Climate (federal party policy)
+policy:
+  party: one-nation
+  issue: climate-biodiversity
+  headline: "Federal policy — abolish Net Zero by 2050"
+  claims:
+    - id: onp-climate-abolish-nz
+      statement: >-
+        [Federal party policy] “Abolish Australia’s Net Zero by 2050 policy, along
+        with any associated subsidies, mandates, or legislation.” “Net-zero is driving
+        up power and fuel prices, costing jobs, making our industries uncompetitive,
+        and pushing climate alarm onto children in schools.”
+      kind: pledge
+      source:
+        url: https://www.onenation.org.au/abolish-net-zero-policy
+        publisher: Pauline Hanson's One Nation
+        title: Abolish Net Zero by 2050 Policy
+        accessed: 2026-08-02
+    - id: onp-climate-inquiry
+      statement: >-
+        [Federal party policy] Request includes: “Hold a full public inquiry into the
+        economic, social and mental health impacts of Net Zero, particularly on
+        children, regional communities, and working Australians.”
+      kind: pledge
+      source:
+        url: https://www.onenation.org.au/abolish-net-zero-policy
+        publisher: Pauline Hanson's One Nation
+        title: Abolish Net Zero by 2050 Policy
+        accessed: 2026-08-02
