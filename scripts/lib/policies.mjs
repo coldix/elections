@@ -5,15 +5,27 @@ import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
 
-/** v1 matrix columns — fixed order left to right. */
+/** Full party view — fixed order left to right. */
 export const MATRIX_PARTIES = ["greens", "labor", "liberal", "nationals", "one-nation"];
+
+/** Default combined view. Coalition is a virtual display column, not a registered party. */
+export const COMBINED_MATRIX_PARTIES = ["greens", "labor", "coalition", "one-nation"];
 
 export const MATRIX_PARTY_LABELS = {
   greens: "Greens",
   labor: "Labor",
   liberal: "Liberal",
   nationals: "Nationals",
+  coalition: "Liberal–Nationals",
   "one-nation": "One Nation",
+};
+
+export const COALITION_SCOPES = ["coalition_shared", "mixed", "party_specific"];
+
+export const COALITION_SCOPE_LABELS = {
+  coalition_shared: "Shared Coalition policy",
+  mixed: "Shared platform with party differences",
+  party_specific: "Party-specific positions",
 };
 
 export const JURISDICTIONS = [
@@ -92,7 +104,6 @@ function findDataDir() {
 }
 
 const DATA_DIR = findDataDir();
-
 const loadYaml = (path) => parse(readFileSync(path, "utf8"));
 
 /** Load issue taxonomy for an election. Empty array if file missing. */
@@ -127,30 +138,40 @@ export function loadPolicies(electionId = "vic2026") {
     .filter(Boolean);
 }
 
+/**
+ * Load display relationships between parties that contest an election in coalition.
+ * This does not merge or replace the underlying party policy records.
+ */
+export function loadCoalitions(electionId = "vic2026") {
+  const path = join(DATA_DIR, electionId, "coalitions.yaml");
+  if (!existsSync(path)) return [];
+  const doc = loadYaml(path);
+  return (doc.coalitions ?? []).map((coalition) => ({
+    ...coalition,
+    issues: coalition.issues ?? [],
+  }));
+}
+
 /** Map party|issue → policy record (or null). */
 export function policyIndex(policies) {
   const map = new Map();
-  for (const p of policies) {
-    map.set(`${p.party}|${p.issue}`, p);
-  }
+  for (const p of policies) map.set(`${p.party}|${p.issue}`, p);
   return map;
 }
 
-/**
- * Build matrix rows for the UI and exports.
- * Always includes every issue × every MATRIX_PARTIES column.
- */
-export function matrixFor(electionId = "vic2026") {
-  const issues = loadIssues(electionId);
-  const policies = loadPolicies(electionId);
-  const byKey = policyIndex(policies);
+function partyDescriptors(slugs) {
+  return slugs.map((slug) => ({
+    slug,
+    label: MATRIX_PARTY_LABELS[slug] ?? slug,
+  }));
+}
 
+function buildRows(issues, partySlugs, byKey) {
   let filledCells = 0;
   let claimCount = 0;
-
   const rows = issues.map((issue) => {
     const cells = {};
-    for (const party of MATRIX_PARTIES) {
+    for (const party of partySlugs) {
       const policy = byKey.get(`${party}|${issue.slug}`) ?? null;
       if (policy) {
         filledCells++;
@@ -160,25 +181,117 @@ export function matrixFor(electionId = "vic2026") {
     }
     return { issue, cells };
   });
-
-  const totalCells = issues.length * MATRIX_PARTIES.length;
-
+  const totalCells = issues.length * partySlugs.length;
   return {
-    parties: MATRIX_PARTIES.map((slug) => ({
-      slug,
-      label: MATRIX_PARTY_LABELS[slug] ?? slug,
-    })),
-    issues,
     rows,
     stats: {
       issues: issues.length,
-      parties: MATRIX_PARTIES.length,
+      parties: partySlugs.length,
       total_cells: totalCells,
       filled_cells: filledCells,
       empty_cells: totalCells - filledCells,
       claims: claimCount,
-      policy_records: policies.length,
     },
+  };
+}
+
+function buildCoalitionCell(issue, coalition, byKey) {
+  const relation = coalition.issues.find((item) => item.issue === issue.slug) ?? {
+    issue: issue.slug,
+    scope: "party_specific",
+  };
+  const memberPolicies = Object.fromEntries(
+    coalition.parties.map((party) => [party, byKey.get(`${party}|${issue.slug}`) ?? null])
+  );
+  const representativeParty =
+    relation.representative_party ?? coalition.parties.find((party) => memberPolicies[party]) ?? null;
+
+  return {
+    type: "coalition",
+    coalition_id: coalition.id,
+    label: coalition.label,
+    short_label: coalition.short_label ?? coalition.label,
+    parties: coalition.parties,
+    scope: relation.scope,
+    scope_label: COALITION_SCOPE_LABELS[relation.scope] ?? relation.scope,
+    shared_policy_id: relation.shared_policy_id ?? null,
+    note: relation.note ?? null,
+    representative_party: representativeParty,
+    policy: representativeParty ? memberPolicies[representativeParty] : null,
+    member_policies: memberPolicies,
+    has_policy: Object.values(memberPolicies).some(Boolean),
+  };
+}
+
+function buildCombinedRows(issues, coalition, byKey) {
+  let filledCells = 0;
+  const rows = issues.map((issue) => {
+    const coalitionCell = buildCoalitionCell(issue, coalition, byKey);
+    const cells = {
+      greens: byKey.get(`greens|${issue.slug}`) ?? null,
+      labor: byKey.get(`labor|${issue.slug}`) ?? null,
+      coalition: coalitionCell,
+      "one-nation": byKey.get(`one-nation|${issue.slug}`) ?? null,
+    };
+    for (const party of COMBINED_MATRIX_PARTIES) {
+      const cell = cells[party];
+      if (party === "coalition" ? cell?.has_policy : Boolean(cell)) filledCells++;
+    }
+    return { issue, cells };
+  });
+  const totalCells = issues.length * COMBINED_MATRIX_PARTIES.length;
+  return {
+    rows,
+    stats: {
+      issues: issues.length,
+      parties: COMBINED_MATRIX_PARTIES.length,
+      total_cells: totalCells,
+      filled_cells: filledCells,
+      empty_cells: totalCells - filledCells,
+    },
+  };
+}
+
+/**
+ * Build both matrix views for the UI and exports.
+ * Separate view preserves every registered party record. Combined view replaces
+ * Liberal and Nationals display columns with a virtual Coalition column only.
+ */
+export function matrixFor(electionId = "vic2026") {
+  const issues = loadIssues(electionId);
+  const policies = loadPolicies(electionId);
+  const coalitions = loadCoalitions(electionId);
+  const byKey = policyIndex(policies);
+
+  const separate = buildRows(issues, MATRIX_PARTIES, byKey);
+  separate.stats.policy_records = policies.length;
+
+  const defaultCoalition =
+    coalitions.find((coalition) => coalition.default_combined) ?? coalitions[0] ?? null;
+
+  let combined = null;
+  if (defaultCoalition) {
+    const built = buildCombinedRows(issues, defaultCoalition, byKey);
+    combined = {
+      coalition: defaultCoalition,
+      parties: partyDescriptors(COMBINED_MATRIX_PARTIES),
+      rows: built.rows,
+      stats: {
+        ...built.stats,
+        claims: separate.stats.claims,
+        policy_records: policies.length,
+      },
+    };
+  }
+
+  return {
+    parties: partyDescriptors(MATRIX_PARTIES),
+    issues,
+    rows: separate.rows,
+    stats: separate.stats,
+    coalitions,
+    combined,
+    default_view: combined ? "combined" : "separate",
     caveat: POLICY_CAVEAT,
   };
 }
