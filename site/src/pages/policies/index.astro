@@ -1,0 +1,164 @@
+---
+import Base from "../../layouts/Base.astro";
+import JurisdictionBadge from "../../components/JurisdictionBadge.astro";
+import { matrixFor, POLICY_CAVEAT } from "../../../../scripts/lib/policies.mjs";
+import { SITE } from "../../lib/site.mjs";
+
+const matrix = matrixFor("vic2026");
+const view = matrix.combined ?? {
+  parties: matrix.parties,
+  rows: matrix.rows,
+};
+
+function rowFilled(cells) {
+  return view.parties.filter((party) =>
+    party.slug === "coalition" ? Boolean(cells[party.slug]?.has_policy) : Boolean(cells[party.slug])
+  ).length;
+}
+
+const schema = {
+  "@type": "CollectionPage",
+  name: "Policy comparisons — Victorian state election 2026",
+  description:
+    "Fifteen issue-by-issue comparisons of sourced policy positions from the Greens, Labor, Liberal–Nationals and One Nation.",
+  url: `${SITE.url}/policies`,
+  isPartOf: { "@id": `${SITE.url}/#website` },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: matrix.issues.map((issue, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: issue.name,
+      url: `${SITE.url}/policies/${issue.slug}`,
+    })),
+  },
+};
+---
+
+<Base
+  title="Policy comparisons"
+  description="Compare the Greens, Labor, Liberal–Nationals and One Nation issue by issue across 15 Victorian election policy areas."
+  breadcrumbs={[{ name: "Policies", href: "/policies" }]}
+  schema={schema}
+>
+  <div class="wrap section policy-index">
+    <header class="page-head">
+      <p class="eyebrow">Victoria 2026</p>
+      <h1>Policy comparisons</h1>
+      <p class="lede">
+        Choose one issue for a readable side-by-side comparison of the Greens, Labor,
+        Liberal–Nationals and One Nation. Every detailed claim links to its public source.
+      </p>
+      <p class="btn-row">
+        <a class="btn" href="/parties/matrix">Full policy matrix</a>
+        <a class="btn btn-ghost btn-sm" href="/parties/issues">Issues & jurisdiction</a>
+        <a class="btn btn-ghost btn-sm" href="/methodology#policy-matrix">Methodology</a>
+      </p>
+    </header>
+
+    <div class="notice" role="note">
+      <strong>No ratings or invented positions.</strong> These pages reorganise the same
+      source-backed records used by the full matrix. {POLICY_CAVEAT}
+    </div>
+
+    <div class="policy-grid">
+      {
+        view.rows.map(({ issue, cells }, index) => {
+          const filled = rowFilled(cells);
+          return (
+            <article class="policy-card card">
+              <header>
+                <span class="policy-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                <JurisdictionBadge jurisdiction={issue.jurisdiction} compact />
+                <span class="fill-count">{filled}/{view.parties.length} columns</span>
+              </header>
+              <h2><a href={`/policies/${issue.slug}`}>{issue.name}</a></h2>
+              <p>{issue.summary}</p>
+              <a class="compare-link" href={`/policies/${issue.slug}`}>
+                Compare party positions →
+              </a>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</Base>
+
+<style>
+  .policy-index {
+    max-width: 78rem;
+  }
+
+  .page-head {
+    max-width: 58rem;
+  }
+
+  .notice {
+    margin: 1.5rem 0 2rem;
+    max-width: 65rem;
+  }
+
+  .policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+    gap: 1rem;
+  }
+
+  .policy-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 15rem;
+    padding: 1.05rem 1.1rem;
+  }
+
+  .policy-card header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .policy-number {
+    margin-right: auto;
+    color: var(--ink-3);
+    font-size: 0.75rem;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+  }
+
+  .fill-count {
+    color: var(--ink-3);
+    font-size: 0.7rem;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .policy-card h2 {
+    margin: 1rem 0 0.55rem;
+    font-size: 1.22rem;
+  }
+
+  .policy-card h2 a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .policy-card h2 a:hover {
+    color: var(--accent-ink);
+    text-decoration: underline;
+  }
+
+  .policy-card > p {
+    flex: 1;
+    margin: 0;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+
+  .compare-link {
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+</style>
