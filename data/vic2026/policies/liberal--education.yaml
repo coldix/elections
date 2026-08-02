@@ -1,22 +1,49 @@
-# Liberal Party of Australia – Victorian Division — Education
+# Liberal Victoria — Education
 policy:
   party: liberal
   issue: education
-  headline: Scrap payroll tax on schools
+  headline: Literacy and Numeracy Guarantee, early specialist support and repeal of the schools tax
   claims:
-    - id: liberal-edu-payroll-tax
-      statement: >-
-        Opposition economic commitments include “to scrap the payroll tax on GPs and
-        all schools,” framed as reducing costs for families with children in
-        non-government schools among other tax relief measures.
-      kind: pledge
-      fiscal:
-        taxpayer_label: "Not specified"
-        financing: taxpayer
-        pbo_status: uncosted
-      source:
-        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
-        publisher: Parliament of Victoria (Hansard)
-        title: Appropriation (2026–2027) Bill 2026 — 12 May
-        published: 2026-05-12
-        accessed: 2026-08-02
+  - id: liberal-edu-guarantee
+    statement: Adopt a Literacy and Numeracy Guarantee aimed at lifting student results by 15 per cent over a decade, with a longer-term objective of 90 per cent of students reaching the top two NAPLAN proficiency bands.
+    kind: pledge
+    source:
+      url: https://www.nationaltribune.com.au/backing-victorian-kids-to-achieve-their-best-liberals-and-nationals-announce-literacy-and-numeracy-guarantee/
+      publisher: The National Tribune (republishing Liberal Victoria statement)
+      title: 'Backing Victorian kids to achieve their best: Literacy and Numeracy Guarantee'
+      published: '2026-07-20'
+      accessed: '2026-08-02'
+  - id: liberal-edu-curriculum
+    statement: Commission a 12-month review to declutter the Victorian Curriculum, reduce teacher workload and strengthen explicit teaching of foundational skills.
+    kind: pledge
+    fiscal:
+      taxpayer_label: Upfront capital
+      amount_aud: 200000
+      amount_display: $200,000
+      timeframe: 12-month review
+      financing: taxpayer
+      pbo_status: uncosted
+    source:
+      url: https://www.nationaltribune.com.au/backing-victorian-kids-to-achieve-their-best-liberals-and-nationals-announce-literacy-and-numeracy-guarantee/
+      publisher: The National Tribune (republishing Liberal Victoria statement)
+      title: 'Backing Victorian kids to achieve their best: Literacy and Numeracy Guarantee'
+      published: '2026-07-20'
+      accessed: '2026-08-02'
+  - id: liberal-edu-school-starters
+    statement: From Term 1 of 2028, place occupational therapists and speech pathologists within the Primary School Nursing Program and provide a $500 subsidy towards an initial specialist appointment for eligible children.
+    kind: pledge
+    source:
+      url: https://vic.nationals.org.au/media-releases/kim-okeeffe-mp-okeeffe-backs-new-plan-for-students-to-succeed-from-day-one/
+      publisher: The Nationals Victoria
+      title: O’Keeffe backs new plan for students to succeed from day one
+      published: '2026-06-10'
+      accessed: '2026-08-02'
+  - id: liberal-edu-schools-tax
+    statement: Repeal payroll tax applied to non-government schools.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2025-06-26-three-more-victorian-schools-hit-by-labors-insidious-schools-tax
+      publisher: Liberal Victoria
+      title: Three more Victorian schools hit by Labor’s schools tax
+      published: '2025-06-26'
+      accessed: '2026-08-02'
