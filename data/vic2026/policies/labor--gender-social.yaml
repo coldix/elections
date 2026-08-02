@@ -2,41 +2,71 @@
 policy:
   party: labor
   issue: gender-social
-  headline: Family violence funding; Gender Equality Act framework
+  headline: Family violence reform, gender-responsive budgeting and LGBTIQA+ equality
   claims:
-    - id: labor-gender-fv-100m
+    - id: labor-social-family-violence
       statement: >-
-        “This Budget delivers $100 million to continue Labor’s nation-leading work in
-        preventing family violence. This includes delivering refuges and crisis
-        accommodation and expanding the Personal Safety Initiative.”
+        Continue prevention, refuges, crisis accommodation and the Personal Safety
+        Initiative as part of the 2026–27 family violence package.
       kind: costed_measure
       fiscal:
-        taxpayer_label: "Ongoing operational"
+        taxpayer_label: Ongoing operational
         amount_aud: 100000000
-        amount_display: "$100 million"
-        timeframe: "Budget 2026/27"
+        amount_display: $100 million
+        timeframe: 2026–27 Budget
         financing: taxpayer
         pbo_status: uncosted
       source:
         url: https://www.premier.vic.gov.au/labor-delivers-what-we-need-keep-victorians-safe-0
         publisher: Premier of Victoria
         title: Labor Delivers What We Need To Keep Victorians Safe
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-gender-cip
+        published: '2026-05-05'
+        accessed: '2026-08-02'
+    - id: labor-social-information-sharing
       statement: >-
-        “More than $23 million will continue the work of the Central Information Point,
-        sharing information between agencies about perpetrators.”
+        Continue the Central Information Point, which shares information between
+        agencies about family violence perpetrators.
       kind: costed_measure
       fiscal:
-        taxpayer_label: "Ongoing operational"
+        taxpayer_label: Ongoing operational
         amount_aud: 23000000
-        amount_display: "more than $23 million"
+        amount_display: more than $23 million
+        timeframe: 2026–27 Budget
         financing: taxpayer
         pbo_status: uncosted
       source:
         url: https://www.premier.vic.gov.au/labor-delivers-what-we-need-keep-victorians-safe-0
         publisher: Premier of Victoria
         title: Labor Delivers What We Need To Keep Victorians Safe
-        published: 2026-05-05
-        accessed: 2026-08-02
+        published: '2026-05-05'
+        accessed: '2026-08-02'
+    - id: labor-social-protection-laws
+      statement: >-
+        Extend family violence intervention orders to better protect victim-survivors,
+        recognise offending that occurs interstate, strengthen stalking law and add
+        procedural protections for vulnerable victims and witnesses.
+      kind: position
+      source:
+        url: https://www.premier.vic.gov.au/new-laws-protect-women-and-children
+        publisher: Premier of Victoria
+        title: New Laws To Protect Women And Children
+        published: '2025-11-13'
+        accessed: '2026-08-02'
+    - id: labor-social-lgbtiqa-equality
+      statement: >-
+        Maintain support for LGBTIQA+ equality, including the conversion-practices
+        ban, anti-vilification protections and grants that expand community services
+        in metropolitan and regional Victoria.
+      kind: position
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 1600000
+        amount_display: $1.6 million sector-strengthening grants
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/labor-supporting-lgbtiqa-victorians
+        publisher: Premier of Victoria
+        title: Labor Is Supporting LGBTIQA+ Victorians
+        published: '2026-05-07'
+        accessed: '2026-08-02'
