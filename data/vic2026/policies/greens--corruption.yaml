@@ -1,20 +1,39 @@
-# Victorian Greens — Corruption / integrity
+# Victorian Greens — Corruption and Integrity
 policy:
   party: greens
   issue: corruption
-  headline: Called for broadened IBAC powers on CFMEU / Big Build
+  headline: Broader IBAC powers, independent integrity funding and political-transparency reforms
   claims:
-    - id: greens-ibac-powers
-      statement: >-
-        ABC News related coverage notes Greens calls for broadened anti-corruption
-        powers in the context of CFMEU and Big Build scrutiny (February 2026 story
-        titled reporting Greens call for broadened powers for the anti-corruption body
-        regarding CFMEU referrals). Labor later announced follow-the-money powers IBAC
-        had sought.
-      kind: position
+    - id: greens-integrity-follow-dollar
+      statement: Give IBAC follow-the-dollar powers to investigate public money flowing through contractors, subcontractors and private entities involved in government projects.
+      kind: pledge
       source:
-        url: https://www.abc.net.au/news/2026-02-17/greens-call-broadened-powers-anticorruption-body-cmfeu/106350798
-        publisher: ABC News
-        title: Greens call for broadened powers for anti-corruption body (CFMEU)
-        published: 2026-02-17
-        accessed: 2026-08-02
+        url: https://greens.org.au/vic/news/media-release/greens-challenge-labor-support-their-follow-dollar-laws-and-strengthen-ibac
+        publisher: Australian Greens Victoria
+        title: Greens challenge Labor to support their follow the dollar laws and strengthen IBAC
+        published: '2026-02-18'
+        accessed: '2026-08-02'
+    - id: greens-integrity-broaden-ibac
+      statement: Broaden anti-corruption jurisdiction so integrity bodies can investigate patterns of conduct, misuse of public office and corruption involving public funds even where the conduct may not meet a criminal threshold.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/policies/democracy-and-integrity-policy
+        publisher: Australian Greens Victoria
+        title: Democracy and Integrity Policy
+        accessed: '2026-08-02'
+    - id: greens-integrity-independent-funding
+      statement: Establish arms-length funding arrangements for IBAC, the Ombudsman and the Auditor-General so governments cannot constrain investigations through their budgets.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/platform/integrity
+        publisher: Australian Greens Victoria
+        title: Integrity in Government
+        accessed: '2026-08-02'
+    - id: greens-integrity-political-rules
+      statement: Introduce truth-in-political-advertising laws, campaign spending caps and stronger revolving-door restrictions for ministers and political staff.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/platform/integrity
+        publisher: Australian Greens Victoria
+        title: Integrity in Government
+        accessed: '2026-08-02'
