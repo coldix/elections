@@ -2,29 +2,38 @@
 policy:
   party: greens
   issue: energy
-  headline: Ban new coal and gas; fossil-free transition framing
+  headline: 100% renewable energy by 2030, public infrastructure and no new coal or gas
   claims:
+    - id: greens-energy-100-renewable
+      statement: Transition Victoria to 100% renewable energy by 2030 while maintaining a reliable and stable electricity grid.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/policies/energy-policy
+        publisher: Australian Greens Victoria
+        title: Energy Policy
+        accessed: '2026-08-02'
+    - id: greens-energy-public-storage
+      statement: Use public investment and ownership for storage and transmission infrastructure, including community-owned microgrids, to support energy security, stable prices and the renewable transition.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/policies/energy-policy
+        publisher: Australian Greens Victoria
+        title: Energy Policy
+        accessed: '2026-08-02'
+    - id: greens-energy-home-upgrades
+      statement: Establish government-backed loans so households can install efficiency upgrades, solar panels and batteries, with repayment deferred until the home is sold.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/policies/energy-policy
+        publisher: Australian Greens Victoria
+        title: Energy Policy
+        accessed: '2026-08-02'
     - id: greens-energy-ban-new
-      statement: >-
-        “The Greens are also calling for an immediate ban on all new coal and gas
-        projects.”
+      statement: Immediately ban all new coal and gas projects and end public support for the existing fossil-fuel industry.
       kind: pledge
       source:
         url: https://greens.org.au/vic/news/media-release/greens-call-urgent-implementation-climate-resilience-inquiry-report-after
         publisher: Australian Greens Victoria
         title: Greens call for urgent implementation of climate resilience inquiry report
-        published: 2026-01-16
-        accessed: 2026-08-02
-    - id: greens-energy-fossil-profit
-      statement: >-
-        Campaign conference framing (2026): “the cost of living crisis is being
-        turbo-charged by Trump's illegal war, the housing crisis is driving crushing
-        rents and unaffordable homes, while fossil fuel corporations continue to profit
-        in a climate crisis… the Greens have a plan to fight back and put people and
-        planet first, not corporate profit for billionaires and big corporations.”
-      kind: position
-      source:
-        url: https://greens.org.au/vic/campcon26
-        publisher: Australian Greens Victoria
-        title: Victorian Greens Campaign Conference 2026
-        accessed: 2026-08-02
+        published: '2026-01-16'
+        accessed: '2026-08-02'
