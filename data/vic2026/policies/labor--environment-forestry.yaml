@@ -2,17 +2,62 @@
 policy:
   party: labor
   issue: environment-forestry
-  headline: Native forest logging ban (2024) — contested by Greens on loopholes
+  headline: End native timber harvesting, restore habitat and expand forest recreation
   claims:
-    - id: labor-forest-ban
+    - id: labor-env-native-harvesting-ended
       statement: >-
-        Greens Victoria (describing Labor government policy): “Native forest logging
-        was banned in Victoria at the start of 2024 after decades of campaigning from
-        the Greens, environmental and First Nations groups.”
+        Maintain the end of commercial native timber harvesting in Victoria's state
+        forests, which took effect on 1 January 2024, while plantation forestry and
+        limited regulated forest-produce licensing continue.
       kind: position
       source:
-        url: https://greens.org.au/vic/news/media-release/victorian-greens-will-introduce-new-laws-close-loopholes-native-forest
-        publisher: Australian Greens Victoria (characterising government ban)
-        title: Victorian Greens will introduce new laws to close loopholes in native forest logging
-        published: 2026-06-23
-        accessed: 2026-08-02
+        url: https://www.deeca.vic.gov.au/forestry/forestry-in-victoria
+        publisher: Victorian Department of Energy, Environment and Climate Action
+        title: Forestry in Victoria
+        accessed: '2026-08-02'
+    - id: labor-env-great-outdoors
+      statement: >-
+        Invest in access, recreation and management across 1.8 million hectares of
+        former timber-harvesting state forests, including tracks, trails, amenities,
+        community-designed Healthy Forest Plans and additional rangers.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Upfront capital
+        amount_aud: 30000000
+        amount_display: $30 million
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.premier.vic.gov.au/our-plan-victorias-great-outdoors
+        publisher: Premier of Victoria
+        title: Our Plan For Victoria's Great Outdoors
+        published: '2025-10-21'
+        accessed: '2026-08-02'
+    - id: labor-env-bushbank
+      statement: >-
+        Continue the BushBank nature-restoration program, which is planting millions
+        of native trees and plants and is intended to restore more than 20,000
+        hectares of land across Victoria.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Upfront capital
+        amount_aud: 77000000
+        amount_display: $77 million program
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.environment.vic.gov.au/bushbank
+        publisher: Victorian Government
+        title: Nature restoration for carbon storage — BushBank program
+        accessed: '2026-08-02'
+    - id: labor-env-biodiversity-2037
+      statement: >-
+        Retain the Biodiversity 2037 framework, including habitat restoration,
+        threatened-species conservation, pest and weed control, and a long-term goal
+        of net gains in habitat extent and condition.
+      kind: position
+      source:
+        url: https://www.environment.vic.gov.au/biodiversity/biodiversity-progress-report
+        publisher: Victorian Government
+        title: Biodiversity 2037 Progress Report
+        accessed: '2026-08-02'
