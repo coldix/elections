@@ -6,180 +6,167 @@
 #   state_primary | shared_fed_state | federal_primary | local_primary | shared_state_local
 
 issues:
-  - slug: cost-of-living
-    name: Cost of Living
-    summary: Household expenses such as energy bills, rents, transport fares, food prices and state taxes and charges.
-    jurisdiction: shared_fed_state
-    jurisdiction_note: >
-      Cost of living is not one portfolio. The Commonwealth sets income tax, most
-      welfare payments and monetary policy; Victoria sets state taxes and charges,
-      energy regulation within the National Electricity Market framework, public
-      transport fares, stamp duty and many service fees.
-    state_role: State taxes and charges, public transport fares, energy consumer protections, some concessions, and land tax / stamp duty settings.
-    federal_role: Income tax, most social security, competition policy, and the bulk of national economic settings.
-    local_role: Council rates and some local fees can affect household budgets but are not the main drivers of statewide cost-of-living debates.
-    related: [energy, housing-planning, debt-budget]
-
-  - slug: energy
-    name: Energy
-    summary: Electricity and gas supply, prices, generation mix, networks and consumer protections in Victoria.
-    jurisdiction: shared_fed_state
-    jurisdiction_note: >
-      Energy is a shared field. Victoria participates in the National Electricity
-      Market and can set state energy policy, consumer protections and some
-      generation and storage decisions; the Commonwealth influences national market
-      rules, emissions targets and major funding programs.
-    state_role: State energy policy, licensing and consumer protection agencies, state-owned or contracted projects, and many household energy concession schemes.
-    federal_role: National Electricity Market architecture, national emissions and energy funding programs, and cross-border market rules.
-    related: [climate-biodiversity, cost-of-living, environment-forestry]
-
-  - slug: education
-    name: Education
-    summary: Public schools, curriculum within state systems, TAFE and early childhood services run or regulated by Victoria.
-    jurisdiction: state_primary
-    jurisdiction_note: >
-      Schooling is primarily a state responsibility in Australia. The Commonwealth
-      provides major funding to schools and runs national curriculum and higher
-      education frameworks; day-to-day public school systems and TAFE are state-led.
-    state_role: Public schools, state curriculum implementation, teacher employment in the state system, TAFE and many early childhood programs.
-    federal_role: School funding agreements, national curriculum frameworks, universities and many student income supports.
-    local_role: Limited direct role; some councils support local early learning or school-related services.
-    related: [debt-budget, gender-social]
-
-  - slug: immigration
-    name: Immigration
-    summary: Who may enter and stay in Australia, permanent migration settings and citizenship — largely Commonwealth powers.
-    jurisdiction: federal_primary
-    jurisdiction_note: >
-      Immigration, visas and citizenship are Commonwealth powers under the
-      Australian Constitution. Victorian governments can advocate, run settlement
-      services, and set some skilled-migration nomination programs, but they do
-      not control national migration levels or border policy.
-    state_role: Settlement services, multicultural programs, and limited state-nominated skilled migration pathways within federal caps.
-    federal_role: Visas, permanent migration planning levels, citizenship, border control and refugee determination.
-    related: [housing-planning, cost-of-living]
-
-  - slug: crime-justice
-    name: Crime & Justice
-    summary: Policing, courts, corrections, youth justice and criminal law in Victoria.
-    jurisdiction: state_primary
-    jurisdiction_note: >
-      Criminal law, police and prisons for ordinary offences are primarily state
-      responsibilities. The Commonwealth runs federal courts and agencies for
-      federal offences (for example some national security and drug trafficking matters).
-    state_role: Victoria Police, state courts, Corrections Victoria, youth justice, and most criminal offences and sentencing laws.
-    federal_role: Federal offences, AFP for federal matters, and national security frameworks.
-    local_role: Local laws and some community safety partnerships; not core criminal justice.
-    related: [corruption, gender-social]
-
-  - slug: corruption
-    name: Corruption
-    summary: Integrity bodies, political donation rules, lobbying transparency and public-sector integrity in Victoria.
-    jurisdiction: state_primary
-    jurisdiction_note: >
-      Victoria’s Independent Broad-based Anti-corruption Commission (IBAC),
-      electoral donation rules for state elections, and most public-sector integrity
-      settings are state law. Commonwealth integrity bodies cover federal public
-      officials and federal elections.
-    state_role: IBAC and related Victorian integrity agencies, state electoral funding and disclosure rules, and public-sector codes.
-    federal_role: Commonwealth integrity frameworks and federal electoral disclosure.
-    related: [crime-justice, debt-budget]
-
-  - slug: debt-budget
-    name: Debt & Budget
-    summary: Victorian state budget balance, net debt, taxes and major expenditure priorities of the State of Victoria.
-    jurisdiction: state_primary
-    jurisdiction_note: >
-      The Victorian Treasurer and Parliament control the state budget, state taxes
-      and state borrowings. Commonwealth grants are a large revenue source, but
-      state debt and state spending priorities are state decisions.
-    state_role: State budget, state taxes, state borrowings and interest, and major recurrent and capital programs.
-    federal_role: Commonwealth budget, GST distribution parameters, and specific purpose payments to states.
-    related: [infrastructure-transport, cost-of-living, health-hospitals]
-
-  - slug: environment-forestry
-    name: Environment & Forestry
-    summary: Land use, forests, native vegetation, pollution regulation and environmental approvals in Victoria.
-    jurisdiction: shared_fed_state
-    jurisdiction_note: >
-      Day-to-day environmental regulation and public land management are largely
-      state. The Commonwealth Environment Protection and Biodiversity Conservation
-      Act can apply to matters of national environmental significance.
-    state_role: State environment protection laws, public land and forest management, and many planning-linked environmental controls.
-    federal_role: Matters of national environmental significance, international treaty obligations, and some national programs.
-    related: [climate-biodiversity, infrastructure-transport]
-
-  - slug: gender-social
-    name: Gender Equality & Social Policy
-    summary: Anti-discrimination law, family violence responses, LGBTQIA+ policy and related social legislation in Victoria.
-    jurisdiction: shared_fed_state
-    jurisdiction_note: >
-      Both levels of government pass anti-discrimination and social policy laws.
-      Victoria has extensive state legislation and service systems; the Commonwealth
-      runs national schemes (for example parts of family law and many income supports).
-    state_role: Victorian equal opportunity and anti-discrimination frameworks, family violence service systems, and many state social programs.
-    federal_role: Family law (largely), national anti-discrimination statutes, and major income support payments.
-    related: [crime-justice, health-hospitals, education]
-
-  - slug: climate-biodiversity
-    name: Climate & Biodiversity
-    summary: Emissions reduction targets, climate adaptation, threatened species and biodiversity programs affecting Victoria.
-    jurisdiction: shared_fed_state
-    jurisdiction_note: >
-      Climate and biodiversity cut across federal and state law. Victoria can set
-      state targets, adaptation plans and nature programs; national targets,
-      international commitments and EPBC-related decisions sit with the Commonwealth.
-    state_role: State emissions targets and policies, climate adaptation programs, and state biodiversity and threatened-species tools.
-    federal_role: National climate targets, international agreements, and federal environmental assessment for nationally significant matters.
-    related: [energy, environment-forestry]
-
-  - slug: aboriginal-affairs
-    name: Aboriginal Affairs & Reconciliation
-    summary: Treaty, truth-telling, self-determination policy and Aboriginal services in the Victorian jurisdiction.
-    jurisdiction: shared_fed_state
-    jurisdiction_note: >
-      Victoria has pursued state treaty and truth-telling processes under state law.
-      Native title, some heritage frameworks and many national Closing the Gap
-      settings involve the Commonwealth. Practical service delivery is often shared.
-    state_role: Victorian treaty and truth-telling institutions, state Aboriginal affairs policy, and many funded services.
-    federal_role: Native title, national Closing the Gap architecture, and Commonwealth-funded programs.
-    related: [housing-planning, health-hospitals, education]
-
-  - slug: housing-planning
-    name: Housing & Planning
-    summary: Housing supply, social housing, renting rules and land-use planning across Victoria.
-    jurisdiction: shared_state_local
-    jurisdiction_note: >
-      Planning schemes and social housing are primarily state-led, with councils
-      administering much day-to-day planning. The Commonwealth influences housing
-      through tax settings, migration, funding deals and national housing programs —
-      but building permits and zoning are not federal day-to-day work.
-    state_role: Planning legislation, housing targets, social and affordable housing programs, and residential tenancies law.
-    federal_role: National housing funding programs, tax settings that affect housing demand, and migration settings that affect population growth.
-    local_role: Local planning decisions within state frameworks, rates, and local amenity rules.
-    related: [cost-of-living, infrastructure-transport, immigration]
-
-  - slug: health-hospitals
-    name: Health & Hospitals
-    summary: Public hospitals, ambulance services and state-run health systems in Victoria.
-    jurisdiction: shared_fed_state
-    jurisdiction_note: >
-      Public hospitals and ambulance services are primarily state-run. Medicare,
-      the Pharmaceutical Benefits Scheme and much primary-care funding are
-      Commonwealth. Aged care is largely federal with some state interfaces.
-    state_role: Public hospital networks, ambulance services, and many public health programs.
-    federal_role: Medicare, PBS, private health insurance regulation, and major aged-care settings.
-    related: [debt-budget, gender-social]
-
-  - slug: infrastructure-transport
-    name: Infrastructure & Transport
-    summary: Roads, public transport, major projects and freight networks within Victoria.
-    jurisdiction: shared_fed_state
-    jurisdiction_note: >
-      Most urban public transport and state roads are Victorian responsibilities.
-      The Commonwealth funds and influences major projects and national highways
-      and regulates aspects of aviation and interstate transport.
-    state_role: Metro and regional public transport, state arterial roads, and major state capital projects.
-    federal_role: National highway funding, some major project co-funding, aviation and interstate regulatory roles.
-    local_role: Local roads and some local transport interfaces.
-    related: [debt-budget, housing-planning, cost-of-living]
+- slug: cost-of-living
+  name: Cost of Living
+  summary: Household expenses such as energy bills, rents, transport fares, food prices and state taxes and charges.
+  jurisdiction: shared_fed_state
+  jurisdiction_note: Cost of living is not one portfolio. The Commonwealth sets income tax, most welfare payments and monetary policy; Victoria sets state taxes and charges, energy regulation within the National Electricity Market framework, public transport fares, stamp duty and many service fees.
+  state_role: State taxes and charges, public transport fares, energy consumer protections, some concessions, and land tax / stamp duty settings.
+  federal_role: Income tax, most social security, competition policy, and the bulk of national economic settings.
+  local_role: Council rates and some local fees can affect household budgets but are not the main drivers of statewide cost-of-living debates.
+  related:
+  - energy
+  - housing-planning
+  - debt-budget
+- slug: energy
+  name: Energy
+  summary: Electricity and gas supply, prices, generation mix, networks and consumer protections in Victoria.
+  jurisdiction: shared_fed_state
+  jurisdiction_note: Energy is a shared field. Victoria participates in the National Electricity Market and can set state energy policy, consumer protections and some generation and storage decisions; the Commonwealth influences national market rules, emissions targets and major funding programs.
+  state_role: State energy policy, licensing and consumer protection agencies, state-owned or contracted projects, and many household energy concession schemes.
+  federal_role: National Electricity Market architecture, national emissions and energy funding programs, and cross-border market rules.
+  related:
+  - climate-biodiversity
+  - cost-of-living
+  - environment-forestry
+- slug: education
+  name: Education
+  summary: Public schools, curriculum within state systems, TAFE and early childhood services run or regulated by Victoria.
+  jurisdiction: state_primary
+  jurisdiction_note: Schooling is primarily a state responsibility in Australia. The Commonwealth provides major funding to schools and runs national curriculum and higher education frameworks; day-to-day public school systems and TAFE are state-led.
+  state_role: Public schools, state curriculum implementation, teacher employment in the state system, TAFE and many early childhood programs.
+  federal_role: School funding agreements, national curriculum frameworks, universities and many student income supports.
+  local_role: Limited direct role; some councils support local early learning or school-related services.
+  related:
+  - debt-budget
+  - gender-social
+- slug: immigration
+  name: Immigration
+  summary: Who may enter and stay in Australia, permanent migration settings and citizenship — largely Commonwealth powers.
+  jurisdiction: federal_primary
+  jurisdiction_note: Immigration, visas and citizenship are Commonwealth powers under the Australian Constitution. Victorian governments can advocate, run settlement services, and set some skilled-migration nomination programs, but they do not control national migration levels or border policy.
+  state_role: Settlement services, multicultural programs, and limited state-nominated skilled migration pathways within federal caps.
+  federal_role: Visas, permanent migration planning levels, citizenship, border control and refugee determination.
+  related:
+  - housing-planning
+  - cost-of-living
+- slug: crime-justice
+  name: Crime & Justice
+  summary: Policing, courts, corrections, youth justice and criminal law in Victoria.
+  jurisdiction: state_primary
+  jurisdiction_note: Criminal law, police and prisons for ordinary offences are primarily state responsibilities. The Commonwealth runs federal courts and agencies for federal offences, including some national-security and drug-trafficking matters.
+  state_role: Victoria Police, state courts, Corrections Victoria, youth justice, and most criminal offences and sentencing laws.
+  federal_role: Federal offences, AFP responsibility for federal matters, and national-security frameworks.
+  local_role: Local laws and some community-safety partnerships; not core criminal justice.
+  related:
+  - corruption
+  - gender-social
+  - firearms-policy
+- slug: firearms-policy
+  name: Firearms Policy
+  summary: Firearm licensing, ownership rules, categories, storage, enforcement, trafficking and lawful sporting, hunting and farming use in Victoria.
+  jurisdiction: state_primary
+  jurisdiction_note: Victoria administers firearm licensing, registration, categories, storage requirements, prohibition orders and most firearm offences under state law. National agreements, imports, border controls and the emerging national firearms register involve the Commonwealth and other jurisdictions.
+  state_role: The Firearms Act, licences and permits, registration and storage rules, firearm prohibition orders, trafficking offences and Victoria Police enforcement.
+  federal_role: Firearm imports and customs controls, national firearms agreements, national intelligence checks and the national firearms register framework.
+  related:
+  - crime-justice
+  - environment-forestry
+- slug: corruption
+  name: Corruption
+  summary: Integrity bodies, political donation rules, lobbying transparency and public-sector integrity in Victoria.
+  jurisdiction: state_primary
+  jurisdiction_note: Victoria’s Independent Broad-based Anti-corruption Commission, electoral donation rules for state elections, and most public-sector integrity settings are state law. Commonwealth integrity bodies cover federal public officials and federal elections.
+  state_role: IBAC and related Victorian integrity agencies, state electoral funding and disclosure rules, and public-sector codes.
+  federal_role: Commonwealth integrity frameworks and federal electoral disclosure.
+  related:
+  - crime-justice
+  - debt-budget
+- slug: debt-budget
+  name: Debt & Budget
+  summary: Victorian state budget balance, net debt, taxes and major expenditure priorities of the State of Victoria.
+  jurisdiction: state_primary
+  jurisdiction_note: The Victorian Treasurer and Parliament control the state budget, state taxes and state borrowings. Commonwealth grants are a large revenue source, but state debt and state spending priorities are state decisions.
+  state_role: State budget, state taxes, state borrowings and interest, and major recurrent and capital programs.
+  federal_role: Commonwealth budget, GST distribution parameters, and specific-purpose payments to states.
+  related:
+  - infrastructure-transport
+  - cost-of-living
+  - health-hospitals
+- slug: environment-forestry
+  name: Environment & Forestry
+  summary: Land use, forests, native vegetation, pollution regulation and environmental approvals in Victoria.
+  jurisdiction: shared_fed_state
+  jurisdiction_note: Day-to-day environmental regulation and public-land management are largely state responsibilities. The Commonwealth Environment Protection and Biodiversity Conservation Act can apply to matters of national environmental significance.
+  state_role: State environment-protection laws, public-land and forest management, and many planning-linked environmental controls.
+  federal_role: Matters of national environmental significance, international treaty obligations, and some national programs.
+  related:
+  - climate-biodiversity
+  - infrastructure-transport
+  - firearms-policy
+- slug: gender-social
+  name: Gender Equality & Social Policy
+  summary: Anti-discrimination law, family-violence responses, LGBTQIA+ policy and related social legislation in Victoria.
+  jurisdiction: shared_fed_state
+  jurisdiction_note: Both levels of government pass anti-discrimination and social-policy laws. Victoria has extensive state legislation and service systems; the Commonwealth runs national schemes including much of family law and income support.
+  state_role: Victorian equal-opportunity and anti-discrimination frameworks, family-violence service systems, and many state social programs.
+  federal_role: Family law, national anti-discrimination statutes, and major income-support payments.
+  related:
+  - crime-justice
+  - health-hospitals
+  - education
+- slug: climate-biodiversity
+  name: Climate & Biodiversity
+  summary: Emissions-reduction targets, climate adaptation, threatened species and biodiversity programs affecting Victoria.
+  jurisdiction: shared_fed_state
+  jurisdiction_note: Climate and biodiversity cut across federal and state law. Victoria can set state targets, adaptation plans and nature programs; national targets, international commitments and EPBC-related decisions sit with the Commonwealth.
+  state_role: State emissions targets and policies, climate-adaptation programs, and state biodiversity and threatened-species tools.
+  federal_role: National climate targets, international agreements, and federal environmental assessment for nationally significant matters.
+  related:
+  - energy
+  - environment-forestry
+- slug: aboriginal-affairs
+  name: Aboriginal Affairs & Reconciliation
+  summary: Treaty, truth-telling, self-determination policy and Aboriginal services in the Victorian jurisdiction.
+  jurisdiction: shared_fed_state
+  jurisdiction_note: Victoria has pursued state treaty and truth-telling processes under state law. Native title, some heritage frameworks and many national Closing the Gap settings involve the Commonwealth. Practical service delivery is often shared.
+  state_role: Victorian treaty and truth-telling institutions, state Aboriginal-affairs policy, and many funded services.
+  federal_role: Native title, national Closing the Gap architecture, and Commonwealth-funded programs.
+  related:
+  - housing-planning
+  - health-hospitals
+  - education
+- slug: housing-planning
+  name: Housing & Planning
+  summary: Housing supply, social housing, renting rules and land-use planning across Victoria.
+  jurisdiction: shared_state_local
+  jurisdiction_note: Planning schemes and social housing are primarily state-led, with councils administering much day-to-day planning. The Commonwealth influences housing through tax settings, migration, funding deals and national housing programs, but building permits and zoning are not federal day-to-day work.
+  state_role: Planning legislation, housing targets, social and affordable housing programs, and residential-tenancies law.
+  federal_role: National housing funding programs, tax settings that affect housing demand, and migration settings that affect population growth.
+  local_role: Local planning decisions within state frameworks, rates, and local amenity rules.
+  related:
+  - cost-of-living
+  - infrastructure-transport
+  - immigration
+- slug: health-hospitals
+  name: Health & Hospitals
+  summary: Public hospitals, ambulance services and state-run health systems in Victoria.
+  jurisdiction: shared_fed_state
+  jurisdiction_note: Public hospitals and ambulance services are primarily state-run. Medicare, the Pharmaceutical Benefits Scheme and much primary-care funding are Commonwealth responsibilities. Aged care is largely federal with some state interfaces.
+  state_role: Public hospital networks, ambulance services, and many public-health programs.
+  federal_role: Medicare, the PBS, private health-insurance regulation, and major aged-care settings.
+  related:
+  - debt-budget
+  - gender-social
+- slug: infrastructure-transport
+  name: Infrastructure & Transport
+  summary: Roads, public transport, major projects and freight networks within Victoria.
+  jurisdiction: shared_fed_state
+  jurisdiction_note: Most urban public transport and state roads are Victorian responsibilities. The Commonwealth funds and influences major projects and national highways and regulates aspects of aviation and interstate transport.
+  state_role: Metro and regional public transport, state arterial roads, and major state capital projects.
+  federal_role: National-highway funding, some major-project co-funding, aviation and interstate regulatory roles.
+  local_role: Local roads and some local transport interfaces.
+  related:
+  - debt-budget
+  - housing-planning
+  - cost-of-living
