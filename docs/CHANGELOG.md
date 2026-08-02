@@ -4,6 +4,16 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
+## 2026-08-02 — Policy matrix wave 7 (near-complete fill)
+
+| Area | What shipped |
+|---|---|
+| **Labor** | Federal migration 185k; IBAC follow-the-money powers. |
+| **One Nation** | Rosebud Hospital PPP (health + infra delivery model). |
+| **Coalition environment** | Liberals scrap offshore wind zones; Nationals/Coalition transmission Plan B (reported). |
+| **Greens** | School equity framing (gender-social); IBAC powers call. |
+| **Totals** | **66/70** cells. Empty: One Nation corruption & environment; Liberal/Nationals gender-social. |
+
 ## 2026-08-02 — Policy matrix wave 6 (health, climate, immigration, education)
 
 | Area | What shipped |
