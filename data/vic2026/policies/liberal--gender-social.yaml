@@ -1,0 +1,33 @@
+# Liberal Victoria — Gender Equality & Social Policy
+policy:
+  party: liberal
+  issue: gender-social
+  headline: Criminalise coercive control and establish a domestic-violence disclosure scheme
+  claims:
+  - id: liberal-gender-coercive-control
+    statement: Create a standalone coercive-control offence covering a course of conduct such as emotional, psychological, financial and physical abuse, threats, isolation and surveillance, with a maximum seven-year prison term.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2025-12-02-new-laws-to-protect-victorians-by-criminalising-coercive-control
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: New laws to protect Victorians by criminalising coercive control
+      published: '2025-12-02'
+      accessed: '2026-08-02'
+  - id: liberal-gender-first-100-days
+    statement: Introduce the coercive-control legislation within the first 100 days of government if it is not enacted beforehand.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2025-12-02-new-laws-to-protect-victorians-by-criminalising-coercive-control
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: New laws to protect Victorians by criminalising coercive control
+      published: '2025-12-02'
+      accessed: '2026-08-02'
+  - id: liberal-gender-disclosure
+    statement: Introduce a ‘Right to Ask, Right to Know’ domestic-violence disclosure scheme allowing a person to request information about a partner’s violent history and police to disclose information where serious risk exists.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/news/2025-12-02-new-laws-to-protect-victorians-by-criminalising-coercive-control
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: New laws to protect Victorians by criminalising coercive control
+      published: '2025-12-02'
+      accessed: '2026-08-02'
