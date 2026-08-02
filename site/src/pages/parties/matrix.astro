@@ -10,7 +10,7 @@ const schema = {
   "@type": "WebPage",
   name: "Policy comparison matrix — Victorian state election 2026",
   description:
-    "Side-by-side, sourced party positions on key issues for the 2026 Victorian state election, with a reversible Liberal–Nationals Coalition view. No ratings — claims and costings only.",
+    "Side-by-side, sourced party positions on key issues for the 2026 Victorian state election, with links to readable issue-by-issue comparisons and a reversible Liberal–Nationals Coalition view.",
   url: `${SITE.url}/parties/matrix`,
   isPartOf: { "@id": `${SITE.url}/#website` },
 };
@@ -18,7 +18,7 @@ const schema = {
 
 <Base
   title="Policy matrix"
-  description="Compare Greens, Labor, Liberal–Nationals and One Nation positions, or switch to separate Liberal and Nationals columns. Sourced claims only, with no star ratings."
+  description="Compare Greens, Labor, Liberal–Nationals and One Nation positions, or open any issue for a dedicated sourced comparison page."
   schema={schema}
 >
   <div class="wrap wrap-wide section">
@@ -27,10 +27,12 @@ const schema = {
       <h1>Policy comparison</h1>
       <p class="lede">
         Joint Liberal–Nationals commitments are consolidated by default so the matrix
-        stays readable. The five-party view remains available wherever you want to
-        inspect the original Liberal and Nationals records separately.
+        stays readable. Select any issue name to open its dedicated comparison page.
+        The five-party view remains available wherever you want to inspect the original
+        Liberal and Nationals records separately.
       </p>
       <p class="btn-row">
+        <a class="btn" href="/policies">Browse 15 policy pages</a>
         <a class="btn btn-ghost btn-sm" href="/parties/issues">Jurisdiction guide</a>
         <a class="btn btn-ghost btn-sm" href="/parties">All parties</a>
         <a class="btn btn-ghost btn-sm" href="/methodology#policy-matrix">How we record positions</a>
@@ -50,6 +52,6 @@ const schema = {
   }
 
   .page-head {
-    max-width: 52rem;
+    max-width: 56rem;
   }
 </style>
