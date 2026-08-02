@@ -21,7 +21,7 @@ const schema = {
   description="Compare Greens, Labor, Liberal, Nationals and One Nation positions on Victorian election issues — sourced quotes and taxpayer-cost chips only, no star ratings."
   schema={schema}
 >
-  <div class="wrap section">
+  <div class="wrap wrap-wide section">
     <header class="page-head">
       <p class="eyebrow">Victoria 2026</p>
       <h1>Policy comparison</h1>
@@ -34,10 +34,22 @@ const schema = {
         <a class="btn btn-ghost btn-sm" href="/parties/issues">Jurisdiction guide</a>
         <a class="btn btn-ghost btn-sm" href="/parties">All parties</a>
         <a class="btn btn-ghost btn-sm" href="/methodology#policy-matrix">How we record positions</a>
-        <a class="btn btn-ghost btn-sm" href="/data">Download data</a>
+        <a class="btn btn-ghost btn-sm" href="/data/vic2026/policies.json">policies.json</a>
+        <a class="btn btn-ghost btn-sm" href="/data">All open data</a>
       </p>
     </header>
 
     <PolicyMatrix matrix={matrix} />
   </div>
 </Base>
+
+<style>
+  /* Wider canvas for the five-column matrix without fighting global .wrap */
+  .wrap-wide {
+    max-width: min(92rem, 100%);
+  }
+
+  .page-head {
+    max-width: 48rem;
+  }
+</style>

@@ -34,6 +34,35 @@ export const JURISDICTION_LABELS = {
 
 export const CLAIM_KINDS = ["pledge", "position", "costed_measure", "opposition_to"];
 
+export const CLAIM_KIND_LABELS = {
+  pledge: "Pledge",
+  position: "Position",
+  costed_measure: "Costed measure",
+  opposition_to: "Opposition",
+};
+
+/** True when headline/statement marks a federal (national) party policy. */
+export function isFederalPolicy(policy) {
+  if (!policy) return false;
+  const head = String(policy.headline ?? "");
+  if (/federal/i.test(head)) return true;
+  return (policy.claims ?? []).some((c) =>
+    /\[Federal party policy\]/i.test(String(c.statement ?? ""))
+  );
+}
+
+/** Strip leading federal tag from statement for display when a badge is shown. */
+export function cleanClaimStatement(statement) {
+  return String(statement ?? "")
+    .replace(/^\[Federal party policy\]\s*/i, "")
+    .replace(/^\[Federal government policy\]\s*/i, "")
+    .replace(/^\[Federal government framing\]\s*/i, "")
+    .replace(/^\[Federal Coalition policy\]\s*/i, "")
+    .replace(/^\[Federal Coalition partner position\]\s*/i, "")
+    .replace(/^\[Federal party framing[^\]]*\]\s*/i, "")
+    .trim();
+}
+
 export const POLICY_CAVEAT =
   "Policy cells show only positions with an individually sourced public record " +
   "(manifesto, press release, Hansard, or Parliamentary Budget Office costing). " +

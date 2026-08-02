@@ -5,10 +5,19 @@ import {
   loadIssues,
   JURISDICTION_LABELS,
   POLICY_CAVEAT,
+  matrixFor,
+  MATRIX_PARTIES,
 } from "../../../../scripts/lib/policies.mjs";
 import { SITE } from "../../lib/site.mjs";
 
 const issues = loadIssues("vic2026");
+const matrix = matrixFor("vic2026");
+const fillByIssue = new Map(
+  matrix.rows.map(({ issue, cells }) => [
+    issue.slug,
+    MATRIX_PARTIES.filter((p) => cells[p]).length,
+  ])
+);
 
 const schema = {
   "@type": "WebPage",
@@ -25,7 +34,7 @@ const schema = {
   description="Plain-language guide to which level of government is responsible for cost of living, housing, health, immigration and other election issues in Victoria."
   schema={schema}
 >
-  <div class="wrap section">
+  <div class="wrap section issues-page">
     <header class="page-head">
       <p class="eyebrow">Victoria 2026</p>
       <h1>Issues & jurisdiction</h1>
@@ -43,81 +52,130 @@ const schema = {
     </header>
 
     <div class="notice" role="note">
-      <strong>How to read this.</strong> Each issue carries a jurisdiction badge:
-      <em>State Primary</em>, <em>Shared Fed/State</em>, <em>Federal Primary</em>,
-      <em>Local</em>, or <em>Shared State/Local</em>. Party positions for these issues
-      appear on the matrix only when a dated public source is in the ledger.
-      {POLICY_CAVEAT}
+      <strong>How to read this.</strong> Each issue carries a jurisdiction badge.
+      The matrix fill count shows how many of the five comparison parties have a
+      sourced position so far. {POLICY_CAVEAT}
     </div>
 
-    <nav class="issue-jump" aria-label="Jump to issue">
-      <p class="issue-jump-label">Jump to</p>
-      <ul>
-        {
-          issues.map((issue) => (
-            <li>
-              <a href={`#${issue.slug}`}>{issue.name}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-
-    <div class="issue-list">
+    <!-- CSS filter: checkboxes + :has hide unmatched cards -->
+    <div class="jfilter-shell">
       {
-        issues.map((issue) => (
-          <article class="issue-card card" id={issue.slug}>
-            <header class="issue-card-head">
-              <h2>{issue.name}</h2>
-              <JurisdictionBadge jurisdiction={issue.jurisdiction} />
-            </header>
-            <p class="issue-summary">{issue.summary}</p>
-            <p class="issue-note">{issue.jurisdiction_note}</p>
-
-            <dl class="issue-roles">
-              {issue.state_role && (
-                <div>
-                  <dt>State (Victoria)</dt>
-                  <dd>{issue.state_role}</dd>
-                </div>
-              )}
-              {issue.federal_role && (
-                <div>
-                  <dt>Federal (Commonwealth)</dt>
-                  <dd>{issue.federal_role}</dd>
-                </div>
-              )}
-              {issue.local_role && (
-                <div>
-                  <dt>Local councils</dt>
-                  <dd>{issue.local_role}</dd>
-                </div>
-              )}
-            </dl>
-
-            <p class="issue-actions">
-              <a class="btn btn-ghost btn-sm" href={`/parties/matrix#issue-${issue.slug}`}>
-                Compare parties on {issue.name}
-              </a>
-            </p>
-          </article>
+        Object.keys(JURISDICTION_LABELS).map((key, i) => (
+          <input
+            type="checkbox"
+            class="visually-hidden jfilter-input"
+            id={`jf-${key}`}
+            checked
+            data-j={key}
+          />
         ))
       }
+
+      <div class="jfilter" role="group" aria-label="Filter issues by jurisdiction">
+        <span class="jfilter-label">Show jurisdictions</span>
+        <div class="jfilter-toggles">
+          {
+            Object.entries(JURISDICTION_LABELS).map(([key, label]) => (
+              <label class="jfilter-chip" for={`jf-${key}`}>
+                <JurisdictionBadge jurisdiction={key} compact />
+                <span class="visually-hidden">{label}</span>
+              </label>
+            ))
+          }
+        </div>
+      </div>
+
+      <nav class="issue-jump" aria-label="Jump to issue">
+        <p class="issue-jump-label">Jump to</p>
+        <ul>
+          {
+            issues.map((issue) => (
+              <li class={`jump-j-${issue.jurisdiction}`}>
+                <a href={`#${issue.slug}`}>
+                  {issue.name}
+                  <span class="jump-fill muted">
+                    {fillByIssue.get(issue.slug) ?? 0}/5
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div class="issue-list">
+        {
+          issues.map((issue) => {
+            const filled = fillByIssue.get(issue.slug) ?? 0;
+            return (
+              <article
+                class={`issue-card card issue-j-${issue.jurisdiction}`}
+                id={issue.slug}
+              >
+                <header class="issue-card-head">
+                  <h2>{issue.name}</h2>
+                  <JurisdictionBadge jurisdiction={issue.jurisdiction} />
+                  <span
+                    class="fill-pill"
+                    title={`${filled} of 5 matrix parties have a sourced position`}
+                  >
+                    Matrix {filled}/5
+                  </span>
+                </header>
+                <p class="issue-summary">{issue.summary}</p>
+                <p class="issue-note">{issue.jurisdiction_note}</p>
+
+                <dl class="issue-roles">
+                  {issue.state_role && (
+                    <div>
+                      <dt>State (Victoria)</dt>
+                      <dd>{issue.state_role}</dd>
+                    </div>
+                  )}
+                  {issue.federal_role && (
+                    <div>
+                      <dt>Federal (Commonwealth)</dt>
+                      <dd>{issue.federal_role}</dd>
+                    </div>
+                  )}
+                  {issue.local_role && (
+                    <div>
+                      <dt>Local councils</dt>
+                      <dd>{issue.local_role}</dd>
+                    </div>
+                  )}
+                </dl>
+
+                <p class="issue-actions">
+                  <a class="btn btn-ghost btn-sm" href={`/parties/matrix#issue-${issue.slug}`}>
+                    Compare parties on {issue.name}
+                  </a>
+                </p>
+              </article>
+            );
+          })
+        }
+      </div>
     </div>
 
     <section class="legend card" aria-labelledby="legend-h">
       <h2 id="legend-h">Jurisdiction badges</h2>
       <ul class="legend-list">
         {
-          Object.entries(JURISDICTION_LABELS).map(([key, label]) => (
+          Object.entries(JURISDICTION_LABELS).map(([key]) => (
             <li>
               <JurisdictionBadge jurisdiction={key} />
               <span class="muted legend-desc">
-                {key === "state_primary" && "Victorian Parliament and government are the primary decision-makers."}
-                {key === "shared_fed_state" && "Both Commonwealth and Victoria have substantial roles."}
-                {key === "federal_primary" && "Primarily a Commonwealth power; state influence is limited or indirect."}
-                {key === "local_primary" && "Primarily local government under state frameworks."}
-                {key === "shared_state_local" && "State sets the framework; councils deliver much day-to-day administration."}
+                {key === "state_primary" &&
+                  "Victorian Parliament and government are the primary decision-makers."}
+                {key === "shared_fed_state" &&
+                  "Both Commonwealth and Victoria have substantial roles."}
+                {key === "federal_primary" &&
+                  "Primarily a Commonwealth power; state influence is limited or indirect."}
+                {key === "local_primary" &&
+                  "Primarily local government under state frameworks."}
+                {key === "shared_state_local" &&
+                  "State sets the framework; councils deliver much day-to-day administration."}
               </span>
             </li>
           ))
@@ -128,8 +186,66 @@ const schema = {
 </Base>
 
 <style>
+  /* Jurisdiction filter hide */
+  .jfilter-shell:has(#jf-state_primary:not(:checked)) :global(.issue-j-state_primary),
+  .jfilter-shell:has(#jf-state_primary:not(:checked)) :global(.jump-j-state_primary),
+  .jfilter-shell:has(#jf-shared_fed_state:not(:checked)) :global(.issue-j-shared_fed_state),
+  .jfilter-shell:has(#jf-shared_fed_state:not(:checked)) :global(.jump-j-shared_fed_state),
+  .jfilter-shell:has(#jf-federal_primary:not(:checked)) :global(.issue-j-federal_primary),
+  .jfilter-shell:has(#jf-federal_primary:not(:checked)) :global(.jump-j-federal_primary),
+  .jfilter-shell:has(#jf-local_primary:not(:checked)) :global(.issue-j-local_primary),
+  .jfilter-shell:has(#jf-local_primary:not(:checked)) :global(.jump-j-local_primary),
+  .jfilter-shell:has(#jf-shared_state_local:not(:checked)) :global(.issue-j-shared_state_local),
+  .jfilter-shell:has(#jf-shared_state_local:not(:checked)) :global(.jump-j-shared_state_local) {
+    display: none !important;
+  }
+
+  .jfilter-shell:has(#jf-state_primary:not(:checked)) label[for="jf-state_primary"],
+  .jfilter-shell:has(#jf-shared_fed_state:not(:checked)) label[for="jf-shared_fed_state"],
+  .jfilter-shell:has(#jf-federal_primary:not(:checked)) label[for="jf-federal_primary"],
+  .jfilter-shell:has(#jf-local_primary:not(:checked)) label[for="jf-local_primary"],
+  .jfilter-shell:has(#jf-shared_state_local:not(:checked)) label[for="jf-shared_state_local"] {
+    opacity: 0.4;
+  }
+
+  .jfilter {
+    margin: 1.25rem 0 1rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .jfilter-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+    margin-bottom: 0.45rem;
+  }
+
+  .jfilter-toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .jfilter-chip {
+    cursor: pointer;
+    display: inline-flex;
+    border-radius: 999px;
+    padding: 0.1rem;
+  }
+
+  .jfilter-chip:focus-within {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
   .issue-jump {
-    margin: 1.5rem 0 2rem;
+    margin: 0 0 1.5rem;
     padding: 1rem 1.15rem;
     border: 1px solid var(--rule);
     border-radius: var(--radius);
@@ -151,12 +267,21 @@ const schema = {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem 0.75rem;
+    gap: 0.4rem 0.85rem;
   }
 
   .issue-jump a {
     font-size: 0.9rem;
     font-weight: 600;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+
+  .jump-fill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
   }
 
   .issue-list {
@@ -174,7 +299,7 @@ const schema = {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem 0.85rem;
+    gap: 0.5rem 0.75rem;
     margin-bottom: 0.65rem;
   }
 
@@ -182,6 +307,18 @@ const schema = {
     margin: 0;
     font-size: 1.25rem;
     flex: 1 1 auto;
+  }
+
+  .fill-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+    background: var(--surface-2);
+    color: var(--ink-2);
   }
 
   .issue-summary {

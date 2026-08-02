@@ -1,13 +1,26 @@
 ---
 /**
  * One party × issue cell: sourced claims, or honest empty state.
+ * Federal policies get an explicit badge; long cells use <details> for scannability.
  */
 import SourceLink from "./SourceLink.astro";
 import FiscalChips from "./FiscalChips.astro";
+import {
+  CLAIM_KIND_LABELS,
+  isFederalPolicy,
+  cleanClaimStatement,
+} from "../../../scripts/lib/policies.mjs";
 
 const { policy, partyLabel } = Astro.props;
 const claims = policy?.claims ?? [];
 const empty = claims.length === 0;
+const federal = !empty && isFederalPolicy(policy);
+const preview = claims.slice(0, 2);
+const rest = claims.slice(2);
+
+function kindLabel(kind) {
+  return CLAIM_KIND_LABELS[kind] ?? kind;
+}
 ---
 
 {
@@ -19,13 +32,26 @@ const empty = claims.length === 0;
       </p>
     </div>
   ) : (
-    <div class="pcell">
-      {policy.headline && <p class="pcell-head">{policy.headline}</p>}
+    <div class={`pcell${federal ? " pcell-federal" : ""}`}>
+      <div class="pcell-meta">
+        {federal && (
+          <span class="fed-badge" title="National party policy — not a Victorian manifesto claim">
+            Federal policy
+          </span>
+        )}
+        {policy.headline && (
+          <p class="pcell-head">
+            {String(policy.headline).replace(/^Federal policy\s*[—–-]\s*/i, "")}
+          </p>
+        )}
+      </div>
+
       <ul class="pcell-claims" role="list">
-        {claims.map((c) => (
+        {preview.map((c) => (
           <li class="pclaim">
+            <span class="kind-chip">{kindLabel(c.kind)}</span>
             <blockquote class="pclaim-quote">
-              <p>{c.statement}</p>
+              <p>{cleanClaimStatement(c.statement)}</p>
             </blockquote>
             <FiscalChips fiscal={c.fiscal} />
             <p class="pclaim-src">
@@ -34,33 +60,84 @@ const empty = claims.length === 0;
           </li>
         ))}
       </ul>
+
+      {rest.length > 0 && (
+        <details class="pcell-more">
+          <summary>
+            {rest.length} more claim{rest.length === 1 ? "" : "s"}
+          </summary>
+          <ul class="pcell-claims" role="list">
+            {rest.map((c) => (
+              <li class="pclaim">
+                <span class="kind-chip">{kindLabel(c.kind)}</span>
+                <blockquote class="pclaim-quote">
+                  <p>{cleanClaimStatement(c.statement)}</p>
+                </blockquote>
+                <FiscalChips fiscal={c.fiscal} />
+                <p class="pclaim-src">
+                  <SourceLink source={c.source} />
+                </p>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
     </div>
   )
 }
 
 <style>
   .pcell {
-    min-height: 4rem;
+    min-height: 3.5rem;
     height: 100%;
   }
 
   .pcell-empty {
     display: flex;
     align-items: flex-start;
+    min-height: 3rem;
+    padding: 0.15rem 0;
   }
 
   .pcell-empty-msg {
     margin: 0;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--ink-3);
     font-style: italic;
     line-height: 1.35;
   }
 
+  .pcell-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .fed-badge {
+    display: inline-flex;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.45rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--st-announced) 45%, var(--rule));
+    background: var(--st-announced-bg);
+    color: var(--st-announced);
+    line-height: 1.2;
+  }
+
   .pcell-head {
-    margin: 0 0 0.4rem;
-    font-size: 0.85rem;
-    font-weight: 600;
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 650;
+    color: var(--ink-2);
+    line-height: 1.3;
+  }
+
+  .pcell-federal .pcell-head {
     color: var(--ink-2);
   }
 
@@ -70,23 +147,68 @@ const empty = claims.length === 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.7rem;
+  }
+
+  .kind-chip {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 0.2rem;
   }
 
   .pclaim-quote {
     margin: 0;
-    padding: 0 0 0 0.65rem;
+    padding: 0 0 0 0.6rem;
     border-left: 3px solid var(--rule-strong);
+  }
+
+  .pcell-federal .pclaim-quote {
+    border-left-color: color-mix(in srgb, var(--st-announced) 55%, var(--rule-strong));
   }
 
   .pclaim-quote p {
     margin: 0;
-    font-size: 0.88rem;
+    font-size: 0.84rem;
     line-height: 1.45;
     color: var(--ink);
   }
 
   .pclaim-src {
-    margin: 0.35rem 0 0;
+    margin: 0.3rem 0 0;
+  }
+
+  .pcell-more {
+    margin-top: 0.55rem;
+    border-top: 1px dashed var(--rule);
+    padding-top: 0.4rem;
+  }
+
+  .pcell-more summary {
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 650;
+    color: var(--accent-ink);
+    list-style: none;
+  }
+
+  .pcell-more summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .pcell-more summary::before {
+    content: "+ ";
+    font-weight: 700;
+  }
+
+  .pcell-more[open] summary::before {
+    content: "− ";
+  }
+
+  .pcell-more .pcell-claims {
+    margin-top: 0.55rem;
   }
 </style>
