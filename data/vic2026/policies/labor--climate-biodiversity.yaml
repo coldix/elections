@@ -2,36 +2,59 @@
 policy:
   party: labor
   issue: climate-biodiversity
-  headline: Climate Change Strategy 2026–30
+  headline: Net zero by 2045 with legislated interim targets and a 2026–30 climate strategy
   claims:
-    - id: labor-climate-strategy
+    - id: labor-climate-legislated-targets
       statement: >-
-        Victoria’s Climate Change Strategy 2026–30 “focuses on what matters to
-        Victorians and is backed by over $8.5 billion. This builds on the almost
-        $2 billion that was announced with the Climate Change Strategy 2021–25.”
+        Maintain Victoria's legislated emissions targets of 45–50 per cent below
+        2005 levels by 2030, 75–80 per cent by 2035 and net zero emissions by 2045.
+      kind: position
+      source:
+        url: https://www.climatechange.vic.gov.au/reducing-victorias-emissions
+        publisher: Victorian Government
+        title: Reducing Victoria's emissions
+        published: '2026-07-25'
+        accessed: '2026-08-02'
+    - id: labor-climate-strategy-2026
+      statement: >-
+        Implement the Climate Change Strategy 2026–30, organised around household
+        and business costs, future infrastructure, transition jobs and community
+        resilience.
       kind: costed_measure
       fiscal:
-        taxpayer_label: "Not specified"
+        taxpayer_label: Not specified
         amount_aud: 8500000000
-        amount_display: "over $8.5 billion"
-        timeframe: "Climate Change Strategy 2026–30"
+        amount_display: over $8.5 billion in supporting measures
+        timeframe: 2026–30
         financing: taxpayer
         pbo_status: uncosted
       source:
         url: https://www.climatechange.vic.gov.au/victorias-climate-change-strategy
-        publisher: Victorian Government (climatechange.vic.gov.au)
+        publisher: Victorian Government
         title: Victoria's Climate Change Strategy
-        published: 2026-01-22
-        accessed: 2026-08-02
-    - id: labor-climate-energy-quote
+        published: '2026-01-22'
+        accessed: '2026-08-02'
+    - id: labor-climate-sector-pledges
       statement: >-
-        Energy Minister messaging in Budget 2026/27 cost-of-living release: “Cheaper,
-        cleaner power isn’t just good for the environment – it’s good for the
-        household budget.”
+        Use five-year sector pledges covering energy, transport, agriculture, waste,
+        industry, government operations and land use, including millions of new trees
+        and restoration through BushBank.
       kind: position
       source:
-        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
-        publisher: Premier of Victoria
-        title: Labor Delivers Real Help To Ease The Cost Of Living
-        published: 2026-05-05
-        accessed: 2026-08-02
+        url: https://www.climatechange.vic.gov.au/victorias-climate-change-strategy
+        publisher: Victorian Government
+        title: Victoria's Climate Change Strategy
+        published: '2026-01-22'
+        accessed: '2026-08-02'
+    - id: labor-climate-renewable-link
+      statement: >-
+        Link the emissions pathway to legislated renewable electricity, offshore wind
+        and storage targets, including 95 per cent renewable electricity generation
+        by 2035.
+      kind: position
+      source:
+        url: https://www.climatechange.vic.gov.au/legislation/climate-action-act-2017
+        publisher: Victorian Government
+        title: Climate Action Act 2017
+        published: '2026-07-25'
+        accessed: '2026-08-02'
