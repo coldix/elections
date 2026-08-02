@@ -1,79 +1,55 @@
 # Australian Labor Party (Victorian Branch) — Energy
-# Restoring/expanding with renewable targets + prior claims
 policy:
   party: labor
   issue: energy
-  headline: Renewable energy targets; renewables investment
+  headline: Free midday power, legislated renewable targets and storage-backed reliability
   claims:
-    - id: labor-energy-renewables
+    - id: labor-energy-midday-power
       statement: >-
-        “Labor is making sure Victoria has the renewable energy needed to keep the
-        lights on and lower bills for Victorian families and businesses. We’re
-        investing more than $6 million to fast-track renewable energy projects –
-        getting cheaper, cleaner power to more Victorian homes sooner.”
-      kind: costed_measure
-      fiscal:
-        taxpayer_label: "Upfront capital"
-        amount_aud: 6000000
-        amount_display: "more than $6 million"
-        timeframe: "Budget 2026/27"
-        financing: taxpayer
-        pbo_status: uncosted
+        From 1 October 2026, participating households will receive three hours of
+        free electricity every day between 11 am and 2 pm under the Midday Power
+        Saver offer. Around 2.6 million households will be eligible, with estimated
+        annual savings varying according to how much usage is shifted to midday.
+      kind: pledge
       source:
-        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
+        url: https://www.premier.vic.gov.au/best-midday-power-offer-country
         publisher: Premier of Victoria
-        title: Labor Delivers Real Help To Ease The Cost Of Living
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-energy-offshore
+        title: Best Midday Power Offer In The Country
+        published: '2026-05-28'
+        accessed: '2026-08-02'
+    - id: labor-energy-renewable-targets
       statement: >-
-        “We’re also investing $124.5 million to progress the Victorian Renewable
-        Energy Terminal at the Port of Hastings to support the construction of
-        Australia’s first offshore wind industry. This will create more than 2,370
-        jobs, generate billions in investment and deliver affordable and reliable
-        power for all Victorians.”
-      kind: costed_measure
-      fiscal:
-        taxpayer_label: "Upfront capital"
-        amount_aud: 124500000
-        amount_display: "$124.5 million"
-        timeframe: "Budget 2026/27"
-        financing: taxpayer
-        pbo_status: uncosted
-      source:
-        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
-        publisher: Premier of Victoria
-        title: Labor Delivers Real Help To Ease The Cost Of Living
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-energy-community-housing
-      statement: >-
-        “We’re helping Victoria’s most vulnerable families with $10 million for
-        community housing renters. It will make their homes more liveable and switch
-        to efficient electric appliances, slashing hundreds of dollars off their
-        energy bills.”
-      kind: costed_measure
-      fiscal:
-        taxpayer_label: "Upfront capital"
-        amount_aud: 10000000
-        amount_display: "$10 million"
-        financing: taxpayer
-        pbo_status: uncosted
-      source:
-        url: https://www.premier.vic.gov.au/labor-delivers-real-help-ease-cost-living
-        publisher: Premier of Victoria
-        title: Labor Delivers Real Help To Ease The Cost Of Living
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-energy-targets
-      statement: >-
-        Victorian Government renewable electricity generation targets: 40% by 2025
-        (achieved), 65% by 2030, 95% by 2035, with offshore wind generation targets
-        published alongside energy storage targets.
+        Maintain Victoria's legislated renewable electricity targets of 65 per cent
+        by 2030 and 95 per cent by 2035, including offshore wind targets of at least
+        2 GW by 2032, 4 GW by 2035 and 9 GW by 2040.
       kind: position
       source:
         url: https://www.energy.vic.gov.au/renewable-energy/victorian-renewable-energy-and-storage-targets
-        publisher: Victorian Government (energy.vic.gov.au)
+        publisher: Victorian Government
         title: Victorian renewable energy and storage targets
-        published: 2026-02-17
-        accessed: 2026-08-02
+        published: '2026-02-17'
+        accessed: '2026-08-02'
+    - id: labor-energy-storage-firming
+      statement: >-
+        Deliver at least 2.6 GW of energy storage by 2030 and 6.3 GW by 2035,
+        supported by targeted gas-fired generation for peak demand and periods of
+        low wind and solar generation.
+      kind: position
+      source:
+        url: https://www.energy.vic.gov.au/renewable-energy/batteries-energy-storage-projects
+        publisher: Victorian Government
+        title: Batteries and energy storage projects
+        accessed: '2026-08-02'
+    - id: labor-energy-sec-jobs
+      statement: >-
+        Continue the state-owned SEC investment and workforce program, including an
+        academy intended to train 2,000 electrical trade apprentices over four years
+        and a regional energy jobs plan projected to deliver more than $18 billion in
+        wages from 2026 to 2040.
+      kind: pledge
+      source:
+        url: https://www.premier.vic.gov.au/our-18-billion-energy-jobs-guarantee-regional-victoria
+        publisher: Premier of Victoria
+        title: Our $18 Billion Energy Jobs Guarantee To Regional Victoria
+        published: '2026-06-08'
+        accessed: '2026-08-02'
