@@ -1,29 +1,39 @@
-# Pauline Hanson's One Nation — Climate (federal party policy)
+# One Nation Victoria — Climate & Biodiversity
 policy:
   party: one-nation
   issue: climate-biodiversity
-  headline: "Federal policy — abolish Net Zero by 2050"
+  headline: Oppose Net Zero while funding practical conservation and restoration
   claims:
-    - id: onp-climate-abolish-nz
+    - id: onp-climate-net-zero
       statement: >-
-        [Federal party policy] “Abolish Australia’s Net Zero by 2050 policy, along
-        with any associated subsidies, mandates, or legislation.” “Net-zero is driving
-        up power and fuel prices, costing jobs, making our industries uncompetitive,
-        and pushing climate alarm onto children in schools.”
-      kind: pledge
+        One Nation Victoria opposes Australia’s Net Zero by 2050 policy and says Victoria
+        should instead pursue an energy policy based on reliable and affordable domestic
+        resources.
+      kind: opposition_to
       source:
-        url: https://www.onenation.org.au/abolish-net-zero-policy
-        publisher: Pauline Hanson's One Nation
-        title: Abolish Net Zero by 2050 Policy
+        url: https://vic.onenation.org.au/our-environment
+        publisher: One Nation Victoria
+        title: Looking After Our Environment
         accessed: 2026-08-02
-    - id: onp-climate-inquiry
+    - id: onp-climate-biodiversity
       statement: >-
-        [Federal party policy] Request includes: “Hold a full public inquiry into the
-        economic, social and mental health impacts of Net Zero, particularly on
-        children, regional communities, and working Australians.”
+        The party supports targeted conservation programs, habitat and landscape
+        restoration, responsible land and water management, and protection of native
+        flora from poorly sited energy projects.
+      kind: position
+      source:
+        url: https://vic.onenation.org.au/our-environment
+        publisher: One Nation Victoria
+        title: Looking After Our Environment
+        accessed: 2026-08-02
+    - id: onp-climate-renewable-siting
+      statement: >-
+        One Nation Victoria would restrict wind and solar projects on prime agricultural
+        land, offshore areas, native forests and sites where it considers bushfire risk
+        unacceptable.
       kind: pledge
       source:
-        url: https://www.onenation.org.au/abolish-net-zero-policy
-        publisher: Pauline Hanson's One Nation
-        title: Abolish Net Zero by 2050 Policy
+        url: https://vic.onenation.org.au/affordable-energy
+        publisher: One Nation Victoria
+        title: Affordable Energy
         accessed: 2026-08-02
