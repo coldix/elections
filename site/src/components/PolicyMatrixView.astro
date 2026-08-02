@@ -73,7 +73,11 @@ function rowFilled(cells) {
               <tr id={`${viewId}-issue-${issue.slug}`}>
                 <th scope="row" class="pm-issue-col">
                   <div class="pm-issue-cell">
-                    <a class="pm-issue-name" href={`/parties/issues#${issue.slug}`}>
+                    <a
+                      class="pm-issue-name"
+                      href={`/policies/${issue.slug}`}
+                      title={`Open the detailed ${issue.name} comparison`}
+                    >
                       {issue.name}
                     </a>
                     <div class="pm-issue-meta">
@@ -114,7 +118,11 @@ function rowFilled(cells) {
         return (
           <article class="pm-card" id={`${viewId}-mobile-issue-${issue.slug}`}>
             <header class="pm-card-head">
-              <h3><a href={`/parties/issues#${issue.slug}`}>{issue.name}</a></h3>
+              <h3>
+                <a href={`/policies/${issue.slug}`} title={`Open the detailed ${issue.name} comparison`}>
+                  {issue.name}
+                </a>
+              </h3>
               <JurisdictionBadge jurisdiction={issue.jurisdiction} />
               <span class="pm-row-fill muted">{filled}/{parties.length} columns</span>
             </header>
