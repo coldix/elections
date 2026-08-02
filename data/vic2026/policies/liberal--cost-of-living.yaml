@@ -1,37 +1,37 @@
-# Liberal Party of Australia – Victorian Division — Cost of Living
+# Liberal Victoria — Cost of Living
 policy:
   party: liberal
   issue: cost-of-living
-  headline: Scrap emergency services tax; cut housing entry costs
+  headline: Scrap the emergency levy, abolish first-home stamp duty and repeal selected state taxes
   claims:
-    - id: liberal-col-scrap-esl
-      statement: >-
-        “Under our plan every Victorian household will save an average of $84 a
-        year when we abolish the emergency services tax.”
-      kind: pledge
-      fiscal:
-        taxpayer_label: "Not specified"
-        financing: unspecified
-        pbo_status: uncosted
-      source:
-        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
-        publisher: Parliament of Victoria (Hansard)
-        title: Appropriation (2026–2027) Bill 2026 — 12 May
-        published: 2026-05-12
-        accessed: 2026-08-02
-    - id: liberal-col-stamp-duty-first-home
-      statement: >-
-        Opposition commitments cited in the same budget debate include “to reduce
-        stamp duty for first home buyers on homes less than $1 million to put home
-        ownership back in reach for young people.”
-      kind: pledge
-      fiscal:
-        taxpayer_label: "Not specified"
-        financing: taxpayer
-        pbo_status: uncosted
-      source:
-        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-2145855009-35502
-        publisher: Parliament of Victoria (Hansard)
-        title: Appropriation (2026–2027) Bill 2026 — 12 May
-        published: 2026-05-12
-        accessed: 2026-08-02
+  - id: liberal-col-esv
+    statement: Scrap the Emergency Services and Volunteers Fund levy and restore the former Fire Services Property Levy, with SES funding provided transparently through the state budget.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/media-releases/2025-05-20-battin-obrien-liberals-and-nationals-to-scrap?topic=emergency-services%2Cleader-of-the-liberal-party
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Liberals and Nationals to scrap Labor’s Emergency Services Tax
+      published: '2025-05-19'
+      accessed: '2026-08-02'
+  - id: liberal-col-stamp-duty
+    statement: Abolish stamp duty for eligible first-home buyers purchasing established or off-the-plan properties valued up to $1 million.
+    kind: pledge
+    fiscal:
+      taxpayer_label: Not specified
+      financing: taxpayer
+      pbo_status: uncosted
+    source:
+      url: https://vic.liberal.org.au/news/2025-05-26-liberals-and-nationals-to-abolish-stamp-duty-for-first-homebuyers
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Liberals and Nationals to abolish stamp duty for first homebuyers
+      published: '2025-05-26'
+      accessed: '2026-08-02'
+  - id: liberal-col-tax-repeals
+    statement: The ten-year economic plan includes repealing state taxes on schools, GP visits and short-stay accommodation, alongside progressively lifting the land-tax-free threshold.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/media-releases/2026-05-12-labor-scraps-promised-20-million-industry-development-fund?topic=leader-of-the-liberal-party%2Ctreasurer%2Cindustry
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: Liberals and Nationals comprehensive 10-year economic plan
+      published: '2026-05-12'
+      accessed: '2026-08-02'
