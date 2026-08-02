@@ -2,41 +2,52 @@
 policy:
   party: labor
   issue: debt-budget
-  headline: Operating surplus path; debt stabilising as share of economy
+  headline: Operating surpluses while net debt rises in dollars but falls relative to the economy
   claims:
-    - id: labor-debt-surplus
+    - id: labor-debt-operating-surplus
       statement: >-
-        “This Budget delivers a surplus of $700 million in 2025-26, $1 billion in
-        2026-27, and increasing to $2 billion by the end of the forward estimates.
-        Net debt as a share of the economy will be lower in four years’ time than
-        it is today.”
+        The 2026–27 Budget forecasts an operating surplus of more than $700 million
+        in 2025–26, $1 billion in 2026–27 and $2 billion in 2029–30.
       kind: position
       fiscal:
-        taxpayer_label: "Not specified"
+        taxpayer_label: Not specified
         financing: mixed
         pbo_status: uncosted
-        timeframe: "Budget 2026/27 forward estimates"
+        timeframe: 2025–26 to 2029–30
       source:
-        url: https://www.premier.vic.gov.au/labor-delivers-cost-living-help-and-surplus
-        publisher: Premier of Victoria
-        title: Labor Delivers Cost Of Living Help And A Surplus
-        published: 2026-05-05
-        accessed: 2026-08-02
-    - id: labor-debt-forecast
+        url: https://www.budget.vic.gov.au/delivering-our-fiscal-strategy
+        publisher: Victorian Budget 2026/27
+        title: Delivering our fiscal strategy
+        published: '2026-05-03'
+        accessed: '2026-08-02'
+    - id: labor-debt-nominal-path
       statement: >-
-        Budget reporting summarised by Guardian Australia: debt is forecast to grow
-        from $165.3bn in June 2026 to $199.3bn in 2029-30 but stabilises as a
-        proportion of the economy to 24.4% of GSP; interest payments forecast to
-        total $11.82bn — or $32m a day — by then.
+        Budget forecasts show net debt increasing from $165.3 billion in June 2026
+        to $199.3 billion in June 2030 while the Government expects debt to fall as a
+        share of gross state product from 2026–27 onwards.
       kind: position
       fiscal:
-        taxpayer_label: "Debt / interest"
+        taxpayer_label: Debt / interest
+        amount_aud: 199300000000
+        amount_display: $199.3 billion forecast net debt in 2029–30
+        timeframe: to June 2030
         financing: borrowing
         pbo_status: uncosted
-        timeframe: "to 2029-30"
       source:
-        url: https://www.theguardian.com/australia-news/2026/may/04/victoria-state-budget-2026-surplus
-        publisher: The Guardian
-        title: Victorian budget 2026 — surplus but debt nears $200bn
-        published: 2026-05-05
-        accessed: 2026-08-02
+        url: https://www.budget.vic.gov.au/sustaining-victorias-economic-growth
+        publisher: Victorian Budget 2026/27
+        title: Sustaining Victoria's economic growth
+        published: '2026-05-03'
+        accessed: '2026-08-02'
+    - id: labor-debt-operating-cash
+      statement: >-
+        Maintain positive net operating cash flows across the forward estimates,
+        which the Budget forecasts at about $6.3 billion to $6.5 billion annually
+        from 2026–27 through 2029–30.
+      kind: position
+      source:
+        url: https://www.budget.vic.gov.au/sustaining-victorias-economic-growth
+        publisher: Victorian Budget 2026/27
+        title: Sustaining Victoria's economic growth
+        published: '2026-05-03'
+        accessed: '2026-08-02'
