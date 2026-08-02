@@ -2,33 +2,46 @@
 policy:
   party: greens
   issue: aboriginal-affairs
-  headline: Supported Statewide Treaty legislation
+  headline: Support Treaty, self-determination and stronger land and cultural-heritage rights
   claims:
-    - id: greens-treaty-vote
-      statement: >-
-        The Statewide Treaty Bill passed the Victorian Parliament with the support of
-        Labor and progressive crossbench parties including the Greens (Liberals and
-        Nationals opposed). Wikipedia’s legislative summary of the Statewide Treaty Act
-        2025 records: “Labor, the Greens, the Animal Justice Party and Legalise Cannabis
-        Victoria voted in favour of the bill while the Liberals and Nationals… and One
-        Nation voted against,” and notes Greens leader Ellen Sandell described passage as
-        a “historic moment” inviting Victorians to walk with First Peoples.
+    - id: greens-treaty-support
+      statement: Support the Victorian Statewide Treaty Bill without amendment as a step toward justice, truth and First Nations self-determination.
       kind: position
       source:
-        url: https://en.wikipedia.org/wiki/Statewide_Treaty_Act_2025
-        publisher: Wikipedia
-        title: Statewide Treaty Act 2025 (parliamentary vote summary)
-        accessed: 2026-08-02
-    - id: greens-treaty-context
-      statement: >-
-        ABC News reporting on treaty becoming law notes the Liberal opposition pledged
-        to scrap the deal if it wins the 2026 election, while the Labor government
-        supported and signed the treaty — establishing the contrast in which Greens
-        parliamentary support for the bill sits.
+        url: https://greens.org.au/vic/news/media-release/history-making-first-ever-treaty-bill-introduced-victorian-parliament
+        publisher: Australian Greens Victoria
+        title: History in the making — first-ever Treaty Bill introduced to Victorian Parliament
+        published: '2025-09-09'
+        accessed: '2026-08-02'
+    - id: greens-first-nations-self-determination
+      statement: Treat First Nations peoples as partners in policies and services that affect them and support representative bodies elected and accepted by their communities.
       kind: position
       source:
-        url: https://www.abc.net.au/news/2025-11-13/australia-first-treaty-agreement-signed-law-victoria/106002730
-        publisher: ABC News
-        title: Australia's first treaty with Aboriginal people signed in Victoria
-        published: 2025-11-13
-        accessed: 2026-08-02
+        url: https://greens.org.au/vic/policies/first-nations-peoples
+        publisher: Australian Greens Victoria
+        title: First Nations Peoples Policy
+        accessed: '2026-08-02'
+    - id: greens-first-nations-settlements
+      statement: Negotiate Traditional Owner settlements that provide land and asset bases for cultural, social and economic development according to community priorities.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/policies/first-nations-peoples
+        publisher: Australian Greens Victoria
+        title: First Nations Peoples Policy
+        accessed: '2026-08-02'
+    - id: greens-first-nations-heritage
+      statement: Strengthen the Aboriginal Heritage Act so relevant Registered Aboriginal Parties make heritage decisions and cultural items are returned to and managed by Traditional Owners.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/policies/first-nations-peoples
+        publisher: Australian Greens Victoria
+        title: First Nations Peoples Policy
+        accessed: '2026-08-02'
+    - id: greens-first-nations-justice
+      statement: Continue the Aboriginal Justice Agreement and related Koori Courts and justice forums, with targeted action to reduce First Nations over-representation in the justice system.
+      kind: position
+      source:
+        url: https://greens.org.au/vic/policies/first-nations-peoples
+        publisher: Australian Greens Victoria
+        title: First Nations Peoples Policy
+        accessed: '2026-08-02'
