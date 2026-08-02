@@ -1,0 +1,49 @@
+# One Nation Victoria — Environment & Forestry
+policy:
+  party: one-nation
+  issue: environment-forestry
+  headline: Practical conservation, fire mitigation and support for forestry
+  claims:
+    - id: onp-env-fire-mitigation
+      statement: >-
+        One Nation Victoria proposes more firebreaks and planned burning, greater
+        investment in early warning systems, floodplain management and bushfire
+        prevention, and research into disaster-resistant infrastructure.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/our-environment
+        publisher: One Nation Victoria
+        title: Looking After Our Environment
+        accessed: 2026-08-02
+    - id: onp-env-conservation
+      statement: >-
+        The party supports targeted conservation, habitat restoration, responsible land
+        and water management, improved access to national parks, and marine conservation
+        research.
+      kind: position
+      source:
+        url: https://vic.onenation.org.au/our-environment
+        publisher: One Nation Victoria
+        title: Looking After Our Environment
+        accessed: 2026-08-02
+    - id: onp-env-rehabilitation-bonds
+      statement: >-
+        One Nation Victoria would require environmental rehabilitation bonds for energy
+        projects so restoration costs are not left to taxpayers.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/our-environment
+        publisher: One Nation Victoria
+        title: Looking After Our Environment
+        accessed: 2026-08-02
+    - id: onp-forestry-support
+      statement: >-
+        One Nation supports expanding plantation forestry for timber self-sufficiency
+        and maintaining regulated native forestry while protecting old-growth forests
+        and environmentally sensitive habitat.
+      kind: position
+      source:
+        url: https://www.onenation.org.au/forestry
+        publisher: Pauline Hanson's One Nation
+        title: Forestry
+        accessed: 2026-08-02
