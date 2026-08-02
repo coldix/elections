@@ -1,0 +1,441 @@
+---
+import Base from "../../layouts/Base.astro";
+import JurisdictionBadge from "../../components/JurisdictionBadge.astro";
+import PolicyCell from "../../components/PolicyCell.astro";
+import CoalitionPolicyCell from "../../components/CoalitionPolicyCell.astro";
+import { matrixFor, POLICY_CAVEAT } from "../../../../scripts/lib/policies.mjs";
+import { POLICY_DIFFERENCES } from "../../lib/policyDifferences.mjs";
+import { SITE, partyColour } from "../../lib/site.mjs";
+
+const matrix = matrixFor("vic2026");
+const view = matrix.combined ?? {
+  parties: matrix.parties,
+  rows: matrix.rows,
+};
+const rowByIssue = new Map(view.rows.map((row) => [row.issue.slug, row]));
+
+function hasPolicy(party, cell) {
+  return party.slug === "coalition" ? Boolean(cell?.has_policy) : Boolean(cell);
+}
+
+function headlineFor(party, cell) {
+  if (!hasPolicy(party, cell)) return "No equivalent sourced position recorded.";
+  if (party.slug !== "coalition") return cell.headline ?? "Sourced position recorded.";
+
+  if (cell.scope === "coalition_shared") {
+    return cell.policy?.headline ?? "Shared Liberal–Nationals position recorded.";
+  }
+
+  return [
+    ["Liberal", cell.member_policies?.liberal],
+    ["Nationals", cell.member_policies?.nationals],
+  ]
+    .filter(([, policy]) => policy)
+    .map(([label, policy]) => `${label}: ${policy.headline}`)
+    .join(" · ") || "Coalition party positions are recorded separately.";
+}
+
+const differences = POLICY_DIFFERENCES.map((difference) => {
+  const row = rowByIssue.get(difference.issue);
+  if (!row) throw new Error(`Unknown issue in key differences: ${difference.issue}`);
+  return { ...difference, ...row };
+});
+
+const schema = {
+  "@type": "CollectionPage",
+  name: "Key policy differences — Victorian state election 2026",
+  description:
+    "Eight of the clearest sourced policy contrasts between the Greens, Labor, Liberal–Nationals and One Nation for Victoria's 2026 state election.",
+  url: `${SITE.url}/policies/key-differences`,
+  isPartOf: { "@id": `${SITE.url}/#website` },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: differences.map((difference, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: difference.question,
+      url: `${SITE.url}/policies/key-differences#${difference.id}`,
+    })),
+  },
+};
+---
+
+<Base
+  title="Key policy differences"
+  description="Compare eight of the clearest sourced differences between the Greens, Labor, Liberal–Nationals and One Nation in Victoria's 2026 election."
+  breadcrumbs={[
+    { name: "Policies", href: "/policies" },
+    { name: "Key differences", href: "/policies/key-differences" },
+  ]}
+  schema={schema}
+>
+  <div class="wrap section differences-page">
+    <header class="page-head">
+      <p class="eyebrow">Victoria 2026</p>
+      <h1>Where the parties differ most</h1>
+      <p class="lede">
+        Eight questions where the sourced records show a genuine choice in direction,
+        method or scale. Open any party card to see the full claims and original sources.
+      </p>
+      <p class="btn-row">
+        <a class="btn" href="/parties/matrix">Full policy matrix</a>
+        <a class="btn" href="/policies">All 15 issues</a>
+        <a class="btn btn-ghost btn-sm" href="/parties/policies">Party policy profiles</a>
+        <a class="btn btn-ghost btn-sm" href="/methodology#policy-matrix">Methodology</a>
+      </p>
+    </header>
+
+    <div class="notice" role="note">
+      <strong>Selected contrasts, not a ranking.</strong> Inclusion here does not mean an
+      issue is more important than one left out. The short introductions are editorial
+      summaries of the differences already visible in the source-backed ledger. Party
+      headlines and detailed claims below are generated from the same records used by the
+      matrix. {POLICY_CAVEAT}
+    </div>
+
+    <nav class="difference-jump" aria-label="Jump to a policy difference">
+      <p>Jump to a difference</p>
+      <ol>
+        {
+          differences.map((difference, index) => (
+            <li>
+              <a href={`#${difference.id}`}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {difference.question}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+
+    <div class="difference-list">
+      {
+        differences.map((difference, index) => (
+          <article class="difference-card" id={difference.id}>
+            <header class="difference-head">
+              <div class="difference-number" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+              <div class="difference-title">
+                <div class="difference-meta">
+                  <span class="difference-label">{difference.label}</span>
+                  <JurisdictionBadge jurisdiction={difference.issue.jurisdiction} compact />
+                </div>
+                <h2>{difference.question}</h2>
+                <p>{difference.summary}</p>
+              </div>
+            </header>
+
+            <div class="party-position-grid">
+              {
+                view.parties.map((party) => {
+                  const cell = difference.cells[party.slug];
+                  const available = hasPolicy(party, cell);
+                  return (
+                    <section
+                      class={`party-position${available ? "" : " party-position-empty"}`}
+                      style={`--party-colour:${partyColour(party.slug)}`}
+                    >
+                      <header class="party-position-head">
+                        <span class="party-bar" aria-hidden="true" />
+                        <h3>{party.label}</h3>
+                      </header>
+
+                      <p class="party-headline">{headlineFor(party, cell)}</p>
+
+                      {available ? (
+                        <details class="party-sources">
+                          <summary>Show sourced record</summary>
+                          <div class="party-record">
+                            {party.slug === "coalition" ? (
+                              <CoalitionPolicyCell cell={cell} />
+                            ) : (
+                              <PolicyCell policy={cell} partyLabel={party.label} />
+                            )}
+                          </div>
+                        </details>
+                      ) : (
+                        <p class="empty-note">
+                          This means no equivalent position is in the ledger yet, not that the
+                          party has no view.
+                        </p>
+                      )}
+
+                      <p class="party-links">
+                        <a href={`/parties/${party.slug}/policies#${difference.issue.slug}`}>
+                          {party.label} profile
+                        </a>
+                      </p>
+                    </section>
+                  );
+                })
+              }
+            </div>
+
+            <footer class="difference-actions">
+              <a class="btn btn-ghost btn-sm" href={`/policies/${difference.issue.slug}`}>
+                Compare the full {difference.issue.name} issue
+              </a>
+              <a
+                class="matrix-row-link"
+                href={`/parties/matrix#combined-issue-${difference.issue.slug}`}
+              >
+                View this row in the matrix →
+              </a>
+            </footer>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</Base>
+
+<style>
+  .differences-page {
+    max-width: 88rem;
+  }
+
+  .page-head {
+    max-width: 62rem;
+  }
+
+  .notice {
+    max-width: 70rem;
+    margin: 1.5rem 0;
+  }
+
+  .difference-jump {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .difference-jump > p {
+    margin: 0 0 0.65rem;
+    color: var(--ink-3);
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+  }
+
+  .difference-jump ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .difference-jump a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    padding: 0.38rem 0.7rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--ink);
+    font-size: 0.8rem;
+    font-weight: 650;
+    line-height: 1.25;
+    text-decoration: none;
+  }
+
+  .difference-jump a:hover {
+    border-color: var(--accent);
+    background: var(--accent-wash);
+    color: var(--accent-ink);
+  }
+
+  .difference-jump a span {
+    color: var(--ink-3);
+    font-size: 0.68rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .difference-list {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .difference-card {
+    scroll-margin-top: 1.25rem;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .difference-head {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.85rem 1rem;
+    padding: 1.2rem 1.3rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--surface-2);
+  }
+
+  .difference-number {
+    color: var(--ink-3);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    line-height: 1.6;
+  }
+
+  .difference-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .difference-label {
+    display: inline-flex;
+    padding: 0.18rem 0.5rem;
+    border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--rule));
+    border-radius: 999px;
+    background: var(--accent-wash);
+    color: var(--accent-ink);
+    font-size: 0.65rem;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .difference-title h2 {
+    margin: 0 0 0.45rem;
+    font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.75rem);
+  }
+
+  .difference-title > p {
+    max-width: 66rem;
+    margin: 0;
+    color: var(--ink-2);
+  }
+
+  .party-position-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--rule);
+  }
+
+  .party-position {
+    min-width: 0;
+    padding: 1rem;
+    background: var(--surface);
+  }
+
+  .party-position-empty {
+    background: color-mix(in srgb, var(--surface-2) 55%, var(--surface));
+  }
+
+  .party-position-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .party-bar {
+    width: 0.72rem;
+    height: 0.72rem;
+    flex: none;
+    border-radius: 3px;
+    background: var(--party-colour);
+  }
+
+  .party-position h3 {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .party-headline {
+    min-height: 4.5rem;
+    margin: 0 0 0.75rem;
+    color: var(--ink);
+    font-size: 0.86rem;
+    font-weight: 620;
+    line-height: 1.45;
+  }
+
+  .party-sources {
+    padding-top: 0.55rem;
+    border-top: 1px dashed var(--rule);
+  }
+
+  .party-sources summary {
+    cursor: pointer;
+    color: var(--accent-ink);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .party-record {
+    margin-top: 0.75rem;
+  }
+
+  .empty-note {
+    margin: 0;
+    color: var(--ink-3);
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .party-links {
+    margin: 0.85rem 0 0;
+    font-size: 0.75rem;
+    font-weight: 650;
+  }
+
+  .difference-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem 1rem;
+    padding: 0.85rem 1.15rem;
+    border-top: 1px solid var(--rule);
+    background: var(--surface-2);
+  }
+
+  .matrix-row-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 72rem) {
+    .party-position-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 42rem) {
+    .difference-head {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+      padding: 1rem;
+    }
+
+    .party-position-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .party-headline {
+      min-height: 0;
+    }
+
+    .difference-actions {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
