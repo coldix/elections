@@ -2,17 +2,53 @@
 policy:
   party: greens
   issue: infrastructure-transport
-  headline: Extend free public transport
+  headline: Permanent free public transport, more frequent services and safer active transport
   claims:
-    - id: greens-infra-free-pt
-      statement: >-
-        “The Greens say Labor has no excuse to make Victorians pay for public transport
-        at the end of May and should extend free public transport” beyond the temporary
-        free/half-price period announced in Budget 2026/27.
+    - id: greens-transport-free
+      statement: Make trains, trams and buses permanently free across metropolitan and regional Victoria.
       kind: pledge
       source:
-        url: https://greens.org.au/vic/news/media-release/greens-say-labor-has-no-excuse-make-victorians-pay-more-public-transport-end
+        url: https://greens.org.au/vic/campaigns/make-public-transport-free
         publisher: Australian Greens Victoria
-        title: Greens say Labor has no excuse to make Victorians pay more for public transport
-        published: 2026-05-22
-        accessed: 2026-08-02
+        title: Make Public Transport Free
+        accessed: '2026-08-02'
+    - id: greens-transport-frequency
+      statement: Increase train, tram and bus frequency, including high-frequency electric bus networks and early works for additional metropolitan and regional rail capacity.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/morept
+        publisher: Australian Greens Victoria
+        title: More Public Transport
+        accessed: '2026-08-02'
+    - id: greens-transport-active-150m
+      statement: The Greens secured a legislated share of Melbourne's congestion levy providing five councils with $150 million over a decade for bike lanes, accessible station connections and walking infrastructure.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Upfront capital
+        amount_aud: 150000000
+        amount_display: $150 million
+        timeframe: over a decade
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-secure-15o-million-active-transport-over-next-decade
+        publisher: Australian Greens Victoria
+        title: Greens secure $150 million for active transport over the next decade
+        published: '2025-11-20'
+        accessed: '2026-08-02'
+    - id: greens-transport-electric
+      statement: Transition public transport—including buses, coaches and regional trains—to fully electric services powered by renewable energy.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/policies/transport-and-freight-policy
+        publisher: Australian Greens Victoria
+        title: Transport and Freight Policy
+        accessed: '2026-08-02'
+    - id: greens-transport-public-ownership
+      statement: Keep public transport infrastructure publicly owned and operated and oppose new privately operated toll roads.
+      kind: position
+      source:
+        url: https://greens.org.au/vic/policies/transport-and-freight-policy
+        publisher: Australian Greens Victoria
+        title: Transport and Freight Policy
+        accessed: '2026-08-02'

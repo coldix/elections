@@ -2,46 +2,51 @@
 policy:
   party: greens
   issue: climate-biodiversity
-  headline: Climate resilience funds; ban new coal and gas
+  headline: Climate-resilience funding, no new coal or gas and stronger nature laws
   claims:
     - id: greens-climate-ban-new
-      statement: >-
-        “The Greens are also calling for an immediate ban on all new coal and gas
-        projects.”
+      statement: Immediately ban all new coal and gas projects.
       kind: pledge
       source:
         url: https://greens.org.au/vic/news/media-release/greens-call-urgent-implementation-climate-resilience-inquiry-report-after
         publisher: Australian Greens Victoria
         title: Greens call for urgent implementation of climate resilience inquiry report
-        published: 2026-01-16
-        accessed: 2026-08-02
-    - id: greens-climate-fund
-      statement: >-
-        “Victoria urgently needs a dedicated fund to support communities with local,
-        practical solutions, whether that means restoring coastal wetlands or building
-        energy efficient homes. Big coal and gas companies should be forced to pay
-        into this fund – they cannot continue to drive up emissions, reap huge
-        profits, and take no responsibility for the consequences.”
+        published: '2026-01-16'
+        accessed: '2026-08-02'
+    - id: greens-climate-resilience-fund
+      statement: Establish a dedicated climate-resilience fund for local adaptation projects such as wetland restoration and energy-efficient homes, funded by coal and gas companies.
       kind: pledge
       fiscal:
-        taxpayer_label: "Not specified"
+        taxpayer_label: Not specified
         financing: mixed
         pbo_status: uncosted
       source:
         url: https://greens.org.au/vic/news/media-release/greens-call-urgent-implementation-climate-resilience-inquiry-report-after
         publisher: Australian Greens Victoria
         title: Greens call for urgent implementation of climate resilience inquiry report
-        published: 2026-01-16
-        accessed: 2026-08-02
-    - id: greens-climate-labor-approvals
-      statement: >-
-        “This Labor government has waved through five new coal and gas approvals in
-        the last nine months while residents in my community are forced to plan for
-        the worst and are fearing for their safety.”
-      kind: opposition_to
+        published: '2026-01-16'
+        accessed: '2026-08-02'
+    - id: greens-biodiversity-framework
+      statement: Create a funded statewide biodiversity framework aimed at reversing ecosystem decline and protecting high-conservation-value terrestrial, freshwater and marine areas.
+      kind: pledge
       source:
-        url: https://greens.org.au/vic/news/media-release/greens-call-urgent-implementation-climate-resilience-inquiry-report-after
+        url: https://greens.org.au/vic/policies/biodiversity-policy
         publisher: Australian Greens Victoria
-        title: Greens call for urgent implementation of climate resilience inquiry report
-        published: 2026-01-16
-        accessed: 2026-08-02
+        title: Biodiversity Policy
+        accessed: '2026-08-02'
+    - id: greens-biodiversity-clearing
+      statement: End broad-scale and incremental native-vegetation clearing, strengthen council powers to protect biodiversity and treat offsets as a last resort rather than permission to destroy habitat.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/policies/biodiversity-policy
+        publisher: Australian Greens Victoria
+        title: Biodiversity Policy
+        accessed: '2026-08-02'
+    - id: greens-biodiversity-recovery
+      statement: Fund and enforce recovery plans for threatened species and ecological communities, with stronger penalties for killing threatened wildlife or destroying habitat.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/policies/biodiversity-policy
+        publisher: Australian Greens Victoria
+        title: Biodiversity Policy
+        accessed: '2026-08-02'

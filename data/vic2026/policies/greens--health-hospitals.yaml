@@ -2,18 +2,53 @@
 policy:
   party: greens
   issue: health-hospitals
-  headline: Critique of under-funded healthcare in Budget 2026/27
+  headline: Universal public healthcare, more mental-health clinicians and expanded treatment capacity
   claims:
-    - id: greens-health-sandell-budget
-      statement: >-
-        Greens leader Ellen Sandell said the budget showed Labor had “no long-term
-        vision.” “Under-funded schools, healthcare and public services receive very
-        little in this budget, while Labor continues to give handouts and concessions
-        to property developers, gambling corporations and fossil fuels.”
+    - id: greens-health-universal
+      statement: Fund universal, timely public healthcare according to need, with stronger primary, preventative, rural and regional services and reduced elective-surgery and outpatient waits.
       kind: position
       source:
-        url: https://www.abc.net.au/news/2026-05-05/victorian-state-budget-2026-wrap/106638608
-        publisher: ABC News
-        title: Victorian government spruiks first surplus in seven years in 2026 budget
-        published: 2026-05-05
-        accessed: 2026-08-02
+        url: https://greens.org.au/vic/policies/health-policy
+        publisher: Australian Greens Victoria
+        title: Health Policy
+        accessed: '2026-08-02'
+    - id: greens-health-mental-clinicians
+      statement: Fund 500 additional psychologists and psychiatrists across schools and public clinics.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Ongoing operational
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://greens.org.au/vic/platform/community-services
+        publisher: Australian Greens Victoria
+        title: Community services
+        accessed: '2026-08-02'
+    - id: greens-health-rehab-beds
+      statement: Fund 200 additional public drug and alcohol detoxification and rehabilitation beds and scale up addiction support over five years.
+      kind: costed_measure
+      fiscal:
+        taxpayer_label: Ongoing operational
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://greens.org.au/vic/platform/community-services
+        publisher: Australian Greens Victoria
+        title: Community services
+        accessed: '2026-08-02'
+    - id: greens-health-emergency-response
+      statement: Use health workers rather than police to lead responses to mental-health emergencies and continue expanding free mental-health care.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/platform/mental-health
+        publisher: Australian Greens Victoria
+        title: Mental Health
+        accessed: '2026-08-02'
+    - id: greens-health-sexual-clinics
+      statement: Expand free state-funded sexual-health clinics, including abortion, contraception and trans and gender-diverse healthcare, with improved access in rural and regional Victoria.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/campaigns/free-state-funded-sexual-health-services-victoria
+        publisher: Australian Greens Victoria
+        title: Free, state-funded sexual health services in Victoria
+        accessed: '2026-08-02'

@@ -2,32 +2,48 @@
 policy:
   party: greens
   issue: environment-forestry
-  headline: Close native forest logging loopholes
+  headline: Close logging loopholes and restore native forests
   claims:
-    - id: greens-forest-bill
-      statement: >-
-        The Greens bill would: “Make it illegal for mills in Victoria to process
-        native forest timber from anywhere in Australia - including old forests in
-        Tasmania; Ban logging on private land; Prevent logging companies from
-        exploiting bushfire and storm processes; Repeal laws that would enable
-        future governments to bring back native logging on public land –
-        future-proofing Victoria’s ban on commercial logging.”
+    - id: greens-forest-processing-ban
+      statement: Prohibit Victorian mills from processing native-forest timber sourced anywhere in Australia and ban commercial native-forest logging on private land.
       kind: pledge
       source:
         url: https://greens.org.au/vic/news/media-release/victorian-greens-will-introduce-new-laws-close-loopholes-native-forest
         publisher: Australian Greens Victoria
         title: Victorian Greens will introduce new laws to close loopholes in native forest logging
-        published: 2026-06-23
-        accessed: 2026-08-02
-    - id: greens-forest-sandell
-      statement: >-
-        “Labor in Victoria is fuelling the destruction of our environment and our
-        forests. The Greens will bring a Bill to Parliament to close Labor’s dodgy
-        loopholes and protect our precious forests for good.”
-      kind: position
+        published: '2026-06-23'
+        accessed: '2026-08-02'
+    - id: greens-forest-salvage
+      statement: Prevent logging companies from using bushfire and storm-recovery processes as a route to commercial native-forest logging.
+      kind: pledge
       source:
         url: https://greens.org.au/vic/news/media-release/victorian-greens-will-introduce-new-laws-close-loopholes-native-forest
         publisher: Australian Greens Victoria
         title: Victorian Greens will introduce new laws to close loopholes in native forest logging
-        published: 2026-06-23
-        accessed: 2026-08-02
+        published: '2026-06-23'
+        accessed: '2026-08-02'
+    - id: greens-forest-future-proof
+      statement: Repeal provisions that could allow a future government to restart commercial native-forest logging on public land.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/news/media-release/victorian-greens-will-introduce-new-laws-close-loopholes-native-forest
+        publisher: Australian Greens Victoria
+        title: Victorian Greens will introduce new laws to close loopholes in native forest logging
+        published: '2026-06-23'
+        accessed: '2026-08-02'
+    - id: greens-forest-restoration
+      statement: Substantially increase investment in forest protection, ecological restoration and regional employment, and manage regrowth toward mature forest for biodiversity, carbon storage and water yield.
+      kind: position
+      source:
+        url: https://greens.org.au/vic/policies/forests-policy
+        publisher: Australian Greens Victoria
+        title: Forests Policy
+        accessed: '2026-08-02'
+    - id: greens-forest-fire-science
+      statement: Base prescribed burning on independent science and protection of people and assets rather than fixed hectare targets.
+      kind: position
+      source:
+        url: https://greens.org.au/vic/policies/forests-policy
+        publisher: Australian Greens Victoria
+        title: Forests Policy
+        accessed: '2026-08-02'
