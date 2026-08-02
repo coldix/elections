@@ -1,18 +1,39 @@
-# Pauline Hanson's One Nation — Aboriginal Affairs (Victorian vote)
+# One Nation Victoria — Aboriginal Affairs & Reconciliation
 policy:
   party: one-nation
   issue: aboriginal-affairs
-  headline: Voted against Statewide Treaty legislation
+  headline: Oppose and repeal Victoria's Statewide Treaty framework
   claims:
-    - id: onp-treaty-vote
+    - id: onp-treaty-opposition
       statement: >-
-        Legislative summary of the Statewide Treaty Act 2025: “Labor, the Greens, the
-        Animal Justice Party and Legalise Cannabis Victoria voted in favour of the bill
-        while the Liberals and Nationals, Shooters, Fishers and Farmers, Libertarian
-        Party and One Nation voted against.”
+        One Nation Victoria opposed the Statewide Treaty Bill 2025, arguing that it would
+        divide Victorians, create unequal treatment and add costly bureaucracy rather
+        than improve practical outcomes.
       kind: opposition_to
       source:
-        url: https://en.wikipedia.org/wiki/Statewide_Treaty_Act_2025
-        publisher: Wikipedia
-        title: Statewide Treaty Act 2025 (parliamentary vote summary)
+        url: https://www.parliament.vic.gov.au/parliamentary-activity/hansard/hansard-details/HANSARD-974425065-32808
+        publisher: Parliament of Victoria
+        title: Statewide Treaty Bill 2025 — second reading
+        published: 2025-10-28
+        accessed: 2026-08-02
+    - id: onp-treaty-repeal
+      statement: >-
+        One Nation Victoria lists repeal of the Statewide Treaty framework as a 2026
+        election commitment.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/donate
+        publisher: One Nation Victoria
+        title: Support One Nation Victoria
+        accessed: 2026-08-02
+    - id: onp-treaty-petition
+      statement: >-
+        One Nation MP Rikkie-Lee Tyrrell is sponsoring a Legislative Council petition
+        calling for repeal of the Statewide Treaty Act 2025 and a return to equal
+        treatment under state law.
+      kind: pledge
+      source:
+        url: https://www.parliament.vic.gov.au/get-involved/petitions/repeal-the-statewide-treaty-act-20252/
+        publisher: Parliament of Victoria
+        title: Petition — Repeal the Statewide Treaty Act 2025
         accessed: 2026-08-02

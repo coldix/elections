@@ -1,36 +1,49 @@
-# Pauline Hanson's One Nation — Energy (federal party policy)
+# One Nation Victoria — Energy
 policy:
   party: one-nation
   issue: energy
-  headline: "Federal policy — coal, gas, hydro, nuclear; Norway-style gas equity"
+  headline: Coal, gas, nuclear and hydro with no new renewable subsidies
   claims:
-    - id: onp-energy-real
+    - id: onp-energy-mix
       statement: >-
-        [Federal party policy] Petitioners ask the Senate to “Back real Australian
-        energy, coal, gas, hydro and nuclear, to bring prices down, secure supply,
-        and put our national interest first” and to “Abolish Australia’s Net Zero by
-        2050 policy, along with any associated subsidies, mandates, or legislation.”
-      kind: pledge
+        One Nation Victoria supports an energy mix including coal, natural gas, nuclear,
+        hydro and other technologies, arguing that reliability and affordability should
+        determine investment.
+      kind: position
       source:
-        url: https://www.onenation.org.au/abolish-net-zero-policy
-        publisher: Pauline Hanson's One Nation
-        title: Abolish Net Zero by 2050 Policy
+        url: https://vic.onenation.org.au/affordable-energy
+        publisher: One Nation Victoria
+        title: Affordable Energy
         accessed: 2026-08-02
-    - id: onp-energy-gas-equity
+    - id: onp-energy-coal
       statement: >-
-        [Federal party policy] Guardian Australia reports Pauline Hanson announced a
-        Norway-inspired gas policy: government would offer “a 30% rebate on the cost
-        of exploration in commonwealth waters in exchange for taking an equity stake
-        of up to 30% in the operation,” with profits for a sovereign wealth fund;
-        abolish the PRRT for new projects and introduce a royalty regime.
+        The party proposes changing National Electricity Market rules so coal generation
+        is not disadvantaged and giving long-term policy certainty for upgrades to
+        Victorian coal power infrastructure.
       kind: pledge
-      fiscal:
-        taxpayer_label: "Not specified"
-        financing: mixed
-        pbo_status: uncosted
       source:
-        url: https://www.theguardian.com/australia-news/2026/may/21/pauline-hanson-announces-norway-inspired-gas-policy-as-she-decries-25-export-tax-as-economic-vandalism
-        publisher: The Guardian
-        title: Pauline Hanson announces Norway-inspired gas policy
-        published: 2026-05-21
+        url: https://vic.onenation.org.au/affordable-energy
+        publisher: One Nation Victoria
+        title: Affordable Energy
+        accessed: 2026-08-02
+    - id: onp-energy-renewable-subsidies
+      statement: >-
+        One Nation Victoria would phase out new taxpayer subsidies for renewable projects
+        while allowing existing agreements to run their course.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/energy-policy
+        publisher: One Nation Victoria
+        title: Affordable Energy Policy
+        accessed: 2026-08-02
+    - id: onp-energy-siting-bonds
+      statement: >-
+        It would prohibit specified wind and solar developments on prime agricultural
+        land, offshore areas, native forests or high bushfire-risk sites, and require
+        rehabilitation bonds for energy projects.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/affordable-energy
+        publisher: One Nation Victoria
+        title: Affordable Energy
         accessed: 2026-08-02

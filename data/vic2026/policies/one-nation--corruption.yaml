@@ -1,0 +1,40 @@
+# One Nation Victoria — Corruption and Integrity
+policy:
+  party: one-nation
+  issue: corruption
+  headline: Royal commission into CFMEU Big Build contracts and stronger transparency
+  claims:
+    - id: onp-corruption-cfmeu-royal-commission
+      statement: >-
+        One Nation Victoria pledges to establish a royal commission into CFMEU-linked
+        Big Build contracts, including examination of any Victorian Labor Party
+        involvement and the use of taxpayer funds.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/cfmeu-big-build
+        publisher: One Nation Victoria
+        title: One Nation will establish a Royal Commission into CFMEU Big Build contracts
+        published: 2026-02-13
+        accessed: 2026-08-02
+    - id: onp-corruption-spending-tool
+      statement: >-
+        Its economic policy proposes an accountability tool that publicly reports each
+        Victorian government department’s spending in real time.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/economic-recovery
+        publisher: One Nation Victoria
+        title: Economic Recovery
+        accessed: 2026-08-02
+    - id: onp-corruption-foi-oversight
+      statement: >-
+        The party argues for more effective freedom-of-information processes, properly
+        resourced oversight bodies and stronger parliamentary scrutiny of executive
+        decision-making.
+      kind: position
+      source:
+        url: https://vic.onenation.org.au/victoria-transparency-accountability
+        publisher: One Nation Victoria
+        title: Restoring Transparency and Accountability in Victoria
+        published: 2026-01-23
+        accessed: 2026-08-02

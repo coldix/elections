@@ -1,17 +1,40 @@
-# Pauline Hanson's One Nation — Gender Equality & Social Policy (federal; curriculum)
+# One Nation Victoria — Gender Equality & Social Policy
 policy:
   party: one-nation
   issue: gender-social
-  headline: "Federal policy — oppose gender/identity curriculum framing in schools"
+  headline: Roll back school gender programs and prioritise sex-based protections
   claims:
-    - id: onp-gender-classroom
+    - id: onp-gender-safe-schools
       statement: >-
-        [Federal party policy] “There should be no room for Western, white, gender,
-        guilt shaming in any classroom and instead children should be taught the
-        benefits of a merit-based, free-thinking society.”
+        One Nation Victoria proposes a feasibility study and staged rollback of the Safe
+        Schools and Respectful Relationships programs, with greater parental control over
+        discussions of gender identity and sexual orientation.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/education-policy
+        publisher: One Nation Victoria
+        title: Education Policy
+        accessed: 2026-08-02
+    - id: onp-gender-gsa-primary
+      statement: >-
+        The party says it would prohibit Gender and Sexuality Alliances in primary
+        schools and restrict exposure of students under 16 to gender-identity material
+        it considers ideological.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/education-policy
+        publisher: One Nation Victoria
+        title: Education Policy
+        accessed: 2026-08-02
+    - id: onp-gender-prison-safety
+      statement: >-
+        One Nation Victoria argues that female prisons should be organised around
+        biological sex and that the safety of female inmates should take precedence over
+        gender self-identification in placement decisions.
       kind: position
       source:
-        url: https://www.onenation.org.au/education
-        publisher: Pauline Hanson's One Nation
-        title: Education
+        url: https://vic.onenation.org.au/women-prison-safety
+        publisher: One Nation Victoria
+        title: Biological Reality and Women Inmates' Right to Safety
+        published: 2026-02-09
         accessed: 2026-08-02

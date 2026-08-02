@@ -1,28 +1,47 @@
-# Pauline Hanson's One Nation — Crime & Justice (federal party policy)
+# One Nation Victoria — Crime & Justice
 policy:
   party: one-nation
   issue: crime-justice
-  headline: "Federal policy — deport visa holders who offend"
+  headline: Tougher bail and sentencing for repeat youth offenders
   claims:
-    - id: onp-crime-visa
+    - id: onp-crime-bail-sentencing
       statement: >-
-        [Federal party policy] “Deport any visa holder who breaks the law. Weak law
-        enforcement policies have put Australians in danger for too long. If you
-        commit a crime, you lose your visa and the right to stay.”
+        One Nation Victoria proposes stricter sentencing guidelines and amended bail
+        laws aimed at keeping dangerous repeat offenders off the streets.
       kind: pledge
       source:
-        url: https://www.onenation.org.au/immigration
-        publisher: Pauline Hanson's One Nation
-        title: Immigration — Immigration Reform for a Stronger Australia
+        url: https://vic.onenation.org.au/crime
+        publisher: One Nation Victoria
+        title: Tackling Crime
         accessed: 2026-08-02
-    - id: onp-crime-deport-illegal
+    - id: onp-crime-detention
       statement: >-
-        [Federal party policy] “Deport 75,000 illegal migrants because Australia’s
-        immigration laws must be enforced, not ignored. Visa overstayers, illegal
-        workers, and unlawful non-residents undermine national security…”
+        The party supports expanding youth detention capacity and says courts should
+        give community safety greater weight when considering bail for repeat offenders.
       kind: pledge
       source:
-        url: https://www.onenation.org.au/immigration
-        publisher: Pauline Hanson's One Nation
-        title: Immigration — Immigration Reform for a Stronger Australia
+        url: https://vic.onenation.org.au/crime
+        publisher: One Nation Victoria
+        title: Tackling Crime
+        accessed: 2026-08-02
+    - id: onp-crime-victim-support
+      statement: >-
+        One Nation Victoria proposes a victim support program covering counselling,
+        legal assistance and financial help, plus restitution requirements for young
+        offenders where appropriate.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/crime
+        publisher: One Nation Victoria
+        title: Tackling Crime
+        accessed: 2026-08-02
+    - id: onp-crime-intervention-review
+      statement: >-
+        The party would examine structured intervention programs for at-risk young people
+        and a panel to review serious crimes committed by offenders released on bail.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/crime
+        publisher: One Nation Victoria
+        title: Tackling Crime
         accessed: 2026-08-02

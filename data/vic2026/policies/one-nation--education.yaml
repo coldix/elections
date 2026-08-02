@@ -1,28 +1,50 @@
-# Pauline Hanson's One Nation — Education (federal party policy)
+# One Nation Victoria — Education
 policy:
   party: one-nation
   issue: education
-  headline: "Federal policy — back-to-basics curriculum"
+  headline: Back-to-basics curriculum, parental control and stronger discipline
   claims:
     - id: onp-edu-basics
       statement: >-
-        [Federal party policy] “One Nation will restore critical thinking in the
-        classroom and reinstate the cornerstone of education with reading, writing,
-        arithmetic, and discipline.”
-      kind: position
+        One Nation Victoria proposes a stronger focus on English, mathematics, science,
+        literacy, numeracy, critical thinking and classroom discipline, with ideological
+        material removed from the curriculum.
+      kind: pledge
       source:
-        url: https://www.onenation.org.au/education
-        publisher: Pauline Hanson's One Nation
-        title: Education
+        url: https://vic.onenation.org.au/education-policy
+        publisher: One Nation Victoria
+        title: Education Policy
         accessed: 2026-08-02
-    - id: onp-edu-merit
+    - id: onp-edu-history
       statement: >-
-        [Federal party policy] “There should be no room for Western, white, gender,
-        guilt shaming in any classroom and instead children should be taught the
-        benefits of a merit-based, free-thinking society.”
-      kind: position
+        The party would reintroduce mandatory Australian history studies emphasising
+        British settlement, military history, democratic institutions, patriotism and
+        critical analysis.
+      kind: pledge
       source:
-        url: https://www.onenation.org.au/education
-        publisher: Pauline Hanson's One Nation
-        title: Education
+        url: https://vic.onenation.org.au/education-policy
+        publisher: One Nation Victoria
+        title: Education Policy
+        accessed: 2026-08-02
+    - id: onp-edu-school-boards-vouchers
+      statement: >-
+        One Nation Victoria proposes elected school boards with parents holding at least
+        half the positions, together with a school voucher system intended to expand
+        parental choice between government and non-government schools.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/education-policy
+        publisher: One Nation Victoria
+        title: Education Policy
+        accessed: 2026-08-02
+    - id: onp-edu-progression-discipline
+      statement: >-
+        The policy would use NAPLAN to identify learning gaps, require year-level
+        achievement before progression, strengthen teacher standards and performance
+        recognition, and give schools clearer suspension and discipline processes.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/education-policy
+        publisher: One Nation Victoria
+        title: Education Policy
         accessed: 2026-08-02

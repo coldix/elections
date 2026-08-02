@@ -1,23 +1,45 @@
-# Pauline Hanson's One Nation — Debt & Budget (federal party policy)
+# One Nation Victoria — Debt & Budget
 policy:
   party: one-nation
   issue: debt-budget
-  headline: "Federal policy — gas royalties and sovereign wealth fund framing"
+  headline: Spending review, lower debt and a phase-out of payroll tax
   claims:
-    - id: onp-debt-sovereign
+    - id: onp-debt-spending-review
       statement: >-
-        [Federal party policy] Guardian Australia reports Hanson’s gas policy would
-        acquire equity stakes “and stash the profits in a sovereign wealth fund,”
-        aiming for “vastly greater returns” for Australian taxpayers from oil and gas,
-        while abolishing the PRRT for new projects and introducing a royalty regime.
+        One Nation Victoria proposes a comprehensive review of state government spending
+        to identify and eliminate waste, reduce budget deficits and slow the growth of
+        state debt.
       kind: pledge
       fiscal:
-        taxpayer_label: "Not specified"
-        financing: mixed
+        taxpayer_label: Not specified
         pbo_status: uncosted
       source:
-        url: https://www.theguardian.com/australia-news/2026/may/21/pauline-hanson-announces-norway-inspired-gas-policy-as-she-decries-25-export-tax-as-economic-vandalism
-        publisher: The Guardian
-        title: Pauline Hanson announces Norway-inspired gas policy
-        published: 2026-05-21
+        url: https://vic.onenation.org.au/economic-recovery
+        publisher: One Nation Victoria
+        title: Economic Recovery
+        accessed: 2026-08-02
+    - id: onp-debt-real-time-reporting
+      statement: >-
+        The party would introduce a public, real-time reporting tool for departmental
+        expenditure and cap spending on high-profile projects it regards as wasteful.
+      kind: pledge
+      source:
+        url: https://vic.onenation.org.au/economic-recovery
+        publisher: One Nation Victoria
+        title: Economic Recovery
+        accessed: 2026-08-02
+    - id: onp-debt-payroll-tax
+      statement: >-
+        One Nation Victoria says it will phase out Victorian payroll tax while using
+        grants and tax incentives to encourage manufacturing, technology and regional
+        investment.
+      kind: pledge
+      fiscal:
+        taxpayer_label: Not specified
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://vic.onenation.org.au/economic-recovery
+        publisher: One Nation Victoria
+        title: Economic Recovery
         accessed: 2026-08-02
