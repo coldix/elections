@@ -1,8 +1,22 @@
 # Changelog — since polls
 
+> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
+> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · hub [../README.md](../README.md)
+
 Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
+
+> **Note:** Entries below are product log lines as committed; the tip of
+> `main` may include later agent merges (policy audits, profiles, key
+> differences, One Nation Council slate) not yet summarised in a dated section.
+
+## 2026-08-03 — Docs stamp + product surface (sync)
+
+| Area | What shipped |
+|---|---|
+| **Docs** | Version + AEST stamp on primary docs; README and SCOPE caught up to policy product; `docs/README.md` index. |
+| **main tip** | One Nation 8-region Council slate (`91ecdbf`); key differences, party profiles, issue pages, coalition view already on main from agent merges. |
 
 ## 2026-08-02 — Policy matrix wave 7 (near-complete fill)
 

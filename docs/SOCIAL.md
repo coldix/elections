@@ -1,5 +1,8 @@
 # Social media — brand split and channel policy
 
+> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
+> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · hub [../README.md](../README.md)
+
 Rules for anything that speaks as the **Australian Election Tracker**.
 Personal creative or political channels are not the product brand.
 

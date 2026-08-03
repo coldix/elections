@@ -1,5 +1,8 @@
 # Poll methodology (Victorian 2026)
 
+> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
+> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · hub [../README.md](../README.md)
+
 Rules for the statewide primary-vote poll ledger and tracker average.
 This document is authoritative for inclusion and maths. It does **not**
 authorise forecasts, seat models, or how-to-vote advice.

@@ -1,5 +1,8 @@
 # HANDOVER
 
+> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
+> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · hub [README.md](README.md)
+
 For future sessions/agents. Read docs/DECISIONS.md before proposing any
 infrastructure; the Workers/D1/R2 stack was already evaluated and rejected
 (ADR-2). This is a data-in-git ledger with a static site on top.
@@ -59,12 +62,18 @@ redirected. Fixed; if you change one, change the other.
   `import.meta.url` is wrong once bundled.
 - Pages: `/`, `/assembly`, `/council`, atlases `/districts` + `/regions`,
   88 district pages, 8 region pages, `/parties` + party pages,
-  `/parties/issues` + `/parties/matrix` (policy secondary product),
-  `/voting`, `/polls`, `/methodology`, `/about`, `/data`, legal pages, `/404`.
-- **Policy ledger:** `data/vic2026/issues.yaml` + `policies/*.yaml`, loader
-  `scripts/lib/policies.mjs`, exports `issues.json` / `policies.json` /
-  `policies.csv`. Rules: [docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md)
-  (ADR-11). No ratings; empty matrix cells are expected until claims are sourced.
+  `/parties/issues` + `/parties/matrix` + `/parties/policies` +
+  `/parties/[slug]/policies`, `/policies` + `/policies/[slug]` +
+  `/policies/key-differences` (policy secondary product),
+  `/voting`, `/polls`, `/open-seats`, `/methodology`, `/about`, `/data`, legal pages, `/404`.
+- **Policy ledger:** `data/vic2026/issues.yaml` + `coalitions.yaml` +
+  `policies/*.yaml`, loader `scripts/lib/policies.mjs`, exports `issues.json` /
+  `policies.json` / `policies.csv` / `coalitions.json`. Rules:
+  [docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md) (ADR-11). No ratings;
+  empty matrix cells are expected until claims are sourced.
+- **Latest main tip (2026-08-03):** `91ecdbf` One Nation eight-region Upper House
+  slate; prior merges include key policy differences, party policy profiles,
+  issue comparison pages, policy audits, coalition matrix view.
 - **Minimal JavaScript (inline only, no bundles):** coverage matrix is
   radio + CSS (ADR-9); policy matrix column toggles are checkbox + CSS
   `:has()`; countdown ticks `ddd:hh:mm:ss` client-side (SSR

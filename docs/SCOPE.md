@@ -1,5 +1,8 @@
 # Scope
 
+> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
+> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · hub [../README.md](../README.md)
+
 ## The wedge (why this project exists)
 
 The Victorian 2026 candidate landscape is already covered by Wikipedia
@@ -21,19 +24,24 @@ is proven valuable.
 Data layer (this repo):
 - [x] 88 Legislative Assembly districts, 8 Legislative Council regions
 - [x] Key dates with sources
-- [ ] Registered parties verified against the VEC register
-- [ ] Current incumbents with sources
-- [ ] Candidate files as announcements are verified, statuses per METHODOLOGY.md
+- [x] Parties file (VEC register + unregistered groups with announced candidates)
+- [x] Current incumbents (Assembly + Council sitting members)
+- [x] Candidate files as announcements are verified, statuses per METHODOLOGY.md
+  (coverage progressive — never “finished” until nominations close)
 - [x] Schema validation in CI; nothing merges that doesn't validate
-- [ ] JSON + CSV export artefacts
+- [x] JSON + CSV export artefacts (`site/public/data/`)
 
-Site (static, after data layer works):
-- [ ] Party coverage grid (the shareable artefact) — seats filled per party
+Site (static):
+- [x] Party coverage grid (Assembly + Council) — `/assembly`, `/council`, homepage snapshot, `/parties`
 - [x] Election countdown + key dates (`ddd:hh:mm:ss` to polls open + key-date list)
-- [ ] District pages (incumbent, declared candidates, sources)
-- [ ] Recent changes feed (derived from git history)
-- [ ] Methodology + editorial independence + authorisation pages
-- [ ] Corrections via GitHub Issues (linked prominently)
+- [x] District pages (incumbent, declared candidates, sources)
+- [ ] Recent changes feed (derived from git history) — still not built
+- [x] Methodology + editorial independence + authorisation pages
+- [x] Corrections via GitHub Issues (linked prominently)
+
+Secondary products (implemented; not required for original kill criteria):
+- [x] Poll average + inventory
+- [x] Policy matrix, issue comparisons, party policy profiles, key differences
 
 ## Explicitly out of scope (first release)
 
@@ -60,8 +68,11 @@ The product **wedge** remains machine-readable candidacies + coverage + evidence
 ledger. The policy matrix is a secondary module:
 
 - Jurisdiction guide at `/parties/issues` (state vs federal vs local)
-- Sourced comparison matrix at `/parties/matrix` (v1: five parties, no ratings)
-- YAML ledger + JSON/CSV export (`issues.json`, `policies.json`, `policies.csv`)
+- Sourced comparison matrix at `/parties/matrix` (majors + One Nation; optional Coalition view)
+- Issue comparison pages at `/policies` and `/policies/[slug]`
+- Party policy profiles at `/parties/policies` and `/parties/[slug]/policies`
+- Key differences at `/policies/key-differences`
+- YAML ledger + JSON/CSV export (`issues.json`, `policies.json`, `policies.csv`, `coalitions.json`)
 - Rules: [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md)
 
 **Still forbidden:** star ratings, editorial scorecards, how-to-vote advice,

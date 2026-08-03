@@ -1,5 +1,8 @@
 # Policy matrix & issues ledger methodology
 
+> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
+> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · hub [../README.md](../README.md)
+
 Rules for recording party policy positions and the jurisdiction guide on
 [electiontracker.au](https://electiontracker.au). Enforced in data validation
 where mechanical checks are possible.

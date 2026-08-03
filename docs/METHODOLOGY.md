@@ -1,5 +1,8 @@
 # Methodology
 
+> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
+> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · hub [../README.md](../README.md)
+
 Published rules applied identically to every party and independent.
 
 ## Candidate statuses

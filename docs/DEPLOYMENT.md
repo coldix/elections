@@ -1,7 +1,12 @@
-# Deployment — Cloudflare Pages
+# Deployment — Cloudflare Workers Builds (assets-only)
 
-The site is a static build deployed from GitHub to Cloudflare Pages. No Workers,
-no D1, no R2 — see [DECISIONS.md](DECISIONS.md) ADR-2.
+> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
+> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · hub [../README.md](../README.md)
+
+The site is a static build deployed from GitHub as an **assets-only Worker**
+(Workers Builds). No application server, no D1, no R2 — see
+[DECISIONS.md](DECISIONS.md) ADR-2. (Older “Pages only” wording is historical;
+the live path is Workers Builds + `wrangler.jsonc`.)
 
 ## Build pipeline
 

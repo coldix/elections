@@ -1,5 +1,8 @@
 # Architecture Decisions
 
+> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
+> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · hub [../README.md](../README.md)
+
 Short ADR log. Future agents: read this before proposing infrastructure.
 
 ## ADR-1: Data lives in git as YAML, not in a database

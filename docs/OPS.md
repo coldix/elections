@@ -1,5 +1,8 @@
 # Operations — monitor data, update the site
 
+> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
+> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · hub [../README.md](../README.md)
+
 How this project stays current without turning editorial judgment into a bot.
 
 The **site does not need its own update schedule.** Pushing valid data to
