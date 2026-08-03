@@ -41,6 +41,7 @@ New documentation and internal links must use the scoped paths.
 
 - [OPS.md](OPS.md) — maintenance cadence and human/agent responsibilities
 - [DEPLOYMENT.md](DEPLOYMENT.md) — Cloudflare Workers build and DNS
+- [ROUTES.md](ROUTES.md) — canonical national/election route architecture and redirects
 - [DISCOVERY.md](DISCOVERY.md) — sitemap, search discovery and IndexNow
 - [SOCIAL.md](SOCIAL.md) — social/video implementation notes
 - [REPO-LAYOUT.md](REPO-LAYOUT.md) — annotated repository structure
@@ -52,15 +53,18 @@ New documentation and internal links must use the scoped paths.
 - [../HANDOVER.md](../HANDOVER.md) — current operational handover
 - [../HANDOVER-COALITION-VIEW.md](../HANDOVER-COALITION-VIEW.md) — coalition policy-view implementation notes
 
-## Point-in-time gap and audit notes
+## Point-in-time gap, audit and change notes
 
-These are working records, not authoritative product rules. Their value is the
-specific research state they capture; current rules remain in the methodology
-documents above.
+These are historical working records, not authoritative product rules. Their
+value is the specific research or implementation state they capture; current
+rules remain in the methodology documents above.
 
 - [labor-gap.md](labor-gap.md)
 - [council-gap.md](council-gap.md)
 - [incumbent-gap.md](incumbent-gap.md)
+- [LABOR-POLICY-AUDIT-2026-08-02.md](LABOR-POLICY-AUDIT-2026-08-02.md)
+- [GREENS-POLICY-AUDIT-2026-08-02.md](GREENS-POLICY-AUDIT-2026-08-02.md)
+- [CHANGELOG-LIBERAL-NATIONALS-FIREARMS.md](CHANGELOG-LIBERAL-NATIONALS-FIREARMS.md)
 
-Additional audit and lead notes are linked from the relevant working document.
-If a note is no longer useful, delete it rather than leaving an unlinked file.
+Additional lead notes are linked from the relevant working document. If a note
+is no longer useful, delete it rather than leaving an unlinked file.
