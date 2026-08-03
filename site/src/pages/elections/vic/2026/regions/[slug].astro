@@ -1,0 +1,6 @@
+---
+import Page, { getStaticPaths as sourceGetStaticPaths } from "../../../../../vicpages/regions/[slug].astro";
+export const getStaticPaths = sourceGetStaticPaths;
+---
+
+<Page {...Astro.props} />

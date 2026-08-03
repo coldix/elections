@@ -1,0 +1,15 @@
+# Permanent Victorian 2026 route migration. Exact hubs precede wildcard rules.
+/assembly /elections/vic/2026/assembly 301
+/council /elections/vic/2026/council 301
+/districts /elections/vic/2026/districts 301
+/districts/* /elections/vic/2026/districts/:splat 301
+/regions /elections/vic/2026/regions 301
+/regions/* /elections/vic/2026/regions/:splat 301
+/parties /elections/vic/2026/parties 301
+/parties/* /elections/vic/2026/parties/:splat 301
+/policies /elections/vic/2026/policies 301
+/policies/* /elections/vic/2026/policies/:splat 301
+/polls /elections/vic/2026/polls 301
+/open-seats /elections/vic/2026/open-seats 301
+/voting /elections/vic/2026/voting 301
+/data /elections/vic/2026/data 301

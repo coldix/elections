@@ -13,7 +13,7 @@
     "scan:leads:full": "node scripts/scan-leads.mjs --full",
     "scan:leads:report": "node scripts/scan-leads.mjs --report-only",
     "dev": "node scripts/write-build-meta.mjs && npm run check && astro dev --root site",
-    "build": "npm run validate && npm run export && node scripts/write-build-meta.mjs && astro build --root site && node scripts/finalize-sitemap.mjs",
+    "build": "npm run validate && npm run export && node scripts/write-build-meta.mjs && astro build --root site && node scripts/rewrite-scoped-routes.mjs && node scripts/finalize-sitemap.mjs",
     "preview": "astro preview --root site",
     "indexnow": "node scripts/indexnow.mjs"
   },

@@ -1,32 +1,26 @@
 ---
 import { SITE } from "../lib/site.mjs";
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const VIC = "/elections/vic/2026";
 const nav = [
-  { href: "/elections", label: "Upcoming elections" },
-  { href: "/assembly", label: "Assembly" },
-  { href: "/council", label: "Council" },
-  { href: "/parties", label: "Parties" },
-  { href: "/voting", label: "Voting" },
-  { href: "/polls", label: "Polls" },
-  { href: "/data", label: "Open data" },
+  { href: "/elections", label: "Upcoming elections", exact: true, featured: true },
+  { href: VIC, label: "Victoria 2026" },
+  { href: `${VIC}/assembly`, label: "Assembly" },
+  { href: `${VIC}/council`, label: "Council" },
+  { href: `${VIC}/parties`, label: "Parties" },
+  { href: `${VIC}/voting`, label: "Voting" },
+  { href: `${VIC}/polls`, label: "Polls" },
+  { href: `${VIC}/data`, label: "Open data" },
   { href: "/methodology", label: "Methodology" },
   { href: "/about", label: "About" },
 ];
-const isCurrent = (href) => path === href || path.startsWith(href + "/");
+const isCurrent = (item) => item.exact ? path === item.href : path === item.href || path.startsWith(item.href + "/");
 ---
 
 <header class="site-header no-print">
   <div class="wrap bar">
     <a class="brand" href="/">
-      <img
-        class="brand-mark"
-        src="/images/aet-logo-512.webp"
-        alt=""
-        aria-hidden="true"
-        width="34"
-        height="34"
-        decoding="async"
-      />
+      <img class="brand-mark" src="/images/aet-logo-512.webp" alt="" aria-hidden="true" width="34" height="34" decoding="async" />
       <span class="brand-text">
         <strong>Australian Election Tracker</strong>
         <span class="brand-sub">by {SITE.publisher}</span>
@@ -36,35 +30,24 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
     <div class="header-end">
       <nav aria-label="Primary">
         <ul>
-          {
-            nav.map((item) => (
-              <li>
-                <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
-                  {item.label}
-                </a>
-              </li>
-            ))
-          }
+          {nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class={item.featured ? "featured-nav" : undefined}
+                aria-current={isCurrent(item) ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
 
-      <button
-        type="button"
-        class="theme-toggle"
-        id="theme-toggle"
-        aria-label="Switch to dark theme"
-        title="Toggle light / dark theme"
-      >
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" title="Toggle light / dark theme">
         <span class="theme-icon" aria-hidden="true">
-          <!-- Sun (shown in dark mode → click for light) -->
-          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-          </svg>
-          <!-- Moon (shown in light mode → click for dark) -->
-          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3a7 7 0 1 0 11.5 11.5z"></path>
-          </svg>
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3a7 7 0 1 0 11.5 11.5z"></path></svg>
         </span>
         <span class="theme-label" data-theme-label>Dark</span>
       </button>
@@ -72,195 +55,73 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
   </div>
 </header>
 
-<script is:inline>
+<script is:inline define:vars={{ VIC }}>
   (function () {
     var KEY = "aet-theme";
     var btn = document.getElementById("theme-toggle");
-    if (!btn) return;
-
     function current() {
       var t = document.documentElement.getAttribute("data-theme");
       if (t === "light" || t === "dark") return t;
       return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     }
-
     function apply(theme) {
       document.documentElement.setAttribute("data-theme", theme);
-      try {
-        localStorage.setItem(KEY, theme);
-      } catch (e) {}
+      try { localStorage.setItem(KEY, theme); } catch (e) {}
+      if (!btn) return;
       var next = theme === "dark" ? "light" : "dark";
       var label = btn.querySelector("[data-theme-label]");
       if (label) label.textContent = next === "dark" ? "Dark" : "Light";
       btn.setAttribute("aria-label", "Switch to " + next + " theme");
       btn.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
     }
-
     apply(current());
-    btn.addEventListener("click", function () {
-      apply(current() === "dark" ? "light" : "dark");
+    if (btn) btn.addEventListener("click", function () { apply(current() === "dark" ? "light" : "dark"); });
+
+    // Source templates retain their original short links. Rewrite them in dev;
+    // the production build also rewrites the static HTML before deployment.
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!location.pathname.startsWith(VIC)) return;
+      var prefixes = ["assembly", "council", "districts", "regions", "parties", "policies", "polls", "open-seats", "voting"];
+      document.querySelectorAll("a[href]").forEach(function (a) {
+        var href = a.getAttribute("href");
+        if (!href) return;
+        for (var i = 0; i < prefixes.length; i++) {
+          var old = "/" + prefixes[i];
+          if (href === old || href.startsWith(old + "/") || href.startsWith(old + "#") || href.startsWith(old + "?")) {
+            a.setAttribute("href", VIC + href);
+            return;
+          }
+        }
+        if (href === "/data" || href.startsWith("/data#") || href.startsWith("/data?")) {
+          a.setAttribute("href", VIC + "/data" + href.slice(5));
+        }
+      });
     });
   })();
 </script>
 
 <style>
-  .site-header {
-    border-bottom: 1px solid var(--rule);
-    background: color-mix(in srgb, var(--paper) 88%, transparent);
-    backdrop-filter: blur(8px);
-    position: sticky;
-    top: 0;
-    z-index: 20;
-  }
-  .bar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem 1.5rem;
-    padding-block: 0.7rem;
-  }
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .brand-mark {
-    width: 2.15rem;
-    height: 2.15rem;
-    border-radius: 50%;
-    flex: none;
-  }
-  .brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.15;
-  }
-  .brand-text strong {
-    font-size: 0.98rem;
-    letter-spacing: -0.015em;
-    font-weight: 660;
-  }
-  .brand-sub {
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-  }
-  .header-end {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.65rem 1.1rem;
-    margin-left: auto;
-  }
-  nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem 1.1rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  nav a {
-    display: block;
-    padding: 0.25rem 0;
-    color: var(--ink-2);
-    text-decoration: none;
-    font-size: 0.92rem;
-    font-weight: 520;
-    border-bottom: 2px solid transparent;
-  }
-  nav a:hover {
-    color: var(--ink);
-    border-bottom-color: var(--rule-strong);
-  }
-  nav a[aria-current="page"] {
-    color: var(--ink);
-    border-bottom-color: var(--accent);
-  }
-  nav a[href="/elections"] {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.34rem 0.72rem;
-    border: 1px solid var(--accent);
-    border-radius: 999px;
-    background: var(--accent-wash);
-    color: var(--ink);
-    font-weight: 650;
-    line-height: 1.2;
-  }
-  nav a[href="/elections"]:hover,
-  nav a[href="/elections"][aria-current="page"] {
-    border-color: var(--accent);
-    background: color-mix(in srgb, var(--accent) 16%, var(--surface));
-    color: var(--ink);
-  }
-
-  .theme-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin: 0;
-    padding: 0.28rem 0.7rem 0.28rem 0.55rem;
-    border-radius: 999px;
-    border: 1px solid var(--rule-strong);
-    background: var(--surface);
-    color: var(--ink-2);
-    font: inherit;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    line-height: 1.2;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
-    flex: none;
-  }
-  .theme-toggle:hover {
-    color: var(--ink);
-    border-color: var(--accent);
-    background: var(--accent-wash);
-  }
-  .theme-icon {
-    display: inline-flex;
-    width: 1rem;
-    height: 1rem;
-    position: relative;
-  }
-  .theme-icon svg {
-    position: absolute;
-    inset: 0;
-    width: 1rem;
-    height: 1rem;
-  }
-  /* In light mode show moon + "Dark"; in dark mode show sun + "Light" */
-  .icon-sun {
-    display: none;
-  }
-  .icon-moon {
-    display: block;
-  }
-  :global(:root[data-theme="dark"]) .icon-sun {
-    display: block;
-  }
-  :global(:root[data-theme="dark"]) .icon-moon {
-    display: none;
-  }
-  @media (prefers-color-scheme: dark) {
-    :global(:root:not([data-theme])) .icon-sun {
-      display: block;
-    }
-    :global(:root:not([data-theme])) .icon-moon {
-      display: none;
-    }
-  }
-
-  @media (max-width: 30rem) {
-    .brand-text strong {
-      font-size: 0.9rem;
-    }
-  }
+  .site-header { border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 20; }
+  .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; padding-block: 0.7rem; }
+  .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; }
+  .brand-mark { width: 2.15rem; height: 2.15rem; border-radius: 50%; flex: none; }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+  .brand-text strong { font-size: 0.98rem; letter-spacing: -0.015em; font-weight: 660; }
+  .brand-sub { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+  .header-end { display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem 1.1rem; margin-left: auto; }
+  nav ul { display: flex; flex-wrap: wrap; gap: 0.25rem 0.9rem; list-style: none; margin: 0; padding: 0; }
+  nav a { display: block; padding: 0.25rem 0; color: var(--ink-2); text-decoration: none; font-size: 0.9rem; font-weight: 520; border-bottom: 2px solid transparent; }
+  nav a:hover { color: var(--ink); border-bottom-color: var(--rule-strong); }
+  nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+  nav a.featured-nav { display: inline-flex; align-items: center; padding: 0.34rem 0.72rem; border: 1px solid var(--accent); border-radius: 999px; background: var(--accent-wash); color: var(--ink); font-weight: 650; line-height: 1.2; }
+  nav a.featured-nav:hover, nav a.featured-nav[aria-current="page"] { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--ink); }
+  .theme-toggle { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0; padding: 0.28rem 0.7rem 0.28rem 0.55rem; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink-2); font: inherit; font-size: 0.78rem; font-weight: 600; line-height: 1.2; cursor: pointer; box-shadow: var(--shadow); flex: none; }
+  .theme-toggle:hover { color: var(--ink); border-color: var(--accent); background: var(--accent-wash); }
+  .theme-icon { display: inline-flex; width: 1rem; height: 1rem; position: relative; }
+  .theme-icon svg { position: absolute; inset: 0; width: 1rem; height: 1rem; }
+  .icon-sun { display: none; } .icon-moon { display: block; }
+  :global(:root[data-theme="dark"]) .icon-sun { display: block; }
+  :global(:root[data-theme="dark"]) .icon-moon { display: none; }
+  @media (prefers-color-scheme: dark) { :global(:root:not([data-theme])) .icon-sun { display: block; } :global(:root:not([data-theme])) .icon-moon { display: none; } }
+  @media (max-width: 30rem) { .brand-text strong { font-size: 0.9rem; } }
 </style>
