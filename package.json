@@ -4,7 +4,8 @@
   "type": "module",
   "description": "Open, sourced, machine-readable Australian election candidate ledger",
   "scripts": {
-    "validate": "node scripts/validate.mjs && node scripts/validate-coalitions.mjs",
+    "check:repo": "node scripts/check-repo-hygiene.mjs",
+    "validate": "npm run check:repo && node scripts/validate.mjs && node scripts/validate-coalitions.mjs",
     "export": "node scripts/export.mjs",
     "check": "npm run validate && npm run export",
     "check:sources": "node scripts/check-sources.mjs",
