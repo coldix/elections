@@ -3,8 +3,8 @@ candidate:
   party: one-nation
   contest: eastern-victoria
   chamber: council
-  status: endorsed
-  occupation: "One Nation Victoria state president"
+  status: withdrawn
+  occupation: "One Nation Victorian leader and state president"
   background: "Former bricklayer, Australian Army combat engineer and coal-industry worker."
   history:
     - status: endorsed
@@ -16,6 +16,18 @@ candidate:
         published: 2026-08-03
         accessed: 2026-08-03
       note: >-
-        News report citing One Nation's statewide announcement and naming
-        Pickering as the party's lead Legislative Council candidate for the
-        Eastern Victoria region at the November 2026 state election.
+        News report citing One Nation's initial statewide announcement and naming
+        Pickering as the party's lead Legislative Council candidate for Eastern
+        Victoria at the November 2026 state election.
+    - status: withdrawn
+      date: 2026-08-03
+      source:
+        url: https://www.theaustralian.com.au/nation/fiscally-and-morally-bankrupt-one-nation-launches-victorian-election-campaign/news-story/699be4fd1b7068077ce00c7c80c556e8
+        publisher: The Australian
+        title: "Pauline Hanson mobbed by protesters at One Nation Victoria launch"
+        published: 2026-08-03
+        accessed: 2026-08-03
+      note: >-
+        At the party's campaign launch Pickering was instead announced as the
+        Victorian leader and Legislative Assembly candidate for Pakenham. The
+        earlier Eastern Victoria endorsement therefore ended before nomination.
