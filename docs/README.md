@@ -19,6 +19,7 @@ you edited against (`git rev-parse --short HEAD`).
 | Polls | `/polls` | [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) |
 | Open data | `/data` | export pipeline in root README |
 | Ops / deploy | — | [OPS.md](OPS.md), [DEPLOYMENT.md](DEPLOYMENT.md) |
+| Repo structure | — | [REPO-LAYOUT.md](REPO-LAYOUT.md) |
 
 ## Freshness check (2026-08-03 vs `91ecdbf`)
 
@@ -39,6 +40,7 @@ you edited against (`git rev-parse --short HEAD`).
 
 ## All docs in this folder
 
+- [REPO-LAYOUT.md](REPO-LAYOUT.md) — full annotated repository tree  
 - [CHANGELOG.md](CHANGELOG.md) — product log since polls module  
 - [SCOPE.md](SCOPE.md) — in/out of product  
 - [METHODOLOGY.md](METHODOLOGY.md) — candidacy statuses  

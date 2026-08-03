@@ -49,6 +49,8 @@ elections are added as new data directories, not rebuilds.
 
 ## Repository layout
 
+Short map of what lives where. **Full annotated tree:** [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
+
 ```
 data/<election>/              one directory per election (vic2026 first)
   election.yaml               key dates, jurisdiction, sources
@@ -105,6 +107,7 @@ match the git short hash you edited against.
 | [docs/DECISIONS.md](docs/DECISIONS.md) | ADRs — read before proposing infra |
 | [docs/CHANGELOG.md](docs/CHANGELOG.md) | Product log since polls module |
 | [docs/DISCOVERY.md](docs/DISCOVERY.md) | SEO / IndexNow / GSC |
+| [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md) | Full repository file tree |
 | [HANDOVER.md](HANDOVER.md) | Agent context and known gaps |
 | [docs/README.md](docs/README.md) | Full docs index |
 
