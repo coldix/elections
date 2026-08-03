@@ -1,463 +1,137 @@
 ---
 import Base from "../layouts/Base.astro";
 import Countdown from "../components/Countdown.astro";
-import StatGrid from "../components/StatGrid.astro";
-import YouTubeLite from "../components/YouTubeLite.astro";
-import { SITE, partyColour, formatDate } from "../lib/site.mjs";
-import { VIDEOS } from "../lib/videos.mjs";
-import {
-  loadElection,
-  coverageFor,
-  summaryFor,
-  COVERAGE_CAVEAT,
-  LIVE_STATUSES,
-} from "../../../scripts/lib/data.mjs";
+import { SITE, formatDate } from "../lib/site.mjs";
+import { loadElection, summaryFor } from "../../../scripts/lib/data.mjs";
+import { ELECTION_DATE_STATUS, loadElectionCalendar } from "../lib/electionCalendar.mjs";
 
 const data = loadElection("vic2026");
-const coverage = coverageFor(data);
 const summary = summaryFor(data);
-
-const stats = [
-  { value: summary.districts, label: "Legislative Assembly districts" },
-  {
-    value: summary.regions,
-    label: "Legislative Council regions",
-    note: `${summary.council_members} sitting members`,
-  },
-  { value: summary.live_candidates, label: "Live candidacies", note: "sourced records" },
-  { value: summary.retirements, label: "Confirmed retirements", note: "not recontesting" },
-  {
-    value: `${summary.districts_with_candidates}/${summary.districts}`,
-    label: "Districts with ≥1 record",
-  },
-  { value: summary.sources, label: "Distinct sources cited" },
-];
-
-// Every party with seats held now and/or any sourced 2026 coverage.
-// Order is seats held (both houses), then alphabetically — not a campaign ranking.
-const coverageTeaser = coverage.filter(
-  (c) =>
-    c.current.total > 0 ||
-    c.assembly_seats_covered > 0 ||
-    c.council_seats_covered > 0
-);
-
-const retireByParty = data.parties
-  .map((p) => ({
-    ...p,
-    count: data.retirements.filter((r) => r.party === p.slug).length,
-  }))
-  .filter((p) => p.count > 0)
-  .sort((a, b) => b.count - a.count);
-
-const openSeats = data.retirements.filter((r) => r.role === "MLA").length;
-
-const emptyDistricts = data.districts
-  .filter((d) => !d.candidates.some((c) => LIVE_STATUSES.includes(c.status)))
-  .sort((a, b) => a.name.localeCompare(b.name));
+const calendar = loadElectionCalendar();
+const victoria = calendar.elections.find((entry) => entry.jurisdiction === "vic");
+const nextElections = calendar.elections.filter((entry) => entry.jurisdiction !== "vic").slice(0, 4);
 
 const schema = {
-  "@type": "Dataset",
-  name: "Australian Election Tracker — Victorian state election 2026 candidate ledger",
-  description:
-    "Open, individually sourced records of announced, endorsed, formally nominated, " +
-    "withdrawn and disendorsed candidates for the 2026 Victorian state election.",
+  "@type": "CollectionPage",
+  name: "Australian Election Tracker",
+  description: "Independent, sourced and machine-readable information for Australian federal, state and territory elections.",
   url: SITE.url,
-  license: "https://creativecommons.org/licenses/by/4.0/",
-  isAccessibleForFree: true,
-  creator: { "@id": `${SITE.url}/#organization` },
-  temporalCoverage: `2024/${data.election.election_day}`,
-  spatialCoverage: { "@type": "Place", name: "Victoria, Australia" },
-  distribution: [
-    {
-      "@type": "DataDownload",
-      encodingFormat: "application/json",
-      contentUrl: `${SITE.url}/data/vic2026/candidates.json`,
-    },
-    {
-      "@type": "DataDownload",
-      encodingFormat: "text/csv",
-      contentUrl: `${SITE.url}/data/vic2026/candidates.csv`,
-    },
-  ],
+  isPartOf: { "@id": `${SITE.url}/#website` },
 };
 ---
 
 <Base
-  title="Victorian state election 2026 candidate tracker"
-  description="Independent, individually sourced tracking of candidates for the 2026 Victorian state election — announced, endorsed, formally nominated, withdrawn and disendorsed. Open JSON and CSV data."
+  title="Australian elections, sourced and open"
+  description="Independent, sourced and machine-readable tracking for Australian federal, state and territory elections. Victoria 2026 is the current active tracker."
   schema={schema}
 >
-  <section class="hero">
+  <section class="hero national-hero">
     <div class="wrap">
-      <p class="eyebrow">Independent · Sourced · Machine-readable</p>
-      <h1>Who is standing, where, and what proves it.</h1>
+      <p class="eyebrow">Independent · Sourced · Australia-wide</p>
+      <h1>Australian elections, one evidence trail.</h1>
       <p class="lede">
-        Australian Election Tracker is a public ledger of 2026 Victorian candidacies — each with
-        a dated source — plus open JSON/CSV. Not a forecast. Not how-to-vote advice. Not the VEC.
+        The tracker is built to follow federal, state and territory elections under one
+        consistent methodology. Victoria 2026 is the first active election ledger.
       </p>
-      <p class="hero-actions btn-row">
-        <a class="btn" href="/assembly">Browse Assembly seats</a>
-        <a class="btn btn-ghost" href="/voting">Voting guide</a>
-        <a class="btn btn-ghost" href="/data">Open data</a>
-      </p>
-
-      <p class="notice prelaunch">
-        <strong>Live since July 2026.</strong> Coverage is incomplete by design: we only count
-        sourced records.{" "}
-        <a href="/methodology#coverage">How we count</a>.
+      <p class="btn-row hero-actions">
+        <a class="btn" href="/elections/vic/2026">Open Victoria 2026 tracker</a>
+        <a class="btn btn-ghost" href="/elections">View upcoming elections</a>
+        <a class="btn btn-ghost" href="/methodology">Read the methodology</a>
       </p>
     </div>
   </section>
 
-  <div class="wrap home-body">
+  <div class="wrap national-body">
     <Countdown election={data.election} keyDates={data.election.dates} />
 
-    <section class="section paths" aria-labelledby="paths-h">
-      <h2 id="paths-h">Start here</h2>
-      <div class="path-grid">
-        <a class="card path-card" href="/assembly">
-          <h3>Who is standing?</h3>
-          <p>88 Assembly districts — sitting members and sourced 2026 candidates.</p>
-        </a>
-        <a class="card path-card" href="/voting">
-          <h3>How do I vote?</h3>
-          <p>Enrolment, compulsory voting, preferential numbering — civic guide + video.</p>
-        </a>
-        <a class="card path-card" href="/council">
-          <h3>Upper house?</h3>
-          <p>8 regions × 5 seats. Sitting MLCs and any sourced Council candidacies.</p>
-        </a>
-        <a class="card path-card" href="/polls">
-          <h3>What are the polls saying?</h3>
-          <p>Sourced statewide primaries and a transparent average — not a forecast.</p>
-        </a>
-        <a class="card path-card" href="/parties/issues">
-          <h3>Who is responsible?</h3>
-          <p>State vs federal vs local — jurisdiction guide for key election issues.</p>
-        </a>
-        <a class="card path-card" href="/parties/matrix">
-          <h3>Compare party policies</h3>
-          <p>Side-by-side sourced positions — no ratings, quotes and cost chips only.</p>
-        </a>
+    <section class="section" aria-labelledby="current-h">
+      <p class="eyebrow">Current active tracker</p>
+      <h2 id="current-h">2026 Victorian state election</h2>
+      <div class="current-grid">
+        <article class="card current-card">
+          <p class="date-line"><strong>{victoria?.date_label ?? "28 November 2026"}</strong></p>
+          <p>
+            Individually sourced candidacies across all 88 Assembly districts and eight
+            Legislative Council regions, plus parties, policies, polling and open data.
+          </p>
+          <dl class="stats">
+            <div><dt>Live candidacies</dt><dd>{summary.live_candidates}</dd></div>
+            <div><dt>Districts</dt><dd>{summary.districts}</dd></div>
+            <div><dt>Council regions</dt><dd>{summary.regions}</dd></div>
+            <div><dt>Sources cited</dt><dd>{summary.sources}</dd></div>
+          </dl>
+          <p class="btn-row">
+            <a class="btn" href="/elections/vic/2026">Election overview</a>
+            <a class="btn btn-ghost" href="/elections/vic/2026/assembly">Assembly seats</a>
+            <a class="btn btn-ghost" href="/elections/vic/2026/parties">Parties</a>
+          </p>
+        </article>
+
+        <aside class="card principle-card">
+          <h3>What the tracker does</h3>
+          <p>Every candidacy and material factual claim carries a dated public source.</p>
+          <p>Coverage is not a forecast, a ranking, an endorsement or how-to-vote advice.</p>
+          <p class="muted">Last Victorian source verification: {formatDate(summary.latest_verified)}.</p>
+        </aside>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="numbers-h">
-      <h2 id="numbers-h">At a glance</h2>
-      <StatGrid stats={stats} />
-      <p class="muted after-stats">
-        Generated at build time. Last source verification:{" "}
-        <strong>{formatDate(summary.latest_verified)}</strong>.
-        {emptyDistricts.length > 0 && (
-          <>
-            {" "}
-            Districts with no sourced candidacy yet:{" "}
-            {emptyDistricts.map((d, i) => (
-              <>
-                {i > 0 && ", "}
-                <a href={`/districts/${d.slug}`}>{d.name}</a>
-              </>
-            ))}
-            .
-          </>
-        )}
-      </p>
-    </section>
-
-    <section id="coverage" class="section" aria-labelledby="coverage-h">
-      <h2 id="coverage-h">Coverage snapshot</h2>
-      <div class="notice caveat" role="note">
-        <strong>Two different numbers.</strong>{" "}
-        <em>Seats held now</em> is today’s Parliament (Assembly + Council).{" "}
-        <em>2026 covered</em> is only seats where we have a sourced candidacy for that
-        party — Assembly (of 88) and Council (of 40) — not vote share, not a prediction.
-        The progress bar is both houses combined (of 128).{" "}
-        {COVERAGE_CAVEAT}{" "}
-        <a href="/methodology#coverage">How we count</a>.
+    <section class="section" aria-labelledby="next-h">
+      <p class="eyebrow">National calendar</p>
+      <h2 id="next-h">What comes next</h2>
+      <div class="upcoming-grid">
+        {nextElections.map((entry) => {
+          const status = ELECTION_DATE_STATUS[entry.status];
+          return (
+            <article class="card upcoming-card">
+              <p class="jurisdiction">{entry.name}</p>
+              <h3>{entry.date_label}</h3>
+              <p class="muted">{status.label}: {entry.basis}</p>
+            </article>
+          );
+        })}
       </div>
-
-      <div class="table-scroll">
-        <table class="data teaser">
-          <caption class="visually-hidden">
-            Party seats held now versus sourced 2026 Assembly and Council coverage
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col">Party</th>
-              <th scope="col" class="num">Seats held now</th>
-              <th scope="col" class="num">2026 Assembly</th>
-              <th scope="col" class="num">2026 Council</th>
-              <th scope="col" class="sub">Progress (of 128)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              coverageTeaser.map((c) => (
-                <tr>
-                  <th scope="row">
-                    <a href={`/parties/${c.party}`} class="party-cell">
-                      <span
-                        class="swatch"
-                        style={`--party-colour:${partyColour(c.party)}`}
-                        aria-hidden="true"
-                      />
-                      {c.short_name}
-                    </a>
-                  </th>
-                  <td class="num mono held-now">
-                    {c.current.total ? (
-                      <>
-                        <span class="held-total">{c.current.total}</span>
-                        <span class="muted held-split">
-                          {" "}
-                          ({c.current.assembly}A · {c.current.council}C)
-                        </span>
-                      </>
-                    ) : (
-                      "—"
-                    )}
-                  </td>
-                  <td class="num mono">
-                    {c.assembly_seats_covered}
-                    <span class="muted"> / {c.assembly_seats_total}</span>
-                  </td>
-                  <td class="num mono">
-                    {c.council_seats_covered}
-                    <span class="muted"> / {c.council_seats_total}</span>
-                  </td>
-                  <td>
-                    <span class="bar" aria-hidden="true">
-                      <span
-                        class="bar-fill"
-                        style={`width:${c.combined_pct}%;--party-colour:${partyColour(c.party)}`}
-                      />
-                    </span>
-                    <span class="visually-hidden">
-                      {c.combined_seats_covered} of {c.combined_seats_total} seats covered
-                      ({c.combined_pct}%)
-                    </span>
-                  </td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-      </div>
-      <p class="btn-row">
-        <a class="btn" href="/parties">Full party coverage</a>
-        <a class="btn btn-ghost" href="/parties/issues">Issues &amp; jurisdiction</a>
-        <a class="btn btn-ghost" href="/parties/matrix">Policy matrix</a>
-        <a class="btn btn-ghost" href="/assembly">All 88 Assembly seats</a>
-        <a class="btn btn-ghost" href="/council">All 40 Council seats</a>
-        <a class="btn btn-ghost" href="/polls">Poll average</a>
-      </p>
-    </section>
-
-    <section class="section" aria-labelledby="retire-h">
-      <h2 id="retire-h">Open contests</h2>
-      <p class="lede">
-        <strong>{summary.retirements}</strong> sitting members have confirmed they will not
-        recontest (dated sources). That includes{" "}
-        <strong>{openSeats}</strong> Assembly seats that will be open contests.
-      </p>
-      <ul class="retire-strip" role="list">
-        {
-          retireByParty.map((p) => (
-            <li>
-              <span class="swatch" style={`--party-colour:${partyColour(p.slug)}`} aria-hidden="true" />
-              <span class="rp-count">{p.count}</span>
-              <span class="rp-name">{p.short_name}</span>
-            </li>
-          ))
-        }
-      </ul>
-      <p class="btn-row">
-        <a class="btn btn-ghost" href="/open-seats">Full open seats &amp; retirements</a>
-        <a class="btn btn-ghost" href="/data/vic2026/retirements.json">retirements.json</a>
-      </p>
-    </section>
-
-    <section class="section video-home" aria-labelledby="video-home-h">
-      <h2 id="video-home-h">How this tracker works</h2>
-      <p class="muted video-home-lead">
-        Optional explainer. Figures in the video are a snapshot — live numbers on this site
-        update as records are verified.
-      </p>
-      <YouTubeLite
-        id={VIDEOS.tracker.id}
-        title={VIDEOS.tracker.title}
-        blurb={VIDEOS.tracker.blurb}
-      />
+      <p><a class="btn btn-ghost" href="/elections">Full Australian election calendar</a></p>
     </section>
 
     <section class="section trust" aria-labelledby="trust-h">
-      <h2 id="trust-h">How to check our work</h2>
+      <h2 id="trust-h">Check the work</h2>
       <div class="trust-grid">
-        <a class="card trust-card" href="/methodology">
-          <h3>Methodology</h3>
-          <p>Statuses, evidence rules, and how coverage is counted.</p>
-        </a>
-        <a class="card trust-card" href="/data">
-          <h3>Open data</h3>
-          <p>JSON and CSV under CC BY 4.0 — same facts as the HTML.</p>
-        </a>
-        <a class="card trust-card" href={SITE.repo}>
-          <h3>Source repository</h3>
-          <p>Every change is a reviewable commit in a public Git repo.</p>
-        </a>
-        <a class="card trust-card" href={SITE.issues}>
-          <h3>Submit a correction</h3>
-          <p>Tip a candidacy with a public source URL and date.</p>
-        </a>
-        <a class="card trust-card" href="/about">
-          <h3>Independence</h3>
-          <p>Who publishes this site and how it stays non-partisan.</p>
-        </a>
+        <a class="card" href="/methodology"><h3>Methodology</h3><p>One set of evidence and neutrality rules.</p></a>
+        <a class="card" href={SITE.repo}><h3>Public repository</h3><p>Every change remains reviewable in Git.</p></a>
+        <a class="card" href={SITE.issues}><h3>Submit a correction</h3><p>Provide a public source and date.</p></a>
+        <a class="card" href="/about"><h3>Independence</h3><p>Publisher, authorisation and project boundaries.</p></a>
       </div>
     </section>
   </div>
 </Base>
 
 <style>
-  .hero {
-    padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
-    background:
-      radial-gradient(60rem 22rem at 12% -8%, var(--accent-wash), transparent 70%),
-      var(--paper);
+  .national-hero {
+    padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem);
+    background: radial-gradient(60rem 24rem at 12% -8%, var(--accent-wash), transparent 70%), var(--paper);
     border-bottom: 1px solid var(--rule);
   }
-  .hero h1 {
-    max-width: 20ch;
-  }
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.7rem;
-    margin: 1.6rem 0 0;
-  }
-  .prelaunch {
-    margin-top: 1.75rem;
-    max-width: 48rem;
-  }
-  /* Even vertical rhythm: countdown + sections share one spacing scale */
-  .home-body {
-    padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
-  }
-  .home-body :global(.countdown) {
-    margin-top: clamp(1.5rem, 3vw, 2rem);
-  }
-  .home-body > .section {
-    padding-block: clamp(1.75rem, 3.5vw, 2.5rem);
-  }
-  .paths h2,
-  .section > h2 {
-    margin: 0 0 0.85rem;
-    font-size: 1.25rem;
-  }
-  .path-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr));
-    gap: 1rem;
-  }
-  .path-card {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  }
-  .path-card:hover {
-    border-color: var(--accent);
-    box-shadow: var(--shadow);
-  }
-  .path-card h3 {
-    margin: 0 0 0.4rem;
-    font-size: 1.05rem;
-  }
-  .path-card p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--ink-2);
-    line-height: 1.45;
-  }
-  .caveat {
-    margin-bottom: 1.25rem;
-  }
-  .after-stats {
-    margin-top: 0.9rem;
-  }
-  .teaser {
-    margin-bottom: 1rem;
-  }
-  .held-split {
-    font-size: 0.82em;
-    font-weight: 400;
-  }
-  .party-cell {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-  }
-  .bar {
-    display: block;
-    height: 0.45rem;
-    min-width: 4.5rem;
-    background: var(--surface-2);
-    border-radius: 999px;
-    overflow: hidden;
-  }
-  .bar-fill {
-    display: block;
-    height: 100%;
-    background: var(--party-colour, var(--accent));
-    border-radius: inherit;
-  }
-  .mono {
-    font-variant-numeric: tabular-nums;
-  }
-  .retire-strip {
-    list-style: none;
-    margin: 0 0 1rem;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem 1.25rem;
-  }
-  .retire-strip li {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.92rem;
-  }
-  .rp-count {
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-  }
-  .video-home-lead {
-    margin: 0 0 0.85rem;
-    max-width: 40rem;
-  }
-  .trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-    gap: 1rem;
-  }
-  .trust-card {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
-  .trust-card:hover {
-    border-color: var(--accent);
-  }
-  .trust-card h3 {
-    margin: 0 0 0.35rem;
-    font-size: 1.02rem;
-  }
-  .trust-card p {
-    margin: 0;
-    font-size: 0.88rem;
-    color: var(--ink-2);
-    line-height: 1.45;
+  .national-hero h1 { max-width: 18ch; }
+  .hero-actions { margin-top: 1.5rem; }
+  .national-body { padding-bottom: 2.5rem; }
+  .national-body :global(.countdown) { margin-top: 1.75rem; }
+  .section { padding-block: clamp(2rem, 4vw, 3rem); }
+  .section > h2 { margin-top: 0; }
+  .current-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr); gap: 1rem; }
+  .date-line { font-size: 1.2rem; }
+  .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+  .stats div { padding: 0.75rem; background: var(--surface-2); border-radius: 0.55rem; }
+  .stats dt { color: var(--ink-3); font-size: 0.78rem; }
+  .stats dd { margin: 0.25rem 0 0; font-size: 1.35rem; font-weight: 700; }
+  .principle-card h3, .upcoming-card h3, .trust-grid h3 { margin-top: 0; }
+  .upcoming-grid, .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; }
+  .jurisdiction { margin: 0 0 0.35rem; color: var(--ink-3); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .trust-grid a { color: inherit; text-decoration: none; }
+  .trust-grid a:hover { border-color: var(--accent); }
+  .trust-grid p { margin-bottom: 0; color: var(--ink-2); }
+  @media (max-width: 48rem) {
+    .current-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 </style>

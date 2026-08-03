@@ -17,19 +17,24 @@ jobs:
 
       # Order matters: data must be valid before it is exported, and exported
       # before the site is built. Any failure here stops the run, so Cloudflare
-      # Pages never deploys a build made from invalid or unsourced records.
+      # never deploys a build made from invalid or unsourced records.
       - name: Validate data (schema, vocabulary, sources, referential integrity)
         run: npm run validate
 
       - name: Generate JSON + CSV exports
         run: npm run export
 
-      # Footer imports generated/build-meta.json; must match npm run build.
       - name: Write build meta
         run: node scripts/write-build-meta.mjs
 
       - name: Build site
         run: npx astro build --root site
+
+      - name: Rewrite scoped election links and reject legacy links
+        run: node scripts/rewrite-scoped-routes.mjs
+
+      - name: Finalise sitemap
+        run: node scripts/finalize-sitemap.mjs
 
       - name: Upload exports
         uses: actions/upload-artifact@v4

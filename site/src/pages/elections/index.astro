@@ -1,19 +1,14 @@
 ---
 import Base from "../../layouts/Base.astro";
 import SourceLink from "../../components/SourceLink.astro";
-import { SITE, formatDate } from "../../lib/site.mjs";
-import {
-  ELECTION_DATE_STATUS,
-  loadElectionCalendar,
-} from "../../lib/electionCalendar.mjs";
+import { SITE } from "../../lib/site.mjs";
+import { ELECTION_DATE_STATUS, loadElectionCalendar } from "../../lib/electionCalendar.mjs";
 
 const calendar = loadElectionCalendar();
-
 const schema = {
   "@type": "CollectionPage",
   name: "Upcoming Australian elections",
-  description:
-    "Sourced dates, expected years and lawful date windows for the next federal, state and territory parliamentary elections in Australia.",
+  description: "Sourced dates, expected years and lawful date windows for the next federal, state and territory parliamentary elections in Australia.",
   url: `${SITE.url}/elections`,
   isPartOf: { "@id": `${SITE.url}/#website` },
   dateModified: calendar.updated,
@@ -30,255 +25,92 @@ const schema = {
     <h1>Upcoming elections</h1>
     <p class="lede">
       The next general parliamentary election for the Commonwealth and every state and
-      territory. Each entry says whether the date is officially confirmed, calculated from
-      a fixed cycle, shown as a legal window, or not fixed.
+      territory. Each entry states how certain the date is and cites the authoritative source.
     </p>
 
     <div class="notice" role="note">
-      <strong>Dates are not all equally certain.</strong> A calculated statutory date is not
-      described as an announced date. By-elections, local government elections and
-      referendums are outside this calendar unless separately added to the tracker.
+      <strong>Dates are not all equally certain.</strong> Calculated statutory dates are not
+      described as announced dates. By-elections, local elections and referendums are outside
+      this calendar unless separately added.
     </div>
 
     <div class="calendar-list">
-      {
-        calendar.elections.map((entry) => {
-          const status = ELECTION_DATE_STATUS[entry.status];
-          return (
-            <article class="election-card card">
-              <header>
-                <div>
-                  <p class="jurisdiction">{entry.name}</p>
-                  <h2>{entry.date_label}</h2>
-                </div>
-                <span class={`date-status status-${entry.status}`}>{status.label}</span>
-              </header>
-
-              <p class="election-name">{entry.election_name}</p>
-              <p>{entry.basis}</p>
-              {entry.note && <p class="note muted">{entry.note}</p>}
-
-              <dl>
-                <div>
-                  <dt>Planned tracker path</dt>
-                  <dd><code>{entry.planned_path}</code></dd>
-                </div>
-                <div>
-                  <dt>Source</dt>
-                  <dd><SourceLink source={entry.source} /></dd>
-                </div>
-              </dl>
-            </article>
-          );
-        })
-      }
+      {calendar.elections.map((entry) => {
+        const status = ELECTION_DATE_STATUS[entry.status];
+        const live = entry.jurisdiction === "vic";
+        return (
+          <article class={`election-card card ${live ? "is-live" : ""}`}>
+            <header>
+              <div>
+                <p class="jurisdiction">{entry.name}</p>
+                <h2>{entry.date_label}</h2>
+              </div>
+              <span class={`date-status status-${entry.status}`}>{status.label}</span>
+            </header>
+            <p class="election-name">{entry.election_name}</p>
+            <p>{entry.basis}</p>
+            {entry.note && <p class="muted">{entry.note}</p>}
+            {live ? (
+              <p><a class="btn" href={entry.planned_path}>Open active tracker</a></p>
+            ) : (
+              <p class="planned"><span>Planned path</span> <code>{entry.planned_path}</code></p>
+            )}
+            <p class="source"><SourceLink source={entry.source} /></p>
+          </article>
+        );
+      })}
     </div>
 
     <section class="section periodic" aria-labelledby="periodic-h">
       <p class="eyebrow">Separate parliamentary cycle</p>
       <h2 id="periodic-h">Tasmania’s Legislative Council</h2>
-      <p>
-        Tasmania does not elect its entire upper house with the House of Assembly. Two or
-        three Legislative Council divisions vote each May on a rotating six-year cycle.
-      </p>
-      {
-        calendar.periodicElections.map((entry) => (
-          <article class="card periodic-card">
-            <div>
-              <h3>{entry.date_label}</h3>
-              <p class="election-name">{entry.election_name}</p>
-              <p>{entry.basis}</p>
-              <p><strong>Divisions:</strong> {entry.contests.join(", ")}</p>
-            </div>
-            <dl>
-              <div>
-                <dt>Planned tracker path</dt>
-                <dd><code>{entry.planned_path}</code></dd>
-              </div>
-              <div>
-                <dt>Source</dt>
-                <dd><SourceLink source={entry.source} /></dd>
-              </div>
-            </dl>
-          </article>
-        ))
-      }
+      <p>Two or three divisions vote each May on a rotating six-year cycle, separately from the House of Assembly.</p>
+      {calendar.periodicElections.map((entry) => (
+        <article class="card periodic-card">
+          <div>
+            <h3>{entry.date_label}</h3>
+            <p>{entry.election_name}</p>
+            <p>{entry.basis}</p>
+            <p><strong>Divisions:</strong> {entry.contests.join(", ")}</p>
+          </div>
+          <div>
+            <p><code>{entry.planned_path}</code></p>
+            <SourceLink source={entry.source} />
+          </div>
+        </article>
+      ))}
     </section>
 
-    <section class="section method" aria-labelledby="method-h">
+    <section class="section" aria-labelledby="labels-h">
       <p class="eyebrow">Methodology</p>
-      <h2 id="method-h">How election dates are labelled</h2>
+      <h2 id="labels-h">What the labels mean</h2>
       <dl class="legend">
-        {
-          Object.entries(ELECTION_DATE_STATUS).map(([key, item]) => (
-            <div>
-              <dt><span class={`date-status status-${key}`}>{item.label}</span></dt>
-              <dd>{item.explanation}</dd>
-            </div>
-          ))
-        }
+        {Object.entries(ELECTION_DATE_STATUS).map(([key, item]) => (
+          <div><dt><span class={`date-status status-${key}`}>{item.label}</span></dt><dd>{item.explanation}</dd></div>
+        ))}
       </dl>
-      <p>
-        The calendar prefers electoral commissions, parliaments and current legislation.
-        Every entry records its source and verification date. When a writ or official
-        announcement supersedes a calculated date or legal window, the entry is updated
-        rather than silently reinterpreted.
-      </p>
-      <p>
-        Global person pages will use permanent paths such as <code>/people/warren-pickering</code>.
-        Election-specific material will progressively move under paths such as
-        <code>/elections/vic/2026</code>, allowing the same platform to cover later state,
-        territory and federal elections without treating Victoria 2026 as the permanent root.
-      </p>
-      <p class="muted updated">Calendar verified {formatDate(calendar.updated)}.</p>
+      <p><a href="/methodology#election-dates">Full election-date methodology</a></p>
     </section>
   </div>
 </Base>
 
 <style>
-  .calendar-page {
-    max-width: 78rem;
-  }
-  .calendar-page > .lede,
-  .calendar-page > .notice {
-    max-width: 62rem;
-  }
-  .calendar-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  .election-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    min-width: 0;
-    box-shadow: var(--shadow);
-  }
-  .election-card header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 0.8rem 1rem;
-  }
-  .election-card h2,
-  .periodic-card h3 {
-    margin: 0.15rem 0 0;
-    font-size: 1.45rem;
-    letter-spacing: -0.025em;
-  }
-  .jurisdiction {
-    margin: 0;
-    color: var(--ink-3);
-    font-size: 0.75rem;
-    font-weight: 760;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-  .election-name {
-    margin: 0;
-    color: var(--ink);
-    font-weight: 680;
-  }
-  .election-card > p,
-  .periodic-card p {
-    margin-block: 0;
-  }
-  .note {
-    font-size: 0.9rem;
-  }
-  .date-status {
-    display: inline-flex;
-    align-items: center;
-    width: fit-content;
-    flex: none;
-    padding: 0.22rem 0.5rem;
-    border: 1px solid var(--rule-strong);
-    border-radius: 999px;
-    background: var(--surface-2);
-    color: var(--ink-2);
-    font-size: 0.7rem;
-    font-weight: 740;
-    letter-spacing: 0.02em;
-    line-height: 1.2;
-  }
-  .status-confirmed {
-    border-color: color-mix(in srgb, #237a4b 55%, var(--rule));
-    background: color-mix(in srgb, #237a4b 10%, var(--surface));
-  }
-  .status-fixed_cycle,
-  .status-periodic {
-    border-color: color-mix(in srgb, var(--accent) 55%, var(--rule));
-    background: var(--accent-wash);
-  }
-  .status-window,
-  .status-not_fixed {
-    border-style: dashed;
-  }
-  dl {
-    margin: auto 0 0;
-  }
-  .election-card dl,
-  .periodic-card dl {
-    display: grid;
-    gap: 0.65rem;
-    padding-top: 0.85rem;
-    border-top: 1px solid var(--rule);
-  }
-  dt {
-    margin-bottom: 0.15rem;
-    color: var(--ink-3);
-    font-size: 0.68rem;
-    font-weight: 760;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  dd {
-    margin: 0;
-  }
-  code {
-    overflow-wrap: anywhere;
-  }
-  .periodic {
-    max-width: 62rem;
-  }
-  .periodic-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(16rem, 1fr);
-    gap: 1.25rem 2rem;
-    margin-top: 1rem;
-  }
-  .method {
-    max-width: 62rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid var(--rule);
-  }
-  .legend {
-    display: grid;
-    gap: 0.75rem;
-    margin: 1.25rem 0 1.5rem;
-  }
-  .legend > div {
-    display: grid;
-    grid-template-columns: 10rem minmax(0, 1fr);
-    align-items: start;
-    gap: 0.6rem 1rem;
-  }
-  .legend dt {
-    margin: 0;
-  }
-  .legend dd {
-    color: var(--ink-2);
-  }
-  .updated {
-    margin-top: 1.5rem;
-    font-size: 0.88rem;
-  }
-  @media (max-width: 42rem) {
-    .periodic-card,
-    .legend > div {
-      grid-template-columns: 1fr;
-    }
-  }
+  .calendar-page { max-width: 70rem; }
+  .calendar-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .election-card header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+  .election-card h2 { margin: 0.1rem 0 0; font-size: 1.35rem; }
+  .election-card.is-live { border-color: var(--accent); }
+  .jurisdiction { margin: 0; color: var(--ink-3); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .election-name { font-weight: 650; }
+  .date-status { display: inline-flex; padding: 0.22rem 0.5rem; border: 1px solid var(--rule-strong); border-radius: 999px; background: var(--surface-2); font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
+  .status-confirmed { border-color: var(--accent); background: var(--accent-wash); }
+  .planned { font-size: 0.85rem; color: var(--ink-3); }
+  .planned span { margin-right: 0.4rem; }
+  .source { margin-bottom: 0; }
+  .periodic-card { display: grid; grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr); gap: 1rem; }
+  .periodic-card h3 { margin-top: 0; }
+  .legend { display: grid; gap: 0.75rem; }
+  .legend div { display: grid; grid-template-columns: 10rem 1fr; gap: 1rem; align-items: start; }
+  .legend dd { margin: 0; color: var(--ink-2); }
+  @media (max-width: 42rem) { .periodic-card, .legend div { grid-template-columns: 1fr; } }
 </style>
