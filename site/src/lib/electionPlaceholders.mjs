@@ -113,6 +113,10 @@ export function loadElectionPlaceholders() {
   }
 
   return entries
-    .map((entry) => ({ ...entry, ...calendarByPath.get(entry.planned_path) }))
+    .map((entry) => ({
+      ...entry,
+      ...calendarByPath.get(entry.planned_path),
+      updated: placeholders.updated,
+    }))
     .sort((a, b) => a.date_sort.localeCompare(b.date_sort));
 }
