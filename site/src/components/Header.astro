@@ -2,7 +2,7 @@
 import { SITE } from "../lib/site.mjs";
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const nav = [
-  { href: "/elections", label: "Elections" },
+  { href: "/elections", label: "Upcoming elections" },
   { href: "/assembly", label: "Assembly" },
   { href: "/council", label: "Council" },
   { href: "/parties", label: "Parties" },
@@ -180,6 +180,23 @@ const isCurrent = (href) => path === href || path.startsWith(href + "/");
   nav a[aria-current="page"] {
     color: var(--ink);
     border-bottom-color: var(--accent);
+  }
+  nav a[href="/elections"] {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.34rem 0.72rem;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    background: var(--accent-wash);
+    color: var(--ink);
+    font-weight: 650;
+    line-height: 1.2;
+  }
+  nav a[href="/elections"]:hover,
+  nav a[href="/elections"][aria-current="page"] {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, var(--surface));
+    color: var(--ink);
   }
 
   .theme-toggle {
