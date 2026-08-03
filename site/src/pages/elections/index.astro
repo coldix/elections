@@ -50,11 +50,11 @@ const schema = {
             <p class="election-name">{entry.election_name}</p>
             <p>{entry.basis}</p>
             {entry.note && <p class="muted">{entry.note}</p>}
-            {live ? (
-              <p><a class="btn" href={entry.planned_path}>Open active tracker</a></p>
-            ) : (
-              <p class="planned"><span>Planned path</span> <code>{entry.planned_path}</code></p>
-            )}
+            <p>
+              <a class={`btn ${live ? "" : "btn-ghost"}`} href={entry.planned_path}>
+                {live ? "Open active tracker" : "View election outline"}
+              </a>
+            </p>
             <p class="source"><SourceLink source={entry.source} /></p>
           </article>
         );
@@ -73,8 +73,8 @@ const schema = {
             <p>{entry.basis}</p>
             <p><strong>Divisions:</strong> {entry.contests.join(", ")}</p>
           </div>
-          <div>
-            <p><code>{entry.planned_path}</code></p>
+          <div class="periodic-actions">
+            <p><a class="btn btn-ghost" href={entry.planned_path}>View election outline</a></p>
             <SourceLink source={entry.source} />
           </div>
         </article>
@@ -104,11 +104,10 @@ const schema = {
   .election-name { font-weight: 650; }
   .date-status { display: inline-flex; padding: 0.22rem 0.5rem; border: 1px solid var(--rule-strong); border-radius: 999px; background: var(--surface-2); font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
   .status-confirmed { border-color: var(--accent); background: var(--accent-wash); }
-  .planned { font-size: 0.85rem; color: var(--ink-3); }
-  .planned span { margin-right: 0.4rem; }
   .source { margin-bottom: 0; }
   .periodic-card { display: grid; grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr); gap: 1rem; }
   .periodic-card h3 { margin-top: 0; }
+  .periodic-actions { align-self: start; }
   .legend { display: grid; gap: 0.75rem; }
   .legend div { display: grid; grid-template-columns: 10rem 1fr; gap: 1rem; align-items: start; }
   .legend dd { margin: 0; color: var(--ink-2); }
