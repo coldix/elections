@@ -12,11 +12,19 @@ const statuses = [
   ["Elected", "Declared elected.", "The commission's declaration."],
   ["Defeated", "Contested and not elected.", "The commission's results."],
 ];
+
+const electionDateStatuses = [
+  ["Confirmed", "An electoral commission or other authoritative body has published the polling date."],
+  ["Fixed-cycle date", "Calculated directly from a statutory recurring rule. Exceptional postponement may still be possible."],
+  ["Legal window", "No polling day has been announced, so the normal or lawful election range is shown."],
+  ["Not fixed", "The term or expected year is known, but an earlier election may be called."],
+  ["Periodic election", "A recurring partial parliamentary election held separately from the jurisdiction's general election."],
+];
 ---
 
 <Base
   title="Methodology"
-  description="How the Australian Election Tracker defines candidate statuses, what evidence each requires, how coverage is counted, and how corrections are handled."
+  description="How the Australian Election Tracker defines candidate statuses, election-date certainty, evidence requirements, coverage, corrections and neutrality."
 >
   <div class="wrap wrap-narrow section">
     <p class="eyebrow">How this works</p>
@@ -77,6 +85,57 @@ const statuses = [
       </li>
     </ul>
 
+    <h2 id="election-dates">Election calendar and date certainty</h2>
+    <p>
+      The <a href="/elections">upcoming elections calendar</a> covers the next general
+      parliamentary election for the Commonwealth and every state and territory. It does
+      not treat all future dates as equally certain.
+    </p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead>
+          <tr>
+            <th scope="col">Label</th>
+            <th scope="col">Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            electionDateStatuses.map(([name, meaning]) => (
+              <tr>
+                <th scope="row">{name}</th>
+                <td>{meaning}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>Electoral commissions, parliaments and current legislation are preferred.</li>
+      <li>Every calendar entry carries a source and verification date.</li>
+      <li>A calculated statutory date is never described as announced or confirmed.</li>
+      <li>
+        Where a lawful range is more useful than a speculative date, the range is shown and
+        the kind of election it applies to is stated.
+      </li>
+      <li>
+        When an official writ or announcement supersedes a calculated date or window, the
+        entry is updated and the change remains visible in Git history.
+      </li>
+      <li>
+        By-elections, local government elections and referendums are outside the calendar
+        unless separately added. Tasmania's rotating Legislative Council elections are
+        included as a clearly labelled parliamentary exception.
+      </li>
+    </ul>
+    <p>
+      Person pages will use permanent paths such as <code>/people/warren-pickering</code>.
+      Election material will progressively use scoped paths such as
+      <code>/elections/vic/2026</code>, with <code>/next</code> used where the election year
+      is not yet sufficiently certain.
+    </p>
+
     <h2 id="coverage">How coverage is counted</h2>
     <p>
       A party "covers" a district when we hold at least one individually sourced record of
@@ -96,7 +155,7 @@ const statuses = [
     <p>
       The inverse also holds: a district with no recorded candidate means we have not
       verified one, not that nobody is standing. Nominations for the 2026 Victorian state
-      election do not close until 13 November 2026, and the Victorian Electoral Commission
+      election close at 12 noon on 9 November 2026, and the Victorian Electoral Commission
       is the authoritative source for the final ballot.
     </p>
 
@@ -119,11 +178,10 @@ const statuses = [
       </li>
       <li id="ordering">
         <strong>Ordering.</strong> Party listings are ordered by the number of seats the
-        party currently holds in the Parliament of Victoria (both houses), largest first,
-        then alphabetically. That is an objective, externally verifiable fact about the
-        sitting parliament. Listings are never ordered by candidate coverage, campaign
-        activity, polling or any editorial judgement of importance — and district listings
-        are ordered by seat name.
+        party currently holds in the relevant parliament, largest first, then alphabetically.
+        That is an objective, externally verifiable fact. Listings are never ordered by
+        candidate coverage, campaign activity, polling or any editorial judgement of
+        importance, and electorate listings are ordered by seat name.
       </li>
       <li>
         Party colours appear only inside party-specific data visualisation. The platform's
@@ -215,9 +273,9 @@ const statuses = [
     </p>
 
     <p class="foot muted">
-      Candidate rules on this page mirror <code>docs/METHODOLOGY.md</code> in the
-      <a href={SITE.repo}>public repository</a>. Poll rules live in
-      <code>docs/POLL-METHODOLOGY.md</code>. Policy rules live in
+      Candidate and election-calendar rules on this page mirror
+      <code>docs/METHODOLOGY.md</code> in the <a href={SITE.repo}>public repository</a>.
+      Poll rules live in <code>docs/POLL-METHODOLOGY.md</code>. Policy rules live in
       <code>docs/POLICY-METHODOLOGY.md</code>. Each carries its own change history.
     </p>
   </div>

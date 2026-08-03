@@ -1,0 +1,183 @@
+calendar:
+  updated: 2026-08-03
+  scope: >-
+    The next general parliamentary election for the Commonwealth and each state
+    or territory. By-elections, local government elections and referendums are
+    excluded. Tasmania's separately elected Legislative Council is listed as a
+    recurring parliamentary exception.
+
+  elections:
+    - jurisdiction: vic
+      name: Victoria
+      election_name: 2026 Victorian state election
+      planned_path: /elections/vic/2026
+      date_label: 28 November 2026
+      date_sort: 2026-11-28
+      polling_day: 2026-11-28
+      status: confirmed
+      basis: Official polling date published by the Victorian Electoral Commission.
+      source:
+        url: https://www.vec.vic.gov.au/voting/types-of-elections/state-elections
+        publisher: Victorian Electoral Commission
+        title: State elections
+        accessed: 2026-08-03
+
+    - jurisdiction: nsw
+      name: New South Wales
+      election_name: 2027 NSW state election
+      planned_path: /elections/nsw/2027
+      date_label: 13 March 2027
+      date_sort: 2027-03-13
+      polling_day: 2027-03-13
+      status: confirmed
+      basis: Official polling date published by the NSW Electoral Commission.
+      source:
+        url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+        publisher: NSW Electoral Commission
+        title: 2027 NSW State election
+        accessed: 2026-08-03
+
+    - jurisdiction: federal
+      name: Federal
+      election_name: Next Australian federal election
+      planned_path: /elections/federal/next
+      date_label: Expected in 2028
+      date_sort: 2027-08-07
+      earliest: 2027-08-07
+      latest: 2028-05-20
+      status: window
+      basis: >-
+        Legal window for the usual simultaneous House of Representatives and
+        half-Senate election. A separate House-only election could occur later.
+      note: "Normal simultaneous election window: 7 August 2027 to 20 May 2028."
+      source:
+        url: https://www.aph.gov.au/About_Parliament/Parliamentary_departments/Parliamentary_Library/Research/FlagPost/2025/August/When_is_the_next_federal_election
+        publisher: Parliament of Australia
+        title: When is the next federal election?
+        published: 2025-08-06
+        accessed: 2026-08-03
+
+    - jurisdiction: nt
+      name: Northern Territory
+      election_name: 2028 Northern Territory election
+      planned_path: /elections/nt/2028
+      date_label: 26 August 2028
+      date_sort: 2028-08-26
+      polling_day: 2028-08-26
+      status: fixed_cycle
+      basis: >-
+        Calculated from the statutory rule: the fourth Saturday in August every
+        four years. The NTEC identifies August 2028 as the next election.
+      source:
+        url: https://ntec.nt.gov.au/elections/about-elections/legislative-assembly-elections/timetable
+        publisher: Northern Territory Electoral Commission
+        title: Legislative Assembly election timetable
+        accessed: 2026-08-03
+
+    - jurisdiction: act
+      name: Australian Capital Territory
+      election_name: 2028 ACT Legislative Assembly election
+      planned_path: /elections/act/2028
+      date_label: 21 October 2028
+      date_sort: 2028-10-21
+      polling_day: 2028-10-21
+      status: fixed_cycle
+      basis: >-
+        Calculated from the statutory four-year cycle on the third Saturday in
+        October. Elections ACT states the current members' terms end that day.
+      source:
+        url: https://www.elections.act.gov.au/elections/our-electoral-system/current-members-of-the-legislative-assembly
+        publisher: Elections ACT
+        title: Current members of the Legislative Assembly
+        accessed: 2026-08-03
+
+    - jurisdiction: qld
+      name: Queensland
+      election_name: 2028 Queensland state election
+      planned_path: /elections/qld/2028
+      date_label: 28 October 2028
+      date_sort: 2028-10-28
+      polling_day: 2028-10-28
+      status: fixed_cycle
+      basis: >-
+        Normal polling day under the Constitution of Queensland: the last
+        Saturday in October in the fourth calendar year after the previous
+        ordinary general election.
+      note: May be postponed by up to 35 days in exceptional circumstances.
+      source:
+        url: https://www.legislation.qld.gov.au/view/whole/html/inforce/2026-04-18/act-2001-080
+        publisher: Queensland Legislation
+        title: Constitution of Queensland 2001, section 19B
+        accessed: 2026-08-03
+
+    - jurisdiction: wa
+      name: Western Australia
+      election_name: 2029 Western Australian state election
+      planned_path: /elections/wa/2029
+      date_label: 10 March 2029
+      date_sort: 2029-03-10
+      polling_day: 2029-03-10
+      status: fixed_cycle
+      basis: >-
+        Calculated from the fixed cycle: conjoint general elections are held on
+        the second Saturday in March every four years.
+      source:
+        url: https://www.elections.wa.gov.au/about-us/media/state-elections-information
+        publisher: Western Australian Electoral Commission
+        title: State Elections Information
+        accessed: 2026-08-03
+
+    - jurisdiction: tas
+      name: Tasmania
+      election_name: Next Tasmanian House of Assembly election
+      planned_path: /elections/tas/next
+      date_label: By 2029, unless held earlier
+      date_sort: 2029-07-01
+      expected_year: 2029
+      status: not_fixed
+      basis: >-
+        The House of Assembly has a maximum term of four years, but the polling
+        date is not fixed and the House may be dissolved earlier.
+      source:
+        url: https://www.tec.tas.gov.au/house-of-assembly/
+        publisher: Tasmanian Electoral Commission
+        title: House of Assembly elections
+        accessed: 2026-08-03
+
+    - jurisdiction: sa
+      name: South Australia
+      election_name: 2030 South Australian state election
+      planned_path: /elections/sa/2030
+      date_label: 16 March 2030
+      date_sort: 2030-03-16
+      polling_day: 2030-03-16
+      status: fixed_cycle
+      basis: >-
+        Calculated from the four-year cycle on the third Saturday in March,
+        following the election held on 21 March 2026.
+      source:
+        url: https://education.parliament.sa.gov.au/have-your-say/voting/
+        publisher: Parliament of South Australia
+        title: Voting
+        accessed: 2026-08-03
+
+  periodic_elections:
+    - jurisdiction: tas
+      name: Tasmania Legislative Council
+      election_name: 2027 periodic Legislative Council elections
+      planned_path: /elections/tas/2027/legislative-council
+      date_label: May 2027
+      date_sort: 2027-05-01
+      status: periodic
+      contests:
+        - Derwent
+        - Mersey
+        - Windermere
+      basis: >-
+        Tasmania elects part of its Legislative Council every May on a six-year
+        rotating cycle, separately from House of Assembly elections.
+      source:
+        url: https://www.tec.tas.gov.au/legislative-council/index.html
+        publisher: Tasmanian Electoral Commission
+        title: Legislative Council elections
+        accessed: 2026-08-03
