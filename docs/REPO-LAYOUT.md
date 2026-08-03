@@ -1,63 +1,64 @@
 # Repository layout
 
-> **Version** `20260803.1638-aest+193f8a9` · **Updated** 2026-08-03 16:38 AEST  
-> git `main` @ [`193f8a9`](https://github.com/coldix/elections/commit/193f8a9) · hub [../README.md](../README.md)
+> **Version** `20260803.2111-aest+17599ed` · **Updated** 2026-08-03 21:11 AEST  
+> edited against `main` @ [`17599ed`](https://github.com/coldix/elections/commit/17599ed) · hub [../README.md](../README.md)
 
-Annotated map of this monorepo. Not a dump of every file (hundreds of candidate
-and policy YAMLs). For the one-screen summary, see [README → Repository layout](../README.md#repository-layout).
-
-**Convention:** `data/` is the source of truth; `site/` only renders it;
-`scripts/` validate and export; `schema/` is the contract.
+Annotated map of the Australian Election Tracker repository. `data/` is the
+source of truth, `scripts/` validate and export it, and `site/` renders the
+static public product.
 
 ## Top level
 
 ```text
 elections/
-├── README.md                 Project hub (start here)
-├── HANDOVER.md               Agent / session context
-├── HANDOVER-COALITION-VIEW.md  Notes for Coalition matrix view
-├── LICENSE                   MIT (code)
-├── package.json              npm scripts: validate, export, build, dev
+├── README.md                    project hub
+├── HANDOVER.md                  current operational handover
+├── HANDOVER-COALITION-VIEW.md   specialised coalition-view notes
+├── LICENSE                      MIT licence for code
+├── package.json                 scripts and dependencies
 ├── package-lock.json
-├── .node-version             Node 22
-├── .gitignore
-├── wrangler.jsonc            Cloudflare assets-only Worker → site/dist
-│
-├── data/                     YAML ledger (git = database)
-├── schema/                   JSON Schema for YAML records
-├── scripts/                  Validate, export, ops utilities
-├── site/                     Astro static site
-├── docs/                     Product + ops documentation
-├── images/                   Brand assets (source); also under site/public
-└── .github/                  Issue templates + CI workflows
+├── wrangler.jsonc               Cloudflare assets-only Worker
+├── data/                        sourced election records
+├── schema/                      JSON Schemas
+├── scripts/                     validation, export and build utilities
+├── site/                        Astro static site
+├── docs/                        product and operations documentation
+├── images/                      source brand assets
+└── .github/                     issue templates and workflows
 ```
 
-Omitted from trees below (generated / local only): `node_modules/`,
-`site/dist/`, `site/public/data/` (export artefacts), `.wrangler/`, `.cache/`.
+Generated or local-only directories such as `node_modules/`, `site/dist/`,
+`site/public/data/`, `.wrangler/` and `.cache/` are not source of truth.
 
-## `data/` — election epochs
+## `data/`
 
 ```text
 data/
-├── LICENSE                   CC BY 4.0 for data/
-└── vic2026/                  Victorian state election 2026
-    ├── election.yaml         Key dates, jurisdiction
-    ├── districts.yaml        88 Assembly seats + incumbents
-    ├── regions.yaml          8 Council regions
-    ├── council-members.yaml  Sitting MLCs (40)
-    ├── district-stats.yaml   Area / population (atlas)
-    ├── parties.yaml          Parties + independents grouping
-    ├── retirements.yaml      Confirmed not recontesting
-    ├── watch-sources.yaml    Lead-scan watch list
-    ├── issues.yaml           Policy issue catalogue
-    ├── coalitions.yaml       Optional Coalition display groups
-    ├── candidates/           One YAML per candidacy (*--*.yaml)
-    ├── policies/             One YAML per party × issue claim
-    └── polls/                Statewide primary-vote poll records
+├── LICENSE                       CC BY 4.0 for data
+├── election-calendar.yaml        next Australian elections and date certainty
+├── election-placeholders.yaml    future-election parliamentary structure
+└── vic2026/                      active Victorian election ledger
+    ├── election.yaml
+    ├── districts.yaml            88 Assembly districts
+    ├── regions.yaml              8 Council regions
+    ├── council-members.yaml      40 sitting MLCs
+    ├── district-stats.yaml
+    ├── parties.yaml
+    ├── retirements.yaml
+    ├── watch-sources.yaml
+    ├── issues.yaml
+    ├── coalitions.yaml
+    ├── candidates/               one YAML file per candidacy
+    ├── policies/                 sourced party × issue claims
+    └── polls/                    public statewide primary-vote polls
 ```
 
-Future elections: add `data/<election-id>/` with the same shape — do not fork the
-site (see ADR-3 in [DECISIONS.md](DECISIONS.md)).
+`election-calendar.yaml` owns dates and permanent planned paths.
+`election-placeholders.yaml` adds chambers, seats, election scope and voting
+systems for future foundation pages without duplicating calendar facts.
+
+Future full trackers should add `data/<election-id>/` and reuse the shared
+loaders and site structure.
 
 ## `schema/`
 
@@ -73,140 +74,147 @@ schema/
 
 ```text
 scripts/
-├── validate.mjs              Full data validation (CI + build gate)
-├── validate-coalitions.mjs   Coalition grouping checks
-├── export.mjs                JSON/CSV → site/public/data/
-├── write-build-meta.mjs      AEST build stamp → build-meta.json
-├── finalize-sitemap.mjs      Sitemap post-process
-├── check-sources.mjs         URL health report (does not publish)
-├── report-coverage.mjs       Party coverage snapshot
-├── scan-leads.mjs            Candidate lead scanner
-├── indexnow.mjs              IndexNow ping after deploy
-├── indexnow.key              Public key file for IndexNow
+├── check-repo-hygiene.mjs       orphan docs, broken links and debris checks
+├── validate.mjs                 data, sources and referential integrity
+├── validate-coalitions.mjs      coalition grouping checks
+├── export.mjs                   JSON/CSV → site/public/data/
+├── write-build-meta.mjs         build fingerprint
+├── rewrite-scoped-routes.mjs    scopes Victoria pages and rejects legacy links
+├── finalize-sitemap.mjs         final sitemap processing
+├── check-sources.mjs            source URL health report
+├── report-coverage.mjs          coverage snapshot
+├── scan-leads.mjs               candidate lead scanner
+├── indexnow.mjs                 post-deploy IndexNow ping
 └── lib/
-    ├── data.mjs              Load election, coverage, representation
-    ├── polls.mjs             Polls + average
-    ├── policies.mjs          Policy matrix + exports
+    ├── data.mjs                 election loader and derived figures
+    ├── polls.mjs                poll loader and average
+    ├── policies.mjs             policy matrix and exports
     ├── ledger-index.mjs
     └── scan-fetch.mjs
 ```
 
-Build order: **validate → export → write-build-meta → astro build → finalize-sitemap**.
+Production order:
 
-## `site/` — Astro app
+```text
+repo hygiene → data validation → export → build metadata → Astro build
+→ scoped-route rewrite/check → sitemap finalisation
+```
+
+## `site/`
 
 ```text
 site/
 ├── astro.config.mjs
-├── public/                   Static files copied into dist as-is
-│   ├── images/               Logos, maps, OG image, video thumbs
-│   ├── data/                 Generated exports (gitignored; from npm run export)
-│   ├── build-meta.json       Deploy fingerprint
+├── public/
+│   ├── _redirects               301 redirects from old Victorian routes
+│   ├── images/
+│   ├── data/                    generated exports, gitignored
+│   ├── build-meta.json
 │   ├── robots.txt
-│   ├── llms.txt
-│   └── …
+│   └── llms.txt
 └── src/
     ├── layouts/Base.astro
     ├── styles/global.css
-    ├── generated/build-meta.json   Imported by Footer
+    ├── components/
     ├── lib/
-    │   ├── site.mjs          SITE constants, party colours, dates
-    │   ├── videos.mjs
+    │   ├── site.mjs
+    │   ├── electionCalendar.mjs
+    │   ├── electionPlaceholders.mjs
     │   ├── policyProfiles.mjs
     │   └── policyDifferences.mjs
-    ├── components/           Coverage matrices, policy matrix, maps, charts…
-    └── pages/                File-based routes (see below)
+    ├── pages/                   national and permanent public routes
+    └── vicpages/                reusable Victoria 2026 route templates
 ```
 
-### Routes (`site/src/pages/`)
+### National and future-election routes
 
-| File | URL |
+| Source | Public URL |
 |---|---|
-| `index.astro` | `/` |
-| `assembly/index.astro` | `/assembly` |
-| `council/index.astro` | `/council` |
-| `districts/index.astro` | `/districts` |
-| `districts/[slug].astro` | `/districts/:slug` |
-| `regions/index.astro` | `/regions` |
-| `regions/[slug].astro` | `/regions/:slug` |
-| `parties/index.astro` | `/parties` |
-| `parties/[slug].astro` | `/parties/:slug` |
-| `parties/policies.astro` | `/parties/policies` |
-| `parties/[slug]/policies.astro` | `/parties/:slug/policies` |
-| `parties/matrix.astro` | `/parties/matrix` |
-| `parties/issues.astro` | `/parties/issues` |
-| `policies/index.astro` | `/policies` |
-| `policies/[slug].astro` | `/policies/:slug` |
-| `policies/key-differences.astro` | `/policies/key-differences` |
-| `polls.astro` | `/polls` |
-| `open-seats.astro` | `/open-seats` |
-| `voting.astro` | `/voting` |
-| `data.astro` | `/data` |
-| `methodology.astro` | `/methodology` |
-| `about.astro` | `/about` |
-| `privacy.astro` / `terms.astro` / `disclaimer.astro` | legal |
-| `404.astro` | custom 404 |
+| `site/src/pages/index.astro` | `/` |
+| `site/src/pages/elections/index.astro` | `/elections` |
+| `site/src/pages/elections/[...path].astro` | all future-election foundation paths |
+| `site/src/pages/methodology.astro` | `/methodology` |
+| legal/about pages | `/privacy`, `/terms`, `/disclaimer`, `/about` |
 
-### Notable components
+The catch-all future route is driven only by validated entries in
+`data/election-placeholders.yaml` and joins them to the calendar by
+`planned_path`.
+
+### Victoria 2026 routes
+
+The source templates live under `site/src/vicpages/`. The build publishes them
+beneath `/elections/vic/2026`:
 
 ```text
-site/src/components/
-├── CoverageMatrix.astro          Assembly 88-cell party grid
-├── CouncilCoverageMatrix.astro   Council 8-region party grid
-├── PolicyMatrix.astro / PolicyMatrixView.astro / PolicyCell.astro
-├── CoalitionPolicyCell.astro
-├── Countdown.astro
-├── VicRegionMap.astro / VicGeoMap.astro
-├── PollCharts.astro
-├── Header.astro / Footer.astro
-└── …
+/elections/vic/2026
+/elections/vic/2026/assembly
+/elections/vic/2026/council
+/elections/vic/2026/districts/*
+/elections/vic/2026/regions/*
+/elections/vic/2026/parties/*
+/elections/vic/2026/policies/*
+/elections/vic/2026/polls
+/elections/vic/2026/open-seats
+/elections/vic/2026/voting
+/elections/vic/2026/data
 ```
+
+`scripts/rewrite-scoped-routes.mjs` performs the scoped build transformation and
+fails when a generated Victorian page retains a legacy internal link. The old
+root-level addresses are preserved by `site/public/_redirects` only.
 
 ## `docs/`
 
 ```text
 docs/
-├── README.md                 Docs index + freshness
-├── REPO-LAYOUT.md            This file
+├── README.md                    documentation index
+├── REPO-LAYOUT.md               this file
 ├── SCOPE.md
-├── METHODOLOGY.md            Candidates
+├── METHODOLOGY.md
 ├── POLICY-METHODOLOGY.md
 ├── POLL-METHODOLOGY.md
 ├── OPS.md
 ├── DEPLOYMENT.md
-├── DECISIONS.md              ADRs
+├── DECISIONS.md
 ├── CHANGELOG.md
 ├── DISCOVERY.md
 ├── SOCIAL.md
+├── PEOPLE-PAGES-PROPOSAL.md     unapproved future concept
 ├── polls-inventory.md
-├── leads/                    Lead-scan notes
-└── *-gap.md / policy audits  Working notes (point-in-time)
+├── leads/                       working lead notes
+└── *-gap.md / audit notes       point-in-time research records
 ```
+
+The documentation graph is checked from the root README. Any Markdown file that
+cannot be reached through a link is treated as orphaned and fails
+`npm run check:repo`.
 
 ## `.github/`
 
 ```text
 .github/
-├── ISSUE_TEMPLATE/candidacy.yml
+├── ISSUE_TEMPLATE/
 └── workflows/
-    ├── validate.yml          validate + export + build on push/PR
-    ├── indexnow.yml          IndexNow after main deploy
-    └── source-health.yml     Weekly source URL check
+    ├── validate.yml             validate, export and build on push/PR
+    ├── indexnow.yml             IndexNow after main updates
+    └── source-health.yml        scheduled source URL checks
 ```
 
-## Generated artefacts (not source of truth)
+## Generated artefacts
 
-| Path | Produced by | Served as |
+| Path | Produced by | Public role |
 |---|---|---|
 | `site/public/data/**` | `npm run export` | `/data/**` |
 | `site/public/build-meta.json` | `write-build-meta.mjs` | `/build-meta.json` |
-| `site/dist/**` | `astro build` | Cloudflare assets root |
+| `site/dist/**` | `npm run build` | Cloudflare asset root |
 
-Do not hand-edit export JSON/CSV; change YAML under `data/` and rebuild.
+Do not hand-edit exports or `site/dist`. Change YAML or source templates and
+rebuild.
 
 ## Related
 
-- [README.md](../README.md) — short layout + how to run  
-- [DEPLOYMENT.md](DEPLOYMENT.md) — Cloudflare / domains  
-- [DECISIONS.md](DECISIONS.md) — why git-as-DB and static hosting  
-- [OPS.md](OPS.md) — editorial cadence  
+- [../README.md](../README.md)
+- [README.md](README.md)
+- [DEPLOYMENT.md](DEPLOYMENT.md)
+- [DECISIONS.md](DECISIONS.md)
+- [OPS.md](OPS.md)
