@@ -1,7 +1,7 @@
 # Methodology
 
-> **Version** `20260803.1909-aest+d68d420` · **Updated** 2026-08-03 19:09 AEST  
-> git `agent/upcoming-elections-implementation8` @ [`d68d420`](https://github.com/coldix/elections/commit/d68d420c4620cdf64df2524c25056d4faa73cdf5) · hub [../README.md](../README.md)
+> **Version** `20260803.2033-aest+654ffb4` · **Updated** 2026-08-03 20:33 AEST  
+> git `agent/people-links-policy` · hub [../README.md](../README.md)
 
 Published rules applied identically to every party and independent.
 
@@ -13,7 +13,7 @@ history with dates and sources.
 | Status | Meaning | Minimum evidence |
 |---|---|---|
 | `announced` | Person or media state an intention to stand; party endorsement not confirmed | Public statement by the person, party or a named news report |
-| `endorsed` | Party has preselected/endorsed the person for the seat | Party announcement, or news report citing the party |
+| `endorsed` | Party has preselected or endorsed the person for the seat | Party announcement, or news report citing the party |
 | `nominated` | Formal nomination accepted by the electoral commission | Commission nominations list |
 | `withdrawn` | Candidacy ended before or after nomination | Statement or news report; reason recorded neutrally if published |
 | `disendorsed` | Party revoked endorsement | Party statement or news report; wording sticks to the sourced fact |
@@ -25,13 +25,15 @@ Rumour and speculation are **not** statuses and are not recorded.
 ## Sourcing rules
 
 - Every status entry requires at least one source: URL, publisher, title,
-  date published, date accessed.
-- Prefer primary sources (commission, party, candidate) over secondary; record
-  secondary sources by outlet name, never "reports say".
+  date published and date accessed.
+- Prefer primary sources such as electoral commissions, parliaments, parties
+  and candidates over secondary sources.
+- Record secondary sources by outlet name, never with vague wording such as
+  "reports say".
 - Paywalled sources are acceptable if publicly citable; add an archive URL
   where possible.
-- Social media posts count only from verified/official accounts of the party
-  or candidate.
+- Social-media posts count as evidence only when they come from a confidently
+  identified official account of the party or candidate.
 
 ## Election calendar and date certainty
 
@@ -63,14 +65,41 @@ Rules:
   update the record and retain the change in Git history.
 - Public ordering uses `date_sort`, representing the earliest plausible or
   scheduled point, and does not imply political importance.
-- Permanent people pages use global paths such as `/people/warren-pickering`.
-  Election material progressively uses scoped paths such as
-  `/elections/vic/2026`, with `/next` reserved for jurisdictions where the year
-  is not yet sufficiently certain.
+- Election material uses scoped paths such as `/elections/vic/2026`, with
+  `/next` reserved for jurisdictions where the year is not sufficiently certain.
 
 The Astro calendar loader performs build-time checks for recognised statuses,
 ISO dates and complete sources. Invalid calendar data therefore fails the site
 build rather than publishing silently.
+
+## Candidate links
+
+Candidate cards may include a small number of external links. These links are
+provided for identification and further reading, not as endorsements.
+
+Use this order of preference:
+
+1. an official candidate, campaign, parliamentary or party profile
+2. one principal public political social-media account, where it can be
+   confidently identified
+3. Wikipedia only when no better official profile is available, clearly
+   labelled as an external reference
+
+Do not add several social accounts merely to increase exposure. Do not link a
+personal account unless the candidate publicly uses it for political
+campaigning. Dead, renamed or ambiguous accounts are removed rather than
+guessed.
+
+## Proposed people pages — not approved
+
+There are currently no `/people` routes and no separate people dataset. A
+possible future design is recorded in
+[PEOPLE-PAGES-PROPOSAL.md](PEOPLE-PAGES-PROPOSAL.md), but it remains a proposal
+only. No route, schema or public profile page should be created until the scope,
+minimum evidence and privacy rules are approved.
+
+For now, public information remains attached to the relevant election and
+candidate record, with external links following the rule above.
 
 ## Optional profile fields
 
@@ -79,45 +108,44 @@ and never required for a valid record.
 
 | Field | Use | Do not use for |
 |---|---|---|
-| `occupation` | Public job or role (e.g. lawyer, teacher, publican) | Guesswork |
-| `background` | One-line public career note | Family, sex, health, private life |
+| `occupation` | Public job or political role | Guesswork or private employment detail |
+| `background` | One-line public career note | Family, sex, health or private life |
 
-**Out of scope permanently (or without a new decision):** sex/gender as a
-required field, marital status, children, home address, personal contact
-details. Privacy policy: only what is already public in a political context.
+**Out of scope permanently, or without a new decision:** sex or gender as a
+required field, marital status, children, home address and personal contact
+details. Only information already public in a political context may be used.
 
-If occupation/background is filled, it should be checkable against a public
-source (campaign bio, party page, news profile).
+If occupation or background is filled, it should be checkable against a public
+source such as a campaign biography, party page or news profile.
 
 ## Corrections
 
-- Errors are corrected by a new commit; history is never rewritten. The
-  candidate file gains a `corrections` entry stating what was wrong, what
-  changed, and when.
-- Anyone may request a correction via GitHub Issues. Requests about living
-  persons are prioritised.
+- Errors are corrected by a new commit; history is never rewritten.
+- Where appropriate, the candidate file gains a `corrections` entry stating
+  what was wrong, what changed and when.
+- A genuine change of candidacy is recorded as status history, not disguised as
+  a correction or deletion.
+- Anyone may request a correction through GitHub Issues. Requests concerning
+  living people are prioritised.
 
 ## Neutrality
 
-- All registered parties and independents get identical structure, rules and
-  display treatment.
-- **Ordering.** Party listings are ordered by seats currently held in the
-  relevant parliament (both houses where applicable), largest first, then
-  alphabetically — an objective, externally verifiable fact. District or
-  electorate listings are ordered by seat name. Listings are never ordered by
-  candidate coverage, campaign activity, polling, or any editorial judgement of
-  importance.
-- Editorial features (e.g. coverage dashboards) are generated from the same
-  data for every party.
-- No payments, sponsorship or advertising can affect coverage, ordering or
-  verification. Any sponsorship is disclosed on the site.
+- All registered parties and independents receive identical structure, rules
+  and display treatment.
+- Party listings are ordered by seats currently held in the relevant parliament,
+  largest first, then alphabetically. Districts and electorates are ordered by
+  seat name.
+- Listings are never ordered by candidate coverage, campaign activity, polling
+  or an editorial judgement of importance.
+- Editorial features are generated from the same data for every party.
+- No payment, sponsorship or advertising can affect coverage, ordering or
+  verification. Any sponsorship must be disclosed.
 
 ## What is never published
 
-- Unverified submissions (they live in GitHub Issues until verified or closed,
-  and issues containing unsourced claims about living persons are edited or
-  deleted on sight)
-- Submitter identities or contact details
-- Personal information about candidates beyond their public candidacy
-  (no home addresses, families, employers unless self-published in the
-  candidacy context)
+- unverified submissions
+- submitter identities or contact details
+- private contact information about candidates
+- home addresses, family details, health information or other personal material
+  unrelated to the public candidacy
+- rumours, allegations or biographical claims without an appropriate source
