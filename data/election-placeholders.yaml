@@ -1,0 +1,306 @@
+placeholders:
+  updated: 2026-08-03
+  scope: >-
+    Foundation pages for elections that are listed in the national calendar but
+    do not yet have an active candidate ledger. The calendar remains the source
+    of truth for dates and date certainty.
+
+  entries:
+    - planned_path: /elections/nsw/2027
+      summary: >-
+        New South Wales elects a 93-member Legislative Assembly and half of its
+        42-member Legislative Council at each state election.
+      parliament: Bicameral
+      total_members: 135
+      contest_summary: 93 Assembly districts and 21 of 42 Council places
+      tracking_status: Foundation page only; candidate tracking has not started.
+      chambers:
+        - name: Legislative Assembly
+          role: Lower house
+          seats: 93
+          constituencies: 93 single-member electoral districts
+          election_scope: All 93 seats
+          voting_system: Optional preferential voting
+          term: Up to four years
+        - name: Legislative Council
+          role: Upper house
+          seats: 42
+          constituencies: One statewide electorate
+          election_scope: 21 seats
+          voting_system: Optional preferential proportional representation
+          term: Eight years; half elected every four years
+      sources:
+        - url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+          publisher: NSW Electoral Commission
+          title: 2027 NSW State election
+          accessed: 2026-08-03
+        - url: https://elections.nsw.gov.au/elections/how-voting-works/voting-in-new-south-wales/how-does-a-state-election-work
+          publisher: NSW Electoral Commission
+          title: How does a state election work?
+          accessed: 2026-08-03
+
+    - planned_path: /elections/federal/next
+      summary: >-
+        A normal federal election elects all 150 members of the House of
+        Representatives and usually 40 of the Senate's 76 places.
+      parliament: Bicameral
+      total_members: 226
+      contest_summary: 150 House divisions and normally 40 Senate places
+      tracking_status: Foundation page only; the election date and candidates are not yet settled.
+      chambers:
+        - name: House of Representatives
+          role: Lower house
+          seats: 150
+          constituencies: 150 single-member electoral divisions
+          election_scope: All 150 seats
+          voting_system: Full preferential voting; an absolute majority is required
+        - name: Senate
+          role: Upper house
+          seats: 76
+          constituencies: Six state contests and two territory contests
+          election_scope: Normally 40 places at a simultaneous House and half-Senate election
+          voting_system: Preferential proportional representation
+          term: State senators serve six years; territory terms follow the House
+      notes:
+        - A double dissolution would put all 76 Senate places to election.
+        - The AEC has determined that the House will remain at 150 seats for the next federal election.
+      sources:
+        - url: https://www.aec.gov.au/media/2026/07-23.htm
+          publisher: Australian Electoral Commission
+          title: House of Representatives composition unchanged for next federal election
+          published: 2026-07-23
+          accessed: 2026-08-03
+        - url: https://www.aec.gov.au/FAQs/
+          publisher: Australian Electoral Commission
+          title: Frequently asked questions
+          accessed: 2026-08-03
+        - url: https://www.aec.gov.au/learn/preferential-voting.htm
+          publisher: Australian Electoral Commission
+          title: Preferential voting
+          accessed: 2026-08-03
+
+    - planned_path: /elections/tas/2027/legislative-council
+      summary: >-
+        Tasmania renews its 15-member Legislative Council gradually, with two or
+        three single-member divisions voting each May.
+      parliament: Bicameral
+      total_members: 50
+      contest_summary: 3 of 15 Legislative Council divisions
+      tracking_status: Foundation page only; candidate tracking has not started.
+      chambers:
+        - name: House of Assembly
+          role: Lower house
+          seats: 35
+          constituencies: Five divisions electing seven members each
+          election_scope: Not part of this periodic election
+          voting_system: Hare-Clark proportional representation
+        - name: Legislative Council
+          role: Upper house
+          seats: 15
+          constituencies: 15 single-member divisions
+          election_scope: Derwent, Mersey and Windermere
+          voting_system: Partial preferential voting
+          term: Six years; two or three divisions elected each year
+      notes:
+        - This election is separate from a House of Assembly general election.
+      sources:
+        - url: https://www.tec.tas.gov.au/legislative-council/
+          publisher: Tasmanian Electoral Commission
+          title: Legislative Council elections
+          accessed: 2026-08-03
+        - url: https://www.tec.tas.gov.au/info/VotingSystems.html
+          publisher: Tasmanian Electoral Commission
+          title: Voting systems in Tasmania
+          accessed: 2026-08-03
+
+    - planned_path: /elections/nt/2028
+      summary: >-
+        The Northern Territory has a single 25-member Legislative Assembly, with
+        one member elected from each division.
+      parliament: Unicameral
+      total_members: 25
+      contest_summary: 25 single-member divisions
+      tracking_status: Foundation page only; candidate tracking has not started.
+      chambers:
+        - name: Legislative Assembly
+          role: Single house
+          seats: 25
+          constituencies: 25 single-member divisions
+          election_scope: All 25 seats
+          voting_system: Preferential voting; an absolute majority is required
+          term: Four-year election cycle
+      sources:
+        - url: https://ntec.nt.gov.au/elections/about-elections/legislative-assembly-elections/legislative-assembly-divisions
+          publisher: Northern Territory Electoral Commission
+          title: Legislative Assembly divisions
+          accessed: 2026-08-03
+        - url: https://ntec.nt.gov.au/elections/past-elections/legislative-assembly/2024-territory-election/counting-information
+          publisher: Northern Territory Electoral Commission
+          title: Counting information
+          accessed: 2026-08-03
+
+    - planned_path: /elections/act/2028
+      summary: >-
+        The ACT elects a single 25-member Legislative Assembly from five
+        multi-member electorates using Hare-Clark proportional representation.
+      parliament: Unicameral
+      total_members: 25
+      contest_summary: 5 electorates electing 5 members each
+      tracking_status: Foundation page only; candidate tracking has not started.
+      chambers:
+        - name: Legislative Assembly
+          role: Single house
+          seats: 25
+          constituencies: Five multi-member electorates
+          election_scope: All 25 seats
+          voting_system: Hare-Clark single transferable vote
+          term: Fixed four-year terms
+      notes:
+        - Brindabella, Ginninderra, Kurrajong, Murrumbidgee and Yerrabi each elect five members.
+      sources:
+        - url: https://www.elections.act.gov.au/elections/education/fact-sheets/fact-sheet-hare-clark
+          publisher: Elections ACT
+          title: Fact sheet - Hare-Clark
+          accessed: 2026-08-03
+        - url: https://www.elections.act.gov.au/elections/our-electoral-system/current-members-of-the-legislative-assembly
+          publisher: Elections ACT
+          title: Current members of the Legislative Assembly
+          accessed: 2026-08-03
+
+    - planned_path: /elections/qld/2028
+      summary: >-
+        Queensland has a single 93-member Legislative Assembly, with one member
+        elected from each state electorate.
+      parliament: Unicameral
+      total_members: 93
+      contest_summary: 93 single-member electorates
+      tracking_status: Foundation page only; candidate tracking has not started.
+      chambers:
+        - name: Legislative Assembly
+          role: Single house
+          seats: 93
+          constituencies: 93 single-member electorates
+          election_scope: All 93 seats
+          voting_system: Full preferential voting
+          term: Fixed four-year election cycle
+      notes:
+        - New electoral boundaries determined in 2026 will apply at the 2028 election.
+      sources:
+        - url: https://www.ecq.qld.gov.au/electoral-boundaries/state-electorate-boundaries
+          publisher: Electoral Commission of Queensland
+          title: State electorate boundaries
+          accessed: 2026-08-03
+        - url: https://www.ecq.qld.gov.au/how-to-vote/voting-systems/full-preferential-voting
+          publisher: Electoral Commission of Queensland
+          title: Full preferential voting
+          accessed: 2026-08-03
+        - url: https://redistribution.ecq.qld.gov.au/about-the-qrc/media
+          publisher: Queensland Redistribution Commission
+          title: Media - 2026 state electoral redistribution
+          accessed: 2026-08-03
+
+    - planned_path: /elections/wa/2029
+      summary: >-
+        Western Australia elects 59 Legislative Assembly members from districts
+        and 37 Legislative Council members from one whole-of-state electorate.
+      parliament: Bicameral
+      total_members: 96
+      contest_summary: 59 Assembly districts and all 37 Council places
+      tracking_status: Foundation page only; candidate tracking has not started.
+      chambers:
+        - name: Legislative Assembly
+          role: Lower house
+          seats: 59
+          constituencies: 59 single-member districts
+          election_scope: All 59 seats
+          voting_system: Full preferential voting
+        - name: Legislative Council
+          role: Upper house
+          seats: 37
+          constituencies: One whole-of-state electorate
+          election_scope: All 37 seats
+          voting_system: Optional preferential proportional representation
+          term: Fixed four-year terms
+      notes:
+        - The whole-of-state Council system was first used at the 2025 election.
+      sources:
+        - url: https://www.elections.wa.gov.au/vote/voting-state-election
+          publisher: Western Australian Electoral Commission
+          title: Voting in a State election
+          accessed: 2026-08-03
+        - url: https://www.parliament.wa.gov.au/WebCMS/WebCMS.nsf/content/role-of-the-legislative-council
+          publisher: Parliament of Western Australia
+          title: Role of the Legislative Council
+          accessed: 2026-08-03
+
+    - planned_path: /elections/tas/next
+      summary: >-
+        Tasmania's House of Assembly has 35 members elected from five divisions,
+        while its 15-member Legislative Council follows a separate annual cycle.
+      parliament: Bicameral
+      total_members: 50
+      contest_summary: 35 House of Assembly places
+      tracking_status: Foundation page only; the polling date is not fixed.
+      chambers:
+        - name: House of Assembly
+          role: Lower house
+          seats: 35
+          constituencies: Five divisions electing seven members each
+          election_scope: All 35 seats
+          voting_system: Hare-Clark single transferable vote
+          term: Up to four years
+        - name: Legislative Council
+          role: Upper house
+          seats: 15
+          constituencies: 15 single-member divisions
+          election_scope: Not elected with the House of Assembly
+          voting_system: Partial preferential voting
+          term: Six years; two or three divisions elected each May
+      notes:
+        - The five Assembly divisions are Bass, Braddon, Clark, Franklin and Lyons.
+      sources:
+        - url: https://www.tec.tas.gov.au/house-of-assembly/index.html
+          publisher: Tasmanian Electoral Commission
+          title: House of Assembly elections
+          accessed: 2026-08-03
+        - url: https://www.tec.tas.gov.au/legislative-council/
+          publisher: Tasmanian Electoral Commission
+          title: Legislative Council elections
+          accessed: 2026-08-03
+
+    - planned_path: /elections/sa/2030
+      summary: >-
+        South Australia elects all 47 members of the House of Assembly and 11 of
+        the Legislative Council's 22 members at each state election.
+      parliament: Bicameral
+      total_members: 69
+      contest_summary: 47 Assembly districts and 11 of 22 Council places
+      tracking_status: Foundation page only; candidate tracking has not started.
+      chambers:
+        - name: House of Assembly
+          role: Lower house
+          seats: 47
+          constituencies: 47 single-member electoral districts
+          election_scope: All 47 seats
+          voting_system: Full preferential voting
+          term: Four years
+        - name: Legislative Council
+          role: Upper house
+          seats: 22
+          constituencies: One statewide electorate
+          election_scope: 11 seats
+          voting_system: Single transferable vote proportional representation
+          term: Eight years; half elected every four years
+      sources:
+        - url: https://www.ecsa.sa.gov.au/electoral-districts
+          publisher: Electoral Commission of South Australia
+          title: South Australian electoral districts
+          accessed: 2026-08-03
+        - url: https://www.ecsa.sa.gov.au/voting/counting-the-votes-for-the-house-of-assembly
+          publisher: Electoral Commission of South Australia
+          title: Counting the votes for the House of Assembly
+          accessed: 2026-08-03
+        - url: https://www.ecsa.sa.gov.au/voting/counting-the-votes-for-the-legislative-council
+          publisher: Electoral Commission of South Australia
+          title: Counting the votes for the Legislative Council
+          accessed: 2026-08-03
