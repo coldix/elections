@@ -1,57 +1,70 @@
 # Documentation index
 
-> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
-> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf)  
+> **Version** `20260803.2111-aest+17599ed` · **Updated** 2026-08-03 21:11 AEST  
+> edited against `main` @ [`17599ed`](https://github.com/coldix/elections/commit/17599ed)  
 > Hub: [../README.md](../README.md)
 
-Primary docs should carry the same **Version / Updated** line at the top.
-Refresh the stamp when you change substance; set version to the short git hash
-you edited against (`git rev-parse --short HEAD`).
+This index is the documentation hub. Every maintained Markdown document must be
+reachable from the root README through this page or another linked document.
+`npm run check:repo` fails when a document is orphaned or a relative link is
+broken.
 
-## Product map (aligned with live site)
+## Product map
 
-| Area | Live URLs | Methodology / ops |
+| Area | Live URLs | Rules / operations |
 |---|---|---|
-| Candidate ledger | `/`, `/assembly`, `/council`, `/districts/*`, `/parties` | [METHODOLOGY.md](METHODOLOGY.md) |
-| Policy matrix | `/parties/matrix`, `/policies`, `/policies/*`, `/parties/*/policies` | [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md) |
-| Jurisdiction guide | `/parties/issues` | POLICY-METHODOLOGY |
-| Key differences | `/policies/key-differences` | POLICY-METHODOLOGY |
-| Polls | `/polls` | [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) |
-| Open data | `/data` | export pipeline in root README |
-| Ops / deploy | — | [OPS.md](OPS.md), [DEPLOYMENT.md](DEPLOYMENT.md) |
-| Repo structure | — | [REPO-LAYOUT.md](REPO-LAYOUT.md) |
+| National home | `/` | [SCOPE.md](SCOPE.md) |
+| Upcoming elections | `/elections` | [METHODOLOGY.md](METHODOLOGY.md) |
+| Victoria 2026 tracker | `/elections/vic/2026` | [METHODOLOGY.md](METHODOLOGY.md) |
+| Assembly and districts | `/elections/vic/2026/assembly`, `/elections/vic/2026/districts/*` | [METHODOLOGY.md](METHODOLOGY.md) |
+| Council and regions | `/elections/vic/2026/council`, `/elections/vic/2026/regions/*` | [METHODOLOGY.md](METHODOLOGY.md) |
+| Parties and policies | `/elections/vic/2026/parties/*`, `/elections/vic/2026/policies/*` | [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md) |
+| Polls | `/elections/vic/2026/polls` | [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) |
+| Open data | `/elections/vic/2026/data`, `/data/vic2026/*` | [../README.md](../README.md) |
+| Future election foundations | `/elections/nsw/2027`, `/elections/federal/next`, etc. | [METHODOLOGY.md](METHODOLOGY.md) |
+| Operations and deployment | — | [OPS.md](OPS.md), [DEPLOYMENT.md](DEPLOYMENT.md) |
+| Repository structure | — | [REPO-LAYOUT.md](REPO-LAYOUT.md) |
 
-## Freshness check (2026-08-03 vs `91ecdbf`)
+The former root-level Victorian routes are retained only as permanent redirects.
+New documentation and internal links must use the scoped paths.
 
-| Document | Status |
-|---|---|
-| [../README.md](../README.md) | **Refreshed** this stamp — was stale (last edit 2026-07-29; missing policy product) |
-| [SCOPE.md](SCOPE.md) | **Refreshed** — MVP checklist caught up; policy + polls sections kept |
-| [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md) | Current (Aug 2026); stamp added |
-| [CHANGELOG.md](CHANGELOG.md) | Current through matrix wave 7; stamp added — may lag latest agent merges |
-| [../HANDOVER.md](../HANDOVER.md) | Partially stale narrative dates; stamp + page list updated |
-| [OPS.md](OPS.md) | Still valid; stamp added |
-| [METHODOLOGY.md](METHODOLOGY.md) | Candidate rules still valid; stamp added |
-| [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) | Valid; stamp added |
-| [DECISIONS.md](DECISIONS.md) | Valid ADRs; stamp added |
-| [DEPLOYMENT.md](DEPLOYMENT.md) | Valid Workers flow; stamp added |
-| [DISCOVERY.md](DISCOVERY.md) | Valid SEO notes; stamp added |
-| Gap notes (`*-gap.md`, policy audits) | Point-in-time working notes — not full product specs |
+## Core product documents
 
-## All docs in this folder
+- [SCOPE.md](SCOPE.md) — product boundaries, MVP and kill criteria
+- [METHODOLOGY.md](METHODOLOGY.md) — candidacy statuses, evidence, dates, links and neutrality
+- [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md) — policy ledger and comparison rules
+- [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) — poll inclusion and weighted average
+- [DECISIONS.md](DECISIONS.md) — architecture decision records
+- [CHANGELOG.md](CHANGELOG.md) — product change history
 
-- [REPO-LAYOUT.md](REPO-LAYOUT.md) — full annotated repository tree  
-- [CHANGELOG.md](CHANGELOG.md) — product log since polls module  
-- [SCOPE.md](SCOPE.md) — in/out of product  
-- [METHODOLOGY.md](METHODOLOGY.md) — candidacy statuses  
-- [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md) — policy matrix  
-- [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) — poll average  
-- [OPS.md](OPS.md) — editorial cadence  
-- [DEPLOYMENT.md](DEPLOYMENT.md) — Cloudflare  
-- [DECISIONS.md](DECISIONS.md) — ADRs  
-- [DISCOVERY.md](DISCOVERY.md) — SEO / IndexNow  
-- [SOCIAL.md](SOCIAL.md) — social / video keys  
-- [polls-inventory.md](polls-inventory.md) — poll discovery inventory  
-- Working notes: `labor-gap.md`, `council-gap.md`, `incumbent-gap.md`, policy audit snapshots  
+## Operations and discovery
 
-Root: [../HANDOVER.md](../HANDOVER.md) for agent context.
+- [OPS.md](OPS.md) — maintenance cadence and human/agent responsibilities
+- [DEPLOYMENT.md](DEPLOYMENT.md) — Cloudflare Workers build and DNS
+- [ROUTES.md](ROUTES.md) — canonical national/election route architecture and redirects
+- [DISCOVERY.md](DISCOVERY.md) — sitemap, search discovery and IndexNow
+- [SOCIAL.md](SOCIAL.md) — social/video implementation notes
+- [REPO-LAYOUT.md](REPO-LAYOUT.md) — annotated repository structure
+- [polls-inventory.md](polls-inventory.md) — polling-source discovery inventory
+
+## Proposals and specialised handovers
+
+- [PEOPLE-PAGES-PROPOSAL.md](PEOPLE-PAGES-PROPOSAL.md) — proposal only; no `/people` routes exist
+- [../HANDOVER.md](../HANDOVER.md) — current operational handover
+- [../HANDOVER-COALITION-VIEW.md](../HANDOVER-COALITION-VIEW.md) — coalition policy-view implementation notes
+
+## Point-in-time gap, audit and change notes
+
+These are historical working records, not authoritative product rules. Their
+value is the specific research or implementation state they capture; current
+rules remain in the methodology documents above.
+
+- [labor-gap.md](labor-gap.md)
+- [council-gap.md](council-gap.md)
+- [incumbent-gap.md](incumbent-gap.md)
+- [LABOR-POLICY-AUDIT-2026-08-02.md](LABOR-POLICY-AUDIT-2026-08-02.md)
+- [GREENS-POLICY-AUDIT-2026-08-02.md](GREENS-POLICY-AUDIT-2026-08-02.md)
+- [CHANGELOG-LIBERAL-NATIONALS-FIREARMS.md](CHANGELOG-LIBERAL-NATIONALS-FIREARMS.md)
+
+Additional lead notes are linked from the relevant working document. If a note
+is no longer useful, delete it rather than leaving an unlinked file.
