@@ -1,147 +1,210 @@
 # Australian Election Tracker
 
-> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
-> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · site stamp also in footer + `/build-meta.json`
+> **Version** `20260803.2111-aest+17599ed` · **Updated** 2026-08-03 21:11 AEST  
+> edited against `main` @ [`17599ed`](https://github.com/coldix/elections/commit/17599ed)
 
-**[electiontracker.au](https://electiontracker.au)** — an open, versioned,
-machine-readable record of who is standing where in Australian elections:
-candidate announcements, endorsements, nominations, withdrawals and
-disendorsements, each backed by a dated source. The project also publishes a
-**sourced policy comparison matrix**, **party policy profiles**, and
-**public statewide primary-vote polls** with a transparent weighted average
-([/polls](https://electiontracker.au/polls)).
+**[electiontracker.au](https://electiontracker.au)** is an open, sourced and
+machine-readable Australian election tracker. The repository records candidate
+announcements, endorsements, nominations, withdrawals and disendorsements with
+dated public sources, then builds a static public site and open JSON/CSV exports.
 
-First election: **Victorian state election, 28 November 2026** (`data/vic2026/`).
-The structure is jurisdiction-agnostic — future federal, state and territory
-elections are added as new data directories, not rebuilds.
+The site is now structured nationally:
 
-## What this is
+- **National home:** [electiontracker.au](https://electiontracker.au)
+- **Upcoming election calendar:** [electiontracker.au/elections](https://electiontracker.au/elections)
+- **Active tracker:** [Victoria 2026](https://electiontracker.au/elections/vic/2026)
+- **Future election foundations:** permanent outline pages such as
+  [NSW 2027](https://electiontracker.au/elections/nsw/2027),
+  [Federal next](https://electiontracker.au/elections/federal/next) and
+  [ACT 2028](https://electiontracker.au/elections/act/2028)
 
-- **The repository is the database.** Every district, party, member, candidate,
-  poll and policy claim is a YAML file. Git history is the audit trail.
-- **Every material claim carries a source** — URL, publisher, date published,
-  date accessed. A record without one fails validation and cannot be published.
-- **Statuses are distinct**: `announced` ≠ `endorsed` ≠ `nominated`. See
-  [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
-- **Coverage is dual-house:** Assembly seats of 88, Council seats of 40,
-  combined progress of 128. Regions (8) are shown where useful for maps/grids.
-- **Policy matrix is secondary but live:** sourced positions only, no ratings
-  ([docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md),
-  [/parties/matrix](https://electiontracker.au/parties/matrix),
-  [/policies](https://electiontracker.au/policies)).
-- **Poll average is transparent:** inclusion rules, weights and error bars in
-  [docs/POLL-METHODOLOGY.md](docs/POLL-METHODOLOGY.md). Summary of recent public
-  polling, not a forecast.
-- **Exports are free.** JSON and CSV at [/data](https://electiontracker.au/data),
-  CC BY 4.0, no key or rate limit.
+Victoria remains the first full election dataset under `data/vic2026/`. Future
+elections use the same repository and route conventions rather than separate
+sites or duplicated code.
 
-## What this is not
+## What is live
 
-- Not forecasting, commentary or how-to-vote advice. The poll average does not
-  predict election day, invent preference flows or rank candidates. The policy
-  matrix is not a scorecard.
-- Not affiliated with any party, candidate or electoral commission. The VEC is
-  authoritative; where we differ, the VEC is right.
-- Not complete. Coverage counts only what has been individually verified — see
-  the [disclaimer](https://electiontracker.au/disclaimer).
-- Not a wiki: submissions arrive as GitHub Issues or PRs and are verified by a
-  maintainer before merge. Nothing publishes automatically.
+### Victoria 2026
+
+The full tracker lives below `/elections/vic/2026`:
+
+```text
+/elections/vic/2026
+/elections/vic/2026/assembly
+/elections/vic/2026/council
+/elections/vic/2026/districts/:slug
+/elections/vic/2026/regions/:slug
+/elections/vic/2026/parties/:slug
+/elections/vic/2026/polls
+/elections/vic/2026/policies
+/elections/vic/2026/data
+```
+
+The Victorian ledger covers 88 Legislative Assembly districts and eight
+Legislative Council regions electing five members each. Candidate coverage is
+progressive and includes only individually sourced records.
+
+### Future elections
+
+`data/election-calendar.yaml` holds sourced election dates, lawful windows and
+date-certainty labels. `data/election-placeholders.yaml` supplies the basic
+parliamentary structure for future election pages: chambers, seat numbers,
+election scope and voting systems.
+
+Foundation pages currently exist for:
+
+```text
+/elections/nsw/2027
+/elections/federal/next
+/elections/tas/2027/legislative-council
+/elections/nt/2028
+/elections/act/2028
+/elections/qld/2028
+/elections/wa/2029
+/elections/tas/next
+/elections/sa/2030
+```
+
+These are clearly labelled outlines, not active candidate trackers. Their
+permanent URLs can expand in place when tracking begins.
+
+## Core principles
+
+- **Git is the database.** YAML is the source of truth and Git history is the
+  audit trail.
+- **Every material status needs evidence.** Missing or invalid sources fail CI.
+- **Statuses are distinct.** `announced`, `endorsed`, `nominated`, `withdrawn`,
+  `disendorsed`, `elected` and `defeated` are not interchangeable.
+- **No forecasting or how-to-vote advice.** Polls summarise recent public
+  primary-vote polling; policy pages publish sourced positions without ratings.
+- **Neutral structure.** The same fields, ordering rules and display treatment
+  apply to every party and independent.
+- **Open exports.** JSON and CSV remain available under `/data/vic2026/` without
+  an API key.
+
+Full rules: [docs/METHODOLOGY.md](docs/METHODOLOGY.md),
+[docs/POLL-METHODOLOGY.md](docs/POLL-METHODOLOGY.md) and
+[docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md).
 
 ## Repository layout
 
-Short map of what lives where. **Full annotated tree:** [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
+```text
+data/
+  election-calendar.yaml          national election calendar
+  election-placeholders.yaml      future-election structure facts
+  vic2026/                         active Victorian election ledger
+    candidates/*.yaml
+    polls/*.yaml
+    policies/*.yaml
+    election.yaml
+    districts.yaml
+    regions.yaml
+    council-members.yaml
+    parties.yaml
+    retirements.yaml
+    issues.yaml
 
-```
-data/<election>/              one directory per election (vic2026 first)
-  election.yaml               key dates, jurisdiction, sources
-  districts.yaml              lower-house seats, incumbents, region mapping
-  regions.yaml                upper-house regions
-  council-members.yaml        sitting upper-house members
-  parties.yaml                registered parties, families, commitments
-  retirements.yaml            sitting members not recontesting
-  candidates/*.yaml           one file per candidacy + status history
-  polls/*.yaml                statewide primary-vote polls (sourced)
-  issues.yaml                 policy issue catalogue
-  coalitions.yaml             optional Coalition display groupings
-  policies/*.yaml             party × issue sourced claims
-schema/                       JSON Schema for candidates, polls, policies, issues
-scripts/lib/data.mjs          candidates, coverage, representation (site + export)
-scripts/lib/polls.mjs         poll load + tracker average
-scripts/lib/policies.mjs      policy matrix + exports
-scripts/validate.mjs          schema, vocabulary, sources, referential integrity
-scripts/export.mjs            JSON/CSV → site/public/data/
-site/                         Astro static site → site/dist/
-docs/                         scope, methodology, ops, deployment, decisions
+schema/                            JSON Schemas
+scripts/
+  validate.mjs                     data and source validation
+  validate-coalitions.mjs          coalition display checks
+  check-repo-hygiene.mjs           orphan docs, broken links and temp-file checks
+  export.mjs                       JSON/CSV generation
+  rewrite-scoped-routes.mjs        Victoria route scoping and legacy-link guard
+  finalize-sitemap.mjs             final sitemap processing
+  lib/                             shared loaders and derived calculations
+
+site/
+  src/pages/                       national and future-election routes
+  src/vicpages/                    reusable Victorian route templates
+  src/components/                  site components
+  public/_redirects                permanent redirects from old Victoria URLs
+
+docs/                              product, methodology and operations docs
+.github/                            issue templates and CI workflows
 ```
 
-## Running it
+See [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md) for the annotated map.
+
+## Running locally
+
+Node 22 is used in CI.
 
 ```bash
 npm install
-npm run dev              # validate + export, then serve locally
-npm run build            # full production build
-npm run report:coverage  # party coverage snapshot (does not publish)
-npm run check:sources    # source URL health (does not publish)
+npm run check:repo       # orphan docs, broken local links and repository debris
+npm run validate         # repository hygiene + election-data validation
+npm run export           # rebuild JSON and CSV exports
+npm run dev              # validate/export, then run Astro locally
+npm run build            # complete production build
+npm run report:coverage  # coverage report only; does not publish
+npm run check:sources    # source URL health report only
 ```
 
-Editorial cadence and agent rules: [docs/OPS.md](docs/OPS.md).
+The production sequence is:
 
-The build is ordered deliberately — **validate → export → build** — and fails
-fast. A record without a valid source stops the build before the site is
-generated, so it can never reach production.
+```text
+repository hygiene → data validation → export → build metadata → Astro build
+→ scoped-route check → sitemap finalisation
+```
+
+A failure at any stage prevents publication.
 
 ## Documentation
 
-Each primary doc carries a **version + AEST timestamp** at the top (same style
-as this file). Bump them when you change the doc’s substance; version should
-match the git short hash you edited against.
+Start with [docs/README.md](docs/README.md). Key documents:
 
-| Doc | Role |
+| Document | Purpose |
 |---|---|
-| [docs/SCOPE.md](docs/SCOPE.md) | In / out of product, success criteria |
-| [docs/METHODOLOGY.md](docs/METHODOLOGY.md) | Candidate statuses and evidence |
-| [docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md) | Policy matrix rules |
-| [docs/POLL-METHODOLOGY.md](docs/POLL-METHODOLOGY.md) | Poll average rules |
-| [docs/OPS.md](docs/OPS.md) | Cadence, agent vs human |
-| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Cloudflare Workers Builds, DNS |
-| [docs/DECISIONS.md](docs/DECISIONS.md) | ADRs — read before proposing infra |
-| [docs/CHANGELOG.md](docs/CHANGELOG.md) | Product log since polls module |
-| [docs/DISCOVERY.md](docs/DISCOVERY.md) | SEO / IndexNow / GSC |
-| [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md) | Full repository file tree |
-| [HANDOVER.md](HANDOVER.md) | Agent context and known gaps |
-| [docs/README.md](docs/README.md) | Full docs index |
+| [docs/SCOPE.md](docs/SCOPE.md) | Product boundaries and success criteria |
+| [docs/METHODOLOGY.md](docs/METHODOLOGY.md) | Candidate statuses, sourcing and neutrality |
+| [docs/POLL-METHODOLOGY.md](docs/POLL-METHODOLOGY.md) | Poll inclusion and weighted average |
+| [docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md) | Policy comparison rules |
+| [docs/OPS.md](docs/OPS.md) | Editorial and maintenance workflow |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Cloudflare build and deployment |
+| [docs/DECISIONS.md](docs/DECISIONS.md) | Architecture decisions |
+| [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md) | Annotated repository structure |
+| [docs/PEOPLE-PAGES-PROPOSAL.md](docs/PEOPLE-PAGES-PROPOSAL.md) | Unapproved future `/people` concept |
+| [HANDOVER.md](HANDOVER.md) | Current operational handover |
+
+The hygiene checker requires every Markdown document to be reachable from this
+README through the documentation index. Broken relative links and orphaned docs
+fail validation.
+
+## Candidate links and people pages
+
+There are no `/people` pages at present. Candidate cards may link to:
+
+1. an official candidate, campaign, parliamentary or party profile;
+2. one principal public political social account; and
+3. Wikipedia only when no better official profile is available.
+
+The possible future people layer remains a proposal only. See
+[docs/PEOPLE-PAGES-PROPOSAL.md](docs/PEOPLE-PAGES-PROPOSAL.md).
 
 ## Deployment
 
-Pushing to `main` builds and deploys automatically via Cloudflare Workers
-Builds (~1 min). The site is static: an assets-only Worker with no server code,
-no database and nothing running per request.
+Pushing valid changes to `main` triggers the Cloudflare Workers build. The site
+is static and assets-only: there is no runtime database or server process.
+Permanent redirects preserve the former root-level Victorian URLs.
 
-See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for project settings, domains and
-DNS. Architecture rationale is in [docs/DECISIONS.md](docs/DECISIONS.md) — read
-it before proposing infrastructure.
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) and
+[docs/DECISIONS.md](docs/DECISIONS.md) before changing infrastructure.
 
-## Contributing a candidate or correction
+## Contributing and corrections
 
-Open a GitHub Issue with the **New candidacy / status change** template
-(candidate name, seat, party, claimed status, public source URL + date). Or
-send a PR editing the candidate file — CI validates schema and sources on every
-push and pull request. Unattended bots must not merge people-data PRs
-([docs/OPS.md](docs/OPS.md)).
-
-Corrections concerning living people are prioritised above all other work.
-History is never rewritten: a correction is a new commit, and the original
-record, the correction and its reason all stay visible.
+Open a GitHub Issue using the candidacy/status template or submit a pull request.
+Named-person changes require public evidence and human review. Corrections are
+new commits; history is not rewritten.
 
 ## Licence
 
-- Code (`scripts/`, `schema/`, `site/`): MIT — see [LICENSE](LICENSE).
-- Data (`data/`): Creative Commons Attribution 4.0 — see
-  [data/LICENSE](data/LICENSE). Attribute as "electiontracker.au".
+- Code (`scripts/`, `schema/`, `site/`): MIT, see [LICENSE](LICENSE).
+- Data (`data/`): CC BY 4.0, see [data/LICENSE](data/LICENSE).
 
-## Status
+## Current status
 
-**Live** at [electiontracker.au](https://electiontracker.au). Candidate coverage
-is progressive by design; policy matrix and polls are secondary modules already
-shipping. Counts and gaps: [HANDOVER.md](HANDOVER.md). Boundaries:
-[docs/SCOPE.md](docs/SCOPE.md).
+The national shell, upcoming-election calendar, future-election foundation
+pages and the full Victoria 2026 tracker are live. There are no open pull
+requests at this housekeeping checkpoint. Current gaps and next actions are in
+[HANDOVER.md](HANDOVER.md) and [docs/SCOPE.md](docs/SCOPE.md).
