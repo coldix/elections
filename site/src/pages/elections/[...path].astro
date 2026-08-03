@@ -1,0 +1,179 @@
+---
+import Base from "../../layouts/Base.astro";
+import SourceLink from "../../components/SourceLink.astro";
+import { SITE } from "../../lib/site.mjs";
+import { ELECTION_DATE_STATUS } from "../../lib/electionCalendar.mjs";
+import { loadElectionPlaceholders } from "../../lib/electionPlaceholders.mjs";
+
+export function getStaticPaths() {
+  return loadElectionPlaceholders().map((entry) => ({
+    params: { path: entry.planned_path.replace(/^\/elections\//, "") },
+    props: { entry },
+  }));
+}
+
+const entry = Astro.props.entry;
+const dateStatus = ELECTION_DATE_STATUS[entry.status];
+const chamberLabel = entry.chambers.length === 1 ? "1 chamber" : `${entry.chambers.length} chambers`;
+
+const schema = {
+  "@type": "WebPage",
+  name: entry.election_name,
+  description: entry.summary,
+  url: `${SITE.url}${entry.planned_path}`,
+  isPartOf: { "@id": `${SITE.url}/#website` },
+  dateModified: entry.updated,
+};
+---
+
+<Base
+  title={entry.election_name}
+  description={`${entry.summary} Foundation information on the parliamentary structure, seats and voting system.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: entry.election_name, href: entry.planned_path },
+  ]}
+>
+  <div class="wrap section placeholder-page">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{entry.name}</span>
+    </nav>
+
+    <p class="eyebrow">Future election foundation page</p>
+    <h1>{entry.election_name}</h1>
+    <p class="lede">{entry.summary}</p>
+
+    <div class="date-line">
+      <strong>{entry.date_label}</strong>
+      <span class={`date-status status-${entry.status}`}>{dateStatus.label}</span>
+    </div>
+    <p class="muted date-basis">{entry.basis}</p>
+    {entry.note && <p class="muted">{entry.note}</p>}
+
+    <div class="notice" role="note">
+      <strong>This is not yet an active candidate tracker.</strong> {entry.tracking_status}
+      The page establishes the correct address and basic parliamentary structure so later
+      candidate, party and result data can be added without changing links.
+    </div>
+
+    <dl class="facts">
+      <div>
+        <dt>Parliament</dt>
+        <dd>{entry.parliament}</dd>
+      </div>
+      <div>
+        <dt>Members in parliament</dt>
+        <dd>{entry.total_members}</dd>
+      </div>
+      <div>
+        <dt>Chambers</dt>
+        <dd>{chamberLabel}</dd>
+      </div>
+      <div>
+        <dt>Expected election scope</dt>
+        <dd>{entry.contest_summary}</dd>
+      </div>
+    </dl>
+
+    <section aria-labelledby="structure-h">
+      <p class="eyebrow">Structure and numbers</p>
+      <h2 id="structure-h">What voters elect</h2>
+      <div class="chamber-grid">
+        {entry.chambers.map((chamber) => (
+          <article class="card chamber-card">
+            <header>
+              <div>
+                <p class="chamber-role">{chamber.role}</p>
+                <h3>{chamber.name}</h3>
+              </div>
+              <strong class="seat-count">{chamber.seats} seats</strong>
+            </header>
+            <dl>
+              <div>
+                <dt>Electorates</dt>
+                <dd>{chamber.constituencies}</dd>
+              </div>
+              <div>
+                <dt>At this election</dt>
+                <dd>{chamber.election_scope}</dd>
+              </div>
+              <div>
+                <dt>Voting system</dt>
+                <dd>{chamber.voting_system}</dd>
+              </div>
+              {chamber.term && (
+                <div>
+                  <dt>Term</dt>
+                  <dd>{chamber.term}</dd>
+                </div>
+              )}
+            </dl>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {entry.notes?.length > 0 && (
+      <section class="section compact" aria-labelledby="notes-h">
+        <h2 id="notes-h">Important details</h2>
+        <ul>
+          {entry.notes.map((note) => <li>{note}</li>)}
+        </ul>
+      </section>
+    )}
+
+    <section class="section compact" aria-labelledby="future-h">
+      <p class="eyebrow">Planned expansion</p>
+      <h2 id="future-h">What can be added here later</h2>
+      <p>
+        When this election becomes active, this address can grow to include electorate or
+        chamber indexes, individually sourced candidates, party coverage, key dates, polls
+        where appropriate, open-data exports and official results.
+      </p>
+    </section>
+
+    <section class="section compact sources" aria-labelledby="sources-h">
+      <p class="eyebrow">Official references</p>
+      <h2 id="sources-h">Structure sources</h2>
+      <ul>
+        {entry.sources.map((source) => (
+          <li><SourceLink source={source} /></li>
+        ))}
+      </ul>
+      <p>
+        Election date source: <SourceLink source={entry.source} />
+      </p>
+    </section>
+
+    <p class="back"><a class="btn btn-ghost" href="/elections">Back to upcoming elections</a></p>
+  </div>
+</Base>
+
+<style>
+  .placeholder-page { max-width: 70rem; }
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .date-line { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .date-line strong { font-size: 1.2rem; }
+  .date-basis { max-width: 52rem; }
+  .date-status { display: inline-flex; padding: 0.22rem 0.5rem; border: 1px solid var(--rule-strong); border-radius: 999px; background: var(--surface-2); font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
+  .status-confirmed { border-color: var(--accent); background: var(--accent-wash); }
+  .notice { margin: 1.5rem 0; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; margin: 1.5rem 0 2.5rem; }
+  .facts > div { background: var(--surface); padding: 1rem 1.1rem; }
+  .facts dt, .chamber-card dt { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-3); }
+  .facts dd { margin: 0.25rem 0 0; font-weight: 650; }
+  .chamber-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: 1rem; }
+  .chamber-card header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+  .chamber-card h3 { margin: 0.15rem 0 0; }
+  .chamber-role { margin: 0; color: var(--ink-3); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+  .seat-count { white-space: nowrap; font-size: 0.95rem; }
+  .chamber-card dl { display: grid; gap: 0.85rem; margin-bottom: 0; }
+  .chamber-card dd { margin: 0.15rem 0 0; color: var(--ink-2); }
+  .compact { max-width: 52rem; }
+  .compact ul, .sources ul { padding-left: 1.2rem; display: grid; gap: 0.45rem; }
+  .back { margin-top: 2.5rem; }
+</style>
