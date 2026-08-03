@@ -24,22 +24,20 @@ const electionDateStatuses = [
 
 <Base
   title="Methodology"
-  description="How the Australian Election Tracker defines candidate statuses, election-date certainty, evidence requirements, coverage, corrections and neutrality."
+  description="How the Australian Election Tracker defines candidate statuses, sources, external links, election-date certainty, coverage, corrections and neutrality."
 >
   <div class="wrap wrap-narrow section">
     <p class="eyebrow">How this works</p>
     <h1>Methodology</h1>
     <p class="lede">
       One set of published rules, applied identically to every party and every independent.
-      These rules are enforced mechanically: a record without a source fails our automated
-      checks and cannot be published.
+      A candidacy record without a source fails the automated checks and cannot be published.
     </p>
 
     <h2>Candidate statuses</h2>
     <p>
-      A candidacy holds exactly one current status. Every previous status stays in its
-      history, with the date and the source that supported it. Rumour and speculation are
-      not statuses and are not recorded at all.
+      A candidacy holds one current status. Every previous status remains in its history,
+      with the date and source that supported it. Rumour and speculation are not recorded.
     </p>
 
     <div class="table-scroll">
@@ -52,44 +50,54 @@ const electionDateStatuses = [
           </tr>
         </thead>
         <tbody>
-          {
-            statuses.map(([name, meaning, evidence]) => (
-              <tr>
-                <th scope="row">{name}</th>
-                <td>{meaning}</td>
-                <td class="muted">{evidence}</td>
-              </tr>
-            ))
-          }
+          {statuses.map(([name, meaning, evidence]) => (
+            <tr>
+              <th scope="row">{name}</th>
+              <td>{meaning}</td>
+              <td class="muted">{evidence}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
 
     <h2 id="sourcing">Sourcing rules</h2>
     <ul>
-      <li>
-        Every status entry requires at least one source, recorded as a structured record:
-        URL, publisher, title, date published and date accessed.
-      </li>
-      <li>
-        Primary sources (electoral commission, party, candidate) are preferred over
-        secondary ones. Secondary sources are named by outlet — never "reports say".
-      </li>
-      <li>
-        Paywalled sources are acceptable if they are publicly citable. An archive link is
-        added where possible.
-      </li>
-      <li>
-        Social media counts only from the verified or official account of the party or
-        candidate.
-      </li>
+      <li>Every status entry records a URL, publisher, title, publication date and access date.</li>
+      <li>Primary sources such as commissions, parliaments, parties and candidates are preferred.</li>
+      <li>Secondary sources are named by outlet, never with vague wording such as “reports say”.</li>
+      <li>Paywalled sources may be used when publicly citable; an archive link is added where possible.</li>
+      <li>Social-media posts count only from a confidently identified official party or candidate account.</li>
     </ul>
+
+    <h2 id="candidate-links">Candidate links</h2>
+    <p>
+      Candidate cards may include a small number of external links for identification and
+      further reading. Their inclusion is not an endorsement.
+    </p>
+    <ol>
+      <li>Official candidate, campaign, parliamentary or party profile.</li>
+      <li>One principal public political social-media account, where it can be confidently identified.</li>
+      <li>Wikipedia only when no better official profile is available, clearly labelled as an external reference.</li>
+    </ol>
+    <p>
+      We do not add several social accounts merely to increase exposure. A personal account
+      is linked only when the candidate publicly uses it for political campaigning. Dead,
+      renamed or ambiguous accounts are removed rather than guessed.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>No people pages yet.</strong> The site does not currently publish
+      <code>/people</code> pages or maintain a separate people dataset. A future design has
+      been documented for consideration, but no route or profile system has been approved.
+      Public information remains attached to the relevant election and candidate record.
+    </div>
 
     <h2 id="election-dates">Election calendar and date certainty</h2>
     <p>
       The <a href="/elections">upcoming elections calendar</a> covers the next general
       parliamentary election for the Commonwealth and every state and territory. It does
-      not treat all future dates as equally certain.
+      not present all future dates with the same degree of certainty.
     </p>
     <div class="table-scroll">
       <table class="data">
@@ -100,14 +108,12 @@ const electionDateStatuses = [
           </tr>
         </thead>
         <tbody>
-          {
-            electionDateStatuses.map(([name, meaning]) => (
-              <tr>
-                <th scope="row">{name}</th>
-                <td>{meaning}</td>
-              </tr>
-            ))
-          }
+          {electionDateStatuses.map(([name, meaning]) => (
+            <tr>
+              <th scope="row">{name}</th>
+              <td>{meaning}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
@@ -115,168 +121,65 @@ const electionDateStatuses = [
       <li>Electoral commissions, parliaments and current legislation are preferred.</li>
       <li>Every calendar entry carries a source and verification date.</li>
       <li>A calculated statutory date is never described as announced or confirmed.</li>
-      <li>
-        Where a lawful range is more useful than a speculative date, the range is shown and
-        the kind of election it applies to is stated.
-      </li>
-      <li>
-        When an official writ or announcement supersedes a calculated date or window, the
-        entry is updated and the change remains visible in Git history.
-      </li>
-      <li>
-        By-elections, local government elections and referendums are outside the calendar
-        unless separately added. Tasmania's rotating Legislative Council elections are
-        included as a clearly labelled parliamentary exception.
-      </li>
+      <li>Where a lawful range is more useful than speculation, the range is published.</li>
+      <li>Official writs or announcements replace calculated dates while Git history preserves the change.</li>
+      <li>By-elections, local government elections and referendums are excluded unless separately added.</li>
     </ul>
-    <p>
-      Person pages will use permanent paths such as <code>/people/warren-pickering</code>.
-      Election material will progressively use scoped paths such as
-      <code>/elections/vic/2026</code>, with <code>/next</code> used where the election year
-      is not yet sufficiently certain.
-    </p>
 
     <h2 id="coverage">How coverage is counted</h2>
     <p>
-      A party "covers" a district when we hold at least one individually sourced record of
-      a live candidacy — announced, endorsed, formally nominated or elected — for that
-      party in that district.
+      A party covers a district when the ledger holds at least one individually sourced live
+      candidacy for that party in that district.
     </p>
     <div class="notice" role="note">
       <strong>The limitation you should know about.</strong> {COVERAGE_CAVEAT}
     </div>
     <p>
-      This matters most for sitting members. It is reasonable to assume most incumbents
-      will recontest, but an assumption is not a source, so we do not record one. A party
-      that holds many seats will therefore appear to have lower coverage than it really
-      does until each of those seats is individually verified. We would rather publish a
-      number that understates reality than one we cannot evidence.
+      A district with no recorded candidate means we have not verified one, not that nobody
+      is standing. The Victorian Electoral Commission remains authoritative for the final ballot.
+    </p>
+
+    <h2 id="optional-fields">Optional public context</h2>
+    <p>
+      Candidate records may include a short public occupation or political role and a
+      one-line career background. These fields are optional and must be checkable against a
+      campaign biography, party page or news profile.
     </p>
     <p>
-      The inverse also holds: a district with no recorded candidate means we have not
-      verified one, not that nobody is standing. Nominations for the 2026 Victorian state
-      election close at 12 noon on 9 November 2026, and the Victorian Electoral Commission
-      is the authoritative source for the final ballot.
+      Family details, private addresses, personal contact information, health information and
+      unrelated private material are outside scope.
     </p>
 
     <h2 id="corrections">Corrections</h2>
     <p>
-      Errors are corrected by a new commit. History is never rewritten — the original
-      record, the correction, and the reason all remain visible in the public Git history.
-    </p>
-    <p>
-      Anyone may request a correction. Requests concerning living people are prioritised.
-      Include a public source if you have one.
+      Errors are corrected by a new commit. History is never rewritten. A genuine change of
+      candidacy is recorded as status history rather than disguised as a correction or deletion.
     </p>
     <p><a class="btn" href={SITE.issues}>Submit a correction</a></p>
 
     <h2 id="neutrality">Neutrality</h2>
     <ul>
-      <li>
-        Every registered party and independent receives identical data structure, rules and
-        display treatment.
-      </li>
-      <li id="ordering">
-        <strong>Ordering.</strong> Party listings are ordered by the number of seats the
-        party currently holds in the relevant parliament, largest first, then alphabetically.
-        That is an objective, externally verifiable fact. Listings are never ordered by
-        candidate coverage, campaign activity, polling or any editorial judgement of
-        importance, and electorate listings are ordered by seat name.
-      </li>
-      <li>
-        Party colours appear only inside party-specific data visualisation. The platform's
-        own identity is deliberately not any party's colour.
-      </li>
-      <li>
-        No payment, sponsorship or advertising can affect coverage, ordering or
-        verification. Any sponsorship would be disclosed on this site.
-      </li>
+      <li>Every registered party and independent receives identical structure and display treatment.</li>
+      <li>Party listings use current parliamentary seats, then alphabetical order.</li>
+      <li>Listings are never ordered by campaign activity, polling or editorial judgement.</li>
+      <li>No payment, sponsorship or advertising can affect coverage, ordering or verification.</li>
     </ul>
 
-    <h2 id="privacy">What is never published</h2>
-    <ul>
-      <li>Unverified submissions.</li>
-      <li>The identity or contact details of anyone who submits information.</li>
-      <li>
-        Personal information about candidates beyond their public candidacy — no home
-        addresses, family details or employers, unless the candidate has published them
-        themselves in that context.
-      </li>
-    </ul>
-
-    <h2 id="polls">Public polls and the tracker average</h2>
+    <h2 id="polls">Polls and policy products</h2>
     <p>
-      In addition to the candidate ledger, the project collects publicly released
-      statewide Victorian Legislative Assembly primary-vote polls as sourced records and
-      publishes a transparent weighted average with uncertainty bands.
+      Poll averages and policy comparisons use separate published rules. They do not change
+      candidate ordering and are not voting recommendations.
     </p>
-    <ul>
-      <li>
-        Inclusion rules, time window, weights and error bars are fixed in
-        <a href="https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md">
-          docs/POLL-METHODOLOGY.md</a>.
-      </li>
-      <li>
-        Party, union and advocacy-commissioned polls may be recorded for transparency and
-        are excluded from the average by default (rare documented exceptions only).
-      </li>
-      <li>
-        The average is a summary of recent public polling — not a forecast, seat model or
-        preference recommendation.
-      </li>
-      <li>
-        Poll figures never change party or district ordering on this site (see
-        <a href="#ordering">ordering</a>).
-      </li>
-    </ul>
     <p>
-      Live figures: <a href="/polls">poll average</a>. Exports:
-      <a href="/data/vic2026/polls.json">polls.json</a>,
-      <a href="/data/vic2026/poll-average.json">poll-average.json</a>.
-    </p>
-
-    <h2 id="policy-matrix">Policy matrix and issues ledger</h2>
-    <p>
-      A secondary product records <strong>sourced party positions</strong> on a fixed
-      set of issues, plus a plain-language guide to which level of government is
-      responsible for each issue. It is not a scorecard.
-    </p>
-    <ul>
-      <li>
-        No star ratings, 1–5 scales, letter grades or editorial “who is better”
-        commentary. Claims are quotes (or tightly attributed statements) with dated sources.
-      </li>
-      <li>
-        Financial claims may carry taxpayer-cost labels (upfront capital, ongoing
-        operational, debt/interest) and a <strong>PBO costed</strong> vs
-        <strong>Uncosted pledge</strong> badge — never a substitute for reading the source.
-      </li>
-      <li>
-        An empty matrix cell means no sourced position is in the ledger yet, not that
-        the party has no view and not a judgement of importance.
-      </li>
-      <li>
-        v1 comparison columns are fixed: Greens, Labor, Liberal, Nationals, One Nation.
-        Where a Victorian source is missing, a national (federal) party policy may be
-        recorded if relevant and labelled as federal — especially for primarily
-        Commonwealth issues such as immigration. Full rules:{" "}
-        <a href="https://github.com/coldix/elections/blob/main/docs/POLICY-METHODOLOGY.md">
-          docs/POLICY-METHODOLOGY.md</a>.
-      </li>
-    </ul>
-    <p>
-      Pages: <a href="/parties/issues">jurisdiction guide</a>,
-      <a href="/parties/matrix">policy matrix</a>. Exports:
-      <a href="/data/vic2026/issues.json">issues.json</a>,
-      <a href="/data/vic2026/policies.json">policies.json</a>,
-      <a href="/data/vic2026/policies.csv">policies.csv</a>.
+      See the <a href="/elections/vic/2026/polls">poll average</a>,
+      <a href="/elections/vic/2026/parties/issues">jurisdiction guide</a> and
+      <a href="/elections/vic/2026/parties/matrix">policy matrix</a>.
     </p>
 
     <p class="foot muted">
-      Candidate and election-calendar rules on this page mirror
-      <code>docs/METHODOLOGY.md</code> in the <a href={SITE.repo}>public repository</a>.
-      Poll rules live in <code>docs/POLL-METHODOLOGY.md</code>. Policy rules live in
-      <code>docs/POLICY-METHODOLOGY.md</code>. Each carries its own change history.
+      These public rules mirror <code>docs/METHODOLOGY.md</code> in the
+      <a href={SITE.repo}>public repository</a>. The unapproved people-page design is kept
+      separately as a proposal so it cannot be mistaken for a current product commitment.
     </p>
   </div>
 </Base>
@@ -285,7 +188,8 @@ const electionDateStatuses = [
   h2 {
     margin-top: 2.5rem;
   }
-  ul {
+  ul,
+  ol {
     padding-left: 1.15rem;
     display: grid;
     gap: 0.5rem;
