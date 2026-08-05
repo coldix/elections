@@ -9,7 +9,8 @@ import { formatDateLong } from "../lib/site.mjs";
 
 const { election, keyDates = [] } = Astro.props;
 const iso = election.election_day;
-// Typical Victorian election-day poll opening; confirm with VEC nearer the day.
+// Typical Victorian election-day poll opening (AEDT in late November); confirm with VEC nearer the day.
+// Fixed +11 is correct for 2026-11-28 Melbourne; do not use bare local parse (CI is UTC).
 const targetIso = `${iso}T08:00:00+11:00`;
 const targetMs = new Date(targetIso).getTime();
 

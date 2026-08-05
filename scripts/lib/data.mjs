@@ -299,8 +299,15 @@ export function summaryFor(data) {
   };
 }
 
-/** Days until the election, computed from a supplied "today" for testability. */
+/**
+ * Whole calendar days from "today" (Melbourne) until a YYYY-MM-DD date.
+ * Uses Australia/Melbourne calendar dates so build-host UTC does not skew the count.
+ */
 export function daysUntil(dateStr, today = new Date()) {
-  const target = new Date(`${dateStr}T00:00:00+11:00`);
-  return Math.ceil((target - today) / 86400000);
+  const melbourneYmd = (d) =>
+    d.toLocaleDateString("en-CA", { timeZone: "Australia/Melbourne" }); // YYYY-MM-DD
+  const todayStr = melbourneYmd(today);
+  const t0 = Date.parse(`${todayStr}T00:00:00Z`);
+  const t1 = Date.parse(`${dateStr}T00:00:00Z`);
+  return Math.round((t1 - t0) / 86400000);
 }

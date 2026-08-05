@@ -1,5 +1,6 @@
 # 2026 Victorian state election — key facts and dates.
-# All dates AEDT. Verify against VEC as the election approaches; VEC is authoritative.
+# Calendar dates (Melbourne). Verify against VEC as the election approaches; VEC is authoritative.
+# Source: https://www.vec.vic.gov.au/voting/2026-state-election (timeline accessed 2026-08-05).
 election:
   id: vic2026
   name: 2026 Victorian state election
@@ -10,42 +11,60 @@ election:
   council_seats: 40
   dates:
     - date: 2026-11-03
-      event: Parliament expires; writs issued
+      event: Writs issued 6pm
       source:
-        url: https://en.wikipedia.org/wiki/2026_Victorian_state_election
-        publisher: Wikipedia
-        accessed: 2026-07-27
+        url: https://www.vec.vic.gov.au/voting/2026-state-election
+        publisher: Victorian Electoral Commission
+        title: 2026 state election timeline
+        accessed: 2026-08-05
+    - date: 2026-11-03
+      event: Electoral roll closes 8pm
+      source:
+        url: https://www.vec.vic.gov.au/voting/2026-state-election
+        publisher: Victorian Electoral Commission
+        title: 2026 state election timeline
+        accessed: 2026-08-05
     - date: 2026-11-04
       event: Nominations open
       source:
         url: https://www.vec.vic.gov.au/voting/2026-state-election
         publisher: Victorian Electoral Commission
-        accessed: 2026-07-27
-    - date: 2026-11-03
-      event: Electoral roll closes 8pm
-      source:
-        url: https://www.vec.vic.gov.au/enrolment/enrol-to-vote
-        publisher: Victorian Electoral Commission
-        title: Enrol to vote — 2026 state election enrolment deadline
-        accessed: 2026-07-29
-    - date: 2026-11-13
+        title: 2026 state election timeline
+        accessed: 2026-08-05
+    - date: 2026-11-09
       event: Nominations close 12 noon
       source:
-        url: https://en.wikipedia.org/wiki/2026_Victorian_state_election
-        publisher: Wikipedia
-        accessed: 2026-07-27
+        url: https://www.vec.vic.gov.au/voting/2026-state-election
+        publisher: Victorian Electoral Commission
+        title: 2026 state election timeline
+        accessed: 2026-08-05
+    - date: 2026-11-18
+      event: Early voting opens
+      source:
+        url: https://www.vec.vic.gov.au/voting/2026-state-election
+        publisher: Victorian Electoral Commission
+        title: 2026 state election timeline
+        accessed: 2026-08-05
+    - date: 2026-11-27
+      event: Early voting closes 6pm
+      source:
+        url: https://www.vec.vic.gov.au/voting/2026-state-election
+        publisher: Victorian Electoral Commission
+        title: 2026 state election timeline
+        accessed: 2026-08-05
     - date: 2026-11-28
       event: Election day
       source:
         url: https://www.vec.vic.gov.au/voting/2026-state-election
         publisher: Victorian Electoral Commission
-        accessed: 2026-07-27
+        title: 2026 state election timeline
+        accessed: 2026-08-05
     - date: 2026-12-19
       event: Latest return of writs
       source:
         url: https://en.wikipedia.org/wiki/2026_Victorian_state_election
         publisher: Wikipedia
-        accessed: 2026-07-27
+        accessed: 2026-08-05
   authorities:
     - name: Victorian Electoral Commission
       url: https://www.vec.vic.gov.au/

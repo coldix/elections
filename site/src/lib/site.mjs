@@ -122,13 +122,25 @@ export const STATUS_STAGE = {
   elected: 4,
 };
 
+/**
+ * Format a calendar date (YYYY-MM-DD) for display.
+ *
+ * Date-only strings must not be shifted by the build host timezone. Cloudflare
+ * (and other CI hosts) run in UTC; parsing midnight+11 without an explicit
+ * display zone made every date render one day early on the live site
+ * (e.g. election day Saturday 28 Nov → Friday 27 Nov).
+ *
+ * Parse as noon UTC so the instant falls on the same calendar day in Melbourne
+ * under both AEST (+10) and AEDT (+11), and always format in Melbourne time.
+ */
 export const formatDate = (iso, opts = {}) =>
   iso
-    ? new Date(`${iso}T00:00:00+11:00`).toLocaleDateString("en-AU", {
+    ? new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-AU", {
         day: "numeric",
         month: "short",
         year: "numeric",
         ...opts,
+        timeZone: "Australia/Melbourne",
       })
     : null;
 
