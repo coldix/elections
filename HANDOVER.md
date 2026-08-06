@@ -75,6 +75,11 @@ one-to-one; CI enforces this.
 - public primary-vote polls
 - policy issues and sourced party positions
 
+Policy rules: [docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md) (ADR-11).
+**Federal follow-up:** ABC/SBS public broadcasting is deliberately *not* a Vic
+2026 matrix issue — see POLICY-METHODOLOGY § “Deferred for federal elections”
+when creating the first federal `issues.yaml`.
+
 Candidate coverage is intentionally progressive. A missing candidate means no
 individually sourced record has been verified, not that nobody is standing.
 
@@ -164,6 +169,7 @@ files in the tree.
 - [docs/README.md](docs/README.md)
 - [docs/SCOPE.md](docs/SCOPE.md)
 - [docs/METHODOLOGY.md](docs/METHODOLOGY.md)
+- [docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md)
 - [docs/OPS.md](docs/OPS.md)
 - [docs/DECISIONS.md](docs/DECISIONS.md)
 - [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)

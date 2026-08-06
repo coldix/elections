@@ -121,6 +121,18 @@ Each issue has a **jurisdiction** enum:
 
 Jurisdiction notes are plain-language guides for voters, not legal opinions.
 
+### Deferred for federal elections (not Vic 2026)
+
+Issues considered and **left out** of the Victorian 2026 taxonomy because they
+are Commonwealth-primary and would produce a one-party or culture-war row on a
+state matrix. Revisit when standing up `data/<federal-election-id>/issues.yaml`.
+
+| Candidate issue | Why deferred for Vic 2026 | Federal setup notes |
+|---|---|---|
+| **Public broadcasting (ABC / SBS)** | Funding and charters are Commonwealth. One Nation has a clear federal pledge (e.g. metro ABC → subscription / regional funding retained; defund SBS — Press Club and party statements, 2026). Other matrix parties lack comparable Victorian-campaign positions; a row would be lopsided and misread as a state lever. | Strong `federal_primary` candidate. Prefer a neutral slug such as `public-media` or `media-broadcasting`. Source multi-party positions (defend funding, partial reform, defund/subscription) before promoting to the matrix; do not ship a row that only One Nation fills unless empty cells are explicitly accepted for that election. |
+
+Do **not** force-fit ABC/SBS claims into Vic `debt-budget` or `gender-social`.
+
 ## Policy records
 
 One YAML file per party × issue when a position exists:

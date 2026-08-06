@@ -182,5 +182,8 @@ secondary keeps the kill criteria on the candidate product intact.
 **Consequences.** Empty cells are expected early in the campaign. Expanding
 parties, scoring systems, or candidate-level policy requires a new decision.
 Fiscal chips (taxpayer cost, PBO costed vs uncosted, debt) are labels on
-sourced claims — not independent costings by this project. Full rules:
-[POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md).
+sourced claims — not independent costings by this project. Issue taxonomies are
+per-election: some Commonwealth-only topics (e.g. ABC/SBS public broadcasting)
+are deferred from Vic 2026 and listed for federal setup in
+[POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md#deferred-for-federal-elections-not-vic-2026).
+Full rules: [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md).

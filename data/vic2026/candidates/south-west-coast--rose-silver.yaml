@@ -1,0 +1,23 @@
+candidate:
+  name: Silver Rose
+  party: greens
+  contest: south-west-coast
+  chamber: assembly
+  status: endorsed
+  occupation: "Youth worker, facilitator and student"
+  background: "Warrnambool local."
+  history:
+    - status: endorsed
+      date: 2026-08-05
+      source:
+        url: https://greens.org.au/vic/person/silver-rose
+        publisher: Victorian Greens
+        title: "Silver Rose, Candidate for South-West Coast"
+        accessed: 2026-08-06
+      note: >-
+        Official Victorian Greens candidate profile naming Silver Rose as the
+        party’s candidate for the Legislative Assembly district of South-West
+        Coast at the 2026 state election.
+  links:
+    - url: https://greens.org.au/vic/person/silver-rose
+      kind: party-profile
