@@ -1,0 +1,24 @@
+candidate:
+  name: Roshena Campbell
+  party: liberal
+  contest: western-metropolitan
+  chamber: council
+  status: endorsed
+  occupation: "Barrister; Melbourne Deputy Lord Mayor"
+  background: "Former Liberal candidate for Aston (2023 by-election)."
+  history:
+    - status: endorsed
+      date: 2026-08-07
+      source:
+        url: https://www.abc.net.au/news/2026-08-07/liberal-party-deputy-melbourne-mayor-roshena-campbell/107008954
+        publisher: ABC News
+        title: >-
+          Liberal Party selects Roshena Campbell to replace Moira Deeming on
+          Victorian state election ballot
+        published: 2026-08-07
+        accessed: 2026-08-07
+      note: >-
+        Victorian Liberal Party state executive selected Campbell for the top
+        spot on the party’s Western Metropolitan Legislative Council ticket for
+        the November 2026 election, filling the vacancy after Moira Deeming’s
+        disendorsement (see western-metropolitan--deeming-moira.yaml).

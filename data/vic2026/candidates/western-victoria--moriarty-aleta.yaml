@@ -1,0 +1,26 @@
+candidate:
+  name: Aleta Moriarty
+  party: independent
+  contest: western-victoria
+  chamber: council
+  status: announced
+  occupation: "CEO, Centre for Sustainability"
+  background: "Geelong/Belmont-based humanitarian and advocate; former UN and World Bank roles."
+  history:
+    - status: announced
+      date: 2026-06-17
+      source:
+        url: https://timesnewsgroup.com.au/goldenplains/news/independent-joins-western-victoria-election-race/
+        publisher: Times News Group (Golden Plains Times)
+        title: "Independent joins Western Victoria election race"
+        published: 2026-06-17
+        accessed: 2026-08-07
+      note: >-
+        Local news report of Moriarty declaring as a community independent for
+        the Western Victoria Legislative Council region at the November 2026
+        state election.
+  links:
+    - url: https://www.aletamoriarty.com/
+      kind: campaign-site
+    - url: https://www.facebook.com/AletaforWesternVictoria/
+      kind: Facebook
