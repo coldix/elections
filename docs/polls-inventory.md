@@ -4,7 +4,7 @@
 Assembly voting-intention polls, used to apply
 [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) inclusion rules.
 
-**Status.** Discovery + ledger cross-check (updated 2026-07-30). Figures in
+**Status.** Discovery + ledger cross-check (updated 2026-08-08). Figures in
 the table may still be provisional until a YAML row exists. Before any
 `data/vic2026/polls/` entry, re-check the primary source for fieldwork dates,
 sample size, commissioner, and exact primaries.
@@ -27,6 +27,9 @@ Discovery index:
 
 | Fieldwork (approx.) | Pollster | Commissioner | n | ALP | LNP | GRN | ONP | OTH | Eligible? | Ledger / notes |
 |---|---|---|---:|---:|---:|---:|---:|---:|---|---|
+| 5–7 Aug 2026 | Roy Morgan | Self | 2084 | 26 | 26 | 12.5 | 23.5 | 12 | **Y** | `roy-morgan-2026-08` (OTH = 4 other parties + 8 ind) |
+| 31 Jul–3 Aug 2026 | Freshwater Strategy | Herald Sun (media) | 1020 | 25 | 30 | 14 | 22 | 9 | **Y** | `freshwater-2026-08` |
+| 28 Jul–1 Aug 2026 | RedBridge/Accent | *AFR* (media) | 1014 | 23 | 30 | 14 | 22 | 11 | **Y** | `redbridge-accent-2026-08-afr` (post-Carroll spill) |
 | 23–26 Jul 2026 | Newspoll | *The Australian* (media) | 1035 | 28 | 31 | 13 | 19 | 9 | **Y** | `newspoll-2026-07` |
 | 1–14 Jul 2026 | RedBridge | Victorian Trades Hall (union) | 6500 | 26 | 26 | 12 | 27 | 9 | **Y (exception)** | `redbridge-2026-07-trades-hall` |
 | 8–12 Jul 2026 | Resolve Strategic | *The Age* (media) | 1000 | 27 | 27 | 12 | 22 | 12 | **Y** | `resolve-2026-07-age` |
@@ -66,16 +69,17 @@ the primary release.
 
 ---
 
-## Window illustration (as of 2026-07-30)
+## Window illustration (as of 2026-08-08)
 
-Under **45-day** fieldwork-end window ending with Newspoll (26 Jul 2026):
+Under **45-day** fieldwork-end window ending with Roy Morgan (7 Aug 2026):
 
+- Roy Morgan early Aug — keep (newest Roy Morgan)
+- Freshwater late Jul/early Aug — keep (newest Freshwater; supersedes Jun)
+- RedBridge/Accent AFR late Jul — keep (newest `redbridge-accent`; supersedes Jun AFR)
 - Newspoll late Jul — keep (only Newspoll)
-- Trades Hall RedBridge — keep via exception (`pollster: redbridge`)
+- Trades Hall RedBridge — keep via exception (`pollster: redbridge`, distinct key)
 - Resolve mid Jul — keep (newest Resolve)
-- RedBridge/Accent AFR Jun — keep
-- DemosAU / Freshwater early Jun — may fall just outside 45 days depending on as-of
-- Older Resolve / Freshwater / Roy Morgan — history only (de-dupe or outside window)
+- Older DemosAU / Freshwater / Roy Morgan / Resolve — history only (de-dupe or outside window)
 
 Recompute with `scripts/lib/polls.mjs` / `/polls` after each ledger change.
 

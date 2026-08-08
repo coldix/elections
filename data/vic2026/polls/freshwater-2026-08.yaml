@@ -1,0 +1,41 @@
+id: freshwater-2026-08
+pollster: freshwater
+commissioner: herald-sun
+commissioner_type: media
+fieldwork_start: 2026-07-31
+fieldwork_end: 2026-08-03
+sample_size: 1020
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Herald Sun / Freshwater Strategy Victorian state primary (squeezed & valid). Fieldwork spans leadership change (Allan→Carroll 28 Jul). Undecideds removed after leaner for published valid result."
+primaries:
+  alp: 25
+  lnp: 30
+  onp: 22
+  grn: 14
+  others: 9
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://freshwaterstrategy.com/2026/08/04/herald-sun-freshwater-strategy-august-polling-data/
+    publisher: Freshwater Strategy
+    title: Herald Sun / Freshwater Strategy August Polling Data
+    published: 2026-08-04
+    accessed: 2026-08-08
+  - url: https://freshwaterstrategy.com/wp-content/uploads/Data-Tables-Herald-Sun-Freshwater-Strategy-Vic-Polling-030826-Full-Tables.xlsx
+    publisher: Freshwater Strategy
+    title: "Data Tables — Herald Sun / Freshwater Strategy Vic Polling 030826 (fieldwork 31 Jul–3 Aug; n=1,020)"
+    published: 2026-08-04
+    accessed: 2026-08-08
+  - url: https://www.heraldsun.com.au/news/victoria/freshwater-strategy-poll-shows-that-on-a-twoparty-preferred-basis-the-coalition-remains-in-front-of-labor-52-to-48/news-story/28da81559b3cf762608351667fac5cb3
+    publisher: Herald Sun
+    title: Freshwater Strategy poll shows Coalition remains in front of Labor 52 to 48
+    published: 2026-08-04
+    accessed: 2026-08-08
+  - url: https://theconversation.com/two-victorian-polls-have-the-coalition-leading-labor-with-one-nation-down-288811
+    publisher: The Conversation
+    title: Two Victorian polls have the Coalition leading Labor, with One Nation down
+    published: 2026-08-04
+    accessed: 2026-08-08
