@@ -1,0 +1,31 @@
+id: roy-morgan-2026-08
+pollster: roy-morgan
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-08-05
+fieldwork_end: 2026-08-07
+sample_size: 2084
+design_effect: null
+mode: sms
+population: victorian-electors
+question_notes: "Special SMS Roy Morgan survey of Victorian state voting intention after Ben Carroll became Premier (28 Jul) and Warren Pickering became One Nation Victoria leader (3 Aug). Others = other parties (4%) + independents (8%)."
+primaries:
+  alp: 26
+  lnp: 26
+  onp: 23.5
+  grn: 12.5
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10303-victorian-state-voting-intention-august-2026
+    publisher: Roy Morgan Research
+    title: "Victorian State Voting Intention: L-NP (26%) and ALP (26%) level on primary and ahead of One Nation (23.5%); however, L-NP narrowly leads ALP on two-party preferred basis (51% cf. 49%)"
+    published: 2026-08-07
+    accessed: 2026-08-08
+  - url: https://roymorgan-cms-prod.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2026/08/07043517/10303-Victorian-State-Voting-Intention-August-2026-002.pdf
+    publisher: Roy Morgan Research
+    title: Victorian State Voting Intention August 2026 (PDF)
+    published: 2026-08-07
+    accessed: 2026-08-08

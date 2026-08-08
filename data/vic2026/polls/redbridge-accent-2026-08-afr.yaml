@@ -1,0 +1,41 @@
+id: redbridge-accent-2026-08-afr
+pollster: redbridge-accent
+commissioner: australian-financial-review
+commissioner_type: media
+fieldwork_start: 2026-07-28
+fieldwork_end: 2026-08-01
+sample_size: 1014
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "AFR / RedBridge / Accent Victorian state voting intention immediately after Ben Carroll became Premier (28 Jul). Online panel; n=1,014 (effective n≈745, weight efficiency 73%). Undecided after leaner (8%) excluded from published VI."
+primaries:
+  alp: 23
+  lnp: 30
+  onp: 22
+  grn: 14
+  others: 11
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.accent-research.com/projects/afr%2C-redbridge-group-and-accent-research-august-2026-victorian-state-poll
+    publisher: Accent Research
+    title: AFR, RedBridge Group and Accent Research August 2026 Victorian state poll
+    published: 2026-08-03
+    accessed: 2026-08-08
+  - url: https://www.afr.com/politics/coalition-surges-ahead-of-labor-following-vic-leadership-challenge-20260803-p60kvr
+    publisher: Australian Financial Review
+    title: Coalition surges ahead of Labor following Vic leadership challenge
+    published: 2026-08-03
+    accessed: 2026-08-08
+  - url: https://www.pollbludger.net/2026/08/04/redbridge-group-coalition-30-labor-23-one-nation-22-in-victoria/
+    publisher: The Poll Bludger
+    title: "RedBridge Group: Coalition 30, Labor 23, One Nation 22 in Victoria"
+    published: 2026-08-04
+    accessed: 2026-08-08
+  - url: https://theconversation.com/two-victorian-polls-have-the-coalition-leading-labor-with-one-nation-down-288811
+    publisher: The Conversation
+    title: Two Victorian polls have the Coalition leading Labor, with One Nation down
+    published: 2026-08-04
+    accessed: 2026-08-08
