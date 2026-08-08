@@ -11,6 +11,14 @@ ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 > `main` may include later agent merges (policy audits, profiles, key
 > differences, One Nation Council slate) not yet summarised in a dated section.
 
+## 2026-08-09 — Google Analytics 4
+
+| Area | What shipped |
+|---|---|
+| **Measurement** | GA4 `G-CLH6BNKFEV` sitewide (`Base.astro` + `SITE.gaMeasurementId`) |
+| **Privacy** | `/privacy` rewritten to disclose Analytics; `LEGAL_UPDATED` 2026-08-09 |
+| **ADR** | ADR-12 supersedes “analytics deliberately never” |
+
 ## 2026-08-03 — Docs stamp + product surface (sync)
 
 | Area | What shipped |
@@ -312,7 +320,6 @@ Done outside git (dashboards). Tick against [DISCOVERY.md](DISCOVERY.md) as need
 
 - Explainer video published on the project YouTube (channel exists; content TBD)
 - Mass district “Request indexing”
-- Analytics / tracking (deliberately never)
 - Forecast / 2PP / seat models
 - Personal channels in footer or `sameAs`
 - Phase 2: scheduled news digests / auto draft-PRs

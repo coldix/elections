@@ -25,6 +25,9 @@ export const SITE = {
   // here because Cloudflare's drop-trailing-slash rule strips the .html
   // extension, and Google requires that exact URL to return 200.
   googleSiteVerification: "c1C819fHSzS0z2WXIPZE419OrNveoSyQy1LDXjijkiw",
+  // Google Analytics 4 Measurement ID. Loaded sitewide from Base.astro.
+  // See docs/DECISIONS.md ADR-12. Empty string disables the tag.
+  gaMeasurementId: "G-CLH6BNKFEV",
   publisherUrl: "https://oze.net.au",
 };
 
@@ -78,7 +81,7 @@ export function socialLinks() {
  * disclaimer change materially — the pages display it, and a stale date on a
  * legal page is worse than none.
  */
-export const LEGAL_UPDATED = "2026-07-29";
+export const LEGAL_UPDATED = "2026-08-09";
 
 /**
  * Party colours, used ONLY inside party-specific data visualisation.

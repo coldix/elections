@@ -132,6 +132,9 @@ citable by machines — which is the point of the project.
 rendered panel; the full table below the matrix covers every party. If the panel
 count grows large, reconsider — but do not reach for a framework first.
 
+**Note (2026-08-09).** Sitewide Google Analytics (ADR-12) is separate from the
+matrix: product measurement, not UI logic. The matrix remains CSS-only.
+
 ## ADR-10: Poll average (sourced ledger + transparent maths)
 
 **Decision.** The project publishes a **sourced primary-vote poll ledger** plus
@@ -187,3 +190,19 @@ per-election: some Commonwealth-only topics (e.g. ABC/SBS public broadcasting)
 are deferred from Vic 2026 and listed for federal setup in
 [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md#deferred-for-federal-elections-not-vic-2026).
 Full rules: [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md).
+
+## ADR-12: Google Analytics 4 for product measurement (2026-08-09)
+
+**Decision.** Load **Google Analytics 4** sitewide (`gtag.js`, Measurement ID in
+`SITE.gaMeasurementId` in `site/src/lib/site.mjs`) so the maintainer can see
+which pages and datasets people use. Disclose it on `/privacy`. No ads, no
+marketing pixels, no session recording.
+
+**Why.** Earlier product notes said “analytics deliberately never” for a
+privacy-minimal static site. That is superseded: growth as a go-to national
+election resource needs basic traffic measurement. Candidate *data* remains
+public-source only; visitor measurement is a separate concern and is disclosed.
+
+**Consequences.** `/privacy` must stay accurate whenever the tag or purposes
+change. Empty `gaMeasurementId` disables the tag. Do not add ad networks or
+cross-site marketing pixels without a new ADR.

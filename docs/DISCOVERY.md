@@ -176,7 +176,6 @@ After data deploys, optional hub re-check: `/assembly`, `/council`,
 
 ## Deliberately not done
 
-- **No analytics.** Privacy policy claims no tracking.
 - **No `Person` schema for candidates.** Methodology restraint > rich results.
 - **No keyword-stuffed landing pages** for seat names.
 - **No mass “Request indexing”** of all 88 districts by hand.
@@ -186,6 +185,11 @@ After data deploys, optional hub re-check: `/assembly`, `/council`,
 Trailing-slash agreement: `site/astro.config.mjs` (`trailingSlash: "never"`)
 and `wrangler.jsonc` (`html_handling: "drop-trailing-slash"`). If canonicals
 point at redirecting URLs, fix those two files together.
+
+## Analytics
+
+Google Analytics 4 (`G-CLH6BNKFEV`) is loaded sitewide via `Base.astro` for
+product measurement. Disclosed on `/privacy`. See DECISIONS ADR-12.
 
 ## Related
 
