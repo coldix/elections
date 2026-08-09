@@ -11,8 +11,6 @@ static public product.
 ```text
 elections/
 ├── README.md                    project hub
-├── handover.md                  current operational handover
-├── handover-coalition-view.md   specialised coalition-view notes
 ├── LICENSE                      MIT licence for code
 ├── package.json                 scripts and dependencies
 ├── package-lock.json
@@ -22,6 +20,10 @@ elections/
 ├── scripts/                     validation, export and build utilities
 ├── site/                        Astro static site
 ├── docs/                        product and operations documentation
+│   ├── README.md                documentation index
+│   ├── handover.md              current operational handover
+│   ├── handover-coalition-view.md
+│   └── …                        methodology, ops, discovery, …
 ├── images/                      source brand assets
 └── .github/                     issue templates and workflows
 ```

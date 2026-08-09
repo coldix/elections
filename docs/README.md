@@ -18,7 +18,7 @@ broken.
 | Council and regions | `/elections/vic/2026/council`, `/elections/vic/2026/regions/*` | [methodology.md](methodology.md) |
 | Parties and policies | `/elections/vic/2026/parties/*`, `/elections/vic/2026/policies/*` | [policy-methodology.md](policy-methodology.md) |
 | Polls (Vic) | `/elections/vic/2026/polls` | [poll-methodology.md](poll-methodology.md) |
-| NSW 2027 (sitting members) | `/elections/nsw/2027`, `/data/nsw2027/*` | [routes.md](routes.md), [../handover.md](../handover.md) |
+| NSW 2027 (sitting members) | `/elections/nsw/2027`, `/data/nsw2027/*` | [routes.md](routes.md), [handover.md](handover.md) |
 | Federal 49 (sitting + polls + policies) | `/elections/federal/49`, `/data/federal-49/*` | [routes.md](routes.md), ADR-13 |
 | Outline foundations | ACT/QLD/NT/WA/SA/Tas calendar paths | [methodology.md](methodology.md) |
 | Open data | `/data/<election-id>/` | [../README.md](../README.md) |
@@ -50,8 +50,8 @@ New documentation and internal links must use the scoped paths.
 ## Proposals and specialised handovers
 
 - [people-pages-proposal.md](people-pages-proposal.md) — proposal only; no `/people` routes exist
-- [../handover.md](../handover.md) — current operational handover
-- [../handover-coalition-view.md](../handover-coalition-view.md) — coalition policy-view implementation notes
+- [handover.md](handover.md) — current operational handover
+- [handover-coalition-view.md](handover-coalition-view.md) — coalition policy-view implementation notes
 
 ## Point-in-time gap, audit and change notes
 
