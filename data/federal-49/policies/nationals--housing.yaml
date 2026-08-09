@@ -1,0 +1,15 @@
+policy:
+  party: nationals
+  issue: housing
+  headline: Regional housing supply and infrastructure
+  claims:
+    - id: nats-regional-housing
+      statement: >-
+        The Nationals emphasise housing and infrastructure needs in regional Australia as
+        part of national Coalition housing and regional development messaging (party materials).
+      kind: position
+      source:
+        url: https://nationals.org.au/
+        publisher: The Nationals
+        title: The Nationals
+        accessed: 2026-08-09

@@ -1,0 +1,125 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import JurisdictionBadge from "../../../../../components/JurisdictionBadge.astro";
+import PolicyCell from "../../../../../components/PolicyCell.astro";
+import SourceLink from "../../../../../components/SourceLink.astro";
+import { matrixFor, loadIssues, MATRIX_PARTY_LABELS } from "../../../../../../../scripts/lib/policies.mjs";
+import { SITE, FEDERAL_49, partyColour } from "../../../../../lib/site.mjs";
+
+export function getStaticPaths() {
+  const issues = loadIssues("federal-49");
+  return issues.map((issue) => ({ params: { slug: issue.slug } }));
+}
+
+const { slug } = Astro.params;
+const matrix = matrixFor("federal-49");
+const row = matrix.rows.find((r) => r.issue.slug === slug);
+if (!row) throw new Error(`Unknown federal issue: ${slug}`);
+const { issue, cells } = row;
+const partyOrder = matrix.parties.map((p) => p.slug);
+
+const schema = {
+  "@type": "WebPage",
+  name: `${issue.name} — federal policy comparison`,
+  description: issue.summary,
+  url: `${SITE.url}${FEDERAL_49}/policies/${issue.slug}`,
+};
+---
+
+<Base
+  title={issue.name}
+  description={`${issue.name}: sourced party positions for the next federal election. ${issue.summary}`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "Federal", href: FEDERAL_49 },
+    { name: "Policies", href: `${FEDERAL_49}/policies` },
+    { name: issue.name, href: `${FEDERAL_49}/policies/${issue.slug}` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={FEDERAL_49}>Federal</a>
+      <span aria-hidden="true">/</span>
+      <a href={`${FEDERAL_49}/policies`}>Policies</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{issue.name}</span>
+    </nav>
+
+    <p class="eyebrow">Federal policy comparison</p>
+    <h1>{issue.name}</h1>
+    <p class="lede">{issue.summary}</p>
+    <p><JurisdictionBadge jurisdiction={issue.jurisdiction} /></p>
+    <p class="muted">{issue.jurisdiction_note}</p>
+
+    {
+      (issue.federal_role || issue.state_role) && (
+        <dl class="roles">
+          {issue.federal_role && (
+            <div>
+              <dt>Federal role</dt>
+              <dd>{issue.federal_role}</dd>
+            </div>
+          )}
+          {issue.state_role && (
+            <div>
+              <dt>State role</dt>
+              <dd>{issue.state_role}</dd>
+            </div>
+          )}
+        </dl>
+      )
+    }
+
+    <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/parties/matrix`}>Matrix</a>
+      <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/policies`}>All issues</a>
+    </p>
+
+    <div class="party-stack">
+      {
+        partyOrder.map((slug) => {
+          const policy = cells[slug];
+          const label = MATRIX_PARTY_LABELS[slug] ?? slug;
+          return (
+            <article class="card party-block" style={`--party-colour:${partyColour(slug)}`}>
+              <header>
+                <span class="swatch" aria-hidden="true" />
+                <h2>{label}</h2>
+              </header>
+              <PolicyCell policy={policy} partyLabel={label} />
+            </article>
+          );
+        })
+      }
+    </div>
+
+    <p class="muted foot">
+      Empty cells mean no individually sourced claim is recorded yet. Methodology:
+      <a href="https://github.com/coldix/elections/blob/main/docs/POLICY-METHODOLOGY.md">
+        POLICY-METHODOLOGY.md
+      </a>
+    </p>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .roles {
+    display: grid; gap: 0.75rem; margin: 1.25rem 0;
+    padding: 1rem; background: var(--surface-2); border-radius: var(--radius);
+  }
+  .roles dt { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
+  .roles dd { margin: 0.2rem 0 0; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; }
+  .party-stack { display: grid; gap: 1rem; }
+  .party-block header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+  .party-block h2 { margin: 0; font-size: 1.1rem; }
+  .swatch {
+    width: 0.7rem; height: 0.7rem; border-radius: 999px; background: var(--party-colour);
+  }
+  .foot { margin-top: 2rem; max-width: 40rem; }
+</style>

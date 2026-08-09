@@ -1,0 +1,15 @@
+policy:
+  party: liberal
+  issue: tax-budget
+  headline: Coalition fiscal and cost-of-living framing
+  claims:
+    - id: lib-col-economy
+      statement: >-
+        The federal Liberal Party campaigns on reducing cost-of-living pressure through
+        economic management, productivity and budget discipline (party public materials).
+      kind: position
+      source:
+        url: https://www.liberal.org.au/
+        publisher: Liberal Party of Australia
+        title: Liberal Party of Australia
+        accessed: 2026-08-09

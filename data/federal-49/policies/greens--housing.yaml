@@ -1,0 +1,15 @@
+policy:
+  party: greens
+  issue: housing
+  headline: More public and affordable housing supply
+  claims:
+    - id: greens-housing-platform
+      statement: >-
+        The Australian Greens advocate large-scale public and affordable housing investment
+        and renters’ rights reforms as national housing priorities (party housing platform materials).
+      kind: position
+      source:
+        url: https://greens.org.au/housing
+        publisher: Australian Greens
+        title: Housing — Australian Greens
+        accessed: 2026-08-09

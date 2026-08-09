@@ -1,0 +1,15 @@
+policy:
+  party: liberal
+  issue: immigration
+  headline: Stronger borders and sustainable migration levels
+  claims:
+    - id: lib-migration
+      statement: >-
+        Federal Liberal messaging emphasises stronger border protection and a migration
+        program sized to housing and infrastructure capacity (party public materials).
+      kind: position
+      source:
+        url: https://www.liberal.org.au/
+        publisher: Liberal Party of Australia
+        title: Liberal Party of Australia
+        accessed: 2026-08-09

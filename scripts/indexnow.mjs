@@ -34,6 +34,8 @@ const PRIORITY = [
   `${FED}/senate`,
   `${FED}/parties`,
   `${FED}/polls`,
+  `${FED}/parties/matrix`,
+  `${FED}/policies`,
   `${FED}/data`,
   `https://${HOST}/methodology`,
   `https://${HOST}/about`,
@@ -51,6 +53,7 @@ const PRIORITY = [
   `https://${HOST}/data/federal-49/senate-members.json`,
   `https://${HOST}/data/federal-49/polls.json`,
   `https://${HOST}/data/federal-49/poll-average.json`,
+  `https://${HOST}/data/federal-49/policies.json`,
 ];
 
 if (!existsSync(KEY_PATH)) {

@@ -1,0 +1,38 @@
+policy:
+  party: one-nation
+  issue: public-media
+  headline: Scrap SBS funding; metropolitan ABC to subscription-only
+  claims:
+    - id: on-sbs-gone
+      statement: >-
+        At the National Press Club, One Nation leader Pauline Hanson stated that under
+        One Nation “the SBS will be gone” and that there is “no need for it anymore.”
+      kind: pledge
+      source:
+        url: https://www.nine.com.au/australia-news/pauline-hanson-calls-for-sbs-to-be-axed-abc-made-subscription-service-20260617-p607nm.html
+        publisher: Nine News
+        title: Pauline Hanson calls for SBS to be axed and ABC made a subscription service
+        published: 2026-06-17
+        accessed: 2026-08-09
+    - id: on-abc-subscription
+      statement: >-
+        Hanson said taxpayers would still fund some ABC operations in regional, rural and
+        remote areas, but in cities the ABC would be “subscription-service only.”
+      kind: pledge
+      source:
+        url: https://www.nine.com.au/australia-news/pauline-hanson-calls-for-sbs-to-be-axed-abc-made-subscription-service-20260617-p607nm.html
+        publisher: Nine News
+        title: Pauline Hanson calls for SBS to be axed and ABC made a subscription service
+        published: 2026-06-17
+        accessed: 2026-08-09
+    - id: on-sbs-policy-confirm
+      statement: >-
+        Reporting on One Nation’s media policy states the official position is to scrap all
+        taxpayer funding for SBS, forcing it to shut down or operate commercially.
+      kind: position
+      source:
+        url: https://mumbrella.com.au/one-nation-policy-to-scrap-sbs-funding-entirely-push-abc-into-regional-only-role-923326
+        publisher: Mumbrella
+        title: One Nation policy to scrap SBS funding entirely, push ABC into regional-only role
+        published: 2026-05-15
+        accessed: 2026-08-09

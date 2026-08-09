@@ -141,6 +141,46 @@ for (const id of listElections()) {
       )
     );
 
+    const issues = loadIssues(id);
+    const policies = loadPolicies(id);
+    const coalitions = loadCoalitions(id);
+    const matrix = matrixFor(id);
+    write("issues.json", {
+      generated: new Date().toISOString(),
+      methodology: "docs/POLICY-METHODOLOGY.md",
+      issues: issues.map(({ jurisdiction_label, ...rest }) => rest),
+    });
+    write("coalitions.json", {
+      generated: new Date().toISOString(),
+      methodology: "docs/POLICY-METHODOLOGY.md",
+      note: "Display relationships only. Registered parties and their policy records remain separate.",
+      coalitions,
+    });
+    write("policies.json", {
+      generated: new Date().toISOString(),
+      caveat: POLICY_CAVEAT,
+      methodology: "docs/POLICY-METHODOLOGY.md",
+      matrix_parties: matrix.parties,
+      default_view: matrix.default_view,
+      combined_matrix_parties: matrix.combined?.parties ?? [],
+      combined_stats: matrix.combined?.stats ?? null,
+      coalitions,
+      stats: matrix.stats,
+      policies: policies.map(({ file, claim_count, ...p }) => p),
+    });
+    writeFileSync(
+      join(out, "policies.csv"),
+      csv(
+        flattenPolicyClaims(policies, issues),
+        [
+          "party", "issue", "issue_name", "claim_id", "kind", "statement", "headline",
+          "taxpayer_label", "amount_aud", "amount_display", "timeframe", "financing",
+          "pbo_status", "source_url", "source_publisher", "source_title",
+          "source_published", "source_accessed",
+        ]
+      )
+    );
+
     index.elections.push({
       id,
       name: data.election.name,
@@ -151,17 +191,20 @@ for (const id of listElections()) {
       senate_members: summary.senate_members,
       polls: polls.length,
       poll_average_status: pollAverage.status,
+      issues: issues.length,
+      policies: policies.length,
       files: [
         "election.json", "divisions.json", "house-members.json",
         "senate-contests.json", "senate-members.json", "parties.json",
         "representation.json", "summary.json",
         "polls.json", "poll-average.json", "polls.csv",
+        "issues.json", "coalitions.json", "policies.json", "policies.csv",
         "divisions.csv", "house-members.csv", "senate-members.csv",
       ],
     });
 
     console.log(
-      `${id}: exported federal · ${summary.house_members} MPs, ${summary.senate_members} senators, ${polls.length} polls -> site/public/data/${id}/`
+      `${id}: exported federal · ${summary.house_members} MPs, ${summary.senate_members} senators, ${polls.length} polls, ${issues.length} issues, ${policies.length} policies -> site/public/data/${id}/`
     );
     continue;
   }

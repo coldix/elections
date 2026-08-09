@@ -120,6 +120,130 @@ function validatePolls(election, dir) {
   return pollCount;
 }
 
+
+function validateIssuesPolicies(election, dir, load, partySlugs) {
+  const JURISDICTIONS = [
+    "state_primary",
+    "shared_fed_state",
+    "federal_primary",
+    "local_primary",
+    "shared_state_local",
+  ];
+  const MATRIX_PARTIES = new Set(["greens", "labor", "liberal", "nationals", "one-nation"]);
+  const CLAIM_KINDS = new Set(["pledge", "position", "costed_measure", "opposition_to"]);
+  const TAXPAYER_LABELS = new Set([
+    "Upfront capital",
+    "Ongoing operational",
+    "Debt / interest",
+    "Not specified",
+  ]);
+  const FINANCING = new Set(["taxpayer", "borrowing", "user_charges", "mixed", "unspecified"]);
+  const PBO_STATUS = new Set(["pbo_costed", "uncosted", "not_applicable"]);
+
+  let issueCount = 0;
+  let policyCount = 0;
+  const issueSlugs = new Set();
+
+  const issuesPath = join(dir, "issues.yaml");
+  if (existsSync(issuesPath)) {
+    const issues = load("issues.yaml").issues ?? [];
+    const issueFile = `${election}/issues.yaml`;
+    for (const issue of issues) {
+      issueCount++;
+      if (!issue.slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(issue.slug)) {
+        fail(issueFile, `bad issue slug: ${issue.slug}`);
+      }
+      if (issueSlugs.has(issue.slug)) fail(issueFile, `duplicate issue slug: ${issue.slug}`);
+      issueSlugs.add(issue.slug);
+      if (!issue.name) fail(issueFile, `${issue.slug}: name required`);
+      if (!issue.summary) fail(issueFile, `${issue.slug}: summary required`);
+      if (!JURISDICTIONS.includes(issue.jurisdiction)) {
+        fail(issueFile, `${issue.slug}: invalid jurisdiction '${issue.jurisdiction}'`);
+      }
+      if (!issue.jurisdiction_note) {
+        fail(issueFile, `${issue.slug}: jurisdiction_note required`);
+      }
+      for (const s of issue.sources ?? []) {
+        checkSource(issueFile, `${issue.slug} source`, s);
+      }
+    }
+    for (const issue of issues) {
+      for (const rel of issue.related ?? []) {
+        if (!issueSlugs.has(rel)) {
+          fail(issueFile, `${issue.slug}: unknown related issue '${rel}'`);
+        }
+      }
+    }
+  }
+
+  const policyDir = join(dir, "policies");
+  if (existsSync(policyDir) && statSync(policyDir).isDirectory()) {
+    if (issueSlugs.size === 0) {
+      fail(`${election}/policies`, "policies/ present but issues.yaml missing or empty");
+    }
+    for (const f of readdirSync(policyDir)) {
+      if (f.startsWith("_") || f.startsWith(".") || !f.endsWith(".yaml")) continue;
+      policyCount++;
+      const file = `${election}/policies/${f}`;
+      const raw = parse(readFileSync(join(policyDir, f), "utf8"));
+      const p = raw?.policy;
+      if (!p) {
+        fail(file, "missing top-level 'policy' key");
+        continue;
+      }
+      if (!MATRIX_PARTIES.has(p.party)) {
+        fail(file, `party must be one of matrix allowlist; got '${p.party}'`);
+      }
+      if (!partySlugs.has(p.party)) fail(file, `unknown party: ${p.party}`);
+      if (!issueSlugs.has(p.issue)) fail(file, `unknown issue: ${p.issue}`);
+      if (!f.startsWith(`${p.party}--${p.issue}`)) {
+        fail(file, `filename must be '${p.party}--${p.issue}.yaml'`);
+      }
+      for (const bad of ["rating", "score", "stars", "rank", "grade"]) {
+        if (p[bad] != null) fail(file, `forbidden field '${bad}' (no subjective ratings)`);
+      }
+      if (!Array.isArray(p.claims) || p.claims.length === 0) {
+        fail(file, "claims must have at least one entry");
+        continue;
+      }
+      const claimIds = new Set();
+      for (const c of p.claims) {
+        if (!c.id || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(c.id)) {
+          fail(file, `bad claim id: ${c.id}`);
+        }
+        if (claimIds.has(c.id)) fail(file, `duplicate claim id: ${c.id}`);
+        claimIds.add(c.id);
+        if (!c.statement) fail(file, `claim ${c.id}: statement required`);
+        if (!CLAIM_KINDS.has(c.kind)) fail(file, `claim ${c.id}: invalid kind '${c.kind}'`);
+        checkSource(file, `claim ${c.id}`, c.source);
+        if (c.rating != null || c.score != null || c.stars != null) {
+          fail(file, `claim ${c.id}: forbidden rating/score/stars field`);
+        }
+        if (c.fiscal) {
+          const fsc = c.fiscal;
+          if (fsc.taxpayer_label && !TAXPAYER_LABELS.has(fsc.taxpayer_label)) {
+            fail(file, `claim ${c.id}: invalid taxpayer_label`);
+          }
+          if (fsc.financing && !FINANCING.has(fsc.financing)) {
+            fail(file, `claim ${c.id}: invalid financing`);
+          }
+          if (fsc.pbo_status && !PBO_STATUS.has(fsc.pbo_status)) {
+            fail(file, `claim ${c.id}: invalid pbo_status`);
+          }
+          if (fsc.amount_aud != null && (!Number.isInteger(fsc.amount_aud) || fsc.amount_aud < 0)) {
+            fail(file, `claim ${c.id}: amount_aud must be a non-negative integer (AUD dollars)`);
+          }
+          if (fsc.pbo_status === "pbo_costed") {
+            checkSource(file, `claim ${c.id} pbo_ref`, fsc.pbo_ref);
+          }
+        }
+      }
+    }
+  }
+
+  return { issueCount, policyCount };
+}
+
 function validateFederal(election, dir, load) {
   const meta = load("election.yaml").election;
   const parties = load("parties.yaml").parties;
@@ -234,7 +358,12 @@ for (const election of readdirSync(DATA_DIR)) {
   if (meta.kind === "federal") {
     validateFederal(election, dir, load);
     const federalPolls = validatePolls(election, dir);
-    if (federalPolls) console.log(`${election}: ${federalPolls} poll(s)`);
+    const parties = load("parties.yaml").parties;
+    const partySlugs = new Set(parties.map((p) => p.slug));
+    const { issueCount, policyCount } = validateIssuesPolicies(election, dir, load, partySlugs);
+    console.log(
+      `${election}: ${federalPolls} poll(s), ${issueCount} issues, ${policyCount} policies`
+    );
     continue;
   }
 
@@ -347,130 +476,7 @@ for (const election of readdirSync(DATA_DIR)) {
   // polls (optional directory) — see docs/POLL-METHODOLOGY.md
   const pollCount = validatePolls(election, dir);
 
-  // issues taxonomy (optional) — policy matrix + jurisdiction guide
-  const JURISDICTIONS = [
-    "state_primary",
-    "shared_fed_state",
-    "federal_primary",
-    "local_primary",
-    "shared_state_local",
-  ];
-  const MATRIX_PARTIES = new Set(["greens", "labor", "liberal", "nationals", "one-nation"]);
-  const CLAIM_KINDS = new Set(["pledge", "position", "costed_measure", "opposition_to"]);
-  const TAXPAYER_LABELS = new Set([
-    "Upfront capital",
-    "Ongoing operational",
-    "Debt / interest",
-    "Not specified",
-  ]);
-  const FINANCING = new Set(["taxpayer", "borrowing", "user_charges", "mixed", "unspecified"]);
-  const PBO_STATUS = new Set(["pbo_costed", "uncosted", "not_applicable"]);
-
-  let issueCount = 0;
-  let policyCount = 0;
-  const issueSlugs = new Set();
-
-  const issuesPath = join(dir, "issues.yaml");
-  if (existsSync(issuesPath)) {
-    const issues = load("issues.yaml").issues ?? [];
-    const issueFile = `${election}/issues.yaml`;
-    for (const issue of issues) {
-      issueCount++;
-      if (!issue.slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(issue.slug)) {
-        fail(issueFile, `bad issue slug: ${issue.slug}`);
-      }
-      if (issueSlugs.has(issue.slug)) fail(issueFile, `duplicate issue slug: ${issue.slug}`);
-      issueSlugs.add(issue.slug);
-      if (!issue.name) fail(issueFile, `${issue.slug}: name required`);
-      if (!issue.summary) fail(issueFile, `${issue.slug}: summary required`);
-      if (!JURISDICTIONS.includes(issue.jurisdiction)) {
-        fail(issueFile, `${issue.slug}: invalid jurisdiction '${issue.jurisdiction}'`);
-      }
-      if (!issue.jurisdiction_note) {
-        fail(issueFile, `${issue.slug}: jurisdiction_note required`);
-      }
-      for (const s of issue.sources ?? []) {
-        checkSource(issueFile, `${issue.slug} source`, s);
-      }
-      for (const rel of issue.related ?? []) {
-        // related slugs are checked after all issues loaded
-      }
-    }
-    for (const issue of issues) {
-      for (const rel of issue.related ?? []) {
-        if (!issueSlugs.has(rel)) {
-          fail(issueFile, `${issue.slug}: unknown related issue '${rel}'`);
-        }
-      }
-    }
-  }
-
-  // policies (optional directory) — party × issue claims; see docs/POLICY-METHODOLOGY.md
-  const policyDir = join(dir, "policies");
-  if (existsSync(policyDir) && statSync(policyDir).isDirectory()) {
-    if (issueSlugs.size === 0) {
-      fail(`${election}/policies`, "policies/ present but issues.yaml missing or empty");
-    }
-    for (const f of readdirSync(policyDir)) {
-      if (f.startsWith("_") || f.startsWith(".") || !f.endsWith(".yaml")) continue;
-      policyCount++;
-      const file = `${election}/policies/${f}`;
-      const raw = parse(readFileSync(join(policyDir, f), "utf8"));
-      const p = raw?.policy;
-      if (!p) {
-        fail(file, "missing top-level 'policy' key");
-        continue;
-      }
-      if (!MATRIX_PARTIES.has(p.party)) {
-        fail(file, `party must be one of matrix allowlist; got '${p.party}'`);
-      }
-      if (!partySlugs.has(p.party)) fail(file, `unknown party: ${p.party}`);
-      if (!issueSlugs.has(p.issue)) fail(file, `unknown issue: ${p.issue}`);
-      if (!f.startsWith(`${p.party}--${p.issue}`)) {
-        fail(file, `filename must be '${p.party}--${p.issue}.yaml'`);
-      }
-      // Forbid rating-style fields anywhere on the record
-      for (const bad of ["rating", "score", "stars", "rank", "grade"]) {
-        if (p[bad] != null) fail(file, `forbidden field '${bad}' (no subjective ratings)`);
-      }
-      if (!Array.isArray(p.claims) || p.claims.length === 0) {
-        fail(file, "claims must have at least one entry");
-        continue;
-      }
-      const claimIds = new Set();
-      for (const c of p.claims) {
-        if (!c.id || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(c.id)) {
-          fail(file, `bad claim id: ${c.id}`);
-        }
-        if (claimIds.has(c.id)) fail(file, `duplicate claim id: ${c.id}`);
-        claimIds.add(c.id);
-        if (!c.statement) fail(file, `claim ${c.id}: statement required`);
-        if (!CLAIM_KINDS.has(c.kind)) fail(file, `claim ${c.id}: invalid kind '${c.kind}'`);
-        checkSource(file, `claim ${c.id}`, c.source);
-        if (c.rating != null || c.score != null || c.stars != null) {
-          fail(file, `claim ${c.id}: forbidden rating/score/stars field`);
-        }
-        if (c.fiscal) {
-          const fsc = c.fiscal;
-          if (fsc.taxpayer_label && !TAXPAYER_LABELS.has(fsc.taxpayer_label)) {
-            fail(file, `claim ${c.id}: invalid taxpayer_label`);
-          }
-          if (fsc.financing && !FINANCING.has(fsc.financing)) {
-            fail(file, `claim ${c.id}: invalid financing`);
-          }
-          if (fsc.pbo_status && !PBO_STATUS.has(fsc.pbo_status)) {
-            fail(file, `claim ${c.id}: invalid pbo_status`);
-          }
-          if (fsc.amount_aud != null && (!Number.isInteger(fsc.amount_aud) || fsc.amount_aud < 0)) {
-            fail(file, `claim ${c.id}: amount_aud must be a non-negative integer (AUD dollars)`);
-          }
-          if (fsc.pbo_status === "pbo_costed") {
-            checkSource(file, `claim ${c.id} pbo_ref`, fsc.pbo_ref);
-          }
-        }
-      }
-    }
-  }
+  const { issueCount, policyCount } = validateIssuesPolicies(election, dir, load, partySlugs);
 
   console.log(
     `${election}: ${districts.length} districts, ${regions.length} regions, ${parties.length} parties, ${count} candidates, ${pollCount} polls, ${issueCount} issues, ${policyCount} policies`

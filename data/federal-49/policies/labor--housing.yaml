@@ -1,0 +1,26 @@
+policy:
+  party: labor
+  issue: housing
+  headline: 1.2 million homes target and Housing Australia programs
+  claims:
+    - id: labor-homes-target
+      statement: >-
+        The Albanese Government states an ambitious goal of building 1.2 million homes
+        by the end of the decade, including training more tradies, fee-free training places
+        and incentives for state governments to accelerate construction.
+      kind: pledge
+      source:
+        url: https://alp.org.au/homes-for-australia/
+        publisher: Australian Labor Party
+        title: Homes for Australia
+        accessed: 2026-08-09
+    - id: labor-haff-dv
+      statement: >-
+        The Housing Australia Future Fund is described as including funding for 4,000 homes
+        for women and children fleeing domestic violence or older women at risk of homelessness.
+      kind: position
+      source:
+        url: https://alp.org.au/homes-for-australia/
+        publisher: Australian Labor Party
+        title: Homes for Australia
+        accessed: 2026-08-09

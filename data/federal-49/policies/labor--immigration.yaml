@@ -1,0 +1,17 @@
+policy:
+  party: labor
+  issue: immigration
+  headline: Migration law changes tied to hate and extremism offences
+  claims:
+    - id: labor-migration-hate-laws
+      statement: >-
+        The Albanese Government passed the Combatting Antisemitism, Hate and Extremism
+        (Criminal and Migration Laws) Act 2026, which Labor describes as strengthening
+        criminal and migration laws targeting hate and extremism.
+      kind: position
+      source:
+        url: https://alp.org.au/news/albanese-government-passes-legislation-to-combat-antisemitism-hate-and-extremism/
+        publisher: Australian Labor Party
+        title: Albanese Government passes legislation to combat antisemitism, hate and extremism
+        published: 2026-01-21
+        accessed: 2026-08-09

@@ -7,7 +7,7 @@
  */
 import PolicyMatrixView from "./PolicyMatrixView.astro";
 
-const { matrix } = Astro.props;
+const { matrix, issueHrefPrefix = "/policies" } = Astro.props;
 const separate = {
   parties: matrix.parties,
   rows: matrix.rows,
@@ -26,9 +26,20 @@ const fillPct = activeStats.total_cells
     <p class="eyebrow">Party positions · sourced only</p>
     <h2 id="pm-h">Policy comparison matrix</h2>
     <p class="lede">
-      The default view consolidates joint Liberal–Nationals commitments into one
-      Coalition column. Switch to the separate-party view whenever their records,
-      emphasis or published positions differ.
+      {
+        combined ? (
+          <>
+            The default view consolidates joint Liberal–Nationals commitments into one
+            Coalition column. Switch to the separate-party view whenever their records,
+            emphasis or published positions differ.
+          </>
+        ) : (
+          <>
+            Columns are individual matrix parties. Empty cells mean no sourced record is in
+            the ledger yet — not that a party has no view.
+          </>
+        )
+      }
     </p>
 
     <div class="pm-progress" aria-hidden="true">
@@ -94,12 +105,22 @@ const fillPct = activeStats.total_cells
 
   {combined && (
     <div data-view-panel="combined" hidden={defaultView !== "combined"}>
-      <PolicyMatrixView view={combined} mode="combined Coalition" viewId="combined" />
+      <PolicyMatrixView
+        view={combined}
+        mode="combined Coalition"
+        viewId="combined"
+        issueHrefPrefix={issueHrefPrefix}
+      />
     </div>
   )}
 
   <div data-view-panel="separate" hidden={defaultView !== "separate"}>
-    <PolicyMatrixView view={separate} mode="separate party" viewId="separate" />
+    <PolicyMatrixView
+      view={separate}
+      mode="separate party"
+      viewId="separate"
+      issueHrefPrefix={issueHrefPrefix}
+    />
   </div>
 </section>
 

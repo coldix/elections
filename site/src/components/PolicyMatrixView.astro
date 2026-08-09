@@ -4,8 +4,9 @@ import JurisdictionBadge from "./JurisdictionBadge.astro";
 import PolicyCell from "./PolicyCell.astro";
 import CoalitionPolicyCell from "./CoalitionPolicyCell.astro";
 
-const { view, mode = "separate", viewId = mode } = Astro.props;
+const { view, mode = "separate", viewId = mode, issueHrefPrefix = "/policies" } = Astro.props;
 const { parties, rows, stats } = view;
+const issueHref = (slug) => `${issueHrefPrefix.replace(/\/$/, "")}/${slug}`;
 
 function cellFilled(cell, slug) {
   return slug === "coalition" ? Boolean(cell?.has_policy) : Boolean(cell);
@@ -75,7 +76,7 @@ function rowFilled(cells) {
                   <div class="pm-issue-cell">
                     <a
                       class="pm-issue-name"
-                      href={`/policies/${issue.slug}`}
+                      href={issueHref(issue.slug)}
                       title={`Open the detailed ${issue.name} comparison`}
                     >
                       {issue.name}
@@ -119,7 +120,7 @@ function rowFilled(cells) {
           <article class="pm-card" id={`${viewId}-mobile-issue-${issue.slug}`}>
             <header class="pm-card-head">
               <h3>
-                <a href={`/policies/${issue.slug}`} title={`Open the detailed ${issue.name} comparison`}>
+                <a href={issueHref(issue.slug)} title={`Open the detailed ${issue.name} comparison`}>
                   {issue.name}
                 </a>
               </h3>

@@ -1,0 +1,16 @@
+policy:
+  party: greens
+  issue: public-media
+  headline: Defend and properly fund public broadcasting
+  claims:
+    - id: greens-abc-sbs
+      statement: >-
+        The Australian Greens support well-funded public broadcasting and oppose cuts that
+        would undermine the ABC and SBS as free-to-air national services (party communications
+        and media policy materials).
+      kind: position
+      source:
+        url: https://greens.org.au/platform
+        publisher: Australian Greens
+        title: Platform — Australian Greens
+        accessed: 2026-08-09

@@ -1,0 +1,16 @@
+policy:
+  party: one-nation
+  issue: immigration
+  headline: Lower migration and tighter foreign-student settings
+  claims:
+    - id: on-lower-migration
+      statement: >-
+        Coverage of One Nation leader Pauline Hanson’s National Press Club address summarised
+        the party’s vision as including lower migration and tighter foreign-student rules.
+      kind: position
+      source:
+        url: https://www.nine.com.au/australia-news/pauline-hanson-calls-for-sbs-to-be-axed-abc-made-subscription-service-20260617-p607nm.html
+        publisher: Nine News
+        title: Pauline Hanson calls for SBS to be axed and ABC made a subscription service
+        published: 2026-06-17
+        accessed: 2026-08-09

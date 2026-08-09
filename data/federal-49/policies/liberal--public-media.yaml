@@ -1,0 +1,17 @@
+policy:
+  party: liberal
+  issue: public-media
+  headline: Efficiency and accountability for national broadcasters
+  claims:
+    - id: lib-abc-accountability
+      statement: >-
+        Federal Liberal commentary and party materials commonly call for greater efficiency,
+        accountability and balance at the national broadcasters while remaining within a
+        publicly funded framework (public statements and party communications). Empty
+        cells are not filled without a specific dated pledge.
+      kind: position
+      source:
+        url: https://www.liberal.org.au/
+        publisher: Liberal Party of Australia
+        title: Liberal Party of Australia
+        accessed: 2026-08-09

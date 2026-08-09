@@ -1,0 +1,91 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import JurisdictionBadge from "../../../../../components/JurisdictionBadge.astro";
+import { loadIssues, matrixFor } from "../../../../../../../scripts/lib/policies.mjs";
+import { SITE, FEDERAL_49 } from "../../../../../lib/site.mjs";
+
+const electionId = "federal-49";
+const issues = loadIssues(electionId);
+const matrix = matrixFor(electionId);
+
+const schema = {
+  "@type": "CollectionPage",
+  name: "Federal policy issues",
+  description: "Issue-by-issue policy comparisons for the next Australian federal election.",
+  url: `${SITE.url}${FEDERAL_49}/policies`,
+};
+---
+
+<Base
+  title="Policy issues"
+  description="Browse federal policy issues and open sourced party comparisons for the 49th Parliament contest."
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "Federal", href: FEDERAL_49 },
+    { name: "Policies", href: `${FEDERAL_49}/policies` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={FEDERAL_49}>Federal</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Policies</span>
+    </nav>
+
+    <p class="eyebrow">Federal · {matrix.stats.issues} issues · {matrix.stats.policy_records} records</p>
+    <h1>Policy issues</h1>
+    <p class="lede">
+      Each issue page compares matrix parties where a sourced national position is recorded.
+      Empty cells are expected early — they are not a ranking.
+    </p>
+    <p class="btn-row">
+      <a class="btn" href={`${FEDERAL_49}/parties/matrix`}>Full matrix</a>
+      <a class="btn btn-ghost btn-sm" href="/data/federal-49/policies.json">policies.json</a>
+    </p>
+
+    <ul class="issue-list" role="list">
+      {
+        issues.map((issue) => {
+          const row = matrix.rows.find((r) => r.issue.slug === issue.slug);
+          const filled = row
+            ? matrix.parties.filter((p) => Boolean(row.cells[p.slug])).length
+            : 0;
+          return (
+            <li>
+              <a class="card issue-card" href={`${FEDERAL_49}/policies/${issue.slug}`}>
+                <header>
+                  <h2>{issue.name}</h2>
+                  <JurisdictionBadge jurisdiction={issue.jurisdiction} />
+                </header>
+                <p>{issue.summary}</p>
+                <p class="muted fill">
+                  {filled}/{matrix.parties.length} matrix parties with a sourced record
+                </p>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; }
+  .issue-list {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 0.85rem;
+  }
+  .issue-card { display: block; text-decoration: none; color: inherit; }
+  .issue-card:hover { border-color: var(--rule-strong); }
+  .issue-card header {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem;
+  }
+  .issue-card h2 { margin: 0; font-size: 1.15rem; }
+  .fill { margin-bottom: 0; font-size: 0.88rem; }
+</style>

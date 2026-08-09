@@ -1,0 +1,16 @@
+policy:
+  party: greens
+  issue: climate-energy
+  headline: Stronger climate action and renewable energy (national platform)
+  claims:
+    - id: greens-climate-platform
+      statement: >-
+        The Australian Greens campaign on faster emissions reduction, ending new coal and gas
+        expansion and accelerating renewable energy and storage as core national priorities
+        (party climate and energy platform materials).
+      kind: position
+      source:
+        url: https://greens.org.au/platform/climate
+        publisher: Australian Greens
+        title: Climate — Australian Greens
+        accessed: 2026-08-09

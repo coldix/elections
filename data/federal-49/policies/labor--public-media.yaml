@@ -1,0 +1,16 @@
+policy:
+  party: labor
+  issue: public-media
+  headline: Continue public funding of national broadcasters
+  claims:
+    - id: labor-public-broadcasting
+      statement: >-
+        As the incumbent Commonwealth government, Labor continues annual appropriations for
+        the ABC and SBS under existing charters. Party materials frame public broadcasting as
+        part of Australia’s media landscape rather than a subscription-only metropolitan model.
+      kind: position
+      source:
+        url: https://www.alp.org.au/our-plan/what-were-working-on/
+        publisher: Australian Labor Party
+        title: What we're working on
+        accessed: 2026-08-09

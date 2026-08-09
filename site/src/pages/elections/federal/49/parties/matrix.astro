@@ -1,0 +1,67 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import PolicyMatrix from "../../../../../components/PolicyMatrix.astro";
+import PolicyIssueLinkStyles from "../../../../../components/PolicyIssueLinkStyles.astro";
+import { matrixFor } from "../../../../../../../scripts/lib/policies.mjs";
+import { SITE, FEDERAL_49 } from "../../../../../lib/site.mjs";
+
+const matrix = matrixFor("federal-49");
+
+const schema = {
+  "@type": "WebPage",
+  name: "Policy comparison matrix — next federal election",
+  description:
+    "Side-by-side, sourced party positions on key federal issues for the contest electing the 49th Parliament. Empty cells mean no sourced record yet.",
+  url: `${SITE.url}${FEDERAL_49}/parties/matrix`,
+  isPartOf: { "@id": `${SITE.url}/#website` },
+};
+---
+
+<Base
+  title="Policy matrix"
+  description="Compare Greens, Labor, Liberal, Nationals and One Nation on federal issues — sourced claims only. Not a scorecard."
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "Federal", href: FEDERAL_49 },
+    { name: "Policy matrix", href: `${FEDERAL_49}/parties/matrix` },
+  ]}
+>
+  <div class="wrap wrap-wide section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={FEDERAL_49}>Federal</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Policy matrix</span>
+    </nav>
+
+    <header class="page-head">
+      <p class="eyebrow">Federal · federal-49 · sourced positions only</p>
+      <h1>Policy comparison</h1>
+      <p class="lede">
+        National-party positions on Commonwealth-relevant issues for the contest electing the
+        <strong>49th Parliament</strong>. Early ledger: empty cells are expected. This is not a
+        scorecard, forecast or how-to-vote guide.
+      </p>
+      <p class="btn-row">
+        <a class="btn" href={`${FEDERAL_49}/policies`}>Browse issues</a>
+        <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/parties`}>Parties</a>
+        <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/polls`}>Polls</a>
+        <a class="btn btn-ghost btn-sm" href="/data/federal-49/policies.json">policies.json</a>
+        <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/data`}>Open data</a>
+      </p>
+    </header>
+
+    <PolicyIssueLinkStyles />
+    <PolicyMatrix matrix={matrix} issueHrefPrefix={`${FEDERAL_49}/policies`} />
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .wrap-wide { max-width: min(92rem, 100%); }
+  .page-head { max-width: 56rem; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+</style>

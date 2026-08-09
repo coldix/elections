@@ -1,0 +1,17 @@
+policy:
+  party: labor
+  issue: tax-budget
+  headline: Productivity focus and housing-enabling infrastructure in Budget 2026
+  claims:
+    - id: labor-budget-productivity
+      statement: >-
+        Labor’s May 2026 Budget communications emphasise boosting productivity and cutting
+        regulatory costs, including investment in housing-enabling infrastructure such as
+        roads, water, power and sewerage to support tens of thousands of homes over a decade.
+      kind: position
+      source:
+        url: https://alp.org.au/news/budget-to-boost-productivity-and-cut-regulatory-costs-by-10-billion/
+        publisher: Australian Labor Party
+        title: Budget to boost productivity and cut regulatory costs by $10 billion
+        published: 2026-05-12
+        accessed: 2026-08-09

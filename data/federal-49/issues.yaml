@@ -1,0 +1,91 @@
+# Federal issue taxonomy for the 49th Parliament contest.
+# Methodology: docs/POLICY-METHODOLOGY.md
+issues:
+  - slug: cost-of-living
+    name: Cost of Living
+    summary: Household costs including energy, rents, groceries, interest rates and tax settings that affect take-home pay.
+    jurisdiction: shared_fed_state
+    jurisdiction_note: >-
+      The Commonwealth sets income tax, most social security, monetary-policy frameworks via the RBA,
+      and many national market rules. States set state taxes, many service fees and some energy consumer
+      protections. This federal matrix records national-party positions only.
+    federal_role: Income tax, welfare, competition policy, national energy and housing programs.
+    state_role: State taxes, public transport fares, many concessions and state energy rules.
+    related: [housing, tax-budget, climate-energy]
+
+  - slug: housing
+    name: Housing
+    summary: Housing supply, affordability, rental settings and Commonwealth funding for homes and infrastructure.
+    jurisdiction: shared_fed_state
+    jurisdiction_note: >-
+      Planning and zoning are largely state and local; the Commonwealth funds national housing programs,
+      finance settings and some rent-related tax rules. Parties contesting a federal election still publish
+      national housing platforms.
+    federal_role: Housing Australia, HAFF-style funds, Help to Buy, tax settings affecting investment.
+    state_role: Planning, zoning, public housing stock and many tenancy laws.
+    related: [cost-of-living, immigration, tax-budget]
+
+  - slug: immigration
+    name: Immigration
+    summary: Permanent and temporary migration levels, visas, citizenship and border policy.
+    jurisdiction: federal_primary
+    jurisdiction_note: >-
+      Immigration, visas and citizenship are Commonwealth powers. States may run settlement services and
+      limited nomination pathways within federal caps.
+    federal_role: Visas, migration planning levels, citizenship, border control, refugee determination.
+    state_role: Settlement services and some skilled-migration nomination programs.
+    related: [housing, cost-of-living]
+
+  - slug: climate-energy
+    name: Climate & Energy
+    summary: Emissions targets, renewable and firming energy, national electricity market settings and climate adaptation.
+    jurisdiction: shared_fed_state
+    jurisdiction_note: >-
+      National market architecture, emissions targets and major funding programs are Commonwealth-led;
+      states set many generation and consumer-protection details within that framework.
+    federal_role: National emissions targets, CER/NEM architecture, major energy funding.
+    state_role: State energy policy, some generation projects and consumer protections.
+    related: [cost-of-living, tax-budget]
+
+  - slug: tax-budget
+    name: Tax & Budget
+    summary: Commonwealth taxes, spending priorities, deficits and fiscal strategy.
+    jurisdiction: federal_primary
+    jurisdiction_note: >-
+      The Commonwealth budget, income tax and most national welfare spending are federal. GST rate and base
+      are Commonwealth; distribution to states involves the Grants Commission process.
+    federal_role: Income tax, company tax, budget balance, major national programs.
+    state_role: State budgets, state taxes and borrowings.
+    related: [cost-of-living, housing, climate-energy]
+
+  - slug: health
+    name: Health
+    summary: Medicare, hospitals funding agreements, PBS and national primary-care settings.
+    jurisdiction: shared_fed_state
+    jurisdiction_note: >-
+      Medicare, PBS and major hospital funding agreements are Commonwealth; public hospital operation is
+      largely state-run under those agreements.
+    federal_role: Medicare, PBS, aged care frameworks, hospital funding agreements.
+    state_role: Public hospital systems and many community health services.
+    related: [tax-budget, cost-of-living]
+
+  - slug: public-media
+    name: Public Media
+    summary: Funding and role of the ABC and SBS as national public broadcasters.
+    jurisdiction: federal_primary
+    jurisdiction_note: >-
+      ABC and SBS charters and appropriations are Commonwealth matters. States do not fund or control the
+      national broadcasters.
+    federal_role: Charter legislation, annual appropriations, national media regulation interfaces.
+    state_role: No primary role in ABC/SBS funding or charters.
+    related: [tax-budget]
+
+  - slug: defence-security
+    name: Defence & Security
+    summary: Defence force posture, alliances, national security legislation and border security at the Commonwealth level.
+    jurisdiction: federal_primary
+    jurisdiction_note: >-
+      Defence and most national-security powers are Commonwealth. State police handle ordinary crime.
+    federal_role: ADF, intelligence agencies, federal offences, national-security legislation.
+    state_role: State police and emergency services for ordinary state offences and disasters.
+    related: [immigration, tax-budget]
