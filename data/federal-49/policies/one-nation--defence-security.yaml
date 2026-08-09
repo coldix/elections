@@ -1,0 +1,40 @@
+policy:
+  party: one-nation
+  issue: defence-security
+  headline: Public support for ADF veterans including Ben Roberts-Smith
+  claims:
+    - id: on-brs-party-support
+      statement: >-
+        During the 2026 Farrer by-election, a One Nation spokesperson told ABC News the party
+        was “the only party which has expressed support for Ben Roberts-Smith” and that signs
+        supporting him reflected “our strong commitment to support all Australian veterans much
+        better than the Labor government currently does.”
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2026-05-06/one-nation-signs-support-ben-roberts-smith/106643228
+        publisher: ABC News
+        title: One Nation defends campaign signs supporting Ben Roberts-Smith
+        published: 2026-05-06
+        accessed: 2026-08-09
+    - id: on-brs-hanson-rally
+      statement: >-
+        One Nation leader Pauline Hanson told a June 2026 rally in support of Ben Roberts-Smith
+        that he is a person she “respect[s] and … admire[s]” (reported by The Guardian).
+      kind: position
+      source:
+        url: https://www.theguardian.com/australia-news/2026/jun/07/one-nation-leader-pauline-hanson-tells-rally-ben-roberts-smith-is-a-person-i-respect-and-i-admire-ntwnfb
+        publisher: The Guardian
+        title: One Nation leader Pauline Hanson tells rally Ben Roberts-Smith is a person ‘I respect and I admire’
+        published: 2026-06-07
+        accessed: 2026-08-09
+    - id: on-veterans-framing
+      statement: >-
+        One Nation’s Farrer campaign messaging framed support for Roberts-Smith as part of a
+        broader commitment to Australian veterans (party statement reported by ABC and SBS).
+      kind: position
+      source:
+        url: https://www.sbs.com.au/news/article/one-nation-features-ben-roberts-smith-in-farrer-by-election-campaign-drawing-legal-scrutiny/hnyvn1ff3
+        publisher: SBS News
+        title: Ben Roberts-Smith images in One Nation's Farrer by-election campaign draw legal scrutiny
+        published: 2026-05-07
+        accessed: 2026-08-09
