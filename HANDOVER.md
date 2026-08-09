@@ -161,8 +161,8 @@ Parliament:
 
 - House: 150 divisions + sitting MPs
 - Senate: composition + half-Senate term status (`up` / `continuing` / `territory`)
-- Parties + representation rollup
-- Exports: `/data/federal-49/`
+- Parties index + per-party member lists
+- Open data page + exports: `/data/federal-49/`
 
 Membership was **bootstrapped** from public Wikipedia compilations of the 48th
 Parliament; prefer APH verification for named-person corrections. Not a

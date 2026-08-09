@@ -1,0 +1,198 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import SourceLink from "../../../../../components/SourceLink.astro";
+import {
+  loadFederalElection,
+  federalRepresentationFor,
+} from "../../../../../../../scripts/lib/federal.mjs";
+import { SITE, FEDERAL_49, partyColour } from "../../../../../lib/site.mjs";
+
+const data = loadFederalElection("federal-49");
+const rep = federalRepresentationFor(data);
+const { election } = data;
+
+const rows = data.parties
+  .map((p) => {
+    const r = rep[p.slug] ?? { representatives: 0, senate: 0, total: 0 };
+    return { ...p, ...r };
+  })
+  .sort(
+    (a, b) =>
+      b.total - a.total ||
+      b.representatives - a.representatives ||
+      a.name.localeCompare(b.name)
+  );
+
+const withSeats = rows.filter((p) => p.total > 0);
+const withoutSeats = rows.filter((p) => p.total === 0);
+
+const schema = {
+  "@type": "WebPage",
+  name: "Parties — next federal election",
+  description: `Parties and independents with seats in the ${election.sitting_parliament_label}, for the contest electing the ${election.parliament_label}.`,
+  url: `${SITE.url}${FEDERAL_49}/parties`,
+};
+---
+
+<Base
+  title="Parties"
+  description={`Federal parties with seats in the ${election.sitting_parliament_label}. Ordered by seats held now — not by coverage or prominence.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "Federal", href: FEDERAL_49 },
+    { name: "Parties", href: `${FEDERAL_49}/parties` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={FEDERAL_49}>Federal</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Parties</span>
+    </nav>
+
+    <p class="eyebrow">Federal · {election.sitting_parliament_label}</p>
+    <h1>Parties</h1>
+    <p class="lede">
+      Parties and independents that hold seats in the current parliament. Ordered by seats held
+      now (House + Senate) — an objective fact about the sitting parliament, not a ranking by
+      prominence. This is <em>not</em> yet a candidacy-coverage dashboard for the
+      {election.parliament_label}.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>Sitting seats only.</strong> Figures are membership of the
+      {election.sitting_parliament_label}. They do not count announced candidates for the next
+      election. Coalition partners (Liberal, Nationals, and where recorded Country Liberal) are
+      listed separately.
+    </div>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={FEDERAL_49}>Overview</a>
+      <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/representatives`}>House</a>
+      <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/senate`}>Senate</a>
+      <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/data`}>Open data</a>
+    </p>
+
+    <p class="summary muted">
+      <strong>{withSeats.length}</strong> with seats ·
+      <strong>{rows.length}</strong> listed groups
+    </p>
+
+    <ul class="party-grid" role="list">
+      {
+        withSeats.map((p) => (
+          <li>
+            <a
+              class="card p-card"
+              href={`${FEDERAL_49}/parties/${p.slug}`}
+              style={`--party-colour:${partyColour(p.slug)}`}
+            >
+              <span class="p-bar" aria-hidden="true" />
+              <header class="p-head">
+                <h2>{p.short_name}</h2>
+                <p class="p-full muted">{p.name}</p>
+                {p.registered === false && <p class="unreg">Not a registered party label</p>}
+              </header>
+              <p class="p-seats">
+                <span class="p-seats-n">{p.total}</span>
+                <span class="muted">
+                  {p.total === 1 ? "seat" : "seats"} held now
+                  <span class="held-split">
+                    {" "}
+                    ({p.representatives}H · {p.senate}S)
+                  </span>
+                </span>
+              </p>
+              <dl class="p-stats">
+                <div>
+                  <dt>House</dt>
+                  <dd>
+                    <strong>{p.representatives}</strong>
+                    <span class="muted">/{election.house_seats}</span>
+                  </dd>
+                </div>
+                <div>
+                  <dt>Senate</dt>
+                  <dd>
+                    <strong>{p.senate}</strong>
+                    <span class="muted">/{election.senate_seats}</span>
+                  </dd>
+                </div>
+              </dl>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    {
+      withoutSeats.length > 0 && (
+        <section class="section compact" aria-labelledby="no-seats-h">
+          <h2 id="no-seats-h">Listed without current seats</h2>
+          <p class="muted">
+            Present in the party register file for this ledger but holding no House or Senate
+            place in the sitting parliament snapshot.
+          </p>
+          <ul class="plain-list">
+            {withoutSeats.map((p) => (
+              <li>
+                <a href={`${FEDERAL_49}/parties/${p.slug}`}>{p.name}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <section class="section compact sources" aria-labelledby="sources-h">
+      <h2 id="sources-h">Sources</h2>
+      {data.parties && (
+        <p class="muted">
+          Party labels follow parliamentary labels in the membership bootstrap; AEC register
+          alignment is a later pass.
+        </p>
+      )}
+      {data.sources.house && <p><SourceLink source={data.sources.house} /></p>}
+      {data.sources.senate && <p><SourceLink source={data.sources.senate} /></p>}
+    </section>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+  .summary { margin: 1rem 0 1.25rem; }
+  .party-grid {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: 0.85rem;
+  }
+  .p-card {
+    display: block; text-decoration: none; color: inherit; position: relative;
+    overflow: hidden; height: 100%;
+  }
+  .p-card:hover { border-color: var(--rule-strong); }
+  .p-bar {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: var(--party-colour, var(--ink-3));
+  }
+  .p-head { padding-left: 0.35rem; }
+  .p-head h2 { margin: 0; font-size: 1.15rem; }
+  .p-full { margin: 0.2rem 0 0; font-size: 0.88rem; }
+  .unreg { margin: 0.35rem 0 0; font-size: 0.78rem; font-weight: 650; color: var(--ink-3); }
+  .p-seats { margin: 1rem 0 0.75rem; padding-left: 0.35rem; }
+  .p-seats-n { font-size: 1.75rem; font-weight: 700; margin-right: 0.35rem; }
+  .held-split { white-space: nowrap; }
+  .p-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 0; padding-left: 0.35rem;
+  }
+  .p-stats dt {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3);
+  }
+  .p-stats dd { margin: 0.1rem 0 0; }
+  .plain-list { padding-left: 1.2rem; display: grid; gap: 0.35rem; }
+  .compact { max-width: 40rem; }
+</style>

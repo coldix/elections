@@ -14,6 +14,7 @@ const KEY_PATH = join(__dirname, "indexnow.key");
 // and the GSC priority list in docs/DISCOVERY.md.
 // Prefer *canonical* election-scoped HTML paths (legacy short URLs 301).
 const VIC = `https://${HOST}/elections/vic/2026`;
+const FED = `https://${HOST}/elections/federal/49`;
 const PRIORITY = [
   `https://${HOST}/`,
   `https://${HOST}/elections`,
@@ -28,6 +29,11 @@ const PRIORITY = [
   `${VIC}/districts`,
   `${VIC}/regions`,
   `${VIC}/open-seats`,
+  FED,
+  `${FED}/representatives`,
+  `${FED}/senate`,
+  `${FED}/parties`,
+  `${FED}/data`,
   `https://${HOST}/methodology`,
   `https://${HOST}/about`,
   `https://${HOST}/privacy`,
@@ -39,6 +45,9 @@ const PRIORITY = [
   `https://${HOST}/data/index.json`,
   `https://${HOST}/data/vic2026/poll-average.json`,
   `https://${HOST}/data/vic2026/candidates.json`,
+  `https://${HOST}/data/federal-49/summary.json`,
+  `https://${HOST}/data/federal-49/house-members.json`,
+  `https://${HOST}/data/federal-49/senate-members.json`,
 ];
 
 if (!existsSync(KEY_PATH)) {

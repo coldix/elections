@@ -38,8 +38,14 @@ const schema = {
       {calendar.elections.map((entry) => {
         const status = ELECTION_DATE_STATUS[entry.status];
         const live = entry.jurisdiction === "vic";
+        const federalActive = entry.jurisdiction === "federal";
+        const cta = live
+          ? "Open active tracker"
+          : federalActive
+            ? "Open federal structure & members"
+            : "View election outline";
         return (
-          <article class={`election-card card ${live ? "is-live" : ""}`}>
+          <article class={`election-card card ${live || federalActive ? "is-live" : ""}`}>
             <header>
               <div>
                 <p class="jurisdiction">{entry.name}</p>
@@ -51,8 +57,8 @@ const schema = {
             <p>{entry.basis}</p>
             {entry.note && <p class="muted">{entry.note}</p>}
             <p>
-              <a class={`btn ${live ? "" : "btn-ghost"}`} href={entry.planned_path}>
-                {live ? "Open active tracker" : "View election outline"}
+              <a class={`btn ${live || federalActive ? "" : "btn-ghost"}`} href={entry.planned_path}>
+                {cta}
               </a>
             </p>
             <p class="source"><SourceLink source={entry.source} /></p>

@@ -108,7 +108,8 @@ const schema = {
     <p class="btn-row">
       <a class="btn" href={`${FEDERAL_49}/representatives`}>House of Representatives</a>
       <a class="btn btn-ghost" href={`${FEDERAL_49}/senate`}>Senate</a>
-      <a class="btn btn-ghost" href="/data/federal-49/summary.json">Open data</a>
+      <a class="btn btn-ghost" href={`${FEDERAL_49}/parties`}>Parties</a>
+      <a class="btn btn-ghost" href={`${FEDERAL_49}/data`}>Open data</a>
     </p>
 
     <section aria-labelledby="composition-h">
@@ -121,7 +122,7 @@ const schema = {
       <div class="party-grid">
         {
           partyRows.map((p) => (
-            <article class="card party-card">
+            <a class="card party-card" href={`${FEDERAL_49}/parties/${p.slug}`}>
               <header>
                 <span class="swatch" style={`background:${partyColour(p.slug)}`} aria-hidden="true" />
                 <h3>{p.short_name || p.name}</h3>
@@ -140,7 +141,7 @@ const schema = {
                   <dd>{p.total}</dd>
                 </div>
               </dl>
-            </article>
+            </a>
           ))
         }
       </div>
@@ -276,6 +277,8 @@ const schema = {
   .party-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); gap: 0.75rem;
   }
+  .party-card { display: block; text-decoration: none; color: inherit; }
+  .party-card:hover { border-color: var(--rule-strong); }
   .party-card header { display: flex; align-items: center; gap: 0.55rem; }
   .party-card h3 { margin: 0; font-size: 1rem; }
   .swatch { width: 0.7rem; height: 0.7rem; border-radius: 999px; flex-shrink: 0; }

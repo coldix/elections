@@ -37,6 +37,9 @@ Canonical path and data id use the **Parliament being elected** (`49`, then
 /elections/federal/49/representatives
 /elections/federal/49/representatives/<slug>
 /elections/federal/49/senate
+/elections/federal/49/parties
+/elections/federal/49/parties/<slug>
+/elections/federal/49/data
 ```
 
 | | Current | Next cycle |

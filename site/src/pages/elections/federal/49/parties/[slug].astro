@@ -1,0 +1,225 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import SourceLink from "../../../../../components/SourceLink.astro";
+import {
+  loadFederalElection,
+  federalRepresentationFor,
+  STATE_LABELS,
+  STATE_ORDER,
+} from "../../../../../../../scripts/lib/federal.mjs";
+import { SITE, FEDERAL_49, partyColour, formatDate } from "../../../../../lib/site.mjs";
+
+export function getStaticPaths() {
+  const data = loadFederalElection("federal-49");
+  return data.parties.map((p) => ({
+    params: { slug: p.slug },
+    props: { party: p, data },
+  }));
+}
+
+const { party, data } = Astro.props;
+const { election } = data;
+const rep = federalRepresentationFor(data)[party.slug] ?? {
+  representatives: 0,
+  senate: 0,
+  total: 0,
+};
+
+const houseMembers = data.houseMembers
+  .filter((m) => m.party === party.slug)
+  .slice()
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const senateMembers = data.senateMembers
+  .filter((m) => m.party === party.slug)
+  .slice()
+  .sort((a, b) => {
+    const si = STATE_ORDER.indexOf(a.state) - STATE_ORDER.indexOf(b.state);
+    return si || a.name.localeCompare(b.name);
+  });
+
+const termLabel = {
+  up: "Up at next half-Senate",
+  continuing: "Continuing",
+  territory: "Territory (with House)",
+  unknown: "Unclear",
+};
+
+const schema = {
+  "@type": "WebPage",
+  name: `${party.name} — federal`,
+  description: `${party.name} in the ${election.sitting_parliament_label}: ${rep.representatives} House and ${rep.senate} Senate seats.`,
+  url: `${SITE.url}${FEDERAL_49}/parties/${party.slug}`,
+};
+---
+
+<Base
+  title={party.short_name || party.name}
+  description={`${party.name}: ${rep.total} seats in the ${election.sitting_parliament_label} (${rep.representatives} House, ${rep.senate} Senate).`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "Federal", href: FEDERAL_49 },
+    { name: "Parties", href: `${FEDERAL_49}/parties` },
+    { name: party.short_name || party.name, href: `${FEDERAL_49}/parties/${party.slug}` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={FEDERAL_49}>Federal</a>
+      <span aria-hidden="true">/</span>
+      <a href={`${FEDERAL_49}/parties`}>Parties</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{party.short_name || party.name}</span>
+    </nav>
+
+    <p class="eyebrow">
+      Federal · {election.sitting_parliament_label}
+      {party.family && <> · family: {party.family}</>}
+    </p>
+    <h1 class="party-title">
+      <span class="swatch" style={`background:${partyColour(party.slug)}`} aria-hidden="true" />
+      {party.name}
+    </h1>
+    {
+      party.short_name && party.short_name !== party.name && (
+        <p class="muted short">{party.short_name}</p>
+      )
+    }
+
+    <div class="notice" role="note">
+      <strong>Sitting members, not candidates.</strong> People listed below hold seats in the
+      {election.sitting_parliament_label}. They are not automatically candidates for the
+      {election.parliament_label}.
+    </div>
+
+    <dl class="facts">
+      <div>
+        <dt>House</dt>
+        <dd>{rep.representatives}</dd>
+      </div>
+      <div>
+        <dt>Senate</dt>
+        <dd>{rep.senate}</dd>
+      </div>
+      <div>
+        <dt>Total</dt>
+        <dd>{rep.total}</dd>
+      </div>
+      <div>
+        <dt>Registration note</dt>
+        <dd>{party.registered === false ? "Independent grouping" : "Party label"}</dd>
+      </div>
+    </dl>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/parties`}>All parties</a>
+      <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/representatives`}>House</a>
+      <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/senate`}>Senate</a>
+    </p>
+
+    <section aria-labelledby="house-h">
+      <h2 id="house-h">House of Representatives ({houseMembers.length})</h2>
+      {
+        houseMembers.length === 0 ? (
+          <p class="muted">No sitting House members under this label in the snapshot.</p>
+        ) : (
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Member</th>
+                  <th scope="col">Division</th>
+                  <th scope="col">State</th>
+                </tr>
+              </thead>
+              <tbody>
+                {houseMembers.map((m) => {
+                  const div = data.divisions.find((d) => d.slug === m.division);
+                  return (
+                    <tr>
+                      <td>{m.name}</td>
+                      <td>
+                        <a href={`${FEDERAL_49}/representatives/${m.division}`}>
+                          {div?.name ?? m.division}
+                        </a>
+                      </td>
+                      <td>{STATE_LABELS[m.state] ?? m.state?.toUpperCase()}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )
+      }
+    </section>
+
+    <section class="section" aria-labelledby="senate-h">
+      <h2 id="senate-h">Senate ({senateMembers.length})</h2>
+      {
+        senateMembers.length === 0 ? (
+          <p class="muted">No sitting senators under this label in the snapshot.</p>
+        ) : (
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Senator</th>
+                  <th scope="col">State / territory</th>
+                  <th scope="col">At next half-Senate</th>
+                </tr>
+              </thead>
+              <tbody>
+                {senateMembers.map((m) => (
+                  <tr>
+                    <td>{m.name}</td>
+                    <td>{STATE_LABELS[m.state] ?? m.state}</td>
+                    <td>{termLabel[m.term_status] ?? m.term_status}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )
+      }
+    </section>
+
+    <section class="section compact sources" aria-labelledby="sources-h">
+      <h2 id="sources-h">Sources</h2>
+      {data.sources.house && <p><SourceLink source={data.sources.house} /></p>}
+      {data.sources.senate && <p><SourceLink source={data.sources.senate} /></p>}
+      {
+        data.sources.house?.accessed && (
+          <p class="muted">Membership snapshot accessed {formatDate(data.sources.house.accessed)}.</p>
+        )
+      }
+    </section>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .party-title { display: flex; align-items: center; gap: 0.65rem; }
+  .swatch { width: 0.85rem; height: 0.85rem; border-radius: 999px; flex-shrink: 0; }
+  .short { margin-top: -0.35rem; }
+  .notice { margin: 1.25rem 0; }
+  .facts {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1px;
+    background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius);
+    overflow: hidden; margin: 1.25rem 0;
+  }
+  .facts > div { background: var(--surface); padding: 1rem 1.1rem; }
+  .facts dt { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-3); }
+  .facts dd { margin: 0.25rem 0 0; font-weight: 650; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: var(--radius); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { text-align: left; padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--rule); }
+  th { background: var(--surface-2); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-3); }
+  tr:last-child td { border-bottom: none; }
+  .compact { max-width: 40rem; }
+</style>

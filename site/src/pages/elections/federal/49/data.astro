@@ -1,0 +1,143 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import {
+  loadFederalElection,
+  federalSummaryFor,
+} from "../../../../../../scripts/lib/federal.mjs";
+import { SITE, FEDERAL_49, ATTRIBUTION } from "../../../../lib/site.mjs";
+
+const data = loadFederalElection("federal-49");
+const summary = federalSummaryFor(data);
+const { election } = data;
+const base = "/data/federal-49";
+
+const files = [
+  {
+    name: "election.json",
+    note: "Contest metadata: parliament numbers, legal window, authorities.",
+  },
+  {
+    name: "divisions.json",
+    note: "150 House electoral divisions with sitting incumbent fields.",
+  },
+  {
+    name: "house-members.json",
+    note: "Sitting MPs of the 48th Parliament (not candidates for the 49th).",
+  },
+  {
+    name: "senate-contests.json",
+    note: "Eight state/territory Senate contests and normal seats up.",
+  },
+  {
+    name: "senate-members.json",
+    note: "Sitting senators with half-Senate term_status (up / continuing / territory).",
+  },
+  {
+    name: "parties.json",
+    note: "Party labels used in this ledger (bootstrap; AEC alignment later).",
+  },
+  {
+    name: "representation.json",
+    note: "Seats held now per party in each chamber.",
+  },
+  {
+    name: "summary.json",
+    note: "Headline counts for this snapshot.",
+  },
+  { name: "divisions.csv", note: "Divisions spreadsheet export." },
+  { name: "house-members.csv", note: "House members spreadsheet export." },
+  { name: "senate-members.csv", note: "Senate members spreadsheet export." },
+];
+
+const schema = {
+  "@type": "WebPage",
+  name: "Federal open data",
+  description: `Machine-readable exports for federal-49 under ${base}/.`,
+  url: `${SITE.url}${FEDERAL_49}/data`,
+};
+---
+
+<Base
+  title="Open data"
+  description={`JSON and CSV for the federal-49 ledger: divisions, sitting members, parties and representation. CC BY 4.0.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "Federal", href: FEDERAL_49 },
+    { name: "Data", href: `${FEDERAL_49}/data` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={FEDERAL_49}>Federal</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Data</span>
+    </nav>
+
+    <p class="eyebrow">Federal · federal-49 · CC BY 4.0</p>
+    <h1>Open data</h1>
+    <p class="lede">
+      Machine-readable exports for the contest electing the
+      <strong>{election.parliament_label}</strong>. Prefer these files over scraping HTML.
+      Attribute: <strong>{ATTRIBUTION}</strong>.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>{summary.house_members} House · {summary.senate_members} Senate</strong> sitting
+      members in this snapshot. Not a candidacy ledger. Membership was bootstrapped from public
+      compilations — prefer Parliament of Australia for named-person corrections.
+    </div>
+
+    <p class="btn-row">
+      <a class="btn" href={`${base}/summary.json`}>summary.json</a>
+      <a class="btn btn-ghost" href={`${base}/parties.json`}>parties.json</a>
+      <a class="btn btn-ghost" href="/data/index.json">All elections index</a>
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">File</th>
+            <th scope="col">Contents</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            files.map((f) => (
+              <tr>
+                <td>
+                  <a href={`${base}/${f.name}`} class="mono">
+                    {f.name}
+                  </a>
+                </td>
+                <td>{f.note}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <p class="muted foot">
+      Generated at build time from YAML under <span class="mono">data/federal-49/</span>. Do not
+      hand-edit <span class="mono">site/public/data/</span>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .notice { margin: 1.25rem 0; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: var(--radius); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { background: var(--surface-2); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-3); }
+  tr:last-child td { border-bottom: none; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+  .foot { margin-top: 1.5rem; max-width: 40rem; }
+</style>
