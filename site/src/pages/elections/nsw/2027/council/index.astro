@@ -225,6 +225,18 @@ const schema = {
 </Base>
 
 <style>
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+  .notice { margin: 1rem 0 1.25rem; }
+  .count { font-weight: 500; font-size: 0.85em; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: var(--radius); margin-bottom: 0.5rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { text-align: left; padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--rule); }
+  th { background: var(--surface-2); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-3); }
+  tr:last-child td { border-bottom: none; }
+  .party-cell { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .swatch-sm { width: 0.55rem; height: 0.55rem; border-radius: 999px; flex-shrink: 0; display: inline-block; }
   .term-pill {
     display: inline-block;
     font-size: 0.8rem;
@@ -232,10 +244,8 @@ const schema = {
     border-radius: 999px;
     background: var(--surface-2, #eee);
   }
-  .term-up {
-    background: #fde8c8;
-  }
-  .term-continuing {
-    background: #e2efe6;
-  }
+  .term-up { background: #fde8c8; }
+  .term-continuing { background: #e2efe6; }
+  .compact { max-width: 52rem; }
+  .source-list { padding-left: 1.2rem; display: grid; gap: 0.45rem; }
 </style>

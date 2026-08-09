@@ -105,3 +105,22 @@ const schema = {
     }
   </div>
 </Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .notice { margin: 1.25rem 0; }
+  .facts {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1px;
+    background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius);
+    overflow: hidden; margin: 1.25rem 0 1.5rem;
+  }
+  .facts > div { background: var(--surface); padding: 1rem 1.1rem; }
+  .facts dt { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-3); }
+  .facts dd { margin: 0.25rem 0 0; font-weight: 650; }
+  .party-cell { display: inline-flex; align-items: center; gap: 0.45rem; text-decoration: none; color: inherit; }
+  .swatch-sm { width: 0.65rem; height: 0.65rem; border-radius: 999px; flex-shrink: 0; display: inline-block; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 2rem; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+  .compact { max-width: 40rem; }
+</style>
