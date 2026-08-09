@@ -1,8 +1,12 @@
 ---
 /**
  * Virtual Liberal–Nationals display cell.
- * Underlying policy records remain separate; this component only consolidates
- * their presentation when the relationship ledger marks an issue as shared.
+ * Underlying policy records remain separate; this component consolidates
+ * presentation when the relationship ledger marks an issue as shared.
+ *
+ * If only one Coalition partner has a sourced record, treat that as the
+ * Coalition position (single cell — no split box with an empty partner).
+ * Nationals without a separate source are assumed aligned until recorded.
  */
 import PolicyCell from "./PolicyCell.astro";
 
@@ -10,9 +14,21 @@ const { cell } = Astro.props;
 const members = cell?.member_policies ?? {};
 const liberal = members.liberal ?? null;
 const nationals = members.nationals ?? null;
+const hasLiberal = Boolean(liberal);
+const hasNationals = Boolean(nationals);
+const hasBoth = hasLiberal && hasNationals;
+const hasOne = (hasLiberal || hasNationals) && !hasBoth;
 const shared = cell?.scope === "coalition_shared";
 const mixed = cell?.scope === "mixed";
 const empty = !cell?.has_policy;
+/** Single-column Coalition display: explicit shared, or only one partner sourced. */
+const showAsShared = !empty && (shared || hasOne);
+const displayPolicy = cell?.policy ?? liberal ?? nationals;
+const partnerNote = hasOne
+  ? hasLiberal && !hasNationals
+    ? "No separate Nationals source on this issue — shown as shared Coalition policy (assumed aligned with the Liberal record until a Nationals-specific position is sourced)."
+    : "No separate Liberal source on this issue — shown as shared Coalition policy (assumed aligned with the Nationals record until a Liberal-specific position is sourced)."
+  : null;
 ---
 
 {
@@ -20,23 +36,29 @@ const empty = !cell?.has_policy;
     <div class="coal-cell coal-empty">
       <p>No sourced Coalition position recorded</p>
     </div>
-  ) : shared ? (
+  ) : showAsShared ? (
     <div class="coal-cell coal-shared">
       <p class="coal-badge">Shared Coalition policy</p>
-      <PolicyCell policy={cell.policy} partyLabel={cell.label} />
-      <details class="coal-drill">
-        <summary>View separate Liberal and Nationals records</summary>
-        <div class="coal-members">
-          <section>
-            <h4>Liberal</h4>
-            <PolicyCell policy={liberal} partyLabel="Liberal" />
-          </section>
-          <section>
-            <h4>Nationals</h4>
-            <PolicyCell policy={nationals} partyLabel="Nationals" />
-          </section>
-        </div>
-      </details>
+      {partnerNote && <p class="coal-note">{partnerNote}</p>}
+      {!partnerNote && cell.note && <p class="coal-note">{cell.note}</p>}
+      <PolicyCell policy={displayPolicy} partyLabel={cell.label} />
+      {
+        hasBoth && (
+          <details class="coal-drill">
+            <summary>View separate Liberal and Nationals records</summary>
+            <div class="coal-members">
+              <section>
+                <h4>Liberal</h4>
+                <PolicyCell policy={liberal} partyLabel="Liberal" />
+              </section>
+              <section>
+                <h4>Nationals</h4>
+                <PolicyCell policy={nationals} partyLabel="Nationals" />
+              </section>
+            </div>
+          </details>
+        )
+      }
     </div>
   ) : (
     <div class={`coal-cell${mixed ? " coal-mixed" : " coal-specific"}`}>

@@ -1,6 +1,10 @@
 # Coalition display relationships for the federal policy matrix.
 # Does not merge underlying liberal/nationals policy YAML — presentation only.
 # Methodology: docs/POLICY-METHODOLOGY.md
+#
+# Federal display rule: if Nationals have no separate sourced record for an issue,
+# the combined matrix shows a single Shared Coalition cell from the Liberal (or
+# sole partner) record — not a split box with an empty Nationals half.
 coalitions:
   - id: liberal-nationals
     label: Liberal–Nationals Coalition
@@ -24,9 +28,10 @@ coalitions:
           regional supply and cutting red tape in the regions.
       - issue: immigration
         scope: party_specific
+        representative_party: liberal
         note: >-
-          Coalition migration-to-housing commitments are recorded on the Liberal policy row;
-          no separate Nationals-only immigration record is in the ledger yet.
+          No separate Nationals immigration record — combined view treats the Liberal/Coalition
+          migration-to-housing position as shared until a Nationals-specific source is added.
       - issue: climate-energy
         scope: mixed
         shared_policy_id: coalition-federal-energy
@@ -50,11 +55,14 @@ coalitions:
           GP, specialist and nurse retention incentives.
       - issue: public-media
         scope: party_specific
+        representative_party: liberal
         note: >-
-          Only a Liberal accountability/efficiency framing is recorded so far; no Nationals-only
-          public-media claim is in the ledger.
+          No separate Nationals public-media record — combined view treats the Liberal
+          accountability framing as shared Coalition policy until a Nationals-specific source
+          is added.
       - issue: defence-security
         scope: party_specific
+        representative_party: liberal
         note: >-
-          Coalition AUKUS and ADF commitments are recorded on the Liberal policy row; no
-          separate Nationals defence record is in the ledger yet.
+          No separate Nationals defence record — combined view treats the Liberal/Coalition
+          AUKUS and ADF position as shared until a Nationals-specific source is added.
