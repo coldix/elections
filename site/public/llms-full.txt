@@ -81,13 +81,13 @@ nobody is standing. After formal nominations, commissions are definitive.
 - Party/union/advocacy polls excluded by default (rare documented exceptions)
 - Rolling window + one poll per pollster + sample/time weighting
 - Output: primaries + uncertainty bands — **not** 2PP forecasts or seat models
-- Full rules: docs/POLL-METHODOLOGY.md in the repository
+- Full rules: docs/poll-methodology.md in the repository
 - Exports: polls.json, poll-average.json, polls.csv
 
 ## Policy matrix
 
 Secondary product: sourced policy claims by issue for major parties. No star
-ratings. Empty cells mean no verified claim yet. See POLICY-METHODOLOGY.md.
+ratings. Empty cells mean no verified claim yet. See policy-methodology.md.
 
 ## How to cite
 

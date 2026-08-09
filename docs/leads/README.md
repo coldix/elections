@@ -16,4 +16,4 @@ Output (gitignored):
 
 Sources: `data/vic2026/watch-sources.yaml`.
 
-**Never** treat the digest as authority. Encode YAML only after opening a primary source and applying [METHODOLOGY.md](../METHODOLOGY.md). See [OPS.md](../OPS.md#lead-scan-efficient-discovery).
+**Never** treat the digest as authority. Encode YAML only after opening a primary source and applying [methodology.md](../methodology.md). See [ops.md](../ops.md#lead-scan-efficient-discovery).

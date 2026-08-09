@@ -1,6 +1,6 @@
 # Weekly reachability check for URLs cited as sources in data/.
 # Report-only: never mutates the ledger or deploys. Failures mean fix/archive
-# a dead source URL — see docs/OPS.md.
+# a dead source URL — see docs/ops.md.
 name: source-health
 
 on:

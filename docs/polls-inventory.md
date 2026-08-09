@@ -2,7 +2,7 @@
 
 **Purpose.** A working census of known *public* statewide Legislative
 Assembly voting-intention polls, used to apply
-[POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) inclusion rules.
+[poll-methodology.md](poll-methodology.md) inclusion rules.
 
 **Status.** Discovery + ledger cross-check (updated 2026-08-08). Figures in
 the table may still be provisional until a YAML row exists. Before any
@@ -92,7 +92,7 @@ Recompute with `scripts/lib/polls.mjs` / `/polls` after each ledger change.
    DemosAU PDFs, Poll Bludger.
 2. Add a row with provisional primaries and **Eligible?** + reason.
 3. Do not create `data/` YAML until primary source fields match
-   [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md).
+   [poll-methodology.md](poll-methodology.md).
 
 ---
 

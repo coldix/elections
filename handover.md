@@ -3,7 +3,7 @@
 > **Updated** 2026-08-09 · hub [README.md](README.md)
 
 Current operational context for the Australian Election Tracker. Historical
-product changes belong in [docs/CHANGELOG.md](docs/CHANGELOG.md); this file is
+product changes belong in [docs/changelog.md](docs/changelog.md); this file is
 kept deliberately short and current.
 
 ## Current product state
@@ -56,7 +56,7 @@ Calendar entries and placeholder paths must remain one-to-one; CI enforces this.
 - public primary-vote polls
 - policy issues and sourced party positions
 
-Policy rules: [docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md) (ADR-11).
+Policy rules: [docs/policy-methodology.md](docs/policy-methodology.md) (ADR-11).
 **Federal follow-up:** ABC/SBS public broadcasting is deliberately *not* a Vic
 2026 matrix issue — see POLICY-METHODOLOGY § “Deferred for federal elections”
 when creating the first federal `issues.yaml`.
@@ -78,7 +78,7 @@ There are **no `/people` pages**. Candidate cards may link to:
 3. Wikipedia only when no better official profile exists.
 
 A possible permanent people layer is documented but not approved:
-[docs/PEOPLE-PAGES-PROPOSAL.md](docs/PEOPLE-PAGES-PROPOSAL.md).
+[docs/people-pages-proposal.md](docs/people-pages-proposal.md).
 
 ## Build and validation
 
@@ -104,7 +104,7 @@ Do not hand-edit `site/public/data/` or `site/dist/`.
 
 ## Architecture constraints
 
-Read [docs/DECISIONS.md](docs/DECISIONS.md) before proposing infrastructure.
+Read [docs/decisions.md](docs/decisions.md) before proposing infrastructure.
 The accepted architecture is:
 
 - YAML and Git history as the database and audit trail
@@ -176,8 +176,8 @@ Be the **most accurate** Australian election info source. Hierarchy:
 2. **Quality secondary** — named news / research with clear provenance  
 3. **Wikipedia** — fallback / discovery only; not preferred durable source  
 
-See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) and ADR-14 in
-[docs/DECISIONS.md](docs/DECISIONS.md).
+See [docs/methodology.md](docs/methodology.md) and ADR-14 in
+[docs/decisions.md](docs/decisions.md).
 
 ## Current priorities
 
@@ -195,13 +195,13 @@ See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) and ADR-14 in
 ## Documents to read first
 
 - [docs/README.md](docs/README.md)
-- [docs/SCOPE.md](docs/SCOPE.md)
-- [docs/METHODOLOGY.md](docs/METHODOLOGY.md)
-- [docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md)
-- [docs/OPS.md](docs/OPS.md)
-- [docs/DECISIONS.md](docs/DECISIONS.md)
-- [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
-- [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md)
+- [docs/scope.md](docs/scope.md)
+- [docs/methodology.md](docs/methodology.md)
+- [docs/policy-methodology.md](docs/policy-methodology.md)
+- [docs/ops.md](docs/ops.md)
+- [docs/decisions.md](docs/decisions.md)
+- [docs/deployment.md](docs/deployment.md)
+- [docs/repo-layout.md](docs/repo-layout.md)
 
 ## End-of-day repository state
 

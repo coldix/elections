@@ -1,6 +1,6 @@
 # Issue taxonomy for the policy matrix and jurisdiction guide.
 # Order here is display order. Edit this file to add, rename, merge or split issues.
-# Methodology: docs/POLICY-METHODOLOGY.md
+# Methodology: docs/policy-methodology.md
 #
 # jurisdiction enum:
 #   state_primary | shared_fed_state | federal_primary | local_primary | shared_state_local

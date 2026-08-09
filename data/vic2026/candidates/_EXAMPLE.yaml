@@ -7,7 +7,7 @@ candidate:
   party: one-nation            # slug from parties.yaml
   contest: nepean              # district slug (assembly) or region slug (council)
   chamber: assembly            # assembly | council
-  status: endorsed             # current status; see docs/METHODOLOGY.md
+  status: endorsed             # current status; see docs/methodology.md
   history:
     - status: announced
       date: 2026-08-01

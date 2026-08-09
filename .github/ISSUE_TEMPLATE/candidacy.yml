@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Every material claim needs a **public source**. Rumour is not recorded.
-        See `docs/METHODOLOGY.md` and `docs/OPS.md`. Do not put private tipster
+        See `docs/methodology.md` and `docs/ops.md`. Do not put private tipster
         details here if they must stay confidential — email instead.
   - type: input
     id: name

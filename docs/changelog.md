@@ -3,8 +3,8 @@
 > **Updated** 2026-08-09 · hub [../README.md](../README.md)
 
 Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
-onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
-ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
+onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
+ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
 ## 2026-08-09 — NSW 2027 sitting-members tracker
 
@@ -123,7 +123,7 @@ ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 | **Issues guide** | New **`/parties/issues`** — 14 issue areas with State / Federal / Local jurisdiction badges and plain-language roles. |
 | **Policy matrix** | New **`/parties/matrix`** — five fixed columns (Greens, Labor, Liberal, Nationals, One Nation) with CSS column toggles; empty cells honest until claims are sourced. |
 | **Data** | `data/vic2026/issues.yaml` + `policies/`; schemas; validate; exports `issues.json`, `policies.json`, `policies.csv`. |
-| **Method** | [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md) + ADR-11: no ratings, quote + source only, taxpayer/PBO/debt chips for fiscal claims. |
+| **Method** | [policy-methodology.md](policy-methodology.md) + ADR-11: no ratings, quote + source only, taxpayer/PBO/debt chips for fiscal claims. |
 | **Open data** | Catalog on `/data` updated; methodology section for policy ledger. |
 
 ## 2026-08-01 — Labor gap progress + Maas open seat
@@ -209,7 +209,7 @@ commits below and prior changelog sections).
   enters the average with a written justification (credible pollster; tracks
   independent media RedBridge/Accent series). Per-record only — not a standing
   waiver.
-- Docs: [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md#case-by-case-exceptions),
+- Docs: [poll-methodology.md](poll-methodology.md#case-by-case-exceptions),
   ADR-10, inventory, SCOPE, OPS.
 
 ## 2026-07-30 — Expand Vic 2026 poll ledger
@@ -240,7 +240,7 @@ Inventory updated to mark ledger status. Average window now includes Newspoll as
 | Engine | `scripts/lib/polls.mjs` — eligibility, weighting, uncertainty bands |
 | Exports | `polls.json`, `poll-average.json` (via export pipeline) |
 | Site | `/polls` page — average + ledger; nav links |
-| Policy | [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md), [polls-inventory.md](polls-inventory.md), ADR in [DECISIONS.md](DECISIONS.md), [SCOPE.md](SCOPE.md) polling section |
+| Policy | [poll-methodology.md](poll-methodology.md), [polls-inventory.md](polls-inventory.md), ADR in [decisions.md](decisions.md), [scope.md](scope.md) polling section |
 | Copy | about / methodology / disclaimer / data pages updated so polling is in-product, not aspirational |
 
 **Guardrails (unchanged):** no seat forecasts; no 2PP without published preference assumptions; party/union/advocacy polls default to `eligible_for_average: false` (exceptions only with `eligibility_exception`).
@@ -254,7 +254,7 @@ Initial ledger (examples): Freshwater, RedBridge (+ Accent/AFR), Resolve Strateg
 **Commit:** `6ce63a9` — *feat: add civic voting guide for Victorian electors*
 
 - New hub: **`/voting`** — enrolment, compulsory voting, preferential rules for Assembly and Council; always defers to VEC/AEC
-- In scope as neutral civic explainers (not how-to-vote advice) — [SCOPE.md](SCOPE.md)
+- In scope as neutral civic explainers (not how-to-vote advice) — [scope.md](scope.md)
 - Header / footer / homepage / disclaimer links
 
 ---
@@ -263,7 +263,7 @@ Initial ledger (examples): Freshwater, RedBridge (+ Accent/AFR), Resolve Strateg
 
 **Commit:** `e20d287` — *docs: social brand split; wire extensible project social links*
 
-- [SOCIAL.md](SOCIAL.md) — Election Tracker vs oze.au vs personal channels
+- [social.md](social.md) — Election Tracker vs oze.au vs personal channels
 - `SOCIAL` + `socialLinks()` in `site/src/lib/site.mjs` → footer, privacy “Our social accounts”, JSON-LD `sameAs`
 - Facebook Page wired: `facebook.com/election.tracker.au`
 
@@ -280,7 +280,7 @@ Initial ledger (examples): Freshwater, RedBridge (+ Accent/AFR), Resolve Strateg
 | Headers | `site/public/_headers` — asset cache, short cache + CORS for `/data/*` |
 | Sitemap | `@astrojs/sitemap` → `sitemap-index.xml` + `sitemap-0.xml` (~118 URLs including `/polls`, `/voting`) |
 | IndexNow | Key file, `npm run indexnow`, CI after deploy (`.github/workflows/indexnow.yml`) |
-| Docs | [DISCOVERY.md](DISCOVERY.md) human dashboard checklist |
+| Docs | [discovery.md](discovery.md) human dashboard checklist |
 
 Live checks around ship: sitemap well-formed; AI crawlers not blocked by Cloudflare managed robots; OG scrape clean on homepage.
 
@@ -288,7 +288,7 @@ Live checks around ship: sitemap well-formed; AI crawlers not blocked by Cloudfl
 
 ## 2026-07-29 — Operator / dashboard work (human)
 
-Done outside git (dashboards). Tick against [DISCOVERY.md](DISCOVERY.md) as needed.
+Done outside git (dashboards). Tick against [discovery.md](discovery.md) as needed.
 
 | Item | Status | Notes |
 |---|---|---|
@@ -298,7 +298,7 @@ Done outside git (dashboards). Tick against [DISCOVERY.md](DISCOVERY.md) as need
 | Bing Webmaster | Operator | Prefer import from GSC; IndexNow already automated |
 | Facebook Sharing Debugger | Done (homepage) | OG tags OK; ignore `fb:app_id` warning unless a FB App is wanted for Insights |
 | Project YouTube | **Live** | [youtube.com/@electiontrackerau](https://www.youtube.com/@electiontrackerau) — channel set up; listed with **Google** and **Bing** |
-| Wire YouTube into site | Code | `SOCIAL.youtube` → footer, privacy, JSON-LD `sameAs` (see [SOCIAL.md](SOCIAL.md)) |
+| Wire YouTube into site | Code | `SOCIAL.youtube` → footer, privacy, JSON-LD `sameAs` (see [social.md](social.md)) |
 | Cloudflare AI crawl blocks | Open (verified live) | Re-check if `Disallow` for GPTBot etc. reappears |
 | Light external links | Optional | FB Page post, oze portfolio; no bought links |
 
@@ -325,7 +325,7 @@ Done outside git (dashboards). Tick against [DISCOVERY.md](DISCOVERY.md) as need
 
 ## 2026-07-29 — Ops runbook + source health
 
-- [OPS.md](OPS.md) — human cadence, watch list, encode→merge→deploy loop; agents draft only
+- [ops.md](ops.md) — human cadence, watch list, encode→merge→deploy loop; agents draft only
 - `npm run check:sources` + weekly `.github/workflows/source-health.yml` (report only)
 - `npm run report:coverage` — same coverage rules as the site
 - Issue template: New candidacy / status change
@@ -342,9 +342,9 @@ Done outside git (dashboards). Tick against [DISCOVERY.md](DISCOVERY.md) as need
 
 ## Related
 
-- [OPS.md](OPS.md) — monitor cadence, agent rules, source-health automation  
-- [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md)  
-- [DISCOVERY.md](DISCOVERY.md)  
-- [SOCIAL.md](SOCIAL.md)  
-- [SCOPE.md](SCOPE.md)  
-- [DECISIONS.md](DECISIONS.md)  
+- [ops.md](ops.md) — monitor cadence, agent rules, source-health automation  
+- [poll-methodology.md](poll-methodology.md)  
+- [discovery.md](discovery.md)  
+- [social.md](social.md)  
+- [scope.md](scope.md)  
+- [decisions.md](decisions.md)  

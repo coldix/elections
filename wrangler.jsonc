@@ -3,7 +3,7 @@
   //
   // There is deliberately no "main" entry point. Cloudflare serves the built
   // files straight from its edge, exactly as Pages did — this is static
-  // hosting on the Workers platform, not a server. See docs/DECISIONS.md ADR-2:
+  // hosting on the Workers platform, not a server. See docs/decisions.md ADR-2:
   // no D1, no R2, no KV, no request-time logic.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "elections",

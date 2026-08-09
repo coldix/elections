@@ -5,7 +5,7 @@
 
 The site is a static build deployed from GitHub as an **assets-only Worker**
 (Workers Builds). No application server, no D1, no R2 — see
-[DECISIONS.md](DECISIONS.md) ADR-2. (Older “Pages only” wording is historical;
+[decisions.md](decisions.md) ADR-2. (Older “Pages only” wording is historical;
 the live path is Workers Builds + `wrangler.jsonc`.)
 
 ## Build pipeline
@@ -53,7 +53,7 @@ is what the dashboard offers by default.
 The site deploys as an **assets-only Worker** — [`wrangler.jsonc`](../wrangler.jsonc)
 points at `site/dist` and has no `main` entry point, so no code runs per
 request. It is static hosting on the Workers platform, not a server. See
-DECISIONS.md ADR-2.
+decisions.md ADR-2.
 
 Connect to the GitHub repository `coldix/elections`, then:
 

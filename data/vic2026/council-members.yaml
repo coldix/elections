@@ -3,7 +3,7 @@
 # This records who currently HOLDS each seat, including mid-term replacements and
 # party changes since 2022 — it is not the 2022 election result.
 # Candidacies for 2026 are tracked separately in candidates/; a member appearing
-# here is NOT thereby a 2026 candidate (see docs/METHODOLOGY.md).
+# here is NOT thereby a 2026 candidate (see docs/methodology.md).
 council_members:
   - name: Sheena Watt
     party: labor

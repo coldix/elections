@@ -139,7 +139,7 @@ matrix: product measurement, not UI logic. The matrix remains CSS-only.
 
 **Decision.** The project publishes a **sourced primary-vote poll ledger** plus
 a transparent **weighted average with error bars**, not a forecast. Rules live
-in [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). Implementation:
+in [poll-methodology.md](poll-methodology.md). Implementation:
 `data/**/polls/`, `scripts/lib/polls.mjs`, `/polls`, exports `polls.json` and
 `poll-average.json`.
 
@@ -155,7 +155,7 @@ prevent ad hoc “which polls count” decisions under campaign pressure.
 - **Case-by-case exception** only: allowlisted pollster, full public metadata,
   non-empty `eligibility_exception` on the YAML, and CI-enforced. Exceptions
   are per record, not a standing waiver for the commissioner
-  (see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md#case-by-case-exceptions)).
+  (see [poll-methodology.md](poll-methodology.md#case-by-case-exceptions)).
 - Window + one-poll-per-pollster + inverse-effective-n × exponential time decay
   (21-day half-life); default design effect 1.3; no house effects; no
   subjective pollster grades.
@@ -163,8 +163,8 @@ prevent ad hoc “which polls count” decisions under campaign pressure.
   minimum floor), not a fake MoE on pooled n.
 
 **Consequences.** New polls are YAML PRs with sources. Forecasting, MRP and
-seat models remain out of scope (SCOPE.md). Candidate ordering never uses
-polls (METHODOLOGY.md).
+seat models remain out of scope (scope.md). Candidate ordering never uses
+polls (methodology.md).
 
 ## ADR-11: Policy matrix & issues ledger (secondary product)
 
@@ -188,8 +188,8 @@ Fiscal chips (taxpayer cost, PBO costed vs uncosted, debt) are labels on
 sourced claims — not independent costings by this project. Issue taxonomies are
 per-election: some Commonwealth-only topics (e.g. ABC/SBS public broadcasting)
 are deferred from Vic 2026 and listed for federal setup in
-[POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md#deferred-for-federal-elections-not-vic-2026).
-Full rules: [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md).
+[policy-methodology.md](policy-methodology.md#deferred-for-federal-elections-not-vic-2026).
+Full rules: [policy-methodology.md](policy-methodology.md).
 
 ## ADR-14: Primary sources preferred; Wikipedia is fallback only (2026-08-09)
 
@@ -203,7 +203,7 @@ candidacy.
 **Why.** Accuracy and citability require provenance. Wiki pages lag, edit-war,
 and are not authoritative for living persons in an electoral ledger.
 
-**Consequences.** Methodology hierarchy is in [METHODOLOGY.md](METHODOLOGY.md).
+**Consequences.** Methodology hierarchy is in [methodology.md](methodology.md).
 Federal sitting members bootstrapped from Wikipedia must be re-verified against
 Parliament of Australia / AEC. Policy and poll claims prefer primary or named
 quality secondary sources. Do not ship wiki-only as “verified” without a path

@@ -1,7 +1,7 @@
 /**
  * Project YouTube explainers (channel @electiontrackerau).
  * Only videos listed here are eligible for on-site click-to-load embeds.
- * Canonical long-form home remains YouTube — see docs/SOCIAL.md.
+ * Canonical long-form home remains YouTube — see docs/social.md.
  */
 
 export const YOUTUBE_CHANNEL = "https://www.youtube.com/@electiontrackerau";

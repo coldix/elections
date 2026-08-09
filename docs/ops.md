@@ -9,8 +9,8 @@ The **site does not need its own update schedule.** Pushing valid data to
 `main` rebuilds and deploys (~1 min). What needs a rhythm is **watching for
 real-world changes** and **encoding them as sourced YAML**.
 
-Related: [METHODOLOGY.md](METHODOLOGY.md), [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md),
-[DISCOVERY.md](DISCOVERY.md), [CHANGELOG.md](CHANGELOG.md), [DECISIONS.md](DECISIONS.md).
+Related: [methodology.md](methodology.md), [poll-methodology.md](poll-methodology.md),
+[discovery.md](discovery.md), [changelog.md](changelog.md), [decisions.md](decisions.md).
 
 ## Who does what
 
@@ -22,7 +22,7 @@ Monitor (semi-auto OK) → Verify (human) → Encode YAML (agent may draft)
 | Step | Owner | Notes |
 |---|---|---|
 | Notice a possible change | You, calendar, later: digests | Low risk if wrong |
-| Decide status is real | **Human** | Per [METHODOLOGY.md](METHODOLOGY.md); rumour is not a status |
+| Decide status is real | **Human** | Per [methodology.md](methodology.md); rumour is not a status |
 | Draft YAML + sources | Human or agent | Agent drafts from a **known URL**; you accept |
 | `npm run check` / CI | Automated | Schema, sources present, referential integrity |
 | Merge to `main` | **Human** | Never auto-merge candidacy/status PRs |
@@ -92,7 +92,7 @@ for later.
 ### One new poll
 
 1. Add YAML under `data/<election>/polls/` matching existing files and
-   [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md).
+   [poll-methodology.md](poll-methodology.md).
 2. Set `eligible_for_average` honestly (party/union/advocacy → usually `false`).
    To exception a party/union/advocacy poll into the average, set
    `eligible_for_average: true` **and** a non-empty `eligibility_exception`
@@ -208,7 +208,7 @@ service (ADR-2).
 |---|---|
 | Cloudflare deploy from `main` | Yes |
 | IndexNow hub ping | Yes (CI after deploy) |
-| GSC “Request indexing” for every district | **No** — hubs only, sparingly ([DISCOVERY.md](DISCOVERY.md)) |
+| GSC “Request indexing” for every district | **No** — hubs only, sparingly ([discovery.md](discovery.md)) |
 | Facebook scrape of every URL | **No** — homepage once; `/voting` when video lands |
 
 ---
@@ -235,6 +235,6 @@ Every production build writes a **Melbourne-time stamp + git short hash**, e.g.
 
 ## Related
 
-- [SCOPE.md](SCOPE.md) — what is in / out of product  
-- [SOCIAL.md](SOCIAL.md) — what to post as the tracker  
-- [DEPLOYMENT.md](DEPLOYMENT.md) — Cloudflare / domains  
+- [scope.md](scope.md) — what is in / out of product  
+- [social.md](social.md) — what to post as the tracker  
+- [deployment.md](deployment.md) — Cloudflare / domains  

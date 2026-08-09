@@ -28,7 +28,7 @@
 # IMPORTANT — Cloudflare "managed robots.txt" / AI training block:
 # If the live robots.txt still shows Disallow for GPTBot, ClaudeBot,
 # Google-Extended, etc., turn OFF Cloudflare's managed AI robots block and
-# allow AI crawlers in AI Crawl Control. See docs/DISCOVERY.md § Cloudflare.
+# allow AI crawlers in AI Crawl Control. See docs/discovery.md § Cloudflare.
 # Our intent is Allow for those agents.
 
 User-agent: *

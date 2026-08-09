@@ -58,4 +58,4 @@ individual dated source (party page, local paper, social post, etc.).
 2. Add `data/vic2026/candidates/<seat>--<slug>.yaml` with full `source` block.
 3. `npm run check` → merge.
 
-See [OPS.md](OPS.md) and [METHODOLOGY.md](METHODOLOGY.md).
+See [ops.md](ops.md) and [methodology.md](methodology.md).

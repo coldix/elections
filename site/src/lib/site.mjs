@@ -11,7 +11,7 @@ export const SITE = {
   domain: "electiontracker.au",
   // Secondary registration. 301-redirects to the matching path on the
   // canonical domain at the edge; it never serves content, so there is no
-  // duplicate-content split. See docs/DEPLOYMENT.md.
+  // duplicate-content split. See docs/deployment.md.
   altDomain: "electiontracker.com.au",
 
   tagline: "Independent, sourced and machine-readable Australian election information",
@@ -31,7 +31,7 @@ export const SITE = {
   // extension, and Google requires that exact URL to return 200.
   googleSiteVerification: "c1C819fHSzS0z2WXIPZE419OrNveoSyQy1LDXjijkiw",
   // Google Analytics 4 Measurement ID. Loaded sitewide from Base.astro.
-  // See docs/DECISIONS.md ADR-12. Empty string disables the tag.
+  // See docs/decisions.md ADR-12. Empty string disables the tag.
   gaMeasurementId: "G-CLH6BNKFEV",
   publisherUrl: "https://oze.net.au",
 };
@@ -51,7 +51,7 @@ export const ATTRIBUTION = SITE.domain;
 /**
  * Project social presence only (Election Tracker brand).
  * Footer + privacy + JSON-LD sameAs. Do NOT put personal channels here
- * (e.g. mallacoota2020) — see docs/SOCIAL.md.
+ * (e.g. mallacoota2020) — see docs/social.md.
  */
 export const SOCIAL = {
   facebook: "https://www.facebook.com/election.tracker.au/",

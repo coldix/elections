@@ -128,7 +128,7 @@ elsewhere if needed.
 
 ## Related
 
-- [OPS.md](OPS.md) — tips still need human verification before merge  
-- [SCOPE.md](SCOPE.md) — no how-to-vote advice  
-- [METHODOLOGY.md](METHODOLOGY.md) — neutrality  
+- [ops.md](ops.md) — tips still need human verification before merge  
+- [scope.md](scope.md) — no how-to-vote advice  
+- [methodology.md](methodology.md) — neutrality  
 - Site: `/voting`, `/about`, `/privacy`
