@@ -180,7 +180,7 @@ Start with [docs/README.md](docs/README.md). Key documents:
 | [docs/decisions.md](docs/decisions.md) | Architecture decisions |
 | [docs/repo-layout.md](docs/repo-layout.md) | Annotated repository structure |
 | [docs/people-pages-proposal.md](docs/people-pages-proposal.md) | Unapproved future `/people` concept |
-| [handover.md](handover.md) | Current operational handover |
+| [docs/handover.md](docs/handover.md) | Current operational handover |
 
 The hygiene checker requires every Markdown document to be reachable from this
 README through the documentation index. Broken relative links and orphaned docs
@@ -222,4 +222,4 @@ new commits; history is not rewritten.
 The national shell, upcoming-election calendar, future-election foundation
 pages and the full Victoria 2026 tracker are live. There are no open pull
 requests at this housekeeping checkpoint. Current gaps and next actions are in
-[handover.md](handover.md) and [docs/scope.md](docs/scope.md).
+[docs/handover.md](docs/handover.md) and [docs/scope.md](docs/scope.md).
