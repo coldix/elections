@@ -1,7 +1,6 @@
 # HANDOVER
 
-> **Version** `20260803.2111-aest+17599ed` · **Updated** 2026-08-03 21:11 AEST  
-> edited against `main` @ [`17599ed`](https://github.com/coldix/elections/commit/17599ed) · hub [README.md](README.md)
+> **Updated** 2026-08-09 · hub [README.md](README.md)
 
 Current operational context for the Australian Election Tracker. Historical
 product changes belong in [docs/CHANGELOG.md](docs/CHANGELOG.md); this file is
@@ -10,58 +9,40 @@ kept deliberately short and current.
 ## Current product state
 
 The site is live at **electiontracker.au** as a static, assets-only Cloudflare
-Worker. A valid merge to `main` builds and deploys automatically.
-
-The public structure is national:
+Worker. A valid merge to `main` builds and deploys automatically
+(`.github/workflows/validate.yml` → Cloudflare).
 
 ```text
 /                                      national landing page
 /elections                             upcoming Australian elections
-/elections/vic/2026                    active Victoria 2026 tracker
-/elections/<jurisdiction>/<year|n>    foundation or active (federal uses parliament n)
+/elections/vic/2026                    full Victoria 2026 candidate tracker
+/elections/nsw/2027                    NSW sitting members (data: nsw2027)
+/elections/federal/49                  federal sitting members + polls + policies
+/elections/<jurisdiction>/<year>       outline foundations (other states/territories)
 ```
 
-Victoria is the only full candidate tracker at present. Its pages live under:
+**Victoria** is the only full candidate tracker. **NSW** and **federal** are
+sitting-member (and for federal, poll/policy) trackers without candidates.
+Former root-level Victorian URLs are permanent redirects — do not restore them
+as canonical links.
 
-```text
-/elections/vic/2026/assembly
-/elections/vic/2026/council
-/elections/vic/2026/districts/*
-/elections/vic/2026/regions/*
-/elections/vic/2026/parties/*
-/elections/vic/2026/policies/*
-/elections/vic/2026/polls
-/elections/vic/2026/open-seats
-/elections/vic/2026/voting
-/elections/vic/2026/data
-```
-
-Former root-level Victorian URLs are permanent redirects. Do not restore them as
-canonical links.
-
-## Election calendar and future foundations
+## Election calendar and foundations
 
 `data/election-calendar.yaml` is the source of truth for the next federal,
 state and territory elections, including date-certainty labels.
 
-`data/election-placeholders.yaml` holds the basic parliamentary structure for
-future pages. Foundation pages currently exist for:
+`data/election-placeholders.yaml` holds chamber structure. Paths with dedicated
+page trees (`vic/2026`, `nsw/2027`, `federal/49`) are excluded from the generic
+placeholder template in `site/src/pages/elections/[...path].astro`.
 
-```text
-/elections/nsw/2027
-/elections/federal/49          # structure + 48th Parliament sitting members (data: federal-49)
-/elections/tas/2027/legislative-council
-/elections/nt/2028
-/elections/act/2028
-/elections/qld/2028
-/elections/wa/2029
-/elections/tas/next
-/elections/sa/2030
-```
+| Path | Data id | Depth |
+|---|---|---|
+| `/elections/vic/2026` | `vic2026` | Full (candidates, polls, policies) |
+| `/elections/nsw/2027` | `nsw2027` | Sitting members (`state-foundation`) |
+| `/elections/federal/49` | `federal-49` | Sitting members + polls + policies |
+| Other calendar paths | — | Outline placeholder only |
 
-Most show chambers, seat numbers, election scope and voting systems only.
-Federal also publishes sitting members (not candidacies). Calendar entries and
-foundation paths must remain one-to-one; CI enforces this.
+Calendar entries and placeholder paths must remain one-to-one; CI enforces this.
 
 ## Victoria 2026 data model
 
@@ -200,19 +181,16 @@ See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) and ADR-14 in
 
 ## Current priorities
 
-1. Continue individually sourced Victoria 2026 candidate verification.
+1. Continue individually sourced Victoria 2026 candidate verification (time-critical).
 2. Close remaining incumbent and Legislative Council candidate gaps without
    substituting assumptions for evidence.
-3. Keep election dates and future structure pages current as official sources
-   change.
-4. Maintain the policy and poll ledgers under their published methodologies
-   (primary sources preferred).
-5. Federal: thicken remaining empty policy cells (primary sources); progressive
-   candidates when announcements appear; keep APH membership current after
-   by-elections and casual vacancies.
-6. Obtain qualified legal review of the living-person and electoral-matter
-   publication approach before the campaign intensifies.
-7. Consider a recent-changes feed only within the existing static architecture.
+3. Keep election dates and foundation pages current as official sources change.
+4. Maintain Vic/federal policy and poll ledgers (primary sources preferred).
+5. Federal: thicken empty policy cells; keep APH membership current; park
+   candidates until announcements warrant it.
+6. NSW: optional next steps are polls and state policies; candidates later.
+7. Obtain qualified legal review of the living-person and electoral-matter
+   publication approach before campaigns intensify.
 
 ## Documents to read first
 

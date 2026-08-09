@@ -1,32 +1,30 @@
 # Australian Election Tracker
 
-> **Version** `20260803.2111-aest+17599ed` · **Updated** 2026-08-03 21:11 AEST  
-> edited against `main` @ [`17599ed`](https://github.com/coldix/elections/commit/17599ed)
+> **Updated** 2026-08-09  
+> Live at [electiontracker.au](https://electiontracker.au) · `main` deploys automatically
 
 **[electiontracker.au](https://electiontracker.au)** is an open, sourced and
 machine-readable Australian election tracker. The repository records candidate
 announcements, endorsements, nominations, withdrawals and disendorsements with
 dated public sources, then builds a static public site and open JSON/CSV exports.
 
-The site is now structured nationally:
+The site is structured nationally:
 
 - **National home:** [electiontracker.au](https://electiontracker.au)
-- **Upcoming election calendar:** [electiontracker.au/elections](https://electiontracker.au/elections)
-- **Active tracker:** [Victoria 2026](https://electiontracker.au/elections/vic/2026)
-- **Future election foundations:** permanent outline pages such as
+- **Upcoming election calendar:** [/elections](https://electiontracker.au/elections)
+- **Full candidate tracker:** [Victoria 2026](https://electiontracker.au/elections/vic/2026)
+- **Sitting-member trackers (no candidates yet):**
   [NSW 2027](https://electiontracker.au/elections/nsw/2027),
-  [Federal next](https://electiontracker.au/elections/federal/49) and
-  [ACT 2028](https://electiontracker.au/elections/act/2028)
+  [Federal (49th Parliament)](https://electiontracker.au/elections/federal/49)
+- **Outline foundations only:** ACT 2028, QLD 2028, NT 2028, WA 2029, SA 2030, Tas
 
-Victoria remains the first full election dataset under `data/vic2026/`. Future
-elections use the same repository and route conventions rather than separate
-sites or duplicated code.
+Victoria is the first full candidacy ledger (`data/vic2026/`). NSW and federal
+publish structure and sitting members first; candidates are added when sourced.
+Other jurisdictions keep permanent outline URLs that expand in place later.
 
 ## What is live
 
-### Victoria 2026
-
-The full tracker lives below `/elections/vic/2026`:
+### Victoria 2026 (full tracker)
 
 ```text
 /elections/vic/2026
@@ -40,22 +38,50 @@ The full tracker lives below `/elections/vic/2026`:
 /elections/vic/2026/data
 ```
 
-The Victorian ledger covers 88 Legislative Assembly districts and eight
-Legislative Council regions electing five members each. Candidate coverage is
-progressive and includes only individually sourced records.
+88 Assembly districts, eight Council regions, progressive sourced candidates,
+polls and policy matrix. Open data: `/data/vic2026/`.
 
-### Future elections
-
-`data/election-calendar.yaml` holds sourced election dates, lawful windows and
-date-certainty labels. `data/election-placeholders.yaml` supplies the basic
-parliamentary structure for future election pages: chambers, seat numbers,
-election scope and voting systems.
-
-Foundation pages currently exist for:
+### NSW 2027 (sitting members)
 
 ```text
 /elections/nsw/2027
+/elections/nsw/2027/districts
+/elections/nsw/2027/districts/:slug
+/elections/nsw/2027/assembly
+/elections/nsw/2027/council
+/elections/nsw/2027/parties
+/elections/nsw/2027/parties/:slug
+/elections/nsw/2027/data
+```
+
+Data id `nsw2027` (`kind: state-foundation`). 93 Assembly districts and
+sitting MLAs/MLCs of the **58th** Parliament; Council term class (`up` /
+`continuing`) for the half-Council election. **Not** a candidacy ledger.
+Open data: `/data/nsw2027/`. Membership from Parliament of NSW downloads.
+
+### Federal — 49th Parliament (sitting members + polls + policies)
+
+```text
 /elections/federal/49
+/elections/federal/49/representatives
+/elections/federal/49/senate
+/elections/federal/49/parties
+/elections/federal/49/polls
+/elections/federal/49/parties/matrix
+/elections/federal/49/data
+```
+
+Data id `federal-49`. Sitting members of the **48th** Parliament; House and
+Senate structure; primary-vote polls and policy matrix. Aliases:
+`/elections/federal/next` → `/49`. Open data: `/data/federal-49/`.
+
+### Outline foundations only
+
+`data/election-calendar.yaml` holds sourced dates. `data/election-placeholders.yaml`
+supplies chamber structure for pages that are not yet sitting-member or
+candidate trackers:
+
+```text
 /elections/tas/2027/legislative-council
 /elections/nt/2028
 /elections/act/2028
@@ -64,9 +90,6 @@ Foundation pages currently exist for:
 /elections/tas/next
 /elections/sa/2030
 ```
-
-These are clearly labelled outlines, not active candidate trackers. Their
-permanent URLs can expand in place when tracking begins.
 
 ## Core principles
 
@@ -79,8 +102,8 @@ permanent URLs can expand in place when tracking begins.
   primary-vote polling; policy pages publish sourced positions without ratings.
 - **Neutral structure.** The same fields, ordering rules and display treatment
   apply to every party and independent.
-- **Open exports.** JSON and CSV remain available under `/data/vic2026/` without
-  an API key.
+- **Open exports.** JSON and CSV under `/data/<election-id>/` (e.g. `vic2026`,
+  `nsw2027`, `federal-49`) without an API key.
 
 Full rules: [docs/METHODOLOGY.md](docs/METHODOLOGY.md),
 [docs/POLL-METHODOLOGY.md](docs/POLL-METHODOLOGY.md) and
@@ -91,18 +114,10 @@ Full rules: [docs/METHODOLOGY.md](docs/METHODOLOGY.md),
 ```text
 data/
   election-calendar.yaml          national election calendar
-  election-placeholders.yaml      future-election structure facts
-  vic2026/                         active Victorian election ledger
-    candidates/*.yaml
-    polls/*.yaml
-    policies/*.yaml
-    election.yaml
-    districts.yaml
-    regions.yaml
-    council-members.yaml
-    parties.yaml
-    retirements.yaml
-    issues.yaml
+  election-placeholders.yaml      outline / chamber structure facts
+  vic2026/                        full Victorian ledger (candidates, polls, policies)
+  nsw2027/                        NSW sitting members (state-foundation)
+  federal-49/                     federal sitting members, polls, policies
 
 schema/                            JSON Schemas
 scripts/
@@ -112,10 +127,10 @@ scripts/
   export.mjs                       JSON/CSV generation
   rewrite-scoped-routes.mjs        Victoria route scoping and legacy-link guard
   finalize-sitemap.mjs             final sitemap processing
-  lib/                             shared loaders and derived calculations
+  lib/                             shared loaders (data, federal, state-foundation, …)
 
 site/
-  src/pages/                       national and future-election routes
+  src/pages/                       national, federal, NSW and outline routes
   src/vicpages/                    reusable Victorian route templates
   src/components/                  site components
   public/_redirects                permanent redirects from old Victoria URLs

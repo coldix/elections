@@ -209,6 +209,28 @@ Parliament of Australia / AEC. Policy and poll claims prefer primary or named
 quality secondary sources. Do not ship wiki-only as “verified” without a path
 to replace.
 
+## ADR-15: State-foundation ledgers (sitting members without candidates) (2026-08-09)
+
+**Decision.** Thin state starts (first: NSW 2027) use `kind: state-foundation`
+with a dedicated loader (`scripts/lib/state-foundation.mjs`), not the Vic-shaped
+`loadElection` tree (which requires candidates/regions) and not federal House/Senate
+file names.
+
+| Layer | Pattern | NSW example |
+|---|---|---|
+| Data id | `<jurisdiction><year>` | `nsw2027` |
+| Path | `/elections/<jurisdiction>/<year>` | `/elections/nsw/2027` |
+| Files | `districts`, `assembly-members`, `council-members`, `parties` | as named |
+
+Sitting members ≠ candidates. Optional polls/policies can be added later under
+the same id when sources exist.
+
+**Why.** Reuse federal’s go-live-as-built pattern without forcing empty candidacy
+trees or misusing federal chamber vocabulary for state houses.
+
+**Consequences.** Validate/export branch on `kind`; dedicated site pages; keep
+generic placeholder template for outline-only calendar paths.
+
 ## ADR-13: Federal identity — parliament number (2026-08-09)
 
 **Decision.** Federal contests are identified by the **Parliament they elect**:

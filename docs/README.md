@@ -1,8 +1,6 @@
 # Documentation index
 
-> **Version** `20260803.2111-aest+17599ed` · **Updated** 2026-08-03 21:11 AEST  
-> edited against `main` @ [`17599ed`](https://github.com/coldix/elections/commit/17599ed)  
-> Hub: [../README.md](../README.md)
+> **Updated** 2026-08-09 · Hub: [../README.md](../README.md)
 
 This index is the documentation hub. Every maintained Markdown document must be
 reachable from the root README through this page or another linked document.
@@ -15,13 +13,15 @@ broken.
 |---|---|---|
 | National home | `/` | [SCOPE.md](SCOPE.md) |
 | Upcoming elections | `/elections` | [METHODOLOGY.md](METHODOLOGY.md) |
-| Victoria 2026 tracker | `/elections/vic/2026` | [METHODOLOGY.md](METHODOLOGY.md) |
+| Victoria 2026 (full) | `/elections/vic/2026` | [METHODOLOGY.md](METHODOLOGY.md) |
 | Assembly and districts | `/elections/vic/2026/assembly`, `/elections/vic/2026/districts/*` | [METHODOLOGY.md](METHODOLOGY.md) |
 | Council and regions | `/elections/vic/2026/council`, `/elections/vic/2026/regions/*` | [METHODOLOGY.md](METHODOLOGY.md) |
 | Parties and policies | `/elections/vic/2026/parties/*`, `/elections/vic/2026/policies/*` | [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md) |
-| Polls | `/elections/vic/2026/polls` | [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) |
-| Open data | `/elections/vic/2026/data`, `/data/vic2026/*` | [../README.md](../README.md) |
-| Future election foundations | `/elections/nsw/2027`, `/elections/federal/49`, etc. | [METHODOLOGY.md](METHODOLOGY.md) |
+| Polls (Vic) | `/elections/vic/2026/polls` | [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) |
+| NSW 2027 (sitting members) | `/elections/nsw/2027`, `/data/nsw2027/*` | [ROUTES.md](ROUTES.md), [../HANDOVER.md](../HANDOVER.md) |
+| Federal 49 (sitting + polls + policies) | `/elections/federal/49`, `/data/federal-49/*` | [ROUTES.md](ROUTES.md), ADR-13 |
+| Outline foundations | ACT/QLD/NT/WA/SA/Tas calendar paths | [METHODOLOGY.md](METHODOLOGY.md) |
+| Open data | `/data/<election-id>/` | [../README.md](../README.md) |
 | Operations and deployment | — | [OPS.md](OPS.md), [DEPLOYMENT.md](DEPLOYMENT.md) |
 | Repository structure | — | [REPO-LAYOUT.md](REPO-LAYOUT.md) |
 

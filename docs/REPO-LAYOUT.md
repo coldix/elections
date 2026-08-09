@@ -1,7 +1,6 @@
 # Repository layout
 
-> **Version** `20260803.2111-aest+17599ed` · **Updated** 2026-08-03 21:11 AEST  
-> edited against `main` @ [`17599ed`](https://github.com/coldix/elections/commit/17599ed) · hub [../README.md](../README.md)
+> **Updated** 2026-08-09 · hub [../README.md](../README.md)
 
 Annotated map of the Australian Election Tracker repository. `data/` is the
 source of truth, `scripts/` validate and export it, and `site/` renders the
@@ -36,29 +35,31 @@ Generated or local-only directories such as `node_modules/`, `site/dist/`,
 data/
 ├── LICENSE                       CC BY 4.0 for data
 ├── election-calendar.yaml        next Australian elections and date certainty
-├── election-placeholders.yaml    future-election parliamentary structure
-└── vic2026/                      active Victorian election ledger
+├── election-placeholders.yaml    chamber structure for outline + dedicated pages
+├── vic2026/                      full Victorian ledger (candidates, polls, policies)
+├── nsw2027/                      NSW sitting members (kind: state-foundation)
+│   ├── election.yaml
+│   ├── districts.yaml            93 Assembly districts
+│   ├── assembly-members.yaml
+│   ├── council-members.yaml      42 MLCs + term_status
+│   └── parties.yaml
+└── federal-49/                   federal sitting members, polls, policies
     ├── election.yaml
-    ├── districts.yaml            88 Assembly districts
-    ├── regions.yaml              8 Council regions
-    ├── council-members.yaml      40 sitting MLCs
-    ├── district-stats.yaml
+    ├── divisions.yaml
+    ├── house-members.yaml
+    ├── senate-members.yaml
+    ├── senate-contests.yaml
     ├── parties.yaml
-    ├── retirements.yaml
-    ├── watch-sources.yaml
-    ├── issues.yaml
-    ├── coalitions.yaml
-    ├── candidates/               one YAML file per candidacy
-    ├── policies/                 sourced party × issue claims
-    └── polls/                    public statewide primary-vote polls
+    ├── issues.yaml / coalitions.yaml / policies/
+    └── polls/
 ```
 
 `election-calendar.yaml` owns dates and permanent planned paths.
 `election-placeholders.yaml` adds chambers, seats, election scope and voting
-systems for future foundation pages without duplicating calendar facts.
+systems without duplicating calendar facts.
 
-Future full trackers should add `data/<election-id>/` and reuse the shared
-loaders and site structure.
+Loaders: Vic-shaped → `scripts/lib/data.mjs`; federal → `federal.mjs`;
+state sitting-member starts → `state-foundation.mjs` (`kind: state-foundation`).
 
 ## `schema/`
 

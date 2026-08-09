@@ -1,15 +1,20 @@
 # Changelog — since polls
 
-> **Version** `20260803.1631-aest+91ecdbf` · **Updated** 2026-08-03 16:31 AEST  
-> git `main` @ [`91ecdbf`](https://github.com/coldix/elections/commit/91ecdbf) · hub [../README.md](../README.md)
+> **Updated** 2026-08-09 · hub [../README.md](../README.md)
 
 Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md). For
 ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 
-> **Note:** Entries below are product log lines as committed; the tip of
-> `main` may include later agent merges (policy audits, profiles, key
-> differences, One Nation Council slate) not yet summarised in a dated section.
+## 2026-08-09 — NSW 2027 sitting-members tracker
+
+| Area | What shipped |
+|---|---|
+| **Data** | `data/nsw2027/` — 93 districts, 93 MLAs, 42 MLCs (21 up / 21 continuing), parties |
+| **Kind** | `state-foundation` loader (`scripts/lib/state-foundation.mjs`), validate + export |
+| **Site** | `/elections/nsw/2027` (districts, assembly, council, parties, open data) |
+| **Sources** | Parliament of NSW official LA/LC downloads; term class with replacement inheritance |
+| **Federal** | Policy thickening continued (e.g. hors de combat war-crimes definition claims) |
 
 ## 2026-08-09 — SEO + AI discovery pass
 
