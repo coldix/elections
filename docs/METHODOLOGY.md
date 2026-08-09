@@ -35,6 +35,25 @@ Rumour and speculation are **not** statuses and are not recorded.
 - Social-media posts count as evidence only when they come from a confidently
   identified official account of the party or candidate.
 
+### Source quality hierarchy (project standard)
+
+Goal: be the **most accurate** public ledger of Australian election information.
+Original sources are preferred; secondary compilations are a fallback.
+
+| Priority | Examples | Use |
+|---|---|---|
+| **1. Primary / original** | Electoral commissions (AEC, VEC, …), Parliament of Australia / state parliaments, official party and candidate publications, Hansard, legislation, court/commission declarations | **Preferred** for every material claim |
+| **2. Quality secondary** | Named news outlets, academic or public research with clear provenance | Acceptable when primary is paywalled, delayed, or not online; cite the outlet, not “reports say” |
+| **3. Wikipedia and similar wikis** | Wikipedia, Fandom, etc. | **Second-class fallback only.** OK to *check* against, or to bootstrap a bulk list that will be re-verified. **Not preferred** as the sole durable source for living-person roles, candidacies, or membership. Replace with (1) or (2) when practical; label clearly if still only Wikipedia |
+
+Rules:
+
+- Do not treat a Wikipedia citation as equal to an AEC or APH record.
+- Bootstrap from Wikipedia is allowed only as a temporary scaffold; membership
+  and candidacy ledgers should be re-sourced to commissions or parliaments.
+- Policies and polls: prefer party sites, PBO, Hansard, and named media that
+  publish full fieldwork/primaries over wiki tables alone.
+
 ## Election calendar and date certainty
 
 The public [upcoming elections page](https://electiontracker.au/elections) is

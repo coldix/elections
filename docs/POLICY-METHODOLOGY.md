@@ -91,6 +91,14 @@ shared relationship must have an underlying policy record for every member;
 `mixed` requires at least two member records; `party_specific` requires at
 least one.
 
+## Source quality
+
+Same hierarchy as [METHODOLOGY.md](METHODOLOGY.md): **primary sources first**
+(party sites, PBO, Hansard, government publications). Named media OK when they
+quote or publish the claim. **Wikipedia is a second-class fallback** for
+discovery only — do not leave a policy claim sourced only to a wiki page when a
+party or primary publication exists.
+
 ## Federal policies
 
 Where a matrix party has no Victorian-specific public position, a **national

@@ -107,6 +107,8 @@ export const PARTY_COLOURS = {
   labor: "#C8102E",
   liberal: "#1B4F9C",
   nationals: "#0B7A4B",
+  "liberal-national": "#1B4F9C",
+  "country-liberal": "#1B4F9C",
   coalition: "#315B82",
   greens: "#1E9E43",
   "one-nation": "#E8730C",

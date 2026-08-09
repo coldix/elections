@@ -3,7 +3,7 @@ source:
   publisher: Australian Electoral Commission
   title: Current register of political parties
   accessed: '2026-08-09'
-  note: Display names follow observed 48th Parliament labels; align to AEC register in a later pass.
+  note: Display names also reflect parliamentary labels from APH membership.
 parties:
 - slug: australias-voice
   name: Australia's Voice
@@ -48,6 +48,11 @@ parties:
 - slug: liberal
   name: Liberal Party of Australia
   short_name: Liberal
+  registered: true
+  family: coalition
+- slug: liberal-national
+  name: Liberal National Party of Queensland
+  short_name: LNP
   registered: true
   family: coalition
 - slug: nationals

@@ -19,6 +19,13 @@ source of published figures.
 
 ---
 
+## Source quality
+
+Prefer **primary or pollster-published tables** and named media that report full
+fieldwork and primaries. Wikipedia poll tables are a **second-class fallback**
+for discovery only — every ledger row must still cite a primary or quality
+secondary source (see [METHODOLOGY.md](METHODOLOGY.md) source hierarchy).
+
 ## Purpose
 
 The tracker average is a **transparent, reproducible summary of recent public

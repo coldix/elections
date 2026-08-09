@@ -1,10 +1,10 @@
 source:
-  url: https://en.wikipedia.org/wiki/Members_of_the_Australian_House_of_Representatives,_2025%E2%80%932028
-  publisher: Wikipedia
-  title: Members of the Australian House of Representatives, 2025–2028
+  url: https://www.aph.gov.au/Senators_and_Members/Contacting_Senators_and_Members/Address_labels_and_CSV_files
+  publisher: Parliament of Australia
+  title: Address labels and CSV files — All Members by name (CSV)
   accessed: '2026-08-09'
-  note: Bootstrap compilation of 48th Parliament membership; prefer APH verification for named-person
-    updates.
+  note: Primary official APH contact list. One mid-term seat (Farrer) supplemented from Parliamentary
+    Handbook when absent from the CSV snapshot.
 divisions:
 - slug: bean
   name: Bean
@@ -275,7 +275,7 @@ divisions:
   state: nsw
   chamber: representatives
   incumbent: Zali Steggall
-  incumbent_party: community-strong
+  incumbent_party: independent
 - slug: watson
   name: Watson
   state: nsw
@@ -287,7 +287,7 @@ divisions:
   state: nsw
   chamber: representatives
   incumbent: Allegra Spender
-  incumbent_party: community-strong
+  incumbent_party: independent
 - slug: werriwa
   name: Werriwa
   state: nsw
@@ -329,7 +329,7 @@ divisions:
   state: qld
   chamber: representatives
   incumbent: Henry Pike
-  incumbent_party: liberal
+  incumbent_party: liberal-national
 - slug: brisbane
   name: Brisbane
   state: qld
@@ -341,13 +341,13 @@ divisions:
   state: qld
   chamber: representatives
   incumbent: Michelle Landry
-  incumbent_party: nationals
+  incumbent_party: liberal-national
 - slug: dawson
   name: Dawson
   state: qld
   chamber: representatives
   incumbent: Andrew Willcox
-  incumbent_party: nationals
+  incumbent_party: liberal-national
 - slug: dickson
   name: Dickson
   state: qld
@@ -359,25 +359,25 @@ divisions:
   state: qld
   chamber: representatives
   incumbent: Cameron Caldwell
-  incumbent_party: liberal
+  incumbent_party: liberal-national
 - slug: fairfax
   name: Fairfax
   state: qld
   chamber: representatives
   incumbent: Ted O'Brien
-  incumbent_party: liberal
+  incumbent_party: liberal-national
 - slug: fisher
   name: Fisher
   state: qld
   chamber: representatives
   incumbent: Andrew Wallace
-  incumbent_party: liberal
+  incumbent_party: liberal-national
 - slug: flynn
   name: Flynn
   state: qld
   chamber: representatives
   incumbent: Colin Boyce
-  incumbent_party: nationals
+  incumbent_party: liberal-national
 - slug: forde
   name: Forde
   state: qld
@@ -395,19 +395,19 @@ divisions:
   state: qld
   chamber: representatives
   incumbent: Garth Hamilton
-  incumbent_party: liberal
+  incumbent_party: liberal-national
 - slug: herbert
   name: Herbert
   state: qld
   chamber: representatives
   incumbent: Phillip Thompson
-  incumbent_party: liberal
+  incumbent_party: liberal-national
 - slug: hinkler
   name: Hinkler
   state: qld
   chamber: representatives
   incumbent: David Batt
-  incumbent_party: nationals
+  incumbent_party: liberal-national
 - slug: kennedy
   name: Kennedy
   state: qld
@@ -431,25 +431,25 @@ divisions:
   state: qld
   chamber: representatives
   incumbent: Terry Young
-  incumbent_party: liberal
+  incumbent_party: liberal-national
 - slug: maranoa
   name: Maranoa
   state: qld
   chamber: representatives
   incumbent: David Littleproud
-  incumbent_party: nationals
+  incumbent_party: liberal-national
 - slug: mcpherson
   name: McPherson
   state: qld
   chamber: representatives
   incumbent: Leon Rebello
-  incumbent_party: liberal
+  incumbent_party: liberal-national
 - slug: moncrieff
   name: Moncrieff
   state: qld
   chamber: representatives
   incumbent: Angie Bell
-  incumbent_party: liberal
+  incumbent_party: liberal-national
 - slug: moreton
   name: Moreton
   state: qld
@@ -485,13 +485,13 @@ divisions:
   state: qld
   chamber: representatives
   incumbent: Llew O'Brien
-  incumbent_party: nationals
+  incumbent_party: liberal-national
 - slug: wright
   name: Wright
   state: qld
   chamber: representatives
   incumbent: Scott Buchholz
-  incumbent_party: liberal
+  incumbent_party: liberal-national
 - slug: adelaide
   name: Adelaide
   state: sa
@@ -660,7 +660,7 @@ divisions:
   chamber: representatives
   incumbent: Zoe McKenzie
   incumbent_party: liberal
-- slug: fraser-victoria
+- slug: fraser
   name: Fraser
   state: vic
   chamber: representatives
@@ -876,7 +876,7 @@ divisions:
   chamber: representatives
   incumbent: Tom French
   incumbent_party: labor
-- slug: o-connor
+- slug: oconnor
   name: O'Connor
   state: wa
   chamber: representatives

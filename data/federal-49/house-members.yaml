@@ -1,13 +1,13 @@
-note: Sitting members of the House of Representatives in the 48th Parliament. Not a candidacy list for
-  the next election.
+note: 'Sitting members of the House of Representatives, 48th Parliament. Not a candidacy list. Primary
+  source: Parliament of Australia contact CSV.'
 parliament: 48
 source:
-  url: https://en.wikipedia.org/wiki/Members_of_the_Australian_House_of_Representatives,_2025%E2%80%932028
-  publisher: Wikipedia
-  title: Members of the Australian House of Representatives, 2025–2028
+  url: https://www.aph.gov.au/Senators_and_Members/Contacting_Senators_and_Members/Address_labels_and_CSV_files
+  publisher: Parliament of Australia
+  title: Address labels and CSV files — All Members by name (CSV)
   accessed: '2026-08-09'
-  note: Bootstrap compilation of 48th Parliament membership; prefer APH verification for named-person
-    updates.
+  note: Primary official APH contact list. One mid-term seat (Farrer) supplemented from Parliamentary
+    Handbook when absent from the CSV snapshot.
 house_members:
 - name: Aaron Violi
   party: liberal
@@ -45,7 +45,7 @@ house_members:
   state: nsw
   parliament: 48
 - name: Allegra Spender
-  party: community-strong
+  party: independent
   division: wentworth
   state: nsw
   parliament: 48
@@ -80,7 +80,7 @@ house_members:
   state: act
   parliament: 48
 - name: Andrew Wallace
-  party: liberal
+  party: liberal-national
   division: fisher
   state: qld
   parliament: 48
@@ -90,12 +90,12 @@ house_members:
   state: tas
   parliament: 48
 - name: Andrew Willcox
-  party: nationals
+  party: liberal-national
   division: dawson
   state: qld
   parliament: 48
 - name: Angie Bell
-  party: liberal
+  party: liberal-national
   division: moncrieff
   state: qld
   parliament: 48
@@ -160,7 +160,7 @@ house_members:
   state: qld
   parliament: 48
 - name: Cameron Caldwell
-  party: liberal
+  party: liberal-national
   division: fadden
   state: qld
   parliament: 48
@@ -200,7 +200,7 @@ house_members:
   state: vic
   parliament: 48
 - name: Colin Boyce
-  party: nationals
+  party: liberal-national
   division: flynn
   state: qld
   parliament: 48
@@ -221,7 +221,7 @@ house_members:
   parliament: 48
 - name: Daniel Mulino
   party: labor
-  division: fraser-victoria
+  division: fraser
   state: vic
   parliament: 48
 - name: Darren Chester
@@ -230,7 +230,7 @@ house_members:
   state: vic
   parliament: 48
 - name: David Batt
-  party: nationals
+  party: liberal-national
   division: hinkler
   state: qld
   parliament: 48
@@ -239,8 +239,10 @@ house_members:
   division: farrer
   state: nsw
   parliament: 48
+  note: Added from Parliamentary Handbook occupancy (start 2026-05-09); not present in APH contact CSV
+    snapshot used for this build.
 - name: David Littleproud
-  party: nationals
+  party: liberal-national
   division: maranoa
   state: qld
   parliament: 48
@@ -285,7 +287,7 @@ house_members:
   state: vic
   parliament: 48
 - name: Garth Hamilton
-  party: liberal
+  party: liberal-national
   division: groom
   state: qld
   parliament: 48
@@ -305,7 +307,7 @@ house_members:
   state: vic
   parliament: 48
 - name: Henry Pike
-  party: liberal
+  party: liberal-national
   division: bowman
   state: qld
   parliament: 48
@@ -415,7 +417,7 @@ house_members:
   state: nsw
   parliament: 48
 - name: Leon Rebello
-  party: liberal
+  party: liberal-national
   division: mcpherson
   state: qld
   parliament: 48
@@ -430,7 +432,7 @@ house_members:
   state: vic
   parliament: 48
 - name: Llew O'Brien
-  party: nationals
+  party: liberal-national
   division: wide-bay
   state: qld
   parliament: 48
@@ -525,7 +527,7 @@ house_members:
   state: nsw
   parliament: 48
 - name: Michelle Landry
-  party: nationals
+  party: liberal-national
   division: capricornia
   state: qld
   parliament: 48
@@ -575,7 +577,7 @@ house_members:
   state: vic
   parliament: 48
 - name: Phillip Thompson
-  party: liberal
+  party: liberal-national
   division: herbert
   state: qld
   parliament: 48
@@ -601,7 +603,7 @@ house_members:
   parliament: 48
 - name: Rick Wilson
   party: liberal
-  division: o-connor
+  division: oconnor
   state: wa
   parliament: 48
 - name: Rob Mitchell
@@ -640,7 +642,7 @@ house_members:
   state: vic
   parliament: 48
 - name: Scott Buchholz
-  party: liberal
+  party: liberal-national
   division: wright
   state: qld
   parliament: 48
@@ -685,12 +687,12 @@ house_members:
   state: nsw
   parliament: 48
 - name: Ted O'Brien
-  party: liberal
+  party: liberal-national
   division: fairfax
   state: qld
   parliament: 48
 - name: Terry Young
-  party: liberal
+  party: liberal-national
   division: longman
   state: qld
   parliament: 48
@@ -740,7 +742,7 @@ house_members:
   state: wa
   parliament: 48
 - name: Zali Steggall
-  party: community-strong
+  party: independent
   division: warringah
   state: nsw
   parliament: 48

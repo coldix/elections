@@ -166,10 +166,21 @@ Parliament:
 - Policy matrix + issues (`/parties/matrix`, `/policies`) — early ledger, empty cells OK
 - Open data page + exports: `/data/federal-49/`
 
-Membership was **bootstrapped** from public Wikipedia compilations of the 48th
-Parliament; prefer APH verification for named-person corrections. Not a
-candidacy ledger yet. Next federal modules: parties pages, polls, policies
-matrix, then progressive candidates.
+House membership is from the **APH contact CSV** (primary); Farrer was filled
+from the **Parliamentary Handbook** when absent from that CSV. Senate
+membership is from the **Parliamentary Handbook** occupancy export. Not a
+candidacy ledger. Parties, polls and policy matrix are live under `/49`.
+
+### Source quality (project goal)
+
+Be the **most accurate** Australian election info source. Hierarchy:
+
+1. **Primary** — commissions, parliaments, parties, candidates, Hansard  
+2. **Quality secondary** — named news / research with clear provenance  
+3. **Wikipedia** — fallback / discovery only; not preferred durable source  
+
+See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) and ADR-14 in
+[docs/DECISIONS.md](docs/DECISIONS.md).
 
 ## Current priorities
 
@@ -178,10 +189,12 @@ matrix, then progressive candidates.
    substituting assumptions for evidence.
 3. Keep election dates and future structure pages current as official sources
    change.
-4. Maintain the policy and poll ledgers under their published methodologies.
-5. Obtain qualified legal review of the living-person and electoral-matter
+4. Maintain the policy and poll ledgers under their published methodologies
+   (primary sources preferred).
+5. Federal: finish APH/AEC re-verification of sitting members; thicken policies;
+   progressive candidates when announcements appear.
+6. Obtain qualified legal review of the living-person and electoral-matter
    publication approach before the campaign intensifies.
-6. Federal: APH-verify sitting members; then parties pages, polls, policy matrix.
 7. Consider a recent-changes feed only within the existing static architecture.
 
 ## Documents to read first

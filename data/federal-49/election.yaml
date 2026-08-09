@@ -16,7 +16,7 @@ election:
   house_seats: 150
   senate_seats: 76
   senate_seats_up_normal: 40
-  tracking_status: Structure and sitting members for the 48th Parliament; not yet an active candidacy
+  tracking_status: Sitting members from Parliament of Australia (primary). Not yet an active candidacy
     ledger.
   authorities:
   - name: Australian Electoral Commission
@@ -35,17 +35,18 @@ election:
     published: '2026-07-23'
     accessed: '2026-08-09'
   membership_sources:
-  - url: https://en.wikipedia.org/wiki/Members_of_the_Australian_House_of_Representatives,_2025%E2%80%932028
-    publisher: Wikipedia
-    title: Members of the Australian House of Representatives, 2025–2028
+  - url: https://www.aph.gov.au/Senators_and_Members/Contacting_Senators_and_Members/Address_labels_and_CSV_files
+    publisher: Parliament of Australia
+    title: Address labels and CSV files — All Members by name (CSV)
     accessed: '2026-08-09'
-    note: Bootstrap compilation of 48th Parliament membership; prefer APH verification for named-person
-      updates.
-  - url: https://en.wikipedia.org/wiki/Members_of_the_Australian_Senate,_2025%E2%80%932028
-    publisher: Wikipedia
-    title: Members of the Australian Senate, 2025–2028
+    note: Primary official APH contact list. One mid-term seat (Farrer) supplemented from Parliamentary
+      Handbook when absent from the CSV snapshot.
+  - url: https://handbook.aph.gov.au/
+    publisher: Parliament of Australia
+    title: Parliamentary Handbook — current senators
     accessed: '2026-08-09'
-    note: Bootstrap compilation; end-term years indicate half-Senate exposure for state senators.
+    note: Primary. Occupancy export from APH Parliamentary Handbook (dataset last change 2026-08-04).
+      Half-Senate term class retained from prior verification where still matching.
   - url: https://www.aph.gov.au/Senators_and_Members
     publisher: Parliament of Australia
     title: Senators and Members
@@ -55,3 +56,5 @@ election:
   - A double dissolution would put all 76 Senate places to election.
   - Sitting members listed here are of the 48th Parliament; they are not automatically candidates for
     the 49th.
+  - Membership is sourced from Parliament of Australia (APH), not Wikipedia. Wikipedia may be used only
+    as a temporary discovery aid.

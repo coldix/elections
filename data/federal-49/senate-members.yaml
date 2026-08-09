@@ -1,20 +1,22 @@
-note: 'Sitting senators in the 48th Parliament. term_status: up = ordinarily faces next half-Senate; continuing
-  = term to 2031; territory = always with House.'
+note: 'Sitting senators, 48th Parliament. Primary source: Parliamentary Handbook. term_status guides half-Senate
+  exposure. Not a candidacy list.'
 parliament: 48
 source:
-  url: https://en.wikipedia.org/wiki/Members_of_the_Australian_Senate,_2025%E2%80%932028
-  publisher: Wikipedia
-  title: Members of the Australian Senate, 2025–2028
+  url: https://handbook.aph.gov.au/
+  publisher: Parliament of Australia
+  title: Parliamentary Handbook — current senators
   accessed: '2026-08-09'
-  note: Bootstrap compilation; end-term years indicate half-Senate exposure for state senators.
+  note: Primary. Occupancy export from APH Parliamentary Handbook (dataset last change 2026-08-04). Half-Senate
+    term class retained from prior verification where still matching.
 senate_members:
-- name: David Pocock
+- name: David Willmer Pocock
   party: independent
   state: act
   parliament: 48
   end_term: 2028
   term_status: territory
   term_note: Territory terms follow the House of Representatives.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/256136
 - name: Katy Gallagher
   party: labor
   state: act
@@ -22,13 +24,22 @@ senate_members:
   end_term: 2028
   term_status: territory
   term_note: Territory terms follow the House of Representatives.
-- name: Andrew Bragg
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/ING
+- name: Andrew James Bragg
   party: liberal
   state: nsw
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/256063
+- name: Dave Sharma
+  party: liberal
+  state: nsw
+  parliament: 48
+  term_status: unknown
+  term_note: Confirm half-Senate class against APH/AEC schedule.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/274506
 - name: David Shoebridge
   party: greens
   state: nsw
@@ -36,20 +47,23 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Deborah O'Neill
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/169119
+- name: Deb O'Neill
   party: labor
   state: nsw
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Jenny McAllister
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/140651
+- name: Jenny McALLISTER
   party: labor
   state: nsw
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/121628
 - name: Jessica Collins
   party: liberal
   state: nsw
@@ -57,6 +71,7 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/297964
 - name: Maria Kovacic
   party: liberal
   state: nsw
@@ -64,27 +79,31 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Mehreen Faruqi
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/306168
+- name: Mehreen Saeed Faruqi
   party: greens
   state: nsw
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Ross Cadell
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/250362
+- name: Ross Philip Cadell
   party: nationals
   state: nsw
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Sean Bell
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/300134
+- name: Sean Fredrick Bell
   party: one-nation
   state: nsw
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/319142
 - name: Tim Ayres
   party: labor
   state: nsw
@@ -92,6 +111,7 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/16913
 - name: Tony Sheldon
   party: labor
   state: nsw
@@ -99,13 +119,7 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Warwick Stacey
-  party: one-nation
-  state: nsw
-  parliament: 48
-  end_term: 2031
-  term_status: continuing
-  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/168275
 - name: Jacinta Nampijinpa Price
   party: liberal
   state: nt
@@ -113,20 +127,23 @@ senate_members:
   end_term: 2028
   term_status: territory
   term_note: Territory terms follow the House of Representatives.
-- name: Malarndirri McCarthy
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/263528
+- name: Malarndirri Barbara Anne McCARTHY
   party: labor
   state: nt
   parliament: 48
   end_term: 2028
   term_status: territory
   term_note: Territory terms follow the House of Representatives.
-- name: Anthony Chisholm
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/122087
+- name: Anthony David Chisholm
   party: labor
   state: qld
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/39801
 - name: Corinne Mulholland
   party: labor
   state: qld
@@ -134,27 +151,31 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: James McGrath
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/277110
+- name: James McGRATH
   party: liberal
   state: qld
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Larissa Waters
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/217241
+- name: Larissa Joy Waters
   party: greens
   state: qld
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Malcolm Roberts
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/192970
+- name: Malcolm Ieuan Roberts
   party: one-nation
   state: qld
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/266524
 - name: Matt Canavan
   party: nationals
   state: qld
@@ -162,34 +183,39 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Murray Watt
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/245212
+- name: Murray Patrick Watt
   party: labor
   state: qld
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Nita Green
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/245759
+- name: Nita Louise Green
   party: labor
   state: qld
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Paul Scarr
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/259819
+- name: Paul Martin Scarr
   party: liberal
   state: qld
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Pauline Hanson
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/282997
+- name: Pauline Lee Hanson
   party: one-nation
   state: qld
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/BK6
 - name: Penny Allman-Payne
   party: greens
   state: qld
@@ -197,13 +223,15 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Susan McDonald
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/298839
+- name: Susan Eileen McDONALD
   party: nationals
   state: qld
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/123072
 - name: Alex Antic
   party: liberal
   state: sa
@@ -211,34 +239,39 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Andrew McLachlan
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/269375
+- name: Andrew Lockhart Mclachlan
   party: liberal
   state: sa
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Anne Ruston
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/287062
+- name: Anne Sowerby Ruston
   party: liberal
   state: sa
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Barbara Pocock
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/243273
+- name: Barbara Ann Pocock
   party: greens
   state: sa
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Charlotte Walker
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/BFQ
+- name: Charlotte Grace Walker
   party: labor
   state: sa
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/316818
 - name: Don Farrell
   party: labor
   state: sa
@@ -246,20 +279,23 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Karen Grogan
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/I0N
+- name: Karen Ann Grogan
   party: labor
   state: sa
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Kerrynne Liddle
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/296331
+- name: Kerrynne Jeanette Liddle
   party: liberal
   state: sa
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/300644
 - name: Leah Blyth
   party: liberal
   state: sa
@@ -267,13 +303,15 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Marielle Smith
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/315170
+- name: Marielle Feuerherdt Smith
   party: labor
   state: sa
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/281603
 - name: Penny Wong
   party: labor
   state: sa
@@ -281,20 +319,23 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Sarah Hanson-Young
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/00AOU
+- name: Sarah Coral Hanson-Young
   party: greens
   state: sa
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Carol Brown
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/I0U
+- name: Carol Louise Brown
   party: labor
   state: tas
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/F49
 - name: Claire Chandler
   party: liberal
   state: tas
@@ -302,13 +343,15 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Helen Polley
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/264449
+- name: Helen Beatrice Polley
   party: labor
   state: tas
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/E5X
 - name: Jacqui Lambie
   party: jacqui-lambie-network
   state: tas
@@ -316,13 +359,15 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Jonathon Duniam
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/250026
+- name: Jonno Duniam
   party: liberal
   state: tas
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/263418
 - name: Josh Dolega
   party: labor
   state: tas
@@ -330,27 +375,23 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Nick McKim
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/316935
+- name: Nick McKIM
   party: greens
   state: tas
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Peter Whish-Wilson
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/JKM
+- name: Peter Stuart Whish-Wilson
   party: greens
   state: tas
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Richard Colbeck
-  party: liberal
-  state: tas
-  parliament: 48
-  end_term: 2031
-  term_status: continuing
-  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/195565
 - name: Richard Dowling
   party: labor
   state: tas
@@ -358,13 +399,23 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Tammy Tyrrell
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/55842
+- name: Richard Mansell Colbeck
+  party: liberal
+  state: tas
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/00AOL
+- name: Tammy Marie Tyrrell
   party: labor
   state: tas
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/300639
 - name: Wendy Askew
   party: liberal
   state: tas
@@ -372,27 +423,31 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Bridget McKenzie
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/281558
+- name: Bridget McKENZIE
   party: nationals
   state: vic
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: James Paterson
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/207825
+- name: James William Paterson
   party: liberal
   state: vic
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Jana Stewart
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/144138
+- name: Jana Naretha Ann Stewart
   party: labor
   state: vic
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/299352
 - name: Jane Hume
   party: liberal
   state: vic
@@ -400,20 +455,23 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Jess Walsh
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/266499
+- name: Jess Cecille Walsh
   party: labor
   state: vic
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Lidia Thorpe
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/252157
+- name: Lidia Alma Thorpe
   party: independent
   state: vic
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/280304
 - name: Lisa Darmanin
   party: labor
   state: vic
@@ -421,6 +479,7 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/301128
 - name: Michelle Ananda-Rajah
   party: labor
   state: vic
@@ -428,6 +487,7 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/290544
 - name: Raff Ciccone
   party: labor
   state: vic
@@ -435,6 +495,7 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/281503
 - name: Ralph Babet
   party: united-australia
   state: vic
@@ -442,13 +503,15 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Sarah Henderson
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/300706
+- name: Sarah Moya Henderson
   party: liberal
   state: vic
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/ZN4
 - name: Steph Hodgins-May
   party: greens
   state: vic
@@ -456,20 +519,23 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Dean Smith
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/310860
+- name: Dean Anthony Smith
   party: liberal
   state: wa
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Dorinda Cox
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/241710
+- name: Dorinda Rose Cox
   party: labor
   state: wa
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/296215
 - name: Ellie Whiteaker
   party: labor
   state: wa
@@ -477,6 +543,7 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/316555
 - name: Fatima Payman
   party: australias-voice
   state: wa
@@ -484,6 +551,7 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/300707
 - name: Glenn Sterle
   party: labor
   state: wa
@@ -491,13 +559,15 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
-- name: Jordon Steele-John
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/E68
+- name: Jordon Alexander Steele-John
   party: greens
   state: wa
   parliament: 48
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/250156
 - name: Matt O'Sullivan
   party: liberal
   state: wa
@@ -505,13 +575,15 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
-- name: Michaelia Cash
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/283585
+- name: Michaelia Clare Cash
   party: liberal
   state: wa
   parliament: 48
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/I0M
 - name: Slade Brockman
   party: liberal
   state: wa
@@ -519,6 +591,7 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/30484
 - name: Sue Lines
   party: labor
   state: wa
@@ -526,6 +599,7 @@ senate_members:
   end_term: 2028
   term_status: up
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/112096
 - name: Tyron Whitten
   party: one-nation
   state: wa
@@ -533,6 +607,7 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/317026
 - name: Varun Ghosh
   party: labor
   state: wa
@@ -540,3 +615,4 @@ senate_members:
   end_term: 2031
   term_status: continuing
   term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+  handbook_url: https://handbook.aph.gov.au/Parliamentarian/257613

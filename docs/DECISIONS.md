@@ -191,6 +191,24 @@ are deferred from Vic 2026 and listed for federal setup in
 [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md#deferred-for-federal-elections-not-vic-2026).
 Full rules: [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md).
 
+## ADR-14: Primary sources preferred; Wikipedia is fallback only (2026-08-09)
+
+**Decision.** Product goal is to be the best **accurate** public source of
+Australian election information. **Original sources first** (commissions,
+parliaments, parties, candidates, Hansard, legislation). Wikipedia and similar
+wikis are a **second-class fallback**: useful for discovery and temporary
+bootstrap, not the preferred durable source for named-person membership or
+candidacy.
+
+**Why.** Accuracy and citability require provenance. Wiki pages lag, edit-war,
+and are not authoritative for living persons in an electoral ledger.
+
+**Consequences.** Methodology hierarchy is in [METHODOLOGY.md](METHODOLOGY.md).
+Federal sitting members bootstrapped from Wikipedia must be re-verified against
+Parliament of Australia / AEC. Policy and poll claims prefer primary or named
+quality secondary sources. Do not ship wiki-only as “verified” without a path
+to replace.
+
 ## ADR-13: Federal identity — parliament number (2026-08-09)
 
 **Decision.** Federal contests are identified by the **Parliament they elect**:

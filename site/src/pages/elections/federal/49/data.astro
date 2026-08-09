@@ -34,7 +34,7 @@ const files = [
   },
   {
     name: "parties.json",
-    note: "Party labels used in this ledger (bootstrap; AEC alignment later).",
+    note: "Party labels from APH parliamentary labels; align to AEC register over time.",
   },
   {
     name: "representation.json",
@@ -98,8 +98,8 @@ const schema = {
 
     <div class="notice" role="note">
       <strong>{summary.house_members} House · {summary.senate_members} Senate</strong> sitting
-      members in this snapshot. Not a candidacy ledger. Membership was bootstrapped from public
-      compilations — prefer Parliament of Australia for named-person corrections.
+      members in this snapshot. Not a candidacy ledger. Membership is sourced from the Parliament
+      of Australia (primary). Wikipedia is a second-class fallback only, not preferred.
     </div>
 
     <p class="btn-row">
