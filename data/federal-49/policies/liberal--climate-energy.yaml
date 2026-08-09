@@ -1,0 +1,17 @@
+policy:
+  party: liberal
+  issue: climate-energy
+  headline: Energy reliability framed through cost of living (Coalition plan)
+  claims:
+    - id: lib-energy-col
+      statement: >-
+        Coalition plan materials emphasise restoring living standards and economic management;
+        detailed technology-specific federal energy pledges for the 49th Parliament should be
+        added as the Coalition publishes updated energy commitments. Existing plan framing
+        prioritises household cost of living alongside energy reliability.
+      kind: position
+      source:
+        url: https://www.liberal.org.au/our-plan
+        publisher: Liberal Party of Australia
+        title: Our Plan to Fix The Economy. Protect Our Way Of Life.
+        accessed: 2026-08-09

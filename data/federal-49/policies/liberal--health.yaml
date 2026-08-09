@@ -1,0 +1,35 @@
+policy:
+  party: liberal
+  issue: health
+  headline: Medicare investment and bulk-billing focus
+  claims:
+    - id: lib-medicare-9b
+      statement: >-
+        The Liberal Party states that an elected Coalition government will invest an historic
+        $9 billion into Medicare to ensure timely and affordable access to a doctor, and will
+        match dollar-for-dollar an $8.5 billion Medicare investment framed as restoring bulk
+        billing.
+      kind: pledge
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 9000000000
+        amount_display: $9 billion
+        timeframe: announced February 2025 (2025 election policy; retained on party site)
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.liberal.org.au/2025/02/23/the-coalition-will-invest-9-billion-into-medicare
+        publisher: Liberal Party of Australia
+        title: The Coalition will invest $9 Billion into Medicare
+        published: 2025-02-23
+        accessed: 2026-08-09
+    - id: lib-health-plan-framing
+      statement: >-
+        The Coalition national plan states that in health, the Coalition will focus on whole-of-life
+        health, and in aged care will give respect, care and dignity with better value for taxpayers.
+      kind: position
+      source:
+        url: https://www.liberal.org.au/our-plan
+        publisher: Liberal Party of Australia
+        title: Our Plan to Fix The Economy. Protect Our Way Of Life.
+        accessed: 2026-08-09

@@ -1,0 +1,26 @@
+policy:
+  party: greens
+  issue: cost-of-living
+  headline: Cheaper power, transport and healthcare cost relief
+  claims:
+    - id: greens-col-energy
+      statement: >-
+        The Greens climate and energy plan includes cheaper power through public renewable
+        investment, household electrification support, and 50 cent public transport fares
+        nationwide as cost-of-living measures.
+      kind: pledge
+      source:
+        url: https://greens.org.au/platform/climate
+        publisher: Australian Greens
+        title: Climate Change & Energy — Policy Portfolio
+        accessed: 2026-08-09
+    - id: greens-col-dental
+      statement: >-
+        The Greens health plan frames putting dental into Medicare with a $195 billion investment
+        as easing cost-of-living pressure by reducing out-of-pocket dental costs.
+      kind: pledge
+      source:
+        url: https://greens.org.au/portfolios/health
+        publisher: Australian Greens
+        title: Health — Policy Portfolio
+        accessed: 2026-08-09

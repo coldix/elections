@@ -1,0 +1,26 @@
+policy:
+  party: nationals
+  issue: health
+  headline: Regional GPs, specialists and nurses
+  claims:
+    - id: nats-regional-gp
+      statement: >-
+        The Nationals plan states they will back regional healthcare with stronger incentives
+        to attract and retain GPs, specialists and nurses in the regions so families can see a
+        doctor without a long drive or long wait.
+      kind: pledge
+      source:
+        url: https://www.nationals.org.au/plan
+        publisher: The Nationals
+        title: Our Plan for Regional Australia
+        accessed: 2026-08-09
+    - id: nats-health-system
+      statement: >-
+        The plan frames a better health system that will provide more GPs and health specialists
+        for families in regional towns — local and affordable.
+      kind: position
+      source:
+        url: https://www.nationals.org.au/plan
+        publisher: The Nationals
+        title: Our Plan for Regional Australia
+        accessed: 2026-08-09

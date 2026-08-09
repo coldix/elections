@@ -1,0 +1,15 @@
+policy:
+  party: nationals
+  issue: tax-budget
+  headline: Reduce tax as part of cost-of-living relief
+  claims:
+    - id: nats-reduce-tax
+      statement: >-
+        The Nationals plan lists tackling cost-of-living pressures by stopping supermarket
+        price gouging, increasing housing affordability, and reducing tax.
+      kind: position
+      source:
+        url: https://www.nationals.org.au/plan
+        publisher: The Nationals
+        title: Our Plan for Regional Australia
+        accessed: 2026-08-09

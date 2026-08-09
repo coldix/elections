@@ -1,0 +1,27 @@
+policy:
+  party: nationals
+  issue: cost-of-living
+  headline: Power prices, supermarket competition, regional housing supply
+  claims:
+    - id: nats-col-fundamentals
+      statement: >-
+        The Nationals plan states they will tackle cost-of-living pressures by fixing the
+        fundamentals that drive higher prices, including boosting reliable energy supply to put
+        downward pressure on power bills.
+      kind: position
+      source:
+        url: https://www.nationals.org.au/plan
+        publisher: The Nationals
+        title: Our Plan for Regional Australia
+        accessed: 2026-08-09
+    - id: nats-supermarket
+      statement: >-
+        The plan includes cracking down on supermarket price gouging with stronger competition
+        laws, real penalties, and fairer deals for farmers at the farmgate and families at the
+        checkout.
+      kind: pledge
+      source:
+        url: https://www.nationals.org.au/plan
+        publisher: The Nationals
+        title: Our Plan for Regional Australia
+        accessed: 2026-08-09

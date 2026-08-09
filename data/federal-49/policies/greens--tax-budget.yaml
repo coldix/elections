@@ -1,0 +1,26 @@
+policy:
+  party: greens
+  issue: tax-budget
+  headline: Tax big corporations; fund Medicare and public services
+  claims:
+    - id: greens-corp-tax
+      statement: >-
+        The Greens health platform states that one in three big corporations pay no tax, and
+        that by making big corporations pay their fair share Australia can expand Medicare and
+        reduce out-of-pocket costs.
+      kind: position
+      source:
+        url: https://greens.org.au/portfolios/health
+        publisher: Australian Greens
+        title: Health — Policy Portfolio
+        accessed: 2026-08-09
+    - id: greens-carbon-price-budget
+      statement: >-
+        The Greens climate plan proposes a carbon price of $100 per tonne on large polluters
+        (at least 25,000 tonnes annually) to fund public investments in the energy transition.
+      kind: pledge
+      source:
+        url: https://greens.org.au/platform/climate
+        publisher: Australian Greens
+        title: Climate Change & Energy — Policy Portfolio
+        accessed: 2026-08-09

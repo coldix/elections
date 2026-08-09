@@ -1,0 +1,27 @@
+policy:
+  party: one-nation
+  issue: cost-of-living
+  headline: Migration and housing pressure as cost-of-living drivers
+  claims:
+    - id: on-col-migration
+      statement: >-
+        ABC reporting on One Nation platforms links the party’s net-zero / lower-migration
+        agenda to easing pressure on housing, jobs and cost of living.
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2026-02-10/one-nation-policy-platforms-pauline-hanson/106296838
+        publisher: ABC News
+        title: People say they'll vote One Nation. What are they voting for?
+        published: 2026-02-10
+        accessed: 2026-08-09
+    - id: on-col-gst-homes
+      statement: >-
+        One Nation would cut GST on building materials for new homes up to $1 million, framed
+        as supporting housing supply and affordability.
+      kind: pledge
+      source:
+        url: https://www.abc.net.au/news/2026-02-10/one-nation-policy-platforms-pauline-hanson/106296838
+        publisher: ABC News
+        title: People say they'll vote One Nation. What are they voting for?
+        published: 2026-02-10
+        accessed: 2026-08-09

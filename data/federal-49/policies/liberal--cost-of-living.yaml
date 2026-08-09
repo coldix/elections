@@ -1,0 +1,16 @@
+policy:
+  party: liberal
+  issue: cost-of-living
+  headline: Restore living standards; economy and housing-first plan
+  claims:
+    - id: lib-col-plan
+      statement: >-
+        The Coalition plan is titled to “fix the economy” and “protect our way of life”,
+        stating the Coalition will restore Australia’s standard of living and put Australians
+        first, including through housing supply and migration settings linked to homes built.
+      kind: position
+      source:
+        url: https://www.liberal.org.au/our-plan
+        publisher: Liberal Party of Australia
+        title: Our Plan to Fix The Economy. Protect Our Way Of Life.
+        accessed: 2026-08-09

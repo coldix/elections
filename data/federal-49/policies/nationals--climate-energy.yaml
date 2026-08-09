@@ -1,0 +1,15 @@
+policy:
+  party: nationals
+  issue: climate-energy
+  headline: Reliable energy to put downward pressure on power bills
+  claims:
+    - id: nats-reliable-energy
+      statement: >-
+        The Nationals cost-of-living plan emphasises boosting reliable energy supply to put
+        downward pressure on power bills for regional families.
+      kind: position
+      source:
+        url: https://www.nationals.org.au/plan
+        publisher: The Nationals
+        title: Our Plan for Regional Australia
+        accessed: 2026-08-09

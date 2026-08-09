@@ -1,15 +1,26 @@
 policy:
   party: nationals
   issue: housing
-  headline: Regional housing supply and infrastructure
+  headline: Cut red tape; increase regional housing supply
   claims:
-    - id: nats-regional-housing
+    - id: nats-housing-red-tape
       statement: >-
-        The Nationals emphasise housing and infrastructure needs in regional Australia as
-        part of national Coalition housing and regional development messaging (party materials).
+        The Nationals plan states they will work with all levels of government to cut red tape
+        and increase housing supply in regional communities, addressing a housing shortage that
+        locks young people out of their own towns.
+      kind: pledge
+      source:
+        url: https://www.nationals.org.au/plan
+        publisher: The Nationals
+        title: Our Plan for Regional Australia
+        accessed: 2026-08-09
+    - id: nats-housing-affordability
+      statement: >-
+        The plan lists increasing housing affordability alongside stopping supermarket price
+        gouging and reducing tax as cost-of-living measures for regional families.
       kind: position
       source:
-        url: https://nationals.org.au/
+        url: https://www.nationals.org.au/plan
         publisher: The Nationals
-        title: The Nationals
+        title: Our Plan for Regional Australia
         accessed: 2026-08-09
