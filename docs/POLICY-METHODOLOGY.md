@@ -76,15 +76,19 @@ Each issue relationship uses one of these scopes:
 
 | Scope | Meaning | Combined display |
 |---|---|---|
-| `coalition_shared` | The available records describe the same joint commitment | Show once with a “Shared Coalition policy” badge and provide a separate-record drill-down |
-| `mixed` | A joint core platform exists alongside party-specific material | Show both party records within the Coalition column |
-| `party_specific` | No qualifying shared position is recorded | Show each member’s position, including an honest empty state where applicable |
+| `coalition_shared` | The available records describe the same joint commitment | Single “Shared Coalition policy” cell; drill-down when both partners have records |
+| `mixed` | A joint core platform exists alongside party-specific material | Split Liberal / Nationals only when **both** are sourced |
+| `party_specific` | No qualifying joint record in the ledger | If only one partner is sourced, single Shared Coalition cell (other assumed aligned). Never a split box with an empty half |
+
+**Missing-partner rule:** When Nationals (or Liberal) has no sourced policy on an
+issue, the combined column uses the other partner’s record as the Coalition
+position. The separate five-party view still shows empty cells honestly.
 
 `shared_policy_id` is required for `coalition_shared` and `mixed` relationships.
 It is a stable identifier for the shared policy family; it does not replace
 claim IDs or sources. `representative_party` selects which complete policy
 record is shown in the collapsed shared cell. Both original records remain
-available in the drill-down and separate-party view.
+available in the drill-down and separate-party view when present.
 
 Validation requires a default combined coalition to classify every issue. A
 shared relationship must have an underlying policy record for every member;
