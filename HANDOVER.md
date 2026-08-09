@@ -162,6 +162,7 @@ Parliament:
 - House: 150 divisions + sitting MPs
 - Senate: composition + half-Senate term status (`up` / `continuing` / `territory`)
 - Parties index + per-party member lists
+- Federal primary-vote poll ledger + tracker average (`/polls`)
 - Open data page + exports: `/data/federal-49/`
 
 Membership was **bootstrapped** from public Wikipedia compilations of the 48th

@@ -101,6 +101,46 @@ for (const id of listElections()) {
       )
     );
 
+    const polls = loadPolls(id);
+    const pollAverage = computePollAverage(polls);
+    write("polls.json", {
+      generated: new Date().toISOString(),
+      caveat: POLL_CAVEAT,
+      methodology: "docs/POLL-METHODOLOGY.md",
+      jurisdiction: "federal",
+      population: "australian-electors",
+      polls: polls.map(({ file, ...p }) => p),
+    });
+    write("poll-average.json", pollAverage);
+    writeFileSync(
+      join(out, "polls.csv"),
+      csv(
+        polls.map((p) => ({
+          id: p.id,
+          pollster: p.pollster,
+          commissioner: p.commissioner,
+          commissioner_type: p.commissioner_type,
+          fieldwork_start: p.fieldwork_start,
+          fieldwork_end: p.fieldwork_end,
+          sample_size: p.sample_size,
+          alp: p.primaries?.alp,
+          lnp: p.primaries?.lnp,
+          onp: p.primaries?.onp,
+          grn: p.primaries?.grn,
+          others: p.primaries?.others,
+          eligible_for_average: p.eligible_for_average,
+          eligibility_exception: p.eligibility_exception ?? "",
+          source_url: p.sources?.[0]?.url,
+        })),
+        [
+          "id", "pollster", "commissioner", "commissioner_type",
+          "fieldwork_start", "fieldwork_end", "sample_size",
+          "alp", "lnp", "onp", "grn", "others",
+          "eligible_for_average", "eligibility_exception", "source_url",
+        ]
+      )
+    );
+
     index.elections.push({
       id,
       name: data.election.name,
@@ -109,16 +149,19 @@ for (const id of listElections()) {
       public_path: data.election.public_path,
       house_members: summary.house_members,
       senate_members: summary.senate_members,
+      polls: polls.length,
+      poll_average_status: pollAverage.status,
       files: [
         "election.json", "divisions.json", "house-members.json",
         "senate-contests.json", "senate-members.json", "parties.json",
         "representation.json", "summary.json",
+        "polls.json", "poll-average.json", "polls.csv",
         "divisions.csv", "house-members.csv", "senate-members.csv",
       ],
     });
 
     console.log(
-      `${id}: exported federal · ${summary.house_members} MPs, ${summary.senate_members} senators -> site/public/data/${id}/`
+      `${id}: exported federal · ${summary.house_members} MPs, ${summary.senate_members} senators, ${polls.length} polls -> site/public/data/${id}/`
     );
     continue;
   }

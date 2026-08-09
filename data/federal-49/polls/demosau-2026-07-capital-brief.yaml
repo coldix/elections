@@ -1,0 +1,31 @@
+id: demosau-2026-07-capital-brief
+pollster: DemosAU
+commissioner: capital-brief
+commissioner_type: media
+fieldwork_start: 2026-07-03
+fieldwork_end: 2026-07-08
+sample_size: 2694
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for Capital Brief / DemosAU."
+primaries:
+  alp: 26
+  lnp: 21
+  onp: 29
+  grn: 14
+  others: 10
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://demosau.com/wp-content/uploads/2026/07/Capital-BriefDemosAU-Federal-Poll-July-2026.pdf
+    publisher: DemosAU
+    title: Capital Brief/DemosAU Federal Poll July 2026
+    published: 2026-07-13
+    accessed: 2026-08-09
+  - url: https://www.capitalbrief.com/newsletter/pauline-hansons-agenda-takes-a-hit-in-new-poll-701d8498-f9f1-43f6-ab7c-dd8d236dfa78/
+    publisher: Capital Brief
+    title: Pauline Hanson's agenda takes a hit in new poll
+    published: 2026-07-13
+    accessed: 2026-08-09

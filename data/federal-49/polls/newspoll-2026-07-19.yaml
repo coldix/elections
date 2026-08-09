@@ -1,0 +1,31 @@
+id: newspoll-2026-07-19
+pollster: "Newspoll / Pyxis"
+commissioner: the-australian
+commissioner_type: media
+fieldwork_start: 2026-07-13
+fieldwork_end: 2026-07-16
+sample_size: 1238
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for The Australian (Newspoll)."
+primaries:
+  alp: 30
+  lnp: 19
+  onp: 30
+  grn: 12
+  others: 9
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theaustralian.com.au/nation/politics/newspoll-pauline-hanson-regains-ground-and-liberals-rise-as-labor-falls-to-equal-lowest-point-since-2022/news-story/da8374ff67e3769478b13867909a1074
+    publisher: The Australian
+    title: "Newspoll: Pauline Hanson regains ground and Liberals rise as Labor falls to equal lowest point since 2022"
+    published: 2026-07-19
+    accessed: 2026-08-09
+  - url: https://www.pollbludger.net/2026/07/15/federal-polls-yougov-demosau-and-roy-morgan-open-thread/
+    publisher: The Poll Bludger
+    title: Federal polls — YouGov, DemosAU and Roy Morgan (includes Newspoll 19 July figures)
+    published: 2026-07-15
+    accessed: 2026-08-09

@@ -1,0 +1,26 @@
+id: essential-2026-07-29-guardian
+pollster: Essential
+commissioner: the-guardian
+commissioner_type: media
+fieldwork_start: 2026-07-22
+fieldwork_end: 2026-07-27
+sample_size: 1060
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Guardian Essential Report federal voting intention. Published primaries; 4% undecided noted on secondary compilations."
+primaries:
+  alp: 31
+  lnp: 22
+  onp: 25
+  grn: 12
+  others: 10
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theguardian.com/australia-news/2026/jul/29/guardian-essential-poll-angus-taylors-approval-rating-crashes-and-one-nation-support-plateaus
+    publisher: The Guardian
+    title: "Guardian Essential poll: Angus Taylor’s approval rating crashes and One Nation support plateaus"
+    published: 2026-07-29
+    accessed: 2026-08-09

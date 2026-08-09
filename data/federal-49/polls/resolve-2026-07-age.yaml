@@ -1,0 +1,26 @@
+id: resolve-2026-07-age
+pollster: "Resolve Strategic"
+commissioner: nine-newspapers
+commissioner_type: media
+fieldwork_start: 2026-07-06
+fieldwork_end: 2026-07-11
+sample_size: 2252
+design_effect: null
+mode: mixed
+population: australian-electors
+question_notes: "Federal primary voting intention for SMH/The Age. Others combine IND 6% + OTH 5%."
+primaries:
+  alp: 28
+  lnp: 23
+  onp: 26
+  grn: 12
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theage.com.au/politics/federal/the-varnish-has-come-off-support-slips-for-hanson-20260712-p60el9.html
+    publisher: The Age
+    title: "The varnish has come off: Support slips for Hanson"
+    published: 2026-07-12
+    accessed: 2026-08-09

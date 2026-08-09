@@ -1,0 +1,26 @@
+id: roy-morgan-2026-07-27
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-07-20
+fieldwork_end: 2026-07-26
+sample_size: 1643
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. L-NP as Liberals 18.5% + Nationals 3.5%."
+primaries:
+  alp: 27.5
+  lnp: 22
+  onp: 25.5
+  grn: 14
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10293-federal-voting-intention-july-27-2026
+    publisher: Roy Morgan
+    title: ALP maintains election-winning lead; One Nation overtake the L-NP Coalition on primary vote
+    published: 2026-07-27
+    accessed: 2026-08-09

@@ -1,0 +1,26 @@
+id: yougov-2026-07-28-news24
+pollster: YouGov
+commissioner: news24
+commissioner_type: media
+fieldwork_start: 2026-07-21
+fieldwork_end: 2026-07-28
+sample_size: 1500
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention (News24 Pulse). Others combine IND 6% + OTH 6%."
+primaries:
+  alp: 28
+  lnp: 22
+  onp: 25
+  grn: 13
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.news24.com.au/politics/australian-politics/labor-on-lowest-majoritywinning-vote-since-federation-as-voters-turn-on-major-parties-news24-pulse/news-story/30abb89ce081815670d1a05c4517f90e
+    publisher: News24
+    title: "Labor on lowest majority-winning vote since Federation, as voters turn on major parties: News24 Pulse"
+    published: 2026-07-28
+    accessed: 2026-08-09

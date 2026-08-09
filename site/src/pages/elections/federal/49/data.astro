@@ -44,6 +44,15 @@ const files = [
     name: "summary.json",
     note: "Headline counts for this snapshot.",
   },
+  {
+    name: "polls.json",
+    note: "Federal primary-vote poll ledger (sourced).",
+  },
+  {
+    name: "poll-average.json",
+    note: "Weighted primary average + bands (not a forecast).",
+  },
+  { name: "polls.csv", note: "Poll ledger spreadsheet export." },
   { name: "divisions.csv", note: "Divisions spreadsheet export." },
   { name: "house-members.csv", note: "House members spreadsheet export." },
   { name: "senate-members.csv", note: "Senate members spreadsheet export." },
@@ -92,7 +101,8 @@ const schema = {
 
     <p class="btn-row">
       <a class="btn" href={`${base}/summary.json`}>summary.json</a>
-      <a class="btn btn-ghost" href={`${base}/parties.json`}>parties.json</a>
+      <a class="btn btn-ghost" href={`${base}/poll-average.json`}>poll-average.json</a>
+      <a class="btn btn-ghost" href={`${FEDERAL_49}/polls`}>Polls page</a>
       <a class="btn btn-ghost" href="/data/index.json">All elections index</a>
     </p>
 

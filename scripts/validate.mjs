@@ -24,6 +24,102 @@ function checkSource(file, ctx, s) {
 }
 
 
+
+function validatePolls(election, dir) {
+  const pollDir = join(dir, "polls");
+  let pollCount = 0;
+  if (!(existsSync(pollDir) && statSync(pollDir).isDirectory())) return pollCount;
+  const COMMISSIONER_TYPES = [
+    "media", "self", "academic", "excluded_advocacy", "party", "union", "candidate",
+  ];
+  const EXCLUDED_TYPES = new Set(["excluded_advocacy", "party", "union", "candidate"]);
+  const MODES = ["online", "sms", "phone", "mixed", "other"];
+  const PRIMARY_KEYS = ["alp", "lnp", "onp", "grn", "others"];
+
+  for (const f of readdirSync(pollDir)) {
+    if (f.startsWith("_") || !f.endsWith(".yaml")) continue;
+    pollCount++;
+    const file = `${election}/polls/${f}`;
+    const raw = parse(readFileSync(join(pollDir, f), "utf8"));
+    const p = raw?.poll ?? raw;
+    if (!p || typeof p !== "object") {
+      fail(file, "missing poll fields");
+      continue;
+    }
+    if (!p.id) fail(file, "id required");
+    if (!p.pollster) fail(file, "pollster required");
+    if (!p.commissioner) fail(file, "commissioner required");
+    if (!COMMISSIONER_TYPES.includes(p.commissioner_type)) {
+      fail(file, `invalid commissioner_type: ${p.commissioner_type}`);
+    }
+    if (!isDate(String(p.fieldwork_start))) fail(file, "fieldwork_start must be YYYY-MM-DD");
+    if (!isDate(String(p.fieldwork_end))) fail(file, "fieldwork_end must be YYYY-MM-DD");
+    if (p.fieldwork_end < p.fieldwork_start) fail(file, "fieldwork_end before fieldwork_start");
+    if (!Number.isInteger(p.sample_size) || p.sample_size < 1) {
+      fail(file, "sample_size must be a positive integer");
+    }
+    if (!MODES.includes(p.mode)) fail(file, `invalid mode: ${p.mode}`);
+    if (!p.population) fail(file, "population required");
+    if (!p.primaries || typeof p.primaries !== "object") {
+      fail(file, "primaries required");
+    } else {
+      let sum = 0;
+      for (const k of PRIMARY_KEYS) {
+        const v = p.primaries[k];
+        if (typeof v !== "number" || v < 0 || v > 100) {
+          fail(file, `primaries.${k} must be a number 0–100`);
+        } else {
+          sum += v;
+        }
+      }
+      if (Math.abs(sum - 100) > 0.6) {
+        fail(file, `primaries sum to ${sum.toFixed(1)}, expected ~100`);
+      }
+    }
+    if (!["allocated", "excluded", "not-stated"].includes(p.undecided_handling)) {
+      fail(file, `invalid undecided_handling: ${p.undecided_handling}`);
+    }
+    if (typeof p.eligible_for_average !== "boolean") {
+      fail(file, "eligible_for_average must be boolean");
+    }
+    if (EXCLUDED_TYPES.has(p.commissioner_type) && p.eligible_for_average) {
+      const exc = p.eligibility_exception;
+      if (typeof exc !== "string" || !exc.trim()) {
+        fail(
+          file,
+          "party/union/advocacy commissioner requires eligibility_exception when eligible_for_average is true"
+        );
+      }
+    }
+    if (
+      p.eligibility_exception != null &&
+      p.eligibility_exception !== "" &&
+      !p.eligible_for_average
+    ) {
+      fail(file, "eligibility_exception only valid when eligible_for_average is true");
+    }
+    if (
+      p.eligibility_exception != null &&
+      p.eligibility_exception !== "" &&
+      !EXCLUDED_TYPES.has(p.commissioner_type)
+    ) {
+      fail(
+        file,
+        "eligibility_exception only for party/union/advocacy/excluded_advocacy commissioners"
+      );
+    }
+    if (!p.eligible_for_average && !p.exclusion_reason) {
+      fail(file, "exclusion_reason required when not eligible for average");
+    }
+    if (!Array.isArray(p.sources) || p.sources.length === 0) {
+      fail(file, "at least one source required");
+    } else {
+      p.sources.forEach((s, i) => checkSource(file, `sources[${i}]`, s));
+    }
+  }
+  return pollCount;
+}
+
 function validateFederal(election, dir, load) {
   const meta = load("election.yaml").election;
   const parties = load("parties.yaml").parties;
@@ -137,6 +233,8 @@ for (const election of readdirSync(DATA_DIR)) {
 
   if (meta.kind === "federal") {
     validateFederal(election, dir, load);
+    const federalPolls = validatePolls(election, dir);
+    if (federalPolls) console.log(`${election}: ${federalPolls} poll(s)`);
     continue;
   }
 
@@ -246,102 +344,8 @@ for (const election of readdirSync(DATA_DIR)) {
     if (!f.startsWith(`${c.contest}--`)) fail(file, `filename must start with '${c.contest}--'`);
   }
 
-  // polls (optional directory) — statewide VI ledger; see docs/POLL-METHODOLOGY.md
-  const pollDir = join(dir, "polls");
-  let pollCount = 0;
-  if (existsSync(pollDir) && statSync(pollDir).isDirectory()) {
-    const COMMISSIONER_TYPES = [
-      "media", "self", "academic", "excluded_advocacy", "party", "union", "candidate",
-    ];
-    const EXCLUDED_TYPES = new Set(["excluded_advocacy", "party", "union", "candidate"]);
-    const MODES = ["online", "sms", "phone", "mixed", "other"];
-    const PRIMARY_KEYS = ["alp", "lnp", "onp", "grn", "others"];
-
-    for (const f of readdirSync(pollDir)) {
-      if (f.startsWith("_") || !f.endsWith(".yaml")) continue;
-      pollCount++;
-      const file = `${election}/polls/${f}`;
-      const raw = parse(readFileSync(join(pollDir, f), "utf8"));
-      const p = raw?.poll ?? raw;
-      if (!p || typeof p !== "object") {
-        fail(file, "missing poll fields");
-        continue;
-      }
-      if (!p.id) fail(file, "id required");
-      if (!p.pollster) fail(file, "pollster required");
-      if (!p.commissioner) fail(file, "commissioner required");
-      if (!COMMISSIONER_TYPES.includes(p.commissioner_type)) {
-        fail(file, `invalid commissioner_type: ${p.commissioner_type}`);
-      }
-      if (!isDate(String(p.fieldwork_start))) fail(file, "fieldwork_start must be YYYY-MM-DD");
-      if (!isDate(String(p.fieldwork_end))) fail(file, "fieldwork_end must be YYYY-MM-DD");
-      if (p.fieldwork_end < p.fieldwork_start) fail(file, "fieldwork_end before fieldwork_start");
-      if (!Number.isInteger(p.sample_size) || p.sample_size < 1) {
-        fail(file, "sample_size must be a positive integer");
-      }
-      if (!MODES.includes(p.mode)) fail(file, `invalid mode: ${p.mode}`);
-      if (!p.population) fail(file, "population required");
-      if (!p.primaries || typeof p.primaries !== "object") {
-        fail(file, "primaries required");
-      } else {
-        let sum = 0;
-        for (const k of PRIMARY_KEYS) {
-          const v = p.primaries[k];
-          if (typeof v !== "number" || v < 0 || v > 100) {
-            fail(file, `primaries.${k} must be a number 0–100`);
-          } else {
-            sum += v;
-          }
-        }
-        if (Math.abs(sum - 100) > 0.6) {
-          fail(file, `primaries sum to ${sum.toFixed(1)}, expected ~100`);
-        }
-      }
-      if (!["allocated", "excluded", "not-stated"].includes(p.undecided_handling)) {
-        fail(file, `invalid undecided_handling: ${p.undecided_handling}`);
-      }
-      if (typeof p.eligible_for_average !== "boolean") {
-        fail(file, "eligible_for_average must be boolean");
-      }
-      // Party/union/advocacy default out of the average. A case-by-case exception
-      // is allowed only with a non-empty eligibility_exception justification
-      // (see docs/POLL-METHODOLOGY.md).
-      if (EXCLUDED_TYPES.has(p.commissioner_type) && p.eligible_for_average) {
-        const exc = p.eligibility_exception;
-        if (typeof exc !== "string" || !exc.trim()) {
-          fail(
-            file,
-            "party/union/advocacy commissioner requires eligibility_exception when eligible_for_average is true"
-          );
-        }
-      }
-      if (
-        p.eligibility_exception != null &&
-        p.eligibility_exception !== "" &&
-        !p.eligible_for_average
-      ) {
-        fail(file, "eligibility_exception only valid when eligible_for_average is true");
-      }
-      if (
-        p.eligibility_exception != null &&
-        p.eligibility_exception !== "" &&
-        !EXCLUDED_TYPES.has(p.commissioner_type)
-      ) {
-        fail(
-          file,
-          "eligibility_exception only for party/union/advocacy/excluded_advocacy commissioners"
-        );
-      }
-      if (!p.eligible_for_average && !p.exclusion_reason) {
-        fail(file, "exclusion_reason required when not eligible for average");
-      }
-      if (!Array.isArray(p.sources) || p.sources.length === 0) {
-        fail(file, "at least one source required");
-      } else {
-        p.sources.forEach((s, i) => checkSource(file, `sources[${i}]`, s));
-      }
-    }
-  }
+  // polls (optional directory) — see docs/POLL-METHODOLOGY.md
+  const pollCount = validatePolls(election, dir);
 
   // issues taxonomy (optional) — policy matrix + jurisdiction guide
   const JURISDICTIONS = [

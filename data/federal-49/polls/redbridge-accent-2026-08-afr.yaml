@@ -1,0 +1,26 @@
+id: redbridge-accent-2026-08-afr
+pollster: "RedBridge / Accent"
+commissioner: australian-financial-review
+commissioner_type: media
+fieldwork_start: 2026-07-27
+fieldwork_end: 2026-07-30
+sample_size: 1001
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for the Australian Financial Review."
+primaries:
+  alp: 29
+  lnp: 22
+  onp: 31
+  grn: 10
+  others: 8
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.afr.com/politics/federal/arm-wrestle-one-nation-retakes-lead-over-labor-in-latest-poll-20260802-p60kn6
+    publisher: Australian Financial Review
+    title: "Arm wrestle: One Nation retakes lead over Labor in latest poll"
+    published: 2026-08-02
+    accessed: 2026-08-09

@@ -1,0 +1,328 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import PollCharts from "../../../../components/PollCharts.astro";
+import { SITE, FEDERAL_49, formatDate } from "../../../../lib/site.mjs";
+import {
+  loadPolls,
+  computePollAverage,
+  PARTY_LABELS,
+  POLL_CAVEAT,
+} from "../../../../../../scripts/lib/polls.mjs";
+
+const electionId = "federal-49";
+const polls = loadPolls(electionId);
+const average = computePollAverage(polls);
+const included = new Set(average.included_poll_ids ?? []);
+const partyOrder = ["alp", "lnp", "onp", "grn", "others"];
+
+const sortedPolls = [...polls].sort((a, b) =>
+  a.fieldwork_end < b.fieldwork_end ? 1 : -1
+);
+
+const avgLine =
+  average.status === "ok" && average.primaries
+    ? `Latest tracker average (as of ${average.as_of}): Labor ${average.primaries.alp}%, ` +
+      `Coalition ${average.primaries.lnp}%, One Nation ${average.primaries.onp}%, ` +
+      `Greens ${average.primaries.grn}%, Others ${average.primaries.others}%. Not a forecast.`
+    : "Sourced federal primary-vote poll ledger with transparent average rules.";
+
+const schema = [
+  {
+    "@type": "Dataset",
+    name: "Next Australian federal election — poll ledger and average",
+    description:
+      "Public federal House of Representatives voting-intention polls for the contest electing the 49th Parliament, " +
+      "each with sources, plus a weighted primary-vote average with uncertainty bands. Not a forecast.",
+    url: `${SITE.url}${FEDERAL_49}/polls`,
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    isAccessibleForFree: true,
+    creator: { "@id": `${SITE.url}/#organization` },
+    temporalCoverage: "2026/..",
+    spatialCoverage: { "@type": "Place", name: "Australia" },
+    variableMeasured: [
+      "Primary vote ALP",
+      "Primary vote L-NP",
+      "Primary vote One Nation",
+      "Primary vote Greens",
+      "Primary vote Others",
+    ],
+    distribution: [
+      {
+        "@type": "DataDownload",
+        encodingFormat: "application/json",
+        contentUrl: `${SITE.url}/data/${electionId}/polls.json`,
+      },
+      {
+        "@type": "DataDownload",
+        encodingFormat: "application/json",
+        contentUrl: `${SITE.url}/data/${electionId}/poll-average.json`,
+      },
+      {
+        "@type": "DataDownload",
+        encodingFormat: "text/csv",
+        contentUrl: `${SITE.url}/data/${electionId}/polls.csv`,
+      },
+    ],
+  },
+  {
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Is the federal poll average a forecast of the next election?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "No. It is a transparent weighted summary of recent public federal primary-vote " +
+            "polls that meet published inclusion rules. It does not model seats, preferences or election day.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Where are the machine-readable poll figures?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            `JSON and CSV: ${SITE.url}/data/${electionId}/polls.json and ` +
+            `${SITE.url}/data/${electionId}/poll-average.json. Methodology: ` +
+            "https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md",
+        },
+      },
+    ],
+  },
+];
+---
+
+<Base
+  title="Federal election polls — average and ledger"
+  description={`Federal voting intention: sourced public primary-vote polls and a transparent weighted average with uncertainty bands. ${avgLine}`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "Federal", href: FEDERAL_49 },
+    { name: "Polls", href: `${FEDERAL_49}/polls` },
+  ]}
+>
+  <div class="wrap wrap-polls section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={FEDERAL_49}>Federal</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Polls</span>
+    </nav>
+
+    <p class="eyebrow">Federal · House voting intention · federal-49</p>
+    <h1>Federal election poll average</h1>
+    <p class="lede">
+      Public <strong>federal</strong> primary-vote polls (House of Representatives voting
+      intention), each with a dated source, plus a transparent weighted average under the same
+      published maths as the Victorian ledger. This is a summary of recent polling —
+      <strong>not a forecast</strong> of election day.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>Read the bands carefully.</strong> {POLL_CAVEAT}
+    </div>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={FEDERAL_49}>Overview</a>
+      <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/parties`}>Parties</a>
+      <a class="btn btn-ghost btn-sm" href={`/data/${electionId}/poll-average.json`}>poll-average.json</a>
+    </p>
+
+    {
+      average.status === "ok" && average.primaries ? (
+        <section aria-labelledby="avg-heading">
+          <h2 id="avg-heading">Tracker average</h2>
+          <p class="muted">
+            As of fieldwork ending {formatDate(average.as_of)} · {average.included_poll_ids.length}{" "}
+            polls · {average.window_days_used}-day window · half-life {average.parameters.half_life_days}{" "}
+            days · default design effect {average.parameters.design_effect_default}
+          </p>
+          <div class="table-scroll">
+            <table class="data">
+              <caption class="visually-hidden">Weighted primary-vote average with 95% intervals</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Party</th>
+                  <th scope="col" class="num">Average</th>
+                  <th scope="col" class="num">95% band</th>
+                </tr>
+              </thead>
+              <tbody>
+                {partyOrder.map((k) => (
+                  <tr>
+                    <th scope="row">{PARTY_LABELS[k]}</th>
+                    <td class="num mono">{average.primaries[k].toFixed(1)}%</td>
+                    <td class="num mono muted">
+                      {average.intervals[k].low.toFixed(1)}–{average.intervals[k].high.toFixed(1)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="muted">
+            Weights combine effective sample size and exponential time decay. Full formula:
+            <a href="https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md">
+              poll methodology
+            </a>
+            · machine-readable
+            <a href={`/data/${electionId}/poll-average.json`}>poll-average.json</a>.
+          </p>
+          {
+            average.bloc_split && (
+              <PollCharts primaries={average.primaries} blocs={average.bloc_split} />
+            )
+          }
+        </section>
+      ) : (
+        <section aria-labelledby="avg-heading">
+          <h2 id="avg-heading">Tracker average</h2>
+          <p>
+            No numeric average is published right now
+            {average.note ? ` — ${average.note}` : ""}. Eligible polls are still listed below.
+          </p>
+        </section>
+      )
+    }
+
+    <h2 id="polls">Polls in the ledger</h2>
+    <p>
+      Every row is a sourced record in the repository. Polls marked
+      <strong>Excluded</strong> fail inclusion rules and are kept for transparency.
+      <strong>In*</strong> means a documented case-by-case exception.
+      <strong>Window</strong> means eligible but outside the rolling average window (or replaced by a
+      newer poll from the same pollster).
+    </p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead>
+          <tr>
+            <th scope="col">Fieldwork</th>
+            <th scope="col">Pollster</th>
+            <th scope="col" class="num">n</th>
+            <th scope="col" class="num">ALP</th>
+            <th scope="col" class="num">L-NP</th>
+            <th scope="col" class="num">ONP</th>
+            <th scope="col" class="num">GRN</th>
+            <th scope="col" class="num">OTH</th>
+            <th scope="col">Average</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            sortedPolls.map((p) => (
+              <tr>
+                <th scope="row" class="mono">
+                  {formatDate(p.fieldwork_end)}
+                </th>
+                <td>
+                  {p.pollster}
+                  <span class="muted block-sm">{p.commissioner_type}</span>
+                </td>
+                <td class="num mono">{p.sample_size}</td>
+                <td class="num mono">{p.primaries.alp}</td>
+                <td class="num mono">{p.primaries.lnp}</td>
+                <td class="num mono">{p.primaries.onp}</td>
+                <td class="num mono">{p.primaries.grn}</td>
+                <td class="num mono">{p.primaries.others}</td>
+                <td>
+                  {included.has(p.id) ? (
+                    <span
+                      class="pill in"
+                      title={p.eligibility_exception ?? undefined}
+                    >
+                      {p.eligibility_exception ? "In*" : "In"}
+                    </span>
+                  ) : p.eligible_for_average ? (
+                    <span
+                      class="pill out"
+                      title={p.eligibility_exception ?? undefined}
+                    >
+                      {p.eligibility_exception ? "Window*" : "Window"}
+                    </span>
+                  ) : (
+                    <span class="pill out" title={p.exclusion_reason ?? ""}>
+                      Excluded
+                    </span>
+                  )}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="rules">Which polls count</h2>
+    <ul>
+      <li>
+        <strong>Federal</strong> House of Representatives voting intention only (not state
+        intention).
+      </li>
+      <li>Published fieldwork dates and sample size (n ≥ 800 under methodology).</li>
+      <li>
+        Commissioner is media, the pollster, or neutral academic by default — party, union or
+        advocacy are out unless a documented exception applies.
+      </li>
+      <li>
+        Rolling window (45 days, extendable to 60), one poll per pollster, at least two pollsters
+        before a number is published.
+      </li>
+      <li>
+        Headline average is <strong>primary vote only</strong> — not 2PP, not seats, not preferred PM.
+      </li>
+    </ul>
+    <p>
+      Full rules and maths:
+      <a href="https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md">
+        docs/POLL-METHODOLOGY.md
+      </a>
+      · downloads:
+      <a href={`/data/${electionId}/polls.json`}>polls.json</a>,
+      <a href={`/data/${electionId}/polls.csv`}>polls.csv</a>,
+      <a href={`/data/${electionId}/poll-average.json`}>poll-average.json</a>.
+    </p>
+
+    <p class="foot muted">
+      Sitting members and structure remain separate from polling. Ordering of parties on this site
+      never uses these figures — see <a href="/methodology#ordering">methodology</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; }
+  .wrap-polls { max-width: 52rem; }
+  h2 { margin-top: 2.5rem; }
+  ul {
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--ink-2);
+  }
+  .table-scroll { overflow-x: auto; margin: 1rem 0; }
+  table.data { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  table.data th, table.data td {
+    text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--rule);
+  }
+  table.data th { font-weight: 650; }
+  table.data .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+  .block-sm { display: block; font-size: 0.78rem; }
+  .pill {
+    display: inline-block; font-size: 0.72rem; font-weight: 700; padding: 0.12rem 0.4rem;
+    border-radius: 999px; border: 1px solid var(--rule-strong);
+  }
+  .pill.in { border-color: var(--accent); background: var(--accent-wash); }
+  .pill.out { background: var(--surface-2); color: var(--ink-3); }
+  .foot { margin-top: 2rem; }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+</style>
