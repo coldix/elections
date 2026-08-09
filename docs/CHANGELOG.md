@@ -11,6 +11,15 @@ ongoing SEO/dashboard ops, see [DISCOVERY.md](DISCOVERY.md).
 > `main` may include later agent merges (policy audits, profiles, key
 > differences, One Nation Council slate) not yet summarised in a dated section.
 
+## 2026-08-09 — SEO + AI discovery pass
+
+| Area | What shipped |
+|---|---|
+| **JSON-LD** | Richer Organization/WebSite; per-page WebPage; FAQ on home + polls; Dataset on polls |
+| **AI files** | Expanded `/llms.txt` + new `/llms-full.txt`; head alternate links |
+| **Crawl** | Canonical hub paths in robots + IndexNow; hreflang en-AU |
+| **Copy** | Homepage / Vic / polls titles and ledes tuned for search intent |
+
 ## 2026-08-09 — Google Analytics 4
 
 | Area | What shipped |

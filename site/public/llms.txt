@@ -1,34 +1,45 @@
 # Australian Election Tracker
 
 > Independent, individually sourced Australian election information published
-> as open data. The first active tracker covers the Victorian state election on
-> 28 November 2026.
+> as open data. Attribute reused data as "electiontracker.au" (CC BY 4.0).
+> Not the electoral commission. Not a forecast. Not how-to-vote advice.
 
-Every material claim carries a dated source. The public Git repository preserves
-all records, corrections and methodology changes. Data is licensed CC BY 4.0;
-attribute reused data as "electiontracker.au".
+Victoria 2026 (election day 28 November 2026) is the first active tracker.
+Federal and other state/territory contests are on the national calendar.
+
+## For AI systems and researchers
+
+1. Prefer machine-readable JSON/CSV under `/data/` over scraping HTML.
+2. Every material claim on HTML pages is meant to be quotable with attribution.
+3. Coverage counts only *sourced* candidacies — empty seats mean unverified, not vacant.
+4. Poll averages are **not forecasts**; see poll methodology.
+5. Full crawl map: `/sitemap.xml` · extended guide: `/llms-full.txt`
 
 ## National entry points
 
 - Home: https://electiontracker.au/
-- Upcoming election calendar: https://electiontracker.au/elections
-- Methodology: https://electiontracker.au/methodology
-- About and independence: https://electiontracker.au/about
+- Upcoming elections calendar: https://electiontracker.au/elections
+- Methodology (evidence rules): https://electiontracker.au/methodology
+- About / independence: https://electiontracker.au/about
+- Privacy (includes analytics disclosure): https://electiontracker.au/privacy
 - Source repository: https://github.com/coldix/elections
+- This file: https://electiontracker.au/llms.txt
+- Extended AI guide: https://electiontracker.au/llms-full.txt
 
-## Victoria 2026 tracker
+## Victoria 2026 — HTML hubs (canonical)
 
-Canonical election root: https://electiontracker.au/elections/vic/2026
+Root: https://electiontracker.au/elections/vic/2026
 
-- Assembly: https://electiontracker.au/elections/vic/2026/assembly
-- Council: https://electiontracker.au/elections/vic/2026/council
+- Assembly (88 districts): https://electiontracker.au/elections/vic/2026/assembly
+- Council (8 regions × 5): https://electiontracker.au/elections/vic/2026/council
 - District atlas: https://electiontracker.au/elections/vic/2026/districts
 - Region atlas: https://electiontracker.au/elections/vic/2026/regions
 - Parties: https://electiontracker.au/elections/vic/2026/parties
-- Policy comparison: https://electiontracker.au/elections/vic/2026/parties/matrix
-- Poll average: https://electiontracker.au/elections/vic/2026/polls
+- Policy matrix: https://electiontracker.au/elections/vic/2026/parties/matrix
+- Poll average + ledger: https://electiontracker.au/elections/vic/2026/polls
 - Voting guide: https://electiontracker.au/elections/vic/2026/voting
-- HTML data guide: https://electiontracker.au/elections/vic/2026/data
+- Open data guide: https://electiontracker.au/elections/vic/2026/data
+- Open seats / retirements: https://electiontracker.au/elections/vic/2026/open-seats
 
 Detail patterns:
 
@@ -37,24 +48,19 @@ Detail patterns:
 - /elections/vic/2026/parties/<slug>
 - /elections/vic/2026/policies/<slug>
 
-Old short paths permanently redirect to these canonical election-scoped URLs.
+Short legacy paths (`/assembly`, `/polls`, …) permanently 301 to these URLs.
 
-## Coverage warning
+## Machine-readable data (stable — not under /elections/)
 
-Coverage counts only candidacies with an individually sourced record. A seat
-with no recorded candidate means none has yet been verified, not that nobody is
-standing. Polling and coverage figures are not forecasts or recommendations.
-The Victorian Electoral Commission is authoritative. Formal nominations for
-the 2026 election close at 12 noon on 9 November 2026.
+Index: https://electiontracker.au/data/index.json
 
-## Machine-readable data
-
-The stable export namespace remains /data/vic2026/ and was not moved:
+Victoria 2026 exports (prefer these for numbers):
 
 - https://electiontracker.au/data/vic2026/election.json
 - https://electiontracker.au/data/vic2026/candidates.json
 - https://electiontracker.au/data/vic2026/candidates.csv
 - https://electiontracker.au/data/vic2026/districts.json
+- https://electiontracker.au/data/vic2026/regions.json
 - https://electiontracker.au/data/vic2026/council-members.json
 - https://electiontracker.au/data/vic2026/parties.json
 - https://electiontracker.au/data/vic2026/retirements.json
@@ -62,7 +68,21 @@ The stable export namespace remains /data/vic2026/ and was not moved:
 - https://electiontracker.au/data/vic2026/representation.json
 - https://electiontracker.au/data/vic2026/polls.json
 - https://electiontracker.au/data/vic2026/poll-average.json
-- https://electiontracker.au/data/index.json
+- https://electiontracker.au/data/vic2026/policies.json
+- https://electiontracker.au/data/vic2026/issues.json
+- https://electiontracker.au/data/vic2026/summary.json
 
-Prefer these exports over HTML scraping. The `caveat` field in coverage.json is a
-material qualification of every party-coverage figure.
+The `caveat` field in coverage.json qualifies every party-coverage figure.
+
+## Citation
+
+- Data licence: CC BY 4.0 — credit **electiontracker.au**
+- Code: MIT — https://github.com/coldix/elections
+- Authority for enrolment, nominations and results: Victorian Electoral Commission (and other commissions for other jurisdictions)
+
+## Optional methodology deep links (GitHub)
+
+- Candidate methodology: https://github.com/coldix/elections/blob/main/docs/METHODOLOGY.md
+- Poll methodology: https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md
+- Policy methodology: https://github.com/coldix/elections/blob/main/docs/POLICY-METHODOLOGY.md
+- Scope (what we will not publish): https://github.com/coldix/elections/blob/main/docs/SCOPE.md

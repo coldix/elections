@@ -33,8 +33,13 @@
 # AI / crawler guides — revalidate often after deploys
 /llms.txt
   Cache-Control: public, max-age=600, stale-while-revalidate=3600
+  Content-Type: text/plain; charset=utf-8
+/llms-full.txt
+  Cache-Control: public, max-age=600, stale-while-revalidate=3600
+  Content-Type: text/plain; charset=utf-8
 /robots.txt
   Cache-Control: public, max-age=600, stale-while-revalidate=3600
+  Content-Type: text/plain; charset=utf-8
 
 # Sitemaps — explicit XML content-type helps picky crawlers / GSC
 /sitemap.xml

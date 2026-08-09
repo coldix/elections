@@ -19,6 +19,7 @@ const canonical = new URL(Astro.url.pathname.replace(/\/$/, "") || "/", SITE.url
 // Absolute URL required — Facebook and other scrapers do not resolve relative
 // paths for og:image.
 const ogImage = new URL("/images/og-image.png", SITE.url).href;
+const logoUrl = new URL("/icon-512.png", SITE.url).href;
 
 // Sitewide structured data. Emitted on every page as a @graph so search engines
 // and AI systems can identify the publisher and the site without inferring it,
@@ -28,22 +29,69 @@ const graph = [
     "@type": "Organization",
     "@id": `${SITE.url}/#organization`,
     name: SITE.name,
+    alternateName: [SITE.short, "electiontracker.au"],
     url: SITE.url,
-    logo: new URL("/icon-512.png", SITE.url).href,
-    description: SITE.tagline,
+    logo: {
+      "@type": "ImageObject",
+      url: logoUrl,
+      width: 512,
+      height: 512,
+    },
+    image: logoUrl,
+    description: SITE.descriptionLong,
     email: SITE.email,
+    areaServed: { "@type": "Country", name: "Australia" },
+    knowsAbout: [
+      "Australian elections",
+      "Victorian state election 2026",
+      "Legislative Assembly candidates",
+      "Legislative Council candidates",
+      "election polling Australia",
+      "open election data",
+    ],
     sameAs: [...socialLinks().map((s) => s.url), SITE.repo],
-    publisher: { "@type": "Organization", name: SITE.publisher, url: SITE.publisherUrl },
+    publishingPrinciples: `${SITE.url}/methodology`,
+    ethicsPolicy: `${SITE.url}/about`,
+    parentOrganization: {
+      "@type": "Organization",
+      name: SITE.publisher,
+      url: SITE.publisherUrl,
+    },
   },
   {
     "@type": "WebSite",
     "@id": `${SITE.url}/#website`,
     url: SITE.url,
     name: SITE.name,
-    description: SITE.tagline,
+    alternateName: SITE.short,
+    description: SITE.descriptionLong,
     inLanguage: "en-AU",
+    isAccessibleForFree: true,
     publisher: { "@id": `${SITE.url}/#organization` },
     license: "https://creativecommons.org/licenses/by/4.0/",
+    copyrightHolder: { "@id": `${SITE.url}/#organization` },
+    about: [
+      { "@type": "Thing", name: "Elections in Australia" },
+      { "@type": "Thing", name: "2026 Victorian state election" },
+    ],
+  },
+  {
+    // Helps AI systems and browsers discover the machine + AI entry points.
+    "@type": "WebPage",
+    "@id": `${canonical}#webpage`,
+    url: canonical,
+    name: pageTitle,
+    description,
+    isPartOf: { "@id": `${SITE.url}/#website` },
+    about: { "@id": `${SITE.url}/#organization` },
+    inLanguage: "en-AU",
+    isAccessibleForFree: true,
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: ogImage,
+      width: 1200,
+      height: 630,
+    },
   },
 ];
 
@@ -112,6 +160,10 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
+    {/* Single-locale site; explicit hreflang helps search engines and AI crawlers. */}
+    <link rel="alternate" hreflang="en-AU" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+
     {
       /* Homepage only — Google reads it there, and repeating it on 115 pages
          would be noise. */
@@ -124,8 +176,8 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
     <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/json" href="/data/index.json" title="Open data index" />
-
-    <link rel="alternate" type="text/plain" href="/llms.txt" title="Guide for AI systems" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Guide for AI systems (summary)" />
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Guide for AI systems (full)" />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
