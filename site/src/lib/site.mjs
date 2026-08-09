@@ -15,6 +15,11 @@ export const SITE = {
   altDomain: "electiontracker.com.au",
 
   tagline: "Independent, sourced and machine-readable Australian election information",
+  /** Longer description for JSON-LD / AI crawlers (not always used as meta). */
+  descriptionLong:
+    "Independent Australian election tracker: sourced candidates, parties, policies, " +
+    "poll averages and open JSON/CSV for federal, state and territory contests. " +
+    "Victoria 2026 is the first active ledger. Not the electoral commission. Not a forecast.",
   repo: "https://github.com/coldix/elections",
   issues: "https://github.com/coldix/elections/issues/new",
   email: "elections@electiontracker.au",
@@ -30,6 +35,9 @@ export const SITE = {
   gaMeasurementId: "G-CLH6BNKFEV",
   publisherUrl: "https://oze.net.au",
 };
+
+/** Canonical path prefix for the active Vic 2026 tracker (HTML pages). */
+export const VIC2026 = "/elections/vic/2026";
 
 /** How reusers should credit the data under CC BY 4.0. */
 export const ATTRIBUTION = SITE.domain;

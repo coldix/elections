@@ -1,7 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import Countdown from "../components/Countdown.astro";
-import { SITE, formatDate } from "../lib/site.mjs";
+import { SITE, VIC2026, formatDate } from "../lib/site.mjs";
 import { loadElection, summaryFor } from "../../../scripts/lib/data.mjs";
 import { ELECTION_DATE_STATUS, loadElectionCalendar } from "../lib/electionCalendar.mjs";
 
@@ -11,18 +11,73 @@ const calendar = loadElectionCalendar();
 const victoria = calendar.elections.find((entry) => entry.jurisdiction === "vic");
 const nextElections = calendar.elections.filter((entry) => entry.jurisdiction !== "vic").slice(0, 4);
 
-const schema = {
-  "@type": "CollectionPage",
-  name: "Australian Election Tracker",
-  description: "Independent, sourced and machine-readable information for Australian federal, state and territory elections.",
-  url: SITE.url,
-  isPartOf: { "@id": `${SITE.url}/#website` },
-};
+const schema = [
+  {
+    "@type": "CollectionPage",
+    name: "Australian Election Tracker",
+    description: SITE.descriptionLong,
+    url: SITE.url,
+    isPartOf: { "@id": `${SITE.url}/#website` },
+    about: [
+      { "@type": "Thing", name: "Elections in Australia" },
+      { "@type": "Thing", name: "2026 Victorian state election" },
+    ],
+    mainEntity: { "@id": `${SITE.url}/#organization` },
+  },
+  {
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is the Australian Election Tracker?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "An independent, public-interest ledger of Australian election information: " +
+            "sourced candidates, parties, policies, statewide poll averages and open JSON/CSV. " +
+            "It is not the electoral commission and does not publish forecasts or how-to-vote cards.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "When is the 2026 Victorian state election?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "The Victorian state election is scheduled for Saturday 28 November 2026. " +
+            "Formal nominations and key dates are set by the Victorian Electoral Commission (VEC).",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Where is the open election data?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Machine-readable exports live under https://electiontracker.au/data/vic2026/ " +
+            "(candidates, districts, polls, policies, coverage). Data is licensed CC BY 4.0; " +
+            "attribute as electiontracker.au.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is coverage a complete list of every candidate?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "No. Coverage counts only candidacies with an individually sourced public record. " +
+            "An empty seat means none has been verified yet, not that nobody is standing. " +
+            "The VEC remains authoritative after formal nominations.",
+        },
+      },
+    ],
+  },
+];
 ---
 
 <Base
-  title="Australian elections, sourced and open"
-  description="Independent, sourced and machine-readable tracking for Australian federal, state and territory elections. Victoria 2026 is the current active tracker."
+  title="Australian election candidates, polls and open data"
+  description="Independent Australian election tracker: sourced candidates, parties, policies and poll averages. Active ledger for the Victorian state election 28 November 2026. Open JSON/CSV — not a forecast."
   schema={schema}
 >
   <section class="hero national-hero">
@@ -30,11 +85,13 @@ const schema = {
       <p class="eyebrow">Independent · Sourced · Australia-wide</p>
       <h1>Australian elections, one evidence trail.</h1>
       <p class="lede">
-        The tracker is built to follow federal, state and territory elections under one
-        consistent methodology. Victoria 2026 is the first active election ledger.
+        Track <strong>who is standing</strong>, with a dated public source for every material
+        claim — plus parties, policy comparisons and a transparent statewide
+        <strong>poll average</strong>. Built for federal, state and territory contests under one
+        methodology. <strong>Victoria 2026</strong> is the first active ledger.
       </p>
       <p class="btn-row hero-actions">
-        <a class="btn" href="/elections/vic/2026">Open Victoria 2026 tracker</a>
+        <a class="btn" href={VIC2026}>Open Victoria 2026 tracker</a>
         <a class="btn btn-ghost" href="/elections">View upcoming elections</a>
         <a class="btn btn-ghost" href="/methodology">Read the methodology</a>
       </p>
@@ -61,9 +118,10 @@ const schema = {
             <div><dt>Sources cited</dt><dd>{summary.sources}</dd></div>
           </dl>
           <p class="btn-row">
-            <a class="btn" href="/elections/vic/2026">Election overview</a>
-            <a class="btn btn-ghost" href="/elections/vic/2026/assembly">Assembly seats</a>
-            <a class="btn btn-ghost" href="/elections/vic/2026/parties">Parties</a>
+            <a class="btn" href={VIC2026}>Election overview</a>
+            <a class="btn btn-ghost" href={`${VIC2026}/assembly`}>Assembly seats</a>
+            <a class="btn btn-ghost" href={`${VIC2026}/polls`}>Poll average</a>
+            <a class="btn btn-ghost" href={`${VIC2026}/parties`}>Parties</a>
           </p>
         </article>
 
@@ -71,8 +129,32 @@ const schema = {
           <h3>What the tracker does</h3>
           <p>Every candidacy and material factual claim carries a dated public source.</p>
           <p>Coverage is not a forecast, a ranking, an endorsement or how-to-vote advice.</p>
+          <p>
+            Prefer machine-readable exports under{" "}
+            <a href="/data/vic2026/candidates.json"><code>/data/vic2026/</code></a> when citing
+            figures; HTML is for people, JSON/CSV for systems.
+          </p>
           <p class="muted">Last Victorian source verification: {formatDate(summary.latest_verified)}.</p>
         </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="use-h">
+      <p class="eyebrow">For people, journalists and AI systems</p>
+      <h2 id="use-h">How to use and cite this site</h2>
+      <div class="trust-grid">
+        <a class="card" href={`${VIC2026}/assembly`}
+          ><h3>Candidates by seat</h3><p>Legislative Assembly — 88 districts with sourced statuses.</p></a
+        >
+        <a class="card" href={`${VIC2026}/polls`}
+          ><h3>Victorian polls</h3><p>Public statewide primaries and a transparent weighted average.</p></a
+        >
+        <a class="card" href={`${VIC2026}/data`}
+          ><h3>Open data</h3><p>JSON and CSV under /data/vic2026/ — CC BY 4.0.</p></a
+        >
+        <a class="card" href="/llms.txt"
+          ><h3>AI guide (llms.txt)</h3><p>Short index for crawlers and language models.</p></a
+        >
       </div>
     </section>
 

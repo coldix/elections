@@ -1,7 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import PollCharts from "../components/PollCharts.astro";
-import { formatDate } from "../lib/site.mjs";
+import { SITE, VIC2026, formatDate } from "../lib/site.mjs";
 import { listElections } from "../../../scripts/lib/data.mjs";
 import {
   loadPolls,
@@ -19,17 +19,106 @@ const partyOrder = ["alp", "lnp", "onp", "grn", "others"];
 const sortedPolls = [...polls].sort((a, b) =>
   a.fieldwork_end < b.fieldwork_end ? 1 : -1
 );
+
+const avgLine =
+  average.status === "ok" && average.primaries
+    ? `Latest tracker average (as of ${average.as_of}): Labor ${average.primaries.alp}%, ` +
+      `Coalition ${average.primaries.lnp}%, One Nation ${average.primaries.onp}%, ` +
+      `Greens ${average.primaries.grn}%, Others ${average.primaries.others}%. Not a forecast.`
+    : "Sourced Victorian statewide primary-vote poll ledger with transparent average rules.";
+
+const schema = [
+  {
+    "@type": "Dataset",
+    name: "Victorian state election 2026 — statewide poll ledger and average",
+    description:
+      "Public statewide Legislative Assembly voting-intention polls for Victoria 2026, " +
+      "each with sources, plus a weighted primary-vote average with uncertainty bands. Not a forecast.",
+    url: `${SITE.url}${VIC2026}/polls`,
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    isAccessibleForFree: true,
+    creator: { "@id": `${SITE.url}/#organization` },
+    temporalCoverage: "2026",
+    spatialCoverage: { "@type": "Place", name: "Victoria, Australia" },
+    variableMeasured: [
+      "Primary vote ALP",
+      "Primary vote L-NP",
+      "Primary vote One Nation",
+      "Primary vote Greens",
+      "Primary vote Others",
+    ],
+    distribution: [
+      {
+        "@type": "DataDownload",
+        encodingFormat: "application/json",
+        contentUrl: `${SITE.url}/data/${electionId}/polls.json`,
+      },
+      {
+        "@type": "DataDownload",
+        encodingFormat: "application/json",
+        contentUrl: `${SITE.url}/data/${electionId}/poll-average.json`,
+      },
+      {
+        "@type": "DataDownload",
+        encodingFormat: "text/csv",
+        contentUrl: `${SITE.url}/data/${electionId}/polls.csv`,
+      },
+    ],
+  },
+  {
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Is the poll average a forecast of the Victorian election?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "No. It is a transparent weighted summary of recent public statewide primary-vote " +
+            "polls that meet published inclusion rules. It does not model seats, preferences or election day.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Where are the machine-readable poll figures?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            `JSON and CSV exports: ${SITE.url}/data/${electionId}/polls.json and ` +
+            `${SITE.url}/data/${electionId}/poll-average.json. Methodology: ` +
+            "https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Which polls enter the average?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Eligible public statewide Victorian Assembly polls with published fieldwork, sample size, " +
+            "mode and primaries. Party/union/advocacy polls are excluded by default. " +
+            "Rules are in POLL-METHODOLOGY.md in the public repository.",
+        },
+      },
+    ],
+  },
+];
 ---
 
 <Base
-  title="Poll average"
-  description="Sourced Victorian statewide primary-vote polls and a transparent weighted average with uncertainty bands. Not a forecast."
+  title="Victorian election polls 2026 — average and ledger"
+  description={`Victorian state election 2026 polls: sourced statewide primary votes and a transparent weighted average with uncertainty bands. ${avgLine}`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Victoria 2026", href: VIC2026 },
+    { name: "Poll average", href: `${VIC2026}/polls` },
+  ]}
 >
   <div class="wrap wrap-polls section">
-    <p class="eyebrow">Statewide voting intention</p>
-    <h1>Poll average</h1>
+    <p class="eyebrow">Victorian state election 2026 · statewide voting intention</p>
+    <h1>Victorian election poll average</h1>
     <p class="lede">
-      Public statewide primary-vote polls for the Victorian Legislative Assembly, each with a
+      Public statewide primary-vote polls for the <strong>Victorian Legislative Assembly</strong>, each with a
       dated source, plus a transparent weighted average under published rules. This is a
       summary of recent polling — <strong>not a forecast</strong> of election day.
     </p>

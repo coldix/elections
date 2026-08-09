@@ -12,22 +12,33 @@ const KEY_PATH = join(__dirname, "indexnow.key");
 
 // Keep aligned with sitemap main hubs + atlases in site/astro.config.mjs
 // and the GSC priority list in docs/DISCOVERY.md.
+// Prefer *canonical* election-scoped HTML paths (legacy short URLs 301).
+const VIC = `https://${HOST}/elections/vic/2026`;
 const PRIORITY = [
   `https://${HOST}/`,
-  `https://${HOST}/voting`,
-  `https://${HOST}/data`,
+  `https://${HOST}/elections`,
+  VIC,
+  `${VIC}/voting`,
+  `${VIC}/data`,
+  `${VIC}/polls`,
+  `${VIC}/assembly`,
+  `${VIC}/council`,
+  `${VIC}/parties`,
+  `${VIC}/parties/matrix`,
+  `${VIC}/districts`,
+  `${VIC}/regions`,
+  `${VIC}/open-seats`,
   `https://${HOST}/methodology`,
-  `https://${HOST}/polls`,
-  `https://${HOST}/assembly`,
-  `https://${HOST}/council`,
-  `https://${HOST}/parties`,
-  `https://${HOST}/districts`,
-  `https://${HOST}/regions`,
   `https://${HOST}/about`,
+  `https://${HOST}/privacy`,
   `https://${HOST}/llms.txt`,
+  `https://${HOST}/llms-full.txt`,
   `https://${HOST}/robots.txt`,
   `https://${HOST}/sitemap.xml`,
   `https://${HOST}/sitemap-index.xml`,
+  `https://${HOST}/data/index.json`,
+  `https://${HOST}/data/vic2026/poll-average.json`,
+  `https://${HOST}/data/vic2026/candidates.json`,
 ];
 
 if (!existsSync(KEY_PATH)) {

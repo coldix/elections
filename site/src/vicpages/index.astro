@@ -62,12 +62,19 @@ const schema = {
   description:
     "Open, individually sourced records of announced, endorsed, formally nominated, " +
     "withdrawn and disendorsed candidates for the 2026 Victorian state election.",
-  url: SITE.url,
+  url: `${SITE.url}/elections/vic/2026`,
   license: "https://creativecommons.org/licenses/by/4.0/",
   isAccessibleForFree: true,
   creator: { "@id": `${SITE.url}/#organization` },
   temporalCoverage: `2024/${data.election.election_day}`,
   spatialCoverage: { "@type": "Place", name: "Victoria, Australia" },
+  keywords: [
+    "Victorian election 2026",
+    "Victoria candidates",
+    "Legislative Assembly",
+    "Legislative Council",
+    "open election data",
+  ],
   distribution: [
     {
       "@type": "DataDownload",
@@ -79,14 +86,20 @@ const schema = {
       encodingFormat: "text/csv",
       contentUrl: `${SITE.url}/data/vic2026/candidates.csv`,
     },
+    {
+      "@type": "DataDownload",
+      encodingFormat: "application/json",
+      contentUrl: `${SITE.url}/data/vic2026/coverage.json`,
+    },
   ],
 };
 ---
 
 <Base
-  title="Victorian state election 2026 candidate tracker"
-  description="Independent, individually sourced tracking of candidates for the 2026 Victorian state election — announced, endorsed, formally nominated, withdrawn and disendorsed. Open JSON and CSV data."
+  title="Victorian state election 2026 candidates — sourced tracker"
+  description="Victorian election 2026 candidate tracker: independently sourced announced, endorsed and nominated candidacies across 88 Assembly districts and 8 Council regions. Open JSON/CSV — not the VEC, not a forecast."
   schema={schema}
+  breadcrumbs={[{ name: "Victoria 2026", href: "/elections/vic/2026" }]}
 >
   <section class="hero">
     <div class="wrap">
