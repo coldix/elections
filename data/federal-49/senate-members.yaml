@@ -37,9 +37,16 @@ senate_members:
   party: liberal
   state: nsw
   parliament: 48
-  term_status: unknown
-  term_note: Confirm half-Senate class against APH/AEC schedule.
+  term_status: up
+  term_note: 'State term ends 30 June 2028 (APH Senators by service expiry date: Sharma, D.N., LP, NSW).
+    Ordinarily faces voters at the next half-Senate election. Casual vacancy filling Marise Payne''s term.'
   handbook_url: https://handbook.aph.gov.au/Parliamentarian/274506
+  end_term: 2028
+  term_source:
+    url: https://www.aph.gov.au/Senators_and_Members/Senators/Senators_by_service_expiry_date
+    publisher: Parliament of Australia
+    title: Senators—service expiry dates
+    accessed: '2026-08-09'
 - name: David Shoebridge
   party: greens
   state: nsw

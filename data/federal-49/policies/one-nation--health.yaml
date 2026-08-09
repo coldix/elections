@@ -1,0 +1,27 @@
+policy:
+  party: one-nation
+  issue: health
+  headline: Higher GP Medicare rebate; photo ID for Medicare cards
+  claims:
+    - id: on-medicare-rebate
+      statement: >-
+        ABC reporting on One Nation’s platforms states the party wants to reduce healthcare
+        costs by increasing the Medicare rebate to GPs and incentivising bulk billing.
+      kind: pledge
+      source:
+        url: https://www.abc.net.au/news/2026-02-10/one-nation-policy-platforms-pauline-hanson/106296838
+        publisher: ABC News
+        title: People say they'll vote One Nation. What are they voting for?
+        published: 2026-02-10
+        accessed: 2026-08-09
+    - id: on-medicare-photo-id
+      statement: >-
+        The same report states One Nation advocates mandatory photo ID for Medicare cards
+        to “prevent misuse” in a cashless welfare context.
+      kind: pledge
+      source:
+        url: https://www.abc.net.au/news/2026-02-10/one-nation-policy-platforms-pauline-hanson/106296838
+        publisher: ABC News
+        title: People say they'll vote One Nation. What are they voting for?
+        published: 2026-02-10
+        accessed: 2026-08-09

@@ -1,0 +1,27 @@
+policy:
+  party: greens
+  issue: defence-security
+  headline: No nuclear submarines; reform defence spending
+  claims:
+    - id: greens-no-nuclear-subs
+      statement: >-
+        The Australian Greens oppose the AUKUS nuclear-submarine acquisition, describing the
+        attempted $375 billion nuclear-submarine program as wasteful and dangerous, and state
+        they will not fund nuclear submarines.
+      kind: opposition_to
+      source:
+        url: https://greens.org.au/portfolios/defence
+        publisher: Australian Greens
+        title: Defence — Policy Portfolio
+        accessed: 2026-08-09
+    - id: greens-defence-people-first
+      statement: >-
+        The Greens describe a defence policy focused on accountability, transparency and
+        community safety, prioritising climate security and Pacific cooperation over what they
+        call fuelling regional arms races.
+      kind: position
+      source:
+        url: https://greens.org.au/portfolios/defence
+        publisher: Australian Greens
+        title: Defence — Policy Portfolio
+        accessed: 2026-08-09

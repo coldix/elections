@@ -1,0 +1,42 @@
+policy:
+  party: labor
+  issue: health
+  headline: Stronger Medicare — permanent UCCs and care-system Budget 2026 measures
+  claims:
+    - id: labor-medicare-budget-2026
+      statement: >-
+        The Albanese Government’s 2026–27 Budget health materials state the Budget will deliver
+        cost-of-living relief by making Medicare Urgent Care Clinics permanent and deliver up to
+        six new fully bulk-billing clinics, building on what it describes as the largest investment
+        in Medicare in its history.
+      kind: costed_measure
+      source:
+        url: https://alp.org.au/news/budget-2026-a-stronger-care-system-for-all-australians/
+        publisher: Australian Labor Party
+        title: "Budget 2026: A stronger care system for all Australians"
+        published: 2026-05-12
+        accessed: 2026-08-09
+    - id: labor-medicare-care-system
+      statement: >-
+        The same Budget announcement frames significant investments and reforms to secure the
+        future of Medicare, the PBS, aged care and the NDIS as the Commonwealth’s universal
+        health and disability support system.
+      kind: position
+      source:
+        url: https://alp.org.au/news/budget-2026-a-stronger-care-system-for-all-australians/
+        publisher: Australian Labor Party
+        title: "Budget 2026: A stronger care system for all Australians"
+        published: 2026-05-12
+        accessed: 2026-08-09
+    - id: labor-paid-prac-health
+      statement: >-
+        The Australian Government expanded the Commonwealth Prac Payment to people training in
+        an additional ten front-line health professions, which Health Minister Mark Butler
+        described as strengthening Medicare by growing the health workforce.
+      kind: position
+      source:
+        url: https://www.health.gov.au/ministers/the-hon-mark-butler-mp/media/australian-government-expands-paid-prac-to-strengthen-medicare?language=en
+        publisher: Department of Health and Aged Care
+        title: Australian Government expands paid prac to strengthen Medicare
+        published: 2026-07-23
+        accessed: 2026-08-09

@@ -1,0 +1,17 @@
+policy:
+  party: labor
+  issue: defence-security
+  headline: Incumbent AUKUS and Defence posture under Labor government
+  claims:
+    - id: labor-aukus-incumbent
+      statement: >-
+        As the incumbent Commonwealth government, Labor continues delivery of the AUKUS
+        pathway and associated Defence capability programs. Specific 49th-Parliament campaign
+        pledges should be added as parties publish them; this record reflects ongoing
+        government posture, not a new opposition manifesto.
+      kind: position
+      source:
+        url: https://www.alp.org.au/our-plan/what-were-working-on/
+        publisher: Australian Labor Party
+        title: What we're working on
+        accessed: 2026-08-09

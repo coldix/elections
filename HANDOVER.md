@@ -191,8 +191,9 @@ See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) and ADR-14 in
    change.
 4. Maintain the policy and poll ledgers under their published methodologies
    (primary sources preferred).
-5. Federal: finish APH/AEC re-verification of sitting members; thicken policies;
-   progressive candidates when announcements appear.
+5. Federal: thicken remaining empty policy cells (primary sources); progressive
+   candidates when announcements appear; keep APH membership current after
+   by-elections and casual vacancies.
 6. Obtain qualified legal review of the living-person and electoral-matter
    publication approach before the campaign intensifies.
 7. Consider a recent-changes feed only within the existing static architecture.

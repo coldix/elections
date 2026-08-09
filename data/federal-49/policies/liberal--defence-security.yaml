@@ -1,0 +1,15 @@
+policy:
+  party: liberal
+  issue: defence-security
+  headline: Deliver AUKUS; stronger ADF and border security
+  claims:
+    - id: lib-aukus-deliver
+      statement: >-
+        The Coalition’s national plan states: “We will build a strong defence force that can
+        act fast and hit hard. We will deliver AUKUS. We will guard our borders.”
+      kind: pledge
+      source:
+        url: https://www.liberal.org.au/our-plan
+        publisher: Liberal Party of Australia
+        title: Our Plan to Fix The Economy. Protect Our Way Of Life.
+        accessed: 2026-08-09
