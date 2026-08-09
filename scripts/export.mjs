@@ -14,11 +14,17 @@ import { join } from "node:path";
 import {
   listElections,
   loadElection,
+  electionKind,
   coverageFor,
   summaryFor,
   representationFor,
   COVERAGE_CAVEAT,
 } from "./lib/data.mjs";
+import {
+  loadFederalElection,
+  federalRepresentationFor,
+  federalSummaryFor,
+} from "./lib/federal.mjs";
 import { loadPolls, computePollAverage, POLL_CAVEAT } from "./lib/polls.mjs";
 import {
   loadIssues,
@@ -42,11 +48,82 @@ rmSync(OUT_ROOT, { recursive: true, force: true });
 const index = { generated: new Date().toISOString(), elections: [] };
 
 for (const id of listElections()) {
-  const data = loadElection(id);
   const out = join(OUT_ROOT, id);
   mkdirSync(out, { recursive: true });
 
   const write = (name, obj) => writeFileSync(join(out, name), JSON.stringify(obj, null, 2));
+
+  if (electionKind(id) === "federal") {
+    const data = loadFederalElection(id);
+    const summary = federalSummaryFor(data);
+    const representation = federalRepresentationFor(data);
+
+    write("election.json", data.election);
+    write("divisions.json", data.divisions.map(({ member, ...d }) => d));
+    write("house-members.json", data.houseMembers);
+    write("senate-contests.json", data.senateContests.map(({ members, ...c }) => c));
+    write("senate-members.json", data.senateMembers);
+    write("parties.json", data.parties);
+    write("representation.json", {
+      generated: new Date().toISOString(),
+      note:
+        "Seats held in the sitting federal parliament (48th Parliament), including " +
+        "mid-term replacements and party changes. Not an election result and not a " +
+        "candidacy count for the 49th Parliament.",
+      sitting_parliament: data.election.sitting_parliament_number,
+      parliament_electing: data.election.parliament_number,
+      representation,
+    });
+    write("summary.json", { generated: new Date().toISOString(), ...summary });
+
+    writeFileSync(
+      join(out, "divisions.csv"),
+      csv(
+        data.divisions.map((d) => ({
+          slug: d.slug,
+          name: d.name,
+          state: d.state,
+          incumbent: d.incumbent,
+          incumbent_party: d.incumbent_party,
+        })),
+        ["slug", "name", "state", "incumbent", "incumbent_party"]
+      )
+    );
+    writeFileSync(
+      join(out, "house-members.csv"),
+      csv(data.houseMembers, ["name", "party", "division", "state", "parliament"])
+    );
+    writeFileSync(
+      join(out, "senate-members.csv"),
+      csv(
+        data.senateMembers,
+        ["name", "party", "state", "parliament", "end_term", "term_status"]
+      )
+    );
+
+    index.elections.push({
+      id,
+      name: data.election.name,
+      kind: "federal",
+      parliament_number: data.election.parliament_number,
+      public_path: data.election.public_path,
+      house_members: summary.house_members,
+      senate_members: summary.senate_members,
+      files: [
+        "election.json", "divisions.json", "house-members.json",
+        "senate-contests.json", "senate-members.json", "parties.json",
+        "representation.json", "summary.json",
+        "divisions.csv", "house-members.csv", "senate-members.csv",
+      ],
+    });
+
+    console.log(
+      `${id}: exported federal · ${summary.house_members} MPs, ${summary.senate_members} senators -> site/public/data/${id}/`
+    );
+    continue;
+  }
+
+  const data = loadElection(id);
 
   // Strip the derived convenience fields back out of the published records so
   // the export mirrors the repository files rather than our internal shape.

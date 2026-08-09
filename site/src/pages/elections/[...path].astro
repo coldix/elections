@@ -6,10 +6,17 @@ import { ELECTION_DATE_STATUS } from "../../lib/electionCalendar.mjs";
 import { loadElectionPlaceholders } from "../../lib/electionPlaceholders.mjs";
 
 export function getStaticPaths() {
-  return loadElectionPlaceholders().map((entry) => ({
-    params: { path: entry.planned_path.replace(/^\/elections\//, "") },
-    props: { entry },
-  }));
+  // Paths with dedicated page trees (not the generic foundation template).
+  const dedicated = new Set(["federal/49"]);
+  return loadElectionPlaceholders()
+    .filter((entry) => {
+      const path = entry.planned_path.replace(/^\/elections\//, "");
+      return !dedicated.has(path);
+    })
+    .map((entry) => ({
+      params: { path: entry.planned_path.replace(/^\/elections\//, "") },
+      props: { entry },
+    }));
 }
 
 const entry = Astro.props.entry;

@@ -81,11 +81,26 @@ export function listElections() {
     .sort();
 }
 
+/**
+ * Peek election.kind without full load.
+ * Vic-shaped ledgers omit kind (treated as state-assembly-council).
+ */
+export function electionKind(id) {
+  const dir = join(DATA_DIR, id);
+  const election = load(dir, "election.yaml").election;
+  return election.kind ?? "state-assembly-council";
+}
+
 /** Load one election, with candidates joined onto districts, regions and parties. */
 export function loadElection(id) {
   const dir = join(DATA_DIR, id);
 
   const election = load(dir, "election.yaml").election;
+  if (election.kind === "federal") {
+    throw new Error(
+      `loadElection(${id}): federal elections use loadFederalElection from scripts/lib/federal.mjs`
+    );
+  }
   const districts = load(dir, "districts.yaml").districts;
   const regions = load(dir, "regions.yaml").regions;
   const parties = load(dir, "parties.yaml").parties;

@@ -39,6 +39,9 @@ export const SITE = {
 /** Canonical path prefix for the active Vic 2026 tracker (HTML pages). */
 export const VIC2026 = "/elections/vic/2026";
 
+/** Canonical path for the next federal election (HTML pages). Data id: federal-49. */
+export const FEDERAL_49 = "/elections/federal/49";
+
 /** How reusers should credit the data under CC BY 4.0. */
 export const ATTRIBUTION = SITE.domain;
 

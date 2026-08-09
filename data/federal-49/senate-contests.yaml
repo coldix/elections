@@ -1,0 +1,46 @@
+source:
+  url: https://www.aec.gov.au/Elections/Federal_Elections/
+  publisher: Australian Electoral Commission
+  title: Federal elections
+  accessed: '2026-08-09'
+contests:
+- slug: nsw
+  name: New South Wales
+  seats: 12
+  seats_up_normal: 6
+  election_scope: 6 of 12 places at a normal half-Senate election
+- slug: vic
+  name: Victoria
+  seats: 12
+  seats_up_normal: 6
+  election_scope: 6 of 12 places at a normal half-Senate election
+- slug: qld
+  name: Queensland
+  seats: 12
+  seats_up_normal: 6
+  election_scope: 6 of 12 places at a normal half-Senate election
+- slug: wa
+  name: Western Australia
+  seats: 12
+  seats_up_normal: 6
+  election_scope: 6 of 12 places at a normal half-Senate election
+- slug: sa
+  name: South Australia
+  seats: 12
+  seats_up_normal: 6
+  election_scope: 6 of 12 places at a normal half-Senate election
+- slug: tas
+  name: Tasmania
+  seats: 12
+  seats_up_normal: 6
+  election_scope: 6 of 12 places at a normal half-Senate election
+- slug: act
+  name: Australian Capital Territory
+  seats: 2
+  seats_up_normal: 2
+  election_scope: Both 2 territory places (terms follow the House)
+- slug: nt
+  name: Northern Territory
+  seats: 2
+  seats_up_normal: 2
+  election_scope: Both 2 territory places (terms follow the House)

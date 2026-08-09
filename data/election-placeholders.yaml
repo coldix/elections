@@ -39,14 +39,17 @@ placeholders:
           title: How does a state election work?
           accessed: 2026-08-03
 
-    - planned_path: /elections/federal/next
+    - planned_path: /elections/federal/49
       summary: >-
-        A normal federal election elects all 150 members of the House of
-        Representatives and usually 40 of the Senate's 76 places.
+        Election for the 49th Parliament of Australia. A normal federal election
+        elects all 150 members of the House of Representatives and usually 40 of
+        the Senate's 76 places.
       parliament: Bicameral
       total_members: 226
       contest_summary: 150 House divisions and normally 40 Senate places
-      tracking_status: Foundation page only; the election date and candidates are not yet settled.
+      tracking_status: >-
+        Sitting members of the 48th Parliament are published under this path.
+        Individual candidacies for the 49th Parliament are not yet tracked.
       chambers:
         - name: House of Representatives
           role: Lower house
@@ -62,8 +65,10 @@ placeholders:
           voting_system: Preferential proportional representation
           term: State senators serve six years; territory terms follow the House
       notes:
+        - This contest elects the 49th Parliament; sitting members listed on the tracker are of the 48th Parliament.
         - A double dissolution would put all 76 Senate places to election.
         - The AEC has determined that the House will remain at 150 seats for the next federal election.
+        - Canonical public path is /elections/federal/49 (parliament elected); /next and /2028 redirect here. Data id federal-49; next contest federal-50.
       sources:
         - url: https://www.aec.gov.au/media/2026/07-23.htm
           publisher: Australian Electoral Commission

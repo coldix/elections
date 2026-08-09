@@ -191,6 +191,33 @@ are deferred from Vic 2026 and listed for federal setup in
 [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md#deferred-for-federal-elections-not-vic-2026).
 Full rules: [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md).
 
+## ADR-13: Federal identity — parliament number (2026-08-09)
+
+**Decision.** Federal contests are identified by the **Parliament they elect**:
+
+| Layer | Pattern | Example (current) |
+|---|---|---|
+| Data id | `federal-<n>` | `federal-49` |
+| Public path | `/elections/federal/<n>` | `/elections/federal/49` |
+| Next cycle | `federal-50`, `/elections/federal/50` | later |
+
+Sitting members under that tree are of the **previous** parliament (48th while
+building for the 49th). Page titles may still say “Next Australian federal
+election” for humans; the path and data id do not use the word `next`.
+
+**Aliases (not separate content):** `/elections/federal/next`, `/49th`, and a
+provisional year (`/2028`) redirect to the current open contest. When
+`federal-50` opens, retarget `/next` to `/50` and leave `/49` as the permanent
+archive of that contest.
+
+**Why.** Years are wrong for a legal window (late 2027–mid 2028). Parliament
+ordinal is stable, archives cleanly, and scales (`49` → `50` → …). Bare `next`
+as the only path would thrash every cycle and break deep links.
+
+**Consequences.** Do not use `2027` as the path. Prefer APH over Wikipedia for
+named-person membership once bootstrapped. Sitting member ≠ candidacy (same
+methodology as Vic Council).
+
 ## ADR-12: Google Analytics 4 for product measurement (2026-08-09)
 
 **Decision.** Load **Google Analytics 4** sitewide (`gtag.js`, Measurement ID in

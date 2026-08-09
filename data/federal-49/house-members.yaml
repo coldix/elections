@@ -1,0 +1,761 @@
+note: Sitting members of the House of Representatives in the 48th Parliament. Not a candidacy list for
+  the next election.
+parliament: 48
+source:
+  url: https://en.wikipedia.org/wiki/Members_of_the_Australian_House_of_Representatives,_2025%E2%80%932028
+  publisher: Wikipedia
+  title: Members of the Australian House of Representatives, 2025–2028
+  accessed: '2026-08-09'
+  note: Bootstrap compilation of 48th Parliament membership; prefer APH verification for named-person
+    updates.
+house_members:
+- name: Aaron Violi
+  party: liberal
+  division: casey
+  state: vic
+  parliament: 48
+- name: Alex Hawke
+  party: liberal
+  division: mitchell
+  state: nsw
+  parliament: 48
+- name: Ali France
+  party: labor
+  division: dickson
+  state: qld
+  parliament: 48
+- name: Alice Jordan-Baird
+  party: labor
+  division: gorton
+  state: vic
+  parliament: 48
+- name: Alicia Payne
+  party: labor
+  division: canberra
+  state: act
+  parliament: 48
+- name: Alison Byrnes
+  party: labor
+  division: cunningham
+  state: nsw
+  parliament: 48
+- name: Alison Penfold
+  party: nationals
+  division: lyne
+  state: nsw
+  parliament: 48
+- name: Allegra Spender
+  party: community-strong
+  division: wentworth
+  state: nsw
+  parliament: 48
+- name: Amanda Rishworth
+  party: labor
+  division: kingston
+  state: sa
+  parliament: 48
+- name: Andrew Charlton
+  party: labor
+  division: parramatta
+  state: nsw
+  parliament: 48
+- name: Andrew Gee
+  party: independent
+  division: calare
+  state: nsw
+  parliament: 48
+- name: Andrew Giles
+  party: labor
+  division: scullin
+  state: vic
+  parliament: 48
+- name: Andrew Hastie
+  party: liberal
+  division: canning
+  state: wa
+  parliament: 48
+- name: Andrew Leigh
+  party: labor
+  division: fenner
+  state: act
+  parliament: 48
+- name: Andrew Wallace
+  party: liberal
+  division: fisher
+  state: qld
+  parliament: 48
+- name: Andrew Wilkie
+  party: independent
+  division: clark
+  state: tas
+  parliament: 48
+- name: Andrew Willcox
+  party: nationals
+  division: dawson
+  state: qld
+  parliament: 48
+- name: Angie Bell
+  party: liberal
+  division: moncrieff
+  state: qld
+  parliament: 48
+- name: Angus Taylor
+  party: liberal
+  division: hume
+  state: nsw
+  parliament: 48
+- name: Anika Wells
+  party: labor
+  division: lilley
+  state: qld
+  parliament: 48
+- name: Anne Aly
+  party: labor
+  division: cowan
+  state: wa
+  parliament: 48
+- name: Anne Stanley
+  party: labor
+  division: werriwa
+  state: nsw
+  parliament: 48
+- name: Anne Urquhart
+  party: labor
+  division: braddon
+  state: tas
+  parliament: 48
+- name: Anne Webster
+  party: nationals
+  division: mallee
+  state: vic
+  parliament: 48
+- name: Anthony Albanese
+  party: labor
+  division: grayndler
+  state: nsw
+  parliament: 48
+- name: Ash Ambihaipahar
+  party: labor
+  division: barton
+  state: nsw
+  parliament: 48
+- name: Barnaby Joyce
+  party: one-nation
+  division: new-england
+  state: nsw
+  parliament: 48
+- name: Basem Abdo
+  party: labor
+  division: calwell
+  state: vic
+  parliament: 48
+- name: Ben Small
+  party: liberal
+  division: forrest
+  state: wa
+  parliament: 48
+- name: Bob Katter
+  party: katters-australian
+  division: kennedy
+  state: qld
+  parliament: 48
+- name: Cameron Caldwell
+  party: liberal
+  division: fadden
+  state: qld
+  parliament: 48
+- name: Carina Garland
+  party: labor
+  division: chisholm
+  state: vic
+  parliament: 48
+- name: Carol Berry
+  party: labor
+  division: whitlam
+  state: nsw
+  parliament: 48
+- name: Cassandra Fernando
+  party: labor
+  division: holt
+  state: vic
+  parliament: 48
+- name: Catherine King
+  party: labor
+  division: ballarat
+  state: vic
+  parliament: 48
+- name: Chris Bowen
+  party: labor
+  division: mcmahon
+  state: nsw
+  parliament: 48
+- name: Claire Clutterham
+  party: labor
+  division: sturt
+  state: sa
+  parliament: 48
+- name: Clare O'Neil
+  party: labor
+  division: hotham
+  state: vic
+  parliament: 48
+- name: Colin Boyce
+  party: nationals
+  division: flynn
+  state: qld
+  parliament: 48
+- name: Dai Le
+  party: independent
+  division: fowler
+  state: nsw
+  parliament: 48
+- name: Dan Repacholi
+  party: labor
+  division: hunter
+  state: nsw
+  parliament: 48
+- name: Dan Tehan
+  party: liberal
+  division: wannon
+  state: vic
+  parliament: 48
+- name: Daniel Mulino
+  party: labor
+  division: fraser-victoria
+  state: vic
+  parliament: 48
+- name: Darren Chester
+  party: nationals
+  division: gippsland
+  state: vic
+  parliament: 48
+- name: David Batt
+  party: nationals
+  division: hinkler
+  state: qld
+  parliament: 48
+- name: David Farley
+  party: one-nation
+  division: farrer
+  state: nsw
+  parliament: 48
+- name: David Littleproud
+  party: nationals
+  division: maranoa
+  state: qld
+  parliament: 48
+- name: David Moncrieff
+  party: labor
+  division: hughes
+  state: nsw
+  parliament: 48
+- name: David Smith
+  party: labor
+  division: bean
+  state: act
+  parliament: 48
+- name: Ed Husic
+  party: labor
+  division: chifley
+  state: nsw
+  parliament: 48
+- name: Elizabeth Watson-Brown
+  party: greens
+  division: ryan
+  state: qld
+  parliament: 48
+- name: Emma Comer
+  party: labor
+  division: petrie
+  state: qld
+  parliament: 48
+- name: Emma McBride
+  party: labor
+  division: dobell
+  state: nsw
+  parliament: 48
+- name: Fiona Phillips
+  party: labor
+  division: gilmore
+  state: nsw
+  parliament: 48
+- name: Gabriel Ng
+  party: labor
+  division: menzies
+  state: vic
+  parliament: 48
+- name: Garth Hamilton
+  party: liberal
+  division: groom
+  state: qld
+  parliament: 48
+- name: Ged Kearney
+  party: labor
+  division: cooper
+  state: vic
+  parliament: 48
+- name: Gordon Reid
+  party: labor
+  division: robertson
+  state: nsw
+  parliament: 48
+- name: Helen Haines
+  party: independent
+  division: indi
+  state: vic
+  parliament: 48
+- name: Henry Pike
+  party: liberal
+  division: bowman
+  state: qld
+  parliament: 48
+- name: Jamie Chaffey
+  party: nationals
+  division: parkes
+  state: nsw
+  parliament: 48
+- name: Jason Clare
+  party: labor
+  division: blaxland
+  state: nsw
+  parliament: 48
+- name: Jason Wood
+  party: liberal
+  division: la-trobe
+  state: vic
+  parliament: 48
+- name: Jerome Laxale
+  party: labor
+  division: bennelong
+  state: nsw
+  parliament: 48
+- name: Jess Teesdale
+  party: labor
+  division: bass
+  state: tas
+  parliament: 48
+- name: Jim Chalmers
+  party: labor
+  division: rankin
+  state: qld
+  parliament: 48
+- name: Jo Briskey
+  party: labor
+  division: maribyrnong
+  state: vic
+  parliament: 48
+- name: Joanne Ryan
+  party: labor
+  division: lalor
+  state: vic
+  parliament: 48
+- name: Jodie Belyea
+  party: labor
+  division: dunkley
+  state: vic
+  parliament: 48
+- name: Josh Burns
+  party: labor
+  division: macnamara
+  state: vic
+  parliament: 48
+- name: Josh Wilson
+  party: labor
+  division: fremantle
+  state: wa
+  parliament: 48
+- name: Julian Hill
+  party: labor
+  division: bruce
+  state: vic
+  parliament: 48
+- name: Julian Leeser
+  party: liberal
+  division: berowra
+  state: nsw
+  parliament: 48
+- name: Julie Collins
+  party: labor
+  division: franklin
+  state: tas
+  parliament: 48
+- name: Julie-Ann Campbell
+  party: labor
+  division: moreton
+  state: qld
+  parliament: 48
+- name: Justine Elliot
+  party: labor
+  division: richmond
+  state: nsw
+  parliament: 48
+- name: Kara Cook
+  party: labor
+  division: bonner
+  state: qld
+  parliament: 48
+- name: Kate Chaney
+  party: independent
+  division: curtin
+  state: wa
+  parliament: 48
+- name: Kate Thwaites
+  party: labor
+  division: jagajaga
+  state: vic
+  parliament: 48
+- name: Kevin Hogan
+  party: nationals
+  division: page
+  state: nsw
+  parliament: 48
+- name: Kristy McBain
+  party: labor
+  division: eden-monaro
+  state: nsw
+  parliament: 48
+- name: Leon Rebello
+  party: liberal
+  division: mcpherson
+  state: qld
+  parliament: 48
+- name: Libby Coker
+  party: labor
+  division: corangamite
+  state: vic
+  parliament: 48
+- name: Lisa Chesters
+  party: labor
+  division: bendigo
+  state: vic
+  parliament: 48
+- name: Llew O'Brien
+  party: nationals
+  division: wide-bay
+  state: qld
+  parliament: 48
+- name: Louise Miller-Frost
+  party: labor
+  division: boothby
+  state: sa
+  parliament: 48
+- name: Luke Gosling
+  party: labor
+  division: solomon
+  state: nt
+  parliament: 48
+- name: Madeleine King
+  party: labor
+  division: brand
+  state: wa
+  parliament: 48
+- name: Madonna Jarrett
+  party: labor
+  division: brisbane
+  state: qld
+  parliament: 48
+- name: Marion Scrymgour
+  party: labor
+  division: lingiari
+  state: nt
+  parliament: 48
+- name: Mark Butler
+  party: labor
+  division: hindmarsh
+  state: sa
+  parliament: 48
+- name: Mark Dreyfus
+  party: labor
+  division: isaacs
+  state: vic
+  parliament: 48
+- name: Mary Aldred
+  party: liberal
+  division: monash
+  state: vic
+  parliament: 48
+- name: Mary Doyle
+  party: labor
+  division: aston
+  state: vic
+  parliament: 48
+- name: Matt Burnell
+  party: labor
+  division: spence
+  state: sa
+  parliament: 48
+- name: Matt Gregg
+  party: labor
+  division: deakin
+  state: vic
+  parliament: 48
+- name: Matt Keogh
+  party: labor
+  division: burt
+  state: wa
+  parliament: 48
+- name: Matt Smith
+  party: labor
+  division: leichhardt
+  state: qld
+  parliament: 48
+- name: Matt Thistlethwaite
+  party: labor
+  division: kingsford-smith
+  state: nsw
+  parliament: 48
+- name: Melissa McIntosh
+  party: liberal
+  division: lindsay
+  state: nsw
+  parliament: 48
+- name: Melissa Price
+  party: liberal
+  division: durack
+  state: wa
+  parliament: 48
+- name: Meryl Swanson
+  party: labor
+  division: paterson
+  state: nsw
+  parliament: 48
+- name: Michael McCormack
+  party: nationals
+  division: riverina
+  state: nsw
+  parliament: 48
+- name: Michelle Landry
+  party: nationals
+  division: capricornia
+  state: qld
+  parliament: 48
+- name: Michelle Rowland
+  party: labor
+  division: greenway
+  state: nsw
+  parliament: 48
+- name: Mike Freelander
+  party: labor
+  division: macarthur
+  state: nsw
+  parliament: 48
+- name: Milton Dick
+  party: labor
+  division: oxley
+  state: qld
+  parliament: 48
+- name: Monique Ryan
+  party: independent
+  division: kooyong
+  state: vic
+  parliament: 48
+- name: Nicolette Boele
+  party: independent
+  division: bradfield
+  state: nsw
+  parliament: 48
+- name: Pat Conaghan
+  party: nationals
+  division: cowper
+  state: nsw
+  parliament: 48
+- name: Pat Conroy
+  party: labor
+  division: shortland
+  state: nsw
+  parliament: 48
+- name: Patrick Gorman
+  party: labor
+  division: perth
+  state: wa
+  parliament: 48
+- name: Peter Khalil
+  party: labor
+  division: wills
+  state: vic
+  parliament: 48
+- name: Phillip Thompson
+  party: liberal
+  division: herbert
+  state: qld
+  parliament: 48
+- name: Rebecca White
+  party: labor
+  division: lyons
+  state: tas
+  parliament: 48
+- name: Rebekha Sharkie
+  party: centre-alliance
+  division: mayo
+  state: sa
+  parliament: 48
+- name: Renee Coffey
+  party: labor
+  division: griffith
+  state: qld
+  parliament: 48
+- name: Richard Marles
+  party: labor
+  division: corio
+  state: vic
+  parliament: 48
+- name: Rick Wilson
+  party: liberal
+  division: o-connor
+  state: wa
+  parliament: 48
+- name: Rob Mitchell
+  party: labor
+  division: mcewen
+  state: vic
+  parliament: 48
+- name: Rowan Holzberger
+  party: labor
+  division: forde
+  state: qld
+  parliament: 48
+- name: Sally Sitou
+  party: labor
+  division: reid
+  state: nsw
+  parliament: 48
+- name: Sam Birrell
+  party: nationals
+  division: nicholls
+  state: vic
+  parliament: 48
+- name: Sam Lim
+  party: labor
+  division: tangney
+  state: wa
+  parliament: 48
+- name: Sam Rae
+  party: labor
+  division: hawke
+  state: vic
+  parliament: 48
+- name: Sarah Witty
+  party: labor
+  division: melbourne
+  state: vic
+  parliament: 48
+- name: Scott Buchholz
+  party: liberal
+  division: wright
+  state: qld
+  parliament: 48
+- name: Sharon Claydon
+  party: labor
+  division: newcastle
+  state: nsw
+  parliament: 48
+- name: Shayne Neumann
+  party: labor
+  division: blair
+  state: qld
+  parliament: 48
+- name: Simon Kennedy
+  party: liberal
+  division: cook
+  state: nsw
+  parliament: 48
+- name: Sophie Scamps
+  party: independent
+  division: mackellar
+  state: nsw
+  parliament: 48
+- name: Steve Georganas
+  party: labor
+  division: adelaide
+  state: sa
+  parliament: 48
+- name: Susan Templeman
+  party: labor
+  division: macquarie
+  state: nsw
+  parliament: 48
+- name: Tania Lawrence
+  party: labor
+  division: hasluck
+  state: wa
+  parliament: 48
+- name: Tanya Plibersek
+  party: labor
+  division: sydney
+  state: nsw
+  parliament: 48
+- name: Ted O'Brien
+  party: liberal
+  division: fairfax
+  state: qld
+  parliament: 48
+- name: Terry Young
+  party: liberal
+  division: longman
+  state: qld
+  parliament: 48
+- name: Tim Watts
+  party: labor
+  division: gellibrand
+  state: vic
+  parliament: 48
+- name: Tim Wilson
+  party: liberal
+  division: goldstein
+  state: vic
+  parliament: 48
+- name: Tom French
+  party: labor
+  division: moore
+  state: wa
+  parliament: 48
+- name: Tom Venning
+  party: liberal
+  division: grey
+  state: sa
+  parliament: 48
+- name: Tony Burke
+  party: labor
+  division: watson
+  state: nsw
+  parliament: 48
+- name: Tony Pasin
+  party: liberal
+  division: barker
+  state: sa
+  parliament: 48
+- name: Tony Zappia
+  party: labor
+  division: makin
+  state: sa
+  parliament: 48
+- name: Tracey Roberts
+  party: labor
+  division: pearce
+  state: wa
+  parliament: 48
+- name: Trish Cook
+  party: labor
+  division: bullwinkel
+  state: wa
+  parliament: 48
+- name: Zali Steggall
+  party: community-strong
+  division: warringah
+  state: nsw
+  parliament: 48
+- name: Zaneta Mascarenhas
+  party: labor
+  division: swan
+  state: wa
+  parliament: 48
+- name: Zhi Soon
+  party: labor
+  division: banks
+  state: nsw
+  parliament: 48
+- name: Zoe McKenzie
+  party: liberal
+  division: flinders
+  state: vic
+  parliament: 48

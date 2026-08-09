@@ -1,0 +1,126 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import SourceLink from "../../../../../components/SourceLink.astro";
+import { loadFederalElection } from "../../../../../../../scripts/lib/federal.mjs";
+import { SITE, FEDERAL_49, partyColour, formatDate } from "../../../../../lib/site.mjs";
+import { STATE_LABELS } from "../../../../../../../scripts/lib/federal.mjs";
+
+export function getStaticPaths() {
+  const data = loadFederalElection("federal-49");
+  return data.divisions.map((d) => ({
+    params: { slug: d.slug },
+    props: { division: d, data },
+  }));
+}
+
+const { division, data } = Astro.props;
+const { election } = data;
+const party = data.partyBySlug.get(division.incumbent_party);
+const member = division.member;
+
+const schema = {
+  "@type": "WebPage",
+  name: `Division of ${division.name}`,
+  description: `Federal electoral division of ${division.name} (${STATE_LABELS[division.state] ?? division.state}). Sitting member of the ${election.sitting_parliament_label}.`,
+  url: `${SITE.url}${FEDERAL_49}/representatives/${division.slug}`,
+};
+---
+
+<Base
+  title={`Division of ${division.name}`}
+  description={`Division of ${division.name}: sitting member and party in the ${election.sitting_parliament_label}. Context for the next federal election (49th Parliament).`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "Federal", href: FEDERAL_49 },
+    { name: "Representatives", href: `${FEDERAL_49}/representatives` },
+    { name: division.name, href: `${FEDERAL_49}/representatives/${division.slug}` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={FEDERAL_49}>Federal</a>
+      <span aria-hidden="true">/</span>
+      <a href={`${FEDERAL_49}/representatives`}>Representatives</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{division.name}</span>
+    </nav>
+
+    <p class="eyebrow">
+      House division · {STATE_LABELS[division.state] ?? division.state?.toUpperCase()}
+    </p>
+    <h1>Division of {division.name}</h1>
+    <p class="lede">
+      One of {election.house_seats} single-member seats in the House of Representatives. At the next
+      federal election this division elects a member of the <strong>{election.parliament_label}</strong>.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>Sitting member only.</strong> A listed MP is not recorded as a candidate for
+      re-election until an individually sourced announcement exists.
+    </div>
+
+    <dl class="facts">
+      <div>
+        <dt>Sitting member</dt>
+        <dd>{member?.name ?? division.incumbent ?? "—"}</dd>
+      </div>
+      <div>
+        <dt>Party</dt>
+        <dd>
+          <span class="party-cell">
+            <span
+              class="swatch"
+              style={`background:${partyColour(division.incumbent_party)}`}
+              aria-hidden="true"
+            />
+            {party?.name ?? division.incumbent_party ?? "—"}
+          </span>
+        </dd>
+      </div>
+      <div>
+        <dt>State / territory</dt>
+        <dd>{STATE_LABELS[division.state] ?? division.state}</dd>
+      </div>
+      <div>
+        <dt>Sitting parliament</dt>
+        <dd>{election.sitting_parliament_label}</dd>
+      </div>
+    </dl>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost" href={`${FEDERAL_49}/representatives`}>All divisions</a>
+      <a class="btn btn-ghost" href={FEDERAL_49}>Federal overview</a>
+    </p>
+
+    <section class="sources compact" aria-labelledby="sources-h">
+      <h2 id="sources-h">Source</h2>
+      {data.sources.house && <p><SourceLink source={data.sources.house} /></p>}
+      {
+        data.sources.house?.accessed && (
+          <p class="muted">Accessed {formatDate(data.sources.house.accessed)}.</p>
+        )
+      }
+    </section>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .notice { margin: 1.25rem 0; }
+  .facts {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1px;
+    background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius);
+    overflow: hidden; margin: 1.5rem 0;
+  }
+  .facts > div { background: var(--surface); padding: 1rem 1.1rem; }
+  .facts dt { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-3); }
+  .facts dd { margin: 0.25rem 0 0; font-weight: 650; }
+  .party-cell { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .swatch { width: 0.65rem; height: 0.65rem; border-radius: 999px; flex-shrink: 0; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 2rem; }
+  .compact { max-width: 40rem; }
+</style>

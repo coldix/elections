@@ -1,0 +1,908 @@
+source:
+  url: https://en.wikipedia.org/wiki/Members_of_the_Australian_House_of_Representatives,_2025%E2%80%932028
+  publisher: Wikipedia
+  title: Members of the Australian House of Representatives, 2025–2028
+  accessed: '2026-08-09'
+  note: Bootstrap compilation of 48th Parliament membership; prefer APH verification for named-person
+    updates.
+divisions:
+- slug: bean
+  name: Bean
+  state: act
+  chamber: representatives
+  incumbent: David Smith
+  incumbent_party: labor
+- slug: canberra
+  name: Canberra
+  state: act
+  chamber: representatives
+  incumbent: Alicia Payne
+  incumbent_party: labor
+- slug: fenner
+  name: Fenner
+  state: act
+  chamber: representatives
+  incumbent: Andrew Leigh
+  incumbent_party: labor
+- slug: banks
+  name: Banks
+  state: nsw
+  chamber: representatives
+  incumbent: Zhi Soon
+  incumbent_party: labor
+- slug: barton
+  name: Barton
+  state: nsw
+  chamber: representatives
+  incumbent: Ash Ambihaipahar
+  incumbent_party: labor
+- slug: bennelong
+  name: Bennelong
+  state: nsw
+  chamber: representatives
+  incumbent: Jerome Laxale
+  incumbent_party: labor
+- slug: berowra
+  name: Berowra
+  state: nsw
+  chamber: representatives
+  incumbent: Julian Leeser
+  incumbent_party: liberal
+- slug: blaxland
+  name: Blaxland
+  state: nsw
+  chamber: representatives
+  incumbent: Jason Clare
+  incumbent_party: labor
+- slug: bradfield
+  name: Bradfield
+  state: nsw
+  chamber: representatives
+  incumbent: Nicolette Boele
+  incumbent_party: independent
+- slug: calare
+  name: Calare
+  state: nsw
+  chamber: representatives
+  incumbent: Andrew Gee
+  incumbent_party: independent
+- slug: chifley
+  name: Chifley
+  state: nsw
+  chamber: representatives
+  incumbent: Ed Husic
+  incumbent_party: labor
+- slug: cook
+  name: Cook
+  state: nsw
+  chamber: representatives
+  incumbent: Simon Kennedy
+  incumbent_party: liberal
+- slug: cowper
+  name: Cowper
+  state: nsw
+  chamber: representatives
+  incumbent: Pat Conaghan
+  incumbent_party: nationals
+- slug: cunningham
+  name: Cunningham
+  state: nsw
+  chamber: representatives
+  incumbent: Alison Byrnes
+  incumbent_party: labor
+- slug: dobell
+  name: Dobell
+  state: nsw
+  chamber: representatives
+  incumbent: Emma McBride
+  incumbent_party: labor
+- slug: eden-monaro
+  name: Eden-Monaro
+  state: nsw
+  chamber: representatives
+  incumbent: Kristy McBain
+  incumbent_party: labor
+- slug: farrer
+  name: Farrer
+  state: nsw
+  chamber: representatives
+  incumbent: David Farley
+  incumbent_party: one-nation
+- slug: fowler
+  name: Fowler
+  state: nsw
+  chamber: representatives
+  incumbent: Dai Le
+  incumbent_party: independent
+- slug: gilmore
+  name: Gilmore
+  state: nsw
+  chamber: representatives
+  incumbent: Fiona Phillips
+  incumbent_party: labor
+- slug: grayndler
+  name: Grayndler
+  state: nsw
+  chamber: representatives
+  incumbent: Anthony Albanese
+  incumbent_party: labor
+- slug: greenway
+  name: Greenway
+  state: nsw
+  chamber: representatives
+  incumbent: Michelle Rowland
+  incumbent_party: labor
+- slug: hughes
+  name: Hughes
+  state: nsw
+  chamber: representatives
+  incumbent: David Moncrieff
+  incumbent_party: labor
+- slug: hume
+  name: Hume
+  state: nsw
+  chamber: representatives
+  incumbent: Angus Taylor
+  incumbent_party: liberal
+- slug: hunter
+  name: Hunter
+  state: nsw
+  chamber: representatives
+  incumbent: Dan Repacholi
+  incumbent_party: labor
+- slug: kingsford-smith
+  name: Kingsford Smith
+  state: nsw
+  chamber: representatives
+  incumbent: Matt Thistlethwaite
+  incumbent_party: labor
+- slug: lindsay
+  name: Lindsay
+  state: nsw
+  chamber: representatives
+  incumbent: Melissa McIntosh
+  incumbent_party: liberal
+- slug: lyne
+  name: Lyne
+  state: nsw
+  chamber: representatives
+  incumbent: Alison Penfold
+  incumbent_party: nationals
+- slug: macarthur
+  name: Macarthur
+  state: nsw
+  chamber: representatives
+  incumbent: Mike Freelander
+  incumbent_party: labor
+- slug: mackellar
+  name: Mackellar
+  state: nsw
+  chamber: representatives
+  incumbent: Sophie Scamps
+  incumbent_party: independent
+- slug: macquarie
+  name: Macquarie
+  state: nsw
+  chamber: representatives
+  incumbent: Susan Templeman
+  incumbent_party: labor
+- slug: mcmahon
+  name: McMahon
+  state: nsw
+  chamber: representatives
+  incumbent: Chris Bowen
+  incumbent_party: labor
+- slug: mitchell
+  name: Mitchell
+  state: nsw
+  chamber: representatives
+  incumbent: Alex Hawke
+  incumbent_party: liberal
+- slug: new-england
+  name: New England
+  state: nsw
+  chamber: representatives
+  incumbent: Barnaby Joyce
+  incumbent_party: one-nation
+- slug: newcastle
+  name: Newcastle
+  state: nsw
+  chamber: representatives
+  incumbent: Sharon Claydon
+  incumbent_party: labor
+- slug: page
+  name: Page
+  state: nsw
+  chamber: representatives
+  incumbent: Kevin Hogan
+  incumbent_party: nationals
+- slug: parkes
+  name: Parkes
+  state: nsw
+  chamber: representatives
+  incumbent: Jamie Chaffey
+  incumbent_party: nationals
+- slug: parramatta
+  name: Parramatta
+  state: nsw
+  chamber: representatives
+  incumbent: Andrew Charlton
+  incumbent_party: labor
+- slug: paterson
+  name: Paterson
+  state: nsw
+  chamber: representatives
+  incumbent: Meryl Swanson
+  incumbent_party: labor
+- slug: reid
+  name: Reid
+  state: nsw
+  chamber: representatives
+  incumbent: Sally Sitou
+  incumbent_party: labor
+- slug: richmond
+  name: Richmond
+  state: nsw
+  chamber: representatives
+  incumbent: Justine Elliot
+  incumbent_party: labor
+- slug: riverina
+  name: Riverina
+  state: nsw
+  chamber: representatives
+  incumbent: Michael McCormack
+  incumbent_party: nationals
+- slug: robertson
+  name: Robertson
+  state: nsw
+  chamber: representatives
+  incumbent: Gordon Reid
+  incumbent_party: labor
+- slug: shortland
+  name: Shortland
+  state: nsw
+  chamber: representatives
+  incumbent: Pat Conroy
+  incumbent_party: labor
+- slug: sydney
+  name: Sydney
+  state: nsw
+  chamber: representatives
+  incumbent: Tanya Plibersek
+  incumbent_party: labor
+- slug: warringah
+  name: Warringah
+  state: nsw
+  chamber: representatives
+  incumbent: Zali Steggall
+  incumbent_party: community-strong
+- slug: watson
+  name: Watson
+  state: nsw
+  chamber: representatives
+  incumbent: Tony Burke
+  incumbent_party: labor
+- slug: wentworth
+  name: Wentworth
+  state: nsw
+  chamber: representatives
+  incumbent: Allegra Spender
+  incumbent_party: community-strong
+- slug: werriwa
+  name: Werriwa
+  state: nsw
+  chamber: representatives
+  incumbent: Anne Stanley
+  incumbent_party: labor
+- slug: whitlam
+  name: Whitlam
+  state: nsw
+  chamber: representatives
+  incumbent: Carol Berry
+  incumbent_party: labor
+- slug: lingiari
+  name: Lingiari
+  state: nt
+  chamber: representatives
+  incumbent: Marion Scrymgour
+  incumbent_party: labor
+- slug: solomon
+  name: Solomon
+  state: nt
+  chamber: representatives
+  incumbent: Luke Gosling
+  incumbent_party: labor
+- slug: blair
+  name: Blair
+  state: qld
+  chamber: representatives
+  incumbent: Shayne Neumann
+  incumbent_party: labor
+- slug: bonner
+  name: Bonner
+  state: qld
+  chamber: representatives
+  incumbent: Kara Cook
+  incumbent_party: labor
+- slug: bowman
+  name: Bowman
+  state: qld
+  chamber: representatives
+  incumbent: Henry Pike
+  incumbent_party: liberal
+- slug: brisbane
+  name: Brisbane
+  state: qld
+  chamber: representatives
+  incumbent: Madonna Jarrett
+  incumbent_party: labor
+- slug: capricornia
+  name: Capricornia
+  state: qld
+  chamber: representatives
+  incumbent: Michelle Landry
+  incumbent_party: nationals
+- slug: dawson
+  name: Dawson
+  state: qld
+  chamber: representatives
+  incumbent: Andrew Willcox
+  incumbent_party: nationals
+- slug: dickson
+  name: Dickson
+  state: qld
+  chamber: representatives
+  incumbent: Ali France
+  incumbent_party: labor
+- slug: fadden
+  name: Fadden
+  state: qld
+  chamber: representatives
+  incumbent: Cameron Caldwell
+  incumbent_party: liberal
+- slug: fairfax
+  name: Fairfax
+  state: qld
+  chamber: representatives
+  incumbent: Ted O'Brien
+  incumbent_party: liberal
+- slug: fisher
+  name: Fisher
+  state: qld
+  chamber: representatives
+  incumbent: Andrew Wallace
+  incumbent_party: liberal
+- slug: flynn
+  name: Flynn
+  state: qld
+  chamber: representatives
+  incumbent: Colin Boyce
+  incumbent_party: nationals
+- slug: forde
+  name: Forde
+  state: qld
+  chamber: representatives
+  incumbent: Rowan Holzberger
+  incumbent_party: labor
+- slug: griffith
+  name: Griffith
+  state: qld
+  chamber: representatives
+  incumbent: Renee Coffey
+  incumbent_party: labor
+- slug: groom
+  name: Groom
+  state: qld
+  chamber: representatives
+  incumbent: Garth Hamilton
+  incumbent_party: liberal
+- slug: herbert
+  name: Herbert
+  state: qld
+  chamber: representatives
+  incumbent: Phillip Thompson
+  incumbent_party: liberal
+- slug: hinkler
+  name: Hinkler
+  state: qld
+  chamber: representatives
+  incumbent: David Batt
+  incumbent_party: nationals
+- slug: kennedy
+  name: Kennedy
+  state: qld
+  chamber: representatives
+  incumbent: Bob Katter
+  incumbent_party: katters-australian
+- slug: leichhardt
+  name: Leichhardt
+  state: qld
+  chamber: representatives
+  incumbent: Matt Smith
+  incumbent_party: labor
+- slug: lilley
+  name: Lilley
+  state: qld
+  chamber: representatives
+  incumbent: Anika Wells
+  incumbent_party: labor
+- slug: longman
+  name: Longman
+  state: qld
+  chamber: representatives
+  incumbent: Terry Young
+  incumbent_party: liberal
+- slug: maranoa
+  name: Maranoa
+  state: qld
+  chamber: representatives
+  incumbent: David Littleproud
+  incumbent_party: nationals
+- slug: mcpherson
+  name: McPherson
+  state: qld
+  chamber: representatives
+  incumbent: Leon Rebello
+  incumbent_party: liberal
+- slug: moncrieff
+  name: Moncrieff
+  state: qld
+  chamber: representatives
+  incumbent: Angie Bell
+  incumbent_party: liberal
+- slug: moreton
+  name: Moreton
+  state: qld
+  chamber: representatives
+  incumbent: Julie-Ann Campbell
+  incumbent_party: labor
+- slug: oxley
+  name: Oxley
+  state: qld
+  chamber: representatives
+  incumbent: Milton Dick
+  incumbent_party: labor
+- slug: petrie
+  name: Petrie
+  state: qld
+  chamber: representatives
+  incumbent: Emma Comer
+  incumbent_party: labor
+- slug: rankin
+  name: Rankin
+  state: qld
+  chamber: representatives
+  incumbent: Jim Chalmers
+  incumbent_party: labor
+- slug: ryan
+  name: Ryan
+  state: qld
+  chamber: representatives
+  incumbent: Elizabeth Watson-Brown
+  incumbent_party: greens
+- slug: wide-bay
+  name: Wide Bay
+  state: qld
+  chamber: representatives
+  incumbent: Llew O'Brien
+  incumbent_party: nationals
+- slug: wright
+  name: Wright
+  state: qld
+  chamber: representatives
+  incumbent: Scott Buchholz
+  incumbent_party: liberal
+- slug: adelaide
+  name: Adelaide
+  state: sa
+  chamber: representatives
+  incumbent: Steve Georganas
+  incumbent_party: labor
+- slug: barker
+  name: Barker
+  state: sa
+  chamber: representatives
+  incumbent: Tony Pasin
+  incumbent_party: liberal
+- slug: boothby
+  name: Boothby
+  state: sa
+  chamber: representatives
+  incumbent: Louise Miller-Frost
+  incumbent_party: labor
+- slug: grey
+  name: Grey
+  state: sa
+  chamber: representatives
+  incumbent: Tom Venning
+  incumbent_party: liberal
+- slug: hindmarsh
+  name: Hindmarsh
+  state: sa
+  chamber: representatives
+  incumbent: Mark Butler
+  incumbent_party: labor
+- slug: kingston
+  name: Kingston
+  state: sa
+  chamber: representatives
+  incumbent: Amanda Rishworth
+  incumbent_party: labor
+- slug: makin
+  name: Makin
+  state: sa
+  chamber: representatives
+  incumbent: Tony Zappia
+  incumbent_party: labor
+- slug: mayo
+  name: Mayo
+  state: sa
+  chamber: representatives
+  incumbent: Rebekha Sharkie
+  incumbent_party: centre-alliance
+- slug: spence
+  name: Spence
+  state: sa
+  chamber: representatives
+  incumbent: Matt Burnell
+  incumbent_party: labor
+- slug: sturt
+  name: Sturt
+  state: sa
+  chamber: representatives
+  incumbent: Claire Clutterham
+  incumbent_party: labor
+- slug: bass
+  name: Bass
+  state: tas
+  chamber: representatives
+  incumbent: Jess Teesdale
+  incumbent_party: labor
+- slug: braddon
+  name: Braddon
+  state: tas
+  chamber: representatives
+  incumbent: Anne Urquhart
+  incumbent_party: labor
+- slug: clark
+  name: Clark
+  state: tas
+  chamber: representatives
+  incumbent: Andrew Wilkie
+  incumbent_party: independent
+- slug: franklin
+  name: Franklin
+  state: tas
+  chamber: representatives
+  incumbent: Julie Collins
+  incumbent_party: labor
+- slug: lyons
+  name: Lyons
+  state: tas
+  chamber: representatives
+  incumbent: Rebecca White
+  incumbent_party: labor
+- slug: aston
+  name: Aston
+  state: vic
+  chamber: representatives
+  incumbent: Mary Doyle
+  incumbent_party: labor
+- slug: ballarat
+  name: Ballarat
+  state: vic
+  chamber: representatives
+  incumbent: Catherine King
+  incumbent_party: labor
+- slug: bendigo
+  name: Bendigo
+  state: vic
+  chamber: representatives
+  incumbent: Lisa Chesters
+  incumbent_party: labor
+- slug: bruce
+  name: Bruce
+  state: vic
+  chamber: representatives
+  incumbent: Julian Hill
+  incumbent_party: labor
+- slug: calwell
+  name: Calwell
+  state: vic
+  chamber: representatives
+  incumbent: Basem Abdo
+  incumbent_party: labor
+- slug: casey
+  name: Casey
+  state: vic
+  chamber: representatives
+  incumbent: Aaron Violi
+  incumbent_party: liberal
+- slug: chisholm
+  name: Chisholm
+  state: vic
+  chamber: representatives
+  incumbent: Carina Garland
+  incumbent_party: labor
+- slug: cooper
+  name: Cooper
+  state: vic
+  chamber: representatives
+  incumbent: Ged Kearney
+  incumbent_party: labor
+- slug: corangamite
+  name: Corangamite
+  state: vic
+  chamber: representatives
+  incumbent: Libby Coker
+  incumbent_party: labor
+- slug: corio
+  name: Corio
+  state: vic
+  chamber: representatives
+  incumbent: Richard Marles
+  incumbent_party: labor
+- slug: deakin
+  name: Deakin
+  state: vic
+  chamber: representatives
+  incumbent: Matt Gregg
+  incumbent_party: labor
+- slug: dunkley
+  name: Dunkley
+  state: vic
+  chamber: representatives
+  incumbent: Jodie Belyea
+  incumbent_party: labor
+- slug: flinders
+  name: Flinders
+  state: vic
+  chamber: representatives
+  incumbent: Zoe McKenzie
+  incumbent_party: liberal
+- slug: fraser-victoria
+  name: Fraser
+  state: vic
+  chamber: representatives
+  incumbent: Daniel Mulino
+  incumbent_party: labor
+- slug: gellibrand
+  name: Gellibrand
+  state: vic
+  chamber: representatives
+  incumbent: Tim Watts
+  incumbent_party: labor
+- slug: gippsland
+  name: Gippsland
+  state: vic
+  chamber: representatives
+  incumbent: Darren Chester
+  incumbent_party: nationals
+- slug: goldstein
+  name: Goldstein
+  state: vic
+  chamber: representatives
+  incumbent: Tim Wilson
+  incumbent_party: liberal
+- slug: gorton
+  name: Gorton
+  state: vic
+  chamber: representatives
+  incumbent: Alice Jordan-Baird
+  incumbent_party: labor
+- slug: hawke
+  name: Hawke
+  state: vic
+  chamber: representatives
+  incumbent: Sam Rae
+  incumbent_party: labor
+- slug: holt
+  name: Holt
+  state: vic
+  chamber: representatives
+  incumbent: Cassandra Fernando
+  incumbent_party: labor
+- slug: hotham
+  name: Hotham
+  state: vic
+  chamber: representatives
+  incumbent: Clare O'Neil
+  incumbent_party: labor
+- slug: indi
+  name: Indi
+  state: vic
+  chamber: representatives
+  incumbent: Helen Haines
+  incumbent_party: independent
+- slug: isaacs
+  name: Isaacs
+  state: vic
+  chamber: representatives
+  incumbent: Mark Dreyfus
+  incumbent_party: labor
+- slug: jagajaga
+  name: Jagajaga
+  state: vic
+  chamber: representatives
+  incumbent: Kate Thwaites
+  incumbent_party: labor
+- slug: kooyong
+  name: Kooyong
+  state: vic
+  chamber: representatives
+  incumbent: Monique Ryan
+  incumbent_party: independent
+- slug: la-trobe
+  name: La Trobe
+  state: vic
+  chamber: representatives
+  incumbent: Jason Wood
+  incumbent_party: liberal
+- slug: lalor
+  name: Lalor
+  state: vic
+  chamber: representatives
+  incumbent: Joanne Ryan
+  incumbent_party: labor
+- slug: macnamara
+  name: Macnamara
+  state: vic
+  chamber: representatives
+  incumbent: Josh Burns
+  incumbent_party: labor
+- slug: mallee
+  name: Mallee
+  state: vic
+  chamber: representatives
+  incumbent: Anne Webster
+  incumbent_party: nationals
+- slug: maribyrnong
+  name: Maribyrnong
+  state: vic
+  chamber: representatives
+  incumbent: Jo Briskey
+  incumbent_party: labor
+- slug: mcewen
+  name: McEwen
+  state: vic
+  chamber: representatives
+  incumbent: Rob Mitchell
+  incumbent_party: labor
+- slug: melbourne
+  name: Melbourne
+  state: vic
+  chamber: representatives
+  incumbent: Sarah Witty
+  incumbent_party: labor
+- slug: menzies
+  name: Menzies
+  state: vic
+  chamber: representatives
+  incumbent: Gabriel Ng
+  incumbent_party: labor
+- slug: monash
+  name: Monash
+  state: vic
+  chamber: representatives
+  incumbent: Mary Aldred
+  incumbent_party: liberal
+- slug: nicholls
+  name: Nicholls
+  state: vic
+  chamber: representatives
+  incumbent: Sam Birrell
+  incumbent_party: nationals
+- slug: scullin
+  name: Scullin
+  state: vic
+  chamber: representatives
+  incumbent: Andrew Giles
+  incumbent_party: labor
+- slug: wannon
+  name: Wannon
+  state: vic
+  chamber: representatives
+  incumbent: Dan Tehan
+  incumbent_party: liberal
+- slug: wills
+  name: Wills
+  state: vic
+  chamber: representatives
+  incumbent: Peter Khalil
+  incumbent_party: labor
+- slug: brand
+  name: Brand
+  state: wa
+  chamber: representatives
+  incumbent: Madeleine King
+  incumbent_party: labor
+- slug: bullwinkel
+  name: Bullwinkel
+  state: wa
+  chamber: representatives
+  incumbent: Trish Cook
+  incumbent_party: labor
+- slug: burt
+  name: Burt
+  state: wa
+  chamber: representatives
+  incumbent: Matt Keogh
+  incumbent_party: labor
+- slug: canning
+  name: Canning
+  state: wa
+  chamber: representatives
+  incumbent: Andrew Hastie
+  incumbent_party: liberal
+- slug: cowan
+  name: Cowan
+  state: wa
+  chamber: representatives
+  incumbent: Anne Aly
+  incumbent_party: labor
+- slug: curtin
+  name: Curtin
+  state: wa
+  chamber: representatives
+  incumbent: Kate Chaney
+  incumbent_party: independent
+- slug: durack
+  name: Durack
+  state: wa
+  chamber: representatives
+  incumbent: Melissa Price
+  incumbent_party: liberal
+- slug: forrest
+  name: Forrest
+  state: wa
+  chamber: representatives
+  incumbent: Ben Small
+  incumbent_party: liberal
+- slug: fremantle
+  name: Fremantle
+  state: wa
+  chamber: representatives
+  incumbent: Josh Wilson
+  incumbent_party: labor
+- slug: hasluck
+  name: Hasluck
+  state: wa
+  chamber: representatives
+  incumbent: Tania Lawrence
+  incumbent_party: labor
+- slug: moore
+  name: Moore
+  state: wa
+  chamber: representatives
+  incumbent: Tom French
+  incumbent_party: labor
+- slug: o-connor
+  name: O'Connor
+  state: wa
+  chamber: representatives
+  incumbent: Rick Wilson
+  incumbent_party: liberal
+- slug: pearce
+  name: Pearce
+  state: wa
+  chamber: representatives
+  incumbent: Tracey Roberts
+  incumbent_party: labor
+- slug: perth
+  name: Perth
+  state: wa
+  chamber: representatives
+  incumbent: Patrick Gorman
+  incumbent_party: labor
+- slug: swan
+  name: Swan
+  state: wa
+  chamber: representatives
+  incumbent: Zaneta Mascarenhas
+  incumbent_party: labor
+- slug: tangney
+  name: Tangney
+  state: wa
+  chamber: representatives
+  incumbent: Sam Lim
+  incumbent_party: labor

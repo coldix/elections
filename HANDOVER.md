@@ -18,10 +18,10 @@ The public structure is national:
 /                                      national landing page
 /elections                             upcoming Australian elections
 /elections/vic/2026                    active Victoria 2026 tracker
-/elections/<jurisdiction>/<year|next> future foundation pages
+/elections/<jurisdiction>/<year|n>    foundation or active (federal uses parliament n)
 ```
 
-Victoria is the only full tracker at present. Its pages live under:
+Victoria is the only full candidate tracker at present. Its pages live under:
 
 ```text
 /elections/vic/2026/assembly
@@ -49,7 +49,7 @@ future pages. Foundation pages currently exist for:
 
 ```text
 /elections/nsw/2027
-/elections/federal/next
+/elections/federal/49          # structure + 48th Parliament sitting members (data: federal-49)
 /elections/tas/2027/legislative-council
 /elections/nt/2028
 /elections/act/2028
@@ -59,9 +59,9 @@ future pages. Foundation pages currently exist for:
 /elections/sa/2030
 ```
 
-They show chambers, seat numbers, election scope and voting systems, but are not
-active candidate trackers. Calendar entries and foundation pages must remain
-one-to-one; CI enforces this.
+Most show chambers, seat numbers, election scope and voting systems only.
+Federal also publishes sitting members (not candidacies). Calendar entries and
+foundation paths must remain one-to-one; CI enforces this.
 
 ## Victoria 2026 data model
 
@@ -152,6 +152,23 @@ The root [README.md](README.md) is the documentation graph entry point.
 Delete superseded notes or link and label them clearly; do not leave unowned
 files in the tree.
 
+## Federal scaffold (federal-49)
+
+Active under `/elections/federal/49` (data id `federal-49` — election for the
+**49th** Parliament). `/elections/federal/next` redirects here. Next cycle will
+be `federal-50` / `/elections/federal/50`. Sitting members are the **48th**
+Parliament:
+
+- House: 150 divisions + sitting MPs
+- Senate: composition + half-Senate term status (`up` / `continuing` / `territory`)
+- Parties + representation rollup
+- Exports: `/data/federal-49/`
+
+Membership was **bootstrapped** from public Wikipedia compilations of the 48th
+Parliament; prefer APH verification for named-person corrections. Not a
+candidacy ledger yet. Next federal modules: parties pages, polls, policies
+matrix, then progressive candidates.
+
 ## Current priorities
 
 1. Continue individually sourced Victoria 2026 candidate verification.
@@ -162,7 +179,8 @@ files in the tree.
 4. Maintain the policy and poll ledgers under their published methodologies.
 5. Obtain qualified legal review of the living-person and electoral-matter
    publication approach before the campaign intensifies.
-6. Consider a recent-changes feed only within the existing static architecture.
+6. Federal: APH-verify sitting members; then parties pages, polls, policy matrix.
+7. Consider a recent-changes feed only within the existing static architecture.
 
 ## Documents to read first
 

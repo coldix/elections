@@ -27,6 +27,29 @@ Victoria 2026 is published beneath `/elections/vic/2026`. Its Astro source
 views live under `site/src/vicpages/`; thin route wrappers under
 `site/src/pages/elections/vic/2026/` expose the canonical URLs.
 
+## Federal (parliament number)
+
+Canonical path and data id use the **Parliament being elected** (`49`, then
+`50`, …). The word `next` is only a redirect alias to the open contest.
+
+```text
+/elections/federal/49
+/elections/federal/49/representatives
+/elections/federal/49/representatives/<slug>
+/elections/federal/49/senate
+```
+
+| | Current | Next cycle |
+|---|---|---|
+| Data | `data/federal-49/` → `/data/federal-49/` | `federal-50` |
+| HTML | `/elections/federal/49` | `/elections/federal/50` |
+
+Sitting members listed under `/49` are of the **48th** Parliament. Aliases:
+
+- `/elections/federal/next` → current open federal contest (retarget when 50 opens)
+- `/elections/federal/49th` → `/elections/federal/49`
+- `/elections/federal/2028` → `/elections/federal/49` (provisional year; not canonical)
+
 ## Legacy redirects
 
 The former short Victorian paths such as `/assembly`, `/districts/ripon` and

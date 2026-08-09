@@ -21,7 +21,7 @@ broken.
 | Parties and policies | `/elections/vic/2026/parties/*`, `/elections/vic/2026/policies/*` | [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md) |
 | Polls | `/elections/vic/2026/polls` | [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) |
 | Open data | `/elections/vic/2026/data`, `/data/vic2026/*` | [../README.md](../README.md) |
-| Future election foundations | `/elections/nsw/2027`, `/elections/federal/next`, etc. | [METHODOLOGY.md](METHODOLOGY.md) |
+| Future election foundations | `/elections/nsw/2027`, `/elections/federal/49`, etc. | [METHODOLOGY.md](METHODOLOGY.md) |
 | Operations and deployment | — | [OPS.md](OPS.md), [DEPLOYMENT.md](DEPLOYMENT.md) |
 | Repository structure | — | [REPO-LAYOUT.md](REPO-LAYOUT.md) |
 

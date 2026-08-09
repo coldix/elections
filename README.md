@@ -15,7 +15,7 @@ The site is now structured nationally:
 - **Active tracker:** [Victoria 2026](https://electiontracker.au/elections/vic/2026)
 - **Future election foundations:** permanent outline pages such as
   [NSW 2027](https://electiontracker.au/elections/nsw/2027),
-  [Federal next](https://electiontracker.au/elections/federal/next) and
+  [Federal next](https://electiontracker.au/elections/federal/49) and
   [ACT 2028](https://electiontracker.au/elections/act/2028)
 
 Victoria remains the first full election dataset under `data/vic2026/`. Future
@@ -55,7 +55,7 @@ Foundation pages currently exist for:
 
 ```text
 /elections/nsw/2027
-/elections/federal/next
+/elections/federal/49
 /elections/tas/2027/legislative-council
 /elections/nt/2028
 /elections/act/2028

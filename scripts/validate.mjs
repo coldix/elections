@@ -23,15 +23,126 @@ function checkSource(file, ctx, s) {
   if (s.published && !isDate(s.published)) fail(file, `${ctx}: source.published must be YYYY-MM-DD`);
 }
 
+
+function validateFederal(election, dir, load) {
+  const meta = load("election.yaml").election;
+  const parties = load("parties.yaml").parties;
+  const divisions = load("divisions.yaml").divisions;
+  const houseMembers = load("house-members.yaml").house_members ?? [];
+  const senateContests = load("senate-contests.yaml").contests ?? [];
+  const senateMembers = load("senate-members.yaml").senate_members ?? [];
+  const houseSource = load("house-members.yaml").source;
+  const senSource = load("senate-members.yaml").source;
+
+  if (!meta.id || meta.id !== election) {
+    fail(`${election}/election.yaml`, `id must match directory name (${election})`);
+  }
+  if (meta.kind !== "federal") fail(`${election}/election.yaml`, "kind must be federal");
+  if (!Number.isInteger(meta.parliament_number)) {
+    fail(`${election}/election.yaml`, "parliament_number required");
+  }
+  if (!Number.isInteger(meta.sitting_parliament_number)) {
+    fail(`${election}/election.yaml`, "sitting_parliament_number required");
+  }
+  if (!meta.public_path?.startsWith("/elections/")) {
+    fail(`${election}/election.yaml`, "public_path required");
+  }
+  checkSource(`${election}/election.yaml`, "membership house", houseSource);
+  checkSource(`${election}/election.yaml`, "membership senate", senSource);
+
+  const partySlugs = new Set();
+  for (const p of parties) {
+    if (!p.slug || !/^[a-z0-9-]+$/.test(p.slug)) fail(`${election}/parties.yaml`, `bad slug: ${p.slug}`);
+    if (partySlugs.has(p.slug)) fail(`${election}/parties.yaml`, `duplicate slug: ${p.slug}`);
+    partySlugs.add(p.slug);
+    if (!p.name) fail(`${election}/parties.yaml`, `${p.slug}: name required`);
+  }
+
+  const divisionSlugs = new Set();
+  for (const d of divisions) {
+    if (!d.slug || !/^[a-z0-9-]+$/.test(d.slug)) fail(`${election}/divisions.yaml`, `bad slug: ${d.slug}`);
+    if (divisionSlugs.has(d.slug)) fail(`${election}/divisions.yaml`, `duplicate slug: ${d.slug}`);
+    divisionSlugs.add(d.slug);
+    if (!d.name) fail(`${election}/divisions.yaml`, `${d.slug}: name required`);
+    if (d.incumbent_party && !partySlugs.has(d.incumbent_party)) {
+      fail(`${election}/divisions.yaml`, `${d.slug}: unknown incumbent_party '${d.incumbent_party}'`);
+    }
+  }
+  if (meta.house_seats && divisions.length !== meta.house_seats) {
+    fail(`${election}/divisions.yaml`, `expected ${meta.house_seats} divisions, got ${divisions.length}`);
+  }
+
+  const STATES = new Set(["nsw", "vic", "qld", "wa", "sa", "tas", "act", "nt"]);
+  const TERM = new Set(["up", "continuing", "territory", "unknown"]);
+
+  if (houseMembers.length !== divisions.length) {
+    fail(`${election}/house-members.yaml`, `expected ${divisions.length} members, got ${houseMembers.length}`);
+  }
+  const seenDiv = new Set();
+  for (const m of houseMembers) {
+    if (!m.name) fail(`${election}/house-members.yaml`, "member missing name");
+    if (!partySlugs.has(m.party)) fail(`${election}/house-members.yaml`, `${m.name}: unknown party '${m.party}'`);
+    if (!divisionSlugs.has(m.division)) fail(`${election}/house-members.yaml`, `${m.name}: unknown division '${m.division}'`);
+    if (seenDiv.has(m.division)) fail(`${election}/house-members.yaml`, `duplicate division ${m.division}`);
+    seenDiv.add(m.division);
+    if (m.state && !STATES.has(m.state)) fail(`${election}/house-members.yaml`, `${m.name}: bad state '${m.state}'`);
+  }
+
+  const contestSlugs = new Set();
+  for (const c of senateContests) {
+    if (!c.slug || !STATES.has(c.slug)) fail(`${election}/senate-contests.yaml`, `bad contest slug: ${c.slug}`);
+    if (contestSlugs.has(c.slug)) fail(`${election}/senate-contests.yaml`, `duplicate ${c.slug}`);
+    contestSlugs.add(c.slug);
+    if (!c.name) fail(`${election}/senate-contests.yaml`, `${c.slug}: name required`);
+    if (!Number.isInteger(c.seats) || c.seats < 1) {
+      fail(`${election}/senate-contests.yaml`, `${c.slug}: seats required`);
+    }
+  }
+  if (contestSlugs.size !== 8) {
+    fail(`${election}/senate-contests.yaml`, `expected 8 contests, got ${contestSlugs.size}`);
+  }
+
+  if (meta.senate_seats && senateMembers.length !== meta.senate_seats) {
+    fail(`${election}/senate-members.yaml`, `expected ${meta.senate_seats} senators, got ${senateMembers.length}`);
+  }
+  const perState = {};
+  for (const m of senateMembers) {
+    if (!m.name) fail(`${election}/senate-members.yaml`, "senator missing name");
+    if (!partySlugs.has(m.party)) fail(`${election}/senate-members.yaml`, `${m.name}: unknown party '${m.party}'`);
+    if (!STATES.has(m.state)) fail(`${election}/senate-members.yaml`, `${m.name}: bad state '${m.state}'`);
+    if (!contestSlugs.has(m.state)) fail(`${election}/senate-members.yaml`, `${m.name}: no contest for state '${m.state}'`);
+    if (m.term_status && !TERM.has(m.term_status)) {
+      fail(`${election}/senate-members.yaml`, `${m.name}: bad term_status '${m.term_status}'`);
+    }
+    perState[m.state] = (perState[m.state] ?? 0) + 1;
+  }
+  for (const c of senateContests) {
+    const n = perState[c.slug] ?? 0;
+    if (n !== c.seats) {
+      fail(`${election}/senate-members.yaml`, `${c.slug}: ${n} members, expected ${c.seats}`);
+    }
+  }
+
+  console.log(
+    `${election}: federal · ${divisions.length} divisions, ${houseMembers.length} MPs, ${senateMembers.length} senators, ${parties.length} parties`
+  );
+}
+
 for (const election of readdirSync(DATA_DIR)) {
   const dir = join(DATA_DIR, election);
   if (!statSync(dir).isDirectory()) continue;
 
   const load = (name) => parse(readFileSync(join(dir, name), "utf8"));
+  const meta = load("election.yaml").election;
+
+  if (meta.kind === "federal") {
+    validateFederal(election, dir, load);
+    continue;
+  }
+
   const districts = load("districts.yaml").districts;
   const regions = load("regions.yaml").regions;
   const parties = load("parties.yaml").parties;
-  const meta = load("election.yaml").election;
 
   // election.yaml
   if (!isDate(String(meta.election_day))) fail(`${election}/election.yaml`, "election_day invalid");

@@ -1,0 +1,67 @@
+source:
+  url: https://www.aec.gov.au/Parties_and_Representatives/party_registration/Registered_parties/
+  publisher: Australian Electoral Commission
+  title: Current register of political parties
+  accessed: '2026-08-09'
+  note: Display names follow observed 48th Parliament labels; align to AEC register in a later pass.
+parties:
+- slug: australias-voice
+  name: Australia's Voice
+  short_name: Australia's Voice
+  registered: true
+  family: null
+- slug: centre-alliance
+  name: Centre Alliance
+  short_name: Centre Alliance
+  registered: true
+  family: null
+- slug: community-strong
+  name: Community Strong
+  short_name: Community Strong
+  registered: true
+  family: null
+- slug: greens
+  name: Australian Greens
+  short_name: Greens
+  registered: true
+  family: greens
+- slug: independent
+  name: Independent
+  short_name: Independent
+  registered: false
+  family: null
+- slug: jacqui-lambie-network
+  name: Jacqui Lambie Network
+  short_name: JLN
+  registered: true
+  family: null
+- slug: katters-australian
+  name: Katter's Australian Party
+  short_name: KAP
+  registered: true
+  family: null
+- slug: labor
+  name: Australian Labor Party
+  short_name: Labor
+  registered: true
+  family: labor
+- slug: liberal
+  name: Liberal Party of Australia
+  short_name: Liberal
+  registered: true
+  family: coalition
+- slug: nationals
+  name: National Party of Australia
+  short_name: Nationals
+  registered: true
+  family: coalition
+- slug: one-nation
+  name: Pauline Hanson's One Nation
+  short_name: One Nation
+  registered: true
+  family: one-nation
+- slug: united-australia
+  name: United Australia Party
+  short_name: UAP
+  registered: true
+  family: null

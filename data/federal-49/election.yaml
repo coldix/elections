@@ -1,0 +1,57 @@
+election:
+  id: federal-49
+  name: Next Australian federal election
+  jurisdiction: federal
+  level: federal
+  kind: federal
+  parliament_number: 49
+  parliament_label: 49th Parliament of Australia
+  sitting_parliament_number: 48
+  sitting_parliament_label: 48th Parliament of Australia
+  public_path: /elections/federal/49
+  date_status: window
+  date_label: Expected in 2028
+  earliest: '2027-08-07'
+  latest: '2028-05-20'
+  house_seats: 150
+  senate_seats: 76
+  senate_seats_up_normal: 40
+  tracking_status: Structure and sitting members for the 48th Parliament; not yet an active candidacy
+    ledger.
+  authorities:
+  - name: Australian Electoral Commission
+    url: https://www.aec.gov.au/
+  - name: Parliament of Australia
+    url: https://www.aph.gov.au/
+  sources:
+  - url: https://www.aph.gov.au/About_Parliament/Parliamentary_departments/Parliamentary_Library/Research/FlagPost/2025/August/When_is_the_next_federal_election
+    publisher: Parliament of Australia
+    title: When is the next federal election?
+    published: '2025-08-06'
+    accessed: '2026-08-09'
+  - url: https://www.aec.gov.au/media/2026/07-23.htm
+    publisher: Australian Electoral Commission
+    title: House of Representatives composition unchanged for next federal election
+    published: '2026-07-23'
+    accessed: '2026-08-09'
+  membership_sources:
+  - url: https://en.wikipedia.org/wiki/Members_of_the_Australian_House_of_Representatives,_2025%E2%80%932028
+    publisher: Wikipedia
+    title: Members of the Australian House of Representatives, 2025–2028
+    accessed: '2026-08-09'
+    note: Bootstrap compilation of 48th Parliament membership; prefer APH verification for named-person
+      updates.
+  - url: https://en.wikipedia.org/wiki/Members_of_the_Australian_Senate,_2025%E2%80%932028
+    publisher: Wikipedia
+    title: Members of the Australian Senate, 2025–2028
+    accessed: '2026-08-09'
+    note: Bootstrap compilation; end-term years indicate half-Senate exposure for state senators.
+  - url: https://www.aph.gov.au/Senators_and_Members
+    publisher: Parliament of Australia
+    title: Senators and Members
+    accessed: '2026-08-09'
+  notes:
+  - A normal simultaneous election elects all 150 House members and normally 40 of 76 Senate places.
+  - A double dissolution would put all 76 Senate places to election.
+  - Sitting members listed here are of the 48th Parliament; they are not automatically candidates for
+    the 49th.

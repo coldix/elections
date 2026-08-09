@@ -1,0 +1,542 @@
+note: 'Sitting senators in the 48th Parliament. term_status: up = ordinarily faces next half-Senate; continuing
+  = term to 2031; territory = always with House.'
+parliament: 48
+source:
+  url: https://en.wikipedia.org/wiki/Members_of_the_Australian_Senate,_2025%E2%80%932028
+  publisher: Wikipedia
+  title: Members of the Australian Senate, 2025–2028
+  accessed: '2026-08-09'
+  note: Bootstrap compilation; end-term years indicate half-Senate exposure for state senators.
+senate_members:
+- name: David Pocock
+  party: independent
+  state: act
+  parliament: 48
+  end_term: 2028
+  term_status: territory
+  term_note: Territory terms follow the House of Representatives.
+- name: Katy Gallagher
+  party: labor
+  state: act
+  parliament: 48
+  end_term: 2028
+  term_status: territory
+  term_note: Territory terms follow the House of Representatives.
+- name: Andrew Bragg
+  party: liberal
+  state: nsw
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: David Shoebridge
+  party: greens
+  state: nsw
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Deborah O'Neill
+  party: labor
+  state: nsw
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Jenny McAllister
+  party: labor
+  state: nsw
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Jessica Collins
+  party: liberal
+  state: nsw
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Maria Kovacic
+  party: liberal
+  state: nsw
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Mehreen Faruqi
+  party: greens
+  state: nsw
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Ross Cadell
+  party: nationals
+  state: nsw
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Sean Bell
+  party: one-nation
+  state: nsw
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Tim Ayres
+  party: labor
+  state: nsw
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Tony Sheldon
+  party: labor
+  state: nsw
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Warwick Stacey
+  party: one-nation
+  state: nsw
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Jacinta Nampijinpa Price
+  party: liberal
+  state: nt
+  parliament: 48
+  end_term: 2028
+  term_status: territory
+  term_note: Territory terms follow the House of Representatives.
+- name: Malarndirri McCarthy
+  party: labor
+  state: nt
+  parliament: 48
+  end_term: 2028
+  term_status: territory
+  term_note: Territory terms follow the House of Representatives.
+- name: Anthony Chisholm
+  party: labor
+  state: qld
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Corinne Mulholland
+  party: labor
+  state: qld
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: James McGrath
+  party: liberal
+  state: qld
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Larissa Waters
+  party: greens
+  state: qld
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Malcolm Roberts
+  party: one-nation
+  state: qld
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Matt Canavan
+  party: nationals
+  state: qld
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Murray Watt
+  party: labor
+  state: qld
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Nita Green
+  party: labor
+  state: qld
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Paul Scarr
+  party: liberal
+  state: qld
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Pauline Hanson
+  party: one-nation
+  state: qld
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Penny Allman-Payne
+  party: greens
+  state: qld
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Susan McDonald
+  party: nationals
+  state: qld
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Alex Antic
+  party: liberal
+  state: sa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Andrew McLachlan
+  party: liberal
+  state: sa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Anne Ruston
+  party: liberal
+  state: sa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Barbara Pocock
+  party: greens
+  state: sa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Charlotte Walker
+  party: labor
+  state: sa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Don Farrell
+  party: labor
+  state: sa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Karen Grogan
+  party: labor
+  state: sa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Kerrynne Liddle
+  party: liberal
+  state: sa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Leah Blyth
+  party: liberal
+  state: sa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Marielle Smith
+  party: labor
+  state: sa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Penny Wong
+  party: labor
+  state: sa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Sarah Hanson-Young
+  party: greens
+  state: sa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Carol Brown
+  party: labor
+  state: tas
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Claire Chandler
+  party: liberal
+  state: tas
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Helen Polley
+  party: labor
+  state: tas
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Jacqui Lambie
+  party: jacqui-lambie-network
+  state: tas
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Jonathon Duniam
+  party: liberal
+  state: tas
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Josh Dolega
+  party: labor
+  state: tas
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Nick McKim
+  party: greens
+  state: tas
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Peter Whish-Wilson
+  party: greens
+  state: tas
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Richard Colbeck
+  party: liberal
+  state: tas
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Richard Dowling
+  party: labor
+  state: tas
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Tammy Tyrrell
+  party: labor
+  state: tas
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Wendy Askew
+  party: liberal
+  state: tas
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Bridget McKenzie
+  party: nationals
+  state: vic
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: James Paterson
+  party: liberal
+  state: vic
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Jana Stewart
+  party: labor
+  state: vic
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Jane Hume
+  party: liberal
+  state: vic
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Jess Walsh
+  party: labor
+  state: vic
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Lidia Thorpe
+  party: independent
+  state: vic
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Lisa Darmanin
+  party: labor
+  state: vic
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Michelle Ananda-Rajah
+  party: labor
+  state: vic
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Raff Ciccone
+  party: labor
+  state: vic
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Ralph Babet
+  party: united-australia
+  state: vic
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Sarah Henderson
+  party: liberal
+  state: vic
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Steph Hodgins-May
+  party: greens
+  state: vic
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Dean Smith
+  party: liberal
+  state: wa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Dorinda Cox
+  party: labor
+  state: wa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Ellie Whiteaker
+  party: labor
+  state: wa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Fatima Payman
+  party: australias-voice
+  state: wa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Glenn Sterle
+  party: labor
+  state: wa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Jordon Steele-John
+  party: greens
+  state: wa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Matt O'Sullivan
+  party: liberal
+  state: wa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Michaelia Cash
+  party: liberal
+  state: wa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Slade Brockman
+  party: liberal
+  state: wa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Sue Lines
+  party: labor
+  state: wa
+  parliament: 48
+  end_term: 2028
+  term_status: up
+  term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
+- name: Tyron Whitten
+  party: one-nation
+  state: wa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.
+- name: Varun Ghosh
+  party: labor
+  state: wa
+  parliament: 48
+  end_term: 2031
+  term_status: continuing
+  term_note: State term ends 30 June 2031; not ordinarily up at the next half-Senate election.

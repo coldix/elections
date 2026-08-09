@@ -40,7 +40,7 @@ calendar:
     - jurisdiction: federal
       name: Federal
       election_name: Next Australian federal election
-      planned_path: /elections/federal/next
+      planned_path: /elections/federal/49
       date_label: Expected in 2028
       date_sort: 2027-08-07
       earliest: 2027-08-07

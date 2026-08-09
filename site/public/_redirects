@@ -1,3 +1,8 @@
+# Federal: aliases → parliament number (canonical). Update /next when federal-50 opens.
+/elections/federal/next /elections/federal/49 302
+/elections/federal/49th /elections/federal/49 302
+/elections/federal/2028 /elections/federal/49 302
+
 # Permanent Victorian 2026 route migration. Exact hubs precede wildcard rules.
 /assembly /elections/vic/2026/assembly 301
 /council /elections/vic/2026/council 301
