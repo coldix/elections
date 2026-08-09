@@ -128,6 +128,23 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Guide for AI systems" />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    {
+      /* Google Analytics 4 — sitewide page views. Measurement ID from SITE.gaMeasurementId.
+         See docs/DECISIONS.md ADR-12 and /privacy. Inline so the ID is baked into static HTML. */
+      SITE.gaMeasurementId ? (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${SITE.gaMeasurementId}`}
+          />
+          <script
+            is:inline
+            set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${SITE.gaMeasurementId}');`}
+          />
+        </>
+      ) : null
+    }
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>

@@ -7,33 +7,70 @@ const social = socialLinks();
 
 <Base
   title="Privacy policy"
-  description="What the Australian Election Tracker collects — almost nothing. No cookies, no analytics, no tracking. How candidate information is handled and how to request a correction."
+  description="What the Australian Election Tracker collects when you visit, how Google Analytics is used, and how candidate information is handled. How to request a correction."
 >
   <div class="wrap wrap-narrow section">
     <p class="eyebrow">Legal</p>
     <h1>Privacy policy</h1>
     <p class="lede">
-      This site is deliberately built so that there is very little to collect. It is a
-      set of static files. It sets no cookies, runs no analytics, and has no accounts,
-      no logins and no tracking scripts of any kind.
+      This site is a static public-interest reference. It has no accounts, logins or
+      mailing lists. We use <strong>Google Analytics 4</strong> to understand which
+      pages people use so we can improve coverage of Australian election data.
+      Candidate records contain only publicly available information about public
+      candidacies.
     </p>
 
     <div class="notice" role="note">
-      <strong>The short version.</strong> We don't track you. We don't know who you are.
-      If you email us, we have your email. If you post a GitHub issue, that's public.
-      Candidate records contain only publicly available information about people's
-      public candidacies.
+      <strong>The short version.</strong> We measure aggregate traffic with Google
+      Analytics so the site can stay useful as a go-to election data resource. We do
+      not sell your data, run ads on this site, or maintain user accounts. If you email
+      us, we have your email. If you post a GitHub issue, that's public.
     </div>
 
-    <h2 id="not-collected">What we do not collect</h2>
+    <h2 id="analytics">Analytics (Google Analytics 4)</h2>
+    <p>
+      When you load a page, this site runs Google’s gtag.js script (Measurement ID{" "}
+      <code>{SITE.gaMeasurementId}</code>). Google may set or read cookies and process
+      technical details such as the page URL, approximate location, device/browser
+      type, and referring site. Google acts as a processor for this measurement data
+      under its own terms and privacy policy.
+    </p>
     <ul>
-      <li>No cookies are set by this site.</li>
-      <li>No analytics, no page-view tracking, no session recording, no heatmaps.</li>
-      <li>No advertising networks, no tracking pixels, no third-party scripts.</li>
-      <li>No user accounts, logins, newsletters or mailing lists.</li>
       <li>
-        No fingerprinting. The site ships no JavaScript bundles at all — the one small
-        script it does include only refreshes the election countdown.
+        <strong>Why:</strong> to see which pages and data people use, fix weak spots,
+        and improve the tracker as a national election resource.
+      </li>
+      <li>
+        <strong>What we do with it:</strong> aggregate reports only (page views, traffic
+        sources, popular districts/regions). We do not use Analytics to identify you
+        personally or to target advertising on this site.
+      </li>
+      <li>
+        <strong>What we do not run:</strong> advertising networks, session recording,
+        heatmaps, or marketing pixels for third-party ad platforms.
+      </li>
+    </ul>
+    <p class="muted">
+      Google’s policies:{" "}
+      <a href="https://policies.google.com/privacy" rel="nofollow noopener"
+        >Google Privacy Policy</a
+      >{" "}
+      and{" "}
+      <a
+        href="https://support.google.com/analytics/answer/6004245"
+        rel="nofollow noopener">Google Analytics data practices</a
+      >. You can also use browser controls, extensions, or Google’s tools that limit
+      Analytics measurement.
+    </p>
+
+    <h2 id="not-collected">What we do not collect for our own systems</h2>
+    <ul>
+      <li>No user accounts, logins, newsletters or mailing lists.</li>
+      <li>No advertising networks or third-party marketing pixels on this site.</li>
+      <li>No session recording or heatmaps.</li>
+      <li>
+        No fingerprinting beyond what Google Analytics may use for measurement; the
+        site itself does not implement custom fingerprinting.
       </li>
     </ul>
 
@@ -43,15 +80,16 @@ const social = socialLinks();
       process the technical details of each request — including your IP address, the
       time, the page requested and your browser's user-agent string — in order to serve
       the page and to protect against attacks and abuse. This is standard infrastructure
-      logging that we do not control, do not use for analytics and do not combine with
-      anything else.
+      logging.
+    </p>
+    <p>
+      Separately, the Google Analytics tag described above sends measurement data to
+      Google when the page loads (subject to your browser and any blocking tools).
     </p>
     <p>
       Cloudflare also enables Network Error Logging on the sites it serves. If your
       browser fails to load a page, it may send a technical error report to Cloudflare's
-      reporting endpoint. Successful requests are not reported. This is a hosting-level
-      feature rather than anything this site does, and it is not analytics — but it is a
-      report leaving your browser, so it is listed here for completeness.
+      reporting endpoint. Successful requests are not reported.
     </p>
     <p class="muted">
       Cloudflare acts as our hosting provider. See
@@ -170,8 +208,9 @@ const social = socialLinks();
 
     <h2 id="children">Children</h2>
     <p>
-      This site is a public-interest reference work not directed at children, and it
-      collects nothing from anyone, including children.
+      This site is a public-interest reference work not directed at children. We do not
+      knowingly seek information from children. Analytics measurement may still run for
+      any visitor who loads a page.
     </p>
 
     <h2 id="changes">Changes</h2>
