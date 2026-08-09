@@ -1,7 +1,7 @@
 policy:
   party: liberal
   issue: defence-security
-  headline: Deliver AUKUS; stronger ADF and border security
+  headline: Deliver AUKUS; later scrutiny of retrospective war-crimes definition
   claims:
     - id: lib-aukus-deliver
       statement: >-
@@ -12,4 +12,32 @@ policy:
         url: https://www.liberal.org.au/our-plan
         publisher: Liberal Party of Australia
         title: Our Plan to Fix The Economy. Protect Our Way Of Life.
+        accessed: 2026-08-09
+    - id: lib-omnibus-supported-as-technical
+      statement: >-
+        In September 2024 Coalition frontbencher Paul Fletcher told the House the Coalition
+        would support the Crimes and Other Legislation Amendment (Omnibus No. 1) Bill 2024,
+        including the hors de combat definition change, on Attorney-General’s office advice that
+        it fixed a longstanding drafting error (use of “and” where “or” was intended) and “does
+        not change the intended effect or operation of the definition.”
+      kind: position
+      source:
+        url: https://www.paulfletcher.com.au/parliamentary-speeches/second-reading-speech-crimes-and-other-legislation-amendment-omnibus-no-1
+        publisher: Paul Fletcher MP
+        title: Second Reading Speech — Crimes and Other Legislation Amendment (Omnibus No. 1) Bill 2024
+        published: 2024-09-10
+        accessed: 2026-08-09
+    - id: lib-cash-war-crimes-scrutiny
+      statement: >-
+        In 2026 Shadow Attorney-General Michaelia Cash said the Coalition had supported the
+        amendment because the government assured it was “simply correcting a drafting error”
+        and “would not change the substance of the law,” but that it is “now apparent the
+        amendment has had a broader substantive effect than Labor represented, which is a
+        serious matter and one that warrants close scrutiny” (reported by the Sydney Morning Herald).
+      kind: position
+      source:
+        url: https://www.smh.com.au/politics/federal/tiny-tweaks-to-war-crimes-laws-put-troops-at-risk-decorated-veteran-warns-20260701-p60bo1.html
+        publisher: The Sydney Morning Herald
+        title: Tiny tweaks to war crimes laws put troops at risk, decorated veteran warns
+        published: 2026-07-01
         accessed: 2026-08-09

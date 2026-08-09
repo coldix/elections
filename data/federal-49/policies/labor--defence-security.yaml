@@ -1,7 +1,7 @@
 policy:
   party: labor
   issue: defence-security
-  headline: Incumbent AUKUS and Defence posture under Labor government
+  headline: Incumbent AUKUS posture; retrospective hors de combat war-crimes definition
   claims:
     - id: labor-aukus-incumbent
       statement: >-
@@ -14,4 +14,52 @@ policy:
         url: https://www.alp.org.au/our-plan/what-were-working-on/
         publisher: Australian Labor Party
         title: What we're working on
+        accessed: 2026-08-09
+    - id: labor-hors-de-combat-schedule-7
+      statement: >-
+        In 2024 the Albanese Government introduced, and Parliament enacted, Schedule 7 of the
+        Crimes and Other Legislation Amendment (Omnibus No. 1) Act 2024 (No. 93 of 2024), which
+        repealed and substituted the Criminal Code dictionary definition of “hors de combat”
+        (used in war-crime murder and related offences under Division 268). The substituted
+        definition treats a person as hors de combat if any of three conditions apply
+        (in the power of an adverse party; clear intention to surrender; or incapacitated by
+        wounds/sickness) and the person abstains from hostile acts and does not attempt to escape.
+      kind: position
+      source:
+        url: https://www.legislation.gov.au/C2024A00093/asmade/text
+        publisher: Federal Register of Legislation
+        title: Crimes and Other Legislation Amendment (Omnibus No. 1) Act 2024 — Schedule 7
+        published: 2024-10-24
+        accessed: 2026-08-09
+    - id: labor-hors-de-combat-retrospective
+      statement: >-
+        Schedule 7 Part 2 applies the substituted hors de combat definition to any conduct on or
+        after 26 September 2002 and to legal proceedings commenced on or after that day that had
+        not been finally determined when Part 2 commenced — a retrospective application spanning
+        the Afghanistan era. The Government’s public rationale is that the change corrected a
+        longstanding technical drafting error and restored Parliament’s original 2002 intent
+        consistent with international humanitarian law, not that it was enacted to enable any
+        named individual prosecution.
+      kind: position
+      source:
+        url: https://www.legislation.gov.au/C2024A00093/asmade/text
+        publisher: Federal Register of Legislation
+        title: Crimes and Other Legislation Amendment (Omnibus No. 1) Act 2024 — Schedule 7 Part 2 (application)
+        published: 2024-10-24
+        accessed: 2026-08-09
+    - id: labor-hors-de-combat-ag-framing
+      statement: >-
+        A spokesperson for Attorney-General Michelle Rowland said the amendment “corrected a
+        longstanding technical drafting error and restores the law to parliament’s original intent
+        in 2002,” and that “retrospective application ensures the law operates as originally
+        intended, avoiding inconsistencies or gaps in the treatment of serious international
+        crimes,” reflecting the government’s intent that Australia maintain complementary
+        jurisdiction with the International Criminal Court (reported by the Sydney Morning Herald,
+        July 2026).
+      kind: position
+      source:
+        url: https://www.smh.com.au/politics/federal/tiny-tweaks-to-war-crimes-laws-put-troops-at-risk-decorated-veteran-warns-20260701-p60bo1.html
+        publisher: The Sydney Morning Herald
+        title: Tiny tweaks to war crimes laws put troops at risk, decorated veteran warns
+        published: 2026-07-01
         accessed: 2026-08-09
