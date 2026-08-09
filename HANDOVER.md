@@ -163,7 +163,8 @@ Parliament:
 - Senate: composition + half-Senate term status (`up` / `continuing` / `territory`)
 - Parties index + per-party member lists
 - Federal primary-vote poll ledger + tracker average (`/polls`)
-- Policy matrix + issues (`/parties/matrix`, `/policies`) — early ledger, empty cells OK
+- Policy matrix + issues (`/parties/matrix`, `/policies`) — Liberal–Nationals combined
+  view default (Vic pattern); empty cells only where no sourced claim
 - Open data page + exports: `/data/federal-49/`
 
 House membership is from the **APH contact CSV** (primary); Farrer was filled

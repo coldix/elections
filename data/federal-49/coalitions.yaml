@@ -1,0 +1,60 @@
+# Coalition display relationships for the federal policy matrix.
+# Does not merge underlying liberal/nationals policy YAML — presentation only.
+# Methodology: docs/POLICY-METHODOLOGY.md
+coalitions:
+  - id: liberal-nationals
+    label: Liberal–Nationals Coalition
+    short_label: Coalition
+    parties: [liberal, nationals]
+    default_combined: true
+    issues:
+      - issue: cost-of-living
+        scope: mixed
+        shared_policy_id: coalition-federal-col
+        representative_party: liberal
+        note: >-
+          Shared Coalition living-standards framing; Nationals add regional energy supply,
+          supermarket competition and farmgate emphasis.
+      - issue: housing
+        scope: mixed
+        shared_policy_id: coalition-federal-housing
+        representative_party: liberal
+        note: >-
+          Shared Coalition plan links migration intake to homes built; Nationals emphasise
+          regional supply and cutting red tape in the regions.
+      - issue: immigration
+        scope: party_specific
+        note: >-
+          Coalition migration-to-housing commitments are recorded on the Liberal policy row;
+          no separate Nationals-only immigration record is in the ledger yet.
+      - issue: climate-energy
+        scope: mixed
+        shared_policy_id: coalition-federal-energy
+        representative_party: nationals
+        note: >-
+          Both partners emphasise reliable energy and power bills; Nationals lead the regional
+          reliable-supply framing in this ledger.
+      - issue: tax-budget
+        scope: mixed
+        shared_policy_id: coalition-federal-tax
+        representative_party: liberal
+        note: >-
+          Shared Coalition economic-management framing; Nationals stress reducing tax as a
+          regional cost-of-living measure.
+      - issue: health
+        scope: mixed
+        shared_policy_id: coalition-federal-health
+        representative_party: liberal
+        note: >-
+          Shared Coalition Medicare bulk-billing investment pledges; Nationals add regional
+          GP, specialist and nurse retention incentives.
+      - issue: public-media
+        scope: party_specific
+        note: >-
+          Only a Liberal accountability/efficiency framing is recorded so far; no Nationals-only
+          public-media claim is in the ledger.
+      - issue: defence-security
+        scope: party_specific
+        note: >-
+          Coalition AUKUS and ADF commitments are recorded on the Liberal policy row; no
+          separate Nationals defence record is in the ledger yet.
