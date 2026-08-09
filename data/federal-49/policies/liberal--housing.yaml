@@ -1,0 +1,35 @@
+policy:
+  party: liberal
+  issue: housing
+  headline: Link migration to home building; axe Labor housing taxes
+  claims:
+    - id: lib-migration-homes-link
+      statement: >-
+        The Coalition plan states it will link Australia’s migration intake to the number of
+        new homes built and overhaul skilled migration to prioritise skills businesses need.
+      kind: pledge
+      source:
+        url: https://www.liberal.org.au/our-plan
+        publisher: Liberal Party of Australia
+        title: Our Plan to Fix The Economy. Protect Our Way Of Life.
+        accessed: 2026-08-09
+    - id: lib-cap-migration-housing
+      statement: >-
+        The plan states the Coalition will cap immigration numbers based on available housing
+        to free up housing stock and restore the dream of home ownership.
+      kind: pledge
+      source:
+        url: https://www.liberal.org.au/our-plan
+        publisher: Liberal Party of Australia
+        title: Our Plan to Fix The Economy. Protect Our Way Of Life.
+        accessed: 2026-08-09
+    - id: lib-axe-housing-taxes
+      statement: >-
+        Coalition materials state the plan will axe Labor’s housing taxes as part of restoring
+        home ownership and protecting living standards.
+      kind: pledge
+      source:
+        url: https://www.liberal.org.au/our-plan
+        publisher: Liberal Party of Australia
+        title: Our Plan to Fix The Economy. Protect Our Way Of Life.
+        accessed: 2026-08-09

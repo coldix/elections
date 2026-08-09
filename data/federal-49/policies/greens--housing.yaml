@@ -1,15 +1,26 @@
 policy:
   party: greens
   issue: housing
-  headline: More public and affordable housing supply
+  headline: Housing as a right; renters and first-home buyers first
   claims:
-    - id: greens-housing-platform
+    - id: greens-housing-right
       statement: >-
-        The Australian Greens advocate large-scale public and affordable housing investment
-        and renters’ rights reforms as national housing priorities (party housing platform materials).
+        The Australian Greens state everyone deserves a secure home and a fair go, arguing
+        housing should be a right not a privilege, and that millions face soaring rents and
+        unaffordable homes while tax settings favour property investors.
       kind: position
       source:
-        url: https://greens.org.au/housing
+        url: https://greens.org.au/portfolios/housing
         publisher: Australian Greens
-        title: Housing — Australian Greens
+        title: Housing & Homelessness — Policy Portfolio
+        accessed: 2026-08-09
+    - id: greens-housing-campaign
+      statement: >-
+        The Greens describe a national campaign for renters, first-home buyers and people under
+        housing stress, focusing on building and renting homes at prices people can afford.
+      kind: position
+      source:
+        url: https://greens.org.au/portfolios/housing
+        publisher: Australian Greens
+        title: Housing & Homelessness — Policy Portfolio
         accessed: 2026-08-09

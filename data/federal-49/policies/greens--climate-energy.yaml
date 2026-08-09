@@ -1,16 +1,38 @@
 policy:
   party: greens
   issue: climate-energy
-  headline: Stronger climate action and renewable energy (national platform)
+  headline: Net-zero by 2035, ban new coal and gas, 100% renewables by 2030
   claims:
-    - id: greens-climate-platform
+    - id: greens-nz-2035
       statement: >-
-        The Australian Greens campaign on faster emissions reduction, ending new coal and gas
-        expansion and accelerating renewable energy and storage as core national priorities
-        (party climate and energy platform materials).
-      kind: position
+        The Australian Greens plan includes legislating a 75% emissions cut by 2030 and
+        net-zero by 2035, with a goal of 100% renewables by 2030, coordinated by a National
+        Climate Action Taskforce.
+      kind: pledge
       source:
         url: https://greens.org.au/platform/climate
         publisher: Australian Greens
-        title: Climate — Australian Greens
+        title: Climate Change & Energy — Policy Portfolio
+        accessed: 2026-08-09
+    - id: greens-ban-new-fossil
+      statement: >-
+        The Greens plan to ban all new coal, oil and gas projects, cancel exploration permits,
+        and block expansions using federal powers, while phasing out coal-fired power by 2030
+        with a national closure timeline managed by AEMO.
+      kind: pledge
+      source:
+        url: https://greens.org.au/platform/climate
+        publisher: Australian Greens
+        title: Climate Change & Energy — Policy Portfolio
+        accessed: 2026-08-09
+    - id: greens-carbon-price
+      statement: >-
+        The Greens propose reinstating a carbon price of $100 per tonne applied to large
+        polluters emitting at least 25,000 tonnes annually, and banning international offsets
+        for that scheme.
+      kind: pledge
+      source:
+        url: https://greens.org.au/platform/climate
+        publisher: Australian Greens
+        title: Climate Change & Energy — Policy Portfolio
         accessed: 2026-08-09

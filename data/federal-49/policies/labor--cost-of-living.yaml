@@ -1,0 +1,15 @@
+policy:
+  party: labor
+  issue: cost-of-living
+  headline: Fair-go housing and work opportunity framing
+  claims:
+    - id: labor-fair-go-home
+      statement: >-
+        Labor’s national plan materials emphasise a “fair go at your own home” and measures
+        intended to make home ownership possible for more Australians who work and save.
+      kind: position
+      source:
+        url: https://www.alp.org.au/our-plan/what-were-working-on/
+        publisher: Australian Labor Party
+        title: What we're working on
+        accessed: 2026-08-09

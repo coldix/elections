@@ -1,0 +1,25 @@
+policy:
+  party: greens
+  issue: immigration
+  headline: Expand humanitarian intake; fairer refugee and family systems
+  claims:
+    - id: greens-humanitarian-50k
+      statement: >-
+        The Greens plan expands Australia’s humanitarian intake to 50,000 places per year,
+        described as providing safety and a new start for people fleeing persecution and conflict.
+      kind: pledge
+      source:
+        url: https://greens.org.au/portfolios/immigration
+        publisher: Australian Greens
+        title: Immigration — Policy Portfolio
+        accessed: 2026-08-09
+    - id: greens-immigration-values
+      statement: >-
+        The Greens state they are committed to rebuilding an immigration system that welcomes
+        refugees with dignity, supports families with fairness, and fosters social inclusion.
+      kind: position
+      source:
+        url: https://greens.org.au/portfolios/immigration
+        publisher: Australian Greens
+        title: Immigration — Policy Portfolio
+        accessed: 2026-08-09

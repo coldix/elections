@@ -1,15 +1,25 @@
 policy:
   party: liberal
   issue: immigration
-  headline: Stronger borders and sustainable migration levels
+  headline: Cap migration to housing supply; prioritise skilled intake
   claims:
-    - id: lib-migration
+    - id: lib-link-migration-homes
       statement: >-
-        Federal Liberal messaging emphasises stronger border protection and a migration
-        program sized to housing and infrastructure capacity (party public materials).
-      kind: position
+        The Coalition plan will link Australia’s migration intake to the number of new homes
+        built and overhaul the skilled migration program toward skills businesses need.
+      kind: pledge
       source:
-        url: https://www.liberal.org.au/
+        url: https://www.liberal.org.au/our-plan
         publisher: Liberal Party of Australia
-        title: Liberal Party of Australia
+        title: Our Plan to Fix The Economy. Protect Our Way Of Life.
+        accessed: 2026-08-09
+    - id: lib-cap-on-housing
+      statement: >-
+        The plan states immigration numbers will be capped based on available housing to free
+        up housing stock.
+      kind: pledge
+      source:
+        url: https://www.liberal.org.au/our-plan
+        publisher: Liberal Party of Australia
+        title: Our Plan to Fix The Economy. Protect Our Way Of Life.
         accessed: 2026-08-09

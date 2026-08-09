@@ -1,15 +1,15 @@
 policy:
   party: liberal
   issue: tax-budget
-  headline: Coalition fiscal and cost-of-living framing
+  headline: Economic management and housing-tax changes in Coalition plan
   claims:
-    - id: lib-col-economy
+    - id: lib-plan-economy
       statement: >-
-        The federal Liberal Party campaigns on reducing cost-of-living pressure through
-        economic management, productivity and budget discipline (party public materials).
+        The federal Liberal “Our Plan” platform frames economic repair, cost-of-living relief
+        and axing Labor housing taxes as core Coalition priorities for government.
       kind: position
       source:
-        url: https://www.liberal.org.au/
+        url: https://www.liberal.org.au/our-plan
         publisher: Liberal Party of Australia
-        title: Liberal Party of Australia
+        title: Our Plan to Fix The Economy. Protect Our Way Of Life.
         accessed: 2026-08-09

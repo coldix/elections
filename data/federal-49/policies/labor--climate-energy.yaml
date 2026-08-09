@@ -1,0 +1,17 @@
+policy:
+  party: labor
+  issue: climate-energy
+  headline: Incumbent government climate and energy settings
+  claims:
+    - id: labor-incumbent-energy
+      statement: >-
+        As the incumbent Commonwealth government, Labor continues legislated national emissions
+        settings and renewable-energy investment programs under its existing climate and energy
+        policy suite (party plan materials). Specific new 49th-Parliament pledges should be
+        added as parties publish them.
+      kind: position
+      source:
+        url: https://www.alp.org.au/our-plan/what-were-working-on/
+        publisher: Australian Labor Party
+        title: What we're working on
+        accessed: 2026-08-09
