@@ -11,7 +11,7 @@ const HOST = "electiontracker.au";
 const KEY_PATH = join(__dirname, "indexnow.key");
 
 // Keep aligned with sitemap main hubs + atlases in site/astro.config.mjs
-// and the GSC priority list in docs/DISCOVERY.md.
+// and the GSC priority list in docs/discovery.md.
 // Prefer *canonical* election-scoped HTML paths (legacy short URLs 301).
 const VIC = `https://${HOST}/elections/vic/2026`;
 const FED = `https://${HOST}/elections/federal/49`;

@@ -11,7 +11,7 @@ authorise forecasts, seat models, or how-to-vote advice.
 `data/vic2026/polls/`, are validated on every build, exported as
 `polls.json` / `poll-average.json`, and shown at
 [electiontracker.au/polls](https://electiontracker.au/polls). Candidate
-coverage remains the product wedge; see [SCOPE.md](SCOPE.md).
+coverage remains the product wedge; see [scope.md](scope.md).
 
 **Companion.** [polls-inventory.md](polls-inventory.md) — discovery census.
 Inventory rows may lag the ledger; the YAML files and exports are the
@@ -24,7 +24,7 @@ source of published figures.
 Prefer **primary or pollster-published tables** and named media that report full
 fieldwork and primaries. Wikipedia poll tables are a **second-class fallback**
 for discovery only — every ledger row must still cite a primary or quality
-secondary source (see [METHODOLOGY.md](METHODOLOGY.md) source hierarchy).
+secondary source (see [methodology.md](methodology.md) source hierarchy).
 
 ## Purpose
 
@@ -69,13 +69,13 @@ It is only a primary-vote grouping for readability.
 
 ## Scope
 
-[SCOPE.md](SCOPE.md) includes the poll ledger and average as a secondary
+[scope.md](scope.md) includes the poll ledger and average as a secondary
 module. Still forbidden without a new decision: forecasts, swing models,
 MRP, seat models, commentary, and any claim that the average “will” or
 “should” be the election result.
 
 Candidate listing order must never use polling
-([METHODOLOGY.md](METHODOLOGY.md) — ordering rule).
+([methodology.md](methodology.md) — ordering rule).
 
 Implementation: `scripts/lib/polls.mjs` (load + average), validation in
 `scripts/validate.mjs`, exports in `scripts/export.mjs`, UI at `/polls`.
@@ -133,7 +133,7 @@ poll may enter the average only when all of the following hold:
    `eligible_for_average: true`.
 4. **Maintainer decision** recorded in the poll file and, for non-obvious
    cases, a one-line note in [polls-inventory.md](polls-inventory.md) or
-   [CHANGELOG.md](CHANGELOG.md).
+   [changelog.md](changelog.md).
 
 Exceptions are **per poll record**, not a standing waiver for the
 commissioner. The next union- or party-funded release starts excluded again.
@@ -431,7 +431,7 @@ Corrections: new commit; do not silently rewrite a wrong topline.
 
 ## Related documents
 
-- [SCOPE.md](SCOPE.md) — product boundary
-- [METHODOLOGY.md](METHODOLOGY.md) — candidate statuses and neutrality
-- [DECISIONS.md](DECISIONS.md) — ADR-10 poll average principles
+- [scope.md](scope.md) — product boundary
+- [methodology.md](methodology.md) — candidate statuses and neutrality
+- [decisions.md](decisions.md) — ADR-10 poll average principles
 - [polls-inventory.md](polls-inventory.md) — discovery census

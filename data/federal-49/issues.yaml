@@ -1,5 +1,5 @@
 # Federal issue taxonomy for the 49th Parliament contest.
-# Methodology: docs/POLICY-METHODOLOGY.md
+# Methodology: docs/policy-methodology.md
 issues:
   - slug: cost-of-living
     name: Cost of Living

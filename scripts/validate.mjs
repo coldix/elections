@@ -575,7 +575,7 @@ for (const election of readdirSync(DATA_DIR)) {
     if (!f.startsWith(`${c.contest}--`)) fail(file, `filename must start with '${c.contest}--'`);
   }
 
-  // polls (optional directory) — see docs/POLL-METHODOLOGY.md
+  // polls (optional directory) — see docs/poll-methodology.md
   const pollCount = validatePolls(election, dir);
 
   const { issueCount, policyCount } = validateIssuesPolicies(election, dir, load, partySlugs);

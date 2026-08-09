@@ -105,9 +105,9 @@ candidate trackers:
 - **Open exports.** JSON and CSV under `/data/<election-id>/` (e.g. `vic2026`,
   `nsw2027`, `federal-49`) without an API key.
 
-Full rules: [docs/METHODOLOGY.md](docs/METHODOLOGY.md),
-[docs/POLL-METHODOLOGY.md](docs/POLL-METHODOLOGY.md) and
-[docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md).
+Full rules: [docs/methodology.md](docs/methodology.md),
+[docs/poll-methodology.md](docs/poll-methodology.md) and
+[docs/policy-methodology.md](docs/policy-methodology.md).
 
 ## Repository layout
 
@@ -139,7 +139,7 @@ docs/                              product, methodology and operations docs
 .github/                            issue templates and CI workflows
 ```
 
-See [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md) for the annotated map.
+See [docs/repo-layout.md](docs/repo-layout.md) for the annotated map.
 
 ## Running locally
 
@@ -171,16 +171,16 @@ Start with [docs/README.md](docs/README.md). Key documents:
 
 | Document | Purpose |
 |---|---|
-| [docs/SCOPE.md](docs/SCOPE.md) | Product boundaries and success criteria |
-| [docs/METHODOLOGY.md](docs/METHODOLOGY.md) | Candidate statuses, sourcing and neutrality |
-| [docs/POLL-METHODOLOGY.md](docs/POLL-METHODOLOGY.md) | Poll inclusion and weighted average |
-| [docs/POLICY-METHODOLOGY.md](docs/POLICY-METHODOLOGY.md) | Policy comparison rules |
-| [docs/OPS.md](docs/OPS.md) | Editorial and maintenance workflow |
-| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Cloudflare build and deployment |
-| [docs/DECISIONS.md](docs/DECISIONS.md) | Architecture decisions |
-| [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md) | Annotated repository structure |
-| [docs/PEOPLE-PAGES-PROPOSAL.md](docs/PEOPLE-PAGES-PROPOSAL.md) | Unapproved future `/people` concept |
-| [HANDOVER.md](HANDOVER.md) | Current operational handover |
+| [docs/scope.md](docs/scope.md) | Product boundaries and success criteria |
+| [docs/methodology.md](docs/methodology.md) | Candidate statuses, sourcing and neutrality |
+| [docs/poll-methodology.md](docs/poll-methodology.md) | Poll inclusion and weighted average |
+| [docs/policy-methodology.md](docs/policy-methodology.md) | Policy comparison rules |
+| [docs/ops.md](docs/ops.md) | Editorial and maintenance workflow |
+| [docs/deployment.md](docs/deployment.md) | Cloudflare build and deployment |
+| [docs/decisions.md](docs/decisions.md) | Architecture decisions |
+| [docs/repo-layout.md](docs/repo-layout.md) | Annotated repository structure |
+| [docs/people-pages-proposal.md](docs/people-pages-proposal.md) | Unapproved future `/people` concept |
+| [handover.md](handover.md) | Current operational handover |
 
 The hygiene checker requires every Markdown document to be reachable from this
 README through the documentation index. Broken relative links and orphaned docs
@@ -195,7 +195,7 @@ There are no `/people` pages at present. Candidate cards may link to:
 3. Wikipedia only when no better official profile is available.
 
 The possible future people layer remains a proposal only. See
-[docs/PEOPLE-PAGES-PROPOSAL.md](docs/PEOPLE-PAGES-PROPOSAL.md).
+[docs/people-pages-proposal.md](docs/people-pages-proposal.md).
 
 ## Deployment
 
@@ -203,8 +203,8 @@ Pushing valid changes to `main` triggers the Cloudflare Workers build. The site
 is static and assets-only: there is no runtime database or server process.
 Permanent redirects preserve the former root-level Victorian URLs.
 
-See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) and
-[docs/DECISIONS.md](docs/DECISIONS.md) before changing infrastructure.
+See [docs/deployment.md](docs/deployment.md) and
+[docs/decisions.md](docs/decisions.md) before changing infrastructure.
 
 ## Contributing and corrections
 
@@ -222,4 +222,4 @@ new commits; history is not rewritten.
 The national shell, upcoming-election calendar, future-election foundation
 pages and the full Victoria 2026 tracker are live. There are no open pull
 requests at this housekeeping checkpoint. Current gaps and next actions are in
-[HANDOVER.md](HANDOVER.md) and [docs/SCOPE.md](docs/SCOPE.md).
+[handover.md](handover.md) and [docs/scope.md](docs/scope.md).

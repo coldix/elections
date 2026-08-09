@@ -82,7 +82,7 @@ The `caveat` field in coverage.json qualifies every party-coverage figure.
 
 ## Optional methodology deep links (GitHub)
 
-- Candidate methodology: https://github.com/coldix/elections/blob/main/docs/METHODOLOGY.md
-- Poll methodology: https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md
-- Policy methodology: https://github.com/coldix/elections/blob/main/docs/POLICY-METHODOLOGY.md
-- Scope (what we will not publish): https://github.com/coldix/elections/blob/main/docs/SCOPE.md
+- Candidate methodology: https://github.com/coldix/elections/blob/main/docs/methodology.md
+- Poll methodology: https://github.com/coldix/elections/blob/main/docs/poll-methodology.md
+- Policy methodology: https://github.com/coldix/elections/blob/main/docs/policy-methodology.md
+- Scope (what we will not publish): https://github.com/coldix/elections/blob/main/docs/scope.md

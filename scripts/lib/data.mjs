@@ -170,7 +170,7 @@ export function loadElection(id) {
  * This is a record of the sitting parliament, NOT a 2026 candidate count and
  * NOT a 2022 election result. Sorting listings by this figure is defensible
  * because it is an objective, externally verifiable fact rather than an
- * editorial ranking — see docs/METHODOLOGY.md#ordering.
+ * editorial ranking — see docs/methodology.md#ordering.
  */
 export function representationFor(data) {
   const map = new Map();
@@ -200,7 +200,7 @@ export function representationFor(data) {
  * Ordering: by seats currently held in the Parliament (both houses), largest
  * first, then alphabetically. That is an objective, externally verifiable fact
  * about the sitting parliament — never a ranking by coverage, campaign
- * prominence or editorial preference. See docs/METHODOLOGY.md#ordering.
+ * prominence or editorial preference. See docs/methodology.md#ordering.
  */
 export function coverageFor(data) {
   const totalDistricts = data.districts.length;

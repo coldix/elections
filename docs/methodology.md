@@ -113,7 +113,7 @@ guessed.
 
 There are currently no `/people` routes and no separate people dataset. A
 possible future design is recorded in
-[PEOPLE-PAGES-PROPOSAL.md](PEOPLE-PAGES-PROPOSAL.md), but it remains a proposal
+[people-pages-proposal.md](people-pages-proposal.md), but it remains a proposal
 only. No route, schema or public profile page should be created until the scope,
 minimum evidence and privacy rules are approved.
 

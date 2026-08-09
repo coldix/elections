@@ -1,6 +1,6 @@
 # Coalition display relationships for the federal policy matrix.
 # Does not merge underlying liberal/nationals policy YAML — presentation only.
-# Methodology: docs/POLICY-METHODOLOGY.md
+# Methodology: docs/policy-methodology.md
 #
 # Federal display rule: if Nationals have no separate sourced record for an issue,
 # the combined matrix shows a single Shared Coalition cell from the Liberal (or

@@ -26,7 +26,7 @@ Data layer (this repo):
 - [x] Key dates with sources
 - [x] Parties file (VEC register + unregistered groups with announced candidates)
 - [x] Current incumbents (Assembly + Council sitting members)
-- [x] Candidate files as announcements are verified, statuses per METHODOLOGY.md
+- [x] Candidate files as announcements are verified, statuses per methodology.md
   (coverage progressive — never “finished” until nominations close)
 - [x] Schema validation in CI; nothing merges that doesn't validate
 - [x] JSON + CSV export artefacts (`site/public/data/`)
@@ -73,7 +73,7 @@ ledger. The policy matrix is a secondary module:
 - Party policy profiles at `/parties/policies` and `/parties/[slug]/policies`
 - Key differences at `/policies/key-differences`
 - YAML ledger + JSON/CSV export (`issues.json`, `policies.json`, `policies.csv`, `coalitions.json`)
-- Rules: [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md)
+- Rules: [policy-methodology.md](policy-methodology.md)
 
 **Still forbidden:** star ratings, editorial scorecards, how-to-vote advice,
 and treating empty cells as a ranking.
@@ -88,7 +88,7 @@ kill/success criteria on candidate coverage.
 
 - Sourced public statewide primary-vote polls under `data/<election>/polls/`
 - Transparent **primary-vote average** with uncertainty bands
-  ([POLL-METHODOLOGY.md](POLL-METHODOLOGY.md), site `/polls`, exports
+  ([poll-methodology.md](poll-methodology.md), site `/polls`, exports
   `polls.json` / `poll-average.json`)
 - Discovery inventory: [polls-inventory.md](polls-inventory.md)
 

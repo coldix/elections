@@ -86,7 +86,7 @@ const schema = [
           text:
             `JSON and CSV exports: ${SITE.url}/data/${electionId}/polls.json and ` +
             `${SITE.url}/data/${electionId}/poll-average.json. Methodology: ` +
-            "https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md",
+            "https://github.com/coldix/elections/blob/main/docs/poll-methodology.md",
         },
       },
       {
@@ -97,7 +97,7 @@ const schema = [
           text:
             "Eligible public statewide Victorian Assembly polls with published fieldwork, sample size, " +
             "mode and primaries. Party/union/advocacy polls are excluded by default. " +
-            "Rules are in POLL-METHODOLOGY.md in the public repository.",
+            "Rules are in poll-methodology.md in the public repository.",
         },
       },
     ],
@@ -161,7 +161,7 @@ const schema = [
           </div>
           <p class="muted">
             Weights combine effective sample size and exponential time decay. Full formula:
-            <a href="https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md">
+            <a href="https://github.com/coldix/elections/blob/main/docs/poll-methodology.md">
               poll methodology
             </a>
             · machine-readable
@@ -267,8 +267,8 @@ const schema = [
     </ul>
     <p>
       Full rules and maths:
-      <a href="https://github.com/coldix/elections/blob/main/docs/POLL-METHODOLOGY.md">
-        docs/POLL-METHODOLOGY.md
+      <a href="https://github.com/coldix/elections/blob/main/docs/poll-methodology.md">
+        docs/poll-methodology.md
       </a>
       · downloads:
       <a href={`/data/${electionId}/polls.json`}>polls.json</a>,

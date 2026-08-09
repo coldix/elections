@@ -11,8 +11,8 @@ static public product.
 ```text
 elections/
 ├── README.md                    project hub
-├── HANDOVER.md                  current operational handover
-├── HANDOVER-COALITION-VIEW.md   specialised coalition-view notes
+├── handover.md                  current operational handover
+├── handover-coalition-view.md   specialised coalition-view notes
 ├── LICENSE                      MIT licence for code
 ├── package.json                 scripts and dependencies
 ├── package-lock.json
@@ -169,18 +169,18 @@ root-level addresses are preserved by `site/public/_redirects` only.
 ```text
 docs/
 ├── README.md                    documentation index
-├── REPO-LAYOUT.md               this file
-├── SCOPE.md
-├── METHODOLOGY.md
-├── POLICY-METHODOLOGY.md
-├── POLL-METHODOLOGY.md
-├── OPS.md
-├── DEPLOYMENT.md
-├── DECISIONS.md
-├── CHANGELOG.md
-├── DISCOVERY.md
-├── SOCIAL.md
-├── PEOPLE-PAGES-PROPOSAL.md     unapproved future concept
+├── repo-layout.md               this file
+├── scope.md
+├── methodology.md
+├── policy-methodology.md
+├── poll-methodology.md
+├── ops.md
+├── deployment.md
+├── decisions.md
+├── changelog.md
+├── discovery.md
+├── social.md
+├── people-pages-proposal.md     unapproved future concept
 ├── polls-inventory.md
 ├── leads/                       working lead notes
 └── *-gap.md / audit notes       point-in-time research records
@@ -216,6 +216,6 @@ rebuild.
 
 - [../README.md](../README.md)
 - [README.md](README.md)
-- [DEPLOYMENT.md](DEPLOYMENT.md)
-- [DECISIONS.md](DECISIONS.md)
-- [OPS.md](OPS.md)
+- [deployment.md](deployment.md)
+- [decisions.md](decisions.md)
+- [ops.md](ops.md)

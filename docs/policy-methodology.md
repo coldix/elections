@@ -8,7 +8,7 @@ Rules for recording party policy positions and the jurisdiction guide on
 where mechanical checks are possible.
 
 This is a **secondary product**. The primary wedge remains the candidate
-coverage ledger (see [SCOPE.md](SCOPE.md)).
+coverage ledger (see [scope.md](scope.md)).
 
 ## What this is
 
@@ -97,7 +97,7 @@ least one.
 
 ## Source quality
 
-Same hierarchy as [METHODOLOGY.md](METHODOLOGY.md): **primary sources first**
+Same hierarchy as [methodology.md](methodology.md): **primary sources first**
 (party sites, PBO, Hansard, government publications). Named media OK when they
 quote or publish the claim. **Wikipedia is a second-class fallback** for
 discovery only — do not leave a policy claim sourced only to a wiki page when a
@@ -204,6 +204,6 @@ Licence: CC BY 4.0 (see `data/LICENSE`).
 
 ## Related docs
 
-- [SCOPE.md](SCOPE.md) — product boundaries
-- [METHODOLOGY.md](METHODOLOGY.md) — candidate ledger rules
-- [DECISIONS.md](DECISIONS.md) — ADR for this secondary product
+- [scope.md](scope.md) — product boundaries
+- [methodology.md](methodology.md) — candidate ledger rules
+- [decisions.md](decisions.md) — ADR for this secondary product

@@ -111,7 +111,7 @@ for (const id of listElections()) {
     write("polls.json", {
       generated: new Date().toISOString(),
       caveat: POLL_CAVEAT,
-      methodology: "docs/POLL-METHODOLOGY.md",
+      methodology: "docs/poll-methodology.md",
       jurisdiction: "federal",
       population: "australian-electors",
       polls: polls.map(({ file, ...p }) => p),
@@ -152,19 +152,19 @@ for (const id of listElections()) {
     const matrix = matrixFor(id);
     write("issues.json", {
       generated: new Date().toISOString(),
-      methodology: "docs/POLICY-METHODOLOGY.md",
+      methodology: "docs/policy-methodology.md",
       issues: issues.map(({ jurisdiction_label, ...rest }) => rest),
     });
     write("coalitions.json", {
       generated: new Date().toISOString(),
-      methodology: "docs/POLICY-METHODOLOGY.md",
+      methodology: "docs/policy-methodology.md",
       note: "Display relationships only. Registered parties and their policy records remain separate.",
       coalitions,
     });
     write("policies.json", {
       generated: new Date().toISOString(),
       caveat: POLICY_CAVEAT,
-      methodology: "docs/POLICY-METHODOLOGY.md",
+      methodology: "docs/policy-methodology.md",
       matrix_parties: matrix.parties,
       default_view: matrix.default_view,
       combined_matrix_parties: matrix.combined?.parties ?? [],
@@ -324,7 +324,7 @@ for (const id of listElections()) {
   write("polls.json", {
     generated: new Date().toISOString(),
     caveat: POLL_CAVEAT,
-    methodology: "docs/POLL-METHODOLOGY.md",
+    methodology: "docs/poll-methodology.md",
     polls: polls.map(({ file, ...p }) => p),
   });
   write("poll-average.json", pollAverage);
@@ -364,19 +364,19 @@ for (const id of listElections()) {
   const matrix = matrixFor(id);
   write("issues.json", {
     generated: new Date().toISOString(),
-    methodology: "docs/POLICY-METHODOLOGY.md",
+    methodology: "docs/policy-methodology.md",
     issues: issues.map(({ jurisdiction_label, ...rest }) => rest),
   });
   write("coalitions.json", {
     generated: new Date().toISOString(),
-    methodology: "docs/POLICY-METHODOLOGY.md",
+    methodology: "docs/policy-methodology.md",
     note: "Display relationships only. Registered parties and their policy records remain separate.",
     coalitions,
   });
   write("policies.json", {
     generated: new Date().toISOString(),
     caveat: POLICY_CAVEAT,
-    methodology: "docs/POLICY-METHODOLOGY.md",
+    methodology: "docs/policy-methodology.md",
     matrix_parties: matrix.parties,
     default_view: matrix.default_view,
     combined_matrix_parties: matrix.combined?.parties ?? [],

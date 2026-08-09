@@ -11,47 +11,47 @@ broken.
 
 | Area | Live URLs | Rules / operations |
 |---|---|---|
-| National home | `/` | [SCOPE.md](SCOPE.md) |
-| Upcoming elections | `/elections` | [METHODOLOGY.md](METHODOLOGY.md) |
-| Victoria 2026 (full) | `/elections/vic/2026` | [METHODOLOGY.md](METHODOLOGY.md) |
-| Assembly and districts | `/elections/vic/2026/assembly`, `/elections/vic/2026/districts/*` | [METHODOLOGY.md](METHODOLOGY.md) |
-| Council and regions | `/elections/vic/2026/council`, `/elections/vic/2026/regions/*` | [METHODOLOGY.md](METHODOLOGY.md) |
-| Parties and policies | `/elections/vic/2026/parties/*`, `/elections/vic/2026/policies/*` | [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md) |
-| Polls (Vic) | `/elections/vic/2026/polls` | [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) |
-| NSW 2027 (sitting members) | `/elections/nsw/2027`, `/data/nsw2027/*` | [ROUTES.md](ROUTES.md), [../HANDOVER.md](../HANDOVER.md) |
-| Federal 49 (sitting + polls + policies) | `/elections/federal/49`, `/data/federal-49/*` | [ROUTES.md](ROUTES.md), ADR-13 |
-| Outline foundations | ACT/QLD/NT/WA/SA/Tas calendar paths | [METHODOLOGY.md](METHODOLOGY.md) |
+| National home | `/` | [scope.md](scope.md) |
+| Upcoming elections | `/elections` | [methodology.md](methodology.md) |
+| Victoria 2026 (full) | `/elections/vic/2026` | [methodology.md](methodology.md) |
+| Assembly and districts | `/elections/vic/2026/assembly`, `/elections/vic/2026/districts/*` | [methodology.md](methodology.md) |
+| Council and regions | `/elections/vic/2026/council`, `/elections/vic/2026/regions/*` | [methodology.md](methodology.md) |
+| Parties and policies | `/elections/vic/2026/parties/*`, `/elections/vic/2026/policies/*` | [policy-methodology.md](policy-methodology.md) |
+| Polls (Vic) | `/elections/vic/2026/polls` | [poll-methodology.md](poll-methodology.md) |
+| NSW 2027 (sitting members) | `/elections/nsw/2027`, `/data/nsw2027/*` | [routes.md](routes.md), [../handover.md](../handover.md) |
+| Federal 49 (sitting + polls + policies) | `/elections/federal/49`, `/data/federal-49/*` | [routes.md](routes.md), ADR-13 |
+| Outline foundations | ACT/QLD/NT/WA/SA/Tas calendar paths | [methodology.md](methodology.md) |
 | Open data | `/data/<election-id>/` | [../README.md](../README.md) |
-| Operations and deployment | — | [OPS.md](OPS.md), [DEPLOYMENT.md](DEPLOYMENT.md) |
-| Repository structure | — | [REPO-LAYOUT.md](REPO-LAYOUT.md) |
+| Operations and deployment | — | [ops.md](ops.md), [deployment.md](deployment.md) |
+| Repository structure | — | [repo-layout.md](repo-layout.md) |
 
 The former root-level Victorian routes are retained only as permanent redirects.
 New documentation and internal links must use the scoped paths.
 
 ## Core product documents
 
-- [SCOPE.md](SCOPE.md) — product boundaries, MVP and kill criteria
-- [METHODOLOGY.md](METHODOLOGY.md) — candidacy statuses, evidence, dates, links and neutrality
-- [POLICY-METHODOLOGY.md](POLICY-METHODOLOGY.md) — policy ledger and comparison rules
-- [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) — poll inclusion and weighted average
-- [DECISIONS.md](DECISIONS.md) — architecture decision records
-- [CHANGELOG.md](CHANGELOG.md) — product change history
+- [scope.md](scope.md) — product boundaries, MVP and kill criteria
+- [methodology.md](methodology.md) — candidacy statuses, evidence, dates, links and neutrality
+- [policy-methodology.md](policy-methodology.md) — policy ledger and comparison rules
+- [poll-methodology.md](poll-methodology.md) — poll inclusion and weighted average
+- [decisions.md](decisions.md) — architecture decision records
+- [changelog.md](changelog.md) — product change history
 
 ## Operations and discovery
 
-- [OPS.md](OPS.md) — maintenance cadence and human/agent responsibilities
-- [DEPLOYMENT.md](DEPLOYMENT.md) — Cloudflare Workers build and DNS
-- [ROUTES.md](ROUTES.md) — canonical national/election route architecture and redirects
-- [DISCOVERY.md](DISCOVERY.md) — sitemap, search discovery and IndexNow
-- [SOCIAL.md](SOCIAL.md) — social/video implementation notes
-- [REPO-LAYOUT.md](REPO-LAYOUT.md) — annotated repository structure
+- [ops.md](ops.md) — maintenance cadence and human/agent responsibilities
+- [deployment.md](deployment.md) — Cloudflare Workers build and DNS
+- [routes.md](routes.md) — canonical national/election route architecture and redirects
+- [discovery.md](discovery.md) — sitemap, search discovery and IndexNow
+- [social.md](social.md) — social/video implementation notes
+- [repo-layout.md](repo-layout.md) — annotated repository structure
 - [polls-inventory.md](polls-inventory.md) — polling-source discovery inventory
 
 ## Proposals and specialised handovers
 
-- [PEOPLE-PAGES-PROPOSAL.md](PEOPLE-PAGES-PROPOSAL.md) — proposal only; no `/people` routes exist
-- [../HANDOVER.md](../HANDOVER.md) — current operational handover
-- [../HANDOVER-COALITION-VIEW.md](../HANDOVER-COALITION-VIEW.md) — coalition policy-view implementation notes
+- [people-pages-proposal.md](people-pages-proposal.md) — proposal only; no `/people` routes exist
+- [../handover.md](../handover.md) — current operational handover
+- [../handover-coalition-view.md](../handover-coalition-view.md) — coalition policy-view implementation notes
 
 ## Point-in-time gap, audit and change notes
 
@@ -62,9 +62,9 @@ rules remain in the methodology documents above.
 - [labor-gap.md](labor-gap.md)
 - [council-gap.md](council-gap.md)
 - [incumbent-gap.md](incumbent-gap.md)
-- [LABOR-POLICY-AUDIT-2026-08-02.md](LABOR-POLICY-AUDIT-2026-08-02.md)
-- [GREENS-POLICY-AUDIT-2026-08-02.md](GREENS-POLICY-AUDIT-2026-08-02.md)
-- [CHANGELOG-LIBERAL-NATIONALS-FIREARMS.md](CHANGELOG-LIBERAL-NATIONALS-FIREARMS.md)
+- [labor-policy-audit-2026-08-02.md](labor-policy-audit-2026-08-02.md)
+- [greens-policy-audit-2026-08-02.md](greens-policy-audit-2026-08-02.md)
+- [changelog-liberal-nationals-firearms.md](changelog-liberal-nationals-firearms.md)
 
 Additional lead notes are linked from the relevant working document. If a note
 is no longer useful, delete it rather than leaving an unlinked file.

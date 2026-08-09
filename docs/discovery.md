@@ -203,8 +203,8 @@ product measurement. Disclosed on `/privacy`. See DECISIONS ADR-12.
 
 ## Related
 
-- [CHANGELOG.md](CHANGELOG.md) — product + discovery work since the polls module  
-- [OPS.md](OPS.md) — data monitoring cadence (not a site cron)  
-- [SOCIAL.md](SOCIAL.md) — social brand split (Facebook + YouTube live)  
-- [DEPLOYMENT.md](DEPLOYMENT.md) — Cloudflare project settings  
-- [POLL-METHODOLOGY.md](POLL-METHODOLOGY.md) — poll average rules for AI quoters  
+- [changelog.md](changelog.md) — product + discovery work since the polls module  
+- [ops.md](ops.md) — data monitoring cadence (not a site cron)  
+- [social.md](social.md) — social brand split (Facebook + YouTube live)  
+- [deployment.md](deployment.md) — Cloudflare project settings  
+- [poll-methodology.md](poll-methodology.md) — poll average rules for AI quoters  

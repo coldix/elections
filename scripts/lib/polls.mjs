@@ -1,5 +1,5 @@
 // Statewide poll ledger + tracker average.
-// Rules: docs/POLL-METHODOLOGY.md. Used by export and the /polls page.
+// Rules: docs/poll-methodology.md. Used by export and the /polls page.
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -242,7 +242,7 @@ export function computePollAverage(polls, options = {}) {
   const selection = selectForAverage(polls, options.asOf);
   const base = {
     generated: new Date().toISOString(),
-    methodology: "docs/POLL-METHODOLOGY.md",
+    methodology: "docs/poll-methodology.md",
     caveat: POLL_CAVEAT,
     parameters: {
       design_effect_default: DEFAULT_DEFF,
