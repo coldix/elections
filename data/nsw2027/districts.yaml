@@ -1,0 +1,379 @@
+source:
+  url: https://www.parliament.nsw.gov.au/_media/documents/members-and-electorates/downloadable-lists/la-members-July-2026.xlsx
+  publisher: Parliament of New South Wales
+  title: Members of the Legislative Assembly (spreadsheet, July 2026)
+  accessed: "2026-08-09"
+  note: District list taken from current LA membership (93 single-member electorates).
+districts:
+- slug: albury
+  name: Albury
+  incumbent: Justin Clancy
+  incumbent_party: liberal
+- slug: auburn
+  name: Auburn
+  incumbent: Lynda Voltz
+  incumbent_party: labor
+- slug: badgerys-creek
+  name: Badgerys Creek
+  incumbent: Tanya Davies
+  incumbent_party: liberal
+- slug: ballina
+  name: Ballina
+  incumbent: Tamara Smith
+  incumbent_party: greens
+- slug: balmain
+  name: Balmain
+  incumbent: Kobi Shetty
+  incumbent_party: greens
+- slug: bankstown
+  name: Bankstown
+  incumbent: Jihad Dib
+  incumbent_party: labor
+- slug: barwon
+  name: Barwon
+  incumbent: Roy Butler
+  incumbent_party: independent
+- slug: bathurst
+  name: Bathurst
+  incumbent: Paul Toole
+  incumbent_party: nationals
+- slug: bega
+  name: Bega
+  incumbent: Michael Holland
+  incumbent_party: labor
+- slug: blacktown
+  name: Blacktown
+  incumbent: Stephen Bali
+  incumbent_party: labor
+- slug: blue-mountains
+  name: Blue Mountains
+  incumbent: Trish Doyle
+  incumbent_party: labor
+- slug: cabramatta
+  name: Cabramatta
+  incumbent: Tri Vo
+  incumbent_party: labor
+- slug: camden
+  name: Camden
+  incumbent: Sally Quinnell
+  incumbent_party: labor
+- slug: campbelltown
+  name: Campbelltown
+  incumbent: Greg Warren
+  incumbent_party: labor
+- slug: canterbury
+  name: Canterbury
+  incumbent: Sophie Cotsis
+  incumbent_party: labor
+- slug: castle-hill
+  name: Castle Hill
+  incumbent: Mark Hodges
+  incumbent_party: liberal
+- slug: cessnock
+  name: Cessnock
+  incumbent: Clayton Barr
+  incumbent_party: labor
+- slug: charlestown
+  name: Charlestown
+  incumbent: Jodie Harrison
+  incumbent_party: labor
+- slug: clarence
+  name: Clarence
+  incumbent: Richie Williamson
+  incumbent_party: nationals
+- slug: coffs-harbour
+  name: Coffs Harbour
+  incumbent: Gurmesh Singh
+  incumbent_party: nationals
+- slug: coogee
+  name: Coogee
+  incumbent: "Marjorie O'Neill"
+  incumbent_party: labor
+- slug: cootamundra
+  name: Cootamundra
+  incumbent: Steph Cooke
+  incumbent_party: nationals
+- slug: cronulla
+  name: Cronulla
+  incumbent: Mark Speakman
+  incumbent_party: liberal
+- slug: davidson
+  name: Davidson
+  incumbent: Matt Cross
+  incumbent_party: liberal
+- slug: drummoyne
+  name: Drummoyne
+  incumbent: Stephanie Di Pasqua
+  incumbent_party: liberal
+- slug: dubbo
+  name: Dubbo
+  incumbent: Dugald Saunders
+  incumbent_party: nationals
+- slug: east-hills
+  name: East Hills
+  incumbent: Kylie Wilkinson
+  incumbent_party: labor
+- slug: epping
+  name: Epping
+  incumbent: Monica Tudehope
+  incumbent_party: liberal
+- slug: fairfield
+  name: Fairfield
+  incumbent: David Saliba
+  incumbent_party: labor
+- slug: gosford
+  name: Gosford
+  incumbent: Liesl Tesch
+  incumbent_party: labor
+- slug: goulburn
+  name: Goulburn
+  incumbent: Wendy Tuckerman
+  incumbent_party: liberal
+- slug: granville
+  name: Granville
+  incumbent: Julia Finn
+  incumbent_party: labor
+- slug: hawkesbury
+  name: Hawkesbury
+  incumbent: Robyn Preston
+  incumbent_party: liberal
+- slug: heathcote
+  name: Heathcote
+  incumbent: Maryanne Stuart
+  incumbent_party: labor
+- slug: heffron
+  name: Heffron
+  incumbent: Ron Hoenig
+  incumbent_party: labor
+- slug: holsworthy
+  name: Holsworthy
+  incumbent: Tina Ayyad
+  incumbent_party: liberal
+- slug: hornsby
+  name: Hornsby
+  incumbent: James Wallace
+  incumbent_party: liberal
+- slug: keira
+  name: Keira
+  incumbent: Ryan Park
+  incumbent_party: labor
+- slug: kellyville
+  name: Kellyville
+  incumbent: Ray Williams
+  incumbent_party: liberal
+- slug: kiama
+  name: Kiama
+  incumbent: Katelin McInerney
+  incumbent_party: labor
+- slug: kogarah
+  name: Kogarah
+  incumbent: Chris Minns
+  incumbent_party: labor
+- slug: lake-macquarie
+  name: Lake Macquarie
+  incumbent: Greg Piper
+  incumbent_party: independent
+- slug: lane-cove
+  name: Lane Cove
+  incumbent: Anthony Roberts
+  incumbent_party: liberal
+- slug: leppington
+  name: Leppington
+  incumbent: Nathan Hagarty
+  incumbent_party: labor
+- slug: lismore
+  name: Lismore
+  incumbent: Janelle Saffin
+  incumbent_party: labor
+- slug: liverpool
+  name: Liverpool
+  incumbent: Charishma Kaliyanda
+  incumbent_party: labor
+- slug: londonderry
+  name: Londonderry
+  incumbent: Prue Car
+  incumbent_party: labor
+- slug: macquarie-fields
+  name: Macquarie Fields
+  incumbent: Anoulack Chanthivong
+  incumbent_party: labor
+- slug: maitland
+  name: Maitland
+  incumbent: Jenny Aitchison
+  incumbent_party: labor
+- slug: manly
+  name: Manly
+  incumbent: James Griffin
+  incumbent_party: liberal
+- slug: maroubra
+  name: Maroubra
+  incumbent: Michael Daley
+  incumbent_party: labor
+- slug: miranda
+  name: Miranda
+  incumbent: Eleni Petinos
+  incumbent_party: liberal
+- slug: monaro
+  name: Monaro
+  incumbent: Steve Whan
+  incumbent_party: labor
+- slug: mount-druitt
+  name: Mount Druitt
+  incumbent: Edmond Atalla
+  incumbent_party: labor
+- slug: murray
+  name: Murray
+  incumbent: Helen Dalton
+  incumbent_party: independent
+- slug: myall-lakes
+  name: Myall Lakes
+  incumbent: Tanya Thompson
+  incumbent_party: nationals
+- slug: newcastle
+  name: Newcastle
+  incumbent: Tim Crakanthorp
+  incumbent_party: labor
+- slug: newtown
+  name: Newtown
+  incumbent: Jenny Leong
+  incumbent_party: greens
+- slug: north-shore
+  name: North Shore
+  incumbent: Felicity Wilson
+  incumbent_party: liberal
+- slug: northern-tablelands
+  name: Northern Tablelands
+  incumbent: Brendan Moylan
+  incumbent_party: nationals
+- slug: oatley
+  name: Oatley
+  incumbent: Mark Coure
+  incumbent_party: liberal
+- slug: orange
+  name: Orange
+  incumbent: Philip Donato
+  incumbent_party: independent
+- slug: oxley
+  name: Oxley
+  incumbent: Michael Kemp
+  incumbent_party: nationals
+- slug: parramatta
+  name: Parramatta
+  incumbent: Donna Davis
+  incumbent_party: labor
+- slug: penrith
+  name: Penrith
+  incumbent: Karen McKeown
+  incumbent_party: labor
+- slug: pittwater
+  name: Pittwater
+  incumbent: Jacqui Scruby
+  incumbent_party: independent
+- slug: port-macquarie
+  name: Port Macquarie
+  incumbent: Robert Dwyer
+  incumbent_party: liberal
+- slug: port-stephens
+  name: Port Stephens
+  incumbent: Kate Washington
+  incumbent_party: labor
+- slug: prospect
+  name: Prospect
+  incumbent: Hugh McDermott
+  incumbent_party: labor
+- slug: riverstone
+  name: Riverstone
+  incumbent: Warren Kirby
+  incumbent_party: labor
+- slug: rockdale
+  name: Rockdale
+  incumbent: Stephen Kamper
+  incumbent_party: labor
+- slug: ryde
+  name: Ryde
+  incumbent: Jordan Lane
+  incumbent_party: liberal
+- slug: shellharbour
+  name: Shellharbour
+  incumbent: Anna Watson
+  incumbent_party: labor
+- slug: south-coast
+  name: South Coast
+  incumbent: Liza Butler
+  incumbent_party: labor
+- slug: strathfield
+  name: Strathfield
+  incumbent: Jason Li
+  incumbent_party: labor
+- slug: summer-hill
+  name: Summer Hill
+  incumbent: Jo Haylen
+  incumbent_party: labor
+- slug: swansea
+  name: Swansea
+  incumbent: Yasmin Catley
+  incumbent_party: labor
+- slug: sydney
+  name: Sydney
+  incumbent: Alex Greenwich
+  incumbent_party: independent
+- slug: tamworth
+  name: Tamworth
+  incumbent: Kevin Anderson
+  incumbent_party: nationals
+- slug: terrigal
+  name: Terrigal
+  incumbent: Adam Crouch
+  incumbent_party: liberal
+- slug: the-entrance
+  name: The Entrance
+  incumbent: David Mehan
+  incumbent_party: labor
+- slug: tweed
+  name: Tweed
+  incumbent: Geoff Provest
+  incumbent_party: nationals
+- slug: upper-hunter
+  name: Upper Hunter
+  incumbent: Dave Layzell
+  incumbent_party: nationals
+- slug: vaucluse
+  name: Vaucluse
+  incumbent: Kellie Sloane
+  incumbent_party: liberal
+- slug: wagga-wagga
+  name: Wagga Wagga
+  incumbent: Joe McGirr
+  incumbent_party: independent
+- slug: wahroonga
+  name: Wahroonga
+  incumbent: Alister Henskens
+  incumbent_party: liberal
+- slug: wakehurst
+  name: Wakehurst
+  incumbent: Michael Regan
+  incumbent_party: independent
+- slug: wallsend
+  name: Wallsend
+  incumbent: Sonia Hornery
+  incumbent_party: labor
+- slug: willoughby
+  name: Willoughby
+  incumbent: Tim James
+  incumbent_party: liberal
+- slug: winston-hills
+  name: Winston Hills
+  incumbent: Mark Taylor
+  incumbent_party: liberal
+- slug: wollondilly
+  name: Wollondilly
+  incumbent: Judy Hannan
+  incumbent_party: independent
+- slug: wollongong
+  name: Wollongong
+  incumbent: Paul Scully
+  incumbent_party: labor
+- slug: wyong
+  name: Wyong
+  incumbent: David Harris
+  incumbent_party: labor

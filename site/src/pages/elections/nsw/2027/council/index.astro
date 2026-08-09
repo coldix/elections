@@ -1,0 +1,241 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import SourceLink from "../../../../../components/SourceLink.astro";
+import {
+  loadStateFoundationElection,
+  stateFoundationSummaryFor,
+} from "../../../../../../../scripts/lib/state-foundation.mjs";
+import { SITE, NSW2027, partyColour } from "../../../../../lib/site.mjs";
+
+const data = loadStateFoundationElection("nsw2027");
+const summary = stateFoundationSummaryFor(data);
+const { election } = data;
+
+const up = data.councilMembers
+  .filter((m) => m.term_status === "up")
+  .sort((a, b) => a.name.localeCompare(b.name));
+const continuing = data.councilMembers
+  .filter((m) => m.term_status === "continuing")
+  .sort((a, b) => a.name.localeCompare(b.name));
+const other = data.councilMembers
+  .filter((m) => m.term_status !== "up" && m.term_status !== "continuing")
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const schema = {
+  "@type": "WebPage",
+  name: "Legislative Council — 2027 NSW state election",
+  description: `Sitting members of the NSW Legislative Council (${election.sitting_parliament_label}): ${summary.council_up} places up in 2027, ${summary.council_continuing} continuing.`,
+  url: `${SITE.url}${NSW2027}/council`,
+};
+---
+
+<Base
+  title="Legislative Council"
+  description={`Sitting NSW Legislative Council members of the ${election.sitting_parliament_label}. Half the chamber (${summary.council_up} places) faces election in 2027.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "NSW 2027", href: NSW2027 },
+    { name: "Council", href: `${NSW2027}/council` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={NSW2027}>NSW 2027</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Council</span>
+    </nav>
+
+    <p class="eyebrow">NSW · {election.sitting_parliament_label} · Upper house</p>
+    <h1>Legislative Council</h1>
+    <p class="lede">
+      <strong>{summary.council_members}</strong> members; MLCs serve eight-year terms with half the
+      chamber elected every four years.
+      <strong>{summary.council_up}</strong> places are <em>up</em> in 2027;
+      <strong>{summary.council_continuing}</strong> continue to 2031.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>Term class, not candidacy.</strong> “Up” means the member’s current term ends at the
+      2027 election (they may or may not recontest). This is not a list of candidates.
+    </div>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={NSW2027}>Overview</a>
+      <a class="btn btn-ghost btn-sm" href={`${NSW2027}/assembly`}>Assembly</a>
+      <a class="btn btn-ghost btn-sm" href="/data/nsw2027/council-members.json"
+        >council-members.json</a
+      >
+    </p>
+
+    <section aria-labelledby="up-h">
+      <h2 id="up-h">
+        Term ends 2027 <span class="muted count">({up.length})</span>
+      </h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Member</th>
+              <th scope="col">Party</th>
+              <th scope="col">End term</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              up.map((m) => {
+                const party = data.partyBySlug.get(m.party);
+                return (
+                  <tr>
+                    <td>{m.name}</td>
+                    <td>
+                      <span class="party-cell">
+                        <span
+                          class="swatch-sm"
+                          style={`background:${partyColour(m.party)}`}
+                          aria-hidden="true"
+                        />
+                        {party?.short_name ?? m.party}
+                      </span>
+                    </td>
+                    <td>{m.end_term ?? "—"}</td>
+                    <td>
+                      <span class={`term-pill term-${m.term_status}`}>{m.term_status}</span>
+                    </td>
+                  </tr>
+                );
+              })
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section compact" aria-labelledby="cont-h">
+      <h2 id="cont-h">
+        Continuing to 2031 <span class="muted count">({continuing.length})</span>
+      </h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Member</th>
+              <th scope="col">Party</th>
+              <th scope="col">End term</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              continuing.map((m) => {
+                const party = data.partyBySlug.get(m.party);
+                return (
+                  <tr>
+                    <td>{m.name}</td>
+                    <td>
+                      <span class="party-cell">
+                        <span
+                          class="swatch-sm"
+                          style={`background:${partyColour(m.party)}`}
+                          aria-hidden="true"
+                        />
+                        {party?.short_name ?? m.party}
+                      </span>
+                    </td>
+                    <td>{m.end_term ?? "—"}</td>
+                    <td>
+                      <span class={`term-pill term-${m.term_status}`}>{m.term_status}</span>
+                    </td>
+                  </tr>
+                );
+              })
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    {
+      other.length > 0 && (
+        <section class="section compact" aria-labelledby="other-h">
+          <h2 id="other-h">Other / unknown term status</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Member</th>
+                  <th scope="col">Party</th>
+                  <th scope="col">End term</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {other.map((m) => {
+                  const party = data.partyBySlug.get(m.party);
+                  return (
+                    <tr>
+                      <td>{m.name}</td>
+                      <td>
+                        <span class="party-cell">
+                          <span
+                            class="swatch-sm"
+                            style={`background:${partyColour(m.party)}`}
+                            aria-hidden="true"
+                          />
+                          {party?.short_name ?? m.party}
+                        </span>
+                      </td>
+                      <td>{m.end_term ?? "—"}</td>
+                      <td>
+                        <span class={`term-pill term-${m.term_status}`}>{m.term_status}</span>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      (data.sources.council || data.sources.council_term) && (
+        <section class="section compact" aria-labelledby="src-h">
+          <h2 id="src-h">Sources</h2>
+          <ul class="source-list">
+            {data.sources.council && (
+              <li>
+                <SourceLink source={data.sources.council} />
+              </li>
+            )}
+            {data.sources.council_term && (
+              <li>
+                <SourceLink source={data.sources.council_term} />
+              </li>
+            )}
+          </ul>
+        </section>
+      )
+    }
+  </div>
+</Base>
+
+<style>
+  .term-pill {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    background: var(--surface-2, #eee);
+  }
+  .term-up {
+    background: #fde8c8;
+  }
+  .term-continuing {
+    background: #e2efe6;
+  }
+</style>

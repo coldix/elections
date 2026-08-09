@@ -1,0 +1,52 @@
+source:
+  url: https://www.parliament.nsw.gov.au/members-and-electorates/members-and-ministers/downloadable-lists
+  publisher: Parliament of New South Wales
+  title: Downloadable lists — members (party labels as published)
+  accessed: "2026-08-09"
+  note: Party display names follow Parliament membership files; slugs are tracker-normalised.
+parties:
+- slug: animal-justice
+  name: Animal Justice Party
+  short_name: AJP
+  registered: true
+  family: null
+- slug: greens
+  name: The Greens
+  short_name: Greens
+  registered: true
+  family: greens
+- slug: independent
+  name: Independent
+  short_name: Independent
+  registered: false
+  family: null
+- slug: labor
+  name: Australian Labor Party
+  short_name: Labor
+  registered: true
+  family: labor
+- slug: legalise-cannabis
+  name: Legalise Cannabis Party
+  short_name: Legalise Cannabis
+  registered: true
+  family: null
+- slug: liberal
+  name: Liberal Party
+  short_name: Liberal
+  registered: true
+  family: coalition
+- slug: libertarian
+  name: Libertarian Party
+  short_name: Libertarian
+  registered: true
+  family: null
+- slug: nationals
+  name: The Nationals
+  short_name: Nationals
+  registered: true
+  family: coalition
+- slug: shooters-fishers-farmers
+  name: Shooters, Fishers and Farmers Party
+  short_name: SFF
+  registered: true
+  family: null

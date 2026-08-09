@@ -1,0 +1,230 @@
+note: >-
+  Sitting members of the Legislative Council, 58th Parliament. Not a candidacy list.
+  Primary membership: Parliament of NSW LC CSV. term_status reflects remaining term class for the
+  2027 half-Council election (up = term ends 2027; continuing = term ends 2031).
+parliament: 58
+source:
+  url: https://www.parliament.nsw.gov.au/_media/documents/members-and-electorates/downloadable-lists/lc-members.csv
+  publisher: Parliament of New South Wales
+  title: Members of the Legislative Council (CSV)
+  accessed: "2026-08-09"
+term_source:
+  url: https://en.wikipedia.org/wiki/Members_of_the_New_South_Wales_Legislative_Council,_2023%E2%80%932027
+  publisher: Wikipedia
+  title: Members of the New South Wales Legislative Council, 2023–2027 (end term column)
+  accessed: "2026-08-09"
+  note: >-
+    Secondary source for end-term years. Names and parties from Parliament CSV. Mid-term
+    replacements Barrett (Taylor seat → 2031) and Overall (Farraway seat → 2027) inherit
+    predecessor term class per casual vacancy rules.
+council_members:
+- name: Abigail Boyd
+  party: greens
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Aileen MacDonald
+  party: liberal
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Amanda Cohn
+  party: greens
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: "Anthony D'Adam"
+  party: labor
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Ben Franklin
+  party: nationals
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Bob Nanva
+  party: labor
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Cameron Murphy
+  party: labor
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Cate Faehrmann
+  party: greens
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Chris Rath
+  party: liberal
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Courtney Houssos
+  party: labor
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Damien Tudehope
+  party: liberal
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Daniel Mookhey
+  party: labor
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Emily Suvaal
+  party: labor
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Emma Hurst
+  party: animal-justice
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Greg Donnelly
+  party: labor
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Jacqui Munro
+  party: liberal
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Jeremy Buckingham
+  party: legalise-cannabis
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: John Graham
+  party: labor
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: John Ruddick
+  party: libertarian
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Mark Banasiak
+  party: shooters-fishers-farmers
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Mark Buttigieg
+  party: labor
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Mark Latham
+  party: independent
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Natalie Ward
+  party: liberal
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Natasha Maclaren-Jones
+  party: liberal
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Nichole Overall
+  party: nationals
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Penny Sharpe
+  party: labor
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Peter Primrose
+  party: labor
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Rachel Merton
+  party: liberal
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Robert Borsak
+  party: shooters-fishers-farmers
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Rod Roberts
+  party: independent
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Rose Jackson
+  party: labor
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Sarah Kaine
+  party: labor
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Sarah Mitchell
+  party: nationals
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Scott Barrett
+  party: nationals
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Scott Farlow
+  party: liberal
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Stephen Lawrence
+  party: labor
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Sue Higginson
+  party: greens
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Susan Carter
+  party: liberal
+  parliament: 58
+  end_term: 2031
+  term_status: continuing
+- name: Tania Mihailuk
+  party: independent
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Tara Moriarty
+  party: labor
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Taylor Martin
+  party: independent
+  parliament: 58
+  end_term: 2027
+  term_status: up
+- name: Wes Fang
+  party: nationals
+  parliament: 58
+  end_term: 2027
+  term_status: up

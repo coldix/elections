@@ -1,0 +1,222 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import SourceLink from "../../../../components/SourceLink.astro";
+import {
+  loadStateFoundationElection,
+  stateFoundationSummaryFor,
+  stateFoundationRepresentationFor,
+} from "../../../../../../scripts/lib/state-foundation.mjs";
+import { SITE, NSW2027, partyColour, formatDate } from "../../../../lib/site.mjs";
+import { ELECTION_DATE_STATUS } from "../../../../lib/electionCalendar.mjs";
+import { loadElectionPlaceholders } from "../../../../lib/electionPlaceholders.mjs";
+
+const data = loadStateFoundationElection("nsw2027");
+const summary = stateFoundationSummaryFor(data);
+const rep = stateFoundationRepresentationFor(data);
+const { election } = data;
+const placeholder = loadElectionPlaceholders().find((e) => e.planned_path === NSW2027);
+const dateStatus = ELECTION_DATE_STATUS[election.date_status] ?? ELECTION_DATE_STATUS.confirmed;
+
+const partyRows = data.parties
+  .map((p) => {
+    const r = rep[p.slug] ?? { assembly: 0, council: 0, total: 0 };
+    return { ...p, ...r };
+  })
+  .filter((p) => p.total > 0)
+  .sort((a, b) => b.total - a.total || a.name.localeCompare(b.name));
+
+const schema = {
+  "@type": "WebPage",
+  name: election.name,
+  description: `${election.name} — sitting members of the ${election.sitting_parliament_label}, Legislative Assembly and Legislative Council structure.`,
+  url: `${SITE.url}${NSW2027}`,
+  isPartOf: { "@id": `${SITE.url}/#website` },
+};
+---
+
+<Base
+  title={election.name}
+  description={`Sitting members of the ${election.sitting_parliament_label}: 93 Assembly districts and Legislative Council composition for the 2027 NSW state election. Not yet a full candidacy ledger.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: election.name, href: NSW2027 },
+  ]}
+>
+  <div class="wrap section fed-home">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">NSW</span>
+    </nav>
+
+    <p class="eyebrow">New South Wales · Election for the {election.parliament_label}</p>
+    <h1>{election.name}</h1>
+    <p class="lede">
+      Voters elect all <strong>{election.assembly_seats}</strong> members of the Legislative
+      Assembly and <strong>{election.council_seats_up}</strong> of the Legislative Council’s
+      <strong>{election.council_seats}</strong> places — forming the
+      <strong>{election.parliament_label}</strong>.
+    </p>
+
+    <div class="date-line">
+      <strong>{election.date_label}</strong>
+      <span class={`date-status status-${election.date_status}`}>{dateStatus.label}</span>
+    </div>
+    <p class="muted date-basis">
+      Polling day {formatDate(election.election_day)} (NSW Electoral Commission fixed cycle).
+    </p>
+
+    <div class="notice" role="note">
+      <strong>Sitting members, not candidacies.</strong>
+      {election.tracking_status}
+      Members listed here sit in the <strong>{election.sitting_parliament_label}</strong>. They are
+      <em>not</em> automatically candidates for {election.date_label}.
+    </div>
+
+    <dl class="facts">
+      <div>
+        <dt>Parliament electing</dt>
+        <dd>{election.parliament_label}</dd>
+      </div>
+      <div>
+        <dt>Sitting parliament</dt>
+        <dd>{election.sitting_parliament_label}</dd>
+      </div>
+      <div>
+        <dt>Assembly districts</dt>
+        <dd>{summary.districts}</dd>
+      </div>
+      <div>
+        <dt>Sitting MLAs / MLCs</dt>
+        <dd>{summary.assembly_members} / {summary.council_members}</dd>
+      </div>
+      <div>
+        <dt>Council places up</dt>
+        <dd>{summary.council_up}</dd>
+      </div>
+      <div>
+        <dt>Data id</dt>
+        <dd class="mono">nsw2027</dd>
+      </div>
+    </dl>
+
+    <p class="btn-row">
+      <a class="btn" href={`${NSW2027}/districts`}>Districts</a>
+      <a class="btn btn-ghost" href={`${NSW2027}/assembly`}>Legislative Assembly</a>
+      <a class="btn btn-ghost" href={`${NSW2027}/council`}>Legislative Council</a>
+      <a class="btn btn-ghost" href={`${NSW2027}/parties`}>Parties</a>
+      <a class="btn btn-ghost" href={`${NSW2027}/data`}>Open data</a>
+    </p>
+
+    <section aria-labelledby="composition-h">
+      <p class="eyebrow">58th Parliament</p>
+      <h2 id="composition-h">Current composition (sitting seats)</h2>
+      <p class="muted">
+        Seats held now, including mid-term changes. Not a forecast and not a 2023 election result
+        frozen in time if a by-election or casual vacancy has occurred.
+      </p>
+      <div class="party-grid">
+        {
+          partyRows.map((p) => (
+            <a class="card party-card" href={`${NSW2027}/parties/${p.slug}`}>
+              <header>
+                <span class="swatch" style={`background:${partyColour(p.slug)}`} aria-hidden="true" />
+                <h3>{p.short_name || p.name}</h3>
+              </header>
+              <dl>
+                <div>
+                  <dt>Assembly</dt>
+                  <dd>{p.assembly}</dd>
+                </div>
+                <div>
+                  <dt>Council</dt>
+                  <dd>{p.council}</dd>
+                </div>
+                <div>
+                  <dt>Total</dt>
+                  <dd>{p.total}</dd>
+                </div>
+              </dl>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section compact" aria-labelledby="structure-h">
+      <p class="eyebrow">Structure</p>
+      <h2 id="structure-h">What voters elect</h2>
+      <div class="chamber-grid">
+        {
+          (placeholder?.chambers ?? []).map((chamber) => (
+            <article class="card chamber-card">
+              <header>
+                <div>
+                  <p class="chamber-role">{chamber.role}</p>
+                  <h3>{chamber.name}</h3>
+                </div>
+                <strong class="seat-count">{chamber.seats} seats</strong>
+              </header>
+              <dl>
+                <div>
+                  <dt>Electorates</dt>
+                  <dd>{chamber.constituencies}</dd>
+                </div>
+                <div>
+                  <dt>At this election</dt>
+                  <dd>{chamber.election_scope}</dd>
+                </div>
+                <div>
+                  <dt>Voting system</dt>
+                  <dd>{chamber.voting_system}</dd>
+                </div>
+                {chamber.term && (
+                  <div>
+                    <dt>Term</dt>
+                    <dd>{chamber.term}</dd>
+                  </div>
+                )}
+              </dl>
+              {chamber.name === "Legislative Assembly" ? (
+                <p class="chamber-link">
+                  <a href={`${NSW2027}/districts`}>Browse {summary.districts} districts →</a>
+                </p>
+              ) : (
+                <p class="chamber-link">
+                  <a href={`${NSW2027}/council`}>Browse Council composition →</a>
+                </p>
+              )}
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    {
+      election.notes?.length > 0 && (
+        <section class="section compact" aria-labelledby="notes-h">
+          <h2 id="notes-h">Important details</h2>
+          <ul>
+            {election.notes.map((note) => (
+              <li>{note}</li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <section class="section compact" aria-labelledby="src-h">
+      <h2 id="src-h">Sources</h2>
+      <ul class="source-list">
+        {
+          (election.membership_sources ?? election.sources ?? []).map((s) => (
+            <li>
+              <SourceLink source={s} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+</Base>

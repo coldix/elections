@@ -152,6 +152,21 @@ The root [README.md](README.md) is the documentation graph entry point.
 Delete superseded notes or link and label them clearly; do not leave unowned
 files in the tree.
 
+## NSW scaffold (nsw2027)
+
+Active under `/elections/nsw/2027` (data id `nsw2027`). Sitting members are the
+**58th** Parliament; the 2027 election forms the **59th**:
+
+- Legislative Assembly: 93 districts + sitting MLAs
+- Legislative Council: 42 members + half-Council term status (`up` / `continuing`)
+- Parties index + per-party member lists
+- Open data page + exports: `/data/nsw2027/`
+- No candidates, polls, or policies yet (thin clone of federal sitting-members tier)
+
+Membership from **Parliament of NSW** official downloads (LA xlsx / LC csv).
+Council term class uses end-term years (secondary cross-check) with mid-term
+replacement inheritance (Barrett→Taylor 2031; Overall→Farraway 2027).
+
 ## Federal scaffold (federal-49)
 
 Active under `/elections/federal/49` (data id `federal-49` — election for the

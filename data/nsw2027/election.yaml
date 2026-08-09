@@ -1,0 +1,49 @@
+election:
+  id: nsw2027
+  name: 2027 NSW state election
+  jurisdiction: nsw
+  level: state
+  kind: state-foundation
+  sitting_parliament_number: 58
+  sitting_parliament_label: 58th Parliament of New South Wales
+  parliament_number: 59
+  parliament_label: 59th Parliament of New South Wales
+  public_path: /elections/nsw/2027
+  date_status: confirmed
+  date_label: 13 March 2027
+  election_day: "2027-03-13"
+  assembly_seats: 93
+  council_seats: 42
+  council_seats_up: 21
+  tracking_status: >-
+    Sitting members of the 58th Parliament of New South Wales are published under this path.
+    Individual candidacies for the 2027 election are not yet tracked.
+  authorities:
+    - name: NSW Electoral Commission
+      url: https://elections.nsw.gov.au/
+    - name: Parliament of New South Wales
+      url: https://www.parliament.nsw.gov.au/
+  sources:
+    - url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+      publisher: NSW Electoral Commission
+      title: 2027 NSW State election
+      accessed: "2026-08-09"
+    - url: https://www.parliament.nsw.gov.au/members-and-electorates/members-and-ministers/downloadable-lists
+      publisher: Parliament of New South Wales
+      title: Downloadable lists — members
+      accessed: "2026-08-09"
+  membership_sources:
+    - url: https://www.parliament.nsw.gov.au/_media/documents/members-and-electorates/downloadable-lists/la-members-July-2026.xlsx
+      publisher: Parliament of New South Wales
+      title: Members of the Legislative Assembly (spreadsheet, July 2026)
+      accessed: "2026-08-09"
+      note: Primary official LA membership download.
+    - url: https://www.parliament.nsw.gov.au/_media/documents/members-and-electorates/downloadable-lists/lc-members.csv
+      publisher: Parliament of New South Wales
+      title: Members of the Legislative Council (CSV)
+      accessed: "2026-08-09"
+      note: Primary official LC membership download.
+  notes:
+    - A state general election elects all 93 Legislative Assembly members and 21 of 42 Legislative Council places.
+    - Sitting members listed here are of the 58th Parliament; they are not automatically candidates for 2027.
+    - Membership names and parties are from Parliament of New South Wales official downloads. Council term class (up/continuing) uses end-term years for the 58th Parliament (2019 class expires 2027; 2023 class expires 2031). Mid-term replacements inherit the predecessor's remaining term: Barrett (for Taylor → 2031), Overall (for Farraway → 2027).

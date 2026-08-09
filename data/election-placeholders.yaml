@@ -13,7 +13,9 @@ placeholders:
       parliament: Bicameral
       total_members: 135
       contest_summary: 93 Assembly districts and 21 of 42 Council places
-      tracking_status: Foundation page only; candidate tracking has not started.
+      tracking_status: >-
+        Sitting members of the 58th Parliament are published under this path
+        (data id nsw2027). Individual candidacies for 2027 are not yet tracked.
       chambers:
         - name: Legislative Assembly
           role: Lower house

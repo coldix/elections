@@ -348,6 +348,103 @@ function validateFederal(election, dir, load) {
   );
 }
 
+function validateStateFoundation(election, dir, load) {
+  const meta = load("election.yaml").election;
+  const parties = load("parties.yaml").parties;
+  const districts = load("districts.yaml").districts;
+  const assemblyMembers = load("assembly-members.yaml").assembly_members ?? [];
+  const councilMembers = load("council-members.yaml").council_members ?? [];
+  const assemblySource = load("assembly-members.yaml").source;
+  const councilSource = load("council-members.yaml").source;
+
+  if (!meta.id || meta.id !== election) {
+    fail(`${election}/election.yaml`, `id must match directory name (${election})`);
+  }
+  if (meta.kind !== "state-foundation") {
+    fail(`${election}/election.yaml`, "kind must be state-foundation");
+  }
+  if (!meta.public_path?.startsWith("/elections/")) {
+    fail(`${election}/election.yaml`, "public_path required");
+  }
+  if (!isDate(String(meta.election_day))) {
+    fail(`${election}/election.yaml`, "election_day invalid");
+  }
+  checkSource(`${election}/assembly-members.yaml`, "membership assembly", assemblySource);
+  checkSource(`${election}/council-members.yaml`, "membership council", councilSource);
+
+  const partySlugs = new Set();
+  for (const p of parties) {
+    if (!p.slug || !/^[a-z0-9-]+$/.test(p.slug)) fail(`${election}/parties.yaml`, `bad slug: ${p.slug}`);
+    if (partySlugs.has(p.slug)) fail(`${election}/parties.yaml`, `duplicate slug: ${p.slug}`);
+    partySlugs.add(p.slug);
+    if (!p.name) fail(`${election}/parties.yaml`, `${p.slug}: name required`);
+  }
+
+  const districtSlugs = new Set();
+  for (const d of districts) {
+    if (!d.slug || !/^[a-z0-9-]+$/.test(d.slug)) fail(`${election}/districts.yaml`, `bad slug: ${d.slug}`);
+    if (districtSlugs.has(d.slug)) fail(`${election}/districts.yaml`, `duplicate slug: ${d.slug}`);
+    districtSlugs.add(d.slug);
+    if (!d.name) fail(`${election}/districts.yaml`, `${d.slug}: name required`);
+    if (d.incumbent_party && !partySlugs.has(d.incumbent_party)) {
+      fail(`${election}/districts.yaml`, `${d.slug}: unknown incumbent_party '${d.incumbent_party}'`);
+    }
+  }
+  if (meta.assembly_seats && districts.length !== meta.assembly_seats) {
+    fail(`${election}/districts.yaml`, `expected ${meta.assembly_seats} districts, got ${districts.length}`);
+  }
+
+  if (assemblyMembers.length !== districts.length) {
+    fail(
+      `${election}/assembly-members.yaml`,
+      `expected ${districts.length} members, got ${assemblyMembers.length}`
+    );
+  }
+  const seenDist = new Set();
+  for (const m of assemblyMembers) {
+    if (!m.name) fail(`${election}/assembly-members.yaml`, "member missing name");
+    if (!partySlugs.has(m.party)) {
+      fail(`${election}/assembly-members.yaml`, `${m.name}: unknown party '${m.party}'`);
+    }
+    if (!districtSlugs.has(m.district)) {
+      fail(`${election}/assembly-members.yaml`, `${m.name}: unknown district '${m.district}'`);
+    }
+    if (seenDist.has(m.district)) {
+      fail(`${election}/assembly-members.yaml`, `duplicate district ${m.district}`);
+    }
+    seenDist.add(m.district);
+  }
+
+  const TERM = new Set(["up", "continuing", "unknown"]);
+  if (meta.council_seats && councilMembers.length !== meta.council_seats) {
+    fail(
+      `${election}/council-members.yaml`,
+      `expected ${meta.council_seats} members, got ${councilMembers.length}`
+    );
+  }
+  let upCount = 0;
+  for (const m of councilMembers) {
+    if (!m.name) fail(`${election}/council-members.yaml`, "member missing name");
+    if (!partySlugs.has(m.party)) {
+      fail(`${election}/council-members.yaml`, `${m.name}: unknown party '${m.party}'`);
+    }
+    if (m.term_status && !TERM.has(m.term_status)) {
+      fail(`${election}/council-members.yaml`, `${m.name}: bad term_status '${m.term_status}'`);
+    }
+    if (m.term_status === "up") upCount++;
+  }
+  if (meta.council_seats_up != null && upCount !== meta.council_seats_up) {
+    fail(
+      `${election}/council-members.yaml`,
+      `expected ${meta.council_seats_up} term_status=up, got ${upCount}`
+    );
+  }
+
+  console.log(
+    `${election}: state-foundation · ${districts.length} districts, ${assemblyMembers.length} MLAs, ${councilMembers.length} MLCs (${upCount} up), ${parties.length} parties`
+  );
+}
+
 for (const election of readdirSync(DATA_DIR)) {
   const dir = join(DATA_DIR, election);
   if (!statSync(dir).isDirectory()) continue;
@@ -364,6 +461,11 @@ for (const election of readdirSync(DATA_DIR)) {
     console.log(
       `${election}: ${federalPolls} poll(s), ${issueCount} issues, ${policyCount} policies`
     );
+    continue;
+  }
+
+  if (meta.kind === "state-foundation") {
+    validateStateFoundation(election, dir, load);
     continue;
   }
 

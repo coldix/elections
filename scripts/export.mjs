@@ -25,6 +25,11 @@ import {
   federalRepresentationFor,
   federalSummaryFor,
 } from "./lib/federal.mjs";
+import {
+  loadStateFoundationElection,
+  stateFoundationRepresentationFor,
+  stateFoundationSummaryFor,
+} from "./lib/state-foundation.mjs";
 import { loadPolls, computePollAverage, POLL_CAVEAT } from "./lib/polls.mjs";
 import {
   loadIssues,
@@ -205,6 +210,81 @@ for (const id of listElections()) {
 
     console.log(
       `${id}: exported federal · ${summary.house_members} MPs, ${summary.senate_members} senators, ${polls.length} polls, ${issues.length} issues, ${policies.length} policies -> site/public/data/${id}/`
+    );
+    continue;
+  }
+
+  if (electionKind(id) === "state-foundation") {
+    const data = loadStateFoundationElection(id);
+    const summary = stateFoundationSummaryFor(data);
+    const representation = stateFoundationRepresentationFor(data);
+
+    write("election.json", data.election);
+    write(
+      "districts.json",
+      data.districts.map(({ member, ...d }) => d)
+    );
+    write("assembly-members.json", data.assemblyMembers);
+    write("council-members.json", data.councilMembers);
+    write("parties.json", data.parties);
+    write("representation.json", {
+      generated: new Date().toISOString(),
+      note:
+        "Seats held in the sitting state parliament, including mid-term replacements " +
+        "and party changes. Not an election result and not a candidacy count for the " +
+        "forthcoming election.",
+      sitting_parliament: data.election.sitting_parliament_number,
+      parliament_electing: data.election.parliament_number,
+      representation,
+    });
+    write("summary.json", { generated: new Date().toISOString(), ...summary });
+
+    writeFileSync(
+      join(out, "districts.csv"),
+      csv(
+        data.districts.map((d) => ({
+          slug: d.slug,
+          name: d.name,
+          incumbent: d.incumbent,
+          incumbent_party: d.incumbent_party,
+        })),
+        ["slug", "name", "incumbent", "incumbent_party"]
+      )
+    );
+    writeFileSync(
+      join(out, "assembly-members.csv"),
+      csv(data.assemblyMembers, ["name", "party", "district", "parliament"])
+    );
+    writeFileSync(
+      join(out, "council-members.csv"),
+      csv(data.councilMembers, ["name", "party", "parliament", "end_term", "term_status"])
+    );
+
+    index.elections.push({
+      id,
+      name: data.election.name,
+      kind: "state-foundation",
+      parliament_number: data.election.parliament_number,
+      public_path: data.election.public_path,
+      assembly_members: summary.assembly_members,
+      council_members: summary.council_members,
+      council_up: summary.council_up,
+      files: [
+        "election.json",
+        "districts.json",
+        "assembly-members.json",
+        "council-members.json",
+        "parties.json",
+        "representation.json",
+        "summary.json",
+        "districts.csv",
+        "assembly-members.csv",
+        "council-members.csv",
+      ],
+    });
+
+    console.log(
+      `${id}: exported state-foundation · ${summary.assembly_members} MLAs, ${summary.council_members} MLCs -> site/public/data/${id}/`
     );
     continue;
   }

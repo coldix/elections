@@ -4,6 +4,7 @@
 import {
   listElections,
   loadElection,
+  electionKind,
   coverageFor,
   summaryFor,
   COVERAGE_CAVEAT,
@@ -17,6 +18,11 @@ if (!elections.length) {
 }
 
 for (const id of elections) {
+  const kind = electionKind(id);
+  if (kind === "federal" || kind === "state-foundation") {
+    console.log(`\n# ${id} — skipped (kind: ${kind}; candidacy coverage N/A)`);
+    continue;
+  }
   const data = loadElection(id);
   const summary = summaryFor(data);
   const rows = coverageFor(data);

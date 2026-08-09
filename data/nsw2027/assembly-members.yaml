@@ -1,0 +1,382 @@
+note: >-
+  Sitting members of the Legislative Assembly, 58th Parliament. Not a candidacy list.
+  Primary source: Parliament of NSW LA membership spreadsheet (July 2026).
+parliament: 58
+source:
+  url: https://www.parliament.nsw.gov.au/_media/documents/members-and-electorates/downloadable-lists/la-members-July-2026.xlsx
+  publisher: Parliament of New South Wales
+  title: Members of the Legislative Assembly (spreadsheet, July 2026)
+  accessed: "2026-08-09"
+assembly_members:
+- name: Adam Crouch
+  party: liberal
+  district: terrigal
+  parliament: 58
+- name: Alex Greenwich
+  party: independent
+  district: sydney
+  parliament: 58
+- name: Alister Henskens
+  party: liberal
+  district: wahroonga
+  parliament: 58
+- name: Anna Watson
+  party: labor
+  district: shellharbour
+  parliament: 58
+- name: Anoulack Chanthivong
+  party: labor
+  district: macquarie-fields
+  parliament: 58
+- name: Anthony Roberts
+  party: liberal
+  district: lane-cove
+  parliament: 58
+- name: Brendan Moylan
+  party: nationals
+  district: northern-tablelands
+  parliament: 58
+- name: Charishma Kaliyanda
+  party: labor
+  district: liverpool
+  parliament: 58
+- name: Chris Minns
+  party: labor
+  district: kogarah
+  parliament: 58
+- name: Clayton Barr
+  party: labor
+  district: cessnock
+  parliament: 58
+- name: Dave Layzell
+  party: nationals
+  district: upper-hunter
+  parliament: 58
+- name: David Harris
+  party: labor
+  district: wyong
+  parliament: 58
+- name: David Mehan
+  party: labor
+  district: the-entrance
+  parliament: 58
+- name: David Saliba
+  party: labor
+  district: fairfield
+  parliament: 58
+- name: Donna Davis
+  party: labor
+  district: parramatta
+  parliament: 58
+- name: Dugald Saunders
+  party: nationals
+  district: dubbo
+  parliament: 58
+- name: Edmond Atalla
+  party: labor
+  district: mount-druitt
+  parliament: 58
+- name: Eleni Petinos
+  party: liberal
+  district: miranda
+  parliament: 58
+- name: Felicity Wilson
+  party: liberal
+  district: north-shore
+  parliament: 58
+- name: Geoff Provest
+  party: nationals
+  district: tweed
+  parliament: 58
+- name: Greg Piper
+  party: independent
+  district: lake-macquarie
+  parliament: 58
+- name: Greg Warren
+  party: labor
+  district: campbelltown
+  parliament: 58
+- name: Gurmesh Singh
+  party: nationals
+  district: coffs-harbour
+  parliament: 58
+- name: Helen Dalton
+  party: independent
+  district: murray
+  parliament: 58
+- name: Hugh McDermott
+  party: labor
+  district: prospect
+  parliament: 58
+- name: Jacqui Scruby
+  party: independent
+  district: pittwater
+  parliament: 58
+- name: James Griffin
+  party: liberal
+  district: manly
+  parliament: 58
+- name: James Wallace
+  party: liberal
+  district: hornsby
+  parliament: 58
+- name: Janelle Saffin
+  party: labor
+  district: lismore
+  parliament: 58
+- name: Jason Li
+  party: labor
+  district: strathfield
+  parliament: 58
+- name: Jenny Aitchison
+  party: labor
+  district: maitland
+  parliament: 58
+- name: Jenny Leong
+  party: greens
+  district: newtown
+  parliament: 58
+- name: Jihad Dib
+  party: labor
+  district: bankstown
+  parliament: 58
+- name: Jo Haylen
+  party: labor
+  district: summer-hill
+  parliament: 58
+- name: Jodie Harrison
+  party: labor
+  district: charlestown
+  parliament: 58
+- name: Joe McGirr
+  party: independent
+  district: wagga-wagga
+  parliament: 58
+- name: Jordan Lane
+  party: liberal
+  district: ryde
+  parliament: 58
+- name: Judy Hannan
+  party: independent
+  district: wollondilly
+  parliament: 58
+- name: Julia Finn
+  party: labor
+  district: granville
+  parliament: 58
+- name: Justin Clancy
+  party: liberal
+  district: albury
+  parliament: 58
+- name: Karen McKeown
+  party: labor
+  district: penrith
+  parliament: 58
+- name: Kate Washington
+  party: labor
+  district: port-stephens
+  parliament: 58
+- name: Katelin McInerney
+  party: labor
+  district: kiama
+  parliament: 58
+- name: Kellie Sloane
+  party: liberal
+  district: vaucluse
+  parliament: 58
+- name: Kevin Anderson
+  party: nationals
+  district: tamworth
+  parliament: 58
+- name: Kobi Shetty
+  party: greens
+  district: balmain
+  parliament: 58
+- name: Kylie Wilkinson
+  party: labor
+  district: east-hills
+  parliament: 58
+- name: Liesl Tesch
+  party: labor
+  district: gosford
+  parliament: 58
+- name: Liza Butler
+  party: labor
+  district: south-coast
+  parliament: 58
+- name: Lynda Voltz
+  party: labor
+  district: auburn
+  parliament: 58
+- name: "Marjorie O'Neill"
+  party: labor
+  district: coogee
+  parliament: 58
+- name: Mark Coure
+  party: liberal
+  district: oatley
+  parliament: 58
+- name: Mark Hodges
+  party: liberal
+  district: castle-hill
+  parliament: 58
+- name: Mark Speakman
+  party: liberal
+  district: cronulla
+  parliament: 58
+- name: Mark Taylor
+  party: liberal
+  district: winston-hills
+  parliament: 58
+- name: Maryanne Stuart
+  party: labor
+  district: heathcote
+  parliament: 58
+- name: Matt Cross
+  party: liberal
+  district: davidson
+  parliament: 58
+- name: Michael Daley
+  party: labor
+  district: maroubra
+  parliament: 58
+- name: Michael Holland
+  party: labor
+  district: bega
+  parliament: 58
+- name: Michael Kemp
+  party: nationals
+  district: oxley
+  parliament: 58
+- name: Michael Regan
+  party: independent
+  district: wakehurst
+  parliament: 58
+- name: Monica Tudehope
+  party: liberal
+  district: epping
+  parliament: 58
+- name: Nathan Hagarty
+  party: labor
+  district: leppington
+  parliament: 58
+- name: Paul Scully
+  party: labor
+  district: wollongong
+  parliament: 58
+- name: Paul Toole
+  party: nationals
+  district: bathurst
+  parliament: 58
+- name: Philip Donato
+  party: independent
+  district: orange
+  parliament: 58
+- name: Prue Car
+  party: labor
+  district: londonderry
+  parliament: 58
+- name: Ray Williams
+  party: liberal
+  district: kellyville
+  parliament: 58
+- name: Richie Williamson
+  party: nationals
+  district: clarence
+  parliament: 58
+- name: Robert Dwyer
+  party: liberal
+  district: port-macquarie
+  parliament: 58
+- name: Robyn Preston
+  party: liberal
+  district: hawkesbury
+  parliament: 58
+- name: Ron Hoenig
+  party: labor
+  district: heffron
+  parliament: 58
+- name: Roy Butler
+  party: independent
+  district: barwon
+  parliament: 58
+- name: Ryan Park
+  party: labor
+  district: keira
+  parliament: 58
+- name: Sally Quinnell
+  party: labor
+  district: camden
+  parliament: 58
+- name: Sonia Hornery
+  party: labor
+  district: wallsend
+  parliament: 58
+- name: Sophie Cotsis
+  party: labor
+  district: canterbury
+  parliament: 58
+- name: Steph Cooke
+  party: nationals
+  district: cootamundra
+  parliament: 58
+- name: Stephanie Di Pasqua
+  party: liberal
+  district: drummoyne
+  parliament: 58
+- name: Stephen Bali
+  party: labor
+  district: blacktown
+  parliament: 58
+- name: Stephen Kamper
+  party: labor
+  district: rockdale
+  parliament: 58
+- name: Steve Whan
+  party: labor
+  district: monaro
+  parliament: 58
+- name: Tamara Smith
+  party: greens
+  district: ballina
+  parliament: 58
+- name: Tanya Davies
+  party: liberal
+  district: badgerys-creek
+  parliament: 58
+- name: Tanya Thompson
+  party: nationals
+  district: myall-lakes
+  parliament: 58
+- name: Tim Crakanthorp
+  party: labor
+  district: newcastle
+  parliament: 58
+- name: Tim James
+  party: liberal
+  district: willoughby
+  parliament: 58
+- name: Tina Ayyad
+  party: liberal
+  district: holsworthy
+  parliament: 58
+- name: Tri Vo
+  party: labor
+  district: cabramatta
+  parliament: 58
+- name: Trish Doyle
+  party: labor
+  district: blue-mountains
+  parliament: 58
+- name: Warren Kirby
+  party: labor
+  district: riverstone
+  parliament: 58
+- name: Wendy Tuckerman
+  party: liberal
+  district: goulburn
+  parliament: 58
+- name: Yasmin Catley
+  party: labor
+  district: swansea
+  parliament: 58

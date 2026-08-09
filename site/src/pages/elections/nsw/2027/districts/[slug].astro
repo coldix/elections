@@ -1,0 +1,107 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import SourceLink from "../../../../../components/SourceLink.astro";
+import { loadStateFoundationElection } from "../../../../../../../scripts/lib/state-foundation.mjs";
+import { SITE, NSW2027, partyColour } from "../../../../../lib/site.mjs";
+
+export function getStaticPaths() {
+  const data = loadStateFoundationElection("nsw2027");
+  return data.districts.map((d) => ({
+    params: { slug: d.slug },
+    props: { district: d },
+  }));
+}
+
+const { district } = Astro.props;
+const data = loadStateFoundationElection("nsw2027");
+const { election } = data;
+const party = data.partyBySlug.get(district.incumbent_party);
+
+const schema = {
+  "@type": "WebPage",
+  name: `${district.name} — NSW Legislative Assembly`,
+  description: `Electoral district of ${district.name}. Sitting member of the ${election.sitting_parliament_label}.`,
+  url: `${SITE.url}${NSW2027}/districts/${district.slug}`,
+};
+---
+
+<Base
+  title={district.name}
+  description={`NSW Legislative Assembly district of ${district.name}. Sitting member of the ${election.sitting_parliament_label} — not a 2027 candidacy.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "NSW 2027", href: NSW2027 },
+    { name: "Districts", href: `${NSW2027}/districts` },
+    { name: district.name, href: `${NSW2027}/districts/${district.slug}` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={NSW2027}>NSW 2027</a>
+      <span aria-hidden="true">/</span>
+      <a href={`${NSW2027}/districts`}>Districts</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{district.name}</span>
+    </nav>
+
+    <p class="eyebrow">Legislative Assembly district</p>
+    <h1>{district.name}</h1>
+    <p class="lede">
+      One of {election.assembly_seats} single-member districts electing the
+      {election.parliament_label}.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>Sitting member only.</strong> This page shows who holds the seat in the
+      {election.sitting_parliament_label}. It is not a list of candidates for the 2027 election.
+    </div>
+
+    <dl class="facts">
+      <div>
+        <dt>Sitting member</dt>
+        <dd>{district.incumbent ?? "—"}</dd>
+      </div>
+      <div>
+        <dt>Party</dt>
+        <dd>
+          {
+            party ? (
+              <a href={`${NSW2027}/parties/${party.slug}`} class="party-cell">
+                <span
+                  class="swatch-sm"
+                  style={`background:${partyColour(party.slug)}`}
+                  aria-hidden="true"
+                />
+                {party.name}
+              </a>
+            ) : (
+              (district.incumbent_party ?? "—")
+            )
+          }
+        </dd>
+      </div>
+      <div>
+        <dt>District slug</dt>
+        <dd class="mono">{district.slug}</dd>
+      </div>
+    </dl>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={`${NSW2027}/districts`}>All districts</a>
+      <a class="btn btn-ghost btn-sm" href={`${NSW2027}/assembly`}>Assembly</a>
+      <a class="btn btn-ghost btn-sm" href={NSW2027}>Overview</a>
+    </p>
+
+    {
+      data.sources.assembly && (
+        <section class="section compact" aria-labelledby="src-h">
+          <h2 id="src-h">Source</h2>
+          <SourceLink source={data.sources.assembly} />
+        </section>
+      )
+    }
+  </div>
+</Base>

@@ -1,0 +1,94 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import {
+  loadStateFoundationElection,
+  stateFoundationSummaryFor,
+} from "../../../../../../../scripts/lib/state-foundation.mjs";
+import { SITE, NSW2027, partyColour } from "../../../../../lib/site.mjs";
+
+const data = loadStateFoundationElection("nsw2027");
+const summary = stateFoundationSummaryFor(data);
+const { election } = data;
+
+const districts = [...data.districts].sort((a, b) => a.name.localeCompare(b.name));
+
+const schema = {
+  "@type": "WebPage",
+  name: "Legislative Assembly districts — 2027 NSW state election",
+  description: `All ${summary.districts} NSW Legislative Assembly districts and sitting members of the ${election.sitting_parliament_label}.`,
+  url: `${SITE.url}${NSW2027}/districts`,
+};
+---
+
+<Base
+  title="Legislative Assembly districts"
+  description={`All ${summary.districts} NSW Legislative Assembly districts for the 2027 state election, with sitting members of the ${election.sitting_parliament_label}.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "NSW 2027", href: NSW2027 },
+    { name: "Districts", href: `${NSW2027}/districts` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={NSW2027}>NSW 2027</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Districts</span>
+    </nav>
+
+    <p class="eyebrow">NSW · {election.sitting_parliament_label} · Lower house</p>
+    <h1>Legislative Assembly districts</h1>
+    <p class="lede">
+      <strong>{summary.districts}</strong> single-member electoral districts. The 2027 election
+      returns all seats for the <strong>{election.parliament_label}</strong>. Names below are
+      <em>sitting</em> members of the {election.sitting_parliament_label} — not a candidacy list.
+    </p>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={NSW2027}>NSW overview</a>
+      <a class="btn btn-ghost btn-sm" href={`${NSW2027}/assembly`}>Assembly list</a>
+      <a class="btn btn-ghost btn-sm" href={`${NSW2027}/council`}>Council</a>
+      <a class="btn btn-ghost btn-sm" href="/data/nsw2027/districts.json">districts.json</a>
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">District</th>
+            <th scope="col">Sitting member</th>
+            <th scope="col">Party</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            districts.map((d) => {
+              const party = data.partyBySlug.get(d.incumbent_party);
+              return (
+                <tr>
+                  <td>
+                    <a href={`${NSW2027}/districts/${d.slug}`}>{d.name}</a>
+                  </td>
+                  <td>{d.incumbent ?? "—"}</td>
+                  <td>
+                    <span class="party-cell">
+                      <span
+                        class="swatch-sm"
+                        style={`background:${partyColour(d.incumbent_party)}`}
+                        aria-hidden="true"
+                      />
+                      {party?.short_name ?? d.incumbent_party ?? "—"}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,114 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import {
+  loadStateFoundationElection,
+  stateFoundationSummaryFor,
+} from "../../../../../../scripts/lib/state-foundation.mjs";
+import { SITE, NSW2027, ATTRIBUTION } from "../../../../lib/site.mjs";
+
+const data = loadStateFoundationElection("nsw2027");
+const summary = stateFoundationSummaryFor(data);
+const { election } = data;
+const base = "/data/nsw2027";
+
+const files = [
+  {
+    name: "election.json",
+    note: "Contest metadata: parliament numbers, polling day, authorities.",
+  },
+  {
+    name: "districts.json",
+    note: "93 Legislative Assembly districts with sitting incumbent fields.",
+  },
+  {
+    name: "assembly-members.json",
+    note: "Sitting MLAs of the 58th Parliament (not candidates for 2027).",
+  },
+  {
+    name: "council-members.json",
+    note: "Sitting MLCs with half-Council term_status (up / continuing).",
+  },
+  {
+    name: "parties.json",
+    note: "Party labels from Parliament membership files; tracker-normalised slugs.",
+  },
+  {
+    name: "representation.json",
+    note: "Seats held now per party in each chamber.",
+  },
+  {
+    name: "summary.json",
+    note: "Headline counts for this snapshot.",
+  },
+  { name: "districts.csv", note: "Districts spreadsheet export." },
+  { name: "assembly-members.csv", note: "Assembly members spreadsheet export." },
+  { name: "council-members.csv", note: "Council members spreadsheet export." },
+];
+
+const schema = {
+  "@type": "WebPage",
+  name: "NSW 2027 open data",
+  description: `Machine-readable exports for nsw2027 under ${base}/.`,
+  url: `${SITE.url}${NSW2027}/data`,
+};
+---
+
+<Base
+  title="Open data"
+  description={`JSON and CSV for the nsw2027 ledger: districts, sitting members, parties and representation. CC BY 4.0.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "NSW 2027", href: NSW2027 },
+    { name: "Data", href: `${NSW2027}/data` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={NSW2027}>NSW 2027</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Data</span>
+    </nav>
+
+    <p class="eyebrow">Machine-readable · CC BY 4.0</p>
+    <h1>Open data — nsw2027</h1>
+    <p class="lede">
+      Snapshot of the {election.sitting_parliament_label}: {summary.assembly_members} MLAs,
+      {summary.council_members} MLCs ({summary.council_up} up in 2027). Credit
+      <strong>{ATTRIBUTION}</strong> when reusing.
+    </p>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={NSW2027}>Tracker home</a>
+      <a class="btn btn-ghost btn-sm" href={`${base}/summary.json`}>summary.json</a>
+      <a class="btn btn-ghost btn-sm" href="/data/">All elections data</a>
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">File</th>
+            <th scope="col">Contents</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            files.map((f) => (
+              <tr>
+                <td>
+                  <a class="mono" href={`${base}/${f.name}`}>
+                    {f.name}
+                  </a>
+                </td>
+                <td>{f.note}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Base>

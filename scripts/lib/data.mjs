@@ -101,6 +101,11 @@ export function loadElection(id) {
       `loadElection(${id}): federal elections use loadFederalElection from scripts/lib/federal.mjs`
     );
   }
+  if (election.kind === "state-foundation") {
+    throw new Error(
+      `loadElection(${id}): state-foundation elections use loadStateFoundationElection from scripts/lib/state-foundation.mjs`
+    );
+  }
   const districts = load(dir, "districts.yaml").districts;
   const regions = load(dir, "regions.yaml").regions;
   const parties = load(dir, "parties.yaml").parties;

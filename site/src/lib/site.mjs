@@ -42,6 +42,9 @@ export const VIC2026 = "/elections/vic/2026";
 /** Canonical path for the next federal election (HTML pages). Data id: federal-49. */
 export const FEDERAL_49 = "/elections/federal/49";
 
+/** Canonical path for the NSW 2027 state election (HTML pages). Data id: nsw2027. */
+export const NSW2027 = "/elections/nsw/2027";
+
 /** How reusers should credit the data under CC BY 4.0. */
 export const ATTRIBUTION = SITE.domain;
 

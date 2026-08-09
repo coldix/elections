@@ -54,6 +54,10 @@ const PRIORITY = [
   `https://${HOST}/data/federal-49/polls.json`,
   `https://${HOST}/data/federal-49/poll-average.json`,
   `https://${HOST}/data/federal-49/policies.json`,
+  `https://${HOST}/elections/nsw/2027`,
+  `https://${HOST}/data/nsw2027/summary.json`,
+  `https://${HOST}/data/nsw2027/assembly-members.json`,
+  `https://${HOST}/data/nsw2027/council-members.json`,
 ];
 
 if (!existsSync(KEY_PATH)) {

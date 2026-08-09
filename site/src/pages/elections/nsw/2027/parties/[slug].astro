@@ -1,0 +1,145 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import {
+  loadStateFoundationElection,
+  stateFoundationRepresentationFor,
+} from "../../../../../../../scripts/lib/state-foundation.mjs";
+import { SITE, NSW2027, partyColour } from "../../../../../lib/site.mjs";
+
+export function getStaticPaths() {
+  const data = loadStateFoundationElection("nsw2027");
+  return data.parties.map((p) => ({
+    params: { slug: p.slug },
+    props: { party: p },
+  }));
+}
+
+const { party } = Astro.props;
+const data = loadStateFoundationElection("nsw2027");
+const rep = stateFoundationRepresentationFor(data);
+const seats = rep[party.slug] ?? { assembly: 0, council: 0, total: 0 };
+const { election } = data;
+
+const mlas = data.assemblyMembers
+  .filter((m) => m.party === party.slug)
+  .sort((a, b) => a.name.localeCompare(b.name));
+const mlcs = data.councilMembers
+  .filter((m) => m.party === party.slug)
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const schema = {
+  "@type": "WebPage",
+  name: `${party.name} — NSW sitting members`,
+  description: `${party.name} sitting members in the ${election.sitting_parliament_label}.`,
+  url: `${SITE.url}${NSW2027}/parties/${party.slug}`,
+};
+---
+
+<Base
+  title={party.short_name || party.name}
+  description={`${party.name}: sitting seats in the ${election.sitting_parliament_label} (not 2027 candidates).`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "NSW 2027", href: NSW2027 },
+    { name: "Parties", href: `${NSW2027}/parties` },
+    { name: party.short_name || party.name, href: `${NSW2027}/parties/${party.slug}` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={NSW2027}>NSW 2027</a>
+      <span aria-hidden="true">/</span>
+      <a href={`${NSW2027}/parties`}>Parties</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{party.short_name || party.name}</span>
+    </nav>
+
+    <p class="eyebrow">
+      <span class="swatch-sm" style={`background:${partyColour(party.slug)}`} aria-hidden="true" />
+      {election.sitting_parliament_label}
+    </p>
+    <h1>{party.name}</h1>
+    <p class="lede">
+      Sitting seats only: <strong>{seats.assembly}</strong> Assembly ·
+      <strong>{seats.council}</strong> Council · <strong>{seats.total}</strong> total.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>Not a candidate list.</strong> These people hold seats now. Whether they recontest in
+      2027 is tracked only when individually sourced.
+    </div>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={`${NSW2027}/parties`}>All parties</a>
+      <a class="btn btn-ghost btn-sm" href={NSW2027}>Overview</a>
+    </p>
+
+    {
+      mlas.length > 0 && (
+        <section aria-labelledby="la-h">
+          <h2 id="la-h">Legislative Assembly ({mlas.length})</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Member</th>
+                  <th scope="col">District</th>
+                </tr>
+              </thead>
+              <tbody>
+                {mlas.map((m) => {
+                  const d = data.districts.find((x) => x.slug === m.district);
+                  return (
+                    <tr>
+                      <td>{m.name}</td>
+                      <td>
+                        <a href={`${NSW2027}/districts/${m.district}`}>{d?.name ?? m.district}</a>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      mlcs.length > 0 && (
+        <section class="section compact" aria-labelledby="lc-h">
+          <h2 id="lc-h">Legislative Council ({mlcs.length})</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Member</th>
+                  <th scope="col">Term status</th>
+                  <th scope="col">End term</th>
+                </tr>
+              </thead>
+              <tbody>
+                {mlcs.map((m) => (
+                  <tr>
+                    <td>{m.name}</td>
+                    <td>{m.term_status}</td>
+                    <td>{m.end_term ?? "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      seats.total === 0 && (
+        <p class="muted">No sitting seats recorded for this label in the current snapshot.</p>
+      )
+    }
+  </div>
+</Base>

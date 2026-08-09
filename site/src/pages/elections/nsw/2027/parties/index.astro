@@ -1,0 +1,113 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import {
+  loadStateFoundationElection,
+  stateFoundationRepresentationFor,
+} from "../../../../../../../scripts/lib/state-foundation.mjs";
+import { SITE, NSW2027, partyColour } from "../../../../../lib/site.mjs";
+
+const data = loadStateFoundationElection("nsw2027");
+const rep = stateFoundationRepresentationFor(data);
+const { election } = data;
+
+const rows = data.parties
+  .map((p) => {
+    const r = rep[p.slug] ?? { assembly: 0, council: 0, total: 0 };
+    return { ...p, ...r };
+  })
+  .sort(
+    (a, b) =>
+      b.total - a.total || b.assembly - a.assembly || a.name.localeCompare(b.name)
+  );
+
+const withSeats = rows.filter((p) => p.total > 0);
+
+const schema = {
+  "@type": "WebPage",
+  name: "Parties — 2027 NSW state election",
+  description: `Parties and independents with seats in the ${election.sitting_parliament_label}.`,
+  url: `${SITE.url}${NSW2027}/parties`,
+};
+---
+
+<Base
+  title="Parties"
+  description={`NSW parties with seats in the ${election.sitting_parliament_label}. Ordered by seats held now — not by coverage or prominence.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "NSW 2027", href: NSW2027 },
+    { name: "Parties", href: `${NSW2027}/parties` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={NSW2027}>NSW 2027</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Parties</span>
+    </nav>
+
+    <p class="eyebrow">NSW · {election.sitting_parliament_label}</p>
+    <h1>Parties</h1>
+    <p class="lede">
+      Parties and independents that hold seats in the current parliament. Ordered by seats held now
+      (Assembly + Council) — an objective fact about the sitting parliament, not a ranking by
+      prominence. This is <em>not</em> yet a candidacy-coverage dashboard for 2027.
+    </p>
+
+    <div class="notice" role="note">
+      <strong>Sitting seats only.</strong> Figures are membership of the
+      {election.sitting_parliament_label}. They do not count announced candidates for the next
+      election. Coalition partners (Liberal and Nationals) are listed separately.
+    </div>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={NSW2027}>Overview</a>
+      <a class="btn btn-ghost btn-sm" href={`${NSW2027}/assembly`}>Assembly</a>
+      <a class="btn btn-ghost btn-sm" href={`${NSW2027}/council`}>Council</a>
+      <a class="btn btn-ghost btn-sm" href={`${NSW2027}/data`}>Open data</a>
+    </p>
+
+    <p class="summary muted">
+      <strong>{withSeats.length}</strong> with seats ·
+      <strong>{rows.length}</strong> listed groups
+    </p>
+
+    <ul class="party-grid" role="list">
+      {
+        withSeats.map((p) => (
+          <li>
+            <a
+              class="card p-card"
+              href={`${NSW2027}/parties/${p.slug}`}
+              style={`--party-colour:${partyColour(p.slug)}`}
+            >
+              <span class="p-bar" aria-hidden="true" />
+              <header class="p-head">
+                <h2>{p.short_name}</h2>
+                <p class="p-full muted">{p.name}</p>
+                {p.registered === false && <p class="unreg">Not a registered party label</p>}
+              </header>
+              <dl class="p-stats">
+                <div>
+                  <dt>Assembly</dt>
+                  <dd>{p.assembly}</dd>
+                </div>
+                <div>
+                  <dt>Council</dt>
+                  <dd>{p.council}</dd>
+                </div>
+                <div>
+                  <dt>Total</dt>
+                  <dd>{p.total}</dd>
+                </div>
+              </dl>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>
