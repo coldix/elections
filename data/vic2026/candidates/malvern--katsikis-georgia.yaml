@@ -1,0 +1,23 @@
+candidate:
+  name: Georgia Katsikis
+  party: greens
+  contest: malvern
+  chamber: assembly
+  status: endorsed
+  occupation: "Disability advocate and researcher"
+  background: "Based in Malvern; formerly worked as a psychologist."
+  history:
+    - status: endorsed
+      date: 2026-08-12
+      source:
+        url: https://greens.org.au/vic/person/georgia-katsikis
+        publisher: Australian Greens Victoria
+        title: "Georgia Katsikis, Candidate for Malvern"
+        accessed: 2026-08-12
+      note: >-
+        Official Victorian Greens candidate profile naming Georgia Katsikis as the
+        party’s candidate for the Legislative Assembly district of Malvern at the
+        2026 state election. Page does not show a separate endorsement publish date.
+  links:
+    - url: https://greens.org.au/vic/person/georgia-katsikis
+      kind: party-profile

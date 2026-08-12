@@ -1,0 +1,23 @@
+candidate:
+  name: Hsiang-Han Hsieh
+  party: greens
+  contest: oakleigh
+  chamber: assembly
+  status: endorsed
+  occupation: "Psychiatrist"
+  background: "Lives and works in the Oakleigh district; works in the public mental health system."
+  history:
+    - status: endorsed
+      date: 2026-08-12
+      source:
+        url: https://greens.org.au/vic/person/hsiang-han-hsieh
+        publisher: Australian Greens Victoria
+        title: "Hsiang-Han Hsieh, Candidate for Oakleigh"
+        accessed: 2026-08-12
+      note: >-
+        Official Victorian Greens candidate profile naming Hsiang-Han Hsieh as the
+        party’s candidate for the Legislative Assembly district of Oakleigh at the
+        2026 state election. Page does not show a separate endorsement publish date.
+  links:
+    - url: https://greens.org.au/vic/person/hsiang-han-hsieh
+      kind: party-profile

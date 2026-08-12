@@ -1,0 +1,21 @@
+candidate:
+  name: Paul Schofield
+  party: greens
+  contest: mulgrave
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-08-12
+      source:
+        url: https://greens.org.au/vic/person/paul-schofield
+        publisher: Australian Greens Victoria
+        title: "Paul Schofield, Candidate for Mulgrave"
+        accessed: 2026-08-12
+      note: >-
+        Official Victorian Greens candidate profile naming Paul Schofield as the
+        party’s candidate for the Legislative Assembly district of Mulgrave at the
+        2026 state election. Page does not show a separate endorsement publish date.
+  links:
+    - url: https://greens.org.au/vic/person/paul-schofield
+      kind: party-profile
