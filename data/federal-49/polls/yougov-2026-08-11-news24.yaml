@@ -1,0 +1,36 @@
+id: yougov-2026-08-11-news24
+pollster: YouGov
+commissioner: news24
+commissioner_type: media
+fieldwork_start: 2026-08-04
+fieldwork_end: 2026-08-10
+sample_size: 1500
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention (News24 Pulse / YouGov). Fieldwork Tue–Mon per Poll Bludger; sample size 1,500 per Wikipedia/prior series. Others residual after ALP+LNP+GRN+ONP (14)."
+primaries:
+  alp: 28
+  lnp: 22
+  onp: 24
+  grn: 12
+  others: 14
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.news24.com.au/politics/australian-politics/coalition-and-one-nation-face-vote-consolidation-battle-to-oust-albanese-as-formal-alliance-ruled-out/news-story/647c039e1efc5027e63a509879724195
+    publisher: News24
+    title: Coalition and One Nation face vote consolidation battle to oust Albanese as formal alliance ruled out
+    published: 2026-08-11
+    accessed: 2026-08-12
+  - url: https://www.pollbludger.net/2026/08/12/federal-polls-yougov-and-roy-morgan-open-thread-5/
+    publisher: The Poll Bludger
+    title: Federal polls — YouGov and Roy Morgan (open thread)
+    published: 2026-08-12
+    accessed: 2026-08-12
+  - url: https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_Australian_federal_election
+    publisher: Wikipedia
+    title: Opinion polling for the next Australian federal election (discovery cross-check for n and residual)
+    published: 2026-08-12
+    accessed: 2026-08-12

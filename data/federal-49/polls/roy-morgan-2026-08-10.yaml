@@ -1,0 +1,31 @@
+id: roy-morgan-2026-08-10
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-08-03
+fieldwork_end: 2026-08-09
+sample_size: 1647
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Australia-wide electors. L-NP reported as Liberals 18.5% + Nationals 3.5%."
+primaries:
+  alp: 25.5
+  lnp: 22
+  onp: 26
+  grn: 15.5
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10307-federal-voting-intention-august-10-2026
+    publisher: Roy Morgan
+    title: One Nation surges into first place on primary vote, but ALP maintains election-winning two-party preferred edge
+    published: 2026-08-10
+    accessed: 2026-08-12
+  - url: https://www.pollbludger.net/2026/08/12/federal-polls-yougov-and-roy-morgan-open-thread-5/
+    publisher: The Poll Bludger
+    title: Federal polls — YouGov and Roy Morgan (open thread)
+    published: 2026-08-12
+    accessed: 2026-08-12
