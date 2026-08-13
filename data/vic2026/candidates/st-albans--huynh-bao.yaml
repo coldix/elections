@@ -1,0 +1,24 @@
+candidate:
+  name: Bao Huynh
+  party: greens
+  contest: st-albans
+  chamber: assembly
+  status: endorsed
+  occupation: "Social policy academic"
+  background: "Local Westie; advocates on education, roads and public transport for St Albans."
+  history:
+    - status: endorsed
+      date: 2026-08-14
+      source:
+        url: https://greens.org.au/vic/person/bao-huynh
+        publisher: Australian Greens Victoria
+        title: "Bao Huynh, Candidate for St Albans"
+        accessed: 2026-08-14
+      note: >-
+        Official Victorian Greens candidate profile naming Bao Huynh as the
+        party’s candidate for the Legislative Assembly district of St Albans at
+        the 2026 state election. Page does not show a separate endorsement
+        publish date.
+  links:
+    - url: https://greens.org.au/vic/person/bao-huynh
+      kind: party-profile
