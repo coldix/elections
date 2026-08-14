@@ -1,6 +1,6 @@
 # Documentation index
 
-> **Updated** 2026-08-09 · Hub: [../README.md](../README.md)
+> **Updated** 2026-08-14 · Hub: [../README.md](../README.md)
 
 This index is the documentation hub. Every maintained Markdown document must be
 reachable from the root README through this page or another linked document.

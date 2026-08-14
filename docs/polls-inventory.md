@@ -4,8 +4,10 @@
 Assembly voting-intention polls, used to apply
 [poll-methodology.md](poll-methodology.md) inclusion rules.
 
-**Status.** Discovery + ledger cross-check (updated 2026-08-08). Figures in
-the table may still be provisional until a YAML row exists. Before any
+**Status.** Discovery + ledger cross-check (updated 2026-08-14). Newest
+public statewide Assembly VI still ends **5–7 Aug** (Roy Morgan SMS); no later
+Vic VI found as of that date. Federal primary-vote rows live under
+`data/federal-49/polls/` (not this Vic inventory). Before any
 `data/vic2026/polls/` entry, re-check the primary source for fieldwork dates,
 sample size, commissioner, and exact primaries.
 

@@ -1,10 +1,19 @@
 # Changelog — since polls
 
-> **Updated** 2026-08-09 · hub [../README.md](../README.md)
+> **Updated** 2026-08-14 · hub [../README.md](../README.md)
 
 Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
+
+## 2026-08-14 — Vic candidates + federal poll catch-up
+
+| Area | What shipped |
+|---|---|
+| **Federal polls** | Early-August VI: Newspoll (3–7 Aug), Roy Morgan (3–9 Aug), YouGov News24 Pulse (4–10 Aug) under `data/federal-49/polls/` |
+| **Vic Greens** | Party-profile endorsements: Lightbody (Bulleen), Katsikis (Malvern), Schofield (Mulgrave), Hsieh (Oakleigh), Huynh (St Albans) |
+| **Vic majors** | Seven Assembly names first recorded from Wikipedia, then upgraded where cited primaries exist (Labor team pages, Gazette, Liberal team URLs, social for Awad/Cottom) |
+| **Hygiene** | Merged remote agent branches pruned; repo hygiene + validate green; live build meta at `0711a4f` before this docs stamp |
 
 ## 2026-08-09 — NSW 2027 sitting-members tracker
 

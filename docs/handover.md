@@ -1,6 +1,6 @@
 # HANDOVER
 
-> **Updated** 2026-08-09 · hub [../README.md](../README.md)
+> **Updated** 2026-08-14 · hub [../README.md](../README.md)
 
 Current operational context for the Australian Election Tracker. Historical
 product changes belong in [changelog.md](changelog.md); this file is
@@ -64,10 +64,12 @@ when creating the first federal `issues.yaml`.
 Candidate coverage is intentionally progressive. A missing candidate means no
 individually sourced record has been verified, not that nobody is standing.
 
-The most recent named-person correction moved Warren Pickering’s live One Nation
-candidacy to Pakenham, retained his initial Eastern Victoria endorsement in
-history as withdrawn, and added his official candidate and principal political
-Facebook links.
+**Ledger snapshot (2026-08-14):** about **279** Vic candidacies; **16** Vic
+statewide polls (newest fieldwork end **5–7 Aug** Roy Morgan SMS); federal-49
+**11** primary-vote polls (average as-of **10 Aug**, including Newspoll /
+Roy Morgan / YouGov early-August releases). Wikipedia remains a discovery
+index — prefer party pages and dated media when available; wiki-only rows
+must note they are not officially confirmed until a primary is verified.
 
 ## People pages decision
 

@@ -1,6 +1,6 @@
 # Repository layout
 
-> **Updated** 2026-08-09 · hub [../README.md](../README.md)
+> **Updated** 2026-08-14 · hub [../README.md](../README.md)
 
 Annotated map of the Australian Election Tracker repository. `data/` is the
 source of truth, `scripts/` validate and export it, and `site/` renders the
