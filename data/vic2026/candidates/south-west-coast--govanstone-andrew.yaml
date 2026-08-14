@@ -3,17 +3,25 @@ candidate:
   party: labor
   contest: south-west-coast
   chamber: assembly
-  status: announced
+  status: endorsed
+  occupation: "Community advocate"
+  background: >-
+    Portland local; involved in community work including Lake Condah / Budj Bim
+    restoration efforts.
   history:
-    - status: announced
-      date: 2026-08-14
+    - status: endorsed
+      date: 2026-08-06
       source:
-        url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
-        publisher: Wikipedia
-        title: Candidates of the 2026 Victorian state election
+        url: https://www.viclabor.org.au/our-team/andrew-govanstone
+        publisher: Victorian Labor
+        title: "Andrew Govanstone: Candidate for South-West Coast"
         accessed: 2026-08-14
       note: >-
-        Not officially confirmed. Listed on Wikipedia’s candidates table for the 2026 Victorian state election (Legislative Assembly). Wikipedia cites: https://www.viclabor.org.au/our-team/andrew-govanstone. Treat as discovery until a primary party or media source is verified directly.
+        Official Victorian Labor candidates page (Wikipedia cites 2026 profile).
   links:
+    - url: https://www.viclabor.org.au/our-team/andrew-govanstone
+      kind: party-profile
+    - url: https://www.facebook.com/AndrewForSouthWestCoast/
+      kind: campaign-site
     - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
       kind: wikipedia

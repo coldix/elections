@@ -6,14 +6,19 @@ candidate:
   status: announced
   history:
     - status: announced
-      date: 2026-08-14
+      date: 2025-12-12
       source:
-        url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
-        publisher: Wikipedia
-        title: Candidates of the 2026 Victorian state election
+        url: https://www.facebook.com/watch/?v=850982047896133
+        publisher: Facebook (Jess Wilson)
+        title: >-
+          The Sunbury community is one of many in Melbourne’s west that have been
+          completely neglected by Labor
+        published: 2025-12-12
         accessed: 2026-08-14
       note: >-
-        Not officially confirmed. Listed on Wikipedia’s candidates table for the 2026 Victorian state election (Legislative Assembly). Wikipedia cites: Jess Wilson Facebook video (12 Dec 2025) per Wikipedia citation. Treat as discovery until a primary party or media source is verified directly.
+        Wikipedia cites this Jess Wilson Facebook video (12 December 2025) in
+        connection with Cottom as Liberal for Sunbury. Secondary social source
+        only; upgrade if a Liberal Victoria team page is verified.
   links:
     - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
       kind: wikipedia

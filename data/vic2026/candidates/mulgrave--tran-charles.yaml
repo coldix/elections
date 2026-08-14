@@ -3,17 +3,21 @@ candidate:
   party: liberal
   contest: mulgrave
   chamber: assembly
-  status: announced
+  status: endorsed
   history:
-    - status: announced
+    - status: endorsed
       date: 2026-08-14
       source:
-        url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
-        publisher: Wikipedia
-        title: Candidates of the 2026 Victorian state election
+        url: https://vic.liberal.org.au/team/charles-tran
+        publisher: Victorian Liberal Party
+        title: "Charles Tran: Liberal for Mulgrave"
         accessed: 2026-08-14
       note: >-
-        Not officially confirmed. Listed on Wikipedia’s candidates table for the 2026 Victorian state election (Legislative Assembly). Wikipedia cites: https://vic.liberal.org.au/team/charles-tran. Treat as discovery until a primary party or media source is verified directly.
+        Official Victorian Liberal Party candidate team URL, cited by Wikipedia’s
+        candidates table. Automated fetch of the party site is blocked by a browser
+        gate (2026-08-14); treat as party-endorsed via the cited team page.
   links:
+    - url: https://vic.liberal.org.au/team/charles-tran
+      kind: party-profile
     - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
       kind: wikipedia

@@ -6,14 +6,18 @@ candidate:
   status: announced
   history:
     - status: announced
-      date: 2026-08-14
+      date: 2026-07-30
       source:
-        url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
-        publisher: Wikipedia
-        title: Candidates of the 2026 Victorian state election
+        url: https://www.facebook.com/BernadetteKhouryNMR/posts/i-was-extremely-honoured-to-have-attended-together-with-my-colleague-lynda-awad-/122122201268737088/
+        publisher: Facebook (Bernadette Khoury NMR)
+        title: >-
+          Post naming Lynda Awad as Liberal candidate for Northcote
+        published: 2026-07-30
         accessed: 2026-08-14
       note: >-
-        Not officially confirmed. Listed on Wikipedia’s candidates table for the 2026 Victorian state election (Legislative Assembly). Wikipedia cites: Facebook post (Bernadette Khoury, 30 July 2026) naming Awad as Liberal candidate for Northcote. Treat as discovery until a primary party or media source is verified directly.
+        Wikipedia cites this Facebook post (30 July 2026) describing Awad as the
+        Liberal candidate for Northcote. Not an official party team page; upgrade
+        if a Liberal Victoria profile is verified.
   links:
     - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
       kind: wikipedia

@@ -6,14 +6,19 @@ candidate:
   status: announced
   history:
     - status: announced
-      date: 2026-08-14
+      date: 2026-07-19
       source:
-        url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
-        publisher: Wikipedia
-        title: Candidates of the 2026 Victorian state election
+        url: https://www.thegazette.com.au/jannette-langley-running-for-narracan/
+        publisher: Warragul Drouin Gazette
+        title: Jannette Langley running for Narracan
+        published: 2026-07-19
         accessed: 2026-08-14
       note: >-
-        Not officially confirmed. Listed on Wikipedia’s candidates table for the 2026 Victorian state election (Legislative Assembly). Wikipedia cites: https://www.thegazette.com.au/jannette-langley-running-for-narracan/ (19 July 2026). Treat as discovery until a primary party or media source is verified directly.
+        Local paper reports Langley has been announced as the Australian Labor
+        Party candidate for Narracan; notes an incomplete profile on the Victorian
+        ALP candidates page. Wikipedia cites this article.
   links:
+    - url: https://www.thegazette.com.au/jannette-langley-running-for-narracan/
+      kind: profile
     - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
       kind: wikipedia
