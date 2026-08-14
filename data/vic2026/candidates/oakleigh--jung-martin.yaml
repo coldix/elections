@@ -1,0 +1,19 @@
+candidate:
+  name: Martin Jung
+  party: liberal
+  contest: oakleigh
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-08-14
+      source:
+        url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
+        publisher: Wikipedia
+        title: Candidates of the 2026 Victorian state election
+        accessed: 2026-08-14
+      note: >-
+        Not officially confirmed. Listed on Wikipedia’s candidates table for the 2026 Victorian state election (Legislative Assembly). Wikipedia cites: https://vic.liberal.org.au/team/martin-jung. Treat as discovery until a primary party or media source is verified directly.
+  links:
+    - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
+      kind: wikipedia
