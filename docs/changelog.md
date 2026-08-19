@@ -11,7 +11,7 @@ ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 | Area | What shipped |
 |---|---|
 | **Vic / federal polls + home** | Invitation to the open [oze monthly survey](https://survey.oze.net.au/s/monthly-poll). Labelled not scientific and **not** in the tracker average |
-| **Header** | Sitewide **Take the survey** button in the header |
+| **Header** | **Survey** button at the top of the header on home, Vic polls, and federal polls |
 
 ## 2026-08-19 — Poll catch-up + Allan retirement + candidate wave
 

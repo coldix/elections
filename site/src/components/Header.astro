@@ -1,7 +1,9 @@
 ---
-import { SITE, OZE_MONTHLY_POLL } from "../lib/site.mjs";
+import { SITE, OZE_MONTHLY_POLL, VIC2026, FEDERAL_49 } from "../lib/site.mjs";
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
-const VIC = "/elections/vic/2026";
+const VIC = VIC2026;
+const showSurvey =
+  path === "/" || path === `${VIC2026}/polls` || path === `${FEDERAL_49}/polls`;
 const nav = [
   { href: "/elections", label: "Upcoming elections", exact: true, featured: true },
   { href: VIC, label: "Victoria 2026" },
@@ -26,6 +28,11 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
         <span class="brand-sub">by {SITE.publisher}</span>
       </span>
     </a>
+    {
+      showSurvey && (
+        <a class="btn btn-sm header-survey" href={OZE_MONTHLY_POLL.url}>Survey</a>
+      )
+    }
 
     <div class="header-end">
       <nav aria-label="Primary">
@@ -43,8 +50,6 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
           ))}
         </ul>
       </nav>
-
-      <a class="btn btn-sm header-survey" href={OZE_MONTHLY_POLL.url}>Take the survey</a>
 
       <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" title="Toggle light / dark theme">
         <span class="theme-icon" aria-hidden="true">
