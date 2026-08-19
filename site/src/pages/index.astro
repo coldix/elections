@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import Countdown from "../components/Countdown.astro";
 import OzeMonthlySurvey from "../components/OzeMonthlySurvey.astro";
-import { SITE, VIC2026, formatDate } from "../lib/site.mjs";
+import { SITE, VIC2026, OZE_MONTHLY_POLL, formatDate } from "../lib/site.mjs";
 import { loadElection, summaryFor } from "../../../scripts/lib/data.mjs";
 import { ELECTION_DATE_STATUS, loadElectionCalendar } from "../lib/electionCalendar.mjs";
 
@@ -93,6 +93,7 @@ const schema = [
       </p>
       <p class="btn-row hero-actions">
         <a class="btn" href={VIC2026}>Open Victoria 2026 tracker</a>
+        <a class="btn" href={OZE_MONTHLY_POLL.url}>Take the survey</a>
         <a class="btn btn-ghost" href="/elections">View upcoming elections</a>
         <a class="btn btn-ghost" href="/methodology">Read the methodology</a>
       </p>

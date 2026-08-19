@@ -2,8 +2,7 @@
 import { SITE, OZE_MONTHLY_POLL, VIC2026, FEDERAL_49 } from "../lib/site.mjs";
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const VIC = VIC2026;
-const showSurvey =
-  path === "/" || path === `${VIC2026}/polls` || path === `${FEDERAL_49}/polls`;
+const showSurvey = path === `${VIC2026}/polls` || path === `${FEDERAL_49}/polls`;
 const nav = [
   { href: "/elections", label: "Upcoming elections", exact: true, featured: true },
   { href: VIC, label: "Victoria 2026" },
