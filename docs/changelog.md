@@ -6,6 +6,12 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
+## 2026-08-19 — Oze monthly survey invitation
+
+| Area | What shipped |
+|---|---|
+| **Vic / federal polls + home** | Invitation to the open [oze monthly survey](https://survey.oze.net.au/s/monthly-poll). Labelled not scientific and **not** in the tracker average |
+
 ## 2026-08-19 — Poll catch-up + Allan retirement + candidate wave
 
 | Area | What shipped |

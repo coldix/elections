@@ -1,0 +1,58 @@
+---
+/**
+ * Invitation to the open oze monthly survey.
+ * Not a scientific poll and not an input to the tracker average.
+ */
+import { OZE_MONTHLY_POLL } from "../lib/site.mjs";
+
+const { variant = "vic" } = Astro.props;
+
+const heading =
+  variant === "home"
+    ? "Have your say — monthly voting survey"
+    : "Oze monthly open survey";
+
+const body =
+  variant === "federal"
+    ? "The same open oze survey asks how you would vote at the next federal election (and at the Victorian election on 28 November 2026). Anyone with the link can answer. It is not weighted, not a forecast, and is not used in the tracker average above. August charts start from this site’s average, then add live answers."
+    : variant === "home"
+      ? "Once a month, say how you would vote at the Victorian election on 28 November 2026 and at the next federal election. Open survey — not a scientific poll, and not part of the tracker average."
+      : "Once a month you can say how you would vote at the Victorian election on 28 November 2026 (and at the next federal election). Anyone with the link can answer. It is not weighted, not a forecast, and is not used in the tracker average above. August charts start from this site’s average, then add live answers.";
+---
+
+<section class:list={["oze-survey", variant === "home" && "oze-survey-home"]} aria-labelledby="oze-survey-h">
+  {variant === "home" ? <h3 id="oze-survey-h">{heading}</h3> : <h2 id="oze-survey-h">{heading}</h2>}
+  <p>{body}</p>
+  <p class="btn-row">
+    <a class="btn" href={OZE_MONTHLY_POLL.url}>Take the monthly survey</a>
+    {
+      variant !== "home" && (
+        <a class="btn btn-ghost" href={OZE_MONTHLY_POLL.repo}>Survey source on GitHub</a>
+      )
+    }
+  </p>
+</section>
+
+<style>
+  .oze-survey {
+    margin: 2rem 0 0;
+    padding: 1.15rem 1.25rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: 0.6rem;
+    background: var(--surface-2);
+  }
+  .oze-survey h2,
+  .oze-survey h3 {
+    margin: 0 0 0.5rem;
+  }
+  .oze-survey p {
+    margin: 0 0 0.85rem;
+    color: var(--ink-2);
+  }
+  .oze-survey .btn-row {
+    margin: 0;
+  }
+  .oze-survey-home {
+    margin-top: 1.25rem;
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import Base from "../../../../layouts/Base.astro";
 import PollCharts from "../../../../components/PollCharts.astro";
+import OzeMonthlySurvey from "../../../../components/OzeMonthlySurvey.astro";
 import { SITE, FEDERAL_49, formatDate } from "../../../../lib/site.mjs";
 import {
   loadPolls,
@@ -86,6 +87,16 @@ const schema = [
             `JSON and CSV: ${SITE.url}/data/${electionId}/polls.json and ` +
             `${SITE.url}/data/${electionId}/poll-average.json. Methodology: ` +
             "https://github.com/coldix/elections/blob/main/docs/poll-methodology.md",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is the oze monthly survey part of the poll average?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "No. The oze monthly survey at survey.oze.net.au is an open questionnaire, not a " +
+            "scientific poll. It is not weighted to the electoral roll and is not used in the tracker average.",
         },
       },
     ],
@@ -187,6 +198,8 @@ const schema = [
         </section>
       )
     }
+
+    <OzeMonthlySurvey variant="federal" />
 
     <h2 id="polls">Polls in the ledger</h2>
     <p>

@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import PollCharts from "../components/PollCharts.astro";
+import OzeMonthlySurvey from "../components/OzeMonthlySurvey.astro";
 import { SITE, VIC2026, formatDate } from "../lib/site.mjs";
 import { listElections } from "../../../scripts/lib/data.mjs";
 import {
@@ -100,6 +101,16 @@ const schema = [
             "Rules are in poll-methodology.md in the public repository.",
         },
       },
+      {
+        "@type": "Question",
+        name: "Is the oze monthly survey part of the poll average?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "No. The oze monthly survey at survey.oze.net.au is an open questionnaire, not a " +
+            "scientific poll. It is not weighted to the electoral roll and is not used in the tracker average.",
+        },
+      },
     ],
   },
 ];
@@ -183,6 +194,8 @@ const schema = [
         </section>
       )
     }
+
+    <OzeMonthlySurvey variant="vic" />
 
     <h2 id="polls">Polls in the ledger</h2>
     <p>

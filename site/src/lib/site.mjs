@@ -36,6 +36,12 @@ export const SITE = {
   publisherUrl: "https://oze.net.au",
 };
 
+/** Open oze monthly voting survey — not a scientific poll, not in the tracker average. */
+export const OZE_MONTHLY_POLL = {
+  url: "https://survey.oze.net.au/s/monthly-poll",
+  repo: "https://github.com/coldix/survey-oze-au",
+};
+
 /** Canonical path prefix for the active Vic 2026 tracker (HTML pages). */
 export const VIC2026 = "/elections/vic/2026";
 

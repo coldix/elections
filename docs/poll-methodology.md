@@ -113,6 +113,11 @@ A poll enters the **eligible set** only if every row holds:
 6. **Duplicate** publications of the same fieldwork (keep one canonical
    source; prefer pollster PDF or commissioning masthead).
 7. Polls that **omit sample size or fieldwork dates**.
+8. **Open oze / self-select surveys** (anyone-with-the-link, unweighted). The
+   monthly questionnaire at [survey.oze.net.au/s/monthly-poll](https://survey.oze.net.au/s/monthly-poll)
+   is linked from the polls pages as an invitation only. It is **not** a
+   ledger row and **must not** enter the average — August charts there are
+   seeded from this tracker’s average, so including them would be circular.
 
 Advocacy / party / union polls are still recorded in the ledger with
 `eligible_for_average: false` and an `exclusion_reason` unless a documented

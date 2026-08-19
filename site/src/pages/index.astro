@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import Countdown from "../components/Countdown.astro";
+import OzeMonthlySurvey from "../components/OzeMonthlySurvey.astro";
 import { SITE, VIC2026, formatDate } from "../lib/site.mjs";
 import { loadElection, summaryFor } from "../../../scripts/lib/data.mjs";
 import { ELECTION_DATE_STATUS, loadElectionCalendar } from "../lib/electionCalendar.mjs";
@@ -137,6 +138,7 @@ const schema = [
           <p class="muted">Last Victorian source verification: {formatDate(summary.latest_verified)}.</p>
         </aside>
       </div>
+      <OzeMonthlySurvey variant="home" />
     </section>
 
     <section class="section" aria-labelledby="use-h">
