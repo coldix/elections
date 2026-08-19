@@ -91,9 +91,19 @@ const schema = [
         <strong>poll average</strong>. Built for federal, state and territory contests under one
         methodology. <strong>Victoria 2026</strong> is the first active ledger.
       </p>
+      <div class="hero-survey">
+        <p class="survey-promo">
+          <strong>How would you vote on 28 November?</strong>
+          Once a month, record a Victorian and federal voting intention. Open to anyone
+          with the link — one vote per person. Not a scientific poll, and not used in
+          the tracker average.
+        </p>
+        <p class="btn-row">
+          <a class="btn" href={OZE_MONTHLY_POLL.url}>Take the survey</a>
+        </p>
+      </div>
       <p class="btn-row hero-actions">
-        <a class="btn" href={VIC2026}>Open Victoria 2026 tracker</a>
-        <a class="btn" href={OZE_MONTHLY_POLL.url}>Take the survey</a>
+        <a class="btn btn-ghost" href={VIC2026}>Open Victoria 2026 tracker</a>
         <a class="btn btn-ghost" href="/elections">View upcoming elections</a>
         <a class="btn btn-ghost" href="/methodology">Read the methodology</a>
       </p>
@@ -198,7 +208,18 @@ const schema = [
     border-bottom: 1px solid var(--rule);
   }
   .national-hero h1 { max-width: 18ch; }
-  .hero-actions { margin-top: 1.5rem; }
+  .hero-survey {
+    max-width: 40rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: 0.65rem;
+    background: var(--surface);
+  }
+  .survey-promo { margin: 0 0 0.85rem; color: var(--ink-2); }
+  .survey-promo strong { display: block; margin-bottom: 0.25rem; color: var(--ink); }
+  .hero-survey .btn-row { margin: 0; }
+  .hero-actions { margin-top: 1.15rem; }
   .national-body { padding-bottom: 2.5rem; }
   .national-body :global(.countdown) { margin-top: 1.75rem; }
   .section { padding-block: clamp(2rem, 4vw, 3rem); }

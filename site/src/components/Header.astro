@@ -34,21 +34,30 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
     }
 
     <div class="header-end">
-      <nav aria-label="Primary">
-        <ul>
-          {nav.map((item) => (
+      <details class="nav-drawer">
+        <summary class="nav-toggle" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="nav-toggle-label">Menu</span>
+        </summary>
+        <nav class="primary-nav" aria-label="Primary">
+          <ul>
             <li>
-              <a
-                href={item.href}
-                class={item.featured ? "featured-nav" : undefined}
-                aria-current={isCurrent(item) ? "page" : undefined}
-              >
-                {item.label}
-              </a>
+              <a class="nav-survey" href={OZE_MONTHLY_POLL.url}>Survey</a>
             </li>
-          ))}
-        </ul>
-      </nav>
+            {nav.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class={item.featured ? "featured-nav" : undefined}
+                  aria-current={isCurrent(item) ? "page" : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </details>
 
       <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" title="Toggle light / dark theme">
         <span class="theme-icon" aria-hidden="true">
@@ -83,6 +92,17 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
     apply(current());
     if (btn) btn.addEventListener("click", function () { apply(current() === "dark" ? "light" : "dark"); });
 
+    var drawer = document.querySelector(".nav-drawer");
+    if (drawer) {
+      document.addEventListener("click", function (event) {
+        if (!drawer.open) return;
+        if (!drawer.contains(event.target)) drawer.removeAttribute("open");
+      });
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && drawer.open) drawer.removeAttribute("open");
+      });
+    }
+
     // Source templates retain their original short links. Rewrite them in dev;
     // the production build also rewrites the static HTML before deployment.
     document.addEventListener("DOMContentLoaded", function () {
@@ -115,13 +135,54 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
   .brand-text strong { font-size: 0.98rem; letter-spacing: -0.015em; font-weight: 660; }
   .brand-sub { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
   .header-end { display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem 1.1rem; margin-left: auto; }
+  .nav-drawer { position: relative; }
+  .nav-toggle { display: none; align-items: center; gap: 0.45rem; list-style: none; cursor: pointer; margin: 0; padding: 0.34rem 0.7rem; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); font: inherit; font-size: 0.82rem; font-weight: 650; line-height: 1.2; box-shadow: var(--shadow); }
+  .nav-toggle::-webkit-details-marker { display: none; }
+  .nav-toggle-bars { display: flex; flex-direction: column; justify-content: space-between; width: 1rem; height: 0.72rem; }
+  .nav-toggle-bars span { display: block; height: 2px; border-radius: 1px; background: currentColor; }
   nav ul { display: flex; flex-wrap: wrap; gap: 0.25rem 0.9rem; list-style: none; margin: 0; padding: 0; }
   nav a { display: block; padding: 0.25rem 0; color: var(--ink-2); text-decoration: none; font-size: 0.9rem; font-weight: 520; border-bottom: 2px solid transparent; }
   nav a:hover { color: var(--ink); border-bottom-color: var(--rule-strong); }
   nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
   nav a.featured-nav { display: inline-flex; align-items: center; padding: 0.34rem 0.72rem; border: 1px solid var(--accent); border-radius: 999px; background: var(--accent-wash); color: var(--ink); font-weight: 650; line-height: 1.2; }
   nav a.featured-nav:hover, nav a.featured-nav[aria-current="page"] { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--ink); }
+  nav a.nav-survey { display: none; }
   .header-survey { flex: none; border-radius: 999px; white-space: nowrap; }
+  @media (max-width: 64rem) {
+    .bar { flex-wrap: nowrap; }
+    .header-end { flex-wrap: nowrap; }
+    .header-survey { display: none; }
+    .theme-label { display: none; }
+    .nav-toggle { display: inline-flex; }
+    .primary-nav { display: none; }
+    .nav-drawer[open] .primary-nav {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 0.45rem);
+      min-width: 16.5rem;
+      padding: 0.55rem;
+      border: 1px solid var(--rule-strong);
+      border-radius: 0.65rem;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      z-index: 30;
+    }
+    .nav-drawer[open] .primary-nav ul { flex-direction: column; gap: 0.15rem; }
+    .nav-drawer[open] .primary-nav a { padding: 0.5rem 0.65rem; border-bottom: 0; border-radius: 0.4rem; }
+    .nav-drawer[open] .primary-nav a:hover { background: var(--accent-wash); }
+    nav a.nav-survey {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.25rem;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      font-weight: 650;
+    }
+    nav a.nav-survey:hover { background: var(--accent-ink); color: #fff; }
+    nav a.featured-nav { border: 0; background: transparent; padding: 0.5rem 0.65rem; border-radius: 0.4rem; }
+  }
   .theme-toggle { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0; padding: 0.28rem 0.7rem 0.28rem 0.55rem; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink-2); font: inherit; font-size: 0.78rem; font-weight: 600; line-height: 1.2; cursor: pointer; box-shadow: var(--shadow); flex: none; }
   .theme-toggle:hover { color: var(--ink); border-color: var(--accent); background: var(--accent-wash); }
   .theme-icon { display: inline-flex; width: 1rem; height: 1rem; position: relative; }
