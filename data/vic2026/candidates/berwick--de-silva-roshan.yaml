@@ -1,0 +1,23 @@
+candidate:
+  name: Roshan De Silva
+  party: greens
+  contest: berwick
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-08-18
+      source:
+        url: https://www.facebook.com/RoshanDeSilvaGreens
+        publisher: Facebook (Roshan De Silva)
+        title: "Roshan De Silva - Greens Candidate for Berwick"
+        accessed: 2026-08-19
+      note: >-
+        Public Facebook page titled as the Greens candidate for Berwick.
+        Wikipedia cites this page (accessed 18 August 2026). Not an official
+        greens.org.au person page; upgrade if a party profile is verified.
+  links:
+    - url: https://www.facebook.com/RoshanDeSilvaGreens
+      kind: Facebook
+    - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
+      kind: wikipedia

@@ -1,0 +1,22 @@
+candidate:
+  name: Ben Lucas
+  party: one-nation
+  contest: narracan
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-08-19
+      source:
+        url: https://www.news24.com.au/politics/australian-politics/former-essendon-premiership-player-john-barnes-tops-latest-list-of-one-nations-victorian-election-candidates/news-story/d046fce8f931f1e91b896e145ca398ab
+        publisher: News24
+        title: Former Essendon premiership player John Barnes tops latest list of One Nation's Victorian election candidates
+        published: 2026-08-19
+        accessed: 2026-08-19
+      note: >-
+        News24 (Patrick Hannaford, 19 August 2026) reports ten new One Nation
+        lower-house candidates. Wikipedia’s candidates table cites that article
+        for Lucas in Narracan. Party page not yet verified.
+  links:
+    - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
+      kind: wikipedia

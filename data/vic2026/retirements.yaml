@@ -280,3 +280,35 @@ retirements:
     note: >-
       Announced she will not recontest her Eastern Victoria Legislative Council
       seat at the November 2026 election; stepped down from cabinet.
+
+  - name: Jacinta Allan
+    party: labor
+    role: MLA
+    seat: bendigo-east
+    announced: 2026-08-14
+    source:
+      url: https://www.abc.net.au/news/2026-08-14/jacinta-allan-former-victorian-premier-quitting-politics/106791250
+      title: Former Victorian premier Jacinta Allan quitting politics at the November election
+      publisher: ABC News
+      published: 2026-08-14
+      accessed: 2026-08-19
+    note: >-
+      Press conference in Bendigo East on 14 August 2026: will not contest the
+      November election after standing down as Premier on 27–28 July. Earlier
+      media treated her as recontesting; see bendigo-east--allan-jacinta.yaml
+      (withdrawn).
+
+  - name: David Ettershank
+    party: legalise-cannabis
+    role: MLC
+    seat: western-metropolitan
+    announced: 2026-06-02
+    source:
+      url: https://www.cannabiz.com.au/legalise-cannabis-victoria-mp-david-ettershank-confirms-political-exit/
+      title: Legalise Cannabis Victoria MP David Ettershank confirms political exit
+      publisher: Cannabis Australia (Cannabiz)
+      published: 2026-06-02
+      accessed: 2026-08-19
+    note: >-
+      Confirmed he will not recontest Western Metropolitan at the November 2026
+      election. Announced 2 June 2026; added to this ledger on 19 August 2026.

@@ -1,6 +1,6 @@
 # HANDOVER
 
-> **Updated** 2026-08-14 · hub [../README.md](../README.md)
+> **Updated** 2026-08-19 · hub [../README.md](../README.md)
 
 Current operational context for the Australian Election Tracker. Historical
 product changes belong in [changelog.md](changelog.md); this file is
@@ -64,12 +64,13 @@ when creating the first federal `issues.yaml`.
 Candidate coverage is intentionally progressive. A missing candidate means no
 individually sourced record has been verified, not that nobody is standing.
 
-**Ledger snapshot (2026-08-14):** about **279** Vic candidacies; **16** Vic
-statewide polls (newest fieldwork end **5–7 Aug** Roy Morgan SMS); federal-49
-**11** primary-vote polls (average as-of **10 Aug**, including Newspoll /
-Roy Morgan / YouGov early-August releases). Wikipedia remains a discovery
-index — prefer party pages and dated media when available; wiki-only rows
-must note they are not officially confirmed until a primary is verified.
+**Ledger snapshot (2026-08-19):** about **294** Vic candidacy files; **18** Vic
+statewide polls (newest fieldwork end **9–15 Aug** Resolve/*Age*); federal-49
+**13** primary-vote polls (average as-of **16 Aug**, including Resolve 9–15 Aug
+and Roy Morgan 10–16 Aug). Jacinta Allan is retired (Bendigo East open).
+Wikipedia remains a discovery index — prefer party pages and dated media when
+available; wiki-only rows must note they are not officially confirmed until a
+primary is verified.
 
 ## People pages decision
 

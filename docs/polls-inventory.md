@@ -4,9 +4,9 @@
 Assembly voting-intention polls, used to apply
 [poll-methodology.md](poll-methodology.md) inclusion rules.
 
-**Status.** Discovery + ledger cross-check (updated 2026-08-14). Newest
-public statewide Assembly VI still ends **5–7 Aug** (Roy Morgan SMS); no later
-Vic VI found as of that date. Federal primary-vote rows live under
+**Status.** Discovery + ledger cross-check (updated 2026-08-19). Newest
+public statewide Assembly VI ends **9–15 Aug** (Resolve/*The Age*); DemosAU
+6–11 Aug is also on the ledger. Federal primary-vote rows live under
 `data/federal-49/polls/` (not this Vic inventory). Before any
 `data/vic2026/polls/` entry, re-check the primary source for fieldwork dates,
 sample size, commissioner, and exact primaries.
@@ -29,6 +29,8 @@ Discovery index:
 
 | Fieldwork (approx.) | Pollster | Commissioner | n | ALP | LNP | GRN | ONP | OTH | Eligible? | Ledger / notes |
 |---|---|---|---:|---:|---:|---:|---:|---:|---|---|
+| 9–15 Aug 2026 | Resolve Strategic | *The Age* (media) | 1000 | 25 | 27 | 12 | 23 | 13 | **Y** | `resolve-2026-08-age` (first after Carroll spill; OTH residual) |
+| 6–11 Aug 2026 | DemosAU | Premier National (media/public) | 1007 | 23 | 32 | 13 | 22 | 10 | **Y** | `demosau-2026-08` (effective n 559) |
 | 5–7 Aug 2026 | Roy Morgan | Self | 2084 | 26 | 26 | 12.5 | 23.5 | 12 | **Y** | `roy-morgan-2026-08` (OTH = 4 other parties + 8 ind) |
 | 31 Jul–3 Aug 2026 | Freshwater Strategy | Herald Sun (media) | 1020 | 25 | 30 | 14 | 22 | 9 | **Y** | `freshwater-2026-08` |
 | 28 Jul–1 Aug 2026 | RedBridge/Accent | *AFR* (media) | 1014 | 23 | 30 | 14 | 22 | 11 | **Y** | `redbridge-accent-2026-08-afr` (post-Carroll spill) |
@@ -71,16 +73,17 @@ the primary release.
 
 ---
 
-## Window illustration (as of 2026-08-08)
+## Window illustration (as of 2026-08-19)
 
-Under **45-day** fieldwork-end window ending with Roy Morgan (7 Aug 2026):
+Under **45-day** fieldwork-end window ending with Resolve (15 Aug 2026):
 
+- Resolve mid Aug — keep (newest Resolve; supersedes Jul)
+- DemosAU early Aug — keep (newest DemosAU; supersedes Jun)
 - Roy Morgan early Aug — keep (newest Roy Morgan)
-- Freshwater late Jul/early Aug — keep (newest Freshwater; supersedes Jun)
-- RedBridge/Accent AFR late Jul — keep (newest `redbridge-accent`; supersedes Jun AFR)
+- Freshwater late Jul/early Aug — keep (newest Freshwater)
+- RedBridge/Accent AFR late Jul — keep (newest `redbridge-accent`)
 - Newspoll late Jul — keep (only Newspoll)
 - Trades Hall RedBridge — keep via exception (`pollster: redbridge`, distinct key)
-- Resolve mid Jul — keep (newest Resolve)
 - Older DemosAU / Freshwater / Roy Morgan / Resolve — history only (de-dupe or outside window)
 
 Recompute with `scripts/lib/polls.mjs` / `/polls` after each ledger change.

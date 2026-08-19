@@ -1,0 +1,24 @@
+candidate:
+  name: Maggie Jane
+  party: greens
+  contest: sydenham
+  chamber: assembly
+  status: endorsed
+  occupation: "Social worker"
+  background: "Carer; campaigning on cost of living, roads and government accountability."
+  history:
+    - status: endorsed
+      date: 2026-08-17
+      source:
+        url: https://greens.org.au/vic/person/maggie-jane
+        publisher: Australian Greens Victoria
+        title: "Maggie Jane, Candidate for Sydenham"
+        accessed: 2026-08-19
+      note: >-
+        Official Victorian Greens candidate profile naming Maggie Jane as the
+        party’s candidate for the Legislative Assembly district of Sydenham.
+        Profile photograph dated 17 August 2026; page does not show a separate
+        endorsement publish date.
+  links:
+    - url: https://greens.org.au/vic/person/maggie-jane
+      kind: party-profile

@@ -1,6 +1,6 @@
 # Australian Election Tracker
 
-> **Updated** 2026-08-14  
+> **Updated** 2026-08-19  
 > Live at [electiontracker.au](https://electiontracker.au) · `main` deploys automatically
 
 **[electiontracker.au](https://electiontracker.au)** is an open, sourced and

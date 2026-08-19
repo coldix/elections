@@ -9,8 +9,8 @@ replacement) is standing in 2026. Wikipedia “incumbent” columns are **not** 
 | | n |
 |---|---|
 | Labor-held Assembly seats | 54 |
-| Labor MLA retirements (open seats) | 9 (incl. Mill Park / D’Ambrosio, Narre Warren South / Maas) |
-| Labor-held seats with sourced Labor 2026 candidacy | 7 |
+| Labor MLA retirements (open seats) | 10 (incl. Bendigo East / Allan, Mill Park / D’Ambrosio, Narre Warren South / Maas) |
+| Labor-held seats with sourced Labor 2026 candidacy | 6 |
 | **Gap — sitting Labor MLA, no sourced recontest** | **38** |
 
 A blank Labor cell is usually **missing public recontest source**, not “Labor not standing.”
@@ -21,7 +21,7 @@ A blank Labor cell is usually **missing public recontest source**, not “Labor 
 2. Encode `data/vic2026/candidates/<district>--<slug>.yaml` with `party: labor`.
 3. Prefer primary URLs over Wikipedia.
 4. **Also valid:** challenger coverage that explicitly frames the sitting MLA as seeking
-   re-election or as Labor’s 2026 opponent (same bar as Jacinta Allan / Alison Marchant).
+   re-election or as Labor’s 2026 opponent (same bar as Alison Marchant).
 
 ## What does **not** count alone
 

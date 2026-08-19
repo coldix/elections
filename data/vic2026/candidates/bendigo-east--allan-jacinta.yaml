@@ -3,7 +3,7 @@ candidate:
   party: labor
   contest: bendigo-east
   chamber: assembly
-  status: announced
+  status: withdrawn
   occupation: "Member of Parliament"
   background: "MLA for Bendigo East since 1999; former Premier of Victoria"
   history:
@@ -25,6 +25,17 @@ candidate:
         title: Allan faces battle to hold onto once-safe Bendigo East seat
         published: 2026-07-28
         accessed: 2026-07-30
+    - status: withdrawn
+      date: 2026-08-14
+      note: >-
+        Press conference in Bendigo East — will not contest the November 2026
+        election. See also retirements.yaml.
+      source:
+        url: https://www.abc.net.au/news/2026-08-14/jacinta-allan-former-victorian-premier-quitting-politics/106791250
+        publisher: ABC News
+        title: Former Victorian premier Jacinta Allan quitting politics at the November election
+        published: 2026-08-14
+        accessed: 2026-08-19
   links:
     - url: https://www.jacintaallan.com
       kind: campaign-site

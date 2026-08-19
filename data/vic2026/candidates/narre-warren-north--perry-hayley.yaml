@@ -1,0 +1,26 @@
+candidate:
+  name: Hayley Perry
+  party: greens
+  contest: narre-warren-north
+  chamber: assembly
+  status: endorsed
+  occupation: "Small-business owner"
+  background: "Narre Warren North local raising a family in the district."
+  history:
+    - status: endorsed
+      date: 2026-08-18
+      source:
+        url: https://greens.org.au/vic/person/hayley-perry
+        publisher: Australian Greens Victoria
+        title: "Hayley Perry, Candidate for Narre Warren North"
+        accessed: 2026-08-19
+      note: >-
+        Official Victorian Greens candidate profile naming Hayley Perry as the
+        party’s candidate for the Legislative Assembly district of Narre Warren
+        North. Profile photograph dated 18 August 2026; page does not show a
+        separate endorsement publish date.
+  links:
+    - url: https://greens.org.au/vic/person/hayley-perry
+      kind: party-profile
+    - url: https://www.facebook.com/HayleyPerryGreens
+      kind: Facebook

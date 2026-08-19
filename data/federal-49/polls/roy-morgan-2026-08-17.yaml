@@ -1,0 +1,31 @@
+id: roy-morgan-2026-08-17
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-08-10
+fieldwork_end: 2026-08-16
+sample_size: 1576
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Australia-wide electors. L-NP reported as Liberals 21% + Nationals 2.5%."
+primaries:
+  alp: 28.5
+  lnp: 23.5
+  onp: 25
+  grn: 12.5
+  others: 10.5
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10311-federal-voting-intention-august-17-2026
+    publisher: Roy Morgan
+    title: In a week students protested against Pauline Hanson and One Nation, and the RBA left interest rates unchanged, the ALP regained its primary vote lead and maintained two-party preferred edge while Greens support is down
+    published: 2026-08-17
+    accessed: 2026-08-19
+  - url: https://roymorgan-cms-prod.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2026/08/17062204/10311-Federal-Voting-Intention-August-17-2026.pdf
+    publisher: Roy Morgan
+    title: Federal Voting Intention August 17 2026 (PDF)
+    published: 2026-08-17
+    accessed: 2026-08-19

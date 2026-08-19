@@ -1,0 +1,31 @@
+id: resolve-2026-08-age
+pollster: "Resolve Strategic"
+commissioner: nine-newspapers
+commissioner_type: media
+fieldwork_start: 2026-08-09
+fieldwork_end: 2026-08-15
+sample_size: 2200
+design_effect: null
+mode: mixed
+population: australian-electors
+question_notes: "Federal primary voting intention for SMH/The Age. Sample ‘more than 2200’ in the masthead; recorded as 2200. Others residual after ALP+LNP+GRN+ONP (11)."
+primaries:
+  alp: 28
+  lnp: 23
+  onp: 26
+  grn: 12
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.smh.com.au/politics/federal/labor-marked-down-on-migration-as-delayed-visa-shake-up-approaches-20260816-p60oq7.html
+    publisher: The Sydney Morning Herald
+    title: "Labor marked down on immigration as delayed visa shake-up approaches: Resolve Political Monitor"
+    published: 2026-08-16
+    accessed: 2026-08-19
+  - url: https://www.pollbludger.net/2026/08/16/resolve-strategic-labor-28-one-nation-26-coalition-23-open-thread-2/
+    publisher: The Poll Bludger
+    title: "Resolve Strategic: Labor 28, One Nation 26, Coalition 23 (open thread)"
+    published: 2026-08-16
+    accessed: 2026-08-19

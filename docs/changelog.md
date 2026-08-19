@@ -1,10 +1,21 @@
 # Changelog — since polls
 
-> **Updated** 2026-08-14 · hub [../README.md](../README.md)
+> **Updated** 2026-08-19 · hub [../README.md](../README.md)
 
 Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
+
+## 2026-08-19 — Poll catch-up + Allan retirement + candidate wave
+
+| Area | What shipped |
+|---|---|
+| **Vic polls** | DemosAU/Premier National (6–11 Aug) and Resolve/*Age* (9–15 Aug, first after Carroll spill) under `data/vic2026/polls/` |
+| **Federal polls** | Resolve/Nine (9–15 Aug) and Roy Morgan (10–16 Aug, finding 10311) under `data/federal-49/polls/` |
+| **Retirement** | **Jacinta Allan** (Labor, Bendigo East) — will not recontest; [ABC](https://www.abc.net.au/news/2026-08-14/jacinta-allan-former-victorian-premier-quitting-politics/106791250) 14 Aug. Candidate file marked `withdrawn`. **David Ettershank** (Legalise Cannabis, Western Metro) added from 2 Jun announcement |
+| **Vic Greens** | Party-profile endorsements: Perry (Narre Warren North), Jane (Sydenham); Nasim (Broadmeadows) from official Greens Instagram; De Silva (Berwick) announced via candidate Facebook |
+| **Vic One Nation** | Nine Assembly names from News24 19 Aug list (Barnes / Essendon plus eight Wikipedia-mapped seats) |
+| **Vic Liberals** | Ambry (Frankston) and Dyson (Pakenham) recorded as wiki-only / unconfirmed |
 
 ## 2026-08-14 — Vic candidates + federal poll catch-up
 

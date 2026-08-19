@@ -1,0 +1,24 @@
+candidate:
+  name: Maryam Nasim
+  party: greens
+  contest: broadmeadows
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-08-11
+      source:
+        url: https://www.instagram.com/p/Db2PuUuOIhT/
+        publisher: Instagram (Victorian Greens)
+        title: I’m Maryam and I’m your Greens candidate for Broadmeadows at the Victorian state election in November!
+        published: 2026-08-11
+        accessed: 2026-08-19
+      note: >-
+        Official Victorian Greens Instagram post (11 August 2026) introducing
+        Maryam Nasim as the party’s candidate for Broadmeadows. Upgrade if a
+        greens.org.au person page is published.
+  links:
+    - url: https://www.instagram.com/p/Db2PuUuOIhT/
+      kind: party-social
+    - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
+      kind: wikipedia

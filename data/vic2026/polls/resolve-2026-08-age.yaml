@@ -1,0 +1,31 @@
+id: resolve-2026-08-age
+pollster: resolve
+commissioner: the-age
+commissioner_type: media
+fieldwork_start: 2026-08-09
+fieldwork_end: 2026-08-15
+sample_size: 1000
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "First Resolve Victorian state VI after Ben Carroll replaced Jacinta Allan (28 Jul). Fieldwork Sunday–Saturday per Poll Bludger; sample padded from Resolve national fieldwork for The Age. Others residual after ALP+LNP+GRN+ONP."
+primaries:
+  alp: 25
+  lnp: 27
+  onp: 23
+  grn: 12
+  others: 13
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theage.com.au/politics/victoria/revealed-how-leadership-coup-has-changed-labor-s-electoral-fortunes-20260817-p60p2l.html
+    publisher: The Age
+    title: "Revealed: How leadership coup has changed Labor’s electoral fortunes"
+    published: 2026-08-19
+    accessed: 2026-08-19
+  - url: https://www.pollbludger.net/2026/08/17/demosau-labor-23-coalition-32-one-nation-22-in-victoria/
+    publisher: The Poll Bludger
+    title: "DemosAU: Labor 23, Coalition 32, One Nation 22 in Victoria (Resolve update)"
+    published: 2026-08-17
+    accessed: 2026-08-19
