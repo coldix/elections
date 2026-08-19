@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <title>OG</title>
+  <style>
+    @font-face {
+      font-family: "AET Sans";
+      src: local("SF Pro Display"), local("Helvetica Neue"), local("Segoe UI");
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+    body {
+      font-family: "AET Sans", ui-sans-serif, system-ui, sans-serif;
+      color: #f4f7fb;
+      background: #071526;
+    }
+    .card {
+      width: 1200px;
+      height: 630px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(900px 420px at 88% 18%, rgba(42, 157, 143, 0.22), transparent 60%),
+        radial-gradient(700px 380px at 8% 110%, rgba(201, 162, 39, 0.12), transparent 55%),
+        linear-gradient(165deg, #06101c 0%, #0a2340 48%, #082033 100%);
+    }
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(ellipse at 70% 40%, black 20%, transparent 75%);
+    }
+    .inner {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      padding: 48px 56px 40px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      grid-template-rows: auto 1fr auto;
+      gap: 0 40px;
+    }
+    .brand {
+      grid-column: 1;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .brand img {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.55), 0 12px 30px rgba(0,0,0,0.35);
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .brand-text strong {
+      font-size: 22px;
+      letter-spacing: 0.04em;
+      font-weight: 750;
+    }
+    .brand-text span {
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #7fd3c7;
+      font-weight: 650;
+    }
+    .copy {
+      grid-column: 1;
+      align-self: center;
+      padding-top: 8px;
+    }
+    .kicker {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #e4c45a;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 68px;
+      line-height: 0.95;
+      font-weight: 780;
+      letter-spacing: -0.03em;
+      max-width: 11ch;
+    }
+    h1 em {
+      font-style: normal;
+      color: #5ec8bc;
+    }
+    .lede {
+      margin-top: 22px;
+      font-size: 23px;
+      line-height: 1.35;
+      color: #d5deea;
+      max-width: 28ch;
+      font-weight: 450;
+    }
+    .art {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ring {
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      border: 2px solid rgba(201, 162, 39, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 42%, rgba(42, 157, 143, 0.28), transparent 62%);
+      box-shadow: inset 0 0 0 18px rgba(7, 21, 38, 0.35);
+    }
+    .ring img {
+      width: 248px;
+      height: 248px;
+      border-radius: 50%;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+    }
+    .bars {
+      position: absolute;
+      left: 18px;
+      bottom: 78px;
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 92px;
+    }
+    .bars i {
+      display: block;
+      width: 14px;
+      border-radius: 4px 4px 0 0;
+      background: linear-gradient(#5ec8bc, #1a6f7a);
+    }
+    .badge {
+      position: absolute;
+      right: 10px;
+      bottom: 62px;
+      background: #0b2744;
+      border: 1.5px solid #c9a227;
+      color: #f6e7a8;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 10px 16px;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    }
+    .footer {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-top: 1px solid rgba(201, 162, 39, 0.35);
+      padding-top: 18px;
+    }
+    .steps {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f4f7fb;
+    }
+    .steps b {
+      color: #c9a227;
+      font-weight: 800;
+    }
+    .url {
+      font-size: 20px;
+      font-weight: 650;
+      color: #7fd3c7;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="grid"></div>
+    <div class="inner">
+      <div class="brand">
+        <img src="aet-logo-512.png" alt="" />
+        <div class="brand-text">
+          <strong>Australian Election Tracker</strong>
+          <span>Independent · Sourced · Open</span>
+        </div>
+      </div>
+      <div class="copy">
+        <div class="kicker">Monthly voting survey</div>
+        <h1>How would <em>you</em> vote?</h1>
+        <p class="lede">Complete it. Share it. Come back each month — then check candidates and policies before you decide.</p>
+      </div>
+      <div class="art">
+        <div class="bars" aria-hidden="true">
+          <i style="height:42%"></i><i style="height:68%"></i><i style="height:54%"></i><i style="height:86%"></i><i style="height:62%"></i>
+        </div>
+        <div class="ring">
+          <img src="aet-logo-512.png" alt="" />
+        </div>
+        <div class="badge">Open to everyone</div>
+      </div>
+      <div class="footer">
+        <div class="steps">Complete <b>·</b> Share <b>·</b> Return monthly</div>
+        <div class="url">electiontracker.au</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
