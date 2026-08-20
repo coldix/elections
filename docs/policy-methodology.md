@@ -39,6 +39,13 @@ scorecard, and not an input to this ledger. Results are published as
 and leader names stripped, for that survey. It must not add a new pledge.
 The long `headline` remains the matrix cell.
 
+`differentiated: true` on an issue is a **selection** flag for the survey’s
+10-issue comparison round: the four matrix positions are materially different.
+It is not a ranking of importance. Issues that fail Gate 1 (federal-only
+immigration) are not rated. Issues that pass Gate 1 but are not flagged —
+firearms, corruption, debt & budget, environment & forestry — are rated but
+not compared. This list is reviewable; changing it is a methodology edit.
+
 ## Non-partisanship
 
 1. **Evidence first.** Every claim requires a structured source (URL, publisher,

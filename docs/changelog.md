@@ -6,6 +6,13 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
+## 2026-08-20 — Issues survey v2 (blind comparison)
+
+| Area | What shipped |
+|---|---|
+| **Survey** | Rate 14 issues; blind comparison of 10 differentiated positions; pie of your picks; Vic vs Everywhere |
+| **Selection** | `differentiated: true` on 10 issues. Immigration dropped (federal). Firearms, corruption, debt, forestry rated only |
+
 ## 2026-08-20 — Short blind claims on policy records
 
 | Area | What shipped |
