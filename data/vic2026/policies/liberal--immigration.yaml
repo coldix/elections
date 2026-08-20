@@ -3,6 +3,7 @@ policy:
   party: liberal
   issue: immigration
   headline: Federal policy — cap migration by housing supply and tighten visa standards
+  blind_claim: "Cap migration to housing supply"
   claims:
   - id: liberal-imm-housing-cap
     statement: '[Federal party policy] Cap annual net overseas migration at the number of new homes completed in Australia, with migration initially set below that ceiling while housing supply catches up.'

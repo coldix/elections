@@ -6,6 +6,12 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
+## 2026-08-20 — Short blind claims on policy records
+
+| Area | What shipped |
+|---|---|
+| **Policies** | `blind_claim` on each Vic 2026 policy YAML — a few words from the headline, no party name, for the issues survey |
+
 ## 2026-08-20 — Vic issues survey invitation
 
 | Area | What shipped |

@@ -3,6 +3,7 @@ policy:
   party: labor
   issue: housing-planning
   headline: Social housing investment, activity-centre density and faster approvals
+  blind_claim: "Social housing and denser activity centres"
   claims:
     - id: labor-housing-social-growth-fund
       statement: >-

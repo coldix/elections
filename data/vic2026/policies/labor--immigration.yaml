@@ -3,6 +3,7 @@ policy:
   party: labor
   issue: immigration
   headline: Federal policy — 185,000 permanent places with an onshore and skilled focus
+  blind_claim: "185,000 permanent places, skilled focus"
   claims:
     - id: labor-imm-2026-program
       statement: >-

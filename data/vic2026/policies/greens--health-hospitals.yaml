@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: health-hospitals
   headline: Universal public healthcare, more mental-health clinicians and expanded treatment capacity
+  blind_claim: "Universal public healthcare"
   claims:
     - id: greens-health-universal
       statement: Fund universal, timely public healthcare according to need, with stronger primary, preventative, rural and regional services and reduced elective-surgery and outpatient waits.

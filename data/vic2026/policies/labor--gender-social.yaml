@@ -3,6 +3,7 @@ policy:
   party: labor
   issue: gender-social
   headline: Family violence reform, gender-responsive budgeting and LGBTIQA+ equality
+  blind_claim: "Family-violence reform and equality laws"
   claims:
     - id: labor-social-family-violence
       statement: >-

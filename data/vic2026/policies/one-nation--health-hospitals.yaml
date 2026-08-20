@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: health-hospitals
   headline: Expand the health workforce and rebuild Rosebud Hospital through a PPP
+  blind_claim: "More clinicians, PPP hospital rebuild"
   claims:
     - id: onp-health-gp-incentives
       statement: >-

@@ -3,6 +3,7 @@ policy:
   party: nationals
   issue: energy
   headline: Energy choice, urban solar parks and a pause on major transmission projects
+  blind_claim: "Energy choice and urban solar"
   claims:
   - id: nationals-energy-gas
     statement: Reverse Victoria’s restrictions on new gas connections and reopen the state to conventional gas exploration, presenting household energy choice and additional supply as affordability measures.

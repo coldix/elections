@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: immigration
   headline: "Federal policy — cut visas; deport unlawful non-residents"
+  blind_claim: "Cut visas, deport unlawful non-residents"
   claims:
     - id: onp-imm-cap
       statement: >-

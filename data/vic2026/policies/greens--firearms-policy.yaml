@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: firearms-policy
   headline: Ownership limits, tighter licence checks and restrictions on high-risk firearms
+  blind_claim: "Tighter licences, fewer high-risk guns"
   claims:
   - id: greens-firearms-cap
     statement: Introduce strict limits on the number of firearms an individual may own.

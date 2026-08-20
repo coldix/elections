@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: cost-of-living
   headline: Remove insurance duty, end renewable subsidies and redirect wasteful spending
+  blind_claim: "Cut insurance duty and energy subsidies"
   claims:
     - id: onp-col-insurance-duty
       statement: >-

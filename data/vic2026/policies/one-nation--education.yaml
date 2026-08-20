@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: education
   headline: Back-to-basics curriculum, parental control and stronger discipline
+  blind_claim: "Back-to-basics and parental control"
   claims:
     - id: onp-edu-basics
       statement: >-

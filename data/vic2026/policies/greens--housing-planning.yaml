@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: housing-planning
   headline: Rent controls, 88,000 public homes, stamp-duty reform and affordable-housing rules
+  blind_claim: "Rent controls and 88,000 public homes"
   claims:
     - id: greens-housing-rent-controls
       statement: Freeze rents for two years, then cap annual increases at wage growth or CPI, whichever is lower; tie increases to the property rather than the tenant.

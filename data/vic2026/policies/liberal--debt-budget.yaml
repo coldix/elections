@@ -3,6 +3,7 @@ policy:
   party: liberal
   issue: debt-budget
   headline: Back-office hiring freeze, cash surplus by 2032 and tighter expenditure controls
+  blind_claim: "Hiring freeze, surplus by 2032"
   claims:
   - id: liberal-debt-freeze
     statement: Freeze recruitment into back-office Victorian Public Service roles while excluding frontline teachers, nurses and police; the Coalition estimates natural attrition would save $22 billion over ten years.

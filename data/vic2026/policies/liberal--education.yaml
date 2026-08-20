@@ -3,6 +3,7 @@ policy:
   party: liberal
   issue: education
   headline: Literacy and Numeracy Guarantee, early specialist support and repeal of the schools tax
+  blind_claim: "Literacy first, repeal the schools tax"
   claims:
   - id: liberal-edu-guarantee
     statement: Adopt a Literacy and Numeracy Guarantee aimed at lifting student results by 15 per cent over a decade, with a longer-term objective of 90 per cent of students reaching the top two NAPLAN proficiency bands.

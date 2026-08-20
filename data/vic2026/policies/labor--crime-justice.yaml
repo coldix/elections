@@ -3,6 +3,7 @@ policy:
   party: labor
   issue: crime-justice
   headline: Tougher bail and youth sentencing alongside permanent violence prevention
+  blind_claim: "Tougher bail and youth sentences"
   claims:
     - id: labor-crime-safety-budget
       statement: >-

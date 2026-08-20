@@ -3,6 +3,7 @@ policy:
   party: liberal
   issue: infrastructure-transport
   headline: $5bn roads program, regional Fair Share Guarantee and a pause on the SRL
+  blind_claim: "$5bn roads, pause the SRL"
   claims:
   - id: liberal-infra-roads
     statement: Invest $5 billion over four years in road maintenance, establish Better Roads Victoria and target one million potholes.

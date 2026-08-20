@@ -4,6 +4,7 @@ policy:
   party: labor
   issue: education
   headline: Free Kinder and TAFE, new schools and disability inclusion
+  blind_claim: "Free Kinder and TAFE"
   claims:
     - id: labor-edu-budget-investment
       statement: >-

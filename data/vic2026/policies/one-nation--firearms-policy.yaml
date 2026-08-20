@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: firearms-policy
   headline: Streamline lawful ownership, review the NFA and strengthen penalties for criminal use
+  blind_claim: "Easier lawful ownership, harder on criminals"
   claims:
   - id: onp-firearms-amnesty
     statement: Legislate an amnesty allowing voluntary surrender or registration of unregistered firearms and examine a market-value voluntary buyback.

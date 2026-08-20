@@ -3,6 +3,7 @@ policy:
   party: nationals
   issue: corruption
   headline: Royal commission, stronger IBAC powers and a construction-sector watchdog
+  blind_claim: "Royal commission and construction watchdog"
   claims:
   - id: nationals-corruption-royal-commission
     statement: Establish a royal commission into alleged CFMEU misconduct on Victorian government major projects, including the flow of public money to organised crime and political organisations.

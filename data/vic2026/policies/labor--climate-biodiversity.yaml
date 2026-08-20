@@ -3,6 +3,7 @@ policy:
   party: labor
   issue: climate-biodiversity
   headline: Net zero by 2045 with legislated interim targets and a 2026–30 climate strategy
+  blind_claim: "Net zero by 2045"
   claims:
     - id: labor-climate-legislated-targets
       statement: >-

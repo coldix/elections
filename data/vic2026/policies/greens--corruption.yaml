@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: corruption
   headline: Broader IBAC powers, independent integrity funding and political-transparency reforms
+  blind_claim: "Broader IBAC and donation rules"
   claims:
     - id: greens-integrity-follow-dollar
       statement: Give IBAC follow-the-dollar powers to investigate public money flowing through contractors, subcontractors and private entities involved in government projects.

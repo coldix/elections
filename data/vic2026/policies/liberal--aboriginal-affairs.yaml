@@ -3,6 +3,7 @@ policy:
   party: liberal
   issue: aboriginal-affairs
   headline: Repeal the Statewide Treaty framework within 100 days
+  blind_claim: "Repeal Treaty within 100 days"
   claims:
   - id: liberal-treaty-repeal
     statement: Introduce legislation within the first 100 days of government to repeal Victoria’s Statewide Treaty framework.

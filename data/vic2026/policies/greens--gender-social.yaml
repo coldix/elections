@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: gender-social
   headline: Reproductive leave, family-violence services and LGBTIQA+ protections
+  blind_claim: "Reproductive leave and LGBTIQA+ protections"
   claims:
     - id: greens-gender-reproductive-leave
       statement: Provide five additional days of reproductive health and wellbeing leave for Victorian public-sector employees.

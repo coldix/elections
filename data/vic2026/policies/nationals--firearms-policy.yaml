@@ -3,6 +3,7 @@ policy:
   party: nationals
   issue: firearms-policy
   headline: Target criminal access while protecting licensed farmers, hunters and sporting shooters
+  blind_claim: "Target criminals, protect licensed owners"
   claims:
   - id: nationals-firearms-no-cap
     statement: Oppose numerical caps on firearms held by compliant licence holders, arguing that caps would burden farmers, hunters, sporting shooters and clubs without addressing criminal access.

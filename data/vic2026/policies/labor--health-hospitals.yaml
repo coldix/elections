@@ -4,6 +4,7 @@ policy:
   party: labor
   issue: health-hospitals
   headline: Record health funding, hospital capacity and free care outside emergency departments
+  blind_claim: "More hospital beds, free non-ED care"
   claims:
     - id: labor-health-total-investment
       statement: >-

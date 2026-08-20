@@ -3,6 +3,7 @@ policy:
   party: liberal
   issue: cost-of-living
   headline: Scrap the emergency levy, abolish first-home stamp duty and repeal selected state taxes
+  blind_claim: "Scrap emergency levy and stamp duty"
   claims:
   - id: liberal-col-esv
     statement: Scrap the Emergency Services and Volunteers Fund levy and restore the former Fire Services Property Levy, with SES funding provided transparently through the state budget.

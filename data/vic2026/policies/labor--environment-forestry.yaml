@@ -3,6 +3,7 @@ policy:
   party: labor
   issue: environment-forestry
   headline: End native timber harvesting, restore habitat and expand forest recreation
+  blind_claim: "End native timber harvesting"
   claims:
     - id: labor-env-native-harvesting-ended
       statement: >-

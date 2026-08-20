@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: debt-budget
   headline: Spending review, lower debt and a phase-out of payroll tax
+  blind_claim: "Cut spending and payroll tax"
   claims:
     - id: onp-debt-spending-review
       statement: >-

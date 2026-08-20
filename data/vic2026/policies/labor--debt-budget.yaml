@@ -3,6 +3,7 @@ policy:
   party: labor
   issue: debt-budget
   headline: Operating surpluses while net debt rises in dollars but falls relative to the economy
+  blind_claim: "Surplus while dollar debt still rises"
   claims:
     - id: labor-debt-operating-surplus
       statement: >-

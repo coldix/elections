@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: climate-biodiversity
   headline: Oppose Net Zero while funding practical conservation and restoration
+  blind_claim: "Oppose Net Zero"
   claims:
     - id: onp-climate-net-zero
       statement: >-

@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: environment-forestry
   headline: Practical conservation, fire mitigation and support for forestry
+  blind_claim: "Fire mitigation and keep forestry"
   claims:
     - id: onp-env-fire-mitigation
       statement: >-

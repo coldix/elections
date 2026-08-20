@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: cost-of-living
   headline: Permanent free public transport, rent caps and action on price gouging
+  blind_claim: "Free public transport and rent caps"
   claims:
     - id: greens-col-free-pt
       statement: Make metropolitan and regional trains, trams and buses permanently free, while increasing service frequency.

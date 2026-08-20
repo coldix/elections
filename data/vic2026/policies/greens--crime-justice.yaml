@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: crime-justice
   headline: Justice reinvestment, bail support and stronger rights in police custody
+  blind_claim: "Justice reinvestment, not more jail"
   claims:
     - id: greens-crime-prevention
       statement: Prioritise evidence-based crime prevention and justice reinvestment in communities over politically driven law-and-order campaigns.

@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: aboriginal-affairs
   headline: Oppose and repeal Victoria's Statewide Treaty framework
+  blind_claim: "Repeal Statewide Treaty"
   claims:
     - id: onp-treaty-opposition
       statement: >-

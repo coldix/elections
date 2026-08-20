@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: energy
   headline: 100% renewable energy by 2030, public infrastructure and no new coal or gas
+  blind_claim: "100% renewables by 2030"
   claims:
     - id: greens-energy-100-renewable
       statement: Transition Victoria to 100% renewable energy by 2030 while maintaining a reliable and stable electricity grid.

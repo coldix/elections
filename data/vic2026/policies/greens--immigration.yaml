@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: immigration
   headline: "Federal policy — expand humanitarian intake; prioritise family reunion"
+  blind_claim: "Expand humanitarian intake"
   claims:
     - id: greens-imm-humanitarian
       statement: >-

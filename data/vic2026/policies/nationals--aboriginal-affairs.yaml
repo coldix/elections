@@ -3,6 +3,7 @@ policy:
   party: nationals
   issue: aboriginal-affairs
   headline: Repeal the Statewide Treaty framework within 100 days
+  blind_claim: "Repeal Treaty within 100 days"
   claims:
   - id: nationals-treaty-repeal
     statement: Introduce legislation within the first 100 days of government to repeal Victoria’s Statewide Treaty framework.

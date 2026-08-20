@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: infrastructure-transport
   headline: Permanent free public transport, more frequent services and safer active transport
+  blind_claim: "Permanent free public transport"
   claims:
     - id: greens-transport-free
       statement: Make trains, trams and buses permanently free across metropolitan and regional Victoria.

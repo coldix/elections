@@ -3,6 +3,7 @@ policy:
   party: labor
   issue: energy
   headline: Free midday power, legislated renewable targets and storage-backed reliability
+  blind_claim: "Free midday power"
   claims:
     - id: labor-energy-midday-power
       statement: >-

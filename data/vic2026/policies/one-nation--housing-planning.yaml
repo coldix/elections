@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: housing-planning
   headline: Reduce demand, release land and cut taxes and planning delays
+  blind_claim: "Cut demand, release land, faster approvals"
   claims:
     - id: onp-housing-foreign-ownership
       statement: >-

@@ -3,6 +3,7 @@ policy:
   party: nationals
   issue: climate-biodiversity
   headline: "Federal policy — Coalition dumps Net Zero target"
+  blind_claim: "Remove the Net Zero target"
   claims:
     - id: nationals-climate-dump-nz
       statement: >-

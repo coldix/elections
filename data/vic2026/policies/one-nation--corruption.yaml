@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: corruption
   headline: Royal commission into CFMEU Big Build contracts and stronger transparency
+  blind_claim: "Royal commission into Big Build contracts"
   claims:
     - id: onp-corruption-cfmeu-royal-commission
       statement: >-

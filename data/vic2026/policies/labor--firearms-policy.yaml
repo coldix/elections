@@ -3,6 +3,7 @@ policy:
   party: labor
   issue: firearms-policy
   headline: Stronger licensing checks, permanent prohibition orders and tougher trafficking penalties
+  blind_claim: "Stronger checks and prohibition orders"
   claims:
   - id: labor-firearms-background-checks
     statement: Require firearms licence applicants and renewing licensees to undergo national AusCheck background checks using criminal and national-security intelligence.

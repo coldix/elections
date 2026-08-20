@@ -3,6 +3,7 @@ policy:
   party: nationals
   issue: crime-justice
   headline: Coalition Safer Communities Plan (shared with Liberals)
+  blind_claim: "Tougher bail, adult time for youth crime"
   claims:
     - id: nationals-crime-safer-plan
       statement: >-

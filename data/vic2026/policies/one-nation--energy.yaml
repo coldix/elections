@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: energy
   headline: Coal, gas, nuclear and hydro with no new renewable subsidies
+  blind_claim: "Coal, gas, nuclear — no new subsidies"
   claims:
     - id: onp-energy-mix
       statement: >-

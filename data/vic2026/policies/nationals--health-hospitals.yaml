@@ -3,6 +3,7 @@ policy:
   party: nationals
   issue: health-hospitals
   headline: $850m West Gippsland hospital, free MenB vaccination and repeal of the GP tax
+  blind_claim: "New regional hospital, repeal GP tax"
   claims:
   - id: nationals-health-west-gippsland
     statement: Invest $850 million in a new West Gippsland hospital with 230 beds and treatment spaces, a larger emergency department, residential aged-care beds and healthcare-worker accommodation.

@@ -3,6 +3,7 @@ policy:
   party: liberal
   issue: environment-forestry
   headline: Agricultural impact tests, landholder protections and a bushfire inquiry
+  blind_claim: "Protect landholders, bushfire inquiry"
   claims:
   - id: liberal-env-ag-audits
     statement: Require independent agricultural and economic impact assessments for major renewable-energy and transmission proposals to protect prime farmland and food production.

@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: education
   headline: Restore school funding, make public education genuinely free and strengthen TAFE
+  blind_claim: "Make public education free"
   claims:
     - id: greens-edu-restore-24b
       statement: Reinstate the $2.4 billion in public-school funding the Greens say the Victorian Government delayed, including funding intended for staff and salaries.

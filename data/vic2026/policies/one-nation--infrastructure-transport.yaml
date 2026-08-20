@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: infrastructure-transport
   headline: Regional roads and services, restrained major-project spending and PPP delivery
+  blind_claim: "Regional roads, restrain mega-projects"
   claims:
     - id: onp-infra-regional
       statement: >-

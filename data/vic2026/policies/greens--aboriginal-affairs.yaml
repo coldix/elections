@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: aboriginal-affairs
   headline: Support Treaty, self-determination and stronger land and cultural-heritage rights
+  blind_claim: "Support Treaty and self-determination"
   claims:
     - id: greens-treaty-support
       statement: Support the Victorian Statewide Treaty Bill without amendment as a step toward justice, truth and First Nations self-determination.

@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: debt-budget
   headline: Progressive property and bank taxes, public financing and a wellbeing budget
+  blind_claim: "Tax property and banks more"
   claims:
     - id: greens-budget-ultra-wealth
       statement: Increase land tax to 5.3% for investors holding more than $5 million in residential investment property, with the Greens reporting $6.4 billion in revenue over a decade.

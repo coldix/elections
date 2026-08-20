@@ -3,6 +3,7 @@ policy:
   party: liberal
   issue: gender-social
   headline: Criminalise coercive control and establish a domestic-violence disclosure scheme
+  blind_claim: "Criminalise coercive control"
   claims:
   - id: liberal-gender-coercive-control
     statement: Create a standalone coercive-control offence covering a course of conduct such as emotional, psychological, financial and physical abuse, threats, isolation and surveillance, with a maximum seven-year prison term.

@@ -3,6 +3,7 @@ policy:
   party: liberal
   issue: energy
   headline: Reverse the gas ban; urban solar parks; review major transmission projects
+  blind_claim: "Reverse the gas ban"
   claims:
   - id: liberal-energy-gas
     statement: Reverse Victoria’s restrictions on new gas connections and reopen the state to conventional gas exploration, presenting household energy choice and additional supply as affordability measures.

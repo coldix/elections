@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: climate-biodiversity
   headline: Climate-resilience funding, no new coal or gas and stronger nature laws
+  blind_claim: "No new coal or gas"
   claims:
     - id: greens-climate-ban-new
       statement: Immediately ban all new coal and gas projects.

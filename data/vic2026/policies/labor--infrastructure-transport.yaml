@@ -4,6 +4,7 @@ policy:
   party: labor
   issue: infrastructure-transport
   headline: Roads blitz, locally built trains and regional freight maintenance
+  blind_claim: "Roads blitz and locally built trains"
   claims:
     - id: labor-infra-roads-blitz
       statement: >-

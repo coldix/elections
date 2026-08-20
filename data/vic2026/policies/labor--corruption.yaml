@@ -3,6 +3,7 @@ policy:
   party: labor
   issue: corruption
   headline: Retrospective follow-the-money powers and broader IBAC reform
+  blind_claim: "Follow-the-money IBAC powers"
   claims:
     - id: labor-integrity-follow-money
       statement: >-

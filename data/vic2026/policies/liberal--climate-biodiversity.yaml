@@ -3,6 +3,7 @@ policy:
   party: liberal
   issue: climate-biodiversity
   headline: "Federal policy — remove Net Zero target from legislation"
+  blind_claim: "Remove the Net Zero target"
   claims:
     - id: liberal-climate-remove-nz
       statement: >-

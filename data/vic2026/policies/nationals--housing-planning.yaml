@@ -3,6 +3,7 @@ policy:
   party: nationals
   issue: housing-planning
   headline: Fast-track growth areas, expand inner-city housing and build more regional homes
+  blind_claim: "Fast-track growth and regional homes"
   claims:
   - id: nationals-housing-psp
     statement: Clear the backlog of 27 Precinct Structure Plans in identified growth areas to accelerate serviced land and housing construction.

@@ -3,6 +3,7 @@ policy:
   party: liberal
   issue: crime-justice
   headline: Safer Communities Plan — police, bail, Adult Crime Adult Time
+  blind_claim: "Tougher bail, adult time for youth crime"
   claims:
     - id: liberal-crime-safer-communities
       statement: >-

@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: crime-justice
   headline: Tougher bail and sentencing for repeat youth offenders
+  blind_claim: "Tougher bail for repeat youth offenders"
   claims:
     - id: onp-crime-bail-sentencing
       statement: >-

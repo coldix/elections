@@ -3,6 +3,7 @@ policy:
   party: labor
   issue: aboriginal-affairs
   headline: Implement Victoria's Statewide Treaty and Gellung Warl institutions
+  blind_claim: "Implement Statewide Treaty"
   claims:
     - id: labor-treaty-law
       statement: >-

@@ -35,6 +35,10 @@ scorecard, and not an input to this ledger. Results are published as
 **Victoria** (Victorian postcodes, including 8000–8999) and **Everywhere**
 (all responses, including Victoria and overseas).
 
+`policy.blind_claim` is a few-word restatement of the headline with party
+and leader names stripped, for that survey. It must not add a new pledge.
+The long `headline` remains the matrix cell.
+
 ## Non-partisanship
 
 1. **Evidence first.** Every claim requires a structured source (URL, publisher,

@@ -3,6 +3,7 @@ policy:
   party: nationals
   issue: gender-social
   headline: Criminalise coercive control and establish a domestic-violence disclosure scheme
+  blind_claim: "Criminalise coercive control"
   claims:
   - id: nationals-gender-coercive-control
     statement: Support a standalone coercive-control offence covering sustained intimidation, isolation, humiliation, manipulation and control, based on the New South Wales model.

@@ -3,6 +3,7 @@ policy:
   party: one-nation
   issue: gender-social
   headline: Roll back school gender programs and prioritise sex-based protections
+  blind_claim: "End school gender programs"
   claims:
     - id: onp-gender-safe-schools
       statement: >-

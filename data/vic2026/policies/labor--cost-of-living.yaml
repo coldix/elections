@@ -4,6 +4,7 @@ policy:
   party: labor
   issue: cost-of-living
   headline: Transport rebates, fuel price controls and targeted household concessions
+  blind_claim: "Transport rebates and fuel controls"
   claims:
     - id: labor-col-rego-rebate
       statement: >-

@@ -3,6 +3,7 @@ policy:
   party: greens
   issue: environment-forestry
   headline: Close logging loopholes and restore native forests
+  blind_claim: "Close logging loopholes"
   claims:
     - id: greens-forest-processing-ban
       statement: Prohibit Victorian mills from processing native-forest timber sourced anywhere in Australia and ban commercial native-forest logging on private land.

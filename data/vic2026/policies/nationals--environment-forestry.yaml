@@ -3,6 +3,7 @@ policy:
   party: nationals
   issue: environment-forestry
   headline: Agricultural impact tests, landholder protections and restoration of native forestry
+  blind_claim: "Restore native forestry"
   claims:
   - id: nationals-env-ag-audits
     statement: Require independent agricultural and economic impact assessments for major renewable-energy and transmission proposals to protect prime farmland and food production.
