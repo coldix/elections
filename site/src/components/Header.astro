@@ -1,8 +1,7 @@
 ---
-import { SITE, OZE_MONTHLY_POLL, VIC2026, FEDERAL_49 } from "../lib/site.mjs";
+import { SITE, OZE_MONTHLY_POLL, VIC2026 } from "../lib/site.mjs";
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const VIC = VIC2026;
-const showSurvey = path === `${VIC2026}/polls` || path === `${FEDERAL_49}/polls`;
 const nav = [
   { href: "/elections", label: "Upcoming elections", exact: true, featured: true },
   { href: VIC, label: "Victoria 2026" },
@@ -27,12 +26,6 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
         <span class="brand-sub">by {SITE.publisher}</span>
       </span>
     </a>
-    {
-      showSurvey && (
-        <a class="btn btn-sm header-survey" href={OZE_MONTHLY_POLL.url}>Survey</a>
-      )
-    }
-
     <div class="header-end">
       <details class="nav-drawer">
         <summary class="nav-toggle" aria-label="Open menu">
@@ -94,6 +87,13 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
 
     var drawer = document.querySelector(".nav-drawer");
     if (drawer) {
+      var toggle = drawer.querySelector(".nav-toggle");
+      function syncToggleLabel() {
+        if (!toggle) return;
+        toggle.setAttribute("aria-label", drawer.open ? "Close menu" : "Open menu");
+      }
+      syncToggleLabel();
+      drawer.addEventListener("toggle", syncToggleLabel);
       document.addEventListener("click", function (event) {
         if (!drawer.open) return;
         if (!drawer.contains(event.target)) drawer.removeAttribute("open");
@@ -128,61 +128,49 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
 
 <style>
   .site-header { border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 20; }
-  .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; padding-block: 0.7rem; }
-  .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; }
+  .bar { display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; padding-block: 0.7rem; }
+  .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; min-width: 0; }
   .brand-mark { width: 2.15rem; height: 2.15rem; border-radius: 50%; flex: none; }
   .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
   .brand-text strong { font-size: 0.98rem; letter-spacing: -0.015em; font-weight: 660; }
   .brand-sub { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
-  .header-end { display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem 1.1rem; margin-left: auto; }
-  .nav-drawer { position: relative; }
-  .nav-toggle { display: none; align-items: center; gap: 0.45rem; list-style: none; cursor: pointer; margin: 0; padding: 0.34rem 0.7rem; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); font: inherit; font-size: 0.82rem; font-weight: 650; line-height: 1.2; box-shadow: var(--shadow); }
+  .header-end { display: flex; flex-wrap: nowrap; align-items: center; gap: 0.65rem; margin-left: auto; }
+  .nav-drawer { position: relative; display: inline-block; flex: none; }
+  .nav-toggle { display: inline-flex; align-items: center; gap: 0.45rem; list-style: none; cursor: pointer; margin: 0; padding: 0.34rem 0.7rem; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); font: inherit; font-size: 0.82rem; font-weight: 650; line-height: 1.2; box-shadow: var(--shadow); user-select: none; }
   .nav-toggle::-webkit-details-marker { display: none; }
+  .nav-drawer[open] .nav-toggle { border-color: var(--accent); background: var(--accent-wash); }
   .nav-toggle-bars { display: flex; flex-direction: column; justify-content: space-between; width: 1rem; height: 0.72rem; }
   .nav-toggle-bars span { display: block; height: 2px; border-radius: 1px; background: currentColor; }
-  nav ul { display: flex; flex-wrap: wrap; gap: 0.25rem 0.9rem; list-style: none; margin: 0; padding: 0; }
-  nav a { display: block; padding: 0.25rem 0; color: var(--ink-2); text-decoration: none; font-size: 0.9rem; font-weight: 520; border-bottom: 2px solid transparent; }
-  nav a:hover { color: var(--ink); border-bottom-color: var(--rule-strong); }
-  nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
-  nav a.featured-nav { display: inline-flex; align-items: center; padding: 0.34rem 0.72rem; border: 1px solid var(--accent); border-radius: 999px; background: var(--accent-wash); color: var(--ink); font-weight: 650; line-height: 1.2; }
-  nav a.featured-nav:hover, nav a.featured-nav[aria-current="page"] { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, var(--surface)); color: var(--ink); }
-  nav a.nav-survey { display: none; }
-  .header-survey { flex: none; border-radius: 999px; white-space: nowrap; }
-  @media (max-width: 64rem) {
-    .bar { flex-wrap: nowrap; }
-    .header-end { flex-wrap: nowrap; }
-    .header-survey { display: none; }
-    .theme-label { display: none; }
-    .nav-toggle { display: inline-flex; }
-    .primary-nav { display: none; }
-    .nav-drawer[open] .primary-nav {
-      display: block;
-      position: absolute;
-      right: 0;
-      top: calc(100% + 0.45rem);
-      min-width: 16.5rem;
-      padding: 0.55rem;
-      border: 1px solid var(--rule-strong);
-      border-radius: 0.65rem;
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      z-index: 30;
-    }
-    .nav-drawer[open] .primary-nav ul { flex-direction: column; gap: 0.15rem; }
-    .nav-drawer[open] .primary-nav a { padding: 0.5rem 0.65rem; border-bottom: 0; border-radius: 0.4rem; }
-    .nav-drawer[open] .primary-nav a:hover { background: var(--accent-wash); }
-    nav a.nav-survey {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 0.25rem;
-      border: 1px solid var(--accent);
-      background: var(--accent);
-      color: #fff;
-      font-weight: 650;
-    }
-    nav a.nav-survey:hover { background: var(--accent-ink); color: #fff; }
-    nav a.featured-nav { border: 0; background: transparent; padding: 0.5rem 0.65rem; border-radius: 0.4rem; }
+  .primary-nav { display: none; }
+  .nav-drawer[open] .primary-nav {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.45rem);
+    min-width: 16.5rem;
+    max-height: min(70vh, 32rem);
+    overflow: auto;
+    padding: 0.55rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: 0.65rem;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    z-index: 30;
   }
+  .nav-drawer[open] .primary-nav ul { display: flex; flex-direction: column; gap: 0.15rem; list-style: none; margin: 0; padding: 0; }
+  .nav-drawer[open] .primary-nav a { display: block; padding: 0.5rem 0.65rem; color: var(--ink-2); text-decoration: none; font-size: 0.9rem; font-weight: 520; border-radius: 0.4rem; }
+  .nav-drawer[open] .primary-nav a:hover { color: var(--ink); background: var(--accent-wash); }
+  .nav-drawer[open] .primary-nav a[aria-current="page"] { color: var(--ink); background: var(--accent-wash); font-weight: 650; }
+  .nav-drawer[open] .primary-nav a.nav-survey {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+    font-weight: 650;
+  }
+  .nav-drawer[open] .primary-nav a.nav-survey:hover { background: var(--accent-ink); color: #fff; }
   .theme-toggle { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0; padding: 0.28rem 0.7rem 0.28rem 0.55rem; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink-2); font: inherit; font-size: 0.78rem; font-weight: 600; line-height: 1.2; cursor: pointer; box-shadow: var(--shadow); flex: none; }
   .theme-toggle:hover { color: var(--ink); border-color: var(--accent); background: var(--accent-wash); }
   .theme-icon { display: inline-flex; width: 1rem; height: 1rem; position: relative; }
@@ -191,5 +179,6 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
   :global(:root[data-theme="dark"]) .icon-sun { display: block; }
   :global(:root[data-theme="dark"]) .icon-moon { display: none; }
   @media (prefers-color-scheme: dark) { :global(:root:not([data-theme])) .icon-sun { display: block; } :global(:root:not([data-theme])) .icon-moon { display: none; } }
+  @media (max-width: 36rem) { .theme-label { display: none; } }
   @media (max-width: 30rem) { .brand-text strong { font-size: 0.9rem; } }
 </style>
