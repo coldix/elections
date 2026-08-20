@@ -8,6 +8,7 @@ import {
   matrixFor,
   MATRIX_PARTIES,
 } from "../../../../scripts/lib/policies.mjs";
+import OzeIssuesSurvey from "../../components/OzeIssuesSurvey.astro";
 import { SITE } from "../../lib/site.mjs";
 
 const issues = loadIssues("vic2026");
@@ -57,6 +58,8 @@ const schema = {
       The matrix fill count shows how many of the five comparison parties have a
       sourced position so far. {POLICY_CAVEAT}
     </div>
+
+    <OzeIssuesSurvey />
 
     <div class="jfilter-shell">
       {

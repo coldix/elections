@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import JurisdictionBadge from "../../components/JurisdictionBadge.astro";
+import OzeIssuesSurvey from "../../components/OzeIssuesSurvey.astro";
 import { matrixFor, POLICY_CAVEAT } from "../../../../scripts/lib/policies.mjs";
 import { SITE } from "../../lib/site.mjs";
 
@@ -62,6 +63,8 @@ const schema = {
       <strong>No ratings or invented positions.</strong> These pages reorganise the same
       source-backed records used by the full matrix. {POLICY_CAVEAT}
     </div>
+
+    <OzeIssuesSurvey />
 
     <div class="policy-grid">
       {

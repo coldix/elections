@@ -42,6 +42,12 @@ export const OZE_MONTHLY_POLL = {
   repo: "https://github.com/coldix/survey-oze-au",
 };
 
+/** Open oze Vic issues survey — public opinion, not a matrix ranking. */
+export const OZE_ISSUES_SURVEY = {
+  url: "https://survey.oze.net.au/s/vic-issues",
+  repo: "https://github.com/coldix/survey-oze-au",
+};
+
 /** Canonical path prefix for the active Vic 2026 tracker (HTML pages). */
 export const VIC2026 = "/elections/vic/2026";
 

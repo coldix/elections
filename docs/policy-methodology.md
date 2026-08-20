@@ -27,6 +27,14 @@ coverage ledger (see [scope.md](scope.md)).
 - Not a complete encyclopaedia of every party statement ever made.
 - Not legal advice about constitutional powers.
 
+The open oze issues survey at
+[survey.oze.net.au/s/vic-issues](https://survey.oze.net.au/s/vic-issues) is
+**public opinion**. Respondents rank these 15 issues and pick whose sourced
+headline is closest in their view. It is not a matrix ranking, not a
+scorecard, and not an input to this ledger. Results are published as
+**Victoria** (Victorian postcodes, including 8000–8999) and **Everywhere**
+(all responses, including Victoria and overseas).
+
 ## Non-partisanship
 
 1. **Evidence first.** Every claim requires a structured source (URL, publisher,

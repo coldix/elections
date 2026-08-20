@@ -4,6 +4,7 @@ import JurisdictionBadge from "../../components/JurisdictionBadge.astro";
 import PolicyCell from "../../components/PolicyCell.astro";
 import CoalitionPolicyCell from "../../components/CoalitionPolicyCell.astro";
 import { matrixFor, POLICY_CAVEAT } from "../../../../scripts/lib/policies.mjs";
+import OzeIssuesSurvey from "../../components/OzeIssuesSurvey.astro";
 import { POLICY_DIFFERENCES } from "../../lib/policyDifferences.mjs";
 import { SITE, partyColour } from "../../lib/site.mjs";
 
@@ -92,6 +93,8 @@ const schema = {
       headlines and detailed claims below are generated from the same records used by the
       matrix. {POLICY_CAVEAT}
     </div>
+
+    <OzeIssuesSurvey />
 
     <nav class="difference-jump" aria-label="Jump to a policy difference">
       <p>Jump to a difference</p>

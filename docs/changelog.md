@@ -6,6 +6,13 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
+## 2026-08-20 — Vic issues survey invitation
+
+| Area | What shipped |
+|---|---|
+| **Issues survey** | Open oze survey at [survey.oze.net.au/s/vic-issues](https://survey.oze.net.au/s/vic-issues): rank the 15 matrix issues, pick whose sourced policy is closest in your view. Public opinion — not a scorecard, not in the average |
+| **Tracker CTAs** | Matrix, policy pages, jurisdiction guide, key differences, and homepage |
+
 ## 2026-08-20 — Header hamburger on all widths
 
 | Area | What shipped |

@@ -1,0 +1,51 @@
+---
+/**
+ * Invitation to the open oze Vic issues survey.
+ * Public opinion, not a matrix ranking and not in the poll average.
+ */
+import { OZE_ISSUES_SURVEY } from "../lib/site.mjs";
+
+const { variant = "matrix" } = Astro.props;
+
+const heading =
+  variant === "home"
+    ? "What should decide Victoria 2026?"
+    : "Rank these issues";
+
+const body =
+  variant === "home"
+    ? "Rank the 15 policy-matrix issues, then pick whose sourced headline is closest — in your view. About 3 minutes. Open to anyone, including overseas. Not a scorecard, and not in the tracker average."
+    : "An open oze survey of these 15 issues: how much each matters to your vote, then whose sourced policy is closest in your view on your top 3. Not a scientific poll and not a ranking by this site.";
+---
+
+<section class:list={["oze-survey", variant === "home" && "oze-survey-home"]} aria-labelledby="oze-issues-h">
+  {variant === "home" ? <h3 id="oze-issues-h">{heading}</h3> : <h2 id="oze-issues-h">{heading}</h2>}
+  <p>{body}</p>
+  <p class="btn-row">
+    <a class="btn" href={OZE_ISSUES_SURVEY.url}>Take the issues survey</a>
+  </p>
+</section>
+
+<style>
+  .oze-survey {
+    margin: 2rem 0 0;
+    padding: 1.15rem 1.25rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: 0.6rem;
+    background: var(--surface-2);
+  }
+  .oze-survey h2,
+  .oze-survey h3 {
+    margin: 0 0 0.5rem;
+  }
+  .oze-survey p {
+    margin: 0 0 0.85rem;
+    color: var(--ink-2);
+  }
+  .oze-survey .btn-row {
+    margin: 0;
+  }
+  .oze-survey-home {
+    margin-top: 1.25rem;
+  }
+</style>

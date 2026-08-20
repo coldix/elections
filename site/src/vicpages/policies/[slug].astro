@@ -4,6 +4,7 @@ import JurisdictionBadge from "../../components/JurisdictionBadge.astro";
 import PolicyCell from "../../components/PolicyCell.astro";
 import CoalitionPolicyCell from "../../components/CoalitionPolicyCell.astro";
 import { matrixFor, POLICY_CAVEAT } from "../../../../scripts/lib/policies.mjs";
+import OzeIssuesSurvey from "../../components/OzeIssuesSurvey.astro";
 import { SITE, partyColour } from "../../lib/site.mjs";
 
 export async function getStaticPaths() {
@@ -107,6 +108,8 @@ const schema = {
       The detailed section reproduces the sourced claims underneath. There are no scores, rankings or inferred
       positions. {POLICY_CAVEAT}
     </div>
+
+    <OzeIssuesSurvey />
 
     <section aria-labelledby="glance-heading">
       <div class="section-head">

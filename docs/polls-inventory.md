@@ -65,6 +65,7 @@ the primary release.
 | Leaked internal party research | No full public methodology (hard exclusion 2). |
 | Other party / union / advocacy releases (default) | Hard exclusion 1 unless a new per-record `eligibility_exception`. |
 | Oze monthly open survey ([survey.oze.net.au/s/monthly-poll](https://survey.oze.net.au/s/monthly-poll)) | Open, unweighted, anyone-with-the-link. Linked from polls pages and home as an invitation only — **not** a ledger row. August pies are seeded from the Election Tracker average (circular if averaged). |
+| Oze Vic issues survey ([survey.oze.net.au/s/vic-issues](https://survey.oze.net.au/s/vic-issues)) | Open issue ranking + closest-policy picks. Public opinion, not a matrix scorecard, **not** a ledger row. |
 
 ## Documented average exceptions
 
