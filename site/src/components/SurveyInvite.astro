@@ -1,0 +1,91 @@
+---
+/**
+ * Homepage survey invitation.
+ *
+ * There are two genuinely different open surveys, and the homepage previously
+ * linked the monthly one three times (hero block, section, header). This
+ * presents both once, side by side, so the choice is legible and the page is
+ * not asking for the same thing repeatedly.
+ *
+ * Contextual pages keep their own single invitation: OzeMonthlySurvey on the
+ * poll pages, OzeIssuesSurvey on the policy and matrix pages.
+ */
+import { OZE_MONTHLY_POLL, OZE_ISSUES_SURVEY } from "../lib/site.mjs";
+
+const surveys = [
+  {
+    href: OZE_MONTHLY_POLL.url,
+    kicker: "Monthly · about 1 minute",
+    title: "How would you vote?",
+    body: "Record a Victorian and a federal voting intention. One vote per person, once a month.",
+    cta: "Take the voting survey",
+    primary: true,
+  },
+  {
+    href: OZE_ISSUES_SURVEY.url,
+    kicker: "One-off · about 4–6 minutes",
+    title: "What should decide Victoria 2026?",
+    body: "Rate 14 issues, then compare 10 sourced policies without seeing which party wrote them.",
+    cta: "Take the issues survey",
+    primary: false,
+  },
+];
+---
+
+<section class="section" aria-labelledby="survey-h">
+  <div class="section-head">
+    <p class="eyebrow">Open surveys</p>
+    <h2 id="survey-h">Have your say</h2>
+    <p>
+      Run by oze, open to anyone with the link. Neither is a scientific poll, and neither
+      feeds the tracker&rsquo;s poll average.
+    </p>
+  </div>
+
+  <div class="card-grid card-grid-wide">
+    {
+      surveys.map((s) => (
+        <article class="card survey-card">
+          <p class="survey-kicker">{s.kicker}</p>
+          <h3>{s.title}</h3>
+          <p class="survey-body">{s.body}</p>
+          <p class="btn-row">
+            <a class:list={["btn", !s.primary && "btn-ghost"]} href={s.href}>
+              {s.cta}
+            </a>
+          </p>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .survey-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-2);
+  }
+  .survey-kicker {
+    margin: 0 0 0.4rem;
+    font-size: 0.76rem;
+    font-weight: 660;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .survey-card h3 {
+    margin: 0 0 0.4rem;
+  }
+  .survey-body {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 0.95rem;
+  }
+  /* Push the action to the bottom so both cards align regardless of copy length. */
+  .survey-card .btn-row {
+    margin: 1rem 0 0;
+    padding-top: 0.15rem;
+    margin-top: auto;
+  }
+</style>
