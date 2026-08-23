@@ -15,6 +15,12 @@ jobs:
           cache: npm
       - run: npm ci
 
+      # Parser fixture tests run first: fast, no network, and a discovery bug
+      # that drops or misattributes a candidate is invisible in the digest, so
+      # it has to be caught here rather than noticed months later.
+      - name: Test discovery parsers
+        run: npm test
+
       # Order matters: data must be valid before it is exported, and exported
       # before the site is built. Any failure here stops the run, so Cloudflare
       # never deploys a build made from invalid or unsourced records.
