@@ -35,6 +35,12 @@ import {
   normalizeContest,
 } from "./lib/ledger-index.mjs";
 import { createFetcher } from "./lib/scan-fetch.mjs";
+import {
+  classifyLead,
+  byTrust,
+  citedUrlFromWikitext,
+  collectNamedRefs,
+} from "./lib/source-trust.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -234,6 +240,9 @@ function parseWikiCandidates(wikitext) {
   if (!section) return leads;
 
   const rows = splitWikiRows(section);
+  // "<ref name=X/>" points at a definition elsewhere on the page; resolve it
+  // so a shorthand citation is not mistaken for no citation at all.
+  const namedRefs = collectNamedRefs(wikitext);
 
   for (const r of rows) {
     if (r.length < 5) continue;
@@ -275,6 +284,9 @@ function parseWikiCandidates(wikitext) {
           contest,
           chamber: "assembly",
           source_url: "https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election",
+          // Wikipedia is discovery only (ADR-14). Carry the citation beneath
+          // the row so the lead is ranked on that, and can be checked there.
+          cited_url: citedUrlFromWikitext(entry, namedRefs),
           title: `Wiki Assembly table: ${name} — ${dist}`,
           source_id: "wiki-candidates",
         });
@@ -296,6 +308,7 @@ function parseWikiCandidates(wikitext) {
         name,
         contest: seat ? normalizeContest(seat[1]) : undefined,
         source_url: "https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election",
+        cited_url: citedUrlFromWikitext(line, namedRefs),
         title: `Wiki retiring: ${line.replace(/<[^>]+>/g, "").slice(0, 120)}`,
         source_id: "wiki-candidates",
       });
@@ -504,6 +517,7 @@ async function main() {
       suppressed.already_reported++;
       continue;
     }
+    lead.trust = classifyLead(lead);
     newLeads.push(lead);
     state.seen_leads[id] = {
       first_seen: state.seen_leads[id]?.first_seen || new Date().toISOString(),
@@ -512,6 +526,10 @@ async function main() {
       title: lead.title || lead.name,
     };
   }
+
+  // Wikipedia ranks below every other source (ADR-14): a lead evidenced only
+  // by a wiki row sorts last, so the strongest evidence is triaged first.
+  newLeads.sort(byTrust);
 
   // Cap seen map growth (keep last 2000)
   const ids = Object.keys(state.seen_leads);
@@ -572,7 +590,15 @@ async function main() {
       : newLeads.map((l, i) => {
           const head = l.name || l.title || "(untitled)";
           const meta = [l.kind, l.party, l.contest, l.chamber].filter(Boolean).join(" · ");
-          return `${i + 1}. **${head}**  \n   ${meta}  \n   ${l.source_url || ""}`;
+          const t = l.trust || {};
+          const badge = t.via_wiki && t.label !== "wikipedia-only"
+            ? `${t.label} (via wiki)`
+            : t.label || "unclassified";
+          // Show the citation under a wiki row, not the wiki page: that is
+          // the thing a human has to check.
+          const url = l.cited_url || l.source_url || "";
+          const wikiRef = l.cited_url && l.source_url !== l.cited_url ? `\n   ↳ found via ${l.source_url}` : "";
+          return `${i + 1}. **${head}**  \n   ${meta}  \n   trust: **${badge}**${t.host ? ` · ${t.host}` : ""}  \n   ${url}${wikiRef}`;
         })),
     ``,
     `---`,

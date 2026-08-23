@@ -150,6 +150,27 @@ npm run scan:leads:report   # print last digest only (no network — cheap for a
    - `.cache/scan/leads-latest.md` (human)
    - `.cache/scan/leads-latest.json` (agents)
 
+**Trust ranking.** Leads are sorted by source quality
+([methodology.md](methodology.md) hierarchy, ADR-14), strongest first:
+
+| Tier | Label | Examples |
+|---|---|---|
+| 1 | `primary` | commissions, parliaments, official party and candidate pages |
+| 2 | `secondary` | named news outlets |
+| 3 | `social` | Facebook/Instagram/X — usable only from a confirmed official account, which the scanner cannot establish |
+| 4 | `wikipedia-only` | a wiki row citing nothing usable |
+
+Wikipedia is never a tier of its own above these. A wiki row is rated on the
+**citation underneath it** — a row citing a party page is `primary (via wiki)`,
+and the digest prints that citation rather than the Wikipedia URL, because the
+citation is the thing to check. `<ref name=X/>` shorthand is resolved to its
+definition. A wiki row citing nothing, or only another wiki, sorts last.
+
+Triage from the top. A `wikipedia-only` lead needs an original source found
+before anything is encoded. Note the tier reflects the **publisher, not
+whether the cited page supports the claim** — that still has to be read. A
+sourced-looking wiki row can cite an article that never mentions the person.
+
 **What it never does:** write candidate YAML, merge to `main`, or treat RSS as proof.
 
 **Agent workflow (save tokens)**
