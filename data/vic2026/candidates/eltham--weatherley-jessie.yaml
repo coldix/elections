@@ -1,0 +1,38 @@
+candidate:
+  name: Jessie Weatherley
+  party: one-nation
+  contest: eltham
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-08-19
+      source:
+        url: https://www.news24.com.au/politics/australian-politics/former-essendon-premiership-player-john-barnes-tops-latest-list-of-one-nations-victorian-election-candidates/news-story/d046fce8f931f1e91b896e145ca398ab
+        publisher: News24
+        title: Former Essendon premiership player John Barnes tops latest list of One Nation's Victorian election candidates
+        published: 2026-08-19
+        accessed: 2026-08-19
+      note: >-
+        News24 (Patrick Hannaford, 19 August 2026) reports ten new One Nation
+        lower-house candidates, including Eltham. Spelling of the surname now
+        follows the party's own candidate page (see corrections).
+  corrections:
+    - date: 2026-08-23
+      was: Jessie Weatherly
+      now: Jessie Weatherley
+      reason: >-
+        Recorded from Wikipedia's candidates table, which spells the surname
+        "Weatherly". One Nation's own candidate page spells it "Weatherley"
+        ("Jessie Weatherley for Eltham"). The party page is a primary source
+        and outranks the wiki table under the methodology source hierarchy.
+      source:
+        url: https://vic.onenation.org.au/candidates
+        publisher: Pauline Hanson's One Nation (Victoria)
+        title: One Nation Candidates
+        accessed: 2026-08-23
+  links:
+    - url: https://vic.onenation.org.au/candidates
+      kind: party-profile
+    - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
+      kind: wikipedia

@@ -15,5 +15,21 @@ candidate:
       note: >-
         Listed as Liberal Legislative Council candidate for Northern Victoria
         (ticket following Wendy Lovell’s departure). March 2026 Liberal
-        convention coverage reported endorsement; party site blocked
-        automated fetch 2026-07-31.
+        convention coverage reported endorsement; the party site blocked
+        automated fetch on 2026-07-31. Superseded as evidence by the party
+        page below.
+    - status: endorsed
+      date: 2026-08-23
+      source:
+        url: https://vic.liberal.org.au/team/steve-brooks
+        publisher: Liberal Victoria
+        title: "Steve Brooks - Liberal for Northern Victoria Region"
+        accessed: 2026-08-23
+      note: >-
+        Official Liberal Victoria team page, confirmed 23 August 2026 by
+        rendering the page in a browser — the site is client-rendered, which is
+        why the earlier automated fetch failed rather than the page being
+        absent.
+  links:
+    - url: https://vic.liberal.org.au/team/steve-brooks
+      kind: party-profile

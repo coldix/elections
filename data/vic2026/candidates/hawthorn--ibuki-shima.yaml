@@ -10,8 +10,32 @@ candidate:
     - status: announced
       date: 2026-04-23
       source:
-        url: "https://en.wikipedia.org/wiki/Annika_Smethurst"
-        title: New teal threat for John Pesutto as deputy mayor enters Hawthorn race
-        publisher: The Age
-        published: 2026-04-23
-        accessed: 2026-05-16
+        url: "https://www.shimaibuki.com.au/"
+        title: "Shima Ibuki for Hawthorn"
+        publisher: Shima Ibuki campaign
+        accessed: 2026-08-23
+      note: >-
+        The candidate's own campaign site describes her as "independent
+        candidate for Hawthorn in this year's state election", verified
+        23 August 2026. The 23 April 2026 announcement date comes from The
+        Age's report of her entering the race; that citation's URL was wrong
+        and has been corrected (see corrections).
+  corrections:
+    - date: 2026-08-23
+      was: "source.url https://en.wikipedia.org/wiki/Annika_Smethurst (publisher recorded as The Age)"
+      now: "source.url https://www.shimaibuki.com.au/"
+      reason: >-
+        The citation named The Age as publisher but linked to the Wikipedia
+        biography of the journalist rather than the article, so the record did
+        not resolve to the evidence it claimed. The Age article URL could not
+        be recovered, so the candidacy is now carried by the candidate's own
+        campaign site — a stronger source under the methodology hierarchy than
+        either.
+      source:
+        url: "https://www.shimaibuki.com.au/"
+        publisher: Shima Ibuki campaign
+        title: "Shima Ibuki for Hawthorn"
+        accessed: 2026-08-23
+  links:
+    - url: "https://www.shimaibuki.com.au/"
+      kind: campaign-site

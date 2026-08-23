@@ -1,0 +1,24 @@
+candidate:
+  name: Madilyn Gorman
+  party: victorian-socialists
+  contest: south-barwon
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-06-21
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/madilyn-gorman
+        publisher: Victorian Socialists
+        title: "Madilyn Gorman – Victorian Socialists"
+        accessed: 2026-08-23
+      note: >-
+        Official Victorian Socialists candidate page states "Candidate for
+        South Barwon". Party does not publish a preselection date;
+        2026-06-21 is the earliest date the profile is evidenced (Wikipedia
+        citation access date). Page independently verified 23 August 2026.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/madilyn-gorman
+      kind: party-profile
+    - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
+      kind: wikipedia

@@ -1,0 +1,24 @@
+candidate:
+  name: Chris Meagher
+  party: victorian-socialists
+  contest: wendouree
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-07-01
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/chris-meagher
+        publisher: Victorian Socialists
+        title: "Chris Meagher – Victorian Socialists"
+        accessed: 2026-08-23
+      note: >-
+        Official Victorian Socialists candidate page states "Candidate for
+        Wendouree". Party does not publish a preselection date;
+        2026-07-01 is the earliest date the profile is evidenced (Wikipedia
+        citation access date). Page independently verified 23 August 2026.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/chris-meagher
+      kind: party-profile
+    - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
+      kind: wikipedia

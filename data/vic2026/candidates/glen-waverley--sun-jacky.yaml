@@ -3,13 +3,45 @@ candidate:
   party: liberal
   contest: glen-waverley
   chamber: assembly
-  status: announced
+  status: endorsed
   history:
     - status: announced
       date: 2026-05-29
       source:
-        url: "https://en.wikipedia.org/wiki/Nick_McGowan"
+        url: "https://www.facebook.com/watch/?v=1677439927113045"
         title: Introducing Jacky Sun
         publisher: Facebook
         published: 2026-05-29
         accessed: 2026-06-04
+      note: >-
+        Video posted by Nick McGowan MLC. Citation URL corrected 2026-08-23
+        (see corrections) — it previously pointed at his Wikipedia biography
+        rather than the post itself.
+    - status: endorsed
+      date: 2026-08-23
+      source:
+        url: https://vic.liberal.org.au/team/jacky-sun
+        publisher: Liberal Victoria
+        title: "Jacky Sun - Liberal for Glen Waverley"
+        accessed: 2026-08-23
+      note: >-
+        Official Liberal Victoria team page, verified 23 August 2026. Note the
+        14 August 2026 ABC report that Sun was "counselled" by the party over a
+        volunteer intern program; counselling is not a status change under the
+        methodology, and the party continues to list him as its candidate.
+  corrections:
+    - date: 2026-08-23
+      was: "source.url https://en.wikipedia.org/wiki/Nick_McGowan (publisher recorded as Facebook)"
+      now: "source.url https://www.facebook.com/watch/?v=1677439927113045"
+      reason: >-
+        The citation named Facebook as publisher but linked to the Wikipedia
+        biography of the MLC who posted the video, so the record did not
+        resolve to the evidence it claimed.
+      source:
+        url: https://vic.liberal.org.au/team/jacky-sun
+        publisher: Liberal Victoria
+        title: "Jacky Sun - Liberal for Glen Waverley"
+        accessed: 2026-08-23
+  links:
+    - url: https://vic.liberal.org.au/team/jacky-sun
+      kind: party-profile
