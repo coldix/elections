@@ -128,28 +128,28 @@ const schema = {
 
     <section class="section paths" aria-labelledby="paths-h">
       <h2 id="paths-h">Start here</h2>
-      <div class="path-grid">
-        <a class="card path-card" href="/assembly">
+      <div class="card-grid">
+        <a class="card link-card" href="/assembly">
           <h3>Who is standing?</h3>
           <p>88 Assembly districts — sitting members and sourced 2026 candidates.</p>
         </a>
-        <a class="card path-card" href="/voting">
+        <a class="card link-card" href="/voting">
           <h3>How do I vote?</h3>
           <p>Enrolment, compulsory voting, preferential numbering — civic guide + video.</p>
         </a>
-        <a class="card path-card" href="/council">
+        <a class="card link-card" href="/council">
           <h3>Upper house?</h3>
           <p>8 regions × 5 seats. Sitting MLCs and any sourced Council candidacies.</p>
         </a>
-        <a class="card path-card" href="/polls">
+        <a class="card link-card" href="/polls">
           <h3>What are the polls saying?</h3>
           <p>Sourced statewide primaries and a transparent average — not a forecast.</p>
         </a>
-        <a class="card path-card" href="/parties/issues">
+        <a class="card link-card" href="/parties/issues">
           <h3>Who is responsible?</h3>
           <p>State vs federal vs local — jurisdiction guide for key election issues.</p>
         </a>
-        <a class="card path-card" href="/parties/matrix">
+        <a class="card link-card" href="/parties/matrix">
           <h3>Compare party policies</h3>
           <p>Side-by-side sourced positions — no ratings, quotes and cost chips only.</p>
         </a>
@@ -306,24 +306,24 @@ const schema = {
 
     <section class="section trust" aria-labelledby="trust-h">
       <h2 id="trust-h">How to check our work</h2>
-      <div class="trust-grid">
-        <a class="card trust-card" href="/methodology">
+      <div class="card-grid">
+        <a class="card link-card" href="/methodology">
           <h3>Methodology</h3>
           <p>Statuses, evidence rules, and how coverage is counted.</p>
         </a>
-        <a class="card trust-card" href="/data">
+        <a class="card link-card" href="/data">
           <h3>Open data</h3>
           <p>JSON and CSV under CC BY 4.0 — same facts as the HTML.</p>
         </a>
-        <a class="card trust-card" href={SITE.repo}>
+        <a class="card link-card" href={SITE.repo}>
           <h3>Source repository</h3>
           <p>Every change is a reviewable commit in a public Git repo.</p>
         </a>
-        <a class="card trust-card" href={SITE.issues}>
+        <a class="card link-card" href={SITE.issues}>
           <h3>Submit a correction</h3>
           <p>Tip a candidacy with a public source URL and date.</p>
         </a>
-        <a class="card trust-card" href="/about">
+        <a class="card link-card" href="/about">
           <h3>Independence</h3>
           <p>Who publishes this site and how it stays non-partisan.</p>
         </a>
@@ -367,31 +367,6 @@ const schema = {
   .section > h2 {
     margin: 0 0 0.85rem;
     font-size: 1.25rem;
-  }
-  .path-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr));
-    gap: 1rem;
-  }
-  .path-card {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  }
-  .path-card:hover {
-    border-color: var(--accent);
-    box-shadow: var(--shadow);
-  }
-  .path-card h3 {
-    margin: 0 0 0.4rem;
-    font-size: 1.05rem;
-  }
-  .path-card p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--ink-2);
-    line-height: 1.45;
   }
   .caveat {
     margin-bottom: 1.25rem;
@@ -449,28 +424,5 @@ const schema = {
   .video-home-lead {
     margin: 0 0 0.85rem;
     max-width: 40rem;
-  }
-  .trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-    gap: 1rem;
-  }
-  .trust-card {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
-  .trust-card:hover {
-    border-color: var(--accent);
-  }
-  .trust-card h3 {
-    margin: 0 0 0.35rem;
-    font-size: 1.02rem;
-  }
-  .trust-card p {
-    margin: 0;
-    font-size: 0.88rem;
-    color: var(--ink-2);
-    line-height: 1.45;
   }
 </style>

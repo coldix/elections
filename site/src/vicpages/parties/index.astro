@@ -67,7 +67,7 @@ const withCoverage = coverage.filter(
           return (
             <li>
               <a
-                class="card p-card"
+                class="card card-interactive p-card"
                 href={`/parties/${c.party}`}
                 style={`--party-colour:${partyColour(c.party)}`}
               >
@@ -179,15 +179,13 @@ const withCoverage = coverage.filter(
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    text-decoration: none;
-    color: inherit;
     height: 100%;
     padding: 1.05rem 1.1rem 1.1rem 1.2rem;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
   }
+  /* Party cards keep a party-coloured hover border — deliberate, and inside
+     the card's own data area. The lift comes from .card-interactive. */
   .p-card:hover {
     border-color: var(--party-colour);
-    box-shadow: var(--shadow);
   }
   .p-bar {
     position: absolute;

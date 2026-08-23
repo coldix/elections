@@ -80,7 +80,7 @@ const schema = {
         withSeats.map((p) => (
           <li>
             <a
-              class="card p-card"
+              class="card card-interactive p-card"
               href={`${NSW2027}/parties/${p.slug}`}
               style={`--party-colour:${partyColour(p.slug)}`}
             >
@@ -123,10 +123,9 @@ const schema = {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: 0.85rem;
   }
   .p-card {
-    display: block; text-decoration: none; color: inherit; position: relative;
+    display: block; position: relative;
     overflow: hidden; height: 100%;
   }
-  .p-card:hover { border-color: var(--rule-strong); }
   .p-bar {
     position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
     background: var(--party-colour, var(--ink-3));
