@@ -122,12 +122,27 @@ function parseGreens(html) {
 function parseOneNation(html) {
   const text = stripTags(html);
   const leads = [];
-  // "Darren Hercus for Nepean"
-  const re = /([A-Z][a-z]+(?:\s+[A-Z][a-z.'-]+)+)\s+for\s+([A-Za-z][A-Za-z\s-]+?)(?:\s*[-–—|]|\s+Pauline|\s*$)/g;
+  // "Darren Hercus for Nepean". The name token must allow internal hyphens and
+  // apostrophes ("Rikkie-Lee", "O'Brien"); a first token of [A-Z][a-z]+ cannot
+  // start on "Rikkie-Lee" and instead matches from "Lee", which both truncates
+  // the name and drags the lost fragment into the seat.
+  const NAME = "[A-Z][A-Za-z'’.-]*[A-Za-z]";
+  const re = new RegExp(
+    `(${NAME}(?:\\s+${NAME})+)\\s+for\\s+([A-Za-z][A-Za-z\\s-]+?)(?:\\s*[-–—|]|\\s+Pauline|\\s*$)`,
+    "g",
+  );
   let m;
   while ((m = re.exec(text))) {
     const name = m[1].trim();
-    const seat = m[2].trim();
+    let seat = m[2].trim();
+    // Candidate cards repeat the name straight after the seat ("... for
+    // Northern Victoria Region Rikkie-Lee Tyrrell made history in 2022 ...").
+    // Cut the seat at the point the name recurs, then drop the Region suffix
+    // so the slug matches the council contest ids.
+    const firstToken = name.split(/[\s\-'’]/)[0];
+    const dup = seat.search(new RegExp(`\\b${firstToken.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`, "i"));
+    if (dup > 0) seat = seat.slice(0, dup).trim();
+    seat = seat.replace(/\s+Region$/i, "").trim();
     if (name.length < 5 || seat.length < 3) continue;
     if (/One Nation|Victoria|Candidates|Donate/i.test(name)) continue;
     leads.push({
@@ -147,10 +162,15 @@ function parseOneNation(html) {
 function cleanWikiCell(s) {
   return String(s || "")
     .replace(/''+/g, "")
-    .replace(/\[\[(?:[^|\]]*\|)?([^\]]+)\]\]/g, "$1")
     .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, "")
-    .replace(/<ref[^/]*\/>/gi, "")
-    .replace(/\{\{[^}]+\}\}/g, "")
+    .replace(/<ref[^>]*\/>/gi, "")
+    .replace(/\{\{[\s\S]*?\}\}/g, "")
+    // Belt-and-braces: any citation markup still unclosed here is malformed or
+    // truncated. The candidate name always precedes it, so drop the remainder
+    // rather than letting "{{Cite web" survive into a person's name.
+    .replace(/<ref\b[\s\S]*$/i, "")
+    .replace(/\{\{[\s\S]*$/, "")
+    .replace(/\[\[(?:[^|\]]*\|)?([^\]]+)\]\]/g, "$1")
     .replace(/<br\s*\/?>/gi, " / ")
     .replace(/<[^>]+>/g, "")
     .replace(/\([^)]*\)/g, "")
@@ -158,22 +178,55 @@ function cleanWikiCell(s) {
     .trim();
 }
 
+// A wikitext citation may wrap across several lines, and continuation lines
+// often begin with "|" (e.g. "|url=..."). Treating those as new table cells
+// both truncates the name mid-citation and shifts every later column by one,
+// silently misattributing candidates to the wrong party. Only start a new cell
+// when no {{template}} or <ref> is still open.
+function markupDepth(depth, line) {
+  const opens = (line.match(/\{\{/g) || []).length;
+  const closes = (line.match(/\}\}/g) || []).length;
+  const refOpens = (line.match(/<ref(?![^>]*\/>)[^>]*>/gi) || []).length;
+  const refCloses = (line.match(/<\/ref>/gi) || []).length;
+  return Math.max(0, depth + opens - closes + refOpens - refCloses);
+}
+
+function splitWikiRows(section) {
+  const rows = [];
+  let current = [];
+  let depth = 0;
+
+  for (const line of section.split("\n")) {
+    if (depth === 0 && line.startsWith("|-")) {
+      if (current.length) rows.push(current);
+      current = [];
+    } else if (depth === 0 && line.startsWith("|")) {
+      current.push(line.slice(1).trim());
+    } else if (current.length) {
+      // Continuation of the cell above, not a new one.
+      current[current.length - 1] += ` ${line.trim()}`;
+    }
+    depth = markupDepth(depth, line);
+  }
+  if (current.length) rows.push(current);
+  return rows;
+}
+
+// Parse debris never looks like a person's name.
+function looksLikeName(name) {
+  return !/[{}<>=]|https?:|\|/.test(name);
+}
+
+function splitCellEntries(cell) {
+  return String(cell || "").split(/<br\s*\/?>/i);
+}
+
 function parseWikiCandidates(wikitext) {
   const leads = [];
   const section = wikitext.split("==Legislative Assembly==")[1]?.split("==Legislative Council==")[0];
   if (!section) return leads;
 
-  let current = [];
-  const rows = [];
-  for (const line of section.split("\n")) {
-    if (line.startsWith("|-")) {
-      if (current.length) rows.push(current);
-      current = [];
-    } else if (line.startsWith("|")) {
-      current.push(line.slice(1).trim());
-    }
-  }
-  if (current.length) rows.push(current);
+  const rows = splitWikiRows(section);
 
   for (const r of rows) {
     if (r.length < 5) continue;
@@ -187,26 +240,33 @@ function parseWikiCandidates(wikitext) {
       { party: "victorian-socialists", cell: r[5] },
     ];
     for (const { party, cell } of cols) {
-      let name = cleanWikiCell(cell);
-      if (!name || name.length < 3 || name.length > 60) continue;
-      // Coalition cells may be "Name (L)" already stripped
-      let p = party;
-      if (party === "coalition") {
-        if (/\(N\)/i.test(cell) || /National/i.test(cell)) p = "nationals";
-        else p = "liberal";
+      // One cell can hold several candidates separated by <br> (e.g. a
+      // Nationals and a Liberal both contesting the same seat). Split first so
+      // each becomes its own lead with its own party, rather than one merged
+      // "A / B" name attributed to whichever party matched the cell.
+      for (const entry of splitCellEntries(cell)) {
+        const name = cleanWikiCell(entry);
+        if (!name || name.length < 3 || name.length > 60) continue;
+        if (!looksLikeName(name)) continue;
+        // Coalition cells may be "Name (L)" already stripped
+        let p = party;
+        if (party === "coalition") {
+          if (/\(N\)/i.test(entry) || /National/i.test(entry)) p = "nationals";
+          else p = "liberal";
+        }
+        // Skip placeholders
+        if (/^tbd$|to be|vacant|independent/i.test(name)) continue;
+        leads.push({
+          kind: "candidate",
+          name,
+          party: p,
+          contest,
+          chamber: "assembly",
+          source_url: "https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election",
+          title: `Wiki Assembly table: ${name} — ${dist}`,
+          source_id: "wiki-candidates",
+        });
       }
-      // Skip placeholders
-      if (/^tbd$|to be|vacant|independent/i.test(name)) continue;
-      leads.push({
-        kind: "candidate",
-        name,
-        party: p,
-        contest,
-        chamber: "assembly",
-        source_url: "https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election",
-        title: `Wiki Assembly table: ${name} — ${dist}`,
-        source_id: "wiki-candidates",
-      });
     }
   }
 
