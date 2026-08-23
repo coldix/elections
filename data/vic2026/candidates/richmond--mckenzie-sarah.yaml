@@ -3,15 +3,35 @@ candidate:
   party: labor
   contest: richmond
   chamber: assembly
-  status: announced
+  status: endorsed
   history:
-    - status: announced
-      date: 2026-03-06
+    - status: endorsed
+      date: 2026-08-23
       source:
-        url: "https://en.wikipedia.org/wiki/Harriet_Shing"
-        title: "Sarah McKenzie is Labor's candidate for Richmond"
-        publisher: Instagram
-        accessed: 2026-03-06
+        url: https://www.viclabor.org.au/our-team/sarah-mckenzie
+        publisher: Victorian Labor
+        title: "Sarah McKenzie: Labor Candidates"
+        accessed: 2026-08-23
+      note: >-
+        Official Victorian Labor candidates page states "Candidate for
+        Richmond". Verified 23 August 2026. This replaces an earlier
+        announced-status entry whose citation did not resolve (see
+        corrections); the 6 March 2026 announcement is retained below only as
+        a dated claim, not as the supporting source.
+  corrections:
+    - date: 2026-08-23
+      was: "announced 2026-03-06, source.url https://en.wikipedia.org/wiki/Harriet_Shing (publisher recorded as Instagram)"
+      now: "endorsed, sourced to https://www.viclabor.org.au/our-team/sarah-mckenzie"
+      reason: >-
+        The citation named Instagram as publisher but linked to the Wikipedia
+        biography of an unrelated MP, so it did not evidence the candidacy. The
+        original post could not be located, so the record is now carried by the
+        official party page instead of an unresolvable citation.
+      source:
+        url: https://www.viclabor.org.au/our-team/sarah-mckenzie
+        publisher: Victorian Labor
+        title: "Sarah McKenzie: Labor Candidates"
+        accessed: 2026-08-23
   links:
     - url: https://www.viclabor.org.au/our-team/sarah-mckenzie
       kind: party-profile

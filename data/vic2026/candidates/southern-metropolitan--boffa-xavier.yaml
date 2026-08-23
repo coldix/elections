@@ -17,8 +17,23 @@ candidate:
       note: >-
         Listed as Liberal Legislative Council candidate for Southern
         Metropolitan. Party media (March 2026 convention coverage) reported
-        endorsement of upper-house ticket candidates including Boffa;
-        Liberal Victoria site blocked automated fetch 2026-07-31.
+        endorsement of upper-house ticket candidates including Boffa; the
+        Liberal Victoria site blocked automated fetch on 2026-07-31.
+        Superseded as evidence by the party page below.
+    - status: endorsed
+      date: 2026-08-23
+      source:
+        url: https://vic.liberal.org.au/team/xavier-boffa
+        publisher: Liberal Victoria
+        title: "Xavier Boffa - Liberal for Southern Metropolitan Region"
+        accessed: 2026-08-23
+      note: >-
+        Official Liberal Victoria team page, confirmed 23 August 2026 by
+        rendering the page in a browser — the site is client-rendered, which is
+        why the earlier automated fetch failed rather than the page being
+        absent.
   links:
+    - url: https://vic.liberal.org.au/team/xavier-boffa
+      kind: party-profile
     - url: https://au.linkedin.com/in/xavier-boffa
       kind: profile

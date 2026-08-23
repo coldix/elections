@@ -3,16 +3,45 @@ candidate:
   party: labor
   contest: croydon
   chamber: assembly
-  status: announced
+  status: endorsed
   history:
     - status: announced
       date: 2026-04-22
       source:
-        url: "https://en.wikipedia.org/wiki/Sonja_Terpstra"
+        url: "https://www.instagram.com/p/DXaO8XDkuo1/"
         title: "Great morning at Croydon station with Richard Farr, our Labor candidate for Croydon"
         publisher: Instagram
         published: 2026-04-22
         accessed: 2026-04-26
+      note: >-
+        Post by Sonja Terpstra MLC. Citation URL corrected 2026-08-23 (see
+        corrections) — it previously pointed at her Wikipedia biography rather
+        than the post itself.
+    - status: endorsed
+      date: 2026-08-23
+      source:
+        url: https://www.viclabor.org.au/our-team/richard-farr
+        publisher: Victorian Labor
+        title: "Richard Farr: Labor Candidates"
+        accessed: 2026-08-23
+      note: >-
+        Official Victorian Labor candidates page states "Candidate for
+        Croydon". Verified 23 August 2026; supersedes the social post as the
+        primary source for this candidacy.
+  corrections:
+    - date: 2026-08-23
+      was: "source.url https://en.wikipedia.org/wiki/Sonja_Terpstra (publisher recorded as Instagram)"
+      now: "source.url https://www.instagram.com/p/DXaO8XDkuo1/"
+      reason: >-
+        The citation named Instagram as publisher but linked to the Wikipedia
+        biography of the MLC who made the post, so the record did not resolve
+        to the evidence it claimed. Replaced with the post itself, and the
+        candidacy re-sourced to the official party page.
+      source:
+        url: https://www.viclabor.org.au/our-team/richard-farr
+        publisher: Victorian Labor
+        title: "Richard Farr: Labor Candidates"
+        accessed: 2026-08-23
   links:
     - url: https://www.viclabor.org.au/our-team/richard-farr
       kind: party-profile
