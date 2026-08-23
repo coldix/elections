@@ -24,7 +24,7 @@ import {
   readdirSync,
 } from "node:fs";
 import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "yaml";
 import {
   alreadyInLedger,
@@ -127,8 +127,11 @@ function parseOneNation(html) {
   // start on "Rikkie-Lee" and instead matches from "Lee", which both truncates
   // the name and drags the lost fragment into the seat.
   const NAME = "[A-Z][A-Za-z'’.-]*[A-Za-z]";
+  // Cards read "<name> for <seat> Meet <name>, One Nation's candidate ...".
+  // Terminating the seat only on a dash/pipe missed most of the page, so also
+  // stop where the candidate's own name recurs (backreference \1).
   const re = new RegExp(
-    `(${NAME}(?:\\s+${NAME})+)\\s+for\\s+([A-Za-z][A-Za-z\\s-]+?)(?:\\s*[-–—|]|\\s+Pauline|\\s*$)`,
+    `(${NAME}(?:\\s+${NAME})+)\\s+for\\s+([A-Za-z][A-Za-z\\s-]+?)(?:\\s*[-–—|]|\\s+Pauline|\\s+\\1\\b|\\s*$)`,
     "g",
   );
   let m;
@@ -142,6 +145,8 @@ function parseOneNation(html) {
     const firstToken = name.split(/[\s\-'’]/)[0];
     const dup = seat.search(new RegExp(`\\b${firstToken.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`, "i"));
     if (dup > 0) seat = seat.slice(0, dup).trim();
+    // Trailing call-to-action left over from the card ("... Pakenham Support").
+    seat = seat.replace(/\s+(?:Meet|Support|Learn|Read|About|Donate|Volunteer)$/i, "").trim();
     seat = seat.replace(/\s+Region$/i, "").trim();
     if (name.length < 5 || seat.length < 3) continue;
     if (/One Nation|Victoria|Candidates|Donate/i.test(name)) continue;
@@ -201,7 +206,9 @@ function splitWikiRows(section) {
       if (current.length) rows.push(current);
       current = [];
     } else if (depth === 0 && line.startsWith("|")) {
-      current.push(line.slice(1).trim());
+      // Some rows open a cell with "||"; treat it as one cell, not an empty
+      // one followed by a second, which would shift every later column.
+      current.push(line.replace(/^\|+/, "").trim());
     } else if (current.length) {
       // Continuation of the cell above, not a new one.
       current[current.length - 1] += ` ${line.trim()}`;
@@ -233,11 +240,16 @@ function parseWikiCandidates(wikitext) {
     const dist = cleanWikiCell(r[0]);
     if (!dist || dist.length > 40 || /Electorate|Held by|party style/i.test(dist)) continue;
     const contest = normalizeContest(dist);
+    // Table columns are: Electorate | Held by | Labor | Coalition | Greens |
+    // One Nation | Socialists | Other. Column 5 is One Nation, not Socialists
+    // -- mapping it to Socialists put every One Nation candidate under the
+    // wrong party and meant the Socialists column was never read at all.
     const cols = [
       { party: "labor", cell: r[2] },
       { party: "coalition", cell: r[3] },
       { party: "greens", cell: r[4] },
-      { party: "victorian-socialists", cell: r[5] },
+      { party: "one-nation", cell: r[5] },
+      { party: "victorian-socialists", cell: r[6] },
     ];
     for (const { party, cell } of cols) {
       // One cell can hold several candidates separated by <br> (e.g. a
@@ -580,7 +592,24 @@ async function main() {
   // Exit 0 always — this is discovery, not CI gate
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// Pure parsers, exported so tests can exercise them against saved fixtures
+// without touching the network. Everything below stays internal.
+export {
+  cleanWikiCell,
+  splitWikiRows,
+  splitCellEntries,
+  looksLikeName,
+  parseWikiCandidates,
+  parseOneNation,
+};
+
+// Only scan when run as a command. Importing the module (tests) must not fetch.
+const invokedDirectly =
+  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (invokedDirectly) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}

@@ -1,0 +1,50 @@
+==Legislative Assembly==
+{| class="wikitable"
+|-
+!Electorate
+!Held by
+!Labor candidate
+!Coalition candidate
+!Greens candidate
+!One Nation candidate
+!Socialists candidate
+!Other candidates
+|-
+|[[Electoral district of Berwick|Berwick]]
+|[[Liberal Party of Australia (Victorian Division)|Liberal]]
+|Rana Khan<ref>{{cite web|url=https://www.viclabor.org.au/our-team/rana-khan|title=Rana Khan: Labor Candidates|website=Victorian Labor|date=June 2026|accessdate=21 June 2026}}</ref>
+|'''[[Brad Battin]]''' ([[Victorian Liberal Party|L]])
+|Roshan De Silva<ref>{{cite web|url=https://www.facebook.com/RoshanDeSilvaGreens|title=Roshan De Silva - Greens Candidate for Berwick|website=Facebook|accessdate=18 August 2026}}</ref>
+|Michael Piastrino<ref name=Barnes/>
+||Nalinda Amarasiri Gunawardana<ref>{{cite web|url=https://www.victoriansocialists.org.au/candidates/nalinda-amarasiri-gunawardana|title=Nalinda Amarasiri Gunawardana: Candidate for Berwick|website=Victorian Socialists|date=March 2026|accessdate=19 March 2026}}</ref>
+|
+|-
+|[[Electoral district of Box Hill|Box Hill]]
+|[[Australian Labor Party (Victorian Branch)|Labor]]
+|'''[[Paul Hamer]]'''<ref name=Incumbents/>
+|Sally Houguet ([[Victorian Liberal Party|L]])<ref>{{cite web|url=https://vic.liberal.org.au/team/sally-houguet|title=Sally Houguet: Candidate for Box Hill|website=Victorian Liberals|date=January 2026|accessdate=30 January 2026}}</ref>
+|Aaron Qin<ref>{{cite web|url=https://greens.org.au/vic/person/aaron-qin|title=Aaron Qin: Candidate for Box Hill|website=Victorian Greens|date=May 2026}}</ref>
+|
+|Saravina Afaj<ref>{{cite web|url=https://www.victoriansocialists.org.au/candidates/saravina-afaj|title=Saravina Afaj: Candidate for Box Hill|date=February 2026|accessdate=14 February 2026|website=Victorian Socialists}}</ref>
+|Heena Sinha Cheung (Ind)<ref>{{cite web|url=https://heena4boxhill.com.au/about|title=A Strong Voice. A Fairer Box Hill|website=Heena 4 Box Hill|date=2026|accessdate=2 June 2026}}</ref><ref>{{cite web|title=The Real Australia–India Relationship|url=https://alliesincolour.substack.com/p/the-real-australiaindia-relationship|website=Allies in Colour|access-date=13 July 2026}}</ref>
+|-
+|[[Electoral district of Ripon|Ripon]]
+|[[Australian Labor Party (Victorian Branch)|Labor]]
+|'''[[Martha Haylett]]'''<ref name=Incumbents/>
+|Jo Armstrong ([[Victorian National Party|N]])<ref>{{Cite web |title=Nationals unveil their candidate for Ripon |url=https://www.westvicnews.com.au/nationals-unveil-their-candidate-for-2026-04-14 |date=14 April 2026|access-date=15 April 2016 |last1=Wilson |first1=Craig |website=West Vic News |language=en}}</ref><br>Megan Read ([[Victorian Liberal Party|L]])<ref>{{Cite web |title=Megan Read Candidate for Ripon |url=https://vic.liberal.org.au/team/megan-read |date=June 2026 |access-date=30 June 2026|website=Victorian Liberal Party |language=en-AU}}</ref> 
+|Tim Drylie<ref>{{cite web|url=https://greens.org.au/vic/person/tim-drylie|title=Tim Drylie: Candidate for Ripon and Councillor for Hepburn Shire Council|website=Victorian Greens|date=March 2026|accessdate=19 March 2026}}</ref>
+|
+|Taylah Brennan-Jones<ref>{{Cite web |title=Taylah Brennan-Jones – Victorian Socialists |url=https://www.victoriansocialists.org.au/candidates/taylah-brennan-jones |access-date=2026-08-02 |website=www.victoriansocialists.org.au |language=en-AU}}</ref>
+|-
+|[[Electoral district of Sydenham|Sydenham]]
+|[[Australian Labor Party (Victorian Branch)|Labor]]
+|Uros Rasic<ref>{{Cite web |title=Introducing Labor’s candidate for Sydenham, Uros Rasic|url=https://www.facebook.com/photo/?fbid=1523060449379370&set=a.360651605620266 |author=Victorian Labor|date=16 March 2026|access-date=18 March 2026 |website=Facebook|language=en}}</ref>
+|Nathalie Moussi ([[Victorian Liberal Party|L]])<ref>{{Cite web
+|url=https://vicliberal.org.au/team/nathalie-moussi |access-date=2026-07-13 |website=vicliberal.org.au|title=Nathalie Moussi: Liberal for Sydenham}}</ref>
+|Maggie Jane<ref>{{Cite web |url=https://greens.org.au/vic/person/maggie-jane | access-date=2026-08-17
+|website=greens.org.au|title=Maggie Jane: Greens Candidate for Sydenham}}</ref>
+|
+|Shania Khan<ref>{{Cite web |title=Shania Khan – Victorian Socialists |url=https://www.victoriansocialists.org.au/candidates/shania-khan |access-date=2026-06-21
+|website=www.victoriansocialists.org.au |language=en-AU}}</ref>
+|}
+==Legislative Council==
