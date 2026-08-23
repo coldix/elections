@@ -34,7 +34,7 @@ const schema = {
       this calendar unless separately added.
     </div>
 
-    <div class="calendar-list">
+    <div class="card-grid-wide">
       {calendar.elections.map((entry) => {
         const status = ELECTION_DATE_STATUS[entry.status];
         const live = entry.jurisdiction === "vic";
@@ -102,7 +102,6 @@ const schema = {
 
 <style>
   .calendar-page { max-width: 70rem; }
-  .calendar-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
   .election-card header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
   .election-card h2 { margin: 0.1rem 0 0; font-size: 1.35rem; }
   .election-card.is-live { border-color: var(--accent); }

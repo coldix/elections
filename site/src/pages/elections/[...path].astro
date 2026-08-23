@@ -88,7 +88,7 @@ const schema = {
     <section aria-labelledby="structure-h">
       <p class="eyebrow">Structure and numbers</p>
       <h2 id="structure-h">What voters elect</h2>
-      <div class="chamber-grid">
+      <div class="card-grid-wide">
         {entry.chambers.map((chamber) => (
           <article class="card chamber-card">
             <header>
@@ -173,7 +173,6 @@ const schema = {
   .facts > div { background: var(--surface); padding: 1rem 1.1rem; }
   .facts dt, .chamber-card dt { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-3); }
   .facts dd { margin: 0.25rem 0 0; font-weight: 650; }
-  .chamber-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: 1rem; }
   .chamber-card header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
   .chamber-card h3 { margin: 0.15rem 0 0; }
   .chamber-role { margin: 0; color: var(--ink-3); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
