@@ -127,7 +127,11 @@ scripts/
   export.mjs                       JSON/CSV generation
   rewrite-scoped-routes.mjs        Victoria route scoping and legacy-link guard
   finalize-sitemap.mjs             final sitemap processing
+  scan-leads.mjs                   discovery scanner (report only, never writes data)
   lib/                             shared loaders (data, federal, state-foundation, …)
+  lib/source-trust.mjs             source trust tiers for discovery leads
+
+tests/                             fixture tests for the discovery parsers
 
 site/
   src/pages/                       national, federal, NSW and outline routes
@@ -152,15 +156,17 @@ npm run validate         # repository hygiene + election-data validation
 npm run export           # rebuild JSON and CSV exports
 npm run dev              # validate/export, then run Astro locally
 npm run build            # complete production build
+npm run test             # fixture tests for the discovery parsers
 npm run report:coverage  # coverage report only; does not publish
 npm run check:sources    # source URL health report only
+npm run scan:leads       # discovery digest only; never writes data
 ```
 
 The production sequence is:
 
 ```text
-repository hygiene → data validation → export → build metadata → Astro build
-→ scoped-route check → sitemap finalisation
+parser tests → repository hygiene → data validation → export → build metadata
+→ Astro build → scoped-route check → sitemap finalisation
 ```
 
 A failure at any stage prevents publication.
@@ -221,5 +227,10 @@ new commits; history is not rewritten.
 
 The national shell, upcoming-election calendar, future-election foundation
 pages and the full Victoria 2026 tracker are live. There are no open pull
-requests at this housekeeping checkpoint. Current gaps and next actions are in
+requests at this housekeeping checkpoint.
+
+At this checkpoint the Victorian ledger holds **311** candidacies and **18**
+statewide polls, and federal-49 holds **13** primary-vote polls. Every
+candidacy rests on a primary, secondary or campaign source — none on Wikipedia
+alone. Current gaps and next actions are in
 [docs/handover.md](docs/handover.md) and [docs/scope.md](docs/scope.md).

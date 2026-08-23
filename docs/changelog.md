@@ -1,10 +1,38 @@
 # Changelog — since polls
 
-> **Updated** 2026-08-20 · hub [../README.md](../README.md)
+> **Updated** 2026-08-23 · hub [../README.md](../README.md)
 
 Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
+
+## 2026-08-23 — Home page simplified; shared card primitives
+
+| Area | What shipped |
+|---|---|
+| **Home** | Seven sections to five, 6450px to 3438px. The monthly survey was linked three times (hero panel, section, header) while the issues survey — a *different* survey — appeared once in the same style. One **Have your say** section now carries both, each with its time commitment. Header keeps its single link |
+| **Hero** | Survey panel and four competing buttons replaced by one primary action, one secondary, and a line of type carrying the proof |
+| **Structure** | "How to use and cite" + "Check the work" (eight near-identical cards) merged into one three-card section. Countdown moved inside the Victoria section; its title is no longer a duplicate `h2` |
+| **Primitives** | `.section-head`, `.card-grid` / `.card-grid-wide`, `.card-interactive`, `.link-card`, `.section-aside`, `--shadow-lift` in `global.css`. Adopted on the Victoria overview, `/elections`, federal 49, NSW 2027, the generic placeholder and three party indexes — net 44 fewer lines. Vic party cards keep their party-coloured hover |
+
+## 2026-08-23 — Discovery scanner: five parser bugs, fixture tests, trust tiers
+
+| Area | What shipped |
+|---|---|
+| **Parser fixes** | Multi-line citations broke row splitting (truncated names, shifted columns); `<br>`-separated candidates merged into one lead; One Nation names could not start on a hyphen; **column 5 read as Socialists when it is One Nation** (all 11 One Nation rows misattributed, Socialists column never read); One Nation seat terminator extracted 3 of 19. Wikipedia extraction 246 → 316, One Nation 3 → 19 |
+| **Tests** | 22 fixture tests (`tests/`) over verbatim rows from the live sources, run in CI before validation. Each parser fix mutation-checked |
+| **Trust tiers** | `scripts/lib/source-trust.mjs` ranks leads `primary` → `secondary` → `social` → `wikipedia-only` per ADR-14. A wiki row is rated on the citation underneath it, and the digest prints that citation instead of the Wikipedia URL. Named `<ref name=X/>` references resolved |
+
+## 2026-08-23 — Vic Socialists wave; every record off Wikipedia
+
+| Area | What shipped |
+|---|---|
+| **Vic Socialists** | 15 Assembly candidates verified against party pages — Bass, Benambra, Bendigo East, Geelong, Kew, Lara, Macedon, Mildura, Mill Park, Mordialloc, Ripon, South Barwon, South-West Coast, Wendouree, Yan Yean. Invisible to the scanner until the column-mapping fix |
+| **Vic Labor** | Bridget Mullahy (Brighton), Elizabeth Nealy (Mill Park) from official party pages |
+| **Source repair** | Eight records rested on Wikipedia; four cited a real publisher but linked to the Wikipedia *biography of the journalist or MP* (Farr, McKenzie, Sun, Ibuki). All re-sourced with `corrections`. Brooks and Boffa were marked "party site blocked automated fetch" — the site is client-rendered, not blocking. **Ledger now has zero records resting on Wikipedia** |
+| **Correction** | Jessie Weatherly → **Weatherley** (Eltham, One Nation) per the party's own page; the mismatch was defeating ledger dedup |
+| **Not encoded** | Catherine D'Arcy (Greens, Dandenong) — cited article never mentions her, and the Greens' own list of 80 has no Dandenong candidate. Recorded under Rejected leads in [leads/README.md](leads/README.md) |
+| **Polls** | Nothing new in the 19–23 Aug window. Roy Morgan's 17 Aug Legislative Council projection added as a third source on the existing 5–7 Aug SMS poll |
 
 ## 2026-08-20 — Issues survey v2 (blind comparison)
 
