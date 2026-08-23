@@ -37,7 +37,10 @@ const daysLabel = daysUntil(iso);
 <div class="countdown card">
   <div class="cd-main">
     <p class="eyebrow">Countdown</p>
-    <h2 class="cd-title">{election.name}</h2>
+    {/* Deliberately not a heading: this card sits inside a section already
+        titled with the election name, and a second h2 carrying identical text
+        is a duplicate for screen readers and search engines. */}
+    <p class="cd-title">{election.name}</p>
     <p class="cd-date">
       <time datetime={iso}>{formatDateLong(iso)}</time>
       <span class="cd-date-sub"> · election day</span>
@@ -163,9 +166,15 @@ const daysLabel = daysUntil(iso);
     align-items: start;
     box-shadow: var(--shadow);
   }
+  /* Styled as a heading, marked up as a paragraph — see the note in the markup. */
   .cd-title {
     margin: 0 0 0.25rem;
     font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.7rem);
+    font-weight: 640;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-wrap: balance;
   }
   .cd-date {
     margin: 0 0 0.5rem;

@@ -1,9 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
 import Countdown from "../components/Countdown.astro";
-import OzeMonthlySurvey from "../components/OzeMonthlySurvey.astro";
-import OzeIssuesSurvey from "../components/OzeIssuesSurvey.astro";
-import { SITE, VIC2026, OZE_MONTHLY_POLL, formatDate } from "../lib/site.mjs";
+import StatGrid from "../components/StatGrid.astro";
+import SurveyInvite from "../components/SurveyInvite.astro";
+import { SITE, VIC2026, formatDate } from "../lib/site.mjs";
 import { loadElection, summaryFor } from "../../../scripts/lib/data.mjs";
 import { ELECTION_DATE_STATUS, loadElectionCalendar } from "../lib/electionCalendar.mjs";
 
@@ -12,6 +12,28 @@ const summary = summaryFor(data);
 const calendar = loadElectionCalendar();
 const victoria = calendar.elections.find((entry) => entry.jurisdiction === "vic");
 const nextElections = calendar.elections.filter((entry) => entry.jurisdiction !== "vic").slice(0, 4);
+
+const vicStats = [
+  { value: summary.live_candidates, label: "Live candidacies", note: "Individually sourced" },
+  { value: summary.districts, label: "Assembly districts" },
+  { value: summary.regions, label: "Council regions" },
+  { value: summary.sources, label: "Sources cited" },
+];
+
+/** Primary ways into the active tracker. */
+const vicEntry = [
+  { href: `${VIC2026}/assembly`, title: "Candidates by seat", body: "All 88 Assembly districts with sourced statuses." },
+  { href: `${VIC2026}/polls`, title: "Poll average", body: "Public statewide primaries and a transparent weighted average." },
+  { href: `${VIC2026}/parties`, title: "Parties and policies", body: "Registered parties and sourced positions, compared side by side." },
+  { href: `${VIC2026}/data`, title: "Open data", body: "JSON and CSV under /data/vic2026/ — CC BY 4.0." },
+];
+
+/** How to check the work — evidence, provenance and corrections in one place. */
+const checkTheWork = [
+  { href: "/methodology", title: "Methodology", body: "One set of evidence and neutrality rules for every contest." },
+  { href: SITE.issues, title: "Submit a correction", body: "Provide a public source and a date. Corrections are recorded, not quietly edited." },
+  { href: "/llms.txt", title: "Guide for AI systems", body: "Short index for crawlers and language models. Full version at /llms-full.txt." },
+];
 
 const schema = [
   {
@@ -87,161 +109,182 @@ const schema = [
       <p class="eyebrow">Independent · Sourced · Australia-wide</p>
       <h1>Australian elections, one evidence trail.</h1>
       <p class="lede">
-        Track <strong>who is standing</strong>, with a dated public source for every material
-        claim — plus parties, policy comparisons and a transparent statewide
-        <strong>poll average</strong>. Built for federal, state and territory contests under one
-        methodology. <strong>Victoria 2026</strong> is the first active ledger.
+        Track <strong>who is standing</strong>, with a dated public source behind every
+        material claim — plus parties, policy comparisons and a transparent statewide
+        <strong>poll average</strong>.
       </p>
-      <div class="hero-survey">
-        <p class="survey-promo">
-          <strong>How would you vote on 28 November?</strong>
-          Once a month, record a Victorian and federal voting intention. Open to anyone
-          with the link — one vote per person. Not a scientific poll, and not used in
-          the tracker average.
-        </p>
-        <p class="btn-row">
-          <a class="btn" href={OZE_MONTHLY_POLL.url}>Take the survey</a>
-        </p>
-      </div>
       <p class="btn-row hero-actions">
-        <a class="btn btn-ghost" href={VIC2026}>Open Victoria 2026 tracker</a>
-        <a class="btn btn-ghost" href="/elections">View upcoming elections</a>
-        <a class="btn btn-ghost" href="/methodology">Read the methodology</a>
+        <a class="btn" href={VIC2026}>Open the Victoria 2026 tracker</a>
+        <a class="btn btn-ghost" href="/elections">Upcoming elections</a>
+      </p>
+      <p class="hero-facts">
+        <span><strong>{summary.live_candidates}</strong> sourced candidacies</span>
+        <span><strong>{summary.sources}</strong> cited sources</span>
+        <span>Victoria votes <strong>{victoria?.date_label ?? "28 November 2026"}</strong></span>
       </p>
     </div>
   </section>
 
   <div class="wrap national-body">
-    <Countdown election={data.election} keyDates={data.election.dates} />
-
     <section class="section" aria-labelledby="current-h">
-      <p class="eyebrow">Current active tracker</p>
-      <h2 id="current-h">2026 Victorian state election</h2>
-      <div class="current-grid">
-        <article class="card current-card">
-          <p class="date-line"><strong>{victoria?.date_label ?? "28 November 2026"}</strong></p>
-          <p>
-            Individually sourced candidacies across all 88 Assembly districts and eight
-            Legislative Council regions, plus parties, policies, polling and open data.
-          </p>
-          <dl class="stats">
-            <div><dt>Live candidacies</dt><dd>{summary.live_candidates}</dd></div>
-            <div><dt>Districts</dt><dd>{summary.districts}</dd></div>
-            <div><dt>Council regions</dt><dd>{summary.regions}</dd></div>
-            <div><dt>Sources cited</dt><dd>{summary.sources}</dd></div>
-          </dl>
-          <p class="btn-row">
-            <a class="btn" href={VIC2026}>Election overview</a>
-            <a class="btn btn-ghost" href={`${VIC2026}/assembly`}>Assembly seats</a>
-            <a class="btn btn-ghost" href={`${VIC2026}/polls`}>Poll average</a>
-            <a class="btn btn-ghost" href={`${VIC2026}/parties`}>Parties</a>
-          </p>
-        </article>
-
-        <aside class="card principle-card">
-          <h3>What the tracker does</h3>
-          <p>Every candidacy and material factual claim carries a dated public source.</p>
-          <p>Coverage is not a forecast, a ranking, an endorsement or how-to-vote advice.</p>
-          <p>
-            Prefer machine-readable exports under{" "}
-            <a href="/data/vic2026/candidates.json"><code>/data/vic2026/</code></a> when citing
-            figures; HTML is for people, JSON/CSV for systems.
-          </p>
-          <p class="muted">Last Victorian source verification: {formatDate(summary.latest_verified)}.</p>
-        </aside>
+      <div class="section-head">
+        <p class="eyebrow">Current active tracker</p>
+        <h2 id="current-h">2026 Victorian state election</h2>
+        <p>
+          Individually sourced candidacies across all 88 Assembly districts and eight
+          Legislative Council regions, plus parties, policies, polling and open data.
+        </p>
       </div>
-      <OzeMonthlySurvey variant="home" />
-      <OzeIssuesSurvey variant="home" />
-    </section>
 
-    <section class="section" aria-labelledby="use-h">
-      <p class="eyebrow">For people, journalists and AI systems</p>
-      <h2 id="use-h">How to use and cite this site</h2>
-      <div class="trust-grid">
-        <a class="card" href={`${VIC2026}/assembly`}
-          ><h3>Candidates by seat</h3><p>Legislative Assembly — 88 districts with sourced statuses.</p></a
-        >
-        <a class="card" href={`${VIC2026}/polls`}
-          ><h3>Victorian polls</h3><p>Public statewide primaries and a transparent weighted average.</p></a
-        >
-        <a class="card" href={`${VIC2026}/data`}
-          ><h3>Open data</h3><p>JSON and CSV under /data/vic2026/ — CC BY 4.0.</p></a
-        >
-        <a class="card" href="/llms.txt"
-          ><h3>AI guide (llms.txt)</h3><p>Short index for crawlers and language models.</p></a
-        >
+      <Countdown election={data.election} keyDates={data.election.dates} />
+
+      <StatGrid stats={vicStats} />
+
+      <div class="card-grid entry-grid">
+        {
+          vicEntry.map((item) => (
+            <a class="card link-card" href={item.href}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </a>
+          ))
+        }
       </div>
+
+      <p class="section-aside">
+        Coverage is progressive: an empty seat means no candidacy has been verified yet, not
+        that nobody is standing. Last Victorian source verification&nbsp;
+        {formatDate(summary.latest_verified)}.
+      </p>
     </section>
 
     <section class="section" aria-labelledby="next-h">
-      <p class="eyebrow">National calendar</p>
-      <h2 id="next-h">What comes next</h2>
-      <div class="upcoming-grid">
-        {nextElections.map((entry) => {
-          const status = ELECTION_DATE_STATUS[entry.status];
-          return (
-            <a class="card upcoming-card" href={entry.planned_path}>
-              <p class="jurisdiction">{entry.name}</p>
-              <h3>{entry.date_label}</h3>
-              <p class="muted">{status.label}: {entry.basis}</p>
-            </a>
-          );
-        })}
+      <div class="section-head">
+        <p class="eyebrow">National calendar</p>
+        <h2 id="next-h">What comes next</h2>
       </div>
-      <p><a class="btn btn-ghost" href="/elections">Full Australian election calendar</a></p>
+      <div class="card-grid">
+        {
+          nextElections.map((entry) => {
+            const status = ELECTION_DATE_STATUS[entry.status];
+            return (
+              <a class="card link-card upcoming-card" href={entry.planned_path}>
+                <h3>{entry.name}</h3>
+                <p class="upcoming-date">{entry.date_label}</p>
+                <p class="muted">
+                  {status.label}: {entry.basis}
+                </p>
+              </a>
+            );
+          })
+        }
+      </div>
+      <p class="section-aside">
+        <a href="/elections">Full Australian election calendar</a>
+      </p>
     </section>
 
-    <section class="section trust" aria-labelledby="trust-h">
-      <h2 id="trust-h">Check the work</h2>
-      <div class="trust-grid">
-        <a class="card" href="/methodology"><h3>Methodology</h3><p>One set of evidence and neutrality rules.</p></a>
-        <a class="card" href={SITE.repo}><h3>Public repository</h3><p>Every change remains reviewable in Git.</p></a>
-        <a class="card" href={SITE.issues}><h3>Submit a correction</h3><p>Provide a public source and date.</p></a>
-        <a class="card" href="/about"><h3>Independence</h3><p>Publisher, authorisation and project boundaries.</p></a>
+    <SurveyInvite />
+
+    <section class="section" aria-labelledby="trust-h">
+      <div class="section-head">
+        <p class="eyebrow">Evidence and provenance</p>
+        <h2 id="trust-h">Check the work</h2>
+        <p>
+          Nothing here is a forecast, a ranking or how-to-vote advice. Every claim should be
+          checkable, so the rules and the full history are public.
+        </p>
       </div>
+      <div class="card-grid">
+        {
+          checkTheWork.map((item) => (
+            <a class="card link-card" href={item.href}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </a>
+          ))
+        }
+      </div>
+      <p class="section-aside">
+        Every change stays reviewable in the <a href={SITE.repo}>public repository</a>. Publisher,
+        authorisation and project boundaries are on the <a href="/about">about page</a>.
+      </p>
     </section>
   </div>
 </Base>
 
 <style>
   .national-hero {
-    padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem);
-    background: radial-gradient(60rem 24rem at 12% -8%, var(--accent-wash), transparent 70%), var(--paper);
+    padding-block: clamp(3.5rem, 9vw, 6.5rem) clamp(2.5rem, 5vw, 4rem);
+    background:
+      radial-gradient(60rem 24rem at 12% -8%, var(--accent-wash), transparent 70%),
+      var(--paper);
     border-bottom: 1px solid var(--rule);
   }
-  .national-hero h1 { max-width: 18ch; }
-  .hero-survey {
-    max-width: 40rem;
-    margin-top: 1.5rem;
-    padding: 1rem 1.15rem;
-    border: 1px solid var(--rule-strong);
-    border-radius: 0.65rem;
-    background: var(--surface);
+  .national-hero h1 {
+    max-width: 18ch;
   }
-  .survey-promo { margin: 0 0 0.85rem; color: var(--ink-2); }
-  .survey-promo strong { display: block; margin-bottom: 0.25rem; color: var(--ink); }
-  .hero-survey .btn-row { margin: 0; }
-  .hero-actions { margin-top: 1.15rem; }
-  .national-body { padding-bottom: 2.5rem; }
-  .national-body :global(.countdown) { margin-top: 1.75rem; }
-  .section { padding-block: clamp(2rem, 4vw, 3rem); }
-  .section > h2 { margin-top: 0; }
-  .current-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr); gap: 1rem; }
-  .date-line { font-size: 1.2rem; }
-  .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
-  .stats div { padding: 0.75rem; background: var(--surface-2); border-radius: 0.55rem; }
-  .stats dt { color: var(--ink-3); font-size: 0.78rem; }
-  .stats dd { margin: 0.25rem 0 0; font-size: 1.35rem; font-weight: 700; }
-  .principle-card h3, .upcoming-card h3, .trust-grid h3 { margin-top: 0; }
-  .upcoming-grid, .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; }
-  .jurisdiction { margin: 0 0 0.35rem; color: var(--ink-3); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-  .upcoming-card { color: inherit; text-decoration: none; }
-  .upcoming-card:hover { border-color: var(--accent); }
-  .trust-grid a { color: inherit; text-decoration: none; }
-  .trust-grid a:hover { border-color: var(--accent); }
-  .trust-grid p { margin-bottom: 0; color: var(--ink-2); }
-  @media (max-width: 48rem) {
-    .current-grid { grid-template-columns: 1fr; }
-    .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-actions {
+    margin-top: 1.6rem;
+    margin-bottom: 0;
+  }
+
+  /* Proof of the product, as a line of type rather than another boxed panel —
+     the hero should state the claim, not restate the dashboard. */
+  .hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.5rem;
+    margin: 1.75rem 0 0;
+    color: var(--ink-3);
+    font-size: 0.92rem;
+  }
+  .hero-facts strong {
+    color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+  }
+  .hero-facts span {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+  .hero-facts span + span {
+    position: relative;
+  }
+  @media (min-width: 34rem) {
+    .hero-facts span + span::before {
+      content: "";
+      position: absolute;
+      left: -0.78rem;
+      top: 0.42em;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--rule-strong);
+    }
+  }
+
+  .national-body {
+    padding-bottom: 2.5rem;
+  }
+  .section {
+    padding-block: clamp(2.25rem, 4.5vw, 3.5rem);
+  }
+  /* Countdown, stats and entry cards form one Victoria block: even spacing
+     between them, so the section reads as a unit rather than three panels. */
+  .national-body :global(.countdown) {
+    margin-bottom: 1.1rem;
+  }
+  .entry-grid {
+    margin-top: 1.1rem;
+  }
+  .upcoming-date {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 640;
+    color: var(--ink);
+  }
+  .upcoming-card .muted {
+    margin: 0.2rem 0 0;
   }
 </style>
