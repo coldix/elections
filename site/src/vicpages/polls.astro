@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import PollCharts from "../components/PollCharts.astro";
 import OzeMonthlySurvey from "../components/OzeMonthlySurvey.astro";
+import AdRow from "../components/AdRow.astro";
 import { SITE, VIC2026, formatDate } from "../lib/site.mjs";
 import { listElections } from "../../../scripts/lib/data.mjs";
 import {
@@ -263,6 +264,8 @@ const schema = [
         </tbody>
       </table>
     </div>
+
+    <AdRow />
 
     <h2 id="rules">Which polls count</h2>
     <ul>

@@ -1,10 +1,17 @@
 # Changelog — since polls
 
-> **Updated** 2026-08-23 · hub [../README.md](../README.md)
+> **Updated** 2026-08-27 · hub [../README.md](../README.md)
 
 Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
+
+## 2026-08-27 — House promotions on three pages
+
+| Area | What shipped |
+|---|---|
+| **Placements** | One oze adnet row on `/`, `/elections/vic/2026` and `/elections/vic/2026/polls` only (1/2/3 columns by width). Candidate, district, party, policy, matrix, methodology, data and legal pages stay ad-free |
+| **Disclosure** | `/privacy` and `/about` describe cookie-free house promotions labelled **Promo**. ADR-16 |
 
 ## 2026-08-23 — Home page simplified; shared card primitives
 

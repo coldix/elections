@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import Countdown from "../components/Countdown.astro";
 import StatGrid from "../components/StatGrid.astro";
 import YouTubeLite from "../components/YouTubeLite.astro";
+import AdRow from "../components/AdRow.astro";
 import { SITE, partyColour, formatDate } from "../lib/site.mjs";
 import { VIDEOS } from "../lib/videos.mjs";
 import {
@@ -303,6 +304,8 @@ const schema = {
         blurb={VIDEOS.tracker.blurb}
       />
     </section>
+
+    <AdRow />
 
     <section class="section trust" aria-labelledby="trust-h">
       <h2 id="trust-h">How to check our work</h2>

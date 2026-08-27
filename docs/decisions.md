@@ -262,8 +262,9 @@ methodology as Vic Council).
 
 **Decision.** Load **Google Analytics 4** sitewide (`gtag.js`, Measurement ID in
 `SITE.gaMeasurementId` in `site/src/lib/site.mjs`) so the maintainer can see
-which pages and datasets people use. Disclose it on `/privacy`. No ads, no
-marketing pixels, no session recording.
+which pages and datasets people use. Disclose it on `/privacy`. No third-party
+ad pixels, no session recording. House promotions are a separate decision
+(ADR-16).
 
 **Why.** Earlier product notes said “analytics deliberately never” for a
 privacy-minimal static site. That is superseded: growth as a go-to national
@@ -271,5 +272,24 @@ election resource needs basic traffic measurement. Candidate *data* remains
 public-source only; visitor measurement is a separate concern and is disclosed.
 
 **Consequences.** `/privacy` must stay accurate whenever the tag or purposes
-change. Empty `gaMeasurementId` disables the tag. Do not add ad networks or
-cross-site marketing pixels without a new ADR.
+change. Empty `gaMeasurementId` disables the tag. Do not add third-party ad
+networks or cross-site marketing pixels without a new ADR.
+
+## ADR-16: House promotions on three high-level pages (2026-08-27)
+
+**Decision.** Carry one responsive oze adnet row — three 300×250 slots, one on
+mobile, two on tablet, three on wide screens — on `/`, `/elections/vic/2026`
+and `/elections/vic/2026/polls` only. Candidate, district, party, policy,
+matrix, methodology, data, privacy and legal pages stay ad-free. Election
+Tracker’s own house campaign is excluded at the ad server so it never promotes
+this site to people already on it. Units are labelled **Promo**. The tag sets
+no cookies and builds no profile. Disclose on `/privacy` and `/about`.
+
+**Why.** ADR-12 forbade adding an ad network without a new ADR. This is a
+cookie-free house network for independent oze projects, not third-party
+behavioural advertising. Three high-level pages keep ads away from records that
+need maximum neutrality and source clarity.
+
+**Consequences.** Do not add slots to candidate, district, party, policy,
+matrix, methodology, data or legal pages. Do not add third-party ad pixels.
+Privacy and about copy must stay accurate if placements change.

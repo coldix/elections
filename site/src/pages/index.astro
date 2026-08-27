@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import Countdown from "../components/Countdown.astro";
 import StatGrid from "../components/StatGrid.astro";
 import SurveyInvite from "../components/SurveyInvite.astro";
+import AdRow from "../components/AdRow.astro";
 import { SITE, VIC2026, formatDate } from "../lib/site.mjs";
 import { loadElection, summaryFor } from "../../../scripts/lib/data.mjs";
 import { ELECTION_DATE_STATUS, loadElectionCalendar } from "../lib/electionCalendar.mjs";
@@ -210,6 +211,7 @@ const schema = [
         authorisation and project boundaries are on the <a href="/about">about page</a>.
       </p>
     </section>
+    <AdRow />
   </div>
 </Base>
 

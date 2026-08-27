@@ -107,7 +107,7 @@ export function socialLinks() {
  * disclaimer change materially — the pages display it, and a stale date on a
  * legal page is worse than none.
  */
-export const LEGAL_UPDATED = "2026-08-09";
+export const LEGAL_UPDATED = "2026-08-27";
 
 /**
  * Party colours, used ONLY inside party-specific data visualisation.

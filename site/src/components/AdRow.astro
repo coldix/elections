@@ -1,0 +1,93 @@
+---
+const context = `page=${Astro.url.pathname.replace(/^\/|\/$/g, "") || "home"}`;
+---
+
+<section class="adnet-row-wrap no-print" aria-label="Promoted links">
+  <div class="ad-row">
+    <div class="ad-slot ad-300x250" data-ad-zone="selected-bottom" data-ad-context={context}></div>
+    <div class="ad-slot ad-300x250 ad-col-2" data-ad-zone="selected-bottom-2" data-ad-context={context}></div>
+    <div class="ad-slot ad-300x250 ad-col-3" data-ad-zone="selected-bottom-3" data-ad-context={context}></div>
+  </div>
+</section>
+<script is:inline async src="https://ads.oze.net.au/t.js"></script>
+
+<style is:global>
+  /* Break out of the content wrap so a 52rem polls column can still hold three 300px units. */
+  .adnet-row-wrap {
+    container-type: inline-size;
+    box-sizing: border-box;
+    width: 100vw;
+    max-width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    margin-block: 1rem 2.5rem;
+    padding-inline: 1rem;
+  }
+  .ad-row {
+    display: grid;
+    grid-template-columns: 300px;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem auto;
+  }
+  .ad-slot { display: block; overflow: hidden; }
+  .ad-300x250 { width: 300px; height: 250px; max-width: 100%; }
+  .ad-slot[data-adnet-state="empty"] { height: 0; margin: 0; }
+  .ad-row .ad-slot { margin: 0; }
+  .ad-row > .ad-col-2,
+  .ad-row > .ad-col-3 { display: none; }
+  @container (min-width: 580px) {
+    .ad-row { grid-template-columns: repeat(2, 300px); }
+    .ad-row > .ad-col-2 { display: block; }
+  }
+  @container (min-width: 916px) {
+    .ad-row { grid-template-columns: repeat(3, 300px); gap: clamp(8px, 1.2cqw, 16px); }
+    .ad-row > .ad-col-3 { display: block; }
+  }
+  .adnet-unit {
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    padding: .9rem;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+  .adnet-link {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    height: 100%;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+  }
+  .adnet-headline,
+  .adnet-body {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+  }
+  .adnet-text .adnet-headline { padding-right: 3.25rem; }
+  .adnet-headline { font-weight: 650; font-size: 1.05rem; line-height: 1.25; -webkit-line-clamp: 2; }
+  .adnet-body { color: var(--ink-2); font-size: .9rem; -webkit-line-clamp: 3; }
+  .adnet-cta { margin-top: auto; font-size: .85rem; font-weight: 600; color: var(--accent-ink); }
+  .adnet-label {
+    position: absolute;
+    top: .4rem;
+    right: .5rem;
+    font-size: .6rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    opacity: .5;
+  }
+  .adnet-unit.adnet-image { padding: 0; border: 0; overflow: hidden; }
+  .adnet-image .adnet-link { display: block; }
+  .adnet-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .adnet-image .adnet-label {
+    padding: 1px 4px;
+    border-radius: 3px;
+    background: rgb(0 0 0 / 55%);
+    color: #fff;
+    opacity: .9;
+  }
+</style>

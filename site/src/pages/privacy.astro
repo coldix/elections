@@ -7,7 +7,7 @@ const social = socialLinks();
 
 <Base
   title="Privacy policy"
-  description="What the Australian Election Tracker collects when you visit, how Google Analytics is used, and how candidate information is handled. How to request a correction."
+  description="What the Australian Election Tracker collects when you visit, how Google Analytics is used, how cookie-free house promotions work, and how candidate information is handled."
 >
   <div class="wrap wrap-narrow section">
     <p class="eyebrow">Legal</p>
@@ -23,8 +23,10 @@ const social = socialLinks();
     <div class="notice" role="note">
       <strong>The short version.</strong> We measure aggregate traffic with Google
       Analytics so the site can stay useful as a go-to election data resource. We do
-      not sell your data, run ads on this site, or maintain user accounts. If you email
-      us, we have your email. If you post a GitHub issue, that's public.
+      not sell your data or maintain user accounts. Three high-level pages carry
+      cookie-free house promotions from the oze network; they do not build a profile or
+      follow you between sites. If you email us, we have your email. If you post a GitHub
+      issue, that's public.
     </div>
 
     <h2 id="analytics">Analytics (Google Analytics 4)</h2>
@@ -43,11 +45,11 @@ const social = socialLinks();
       <li>
         <strong>What we do with it:</strong> aggregate reports only (page views, traffic
         sources, popular districts/regions). We do not use Analytics to identify you
-        personally or to target advertising on this site.
+        personally or to target the promotions shown on this site.
       </li>
       <li>
-        <strong>What we do not run:</strong> advertising networks, session recording,
-        heatmaps, or marketing pixels for third-party ad platforms.
+        <strong>What we do not run:</strong> behavioural or auction-based advertising,
+        session recording, heatmaps, or marketing pixels for third-party ad platforms.
       </li>
     </ul>
     <p class="muted">
@@ -66,13 +68,29 @@ const social = socialLinks();
     <h2 id="not-collected">What we do not collect for our own systems</h2>
     <ul>
       <li>No user accounts, logins, newsletters or mailing lists.</li>
-      <li>No advertising networks or third-party marketing pixels on this site.</li>
+      <li>No behavioural advertising, ad auctions or third-party marketing pixels.</li>
       <li>No session recording or heatmaps.</li>
       <li>
         No fingerprinting beyond what Google Analytics may use for measurement; the
         site itself does not implement custom fingerprinting.
       </li>
     </ul>
+
+    <h2 id="promotions">House promotions</h2>
+    <p>
+      The homepage, Victoria 2026 overview and Victorian polls page may load promoted
+      links from <a href="https://ads.oze.net.au/" rel="noopener">ads.oze.net.au</a>, a
+      small self-hosted network for independent oze projects. These promotions are chosen
+      from page context and broad device/country information. The tag sets no cookies,
+      writes nothing to browser storage and receives no identifier from Google Analytics.
+    </p>
+    <p>
+      The ad server records which site, page placement, campaign and creative were served,
+      broad device class and country, whether the promotion became viewable, and whether it
+      was clicked. The page path is stored as a one-way hash and the visitor's IP address is
+      not stored. Promotions are labelled <strong>Promo</strong> and do not affect polling,
+      candidate coverage, policy comparisons or editorial ordering.
+    </p>
 
     <h2 id="processed">What is processed when you visit</h2>
     <p>
