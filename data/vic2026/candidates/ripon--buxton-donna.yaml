@@ -1,0 +1,27 @@
+candidate:
+  name: Donna Buxton
+  party: one-nation
+  contest: ripon
+  chamber: assembly
+  status: endorsed
+  occupation: "Speech pathologist"
+  background: "Former primary school teacher; runs a speech pathology practice."
+  history:
+    - status: endorsed
+      date: 2026-08-31
+      source:
+        url: https://vic.onenation.org.au/donna-buxton
+        title: Donna Buxton for Ripon
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-08-31
+      note: >-
+        Party candidate page lists Buxton as One Nation's candidate for Ripon.
+        Also named in ABC News (30 August 2026) covering the Marnoo Farmers
+        Fightback rally announcement.
+  links:
+    - url: https://vic.onenation.org.au/donna-buxton
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party
+    - url: https://www.abc.net.au/news/2026-08-30/one-nation-energy-policy-vni-west/107094846
+      kind: news

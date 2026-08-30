@@ -1,0 +1,26 @@
+candidate:
+  name: Vaughan Williams
+  party: one-nation
+  contest: western-victoria
+  chamber: council
+  status: endorsed
+  background: "Former Bendigo councillor."
+  history:
+    - status: endorsed
+      date: 2026-08-31
+      source:
+        url: https://vic.onenation.org.au/vaughan-williams
+        title: Vaughan Williams for Western Victoria Region
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-08-31
+      note: >-
+        Party candidate page lists Williams as One Nation's candidate for the
+        Western Victoria Legislative Council region. Spelling follows the party
+        page (ABC News of 30 August 2026 used "Vaughn").
+  links:
+    - url: https://vic.onenation.org.au/vaughan-williams
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party
+    - url: https://www.abc.net.au/news/2026-08-30/one-nation-energy-policy-vni-west/107094846
+      kind: news

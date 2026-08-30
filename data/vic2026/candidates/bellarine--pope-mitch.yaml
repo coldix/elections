@@ -1,0 +1,17 @@
+candidate:
+  name: Mitch Pope
+  party: greens
+  contest: bellarine
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-08-31
+      source:
+        url: https://greens.org.au/vic/person/mitch-pope
+        title: "Mitch Pope: Candidate for Bellarine"
+        publisher: Victorian Greens
+        accessed: 2026-08-31
+  links:
+    - url: https://greens.org.au/vic/person/mitch-pope
+      kind: party-profile

@@ -1,0 +1,25 @@
+candidate:
+  name: Stuart Robinson
+  party: one-nation
+  contest: wendouree
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-08-31
+      source:
+        url: https://vic.onenation.org.au/stuart-robinson
+        title: Stuart Robinson for Wendouree
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-08-31
+      note: >-
+        Party candidate page lists Robinson as One Nation's candidate for
+        Wendouree. Also named in ABC News (30 August 2026) covering the Marnoo
+        Farmers Fightback rally announcement.
+  links:
+    - url: https://vic.onenation.org.au/stuart-robinson
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party
+    - url: https://www.abc.net.au/news/2026-08-30/one-nation-energy-policy-vni-west/107094846
+      kind: news

@@ -1,0 +1,22 @@
+candidate:
+  name: Tony Briffa
+  party: independent
+  contest: williamstown
+  chamber: assembly
+  status: announced
+  occupation: "Former Hobsons Bay councillor and mayor"
+  background: "Former Hobsons Bay mayor; Honorary Fellow of Victoria University."
+  history:
+    - status: announced
+      date: 2026-08-31
+      source:
+        url: https://briffaindependent.com.au/
+        title: "Tony Briffa, Independent for Williamstown District - Putting our community first"
+        publisher: Tony Briffa Independent
+        accessed: 2026-08-31
+      note: >-
+        Campaign site states Briffa is the community independent candidate for
+        the State Electorate of Williamstown. Tip via GitHub issue #33.
+  links:
+    - url: https://briffaindependent.com.au/
+      kind: campaign
