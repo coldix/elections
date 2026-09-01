@@ -1,6 +1,7 @@
 ---
 import Base from "../../../../layouts/Base.astro";
 import SourceLink from "../../../../components/SourceLink.astro";
+import PollAverageBoard from "../../../../components/PollAverageBoard.astro";
 import {
   loadFederalElection,
   federalSummaryFor,
@@ -8,6 +9,7 @@ import {
   STATE_LABELS,
   STATE_ORDER,
 } from "../../../../../../scripts/lib/federal.mjs";
+import { loadPolls, computePollAverage } from "../../../../../../scripts/lib/polls.mjs";
 import { SITE, FEDERAL_49, partyColour, formatDate } from "../../../../lib/site.mjs";
 import { ELECTION_DATE_STATUS } from "../../../../lib/electionCalendar.mjs";
 import { loadElectionPlaceholders } from "../../../../lib/electionPlaceholders.mjs";
@@ -15,6 +17,7 @@ import { loadElectionPlaceholders } from "../../../../lib/electionPlaceholders.m
 const data = loadFederalElection("federal-49");
 const summary = federalSummaryFor(data);
 const rep = federalRepresentationFor(data);
+const pollAverage = computePollAverage(loadPolls("federal-49"));
 const { election } = data;
 const placeholder = loadElectionPlaceholders().find((e) => e.planned_path === FEDERAL_49);
 const dateStatus = ELECTION_DATE_STATUS[election.date_status] ?? ELECTION_DATE_STATUS.window;
@@ -71,6 +74,13 @@ const schema = {
       A separate House-only election could occur later.
     </p>
 
+    <PollAverageBoard
+      average={pollAverage}
+      jurisdiction="federal"
+      variant="teaser"
+      href={`${FEDERAL_49}/polls`}
+    />
+
     <div class="notice" role="note">
       <strong>Sitting members, not candidacies.</strong>
       {election.tracking_status}
@@ -107,9 +117,9 @@ const schema = {
 
     <p class="btn-row">
       <a class="btn" href={`${FEDERAL_49}/representatives`}>House of Representatives</a>
+      <a class="btn" href={`${FEDERAL_49}/polls`}>Poll average</a>
       <a class="btn btn-ghost" href={`${FEDERAL_49}/senate`}>Senate</a>
       <a class="btn btn-ghost" href={`${FEDERAL_49}/parties`}>Parties</a>
-      <a class="btn btn-ghost" href={`${FEDERAL_49}/polls`}>Polls</a>
       <a class="btn btn-ghost" href={`${FEDERAL_49}/parties/matrix`}>Policies</a>
       <a class="btn btn-ghost" href={`${FEDERAL_49}/data`}>Open data</a>
     </p>

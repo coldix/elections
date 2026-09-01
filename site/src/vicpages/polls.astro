@@ -1,22 +1,22 @@
 ---
 import Base from "../layouts/Base.astro";
 import PollCharts from "../components/PollCharts.astro";
+import PollAverageBoard from "../components/PollAverageBoard.astro";
 import OzeMonthlySurvey from "../components/OzeMonthlySurvey.astro";
 import AdRow from "../components/AdRow.astro";
-import { SITE, VIC2026, formatDate } from "../lib/site.mjs";
-import { listElections } from "../../../scripts/lib/data.mjs";
+import { SITE, VIC2026, FEDERAL_49, formatDate } from "../lib/site.mjs";
 import {
   loadPolls,
   computePollAverage,
-  PARTY_LABELS,
   POLL_CAVEAT,
 } from "../../../scripts/lib/polls.mjs";
 
-const electionId = listElections()[0] ?? "vic2026";
-const polls = loadPolls(electionId);
+// Hardcoded. The first data directory alphabetically is federal-49, not Victoria.
+const electionId = "vic2026";
+const polls = loadPolls("vic2026");
 const average = computePollAverage(polls);
+const federalAverage = computePollAverage(loadPolls("federal-49"));
 const included = new Set(average.included_poll_ids ?? []);
-const partyOrder = ["alp", "lnp", "onp", "grn", "others"];
 
 const sortedPolls = [...polls].sort((a, b) =>
   a.fieldwork_end < b.fieldwork_end ? 1 : -1
@@ -130,71 +130,39 @@ const schema = [
     <p class="eyebrow">Victorian state election 2026 · statewide voting intention</p>
     <h1>Victorian election poll average</h1>
     <p class="lede">
-      Public statewide primary-vote polls for the <strong>Victorian Legislative Assembly</strong>, each with a
-      dated source, plus a transparent weighted average under published rules. This is a
-      summary of recent polling — <strong>not a forecast</strong> of election day.
+      Statewide primary vote for the <strong>Victorian Legislative Assembly</strong> —
+      not federal House numbers. A weighted summary of recent public polls,{" "}
+      <strong>not a forecast</strong>.
     </p>
+
+    <PollAverageBoard
+      average={average}
+      jurisdiction="vic"
+      other={{
+        href: `${FEDERAL_49}/polls`,
+        label: "Federal House average",
+        asOf: federalAverage.as_of,
+      }}
+    />
 
     <div class="notice" role="note">
       <strong>Read the bands carefully.</strong> {POLL_CAVEAT}
     </div>
 
     {
-      average.status === "ok" && average.primaries ? (
-        <section aria-labelledby="avg-heading">
-          <h2 id="avg-heading">Tracker average</h2>
-          <p class="muted">
-            As of fieldwork ending {formatDate(average.as_of)} · {average.included_poll_ids.length}{" "}
-            polls · {average.window_days_used}-day window · half-life {average.parameters.half_life_days}{" "}
-            days · default design effect {average.parameters.design_effect_default}
-          </p>
-          <div class="table-scroll">
-            <table class="data">
-              <caption class="visually-hidden">Weighted primary-vote average with 95% intervals</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Party</th>
-                  <th scope="col" class="num">Average</th>
-                  <th scope="col" class="num">95% band</th>
-                </tr>
-              </thead>
-              <tbody>
-                {partyOrder.map((k) => (
-                  <tr>
-                    <th scope="row">{PARTY_LABELS[k]}</th>
-                    <td class="num mono">{average.primaries[k].toFixed(1)}%</td>
-                    <td class="num mono muted">
-                      {average.intervals[k].low.toFixed(1)}–{average.intervals[k].high.toFixed(1)}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p class="muted">
-            Weights combine effective sample size and exponential time decay. Full formula:
-            <a href="https://github.com/coldix/elections/blob/main/docs/poll-methodology.md">
-              poll methodology
-            </a>
-            · machine-readable
-            <a href={`/data/${electionId}/poll-average.json`}>poll-average.json</a>.
-          </p>
-          {
-            average.bloc_split && (
-              <PollCharts primaries={average.primaries} blocs={average.bloc_split} />
-            )
-          }
-        </section>
-      ) : (
-        <section aria-labelledby="avg-heading">
-          <h2 id="avg-heading">Tracker average</h2>
-          <p>
-            No numeric average is published right now
-            {average.note ? ` — ${average.note}` : ""}. Eligible polls are still listed below.
-          </p>
-        </section>
+      average.status === "ok" && average.bloc_split && (
+        <PollCharts primaries={average.primaries} blocs={average.bloc_split} />
       )
     }
+
+    <p class="muted">
+      Weights combine effective sample size and exponential time decay. Full formula:
+      <a href="https://github.com/coldix/elections/blob/main/docs/poll-methodology.md">
+        poll methodology
+      </a>
+      · machine-readable
+      <a href={`/data/${electionId}/poll-average.json`}>poll-average.json</a>.
+    </p>
 
     <OzeMonthlySurvey variant="vic" />
 

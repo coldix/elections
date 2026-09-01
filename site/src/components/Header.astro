@@ -1,5 +1,5 @@
 ---
-import { SITE, OZE_MONTHLY_POLL, VIC2026 } from "../lib/site.mjs";
+import { SITE, OZE_MONTHLY_POLL, VIC2026, FEDERAL_49 } from "../lib/site.mjs";
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const VIC = VIC2026;
 const nav = [
@@ -9,7 +9,8 @@ const nav = [
   { href: `${VIC}/council`, label: "Council" },
   { href: `${VIC}/parties`, label: "Parties" },
   { href: `${VIC}/voting`, label: "Voting" },
-  { href: `${VIC}/polls`, label: "Polls" },
+  { href: `${VIC}/polls`, label: "Vic polls" },
+  { href: `${FEDERAL_49}/polls`, label: "Federal polls" },
   { href: `${VIC}/data`, label: "Open data" },
   { href: "/methodology", label: "Methodology" },
   { href: "/about", label: "About" },

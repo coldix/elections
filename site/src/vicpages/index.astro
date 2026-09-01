@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import Countdown from "../components/Countdown.astro";
 import StatGrid from "../components/StatGrid.astro";
+import PollAverageBoard from "../components/PollAverageBoard.astro";
 import YouTubeLite from "../components/YouTubeLite.astro";
 import AdRow from "../components/AdRow.astro";
 import { SITE, partyColour, formatDate } from "../lib/site.mjs";
@@ -13,10 +14,12 @@ import {
   COVERAGE_CAVEAT,
   LIVE_STATUSES,
 } from "../../../scripts/lib/data.mjs";
+import { loadPolls, computePollAverage } from "../../../scripts/lib/polls.mjs";
 
 const data = loadElection("vic2026");
 const coverage = coverageFor(data);
 const summary = summaryFor(data);
+const pollAverage = computePollAverage(loadPolls("vic2026"));
 
 const stats = [
   { value: summary.districts, label: "Legislative Assembly districts" },
@@ -126,6 +129,13 @@ const schema = {
 
   <div class="wrap home-body">
     <Countdown election={data.election} keyDates={data.election.dates} />
+
+    <PollAverageBoard
+      average={pollAverage}
+      jurisdiction="vic"
+      variant="teaser"
+      href="/polls"
+    />
 
     <section class="section paths" aria-labelledby="paths-h">
       <h2 id="paths-h">Start here</h2>

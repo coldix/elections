@@ -6,6 +6,14 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
+## 2026-09-01 — Poll pages: Vic numbers, federal date, both findable
+
+| Area | What shipped |
+|---|---|
+| **Bug** | The Victorian polls page loaded `listElections()[0]`, which is `federal-49` alphabetically, so `/elections/vic/2026/polls` published the **federal** average (Labor 28.3%, as of 16 Aug) and linked to `/data/federal-49/`. It now loads `vic2026` (Labor 25.4%, as of 15 Aug) |
+| **Board** | Both poll pages open on a large as-of date and five primary shares, not a compact table. Each page links to the other ledger so the two dates cannot be mistaken for one |
+| **Find** | Same board on the national home (Vic beside federal), the Vic overview and the federal overview. Menu: **Vic polls** and **Federal polls** |
+
 ## 2026-08-31 — Seven sourced Vic candidacies
 
 | Area | What shipped |
