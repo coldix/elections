@@ -1,0 +1,31 @@
+id: roy-morgan-2026-08-24
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-08-17
+fieldwork_end: 2026-08-23
+sample_size: 1508
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Finding 10321. L-NP reported as Liberals 18.5% + Nationals 2.5%."
+primaries:
+  alp: 27
+  lnp: 21
+  onp: 27
+  grn: 14
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10321-federal-voting-intention-august-24-2026
+    publisher: Roy Morgan
+    title: ALP and One Nation are level on primary vote, but the ALP maintains a two-party preferred lead over the L-NP and One Nation
+    published: 2026-08-24
+    accessed: 2026-09-01
+  - url: https://roymorgan-cms-prod.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2026/08/24063036/10321-Federal-Voting-Intention-August-24-2026.pdf
+    publisher: Roy Morgan
+    title: Federal Voting Intention August 24 2026 (PDF)
+    published: 2026-08-24
+    accessed: 2026-09-01

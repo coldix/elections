@@ -111,13 +111,18 @@ const schema = [
 >
   <section class="hero national-hero">
     <div class="wrap">
-      <p class="eyebrow">Independent · Sourced · Australia-wide</p>
-      <h1>Australian elections, one evidence trail.</h1>
-      <p class="lede">
-        Track <strong>who is standing</strong>, with a dated public source behind every
-        material claim — plus parties, policy comparisons and a transparent statewide
-        <strong>poll average</strong>.
-      </p>
+      <div class="hero-split">
+        <div class="hero-copy">
+          <p class="eyebrow">Independent · Sourced · Australia-wide</p>
+          <h1>Australian elections, one evidence trail.</h1>
+          <p class="lede">
+            Track <strong>who is standing</strong>, with a dated public source behind every
+            material claim — plus parties, policy comparisons and a transparent statewide
+            <strong>poll average</strong>.
+          </p>
+        </div>
+        <a class="btn hero-latest" href="/latest">What's new</a>
+      </div>
       <p class="btn-row hero-actions">
         <a class="btn" href={VIC2026}>Open the Victoria 2026 tracker</a>
         <a class="btn btn-ghost" href="/elections">Upcoming elections</a>
@@ -254,6 +259,21 @@ const schema = [
   }
   .national-hero h1 {
     max-width: 18ch;
+  }
+  .hero-split {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.1rem 2rem;
+  }
+  .hero-copy {
+    flex: 1 1 22rem;
+    min-width: 0;
+  }
+  .hero-latest {
+    flex: 0 0 auto;
+    align-self: center;
   }
   .hero-actions {
     margin-top: 1.6rem;

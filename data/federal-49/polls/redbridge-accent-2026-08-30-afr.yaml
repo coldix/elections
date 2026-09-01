@@ -1,0 +1,36 @@
+id: redbridge-accent-2026-08-30-afr
+pollster: "RedBridge / Accent"
+commissioner: australian-financial-review
+commissioner_type: media
+fieldwork_start: 2026-08-24
+fieldwork_end: 2026-08-28
+sample_size: 1006
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for the Australian Financial Review. Fieldwork Monday–Friday per Poll Bludger."
+primaries:
+  alp: 29
+  lnp: 22
+  onp: 28
+  grn: 12
+  others: 9
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.afr.com/politics/federal/hanson-and-albanese-trade-blows-as-new-poll-shows-deadlock-20260830-p60sqq
+    publisher: Australian Financial Review
+    title: Hanson and Albanese trade blows as new poll shows deadlock
+    published: 2026-08-30
+    accessed: 2026-09-01
+  - url: https://www.pollbludger.net/2026/08/30/federal-polls-newspoll-and-redbridge-group-open-thread-2/
+    publisher: The Poll Bludger
+    title: "Federal polls: Newspoll and RedBridge Group (open thread)"
+    published: 2026-08-30
+    accessed: 2026-09-01
+  - url: https://theconversation.com/total-support-for-right-wing-parties-rises-in-newspoll-before-secret-harbour-byelection-290339
+    publisher: The Conversation
+    title: Total support for right-wing parties rises in Newspoll before Secret Harbour byelection
+    published: 2026-08-30
+    accessed: 2026-09-01

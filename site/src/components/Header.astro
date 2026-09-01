@@ -4,6 +4,7 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const VIC = VIC2026;
 const nav = [
   { href: "/elections", label: "Upcoming elections", exact: true, featured: true },
+  { href: "/latest", label: "What's new", exact: true },
   { href: VIC, label: "Victoria 2026" },
   { href: `${VIC}/assembly`, label: "Assembly" },
   { href: `${VIC}/council`, label: "Council" },

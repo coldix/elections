@@ -1,0 +1,31 @@
+id: roy-morgan-2026-08-31
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-08-24
+fieldwork_end: 2026-08-30
+sample_size: 1585
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Finding 10328. L-NP reported as Liberals 18% + Nationals 2.5%."
+primaries:
+  alp: 29.5
+  lnp: 20.5
+  onp: 23.5
+  grn: 13.5
+  others: 13
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10328-federal-voting-intention-august-31-2026
+    publisher: Roy Morgan
+    title: Despite the ALP loss in Western Australia, the ALP has gained nationally after One Nation MP David Farley says One Nation’s immigration policy is ‘not too different’ to Labor’s
+    published: 2026-08-31
+    accessed: 2026-09-01
+  - url: https://roymorgan-cms-prod.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2026/08/31070006/10328-Federal-Voting-Intention-August-31-2026.pdf
+    publisher: Roy Morgan
+    title: Federal Voting Intention August 31 2026 (PDF)
+    published: 2026-08-31
+    accessed: 2026-09-01

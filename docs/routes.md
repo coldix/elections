@@ -1,6 +1,6 @@
 # Public route architecture
 
-Updated: 9 August 2026
+Updated: 1 September 2026
 
 Australian Election Tracker uses election-scoped canonical HTML paths so the
 same site can cover every Australian federal, state and territory election.
@@ -8,6 +8,7 @@ same site can cover every Australian federal, state and territory election.
 ## National routes
 
 - `/` — national homepage
+- `/latest` — recent sourced polls and Victorian candidacies
 - `/elections` — upcoming election calendar
 - `/methodology`, `/about` and legal pages — site-wide material
 - `/people/<slug>` — permanent person pages when introduced

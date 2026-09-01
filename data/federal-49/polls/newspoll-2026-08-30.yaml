@@ -1,0 +1,36 @@
+id: newspoll-2026-08-30
+pollster: "Newspoll / Pyxis"
+commissioner: the-australian
+commissioner_type: media
+fieldwork_start: 2026-08-24
+fieldwork_end: 2026-08-28
+sample_size: 1243
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for The Australian (Newspoll / Pyxis). Fieldwork Monday–Friday per Poll Bludger."
+primaries:
+  alp: 29
+  lnp: 19
+  onp: 30
+  grn: 13
+  others: 9
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theaustralian.com.au/nation/politics/newspoll-one-nation-surges-past-labor-as-anthony-albanese-vows-to-defeat-dishonest-populists/news-story/1d0a82aec5b93c4f219669693f66c02b
+    publisher: The Australian
+    title: "Newspoll: One Nation surges past Labor as Anthony Albanese vows to defeat dishonest populists"
+    published: 2026-08-30
+    accessed: 2026-09-01
+  - url: https://theconversation.com/total-support-for-right-wing-parties-rises-in-newspoll-before-secret-harbour-byelection-290339
+    publisher: The Conversation
+    title: Total support for right-wing parties rises in Newspoll before Secret Harbour byelection
+    published: 2026-08-30
+    accessed: 2026-09-01
+  - url: https://www.pollbludger.net/2026/08/30/federal-polls-newspoll-and-redbridge-group-open-thread-2/
+    publisher: The Poll Bludger
+    title: "Federal polls: Newspoll and RedBridge Group (open thread)"
+    published: 2026-08-30
+    accessed: 2026-09-01

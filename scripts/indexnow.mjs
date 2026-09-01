@@ -17,6 +17,7 @@ const VIC = `https://${HOST}/elections/vic/2026`;
 const FED = `https://${HOST}/elections/federal/49`;
 const PRIORITY = [
   `https://${HOST}/`,
+  `https://${HOST}/latest`,
   `https://${HOST}/elections`,
   VIC,
   `${VIC}/voting`,

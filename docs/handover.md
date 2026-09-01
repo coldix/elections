@@ -66,7 +66,7 @@ individually sourced record has been verified, not that nobody is standing.
 
 **Ledger snapshot (2026-09-01):** **318** Vic candidacy files; **18** Vic
 statewide polls (newest fieldwork end **9–15 Aug** Resolve/*Age*); federal-49
-**13** primary-vote polls (newest fieldwork end **10–16 Aug** Roy Morgan).
+**18** primary-vote polls (newest fieldwork end **24–30 Aug** Roy Morgan).
 Jacinta Allan is retired (Bendigo East open). The 31 Aug encode added seven
 sourced records (Pope, Raven, Buxton, Robinson, Ballinger, Williams, Briffa).
 
@@ -305,7 +305,6 @@ housekeeping checkpoint:
 | `efb3426` | House promotions on `/`, Vic 2026 overview and Vic polls |
 | `3d30077` | Seven sourced Vic candidacies (Pope, Raven, Buxton, Robinson, Ballinger, Williams, Briffa) |
 
-Polls are unchanged from the 23 Aug snapshot: newest Vic fieldwork is still
-9–15 Aug Resolve/*Age*; newest federal-49 fieldwork is still 10–16 Aug Roy
-Morgan. No new statewide primary-vote polls in the 24 Aug–1 Sep window were
-encoded.
+Victorian statewide polling is still 9–15 Aug Resolve/*Age*. Federal-49 was
+caught up on 1 Sep: five House VI records (two Roy Morgan weeks, YouGov Pulse,
+Newspoll, RedBridge/Accent AFR), newest fieldwork **24–30 Aug**.

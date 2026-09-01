@@ -6,6 +6,14 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
+## 2026-09-01 — Federal poll catch-up; What's new page
+
+| Area | What shipped |
+|---|---|
+| **Vic polls** | Scanner + Wikipedia + Poll Bludger: no new statewide Assembly VI after Resolve 9–15 Aug |
+| **Federal polls** | Five House VI records since the 19 Aug encode: Roy Morgan 17–23 Aug and 24–30 Aug (pollster PDFs), YouGov/News24 Pulse 18–24 Aug, Newspoll 24–28 Aug, RedBridge/Accent AFR 24–28 Aug. Ledger 13 → **18** |
+| **Latest** | `/latest` lists sourced polls and Victorian candidacies from the last 21 days. Homepage hero has a **What's new** button to the right of the heading |
+
 ## 2026-09-01 — Poll pages: Vic numbers, federal date, both findable
 
 | Area | What shipped |

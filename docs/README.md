@@ -12,6 +12,7 @@ broken.
 | Area | Live URLs | Rules / operations |
 |---|---|---|
 | National home | `/` | [scope.md](scope.md) |
+| What's new | `/latest` | [changelog.md](changelog.md), [poll-methodology.md](poll-methodology.md) |
 | Upcoming elections | `/elections` | [methodology.md](methodology.md) |
 | Victoria 2026 (full) | `/elections/vic/2026` | [methodology.md](methodology.md) |
 | Assembly and districts | `/elections/vic/2026/assembly`, `/elections/vic/2026/districts/*` | [methodology.md](methodology.md) |

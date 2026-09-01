@@ -15,6 +15,7 @@ export default defineConfig({
         const path = new URL(item.url).pathname.replace(/\/$/, "") || "/";
         const mainHubs = new Set([
           "/elections",
+          "/latest",
           VIC,
           `${VIC}/voting`,
           `${VIC}/data`,

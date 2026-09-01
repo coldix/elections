@@ -38,3 +38,8 @@ sources:
     type: rss
     url: "https://news.google.com/rss/search?q=Victoria+(poll+OR+Newspoll+OR+Resolve+OR+RedBridge+OR+Freshwater)+%22state%22+2026&hl=en-AU&gl=AU&ceid=AU:en"
     note: Statewide poll discovery (still encode by hand).
+
+  - id: gnews-federal-polls
+    type: rss
+    url: "https://news.google.com/rss/search?q=Australia+(Newspoll+OR+Resolve+OR+RedBridge+OR+%22Roy+Morgan%22+OR+YouGov)+federal+(poll+OR+%22voting+intention%22)&hl=en-AU&gl=AU&ceid=AU:en"
+    note: Federal House VI discovery (still encode by hand).

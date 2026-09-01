@@ -1,0 +1,31 @@
+id: yougov-2026-08-26-news24
+pollster: YouGov
+commissioner: news24
+commissioner_type: media
+fieldwork_start: 2026-08-18
+fieldwork_end: 2026-08-24
+sample_size: 1510
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention (News24 Pulse / YouGov). Fieldwork Tuesday–Monday per Poll Bludger. Independents 5% and other minors 7% combined as Others."
+primaries:
+  alp: 29
+  lnp: 21
+  onp: 26
+  grn: 12
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://theconversation.com/mixed-results-for-one-nation-and-the-coalition-in-latest-federal-polls-290299
+    publisher: The Conversation
+    title: Mixed results for One Nation and the Coalition in latest federal polls
+    published: 2026-08-26
+    accessed: 2026-09-01
+  - url: https://www.pollbludger.net/2026/08/26/yougov-labor-29-one-nation-26-coalition-21-open-thread/
+    publisher: The Poll Bludger
+    title: "YouGov: Labor 29, One Nation 26, Coalition 21 (open thread)"
+    published: 2026-08-26
+    accessed: 2026-09-01

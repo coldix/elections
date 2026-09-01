@@ -353,7 +353,9 @@ function parseRss(xml, sourceId) {
 
     // Poll feed: polls only. Candidate feed: candidate/retire signals. Retire feed: retire only.
     if (sourceId.includes("poll")) {
-      if (!isPoll || !isVic) continue;
+      if (!isPoll) continue;
+      if (sourceId.includes("vic") && !isVic) continue;
+      if (sourceId.includes("federal") && !/federal|national|australia|newspoll|yougov|essential/i.test(blob)) continue;
     } else if (sourceId.includes("retire")) {
       if (!isRetire || !isVic) continue;
     } else {

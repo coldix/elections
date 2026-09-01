@@ -230,7 +230,7 @@ pages and the full Victoria 2026 tracker are live. There are no open pull
 requests at this housekeeping checkpoint.
 
 At this checkpoint the Victorian ledger holds **318** candidacies and **18**
-statewide polls, and federal-49 holds **13** primary-vote polls. Every
+statewide polls, and federal-49 holds **18** primary-vote polls. Every
 candidacy rests on a primary, secondary or campaign source — none on Wikipedia
 alone. Current gaps and next actions are in
 [docs/handover.md](docs/handover.md) and [docs/scope.md](docs/scope.md).

@@ -1,0 +1,132 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, formatDate } from "../lib/site.mjs";
+import { loadLatest } from "../lib/latest.mjs";
+
+const latest = loadLatest();
+const newest = latest.items[0]?.date ?? null;
+
+const schema = {
+  "@type": "CollectionPage",
+  name: "What's new — Australian Election Tracker",
+  description:
+    "Recent sourced additions to the Australian Election Tracker: new statewide and federal primary-vote polls, and newly encoded Victorian candidacies.",
+  url: `${SITE.url}/latest`,
+  isPartOf: { "@id": `${SITE.url}/#website` },
+  dateModified: newest,
+};
+---
+
+<Base
+  title="What's new"
+  description="Latest sourced polls and Victorian candidacies added to the Australian Election Tracker. Not a forecast."
+  schema={schema}
+  breadcrumbs={[{ name: "What's new", href: "/latest" }]}
+>
+  <div class="wrap wrap-narrow section">
+    <p class="eyebrow">Ledger updates</p>
+    <h1>What's new</h1>
+    <p class="lede">
+      Sourced records added or dated in the last {latest.windowDays} days. Victorian
+      statewide polling last moved on 15 August; federal House polls continue weekly.
+      Nothing here is a forecast.
+    </p>
+
+    <section aria-labelledby="polls-h">
+      <h2 id="polls-h">Polls</h2>
+      {
+        latest.polls.length === 0 ? (
+          <p>No new sourced statewide or federal primary-vote polls in this window.</p>
+        ) : (
+          <ol class="latest-list">
+            {latest.polls.map((item) => (
+              <li>
+                <a class="card card-interactive latest-card" href={item.href}>
+                  <p class="kicker">
+                    <time datetime={item.date}>{formatDate(item.date)}</time>
+                    <span aria-hidden="true"> · </span>
+                    {item.kicker}
+                  </p>
+                  <h2>{item.title}</h2>
+                  <p>{item.body}</p>
+                </a>
+              </li>
+            ))}
+          </ol>
+        )
+      }
+    </section>
+
+    <section aria-labelledby="cands-h">
+      <h2 id="cands-h">Victorian candidacies</h2>
+      {
+        latest.candidates.length === 0 ? (
+          <p>No newly dated Victorian candidacy records in this window.</p>
+        ) : (
+          <ol class="latest-list">
+            {latest.candidates.slice(0, 12).map((item) => (
+              <li>
+                <a class="card card-interactive latest-card" href={item.href}>
+                  <p class="kicker">
+                    <time datetime={item.date}>{formatDate(item.date)}</time>
+                    <span aria-hidden="true"> · </span>
+                    {item.kicker}
+                  </p>
+                  <h2>{item.title}</h2>
+                  <p>{item.body}</p>
+                </a>
+              </li>
+            ))}
+          </ol>
+        )
+      }
+      {
+        latest.candidates.length > 12 && (
+          <p class="section-aside">
+            Showing 12 of {latest.candidates.length} in this window.
+            {" "}
+            <a href="/elections/vic/2026">Full Victoria 2026 tracker</a>.
+          </p>
+        )
+      }
+    </section>
+
+    <p class="section-aside">
+      Full ledgers: <a href="/elections/vic/2026/polls">Victorian polls</a>,
+      <a href="/elections/federal/49/polls">federal polls</a>,
+      <a href="/elections/vic/2026">Victoria 2026 tracker</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  section {
+    margin-top: 2.25rem;
+  }
+  .latest-list {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+  .latest-card {
+    display: block;
+  }
+  .latest-card h2 {
+    margin: 0.15rem 0 0.35rem;
+    font-size: 1.05rem;
+  }
+  .latest-card p {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 0.92rem;
+  }
+  .kicker {
+    font-size: 0.78rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+</style>
