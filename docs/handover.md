@@ -1,6 +1,6 @@
 # HANDOVER
 
-> **Updated** 2026-08-19 · hub [../README.md](../README.md)
+> **Updated** 2026-09-01 · hub [../README.md](../README.md)
 
 Current operational context for the Australian Election Tracker. Historical
 product changes belong in [changelog.md](changelog.md); this file is
@@ -64,10 +64,11 @@ when creating the first federal `issues.yaml`.
 Candidate coverage is intentionally progressive. A missing candidate means no
 individually sourced record has been verified, not that nobody is standing.
 
-**Ledger snapshot (2026-08-23):** **311** Vic candidacy files; **18** Vic
+**Ledger snapshot (2026-09-01):** **318** Vic candidacy files; **18** Vic
 statewide polls (newest fieldwork end **9–15 Aug** Resolve/*Age*); federal-49
 **13** primary-vote polls (newest fieldwork end **10–16 Aug** Roy Morgan).
-Jacinta Allan is retired (Bendigo East open).
+Jacinta Allan is retired (Bendigo East open). The 31 Aug encode added seven
+sourced records (Pope, Raven, Buxton, Robinson, Ballinger, Williams, Briffa).
 
 **Every candidacy now rests on a primary, secondary or campaign source — none
 on Wikipedia alone.** An audit on 2026-08-23 found eight records resting on
@@ -294,21 +295,17 @@ See [methodology.md](methodology.md) and ADR-14 in
 
 ## End-of-day repository state
 
-**2026-08-23.** `main` is at the design flow-on merge (#30); PRs #24–#30 were
-merged and their branches deleted; no open pull requests. Seven merges this
-session:
+**2026-09-01.** `main` is in sync with origin after the 31 Aug candidacy
+encode and this docs refresh. No open pull requests. Since the 23 Aug
+housekeeping checkpoint:
 
-| PR | What |
+| Commit / PR | What |
 |---|---|
-| #24 | Mullahy + Nealy candidates; Roy Morgan upper-house source |
-| #25 | Three scanner name-parsing bugs |
-| #26 | Fixture tests, plus two more bugs they caught |
-| #27 | Source trust ranking, Wikipedia lowest |
-| #28 | 15 Socialists candidates; 8 records re-sourced off Wikipedia |
-| #29 | Home page simplified — one ask per survey |
-| #30 | Shared card primitives adopted across tracker pages |
+| #31 | Docs refresh — README, handover, changelog |
+| `efb3426` | House promotions on `/`, Vic 2026 overview and Vic polls |
+| `3d30077` | Seven sourced Vic candidacies (Pope, Raven, Buxton, Robinson, Ballinger, Williams, Briffa) |
 
-Polls were checked for the 19–23 Aug window and nothing new existed: the Poll
-Bludger's 21 Aug Morgan write-up is the same 10–16 Aug fieldwork already
-recorded, and Roy Morgan's 18 Aug upper-house release re-analyses the recorded
-5–7 Aug SMS fieldwork rather than adding a poll.
+Polls are unchanged from the 23 Aug snapshot: newest Vic fieldwork is still
+9–15 Aug Resolve/*Age*; newest federal-49 fieldwork is still 10–16 Aug Roy
+Morgan. No new statewide primary-vote polls in the 24 Aug–1 Sep window were
+encoded.

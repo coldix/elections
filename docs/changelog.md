@@ -1,10 +1,20 @@
 # Changelog — since polls
 
-> **Updated** 2026-08-27 · hub [../README.md](../README.md)
+> **Updated** 2026-09-01 · hub [../README.md](../README.md)
 
 Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
+
+## 2026-08-31 — Seven sourced Vic candidacies
+
+| Area | What shipped |
+|---|---|
+| **Greens** | Mitch Pope (Bellarine) from the party candidate page |
+| **Victorian Socialists** | Andy Raven (Eureka) from the party candidate page |
+| **One Nation** | Paul Ballinger (Eureka), Donna Buxton (Ripon), Stuart Robinson (Wendouree), Vaughan Williams (Western Victoria LC). Party pages opened before encode; ABC News 30 Aug named Ballinger, Buxton, Robinson and Williams at the Marnoo Farmers Fightback rally. Williams spelling follows the party page (ABC used "Vaughn") |
+| **Independent** | Tony Briffa (Williamstown, announced) from the campaign site; tip via GitHub issue #33 |
+| **Ledger** | 311 → **318** Vic candidacy files. All seven rest on a party or campaign primary |
 
 ## 2026-08-27 — House promotions on three pages
 
