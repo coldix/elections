@@ -1,6 +1,6 @@
 # Repository layout
 
-> **Updated** 2026-08-19 · hub [../README.md](../README.md)
+> **Updated** 2026-09-03 · hub [../README.md](../README.md)
 
 Annotated map of the Australian Election Tracker repository. `data/` is the
 source of truth, `scripts/` validate and export it, and `site/` renders the
@@ -123,8 +123,10 @@ site/
     ├── components/
     ├── lib/
     │   ├── site.mjs
+    │   ├── nav.mjs                  election-scoped header/footer links
     │   ├── electionCalendar.mjs
     │   ├── electionPlaceholders.mjs
+    │   ├── latest.mjs
     │   ├── policyProfiles.mjs
     │   └── policyDifferences.mjs
     ├── pages/                   national and permanent public routes

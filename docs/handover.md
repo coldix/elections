@@ -1,6 +1,6 @@
 # HANDOVER
 
-> **Updated** 2026-09-02 · hub [../README.md](../README.md)
+> **Updated** 2026-09-03 · hub [../README.md](../README.md)
 
 Current operational context for the Australian Election Tracker. Historical
 product changes belong in [changelog.md](changelog.md); this file is
@@ -235,7 +235,7 @@ Parliament:
 - House: 150 divisions + sitting MPs
 - Senate: composition + half-Senate term status (`up` / `continuing` / `territory`)
 - Parties index + per-party member lists
-- Federal primary-vote poll ledger + tracker average (`/polls`)
+- Federal primary-vote poll ledger + tracker average (`/elections/federal/49/polls`)
 - Policy matrix + issues (`/parties/matrix`, `/policies`) — Liberal–Nationals combined
   view default (Vic pattern); empty cells only where no sourced claim
 - Open data page + exports: `/data/federal-49/`
@@ -295,23 +295,23 @@ See [methodology.md](methodology.md) and ADR-14 in
 - [decisions.md](decisions.md)
 - [deployment.md](deployment.md)
 - [repo-layout.md](repo-layout.md)
+- [nav-tree.md](nav-tree.md)
 
 ## End-of-day repository state
 
-**2026-09-02.** 15 One Nation Assembly pages, Ababneh (Carrum), and
-DemosAU/Capital Brief 18–20 Aug. Vic polling still Resolve 9–15 Aug.
-Guardian Essential 1–2 Sep not encoded.
+**2026-09-03.** Hygiene clean (721 source files, 26 linked Markdown
+documents). No orphan docs, no committed junk, no open PRs.
+Open issue: [#32](https://github.com/coldix/elections/issues/32) extra Berwick
+details for Rana Khan.
 
-**2026-09-01.** `main` is in sync with origin after the 31 Aug candidacy
-encode and this docs refresh. No open pull requests. Since the 23 Aug
-housekeeping checkpoint:
-
-| Commit / PR | What |
+| Commit | What |
 |---|---|
-| #31 | Docs refresh — README, handover, changelog |
-| `efb3426` | House promotions on `/`, Vic 2026 overview and Vic polls |
-| `3d30077` | Seven sourced Vic candidacies (Pope, Raven, Buxton, Robinson, Ballinger, Williams, Briffa) |
+| `32a6c32` | Election-scoped header/footer; [nav-tree.md](nav-tree.md) |
+| `15159c1` | 16 Vic candidacies (15 One Nation Assembly + Ababneh Carrum); DemosAU/Capital Brief 18–20 Aug |
+| `a3a9795` | 2022 results on every Vic Assembly district page (ADR-17) |
+| `00e25e8` | Five federal polls + `/latest` |
+| `0773407` | Vic polls page no longer published the federal average |
 
-Victorian statewide polling is still 9–15 Aug Resolve/*Age*. Federal-49 was
-caught up on 1 Sep: five House VI records (two Roy Morgan weeks, YouGov Pulse,
-Newspoll, RedBridge/Accent AFR), newest fieldwork **24–30 Aug**.
+Ledger: **334** Vic candidacies, **18** Vic polls (newest **9–15 Aug**
+Resolve/*Age*), **19** federal polls (newest fieldwork **24–30 Aug** Roy
+Morgan). Guardian Essential 1–2 Sep still not encoded.

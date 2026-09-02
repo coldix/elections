@@ -1,6 +1,6 @@
 # Australian Election Tracker
 
-> **Updated** 2026-09-02  
+> **Updated** 2026-09-03  
 > Live at [electiontracker.au](https://electiontracker.au) · `main` deploys automatically
 
 **[electiontracker.au](https://electiontracker.au)** is an open, sourced and
@@ -132,7 +132,7 @@ scripts/
   lib/                             shared loaders (data, federal, state-foundation, …)
   lib/source-trust.mjs             source trust tiers for discovery leads
 
-tests/                             fixture tests for the discovery parsers
+tests/                             fixture tests (parsers, polls, 2022 results, nav)
 
 site/
   src/pages/                       national, federal, NSW and outline routes
@@ -186,6 +186,7 @@ Start with [docs/README.md](docs/README.md). Key documents:
 | [docs/deployment.md](docs/deployment.md) | Cloudflare build and deployment |
 | [docs/decisions.md](docs/decisions.md) | Architecture decisions |
 | [docs/repo-layout.md](docs/repo-layout.md) | Annotated repository structure |
+| [docs/nav-tree.md](docs/nav-tree.md) | Public sitemap and what the header/footer show |
 | [docs/people-pages-proposal.md](docs/people-pages-proposal.md) | Unapproved future `/people` concept |
 | [docs/handover.md](docs/handover.md) | Current operational handover |
 
@@ -227,8 +228,10 @@ new commits; history is not rewritten.
 ## Current status
 
 The national shell, upcoming-election calendar, future-election foundation
-pages and the full Victoria 2026 tracker are live. There are no open pull
-requests at this housekeeping checkpoint.
+pages and the full Victoria 2026 tracker are live. Header and footer are
+election-scoped (Victoria / Federal / Elections / What’s new, plus a section
+bar inside each tracker). There are no open pull requests at this checkpoint.
+GitHub issue #32 (extra Berwick details for Rana Khan) remains open.
 
 At this checkpoint the Victorian ledger holds **334** candidacies and **18**
 statewide polls, and federal-49 holds **19** primary-vote polls. Every

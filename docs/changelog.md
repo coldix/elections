@@ -1,10 +1,17 @@
 # Changelog — since polls
 
-> **Updated** 2026-09-02 · hub [../README.md](../README.md)
+> **Updated** 2026-09-03 · hub [../README.md](../README.md)
 
 Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
+
+## 2026-09-03 — End-of-day docs checkpoint
+
+| Area | What shipped |
+|---|---|
+| **Docs** | README, handover, docs index and repo-layout brought to 3 Sep. Ledger still **334** Vic candidacies, **18** Vic polls, **19** federal polls. Hygiene clean: no orphan Markdown, no committed junk |
+| **Open** | No pull requests. GitHub issue #32 (Rana Khan / Berwick extra details). Guardian Essential 1–2 Sep still not encoded (no published Greens/Others split) |
 
 ## 2026-09-02 — Election-scoped header and footer
 
