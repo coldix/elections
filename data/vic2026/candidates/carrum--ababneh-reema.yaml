@@ -1,0 +1,20 @@
+candidate:
+  name: Reema Ababneh
+  party: victorian-socialists
+  contest: carrum
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/reema-ababneh
+        title: Reema Ababneh
+        publisher: Victorian Socialists
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Ababneh as the Victorian Socialists
+        candidate for Carrum.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/reema-ababneh
+      kind: party-profile

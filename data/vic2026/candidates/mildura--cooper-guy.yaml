@@ -1,0 +1,22 @@
+candidate:
+  name: Guy Cooper
+  party: one-nation
+  contest: mildura
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/guy-cooper
+        title: Guy Cooper for Mildura
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Guy as One Nation's candidate
+        for Mildura.
+  links:
+    - url: https://vic.onenation.org.au/guy-cooper
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

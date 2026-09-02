@@ -1,0 +1,22 @@
+candidate:
+  name: Phillip Bryant
+  party: one-nation
+  contest: shepparton
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/phillip-bryant
+        title: Phillip Bryant for Shepparton
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Phillip as One Nation's candidate
+        for Shepparton.
+  links:
+    - url: https://vic.onenation.org.au/phillip-bryant
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

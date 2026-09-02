@@ -1,0 +1,22 @@
+candidate:
+  name: Jamie Baker
+  party: one-nation
+  contest: box-hill
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/jamie-baker
+        title: Jamie Baker for Box Hill
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Jamie as One Nation's candidate
+        for Box Hill.
+  links:
+    - url: https://vic.onenation.org.au/jamie-baker
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

@@ -1,0 +1,22 @@
+candidate:
+  name: Josh Geard
+  party: one-nation
+  contest: south-barwon
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/josh-geard
+        title: Josh Geard for South Barwon
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Josh as One Nation's candidate
+        for South Barwon.
+  links:
+    - url: https://vic.onenation.org.au/josh-geard
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

@@ -1,0 +1,22 @@
+candidate:
+  name: Alexander Lopez
+  party: one-nation
+  contest: footscray
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/alexander-lopez
+        title: Alexander Lopez for Footscray
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Alexander as One Nation's candidate
+        for Footscray.
+  links:
+    - url: https://vic.onenation.org.au/alexander-lopez
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

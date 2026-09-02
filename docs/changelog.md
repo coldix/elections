@@ -1,10 +1,19 @@
 # Changelog — since polls
 
-> **Updated** 2026-09-01 · hub [../README.md](../README.md)
+> **Updated** 2026-09-02 · hub [../README.md](../README.md)
 
 Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
+
+## 2026-09-02 — One Nation Assembly wave; DemosAU federal poll
+
+| Area | What shipped |
+|---|---|
+| **One Nation** | 15 Assembly endorsements from the party candidate pages (Lindrum, Schellekens, Hawken, Baker, Wright, Campbell, Lopez, Goodman, Wilke, Cooper, Beards, Crutchfield, Rindfleish, Bryant, Geard) |
+| **Victorian Socialists** | Reema Ababneh (Carrum) from the party candidate page |
+| **Federal polls** | DemosAU/Capital Brief 18–20 Aug: Labor 26 / Coalition 25 / One Nation 24 / Greens 12 / Others 13. Ledger 18 → **19**. Vic still has no statewide Assembly poll after Resolve 9–15 Aug |
+| **Ledger** | 318 → **334** Vic candidacy files. Guardian Essential (1–2 Sep) not encoded: Guardian printed ALP/L-NP/ONP only |
 
 ## 2026-09-02 — 2022 results on every Assembly district page
 

@@ -1,0 +1,22 @@
+candidate:
+  name: Tammy Lindrum
+  party: one-nation
+  contest: albert-park
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/tammy-lindrum
+        title: Tammy Lindrum for Albert Park
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Tammy as One Nation's candidate
+        for Albert Park.
+  links:
+    - url: https://vic.onenation.org.au/tammy-lindrum
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

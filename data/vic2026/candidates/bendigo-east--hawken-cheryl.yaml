@@ -1,0 +1,22 @@
+candidate:
+  name: Cheryl Hawken
+  party: one-nation
+  contest: bendigo-east
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/cheryl-hawken
+        title: Cheryl Hawken for Bendigo East
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Cheryl as One Nation's candidate
+        for Bendigo East.
+  links:
+    - url: https://vic.onenation.org.au/cheryl-hawken
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

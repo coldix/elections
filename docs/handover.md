@@ -1,6 +1,6 @@
 # HANDOVER
 
-> **Updated** 2026-09-01 · hub [../README.md](../README.md)
+> **Updated** 2026-09-02 · hub [../README.md](../README.md)
 
 Current operational context for the Australian Election Tracker. Historical
 product changes belong in [changelog.md](changelog.md); this file is
@@ -65,11 +65,13 @@ when creating the first federal `issues.yaml`.
 Candidate coverage is intentionally progressive. A missing candidate means no
 individually sourced record has been verified, not that nobody is standing.
 
-**Ledger snapshot (2026-09-01):** **318** Vic candidacy files; **18** Vic
+**Ledger snapshot (2026-09-02):** **334** Vic candidacy files; **18** Vic
 statewide polls (newest fieldwork end **9–15 Aug** Resolve/*Age*); federal-49
-**18** primary-vote polls (newest fieldwork end **24–30 Aug** Roy Morgan).
-Jacinta Allan is retired (Bendigo East open). The 31 Aug encode added seven
-sourced records (Pope, Raven, Buxton, Robinson, Ballinger, Williams, Briffa).
+**19** primary-vote polls (newest fieldwork end **24–30 Aug** Roy Morgan;
+DemosAU/Capital Brief 18–20 Aug is on the ledger). Jacinta Allan is retired
+(Bendigo East open). The 2 Sep encode added 15 One Nation Assembly records
+and Reema Ababneh (Carrum). Guardian Essential 1–2 Sep is not encoded (no
+published Greens/Others split).
 
 **Every candidacy now rests on a primary, secondary or campaign source — none
 on Wikipedia alone.** An audit on 2026-08-23 found eight records resting on
@@ -295,6 +297,10 @@ See [methodology.md](methodology.md) and ADR-14 in
 - [repo-layout.md](repo-layout.md)
 
 ## End-of-day repository state
+
+**2026-09-02.** 15 One Nation Assembly pages, Ababneh (Carrum), and
+DemosAU/Capital Brief 18–20 Aug. Vic polling still Resolve 9–15 Aug.
+Guardian Essential 1–2 Sep not encoded.
 
 **2026-09-01.** `main` is in sync with origin after the 31 Aug candidacy
 encode and this docs refresh. No open pull requests. Since the 23 Aug

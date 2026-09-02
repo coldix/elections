@@ -1,0 +1,22 @@
+candidate:
+  name: Steve Goodman
+  party: one-nation
+  contest: gippsland-east
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/steve-goodman
+        title: Steve Goodman for Gippsland East
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Steve as One Nation's candidate
+        for Gippsland East.
+  links:
+    - url: https://vic.onenation.org.au/steve-goodman
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

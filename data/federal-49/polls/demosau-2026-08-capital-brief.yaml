@@ -1,0 +1,31 @@
+id: demosau-2026-08-capital-brief
+pollster: DemosAU
+commissioner: capital-brief
+commissioner_type: media
+fieldwork_start: 2026-08-18
+fieldwork_end: 2026-08-20
+sample_size: 1562
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for Capital Brief / DemosAU. Pollster article: ALP 26 (steady), Coalition 25 (+4), One Nation 24 (-5), Greens 12 (-2), Others 13 (+3)."
+primaries:
+  alp: 26
+  lnp: 25
+  onp: 24
+  grn: 12
+  others: 13
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://demosau.com/news/one-nation-falls-back-into-third-hansons-popularity-nosedives-amongst-women-new-poll/
+    publisher: DemosAU
+    title: One Nation falls back into third, Hanson’s popularity nosedives amongst women — new poll
+    published: 2026-08-26
+    accessed: 2026-09-02
+  - url: https://www.capitalbrief.com/newsletter/hanson-support-plunges-in-new-poll-7ec0e908-55c4-434a-bd91-97190dcf30ff/
+    publisher: Capital Brief
+    title: Hanson support plunges in new poll
+    published: 2026-08-24
+    accessed: 2026-09-02

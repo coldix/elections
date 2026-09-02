@@ -1,0 +1,22 @@
+candidate:
+  name: Glenda Wright
+  party: one-nation
+  contest: dandenong
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/glenda-wright
+        title: Glenda Wright for Dandenong
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Glenda as One Nation's candidate
+        for Dandenong.
+  links:
+    - url: https://vic.onenation.org.au/glenda-wright
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

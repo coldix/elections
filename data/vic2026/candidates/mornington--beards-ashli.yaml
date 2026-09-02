@@ -1,0 +1,22 @@
+candidate:
+  name: Ashli Beards
+  party: one-nation
+  contest: mornington
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/ashli-beards
+        title: Ashli Beards for Mornington
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Ashli as One Nation's candidate
+        for Mornington.
+  links:
+    - url: https://vic.onenation.org.au/ashli-beards
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

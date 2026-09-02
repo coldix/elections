@@ -1,0 +1,22 @@
+candidate:
+  name: Harrison Rindfleish
+  party: one-nation
+  contest: richmond
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/harrison-rindfleish
+        title: Harrison Rindfleish for Richmond
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Harrison as One Nation's candidate
+        for Richmond.
+  links:
+    - url: https://vic.onenation.org.au/harrison-rindfleish
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party
