@@ -1,0 +1,3518 @@
+# 2022 Victorian Legislative Assembly results by district.
+# 2021 redivision boundaries (same seats as 2026).
+# First preferences and two-candidate / two-party preferred figures
+# transcribed from VEC-cited Wikipedia election boxes and checked against
+# VEC district pages for Bass (2CP) and Brunswick (ALP–Coalition 2PP).
+# Source of truth for each district: the VEC results URL on the record.
+# Historical results only — not a 2026 forecast or swing projection.
+# Statewide first-preference totals from the same Wikipedia summary,
+# citing VEC 2022 state election results.
+election_day: 2022-11-26
+boundaries: "2021 redivision"
+statewide:
+  formal: 3654205
+  two_party_preferred:
+    labor_pct: 55.0
+    coalition_pct: 45.0
+  primaries:
+    - { party: labor, votes: 1339496, pct: 36.66 }
+    - { party: liberal, votes: 1087413, pct: 29.76 }
+    - { party: nationals, votes: 172687, pct: 4.73 }
+    - { party: greens, votes: 420201, pct: 11.50 }
+    - { party: one-nation, votes: 10323, pct: 0.28 }
+    - { party: others, votes: 624085, pct: 17.08 }
+  source:
+    url: https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results
+    publisher: Victorian Electoral Commission
+    title: 2022 state election results
+    accessed: 2026-09-01
+districts:
+  - slug: albert-park
+    formal: 39110
+    informal: 1396
+    turnout: 40506
+    turnout_pct: 83
+    primaries:
+      - { party: labor, votes: 14254, pct: 36.45 }
+      - { party: liberal, votes: 11659, pct: 29.81 }
+      - { party: greens, votes: 8178, pct: 20.91 }
+      - { party: others, votes: 5019, pct: 12.83 }
+    two_candidate_preferred:
+      winner:
+        name: Nina Taylor
+        party: labor
+        votes: 23916
+        pct: 61.15
+      runner_up:
+        name: Lauren Sherson
+        party: liberal
+        votes: 15194
+        pct: 38.85
+      margin_pp: 11.15
+    two_party_preferred:
+      winner:
+        name: Nina Taylor
+        party: labor
+        votes: 23916
+        pct: 61.15
+      runner_up:
+        name: Lauren Sherson
+        party: liberal
+        votes: 15194
+        pct: 38.85
+      margin_pp: 11.15
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/albert-park-district-results"
+      publisher: Victorian Electoral Commission
+      title: Albert Park District results
+      accessed: 2026-09-01
+    first_pref_votes: 39110
+  - slug: ashwood
+    formal: 44710
+    informal: 1565
+    turnout: 46275
+    turnout_pct: 90.4
+    primaries:
+      - { party: labor, votes: 18014, pct: 40.29 }
+      - { party: liberal, votes: 16618, pct: 37.17 }
+      - { party: greens, votes: 6612, pct: 14.79 }
+      - { party: others, votes: 3466, pct: 7.75 }
+    two_candidate_preferred:
+      winner:
+        name: Matt Fregon
+        party: labor
+        votes: 25106
+        pct: 56.15
+      runner_up:
+        name: Asher Judah
+        party: liberal
+        votes: 19604
+        pct: 43.85
+      margin_pp: 6.15
+    two_party_preferred:
+      winner:
+        name: Matt Fregon
+        party: labor
+        votes: 25106
+        pct: 56.15
+      runner_up:
+        name: Asher Judah
+        party: liberal
+        votes: 19604
+        pct: 43.85
+      margin_pp: 6.15
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/ashwood-district-results"
+      publisher: Victorian Electoral Commission
+      title: Ashwood District results
+      accessed: 2026-09-01
+    first_pref_votes: 44710
+  - slug: bass
+    formal: 41404
+    informal: 3135
+    turnout: 44539
+    turnout_pct: 89.1
+    primaries:
+      - { party: labor, votes: 13478, pct: 32.55 }
+      - { party: liberal, votes: 12482, pct: 30.15 }
+      - { party: nationals, votes: 5506, pct: 13.3 }
+      - { party: greens, votes: 3369, pct: 8.14 }
+      - { party: others, votes: 6569, pct: 15.87 }
+    two_candidate_preferred:
+      winner:
+        name: Jordan Crugnale
+        party: labor
+        votes: 20803
+        pct: 50.24
+      runner_up:
+        name: Aaron Brown
+        party: liberal
+        votes: 20601
+        pct: 49.76
+      margin_pp: 0.24
+    two_party_preferred:
+      winner:
+        name: Jordan Crugnale
+        party: labor
+        votes: 20803
+        pct: 50.24
+      runner_up:
+        name: Aaron Brown
+        party: liberal
+        votes: 20601
+        pct: 49.76
+      margin_pp: 0.24
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/bass-district-results"
+      publisher: Victorian Electoral Commission
+      title: Bass District results
+      accessed: 2026-09-01
+    first_pref_votes: 41404
+  - slug: bayswater
+    formal: 42599
+    informal: 2512
+    turnout: 45111
+    turnout_pct: 90.8
+    primaries:
+      - { party: labor, votes: 17609, pct: 41.34 }
+      - { party: liberal, votes: 15174, pct: 35.62 }
+      - { party: greens, votes: 3151, pct: 7.4 }
+      - { party: others, votes: 6665, pct: 15.65 }
+    two_candidate_preferred:
+      winner:
+        name: Jackson Taylor
+        party: labor
+        votes: 23101
+        pct: 54.23
+      runner_up:
+        name: Nick Wakeling
+        party: liberal
+        votes: 19498
+        pct: 45.77
+      margin_pp: 4.23
+    two_party_preferred:
+      winner:
+        name: Jackson Taylor
+        party: labor
+        votes: 23101
+        pct: 54.23
+      runner_up:
+        name: Nick Wakeling
+        party: liberal
+        votes: 19498
+        pct: 45.77
+      margin_pp: 4.23
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/bayswater-district-results"
+      publisher: Victorian Electoral Commission
+      title: Bayswater District results
+      accessed: 2026-09-01
+    first_pref_votes: 42599
+  - slug: bellarine
+    formal: 47153
+    informal: 2156
+    primaries:
+      - { party: labor, votes: 20103, pct: 42.63 }
+      - { party: liberal, votes: 15617, pct: 33.12 }
+      - { party: greens, votes: 5537, pct: 11.74 }
+      - { party: others, votes: 5896, pct: 12.5 }
+    two_candidate_preferred:
+      winner:
+        name: Alison Marchant
+        party: labor
+        votes: 27567
+        pct: 58.46
+      runner_up:
+        name: Donnie Grigau
+        party: liberal
+        votes: 19586
+        pct: 41.54
+      margin_pp: 8.46
+    two_party_preferred:
+      winner:
+        name: Alison Marchant
+        party: labor
+        votes: 27567
+        pct: 58.46
+      runner_up:
+        name: Donnie Grigau
+        party: liberal
+        votes: 19586
+        pct: 41.54
+      margin_pp: 8.46
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/bellarine-district-results"
+      publisher: Victorian Electoral Commission
+      title: Bellarine District results
+      accessed: 2026-09-01
+    first_pref_votes: 47153
+  - slug: benambra
+    formal: 41135
+    informal: 2099
+    turnout: 43234
+    turnout_pct: 86.4
+    primaries:
+      - { party: labor, votes: 5375, pct: 13.07 }
+      - { party: liberal, votes: 17658, pct: 42.93 }
+      - { party: greens, votes: 1592, pct: 3.87 }
+      - { party: others, votes: 16510, pct: 40.14 }
+    two_candidate_preferred:
+      winner:
+        name: Bill Tilley
+        party: liberal
+        votes: 20956
+        pct: 50.94
+      runner_up:
+        name: Jacqui Hawkins
+        party: independent
+        votes: 20179
+        pct: 49.06
+      margin_pp: 0.94
+    two_party_preferred:
+      winner:
+        name: Bill Tilley
+        party: liberal
+        votes: 26021
+        pct: 63.26
+      runner_up:
+        name: Mark Tait
+        party: labor
+        votes: 15114
+        pct: 36.74
+      margin_pp: 13.26
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/benambra-district-results"
+      publisher: Victorian Electoral Commission
+      title: Benambra District results
+      accessed: 2026-09-01
+    first_pref_votes: 41135
+  - slug: bendigo-east
+    formal: 45568
+    informal: 2184
+    primaries:
+      - { party: labor, votes: 22010, pct: 48.3 }
+      - { party: liberal, votes: 12478, pct: 27.38 }
+      - { party: greens, votes: 3944, pct: 8.66 }
+      - { party: one-nation, votes: 2597, pct: 5.7 }
+      - { party: others, votes: 4539, pct: 9.96 }
+    two_candidate_preferred:
+      winner:
+        name: Jacinta Allan
+        party: labor
+        votes: 27727
+        pct: 60.85
+      runner_up:
+        name: Darin Schade
+        party: liberal
+        votes: 17841
+        pct: 39.15
+      margin_pp: 10.85
+    two_party_preferred:
+      winner:
+        name: Jacinta Allan
+        party: labor
+        votes: 27727
+        pct: 60.85
+      runner_up:
+        name: Darin Schade
+        party: liberal
+        votes: 17841
+        pct: 39.15
+      margin_pp: 10.85
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/bendigo-east-district-results"
+      publisher: Victorian Electoral Commission
+      title: Bendigo East District results
+      accessed: 2026-09-01
+    first_pref_votes: 45568
+  - slug: bendigo-west
+    formal: 40248
+    informal: 2401
+    turnout: 42649
+    turnout_pct: 89.2
+    primaries:
+      - { party: labor, votes: 18704, pct: 46.47 }
+      - { party: liberal, votes: 10057, pct: 24.99 }
+      - { party: greens, votes: 4634, pct: 11.51 }
+      - { party: others, votes: 6853, pct: 17.03 }
+    two_candidate_preferred:
+      winner:
+        name: Maree Edwards
+        party: labor
+        votes: 25999
+        pct: 64.6
+      runner_up:
+        name: Ken Price
+        party: liberal
+        votes: 14249
+        pct: 35.4
+      margin_pp: 14.6
+    two_party_preferred:
+      winner:
+        name: Maree Edwards
+        party: labor
+        votes: 25999
+        pct: 64.6
+      runner_up:
+        name: Ken Price
+        party: liberal
+        votes: 14249
+        pct: 35.4
+      margin_pp: 14.6
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/bendigo-west-district-results"
+      publisher: Victorian Electoral Commission
+      title: Bendigo West District results
+      accessed: 2026-09-01
+    first_pref_votes: 40248
+  - slug: bentleigh
+    formal: 45120
+    informal: 1408
+    turnout: 46528
+    turnout_pct: 90.5
+    primaries:
+      - { party: labor, votes: 20656, pct: 45.78 }
+      - { party: liberal, votes: 16401, pct: 36.35 }
+      - { party: greens, votes: 4845, pct: 10.74 }
+      - { party: others, votes: 3218, pct: 7.13 }
+    two_candidate_preferred:
+      winner:
+        name: Nick Staikos
+        party: labor
+        votes: 26153
+        pct: 57.96
+      runner_up:
+        name: Debbie Taylor-Haynes
+        party: liberal
+        votes: 18972
+        pct: 42.04
+      margin_pp: 7.96
+    two_party_preferred:
+      winner:
+        name: Nick Staikos
+        party: labor
+        votes: 26153
+        pct: 57.96
+      runner_up:
+        name: Debbie Taylor-Haynes
+        party: liberal
+        votes: 18972
+        pct: 42.04
+      margin_pp: 7.96
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/bentleigh-district-results"
+      publisher: Victorian Electoral Commission
+      title: Bentleigh District results
+      accessed: 2026-09-01
+    first_pref_votes: 45120
+  - slug: berwick
+    formal: 44288
+    informal: 1876
+    turnout: 46164
+    turnout_pct: 88.9
+    primaries:
+      - { party: labor, votes: 15874, pct: 35.84 }
+      - { party: liberal, votes: 20031, pct: 45.23 }
+      - { party: greens, votes: 4297, pct: 9.7 }
+      - { party: others, votes: 4087, pct: 9.23 }
+    two_candidate_preferred:
+      winner:
+        name: Brad Battin
+        party: liberal
+        votes: 24230
+        pct: 54.71
+      runner_up:
+        name: Malik Zaveer
+        party: labor
+        votes: 20058
+        pct: 45.29
+      margin_pp: 4.71
+    two_party_preferred:
+      winner:
+        name: Brad Battin
+        party: liberal
+        votes: 24230
+        pct: 54.71
+      runner_up:
+        name: Malik Zaveer
+        party: labor
+        votes: 20058
+        pct: 45.29
+      margin_pp: 4.71
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/berwick-district-results"
+      publisher: Victorian Electoral Commission
+      title: Berwick District results
+      accessed: 2026-09-01
+    first_pref_votes: 44289
+  - slug: box-hill
+    formal: 44357
+    informal: 1635
+    turnout: 45992
+    turnout_pct: 90.5
+    primaries:
+      - { party: labor, votes: 18340, pct: 41.35 }
+      - { party: liberal, votes: 15593, pct: 35.15 }
+      - { party: greens, votes: 6267, pct: 14.13 }
+      - { party: others, votes: 4157, pct: 9.37 }
+    two_candidate_preferred:
+      winner:
+        name: Paul Hamer
+        party: labor
+        votes: 25383
+        pct: 57.23
+      runner_up:
+        name: Nicole Werner
+        party: liberal
+        votes: 18973
+        pct: 42.77
+      margin_pp: 7.23
+    two_party_preferred:
+      winner:
+        name: Paul Hamer
+        party: labor
+        votes: 25383
+        pct: 57.23
+      runner_up:
+        name: Nicole Werner
+        party: liberal
+        votes: 18973
+        pct: 42.77
+      margin_pp: 7.23
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/box-hill-district-results"
+      publisher: Victorian Electoral Commission
+      title: Box Hill District results
+      accessed: 2026-09-01
+    first_pref_votes: 44357
+  - slug: brighton
+    formal: 41196
+    informal: 1786
+    turnout: 42982
+    turnout_pct: 89.1
+    primaries:
+      - { party: labor, votes: 10164, pct: 24.67 }
+      - { party: liberal, votes: 18791, pct: 45.61 }
+      - { party: greens, votes: 5680, pct: 13.79 }
+      - { party: others, votes: 6561, pct: 15.93 }
+    two_candidate_preferred:
+      winner:
+        name: James Newbury
+        party: liberal
+        votes: 22710
+        pct: 55.13
+      runner_up:
+        name: Louise Crawford
+        party: labor
+        votes: 18486
+        pct: 44.87
+      margin_pp: 5.13
+    two_party_preferred:
+      winner:
+        name: James Newbury
+        party: liberal
+        votes: 22710
+        pct: 55.13
+      runner_up:
+        name: Louise Crawford
+        party: labor
+        votes: 18486
+        pct: 44.87
+      margin_pp: 5.13
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/brighton-district-results"
+      publisher: Victorian Electoral Commission
+      title: Brighton District results
+      accessed: 2026-09-01
+    first_pref_votes: 41196
+  - slug: broadmeadows
+    formal: 34780
+    informal: 4198
+    primaries:
+      - { party: labor, votes: 15899, pct: 45.71 }
+      - { party: liberal, votes: 8044, pct: 23.13 }
+      - { party: greens, votes: 2908, pct: 8.36 }
+      - { party: others, votes: 7929, pct: 22.8 }
+    two_candidate_preferred:
+      winner:
+        name: Kathleen Matthews-Ward
+        party: labor
+        votes: 22781
+        pct: 65.5
+      runner_up:
+        name: Baris Duzova
+        party: liberal
+        votes: 11999
+        pct: 34.5
+      margin_pp: 15.5
+    two_party_preferred:
+      winner:
+        name: Kathleen Matthews-Ward
+        party: labor
+        votes: 22781
+        pct: 65.5
+      runner_up:
+        name: Baris Duzova
+        party: liberal
+        votes: 11999
+        pct: 34.5
+      margin_pp: 15.5
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/broadmeadows-district-results"
+      publisher: Victorian Electoral Commission
+      title: Broadmeadows District results
+      accessed: 2026-09-01
+    first_pref_votes: 34780
+  - slug: brunswick
+    formal: 43445
+    informal: 1733
+    primaries:
+      - { party: labor, votes: 12392, pct: 28.52 }
+      - { party: liberal, votes: 4723, pct: 10.87 }
+      - { party: greens, votes: 18959, pct: 43.64 }
+      - { party: others, votes: 7371, pct: 16.97 }
+    two_candidate_preferred:
+      winner:
+        name: Tim Read
+        party: greens
+        votes: 27664
+        pct: 63.68
+      runner_up:
+        name: Mike Williams
+        party: labor
+        votes: 15781
+        pct: 36.32
+      margin_pp: 13.68
+    two_party_preferred:
+      winner:
+        name: Mike Williams
+        party: labor
+        votes: 36518
+        pct: 84.06
+      runner_up:
+        name: Minh Quan Nguyen
+        party: liberal
+        votes: 6927
+        pct: 15.94
+      margin_pp: 34.06
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/brunswick-district-results"
+      publisher: Victorian Electoral Commission
+      title: Brunswick District results
+      accessed: 2026-09-01
+    first_pref_votes: 43445
+  - slug: bulleen
+    formal: 42959
+    informal: 2326
+    turnout: 45285
+    turnout_pct: 89.7
+    primaries:
+      - { party: labor, votes: 14052, pct: 32.71 }
+      - { party: liberal, votes: 20645, pct: 48.06 }
+      - { party: greens, votes: 4576, pct: 10.65 }
+      - { party: others, votes: 3686, pct: 8.58 }
+    two_candidate_preferred:
+      winner:
+        name: Matthew Guy
+        party: liberal
+        votes: 24030
+        pct: 55.94
+      runner_up:
+        name: Ian Rogers
+        party: labor
+        votes: 18929
+        pct: 44.06
+      margin_pp: 5.94
+    two_party_preferred:
+      winner:
+        name: Matthew Guy
+        party: liberal
+        votes: 24030
+        pct: 55.94
+      runner_up:
+        name: Ian Rogers
+        party: labor
+        votes: 18929
+        pct: 44.06
+      margin_pp: 5.94
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/bulleen-district-results"
+      publisher: Victorian Electoral Commission
+      title: Bulleen District results
+      accessed: 2026-09-01
+    first_pref_votes: 42959
+  - slug: bundoora
+    formal: 40336
+    informal: 2209
+    turnout: 42545
+    turnout_pct: 89.9
+    primaries:
+      - { party: labor, votes: 19288, pct: 47.82 }
+      - { party: liberal, votes: 11167, pct: 27.68 }
+      - { party: greens, votes: 5311, pct: 13.17 }
+      - { party: others, votes: 4570, pct: 11.33 }
+    two_candidate_preferred:
+      winner:
+        name: Colin Brooks
+        party: labor
+        votes: 25288
+        pct: 62.69
+      runner_up:
+        name: Sahil Tomar
+        party: liberal
+        votes: 15048
+        pct: 37.31
+      margin_pp: 12.69
+    two_party_preferred:
+      winner:
+        name: Colin Brooks
+        party: labor
+        votes: 25288
+        pct: 62.69
+      runner_up:
+        name: Sahil Tomar
+        party: liberal
+        votes: 15048
+        pct: 37.31
+      margin_pp: 12.69
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/bundoora-district-results"
+      publisher: Victorian Electoral Commission
+      title: Bundoora District results
+      accessed: 2026-09-01
+    first_pref_votes: 40336
+  - slug: carrum
+    formal: 43294
+    informal: 2183
+    turnout: 45477
+    turnout_pct: 88.7
+    primaries:
+      - { party: labor, votes: 21586, pct: 49.86 }
+      - { party: liberal, votes: 13141, pct: 30.35 }
+      - { party: greens, votes: 3282, pct: 7.58 }
+      - { party: others, votes: 5291, pct: 12.22 }
+    two_candidate_preferred:
+      winner:
+        name: Sonya Kilkenny
+        party: labor
+        votes: 25871
+        pct: 59.76
+      runner_up:
+        name: Bec Buchanan
+        party: liberal
+        votes: 17423
+        pct: 40.24
+      margin_pp: 9.76
+    two_party_preferred:
+      winner:
+        name: Sonya Kilkenny
+        party: labor
+        votes: 25871
+        pct: 59.76
+      runner_up:
+        name: Bec Buchanan
+        party: liberal
+        votes: 17423
+        pct: 40.24
+      margin_pp: 9.76
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/carrum-district-results"
+      publisher: Victorian Electoral Commission
+      title: Carrum District results
+      accessed: 2026-09-01
+    first_pref_votes: 43300
+  - slug: caulfield
+    formal: 40683
+    informal: 1374
+    primaries:
+      - { party: labor, votes: 11301, pct: 27.78 }
+      - { party: liberal, votes: 18088, pct: 44.46 }
+      - { party: greens, votes: 6447, pct: 15.85 }
+      - { party: others, votes: 4847, pct: 11.91 }
+    two_candidate_preferred:
+      winner:
+        name: David Southwick
+        party: liberal
+        votes: 21183
+        pct: 52.07
+      runner_up:
+        name: Lior Harel
+        party: labor
+        votes: 19500
+        pct: 47.93
+      margin_pp: 2.07
+    two_party_preferred:
+      winner:
+        name: David Southwick
+        party: liberal
+        votes: 21183
+        pct: 52.07
+      runner_up:
+        name: Lior Harel
+        party: labor
+        votes: 19500
+        pct: 47.93
+      margin_pp: 2.07
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/caulfield-district-results"
+      publisher: Victorian Electoral Commission
+      title: Caulfield District results
+      accessed: 2026-09-01
+    first_pref_votes: 40683
+  - slug: clarinda
+    formal: 40564
+    informal: 2477
+    turnout: 43041
+    turnout_pct: 88.8
+    primaries:
+      - { party: labor, votes: 18441, pct: 45.46 }
+      - { party: liberal, votes: 11593, pct: 28.58 }
+      - { party: greens, votes: 3227, pct: 7.96 }
+      - { party: others, votes: 7303, pct: 18 }
+    two_candidate_preferred:
+      winner:
+        name: Meng Heang Tak
+        party: labor
+        votes: 24416
+        pct: 60.19
+      runner_up:
+        name: Anthony Richardson
+        party: liberal
+        votes: 16148
+        pct: 39.81
+      margin_pp: 10.19
+    two_party_preferred:
+      winner:
+        name: Meng Heang Tak
+        party: labor
+        votes: 24416
+        pct: 60.19
+      runner_up:
+        name: Anthony Richardson
+        party: liberal
+        votes: 16148
+        pct: 39.81
+      margin_pp: 10.19
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/clarinda-district-results"
+      publisher: Victorian Electoral Commission
+      title: Clarinda District results
+      accessed: 2026-09-01
+    first_pref_votes: 40564
+  - slug: cranbourne
+    formal: 40822
+    informal: 3234
+    turnout: 44056
+    turnout_pct: 86.1
+    primaries:
+      - { party: labor, votes: 18853, pct: 46.18 }
+      - { party: liberal, votes: 11230, pct: 27.51 }
+      - { party: greens, votes: 2282, pct: 5.59 }
+      - { party: others, votes: 8457, pct: 20.72 }
+    two_candidate_preferred:
+      winner:
+        name: Pauline Richards
+        party: labor
+        votes: 24073
+        pct: 58.97
+      runner_up:
+        name: Jagdeep Singh
+        party: liberal
+        votes: 16749
+        pct: 41.03
+      margin_pp: 8.97
+    two_party_preferred:
+      winner:
+        name: Pauline Richards
+        party: labor
+        votes: 24073
+        pct: 58.97
+      runner_up:
+        name: Jagdeep Singh
+        party: liberal
+        votes: 16749
+        pct: 41.03
+      margin_pp: 8.97
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/cranbourne-district-results"
+      publisher: Victorian Electoral Commission
+      title: Cranbourne District results
+      accessed: 2026-09-01
+    first_pref_votes: 40822
+  - slug: croydon
+    formal: 45639
+    informal: 2054
+    turnout: 47693
+    turnout_pct: 90.8
+    primaries:
+      - { party: labor, votes: 15564, pct: 34.1 }
+      - { party: liberal, votes: 19605, pct: 42.96 }
+      - { party: greens, votes: 4940, pct: 10.82 }
+      - { party: others, votes: 5530, pct: 12.12 }
+    two_candidate_preferred:
+      winner:
+        name: David Hodgett
+        party: liberal
+        votes: 23446
+        pct: 51.37
+      runner_up:
+        name: Sorina Grasso
+        party: labor
+        votes: 22193
+        pct: 48.63
+      margin_pp: 1.37
+    two_party_preferred:
+      winner:
+        name: David Hodgett
+        party: liberal
+        votes: 23446
+        pct: 51.37
+      runner_up:
+        name: Sorina Grasso
+        party: labor
+        votes: 22193
+        pct: 48.63
+      margin_pp: 1.37
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/croydon-district-results"
+      publisher: Victorian Electoral Commission
+      title: Croydon District results
+      accessed: 2026-09-01
+    first_pref_votes: 45639
+  - slug: dandenong
+    formal: 39505
+    informal: 3195
+    turnout: 42700
+    turnout_pct: 84
+    primaries:
+      - { party: labor, votes: 21677, pct: 54.87 }
+      - { party: liberal, votes: 8475, pct: 21.45 }
+      - { party: greens, votes: 3215, pct: 8.14 }
+      - { party: others, votes: 6140, pct: 15.54 }
+    two_candidate_preferred:
+      winner:
+        name: Gabrielle Williams
+        party: labor
+        votes: 26970
+        pct: 68.27
+      runner_up:
+        name: Karen Broadley
+        party: liberal
+        votes: 12535
+        pct: 31.73
+      margin_pp: 18.27
+    two_party_preferred:
+      winner:
+        name: Gabrielle Williams
+        party: labor
+        votes: 26970
+        pct: 68.27
+      runner_up:
+        name: Karen Broadley
+        party: liberal
+        votes: 12535
+        pct: 31.73
+      margin_pp: 18.27
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/dandenong-district-results"
+      publisher: Victorian Electoral Commission
+      title: Dandenong District results
+      accessed: 2026-09-01
+    first_pref_votes: 39507
+  - slug: eildon
+    formal: 42399
+    informal: 2343
+    primaries:
+      - { party: labor, votes: 12284, pct: 28.97 }
+      - { party: liberal, votes: 20119, pct: 47.45 }
+      - { party: greens, votes: 4753, pct: 11.21 }
+      - { party: others, votes: 5243, pct: 12.37 }
+    two_candidate_preferred:
+      winner:
+        name: Cindy McLeish
+        party: liberal
+        votes: 24162
+        pct: 56.99
+      runner_up:
+        name: Jane Judd
+        party: labor
+        votes: 18237
+        pct: 43.01
+      margin_pp: 6.99
+    two_party_preferred:
+      winner:
+        name: Cindy McLeish
+        party: liberal
+        votes: 24162
+        pct: 56.99
+      runner_up:
+        name: Jane Judd
+        party: labor
+        votes: 18237
+        pct: 43.01
+      margin_pp: 6.99
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/eildon-district-results"
+      publisher: Victorian Electoral Commission
+      title: Eildon District results
+      accessed: 2026-09-01
+    first_pref_votes: 42399
+  - slug: eltham
+    formal: 43844
+    informal: 1507
+    turnout: 45351
+    turnout_pct: 92.7
+    primaries:
+      - { party: labor, votes: 19509, pct: 44.5 }
+      - { party: liberal, votes: 15615, pct: 35.61 }
+      - { party: greens, votes: 5897, pct: 13.45 }
+      - { party: others, votes: 2823, pct: 6.44 }
+    two_candidate_preferred:
+      winner:
+        name: Vicki Ward
+        party: labor
+        votes: 25870
+        pct: 59
+      runner_up:
+        name: Jason McClintock
+        party: liberal
+        votes: 17974
+        pct: 41
+      margin_pp: 9
+    two_party_preferred:
+      winner:
+        name: Vicki Ward
+        party: labor
+        votes: 25870
+        pct: 59
+      runner_up:
+        name: Jason McClintock
+        party: liberal
+        votes: 17974
+        pct: 41
+      margin_pp: 9
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/eltham-district-results"
+      publisher: Victorian Electoral Commission
+      title: Eltham District results
+      accessed: 2026-09-01
+    first_pref_votes: 43844
+  - slug: essendon
+    formal: 41867
+    informal: 1761
+    turnout: 43628
+    turnout_pct: 88.1
+    primaries:
+      - { party: labor, votes: 17196, pct: 41.07 }
+      - { party: liberal, votes: 12331, pct: 29.45 }
+      - { party: greens, votes: 6344, pct: 15.15 }
+      - { party: others, votes: 5996, pct: 14.32 }
+    two_candidate_preferred:
+      winner:
+        name: Danny Pearson
+        party: labor
+        votes: 26146
+        pct: 62.45
+      runner_up:
+        name: Angelo Baronessa
+        party: liberal
+        votes: 15721
+        pct: 37.55
+      margin_pp: 12.45
+    two_party_preferred:
+      winner:
+        name: Danny Pearson
+        party: labor
+        votes: 26146
+        pct: 62.45
+      runner_up:
+        name: Angelo Baronessa
+        party: liberal
+        votes: 15721
+        pct: 37.55
+      margin_pp: 12.45
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/essendon-district-results"
+      publisher: Victorian Electoral Commission
+      title: Essendon District results
+      accessed: 2026-09-01
+    first_pref_votes: 41867
+  - slug: eureka
+    formal: 45247
+    informal: 3297
+    turnout: 48544
+    turnout_pct: 89.1
+    primaries:
+      - { party: labor, votes: 18531, pct: 40.96 }
+      - { party: liberal, votes: 14320, pct: 31.65 }
+      - { party: greens, votes: 4887, pct: 10.8 }
+      - { party: others, votes: 7509, pct: 16.6 }
+    two_candidate_preferred:
+      winner:
+        name: Michaela Settle
+        party: labor
+        votes: 25869
+        pct: 57.17
+      runner_up:
+        name: Paul Tatchell
+        party: liberal
+        votes: 19378
+        pct: 42.83
+      margin_pp: 7.17
+    two_party_preferred:
+      winner:
+        name: Michaela Settle
+        party: labor
+        votes: 25869
+        pct: 57.17
+      runner_up:
+        name: Paul Tatchell
+        party: liberal
+        votes: 19378
+        pct: 42.83
+      margin_pp: 7.17
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/eureka-district-results"
+      publisher: Victorian Electoral Commission
+      title: Eureka District results
+      accessed: 2026-09-01
+    first_pref_votes: 45247
+  - slug: euroa
+    formal: 42242
+    informal: 2431
+    turnout: 44673
+    turnout_pct: 88.2
+    primaries:
+      - { party: labor, votes: 12840, pct: 30.4 }
+      - { party: liberal, votes: 9227, pct: 21.84 }
+      - { party: nationals, votes: 13496, pct: 31.95 }
+      - { party: greens, votes: 2245, pct: 5.31 }
+      - { party: others, votes: 4434, pct: 10.5 }
+    two_candidate_preferred:
+      winner:
+        name: Annabelle Cleeland
+        party: nationals
+        votes: 25316
+        pct: 59.93
+      runner_up:
+        name: Angela Tough
+        party: labor
+        votes: 16926
+        pct: 40.07
+      margin_pp: 9.93
+    two_party_preferred:
+      winner:
+        name: Annabelle Cleeland
+        party: nationals
+        votes: 25316
+        pct: 59.93
+      runner_up:
+        name: Angela Tough
+        party: labor
+        votes: 16926
+        pct: 40.07
+      margin_pp: 9.93
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/euroa-district-results"
+      publisher: Victorian Electoral Commission
+      title: Euroa District results
+      accessed: 2026-09-01
+    first_pref_votes: 42242
+  - slug: evelyn
+    formal: 43664
+    informal: 2255
+    turnout: 45919
+    turnout_pct: 91.5
+    primaries:
+      - { party: labor, votes: 14277, pct: 32.7 }
+      - { party: liberal, votes: 20385, pct: 46.69 }
+      - { party: greens, votes: 4052, pct: 9.28 }
+      - { party: others, votes: 4951, pct: 11.34 }
+    two_candidate_preferred:
+      winner:
+        name: Bridget Vallence
+        party: liberal
+        votes: 24190
+        pct: 55.4
+      runner_up:
+        name: Lorna Dent
+        party: labor
+        votes: 19474
+        pct: 44.6
+      margin_pp: 5.4
+    two_party_preferred:
+      winner:
+        name: Bridget Vallence
+        party: liberal
+        votes: 24190
+        pct: 55.4
+      runner_up:
+        name: Lorna Dent
+        party: labor
+        votes: 19474
+        pct: 44.6
+      margin_pp: 5.4
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/evelyn-district-results"
+      publisher: Victorian Electoral Commission
+      title: Evelyn District results
+      accessed: 2026-09-01
+    first_pref_votes: 43665
+  - slug: footscray
+    formal: 40340
+    informal: 1654
+    turnout: 41994
+    turnout_pct: 86
+    primaries:
+      - { party: labor, votes: 17387, pct: 43.1 }
+      - { party: liberal, votes: 7214, pct: 17.88 }
+      - { party: greens, votes: 9045, pct: 22.42 }
+      - { party: others, votes: 6694, pct: 16.59 }
+    two_candidate_preferred:
+      winner:
+        name: Katie Hall
+        party: labor
+        votes: 21880
+        pct: 54.24
+      runner_up:
+        name: Elena Pereyra
+        party: greens
+        votes: 18460
+        pct: 45.76
+      margin_pp: 4.24
+    two_party_preferred:
+      winner:
+        name: Katie Hall
+        party: labor
+        votes: 30523
+        pct: 75.66
+      runner_up:
+        name: Emete Joesika
+        party: liberal
+        votes: 9817
+        pct: 24.34
+      margin_pp: 25.66
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/footscray-district-results"
+      publisher: Victorian Electoral Commission
+      title: Footscray District results
+      accessed: 2026-09-01
+    first_pref_votes: 40340
+  - slug: frankston
+    formal: 39941
+    informal: 2323
+    primaries:
+      - { party: labor, votes: 16595, pct: 41.55 }
+      - { party: liberal, votes: 11762, pct: 29.45 }
+      - { party: greens, votes: 5060, pct: 12.67 }
+      - { party: others, votes: 6524, pct: 16.33 }
+    two_candidate_preferred:
+      winner:
+        name: Paul Edbrooke
+        party: labor
+        votes: 23429
+        pct: 58.66
+      runner_up:
+        name: Michael O'Reilly
+        party: liberal
+        votes: 16512
+        pct: 41.34
+      margin_pp: 8.66
+    two_party_preferred:
+      winner:
+        name: Paul Edbrooke
+        party: labor
+        votes: 23429
+        pct: 58.66
+      runner_up:
+        name: Michael O'Reilly
+        party: liberal
+        votes: 16512
+        pct: 41.34
+      margin_pp: 8.66
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/frankston-district-results"
+      publisher: Victorian Electoral Commission
+      title: Frankston District results
+      accessed: 2026-09-01
+    first_pref_votes: 39941
+  - slug: geelong
+    formal: 44762
+    informal: 1918
+    turnout: 46680
+    turnout_pct: 89.1
+    primaries:
+      - { party: labor, votes: 20754, pct: 46.37 }
+      - { party: liberal, votes: 12194, pct: 27.24 }
+      - { party: greens, votes: 6849, pct: 15.3 }
+      - { party: others, votes: 4965, pct: 11.09 }
+    two_candidate_preferred:
+      winner:
+        name: Christine Couzens
+        party: labor
+        votes: 28965
+        pct: 64.71
+      runner_up:
+        name: James Bennett-Hullin
+        party: liberal
+        votes: 15797
+        pct: 35.29
+      margin_pp: 14.71
+    two_party_preferred:
+      winner:
+        name: Christine Couzens
+        party: labor
+        votes: 28965
+        pct: 64.71
+      runner_up:
+        name: James Bennett-Hullin
+        party: liberal
+        votes: 15797
+        pct: 35.29
+      margin_pp: 14.71
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/geelong-district-results"
+      publisher: Victorian Electoral Commission
+      title: Geelong District results
+      accessed: 2026-09-01
+    first_pref_votes: 44762
+  - slug: gippsland-east
+    formal: 42209
+    informal: 1995
+    turnout: 44204
+    turnout_pct: 89
+    primaries:
+      - { party: labor, votes: 7191, pct: 17.04 }
+      - { party: nationals, votes: 26737, pct: 63.34 }
+      - { party: greens, votes: 2691, pct: 6.38 }
+      - { party: others, votes: 5593, pct: 13.25 }
+    two_candidate_preferred:
+      winner:
+        name: Tim Bull
+        party: nationals
+        votes: 31475
+        pct: 74.57
+      runner_up:
+        name: Stephen Richardson
+        party: labor
+        votes: 10734
+        pct: 25.43
+      margin_pp: 24.57
+    two_party_preferred:
+      winner:
+        name: Tim Bull
+        party: nationals
+        votes: 31475
+        pct: 74.57
+      runner_up:
+        name: Stephen Richardson
+        party: labor
+        votes: 10734
+        pct: 25.43
+      margin_pp: 24.57
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/gippsland-east-district-results"
+      publisher: Victorian Electoral Commission
+      title: Gippsland East District results
+      accessed: 2026-09-01
+    first_pref_votes: 42212
+  - slug: gippsland-south
+    formal: 42351
+    informal: 2363
+    turnout: 44714
+    turnout_pct: 90
+    primaries:
+      - { party: labor, votes: 9920, pct: 23.42 }
+      - { party: nationals, votes: 22566, pct: 53.28 }
+      - { party: greens, votes: 3538, pct: 8.35 }
+      - { party: others, votes: 6339, pct: 14.97 }
+    two_candidate_preferred:
+      winner:
+        name: Danny O'Brien
+        party: nationals
+        votes: 27763
+        pct: 65.55
+      runner_up:
+        name: Denise Ryan
+        party: labor
+        votes: 14588
+        pct: 34.45
+      margin_pp: 15.55
+    two_party_preferred:
+      winner:
+        name: Danny O'Brien
+        party: nationals
+        votes: 27763
+        pct: 65.55
+      runner_up:
+        name: Denise Ryan
+        party: labor
+        votes: 14588
+        pct: 34.45
+      margin_pp: 15.55
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/gippsland-south-district-results"
+      publisher: Victorian Electoral Commission
+      title: Gippsland South District results
+      accessed: 2026-09-01
+    first_pref_votes: 42363
+  - slug: glen-waverley
+    formal: 44667
+    informal: 1529
+    turnout: 46196
+    turnout_pct: 90.9
+    primaries:
+      - { party: labor, votes: 18153, pct: 40.64 }
+      - { party: liberal, votes: 17941, pct: 40.17 }
+      - { party: greens, votes: 4270, pct: 9.56 }
+      - { party: others, votes: 4294, pct: 9.61 }
+    two_candidate_preferred:
+      winner:
+        name: John Mullahy
+        party: labor
+        votes: 23809
+        pct: 53.3
+      runner_up:
+        name: Neil Angus
+        party: liberal
+        votes: 20858
+        pct: 46.7
+      margin_pp: 3.3
+    two_party_preferred:
+      winner:
+        name: John Mullahy
+        party: labor
+        votes: 23809
+        pct: 53.3
+      runner_up:
+        name: Neil Angus
+        party: liberal
+        votes: 20858
+        pct: 46.7
+      margin_pp: 3.3
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/glen-waverley-district-results"
+      publisher: Victorian Electoral Commission
+      title: Glen Waverley District results
+      accessed: 2026-09-01
+    first_pref_votes: 44658
+  - slug: greenvale
+    formal: 37686
+    informal: 3952
+    turnout: 41638
+    turnout_pct: 83.5
+    primaries:
+      - { party: labor, votes: 15628, pct: 41.47 }
+      - { party: liberal, votes: 9568, pct: 25.39 }
+      - { party: greens, votes: 2194, pct: 5.82 }
+      - { party: others, votes: 10296, pct: 27.32 }
+    two_candidate_preferred:
+      winner:
+        name: Iwan Walters
+        party: labor
+        votes: 21506
+        pct: 57.07
+      runner_up:
+        name: Usman Ghani
+        party: liberal
+        votes: 16180
+        pct: 42.93
+      margin_pp: 7.07
+    two_party_preferred:
+      winner:
+        name: Iwan Walters
+        party: labor
+        votes: 21506
+        pct: 57.07
+      runner_up:
+        name: Usman Ghani
+        party: liberal
+        votes: 16180
+        pct: 42.93
+      margin_pp: 7.07
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/greenvale-district-results"
+      publisher: Victorian Electoral Commission
+      title: Greenvale District results
+      accessed: 2026-09-01
+    first_pref_votes: 37686
+  - slug: hastings
+    formal: 41232
+    informal: 2369
+    turnout: 43601
+    turnout_pct: 89.6
+    primaries:
+      - { party: labor, votes: 15361, pct: 37.26 }
+      - { party: liberal, votes: 16415, pct: 39.81 }
+      - { party: greens, votes: 4118, pct: 9.99 }
+      - { party: others, votes: 5338, pct: 12.95 }
+    two_candidate_preferred:
+      winner:
+        name: Paul Mercurio
+        party: labor
+        votes: 21174
+        pct: 51.35
+      runner_up:
+        name: Briony Hutton
+        party: liberal
+        votes: 20058
+        pct: 48.65
+      margin_pp: 1.35
+    two_party_preferred:
+      winner:
+        name: Paul Mercurio
+        party: labor
+        votes: 21174
+        pct: 51.35
+      runner_up:
+        name: Briony Hutton
+        party: liberal
+        votes: 20058
+        pct: 48.65
+      margin_pp: 1.35
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/hastings-district-results"
+      publisher: Victorian Electoral Commission
+      title: Hastings District results
+      accessed: 2026-09-01
+    first_pref_votes: 41232
+  - slug: hawthorn
+    formal: 44310
+    informal: 1178
+    turnout: 45488
+    turnout_pct: 90.8
+    primaries:
+      - { party: labor, votes: 9799, pct: 22.11 }
+      - { party: liberal, votes: 18728, pct: 42.27 }
+      - { party: greens, votes: 4927, pct: 11.12 }
+      - { party: others, votes: 10856, pct: 24.5 }
+    two_candidate_preferred:
+      winner:
+        name: John Pesutto
+        party: liberal
+        votes: 22927
+        pct: 51.74
+      runner_up:
+        name: John Kennedy
+        party: labor
+        votes: 21383
+        pct: 48.26
+      margin_pp: 1.74
+    two_party_preferred:
+      winner:
+        name: John Pesutto
+        party: liberal
+        votes: 22927
+        pct: 51.74
+      runner_up:
+        name: John Kennedy
+        party: labor
+        votes: 21383
+        pct: 48.26
+      margin_pp: 1.74
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/hawthorn-district-results"
+      publisher: Victorian Electoral Commission
+      title: Hawthorn District results
+      accessed: 2026-09-01
+    first_pref_votes: 44310
+  - slug: ivanhoe
+    formal: 40599
+    informal: 1536
+    turnout: 42135
+    turnout_pct: 89.7
+    primaries:
+      - { party: labor, votes: 17333, pct: 42.69 }
+      - { party: liberal, votes: 12566, pct: 30.95 }
+      - { party: greens, votes: 7808, pct: 19.23 }
+      - { party: others, votes: 2892, pct: 7.12 }
+    two_candidate_preferred:
+      winner:
+        name: Anthony Carbines
+        party: labor
+        votes: 25476
+        pct: 62.75
+      runner_up:
+        name: Bernadette Khoury
+        party: liberal
+        votes: 15123
+        pct: 37.25
+      margin_pp: 12.75
+    two_party_preferred:
+      winner:
+        name: Anthony Carbines
+        party: labor
+        votes: 25476
+        pct: 62.75
+      runner_up:
+        name: Bernadette Khoury
+        party: liberal
+        votes: 15123
+        pct: 37.25
+      margin_pp: 12.75
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/ivanhoe-district-results"
+      publisher: Victorian Electoral Commission
+      title: Ivanhoe District results
+      accessed: 2026-09-01
+    first_pref_votes: 40599
+  - slug: kalkallo
+    formal: 39970
+    informal: 3504
+    turnout: 43474
+    turnout_pct: 83.3
+    primaries:
+      - { party: labor, votes: 21531, pct: 53.87 }
+      - { party: liberal, votes: 9154, pct: 22.9 }
+      - { party: greens, votes: 2116, pct: 5.29 }
+      - { party: others, votes: 7179, pct: 17.96 }
+    two_candidate_preferred:
+      winner:
+        name: Ros Spence
+        party: labor
+        votes: 26561
+        pct: 66.45
+      runner_up:
+        name: Bikram Singh
+        party: liberal
+        votes: 13409
+        pct: 33.55
+      margin_pp: 16.45
+    two_party_preferred:
+      winner:
+        name: Ros Spence
+        party: labor
+        votes: 26561
+        pct: 66.45
+      runner_up:
+        name: Bikram Singh
+        party: liberal
+        votes: 13409
+        pct: 33.55
+      margin_pp: 16.45
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/kalkallo-district-results"
+      publisher: Victorian Electoral Commission
+      title: Kalkallo District results
+      accessed: 2026-09-01
+    first_pref_votes: 39980
+  - slug: kew
+    formal: 43592
+    informal: 1367
+    turnout: 44959
+    turnout_pct: 90.1
+    primaries:
+      - { party: labor, votes: 9896, pct: 22.7 }
+      - { party: liberal, votes: 19321, pct: 44.32 }
+      - { party: greens, votes: 3612, pct: 8.29 }
+      - { party: others, votes: 10763, pct: 24.69 }
+    two_candidate_preferred:
+      winner:
+        name: Jess Wilson
+        party: liberal
+        votes: 23529
+        pct: 53.98
+      runner_up:
+        name: Lucy Skelton
+        party: labor
+        votes: 20063
+        pct: 46.02
+      margin_pp: 3.98
+    two_party_preferred:
+      winner:
+        name: Jess Wilson
+        party: liberal
+        votes: 23529
+        pct: 53.98
+      runner_up:
+        name: Lucy Skelton
+        party: labor
+        votes: 20063
+        pct: 46.02
+      margin_pp: 3.98
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/kew-district-results"
+      publisher: Victorian Electoral Commission
+      title: Kew District results
+      accessed: 2026-09-01
+    first_pref_votes: 43592
+  - slug: kororoit
+    formal: 40373
+    informal: 3683
+    turnout: 44056
+    turnout_pct: 86.3
+    primaries:
+      - { party: labor, votes: 17468, pct: 43.27 }
+      - { party: liberal, votes: 9801, pct: 24.28 }
+      - { party: greens, votes: 2650, pct: 6.56 }
+      - { party: others, votes: 10454, pct: 25.89 }
+    two_candidate_preferred:
+      winner:
+        name: Luba Grigorovitch
+        party: labor
+        votes: 26047
+        pct: 64.52
+      runner_up:
+        name: John Fletcher
+        party: liberal
+        votes: 14326
+        pct: 35.48
+      margin_pp: 14.52
+    two_party_preferred:
+      winner:
+        name: Luba Grigorovitch
+        party: labor
+        votes: 26047
+        pct: 64.52
+      runner_up:
+        name: John Fletcher
+        party: liberal
+        votes: 14326
+        pct: 35.48
+      margin_pp: 14.52
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/kororoit-district-results"
+      publisher: Victorian Electoral Commission
+      title: Kororoit District results
+      accessed: 2026-09-01
+    first_pref_votes: 40373
+  - slug: lara
+    formal: 39512
+    informal: 2677
+    primaries:
+      - { party: labor, votes: 19635, pct: 49.69 }
+      - { party: liberal, votes: 8460, pct: 21.41 }
+      - { party: greens, votes: 4473, pct: 11.32 }
+      - { party: others, votes: 6953, pct: 17.6 }
+    two_candidate_preferred:
+      winner:
+        name: Ella George
+        party: labor
+        votes: 26027
+        pct: 65.87
+      runner_up:
+        name: Ralph Krein
+        party: liberal
+        votes: 13485
+        pct: 34.13
+      margin_pp: 15.87
+    two_party_preferred:
+      winner:
+        name: Ella George
+        party: labor
+        votes: 26027
+        pct: 65.87
+      runner_up:
+        name: Ralph Krein
+        party: liberal
+        votes: 13485
+        pct: 34.13
+      margin_pp: 15.87
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/lara-district-results"
+      publisher: Victorian Electoral Commission
+      title: Lara District results
+      accessed: 2026-09-01
+    first_pref_votes: 39521
+  - slug: laverton
+    formal: 37132
+    informal: 3149
+    primaries:
+      - { party: labor, votes: 17026, pct: 45.85 }
+      - { party: liberal, votes: 8233, pct: 22.17 }
+      - { party: greens, votes: 3496, pct: 9.42 }
+      - { party: others, votes: 8382, pct: 22.57 }
+    two_candidate_preferred:
+      winner:
+        name: Sarah Connolly
+        party: labor
+        votes: 25393
+        pct: 68.39
+      runner_up:
+        name: Raja Reddy
+        party: liberal
+        votes: 11739
+        pct: 31.61
+      margin_pp: 18.39
+    two_party_preferred:
+      winner:
+        name: Sarah Connolly
+        party: labor
+        votes: 25393
+        pct: 68.39
+      runner_up:
+        name: Raja Reddy
+        party: liberal
+        votes: 11739
+        pct: 31.61
+      margin_pp: 18.39
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/laverton-district-results"
+      publisher: Victorian Electoral Commission
+      title: Laverton District results
+      accessed: 2026-09-01
+    first_pref_votes: 37137
+  - slug: lowan
+    formal: 43240
+    informal: 2622
+    turnout: 45862
+    turnout_pct: 89.7
+    primaries:
+      - { party: labor, votes: 8454, pct: 19.55 }
+      - { party: nationals, votes: 25482, pct: 58.93 }
+      - { party: greens, votes: 2575, pct: 5.96 }
+      - { party: others, votes: 6686, pct: 15.46 }
+    two_candidate_preferred:
+      winner:
+        name: Emma Kealy
+        party: nationals
+        votes: 30941
+        pct: 71.56
+      runner_up:
+        name: Mick Monaghan
+        party: labor
+        votes: 12299
+        pct: 28.44
+      margin_pp: 21.56
+    two_party_preferred:
+      winner:
+        name: Emma Kealy
+        party: nationals
+        votes: 30941
+        pct: 71.56
+      runner_up:
+        name: Mick Monaghan
+        party: labor
+        votes: 12299
+        pct: 28.44
+      margin_pp: 21.56
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/lowan-district-results"
+      publisher: Victorian Electoral Commission
+      title: Lowan District results
+      accessed: 2026-09-01
+    first_pref_votes: 43197
+  - slug: macedon
+    formal: 41589
+    informal: 1974
+    turnout: 43563
+    turnout_pct: 90.7
+    primaries:
+      - { party: labor, votes: 17234, pct: 41.44 }
+      - { party: liberal, votes: 12463, pct: 29.97 }
+      - { party: greens, votes: 5214, pct: 12.54 }
+      - { party: one-nation, votes: 1511, pct: 3.63 }
+      - { party: others, votes: 5167, pct: 12.42 }
+    two_candidate_preferred:
+      winner:
+        name: Mary-Anne Thomas
+        party: labor
+        votes: 24762
+        pct: 59.54
+      runner_up:
+        name: Dominic Bonanno
+        party: liberal
+        votes: 16827
+        pct: 40.46
+      margin_pp: 9.54
+    two_party_preferred:
+      winner:
+        name: Mary-Anne Thomas
+        party: labor
+        votes: 24762
+        pct: 59.54
+      runner_up:
+        name: Dominic Bonanno
+        party: liberal
+        votes: 16827
+        pct: 40.46
+      margin_pp: 9.54
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/macedon-district-results"
+      publisher: Victorian Electoral Commission
+      title: Macedon District results
+      accessed: 2026-09-01
+    first_pref_votes: 41589
+  - slug: malvern
+    formal: 40791
+    informal: 1146
+    turnout: 41937
+    turnout_pct: 89.5
+    primaries:
+      - { party: labor, votes: 10266, pct: 26.1 }
+      - { party: liberal, votes: 20768, pct: 52.8 }
+      - { party: greens, votes: 6137, pct: 15.6 }
+      - { party: others, votes: 2163, pct: 5.5 }
+    two_candidate_preferred:
+      winner:
+        name: Michael O'Brien
+        party: liberal
+        votes: 23685
+        pct: 58.06
+      runner_up:
+        name: Darren Natale
+        party: labor
+        votes: 17106
+        pct: 41.94
+      margin_pp: 8.06
+    two_party_preferred:
+      winner:
+        name: Michael O'Brien
+        party: liberal
+        votes: 23685
+        pct: 58.06
+      runner_up:
+        name: Darren Natale
+        party: labor
+        votes: 17106
+        pct: 41.94
+      margin_pp: 8.06
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/malvern-district-results"
+      publisher: Victorian Electoral Commission
+      title: Malvern District results
+      accessed: 2026-09-01
+    first_pref_votes: 39334
+  - slug: melbourne
+    formal: 42519
+    informal: 1485
+    turnout: 44004
+    turnout_pct: 80.7
+    primaries:
+      - { party: labor, votes: 13033, pct: 30.65 }
+      - { party: liberal, votes: 7522, pct: 17.69 }
+      - { party: greens, votes: 15855, pct: 37.29 }
+      - { party: others, votes: 6109, pct: 14.37 }
+    two_candidate_preferred:
+      winner:
+        name: Ellen Sandell
+        party: greens
+        votes: 25593
+        pct: 60.19
+      runner_up:
+        name: Rebecca Thistleton
+        party: labor
+        votes: 16926
+        pct: 39.81
+      margin_pp: 10.19
+    two_party_preferred:
+      winner:
+        name: Rebecca Thistleton
+        party: labor
+        votes: 31895
+        pct: 75.01
+      runner_up:
+        name: George Palackalody
+        party: liberal
+        votes: 10624
+        pct: 24.99
+      margin_pp: 25.01
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/melbourne-district-results"
+      publisher: Victorian Electoral Commission
+      title: Melbourne District results
+      accessed: 2026-09-01
+    first_pref_votes: 42519
+  - slug: melton
+    formal: 37619
+    informal: 4716
+    turnout: 42335
+    turnout_pct: 84.4
+    primaries:
+      - { party: labor, votes: 14193, pct: 37.73 }
+      - { party: liberal, votes: 9155, pct: 24.34 }
+      - { party: greens, votes: 1711, pct: 4.55 }
+      - { party: others, votes: 12560, pct: 33.39 }
+    two_candidate_preferred:
+      winner:
+        name: Steve McGhie
+        party: labor
+        votes: 20538
+        pct: 54.59
+      runner_up:
+        name: Graham Watt
+        party: liberal
+        votes: 17081
+        pct: 45.41
+      margin_pp: 4.59
+    two_party_preferred:
+      winner:
+        name: Steve McGhie
+        party: labor
+        votes: 20538
+        pct: 54.59
+      runner_up:
+        name: Graham Watt
+        party: liberal
+        votes: 17081
+        pct: 45.41
+      margin_pp: 4.59
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/melton-district-results"
+      publisher: Victorian Electoral Commission
+      title: Melton District results
+      accessed: 2026-09-01
+    first_pref_votes: 37619
+  - slug: mildura
+    formal: 38140
+    informal: 3096
+    turnout: 41236
+    turnout_pct: 86
+    primaries:
+      - { party: labor, votes: 2483, pct: 6.51 }
+      - { party: liberal, votes: 7291, pct: 19.12 }
+      - { party: nationals, votes: 9868, pct: 25.87 }
+      - { party: greens, votes: 894, pct: 2.34 }
+      - { party: others, votes: 17604, pct: 46.16 }
+    two_candidate_preferred:
+      winner:
+        name: Jade Benham
+        party: nationals
+        votes: 19520
+        pct: 51.18
+      runner_up:
+        name: Ali Cupper
+        party: independent
+        votes: 18620
+        pct: 48.82
+      margin_pp: 1.18
+    two_party_preferred:
+      winner:
+        name: Jade Benham
+        party: nationals
+        votes: 24454
+        pct: 64.12
+      runner_up:
+        name: Stella Zigouras
+        party: labor
+        votes: 13686
+        pct: 35.88
+      margin_pp: 14.12
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/mildura-district-results"
+      publisher: Victorian Electoral Commission
+      title: Mildura District results
+      accessed: 2026-09-01
+    first_pref_votes: 38140
+  - slug: mill-park
+    formal: 37793
+    informal: 2515
+    primaries:
+      - { party: labor, votes: 18857, pct: 49.9 }
+      - { party: liberal, votes: 9797, pct: 25.92 }
+      - { party: greens, votes: 2761, pct: 7.31 }
+      - { party: others, votes: 6382, pct: 16.89 }
+    two_candidate_preferred:
+      winner:
+        name: Lily D'Ambrosio
+        party: labor
+        votes: 23274
+        pct: 61.58
+      runner_up:
+        name: Paige Yap
+        party: liberal
+        votes: 14519
+        pct: 38.42
+      margin_pp: 11.58
+    two_party_preferred:
+      winner:
+        name: Lily D'Ambrosio
+        party: labor
+        votes: 23274
+        pct: 61.58
+      runner_up:
+        name: Paige Yap
+        party: liberal
+        votes: 14519
+        pct: 38.42
+      margin_pp: 11.58
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/mill-park-district-results"
+      publisher: Victorian Electoral Commission
+      title: Mill Park District results
+      accessed: 2026-09-01
+    first_pref_votes: 37797
+  - slug: monbulk
+    formal: 41797
+    informal: 2063
+    turnout: 43860
+    turnout_pct: 90.4
+    primaries:
+      - { party: labor, votes: 15071, pct: 36.06 }
+      - { party: liberal, votes: 12327, pct: 29.49 }
+      - { party: greens, votes: 6255, pct: 14.97 }
+      - { party: others, votes: 8144, pct: 19.48 }
+    two_candidate_preferred:
+      winner:
+        name: Daniela De Martino
+        party: labor
+        votes: 24056
+        pct: 57.55
+      runner_up:
+        name: Gareth Ward
+        party: liberal
+        votes: 17741
+        pct: 42.45
+      margin_pp: 7.55
+    two_party_preferred:
+      winner:
+        name: Daniela De Martino
+        party: labor
+        votes: 24056
+        pct: 57.55
+      runner_up:
+        name: Gareth Ward
+        party: liberal
+        votes: 17741
+        pct: 42.45
+      margin_pp: 7.55
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/monbulk-district-results"
+      publisher: Victorian Electoral Commission
+      title: Monbulk District results
+      accessed: 2026-09-01
+    first_pref_votes: 41797
+  - slug: mordialloc
+    formal: 44059
+    informal: 2035
+    turnout: 46094
+    turnout_pct: 91
+    primaries:
+      - { party: labor, votes: 19398, pct: 44.03 }
+      - { party: liberal, votes: 13829, pct: 31.39 }
+      - { party: greens, votes: 4526, pct: 10.27 }
+      - { party: others, votes: 6306, pct: 14.31 }
+    two_candidate_preferred:
+      winner:
+        name: Tim Richardson
+        party: labor
+        votes: 25640
+        pct: 58.19
+      runner_up:
+        name: Phillip Pease
+        party: liberal
+        votes: 18419
+        pct: 41.81
+      margin_pp: 8.19
+    two_party_preferred:
+      winner:
+        name: Tim Richardson
+        party: labor
+        votes: 25640
+        pct: 58.19
+      runner_up:
+        name: Phillip Pease
+        party: liberal
+        votes: 18419
+        pct: 41.81
+      margin_pp: 8.19
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/mordialloc-district-results"
+      publisher: Victorian Electoral Commission
+      title: Mordialloc District results
+      accessed: 2026-09-01
+    first_pref_votes: 44059
+  - slug: mornington
+    formal: 42062
+    informal: 1823
+    turnout: 43885
+    turnout_pct: 91.34
+    primaries:
+      - { party: labor, votes: 9246, pct: 21.98 }
+      - { party: liberal, votes: 17910, pct: 42.58 }
+      - { party: greens, votes: 2677, pct: 6.36 }
+      - { party: others, votes: 12229, pct: 29.07 }
+    two_candidate_preferred:
+      winner:
+        name: Chris Crewther
+        party: liberal
+        votes: 21326
+        pct: 50.7
+      runner_up:
+        name: Kate Lardner
+        party: independent
+        votes: 20736
+        pct: 49.3
+      margin_pp: 0.7
+    two_party_preferred:
+      winner:
+        name: Chris Crewther
+        party: liberal
+        votes: 24514
+        pct: 58.28
+      runner_up:
+        name: Georgia Fowler
+        party: labor
+        votes: 17548
+        pct: 41.72
+      margin_pp: 8.28
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/mornington-district-results"
+      publisher: Victorian Electoral Commission
+      title: Mornington District results
+      accessed: 2026-09-01
+    first_pref_votes: 42062
+  - slug: morwell
+    formal: 43261
+    informal: 3526
+    turnout: 46787
+    turnout_pct: 87
+    primaries:
+      - { party: labor, votes: 13601, pct: 31.44 }
+      - { party: liberal, votes: 6710, pct: 15.51 }
+      - { party: nationals, votes: 9902, pct: 22.89 }
+      - { party: greens, votes: 1830, pct: 4.23 }
+      - { party: one-nation, votes: 2648, pct: 6.12 }
+      - { party: others, votes: 8570, pct: 19.81 }
+    two_candidate_preferred:
+      winner:
+        name: Martin Cameron
+        party: nationals
+        votes: 23541
+        pct: 54.42
+      runner_up:
+        name: Kate Maxfield
+        party: labor
+        votes: 19720
+        pct: 45.58
+      margin_pp: 4.42
+    two_party_preferred:
+      winner:
+        name: Martin Cameron
+        party: nationals
+        votes: 23541
+        pct: 54.42
+      runner_up:
+        name: Kate Maxfield
+        party: labor
+        votes: 19720
+        pct: 45.58
+      margin_pp: 4.42
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/morwell-district-results"
+      publisher: Victorian Electoral Commission
+      title: Morwell District results
+      accessed: 2026-09-01
+    first_pref_votes: 43261
+  - slug: mulgrave
+    formal: 37924
+    informal: 3650
+    turnout: 41574
+    turnout_pct: 88.4
+    primaries:
+      - { party: labor, votes: 19365, pct: 51.06 }
+      - { party: liberal, votes: 6528, pct: 17.21 }
+      - { party: greens, votes: 1930, pct: 5.09 }
+      - { party: others, votes: 10148, pct: 26.76 }
+    two_candidate_preferred:
+      winner:
+        name: Daniel Andrews
+        party: labor
+        votes: 23070
+        pct: 60.83
+      runner_up:
+        name: Ian Cook
+        party: independent
+        votes: 14854
+        pct: 39.17
+      margin_pp: 10.83
+    two_party_preferred:
+      winner:
+        name: Daniel Andrews
+        party: labor
+        votes: 22976
+        pct: 60.2
+      runner_up:
+        name: Michael Piastrino
+        party: liberal
+        votes: 15191
+        pct: 39.8
+      margin_pp: 10.2
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/mulgrave-district-results"
+      publisher: Victorian Electoral Commission
+      title: Mulgrave District results
+      accessed: 2026-09-01
+    first_pref_votes: 37971
+  - slug: murray-plains
+    formal: 40181
+    informal: 2647
+    turnout: 42828
+    turnout_pct: 88.1
+    primaries:
+      - { party: labor, votes: 7543, pct: 18.77 }
+      - { party: nationals, votes: 24831, pct: 61.8 }
+      - { party: greens, votes: 1560, pct: 3.88 }
+      - { party: others, votes: 6257, pct: 15.57 }
+    two_candidate_preferred:
+      winner:
+        name: Peter Walsh
+        party: nationals
+        votes: 29483
+        pct: 73.38
+      runner_up:
+        name: Damien Hurrell
+        party: labor
+        votes: 10698
+        pct: 26.62
+      margin_pp: 23.38
+    two_party_preferred:
+      winner:
+        name: Peter Walsh
+        party: nationals
+        votes: 29483
+        pct: 73.38
+      runner_up:
+        name: Damien Hurrell
+        party: labor
+        votes: 10698
+        pct: 26.62
+      margin_pp: 23.38
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/murray-plains-district-results"
+      publisher: Victorian Electoral Commission
+      title: Murray Plains District results
+      accessed: 2026-09-01
+    first_pref_votes: 40191
+  - slug: narracan
+    formal: 37205
+    informal: 2619
+    turnout: 39824
+    turnout_pct: 78.9
+    primaries:
+      - { party: liberal, votes: 16741, pct: 45 }
+      - { party: greens, votes: 4132, pct: 11.11 }
+      - { party: one-nation, votes: 2246, pct: 6.04 }
+      - { party: others, votes: 14086, pct: 37.86 }
+    two_candidate_preferred:
+      winner:
+        name: Wayne Farnham
+        party: liberal
+        votes: 23448
+        pct: 63.02
+      runner_up:
+        name: Tony Wolfe
+        party: independent
+        votes: 13757
+        pct: 36.98
+      margin_pp: 13.02
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/narracan-district-results"
+      publisher: Victorian Electoral Commission
+      title: Narracan District results
+      accessed: 2026-09-01
+    first_pref_votes: 37205
+  - slug: narre-warren-north
+    formal: 41370
+    informal: 3602
+    turnout: 44972
+    turnout_pct: 86.7
+    primaries:
+      - { party: labor, votes: 19350, pct: 46.77 }
+      - { party: liberal, votes: 11291, pct: 27.29 }
+      - { party: greens, votes: 2809, pct: 6.79 }
+      - { party: others, votes: 7920, pct: 19.14 }
+    two_candidate_preferred:
+      winner:
+        name: Belinda Wilson
+        party: labor
+        votes: 24302
+        pct: 58.74
+      runner_up:
+        name: Timothy Dragan
+        party: liberal
+        votes: 17068
+        pct: 41.26
+      margin_pp: 8.74
+    two_party_preferred:
+      winner:
+        name: Belinda Wilson
+        party: labor
+        votes: 24302
+        pct: 58.74
+      runner_up:
+        name: Timothy Dragan
+        party: liberal
+        votes: 17068
+        pct: 41.26
+      margin_pp: 8.74
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/narre-warren-north-district-results"
+      publisher: Victorian Electoral Commission
+      title: Narre Warren North District results
+      accessed: 2026-09-01
+    first_pref_votes: 41370
+  - slug: narre-warren-south
+    formal: 42859
+    informal: 3349
+    primaries:
+      - { party: labor, votes: 20562, pct: 47.98 }
+      - { party: liberal, votes: 12280, pct: 28.65 }
+      - { party: greens, votes: 2836, pct: 6.62 }
+      - { party: others, votes: 7181, pct: 16.75 }
+    two_candidate_preferred:
+      winner:
+        name: Gary Maas
+        party: labor
+        votes: 24994
+        pct: 58.32
+      runner_up:
+        name: Annette Samuel
+        party: liberal
+        votes: 17865
+        pct: 41.68
+      margin_pp: 8.32
+    two_party_preferred:
+      winner:
+        name: Gary Maas
+        party: labor
+        votes: 24994
+        pct: 58.32
+      runner_up:
+        name: Annette Samuel
+        party: liberal
+        votes: 17865
+        pct: 41.68
+      margin_pp: 8.32
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/narre-warren-south-district-results"
+      publisher: Victorian Electoral Commission
+      title: Narre Warren South District results
+      accessed: 2026-09-01
+    first_pref_votes: 42859
+  - slug: nepean
+    formal: 40766
+    informal: 2753
+    primaries:
+      - { party: labor, votes: 13308, pct: 32.64 }
+      - { party: liberal, votes: 19614, pct: 48.11 }
+      - { party: greens, votes: 3576, pct: 8.77 }
+      - { party: others, votes: 4268, pct: 10.47 }
+    two_candidate_preferred:
+      winner:
+        name: Sam Groth
+        party: liberal
+        votes: 22986
+        pct: 56.39
+      runner_up:
+        name: Chris Brayne
+        party: labor
+        votes: 17780
+        pct: 43.61
+      margin_pp: 6.39
+    two_party_preferred:
+      winner:
+        name: Sam Groth
+        party: liberal
+        votes: 22986
+        pct: 56.39
+      runner_up:
+        name: Chris Brayne
+        party: labor
+        votes: 17780
+        pct: 43.61
+      margin_pp: 6.39
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/nepean-district-results"
+      publisher: Victorian Electoral Commission
+      title: Nepean District results
+      accessed: 2026-09-01
+    first_pref_votes: 40766
+  - slug: niddrie
+    formal: 42242
+    informal: 2763
+    turnout: 45005
+    turnout_pct: 90
+    primaries:
+      - { party: labor, votes: 18567, pct: 43.95 }
+      - { party: liberal, votes: 14344, pct: 33.96 }
+      - { party: greens, votes: 3117, pct: 7.38 }
+      - { party: others, votes: 6214, pct: 14.71 }
+    two_candidate_preferred:
+      winner:
+        name: Ben Carroll
+        party: labor
+        votes: 23949
+        pct: 56.69
+      runner_up:
+        name: Alan Youhana
+        party: liberal
+        votes: 18293
+        pct: 43.31
+      margin_pp: 6.69
+    two_party_preferred:
+      winner:
+        name: Ben Carroll
+        party: labor
+        votes: 23949
+        pct: 56.69
+      runner_up:
+        name: Alan Youhana
+        party: liberal
+        votes: 18293
+        pct: 43.31
+      margin_pp: 6.69
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/niddrie-district-results"
+      publisher: Victorian Electoral Commission
+      title: Niddrie District results
+      accessed: 2026-09-01
+    first_pref_votes: 42242
+  - slug: northcote
+    formal: 42642
+    informal: 2445
+    turnout: 45087
+    turnout_pct: 89.5
+    primaries:
+      - { party: labor, votes: 17303, pct: 40.58 }
+      - { party: liberal, votes: 5205, pct: 12.21 }
+      - { party: greens, votes: 12797, pct: 30.01 }
+      - { party: others, votes: 7337, pct: 17.21 }
+    two_candidate_preferred:
+      winner:
+        name: Kat Theophanous
+        party: labor
+        votes: 21413
+        pct: 50.22
+      runner_up:
+        name: Campbell Gome
+        party: greens
+        votes: 21229
+        pct: 49.78
+      margin_pp: 0.22
+    two_party_preferred:
+      winner:
+        name: Kat Theophanous
+        party: labor
+        votes: 34840
+        pct: 81.7
+      runner_up:
+        name: Stewart Todhunter
+        party: liberal
+        votes: 7802
+        pct: 18.3
+      margin_pp: 31.7
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/northcote-district-results"
+      publisher: Victorian Electoral Commission
+      title: Northcote District results
+      accessed: 2026-09-01
+    first_pref_votes: 42642
+  - slug: oakleigh
+    formal: 43910
+    informal: 2000
+    turnout: 45910
+    turnout_pct: 88.4
+    primaries:
+      - { party: labor, votes: 19778, pct: 45.04 }
+      - { party: liberal, votes: 12848, pct: 29.26 }
+      - { party: greens, votes: 7278, pct: 16.57 }
+      - { party: others, votes: 4006, pct: 9.12 }
+    two_candidate_preferred:
+      winner:
+        name: Steve Dimopoulos
+        party: labor
+        votes: 27876
+        pct: 63.48
+      runner_up:
+        name: Jim Grivokostopoulos
+        party: liberal
+        votes: 16034
+        pct: 36.52
+      margin_pp: 13.48
+    two_party_preferred:
+      winner:
+        name: Steve Dimopoulos
+        party: labor
+        votes: 27876
+        pct: 63.48
+      runner_up:
+        name: Jim Grivokostopoulos
+        party: liberal
+        votes: 16034
+        pct: 36.52
+      margin_pp: 13.48
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/oakleigh-district-results"
+      publisher: Victorian Electoral Commission
+      title: Oakleigh District results
+      accessed: 2026-09-01
+    first_pref_votes: 43910
+  - slug: ovens-valley
+    formal: 40382
+    informal: 2114
+    turnout: 42496
+    turnout_pct: 88.3
+    primaries:
+      - { party: labor, votes: 8369, pct: 20.72 }
+      - { party: nationals, votes: 21057, pct: 52.14 }
+      - { party: greens, votes: 3625, pct: 8.98 }
+      - { party: others, votes: 7339, pct: 18.17 }
+    two_candidate_preferred:
+      winner:
+        name: Tim McCurdy
+        party: nationals
+        votes: 27395
+        pct: 67.84
+      runner_up:
+        name: Zuvele Leschen
+        party: labor
+        votes: 12987
+        pct: 32.16
+      margin_pp: 17.84
+    two_party_preferred:
+      winner:
+        name: Tim McCurdy
+        party: nationals
+        votes: 27395
+        pct: 67.84
+      runner_up:
+        name: Zuvele Leschen
+        party: labor
+        votes: 12987
+        pct: 32.16
+      margin_pp: 17.84
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/ovens-valley-district-results"
+      publisher: Victorian Electoral Commission
+      title: Ovens Valley District results
+      accessed: 2026-09-01
+    first_pref_votes: 40390
+  - slug: pakenham
+    formal: 38867
+    informal: 3
+    turnout: 41956
+    turnout_pct: 87.4
+    primaries:
+      - { party: labor, votes: 13151, pct: 33.84 }
+      - { party: liberal, votes: 12605, pct: 32.43 }
+      - { party: greens, votes: 2571, pct: 6.61 }
+      - { party: one-nation, votes: 1321, pct: 3.4 }
+      - { party: others, votes: 9219, pct: 23.72 }
+    two_candidate_preferred:
+      winner:
+        name: Emma Vulin
+        party: labor
+        votes: 19587
+        pct: 50.39
+      runner_up:
+        name: David Farrelly
+        party: liberal
+        votes: 19280
+        pct: 49.61
+      margin_pp: 0.39
+    two_party_preferred:
+      winner:
+        name: Emma Vulin
+        party: labor
+        votes: 19587
+        pct: 50.39
+      runner_up:
+        name: David Farrelly
+        party: liberal
+        votes: 19280
+        pct: 49.61
+      margin_pp: 0.39
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/pakenham-district-results"
+      publisher: Victorian Electoral Commission
+      title: Pakenham District results
+      accessed: 2026-09-01
+    first_pref_votes: 38867
+  - slug: pascoe-vale
+    formal: 40273
+    informal: 2249
+    turnout: 42522
+    turnout_pct: 87.5
+    primaries:
+      - { party: labor, votes: 15611, pct: 38.76 }
+      - { party: liberal, votes: 8461, pct: 21.01 }
+      - { party: greens, votes: 9034, pct: 22.43 }
+      - { party: others, votes: 7167, pct: 17.8 }
+    two_candidate_preferred:
+      winner:
+        name: Anthony Cianflone
+        party: labor
+        votes: 20950
+        pct: 52.02
+      runner_up:
+        name: Angelica Panopoulos
+        party: greens
+        votes: 19323
+        pct: 47.98
+      margin_pp: 2.02
+    two_party_preferred:
+      winner:
+        name: Anthony Cianflone
+        party: labor
+        votes: 29096
+        pct: 72.25
+      runner_up:
+        name: Tom Wright
+        party: liberal
+        votes: 11177
+        pct: 27.75
+      margin_pp: 22.25
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/pascoe-vale-district-results"
+      publisher: Victorian Electoral Commission
+      title: Pascoe Vale District results
+      accessed: 2026-09-01
+    first_pref_votes: 40273
+  - slug: point-cook
+    formal: 39099
+    informal: 4448
+    primaries:
+      - { party: labor, votes: 15657, pct: 40.04 }
+      - { party: liberal, votes: 9651, pct: 24.68 }
+      - { party: greens, votes: 2656, pct: 6.79 }
+      - { party: others, votes: 11137, pct: 28.48 }
+    two_candidate_preferred:
+      winner:
+        name: Mathew Hilakari
+        party: labor
+        votes: 22810
+        pct: 58.34
+      runner_up:
+        name: Angela Newhouse
+        party: liberal
+        votes: 16289
+        pct: 41.66
+      margin_pp: 8.34
+    two_party_preferred:
+      winner:
+        name: Mathew Hilakari
+        party: labor
+        votes: 22810
+        pct: 58.34
+      runner_up:
+        name: Angela Newhouse
+        party: liberal
+        votes: 16289
+        pct: 41.66
+      margin_pp: 8.34
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/point-cook-district-results"
+      publisher: Victorian Electoral Commission
+      title: Point Cook District results
+      accessed: 2026-09-01
+    first_pref_votes: 39101
+  - slug: polwarth
+    formal: 46002
+    informal: 1949
+    turnout: 47951
+    turnout_pct: 90.4
+    primaries:
+      - { party: labor, votes: 13484, pct: 29.31 }
+      - { party: liberal, votes: 19540, pct: 42.48 }
+      - { party: greens, votes: 7661, pct: 16.65 }
+      - { party: others, votes: 5317, pct: 11.56 }
+    two_candidate_preferred:
+      winner:
+        name: Richard Riordan
+        party: liberal
+        votes: 23823
+        pct: 51.79
+      runner_up:
+        name: Hutch Hussein
+        party: labor
+        votes: 22179
+        pct: 48.21
+      margin_pp: 1.79
+    two_party_preferred:
+      winner:
+        name: Richard Riordan
+        party: liberal
+        votes: 23823
+        pct: 51.79
+      runner_up:
+        name: Hutch Hussein
+        party: labor
+        votes: 22179
+        pct: 48.21
+      margin_pp: 1.79
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/polwarth-district-results"
+      publisher: Victorian Electoral Commission
+      title: Polwarth District results
+      accessed: 2026-09-01
+    first_pref_votes: 46002
+  - slug: prahran
+    formal: 39243
+    informal: 1223
+    turnout: 40466
+    turnout_pct: 82.7
+    primaries:
+      - { party: labor, votes: 10421, pct: 26.56 }
+      - { party: liberal, votes: 12198, pct: 31.08 }
+      - { party: greens, votes: 14286, pct: 36.4 }
+      - { party: others, votes: 2338, pct: 5.96 }
+    two_candidate_preferred:
+      winner:
+        name: Sam Hibbins
+        party: greens
+        votes: 24334
+        pct: 62.01
+      runner_up:
+        name: Matthew Lucas
+        party: liberal
+        votes: 14909
+        pct: 37.99
+      margin_pp: 12.01
+    two_party_preferred:
+      winner:
+        name: Wesa Chau
+        party: labor
+        votes: 23966
+        pct: 61.07
+      runner_up:
+        name: Matthew Lucas
+        party: liberal
+        votes: 15277
+        pct: 38.93
+      margin_pp: 11.07
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/prahran-district-results"
+      publisher: Victorian Electoral Commission
+      title: Prahran District results
+      accessed: 2026-09-01
+    first_pref_votes: 39243
+  - slug: preston
+    formal: 39857
+    informal: 3392
+    turnout: 43249
+    turnout_pct: 85.9
+    primaries:
+      - { party: labor, votes: 14999, pct: 37.63 }
+      - { party: liberal, votes: 6883, pct: 17.27 }
+      - { party: greens, votes: 6027, pct: 15.12 }
+      - { party: others, votes: 11948, pct: 29.98 }
+    two_candidate_preferred:
+      winner:
+        name: Nathan Lambert
+        party: labor
+        votes: 20761
+        pct: 52.09
+      runner_up:
+        name: Patchouli Paterson
+        party: greens
+        votes: 19096
+        pct: 47.91
+      margin_pp: 2.09
+    two_party_preferred:
+      winner:
+        name: Nathan Lambert
+        party: labor
+        votes: 27769
+        pct: 69.67
+      runner_up:
+        name: Amanda Paliouras
+        party: liberal
+        votes: 12088
+        pct: 30.33
+      margin_pp: 19.67
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/preston-district-results"
+      publisher: Victorian Electoral Commission
+      title: Preston District results
+      accessed: 2026-09-01
+    first_pref_votes: 39857
+  - slug: richmond
+    formal: 39731
+    informal: 1381
+    turnout: 41112
+    turnout_pct: 85.1
+    primaries:
+      - { party: labor, votes: 13037, pct: 32.81 }
+      - { party: liberal, votes: 7456, pct: 18.77 }
+      - { party: greens, votes: 13771, pct: 34.66 }
+      - { party: others, votes: 5467, pct: 13.76 }
+    two_candidate_preferred:
+      winner:
+        name: Gabrielle de Vietri
+        party: greens
+        votes: 22771
+        pct: 57.24
+      runner_up:
+        name: Lauren O'Dwyer
+        party: labor
+        votes: 17012
+        pct: 42.76
+      margin_pp: 7.24
+    two_party_preferred:
+      winner:
+        name: Lauren O'Dwyer
+        party: labor
+        votes: 29451
+        pct: 74.13
+      runner_up:
+        name: Lucas Moon
+        party: liberal
+        votes: 10280
+        pct: 25.87
+      margin_pp: 24.13
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/richmond-district-results"
+      publisher: Victorian Electoral Commission
+      title: Richmond District results
+      accessed: 2026-09-01
+    first_pref_votes: 39731
+  - slug: ringwood
+    formal: 45753
+    informal: 1676
+    turnout: 47429
+    turnout_pct: 91.1
+    primaries:
+      - { party: labor, votes: 17851, pct: 39.02 }
+      - { party: liberal, votes: 15467, pct: 33.81 }
+      - { party: greens, votes: 7105, pct: 15.53 }
+      - { party: others, votes: 5330, pct: 11.65 }
+    two_candidate_preferred:
+      winner:
+        name: Will Fowles
+        party: labor
+        votes: 26322
+        pct: 57.53
+      runner_up:
+        name: Cynthia Watson
+        party: liberal
+        votes: 19431
+        pct: 42.47
+      margin_pp: 7.53
+    two_party_preferred:
+      winner:
+        name: Will Fowles
+        party: labor
+        votes: 26322
+        pct: 57.53
+      runner_up:
+        name: Cynthia Watson
+        party: liberal
+        votes: 19431
+        pct: 42.47
+      margin_pp: 7.53
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/ringwood-district-results"
+      publisher: Victorian Electoral Commission
+      title: Ringwood District results
+      accessed: 2026-09-01
+    first_pref_votes: 45753
+  - slug: ripon
+    formal: 42341
+    informal: 3111
+    turnout: 45452
+    turnout_pct: 89.5
+    primaries:
+      - { party: labor, votes: 16321, pct: 38.55 }
+      - { party: liberal, votes: 15305, pct: 36.15 }
+      - { party: greens, votes: 2524, pct: 5.96 }
+      - { party: others, votes: 8191, pct: 19.35 }
+    two_candidate_preferred:
+      winner:
+        name: Martha Haylett
+        party: labor
+        votes: 22438
+        pct: 52.99
+      runner_up:
+        name: Louise Staley
+        party: liberal
+        votes: 19903
+        pct: 47.01
+      margin_pp: 2.99
+    two_party_preferred:
+      winner:
+        name: Martha Haylett
+        party: labor
+        votes: 22438
+        pct: 52.99
+      runner_up:
+        name: Louise Staley
+        party: liberal
+        votes: 19903
+        pct: 47.01
+      margin_pp: 2.99
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/ripon-district-results"
+      publisher: Victorian Electoral Commission
+      title: Ripon District results
+      accessed: 2026-09-01
+    first_pref_votes: 42341
+  - slug: rowville
+    formal: 43369
+    informal: 2070
+    turnout: 45439
+    turnout_pct: 91.4
+    primaries:
+      - { party: labor, votes: 14283, pct: 32.93 }
+      - { party: liberal, votes: 17600, pct: 40.58 }
+      - { party: greens, votes: 3055, pct: 7.04 }
+      - { party: others, votes: 8431, pct: 19.44 }
+    two_candidate_preferred:
+      winner:
+        name: Kim Wells
+        party: liberal
+        votes: 23274
+        pct: 53.67
+      runner_up:
+        name: Mannie Kaur Verma
+        party: labor
+        votes: 20095
+        pct: 46.33
+      margin_pp: 3.67
+    two_party_preferred:
+      winner:
+        name: Kim Wells
+        party: liberal
+        votes: 23274
+        pct: 53.67
+      runner_up:
+        name: Mannie Kaur Verma
+        party: labor
+        votes: 20095
+        pct: 46.33
+      margin_pp: 3.67
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/rowville-district-results"
+      publisher: Victorian Electoral Commission
+      title: Rowville District results
+      accessed: 2026-09-01
+    first_pref_votes: 43369
+  - slug: sandringham
+    formal: 40510
+    informal: 1701
+    turnout: 42211
+    turnout_pct: 91.2
+    primaries:
+      - { party: labor, votes: 10426, pct: 25.74 }
+      - { party: liberal, votes: 18783, pct: 46.37 }
+      - { party: greens, votes: 5949, pct: 14.69 }
+      - { party: others, votes: 5354, pct: 13.22 }
+    two_candidate_preferred:
+      winner:
+        name: Brad Rowswell
+        party: liberal
+        votes: 22294
+        pct: 55.03
+      runner_up:
+        name: Bettina Prescott
+        party: labor
+        votes: 18216
+        pct: 44.97
+      margin_pp: 5.03
+    two_party_preferred:
+      winner:
+        name: Brad Rowswell
+        party: liberal
+        votes: 22294
+        pct: 55.03
+      runner_up:
+        name: Bettina Prescott
+        party: labor
+        votes: 18216
+        pct: 44.97
+      margin_pp: 5.03
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/sandringham-district-results"
+      publisher: Victorian Electoral Commission
+      title: Sandringham District results
+      accessed: 2026-09-01
+    first_pref_votes: 40512
+  - slug: shepparton
+    formal: 41301
+    informal: 2663
+    turnout: 43964
+    turnout_pct: 86.21
+    primaries:
+      - { party: labor, votes: 3285, pct: 7.95 }
+      - { party: liberal, votes: 8491, pct: 20.56 }
+      - { party: nationals, votes: 13242, pct: 32.06 }
+      - { party: greens, votes: 1056, pct: 2.56 }
+      - { party: others, votes: 15227, pct: 36.87 }
+    two_candidate_preferred:
+      winner:
+        name: Kim O'Keeffe
+        party: nationals
+        votes: 23455
+        pct: 56.79
+      runner_up:
+        name: Suzanna Sheed
+        party: independent
+        votes: 17846
+        pct: 43.21
+      margin_pp: 6.79
+    two_party_preferred:
+      winner:
+        name: Kim O'Keeffe
+        party: nationals
+        votes: 30704
+        pct: 74.34
+      runner_up:
+        name: Liam Cowan
+        party: labor
+        votes: 10597
+        pct: 25.66
+      margin_pp: 24.34
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/shepparton-district-results"
+      publisher: Victorian Electoral Commission
+      title: Shepparton District results
+      accessed: 2026-09-01
+    first_pref_votes: 41301
+  - slug: south-barwon
+    formal: 45184
+    informal: 1637
+    turnout: 46821
+    turnout_pct: 90.8
+    primaries:
+      - { party: labor, votes: 19969, pct: 44.19 }
+      - { party: liberal, votes: 14516, pct: 32.13 }
+      - { party: greens, votes: 5719, pct: 12.66 }
+      - { party: others, votes: 4980, pct: 11.02 }
+    two_candidate_preferred:
+      winner:
+        name: Darren Cheeseman
+        party: labor
+        votes: 27020
+        pct: 59.8
+      runner_up:
+        name: Andrew Katos
+        party: liberal
+        votes: 18164
+        pct: 40.2
+      margin_pp: 9.8
+    two_party_preferred:
+      winner:
+        name: Darren Cheeseman
+        party: labor
+        votes: 27020
+        pct: 59.8
+      runner_up:
+        name: Andrew Katos
+        party: liberal
+        votes: 18164
+        pct: 40.2
+      margin_pp: 9.8
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/south-barwon-district-results"
+      publisher: Victorian Electoral Commission
+      title: South Barwon District results
+      accessed: 2026-09-01
+    first_pref_votes: 45184
+  - slug: south-west-coast
+    formal: 45496
+    informal: 2723
+    primaries:
+      - { party: labor, votes: 9640, pct: 21.19 }
+      - { party: liberal, votes: 19517, pct: 42.9 }
+      - { party: greens, votes: 2457, pct: 5.4 }
+      - { party: others, votes: 13882, pct: 30.51 }
+    two_candidate_preferred:
+      winner:
+        name: Roma Britnell
+        party: liberal
+        votes: 26410
+        pct: 58.05
+      runner_up:
+        name: Kylie Gaston
+        party: labor
+        votes: 19086
+        pct: 41.95
+      margin_pp: 8.05
+    two_party_preferred:
+      winner:
+        name: Roma Britnell
+        party: liberal
+        votes: 26410
+        pct: 58.05
+      runner_up:
+        name: Kylie Gaston
+        party: labor
+        votes: 19086
+        pct: 41.95
+      margin_pp: 8.05
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/south-west-coast-district-results"
+      publisher: Victorian Electoral Commission
+      title: South-West Coast District results
+      accessed: 2026-09-01
+    first_pref_votes: 45496
+  - slug: st-albans
+    formal: 35716
+    informal: 3638
+    turnout: 39354
+    turnout_pct: 84.7
+    primaries:
+      - { party: labor, votes: 15094, pct: 42.26 }
+      - { party: liberal, votes: 9066, pct: 25.38 }
+      - { party: greens, votes: 2416, pct: 6.76 }
+      - { party: others, votes: 9140, pct: 25.59 }
+    two_candidate_preferred:
+      winner:
+        name: Natalie Suleyman
+        party: labor
+        votes: 21274
+        pct: 59.56
+      runner_up:
+        name: Maria Kerr
+        party: liberal
+        votes: 14442
+        pct: 40.44
+      margin_pp: 9.56
+    two_party_preferred:
+      winner:
+        name: Natalie Suleyman
+        party: labor
+        votes: 21274
+        pct: 59.56
+      runner_up:
+        name: Maria Kerr
+        party: liberal
+        votes: 14442
+        pct: 40.44
+      margin_pp: 9.56
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/st-albans-district-results"
+      publisher: Victorian Electoral Commission
+      title: St Albans District results
+      accessed: 2026-09-01
+    first_pref_votes: 35716
+  - slug: sunbury
+    formal: 37706
+    informal: 2620
+    turnout: 40326
+    turnout_pct: 88.5
+    primaries:
+      - { party: labor, votes: 16253, pct: 43.1 }
+      - { party: liberal, votes: 11895, pct: 31.55 }
+      - { party: greens, votes: 2459, pct: 6.52 }
+      - { party: others, votes: 7099, pct: 18.83 }
+    two_candidate_preferred:
+      winner:
+        name: Josh Bull
+        party: labor
+        votes: 21271
+        pct: 56.41
+      runner_up:
+        name: Simmone Cottom
+        party: liberal
+        votes: 16435
+        pct: 43.59
+      margin_pp: 6.41
+    two_party_preferred:
+      winner:
+        name: Josh Bull
+        party: labor
+        votes: 21271
+        pct: 56.41
+      runner_up:
+        name: Simmone Cottom
+        party: liberal
+        votes: 16435
+        pct: 43.59
+      margin_pp: 6.41
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/sunbury-district-results"
+      publisher: Victorian Electoral Commission
+      title: Sunbury District results
+      accessed: 2026-09-01
+    first_pref_votes: 37706
+  - slug: sydenham
+    formal: 43662
+    informal: 3594
+    turnout: 47256
+    turnout_pct: 89
+    primaries:
+      - { party: labor, votes: 18978, pct: 43.47 }
+      - { party: liberal, votes: 12661, pct: 29 }
+      - { party: greens, votes: 2547, pct: 5.83 }
+      - { party: others, votes: 9478, pct: 21.71 }
+    two_candidate_preferred:
+      winner:
+        name: Natalie Hutchins
+        party: labor
+        votes: 25657
+        pct: 58.76
+      runner_up:
+        name: Joseph Cullia
+        party: liberal
+        votes: 18005
+        pct: 41.24
+      margin_pp: 8.76
+    two_party_preferred:
+      winner:
+        name: Natalie Hutchins
+        party: labor
+        votes: 25657
+        pct: 58.76
+      runner_up:
+        name: Joseph Cullia
+        party: liberal
+        votes: 18005
+        pct: 41.24
+      margin_pp: 8.76
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/sydenham-district-results"
+      publisher: Victorian Electoral Commission
+      title: Sydenham District results
+      accessed: 2026-09-01
+    first_pref_votes: 43664
+  - slug: tarneit
+    formal: 38977
+    informal: 2947
+    turnout: 41924
+    turnout_pct: 85.9
+    primaries:
+      - { party: labor, votes: 18173, pct: 46.62 }
+      - { party: liberal, votes: 10438, pct: 26.78 }
+      - { party: greens, votes: 2883, pct: 7.4 }
+      - { party: others, votes: 7484, pct: 19.2 }
+    two_candidate_preferred:
+      winner:
+        name: Dylan Wight
+        party: labor
+        votes: 24276
+        pct: 62.28
+      runner_up:
+        name: Preet Singh
+        party: liberal
+        votes: 14701
+        pct: 37.72
+      margin_pp: 12.28
+    two_party_preferred:
+      winner:
+        name: Dylan Wight
+        party: labor
+        votes: 24276
+        pct: 62.28
+      runner_up:
+        name: Preet Singh
+        party: liberal
+        votes: 14701
+        pct: 37.72
+      margin_pp: 12.28
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/tarneit-district-results"
+      publisher: Victorian Electoral Commission
+      title: Tarneit District results
+      accessed: 2026-09-01
+    first_pref_votes: 38978
+  - slug: thomastown
+    formal: 37429
+    informal: 3151
+    turnout: 40580
+    turnout_pct: 85.2
+    primaries:
+      - { party: labor, votes: 19396, pct: 51.82 }
+      - { party: liberal, votes: 9003, pct: 24.05 }
+      - { party: greens, votes: 2557, pct: 6.83 }
+      - { party: others, votes: 6520, pct: 17.42 }
+    two_candidate_preferred:
+      winner:
+        name: Bronwyn Halfpenny
+        party: labor
+        votes: 24628
+        pct: 65.8
+      runner_up:
+        name: Gurdawar Singh
+        party: liberal
+        votes: 12801
+        pct: 34.2
+      margin_pp: 15.8
+    two_party_preferred:
+      winner:
+        name: Bronwyn Halfpenny
+        party: labor
+        votes: 24628
+        pct: 65.8
+      runner_up:
+        name: Gurdawar Singh
+        party: liberal
+        votes: 12801
+        pct: 34.2
+      margin_pp: 15.8
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/thomastown-district-results"
+      publisher: Victorian Electoral Commission
+      title: Thomastown District results
+      accessed: 2026-09-01
+    first_pref_votes: 37476
+  - slug: warrandyte
+    formal: 45075
+    informal: 1582
+    turnout: 46657
+    turnout_pct: 91.6
+    primaries:
+      - { party: labor, votes: 14946, pct: 33.16 }
+      - { party: liberal, votes: 21344, pct: 47.35 }
+      - { party: greens, votes: 5283, pct: 11.72 }
+      - { party: others, votes: 3502, pct: 7.77 }
+    two_candidate_preferred:
+      winner:
+        name: Ryan Smith
+        party: liberal
+        votes: 24482
+        pct: 54.31
+      runner_up:
+        name: Naomi Oakley
+        party: labor
+        votes: 20593
+        pct: 45.69
+      margin_pp: 4.31
+    two_party_preferred:
+      winner:
+        name: Ryan Smith
+        party: liberal
+        votes: 24482
+        pct: 54.31
+      runner_up:
+        name: Naomi Oakley
+        party: labor
+        votes: 20593
+        pct: 45.69
+      margin_pp: 4.31
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/warrandyte-district-results"
+      publisher: Victorian Electoral Commission
+      title: Warrandyte District results
+      accessed: 2026-09-01
+    first_pref_votes: 45075
+  - slug: wendouree
+    formal: 42172
+    informal: 2399
+    turnout: 44571
+    turnout_pct: 88.3
+    primaries:
+      - { party: labor, votes: 20059, pct: 47.56 }
+      - { party: liberal, votes: 12548, pct: 29.75 }
+      - { party: greens, votes: 4386, pct: 10.4 }
+      - { party: others, votes: 5182, pct: 12.29 }
+    two_candidate_preferred:
+      winner:
+        name: Juliana Addison
+        party: labor
+        votes: 26109
+        pct: 61.91
+      runner_up:
+        name: Samantha McIntosh
+        party: liberal
+        votes: 16063
+        pct: 38.09
+      margin_pp: 11.91
+    two_party_preferred:
+      winner:
+        name: Juliana Addison
+        party: labor
+        votes: 26109
+        pct: 61.91
+      runner_up:
+        name: Samantha McIntosh
+        party: liberal
+        votes: 16063
+        pct: 38.09
+      margin_pp: 11.91
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/wendouree-district-results"
+      publisher: Victorian Electoral Commission
+      title: Wendouree District results
+      accessed: 2026-09-01
+    first_pref_votes: 42175
+  - slug: werribee
+    formal: 38603
+    informal: 4156
+    turnout: 42759
+    turnout_pct: 85.6
+    primaries:
+      - { party: labor, votes: 17512, pct: 45.36 }
+      - { party: liberal, votes: 9779, pct: 25.33 }
+      - { party: greens, votes: 2613, pct: 6.77 }
+      - { party: others, votes: 8699, pct: 22.53 }
+    two_candidate_preferred:
+      winner:
+        name: Tim Pallas
+        party: labor
+        votes: 23517
+        pct: 60.92
+      runner_up:
+        name: Mia Shaw
+        party: liberal
+        votes: 15086
+        pct: 39.08
+      margin_pp: 10.92
+    two_party_preferred:
+      winner:
+        name: Tim Pallas
+        party: labor
+        votes: 23517
+        pct: 60.92
+      runner_up:
+        name: Mia Shaw
+        party: liberal
+        votes: 15086
+        pct: 39.08
+      margin_pp: 10.92
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/werribee-district-results"
+      publisher: Victorian Electoral Commission
+      title: Werribee District results
+      accessed: 2026-09-01
+    first_pref_votes: 38603
+  - slug: williamstown
+    formal: 38974
+    informal: 1878
+    turnout: 40852
+    turnout_pct: 88.9
+    primaries:
+      - { party: labor, votes: 16173, pct: 41.5 }
+      - { party: liberal, votes: 10928, pct: 28.04 }
+      - { party: greens, votes: 6013, pct: 15.43 }
+      - { party: others, votes: 5860, pct: 15.04 }
+    two_candidate_preferred:
+      winner:
+        name: Melissa Horne
+        party: labor
+        votes: 24726
+        pct: 63.44
+      runner_up:
+        name: Daria Kellander
+        party: liberal
+        votes: 14248
+        pct: 36.56
+      margin_pp: 13.44
+    two_party_preferred:
+      winner:
+        name: Melissa Horne
+        party: labor
+        votes: 24726
+        pct: 63.44
+      runner_up:
+        name: Daria Kellander
+        party: liberal
+        votes: 14248
+        pct: 36.56
+      margin_pp: 13.44
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/williamstown-district-results"
+      publisher: Victorian Electoral Commission
+      title: Williamstown District results
+      accessed: 2026-09-01
+    first_pref_votes: 38974
+  - slug: yan-yean
+    formal: 39415
+    informal: 2475
+    turnout: 41890
+    turnout_pct: 88.5
+    primaries:
+      - { party: labor, votes: 16328, pct: 41.43 }
+      - { party: liberal, votes: 13361, pct: 33.9 }
+      - { party: greens, votes: 2537, pct: 6.44 }
+      - { party: others, votes: 7193, pct: 18.25 }
+    two_candidate_preferred:
+      winner:
+        name: Lauren Kathage
+        party: labor
+        votes: 21390
+        pct: 54.27
+      runner_up:
+        name: Richard Welch
+        party: liberal
+        votes: 18025
+        pct: 45.73
+      margin_pp: 4.27
+    two_party_preferred:
+      winner:
+        name: Lauren Kathage
+        party: labor
+        votes: 21390
+        pct: 54.27
+      runner_up:
+        name: Richard Welch
+        party: liberal
+        votes: 18025
+        pct: 45.73
+      margin_pp: 4.27
+    source:
+      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/yan-yean-district-results"
+      publisher: Victorian Electoral Commission
+      title: Yan Yean District results
+      accessed: 2026-09-01
+    first_pref_votes: 39419

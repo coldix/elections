@@ -20,6 +20,7 @@ const files = [
   ["summary.json", null, "Headline counts, regenerated on every build.", null],
   ["polls.json", "polls.csv", "Sourced statewide primary-vote polls (eligible and excluded).", null],
   ["poll-average.json", null, "Weighted primary-vote average with uncertainty bands (not a forecast).", null],
+  ["district-results-2022.json", "district-results-2022.csv", "2022 Assembly first-preference and two-candidate / two-party preferred figures for all 88 districts. Historical results, not a 2026 forecast.", 88],
   ["issues.json", null, "Policy issue taxonomy and jurisdiction notes for the comparison matrix.", null],
   ["coalitions.json", null, "Reversible display relationships for combined Coalition matrix columns; registered parties remain separate.", null],
   ["policies.json", "policies.csv", "Sourced party policy claims by issue (sparse ledger; no ratings).", null],
@@ -32,8 +33,8 @@ const schema = {
     "Individually sourced records of announced, endorsed, formally nominated, withdrawn " +
     "and disendorsed candidates for the 2026 Victorian state election, plus districts, " +
     "Legislative Council members, parties, confirmed retirements, a sourced statewide " +
-    "poll ledger with a transparent primary-vote average, and a policy issues, Coalition " +
-    "display relationships and party-claims ledger.",
+    "poll ledger with a transparent primary-vote average, 2022 Assembly district results, " +
+    "and a policy issues, Coalition display relationships and party-claims ledger.",
   url: `${SITE.url}/data`,
   license: "https://creativecommons.org/licenses/by/4.0/",
   isAccessibleForFree: true,

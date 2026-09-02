@@ -120,6 +120,114 @@ function validatePolls(election, dir) {
   return pollCount;
 }
 
+const RESULT_PRIMARY_PARTIES = new Set([
+  "labor", "liberal", "nationals", "greens", "one-nation", "others",
+]);
+const RESULT_FINISH_PARTIES = new Set([
+  "labor", "liberal", "nationals", "greens", "one-nation", "independent",
+]);
+
+function checkPreferredFinish(file, slug, label, finish, required) {
+  if (!finish) {
+    if (required) fail(file, `${slug}: ${label} required`);
+    return;
+  }
+  for (const side of ["winner", "runner_up"]) {
+    const c = finish[side];
+    if (!c?.name) fail(file, `${slug}: ${label}.${side}.name required`);
+    if (!RESULT_FINISH_PARTIES.has(c?.party)) {
+      fail(file, `${slug}: ${label}.${side} unknown party ${c?.party}`);
+    }
+    if (!Number.isInteger(c?.votes) || c.votes < 0) {
+      fail(file, `${slug}: ${label}.${side}.votes`);
+    }
+    if (typeof c?.pct !== "number" || c.pct < 0 || c.pct > 100) {
+      fail(file, `${slug}: ${label}.${side}.pct`);
+    }
+  }
+  if (typeof finish.margin_pp !== "number") {
+    fail(file, `${slug}: ${label} margin_pp required`);
+  } else if (finish.winner?.pct != null) {
+    const expected = finish.winner.pct - 50;
+    if (Math.abs(finish.margin_pp - expected) > 0.08) {
+      fail(file, `${slug}: ${label} margin_pp ${finish.margin_pp} != ${expected.toFixed(2)}`);
+    }
+  }
+  if (finish.winner?.pct != null && finish.runner_up?.pct != null) {
+    const sum = finish.winner.pct + finish.runner_up.pct;
+    if (Math.abs(sum - 100) > 0.08) {
+      fail(file, `${slug}: ${label} pct sum ${sum.toFixed(2)}`);
+    }
+  }
+}
+
+function validateDistrictResults2022(election, dir, districtSlugs) {
+  const path = join(dir, "district-results-2022.yaml");
+  const file = `${election}/district-results-2022.yaml`;
+  if (!(existsSync(path) && statSync(path).isFile())) return 0;
+  const raw = parse(readFileSync(path, "utf8"));
+  if (raw?.statewide) {
+    if (!Array.isArray(raw.statewide.primaries) || raw.statewide.primaries.length === 0) {
+      fail(file, "statewide.primaries required");
+    } else {
+      let pctSum = 0;
+      for (const row of raw.statewide.primaries) {
+        if (!RESULT_PRIMARY_PARTIES.has(row.party)) {
+          fail(file, `statewide: unknown primary party ${row.party}`);
+        }
+        if (typeof row.pct !== "number") fail(file, `statewide: ${row.party} pct`);
+        pctSum += row.pct;
+      }
+      if (Math.abs(pctSum - 100) > 0.8) {
+        fail(file, `statewide primaries pct sum ${pctSum.toFixed(2)}`);
+      }
+    }
+    checkSource(file, "statewide", raw.statewide.source);
+  }
+  const rows = raw?.districts;
+  if (!Array.isArray(rows)) {
+    fail(file, "districts array required");
+    return 0;
+  }
+  const seen = new Set();
+  for (const d of rows) {
+    if (!d?.slug) {
+      fail(file, "district missing slug");
+      continue;
+    }
+    if (!districtSlugs.has(d.slug)) fail(file, `${d.slug}: unknown district`);
+    if (seen.has(d.slug)) fail(file, `${d.slug}: duplicate`);
+    seen.add(d.slug);
+    if (!Number.isInteger(d.formal) || d.formal < 1) fail(file, `${d.slug}: formal votes required`);
+    if (!Array.isArray(d.primaries) || d.primaries.length === 0) {
+      fail(file, `${d.slug}: primaries required`);
+    } else {
+      let pctSum = 0;
+      for (const row of d.primaries) {
+        if (!RESULT_PRIMARY_PARTIES.has(row.party)) {
+          fail(file, `${d.slug}: unknown primary party ${row.party}`);
+        }
+        if (!Number.isInteger(row.votes) || row.votes < 0) fail(file, `${d.slug}: ${row.party} votes`);
+        if (typeof row.pct !== "number") fail(file, `${d.slug}: ${row.party} pct`);
+        pctSum += row.pct;
+      }
+      if (Math.abs(pctSum - 100) > 0.8) fail(file, `${d.slug}: primaries pct sum ${pctSum.toFixed(2)}`);
+    }
+    checkPreferredFinish(file, d.slug, "two_candidate_preferred", d.two_candidate_preferred, true);
+    checkPreferredFinish(file, d.slug, "two_party_preferred", d.two_party_preferred, false);
+    checkSource(file, d.slug, d.source);
+    const vecUrl =
+      `https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/${d.slug}-district-results`;
+    if (d.source?.url && d.source.url !== vecUrl) {
+      fail(file, `${d.slug}: source.url must be the VEC district results page`);
+    }
+  }
+  if (seen.size !== districtSlugs.size) {
+    fail(file, `expected ${districtSlugs.size} districts, got ${seen.size}`);
+  }
+  return rows.length;
+}
+
 
 function validateIssuesPolicies(election, dir, load, partySlugs) {
   const JURISDICTIONS = [
@@ -578,10 +686,14 @@ for (const election of readdirSync(DATA_DIR)) {
   // polls (optional directory) — see docs/poll-methodology.md
   const pollCount = validatePolls(election, dir);
 
+  // Historical 2022 Assembly results (optional file; required to cover every
+  // district when present). Not a 2026 forecast.
+  const resultCount = validateDistrictResults2022(election, dir, districtSlugs);
+
   const { issueCount, policyCount } = validateIssuesPolicies(election, dir, load, partySlugs);
 
   console.log(
-    `${election}: ${districts.length} districts, ${regions.length} regions, ${parties.length} parties, ${count} candidates, ${pollCount} polls, ${issueCount} issues, ${policyCount} policies`
+    `${election}: ${districts.length} districts, ${regions.length} regions, ${parties.length} parties, ${count} candidates, ${pollCount} polls, ${resultCount} district-results-2022, ${issueCount} issues, ${policyCount} policies`
   );
 }
 

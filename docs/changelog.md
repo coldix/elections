@@ -6,6 +6,14 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
+## 2026-09-02 — 2022 results on every Assembly district page
+
+| Area | What shipped |
+|---|---|
+| **2022 results** | Each `/elections/vic/2026/districts/:slug` page shows the 2022 first-preference vote and two-candidate preferred finish, plus Labor–Coalition 2PP when the VEC published one. Bass is Labor 50.24% to Liberal 49.76%. Brunswick’s 2CP is Greens versus Labor |
+| **Not a forecast** | No uniform swing, likely winner, pendulum or seat total. A statewide strip compares 2022 primaries with the current tracker average and says it is not applied to the seat (ADR-17). One Nation was 0.28% of the 2022 Assembly primary |
+| **Data** | `data/vic2026/district-results-2022.yaml` (88 districts, VEC URLs). Exports `district-results-2022.json` / `.csv` |
+
 ## 2026-09-01 — Federal poll catch-up; What's new page
 
 | Area | What shipped |

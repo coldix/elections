@@ -54,6 +54,7 @@ Calendar entries and placeholder paths must remain one-to-one; CI enforces this.
 - individually sourced candidate status histories
 - retirements
 - public primary-vote polls
+- 2022 Assembly district results (first preferences + 2CP/2PP; ADR-17)
 - policy issues and sourced party positions
 
 Policy rules: [policy-methodology.md](policy-methodology.md) (ADR-11).

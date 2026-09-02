@@ -293,3 +293,35 @@ need maximum neutrality and source clarity.
 **Consequences.** Do not add slots to candidate, district, party, policy,
 matrix, methodology, data or legal pages. Do not add third-party ad pixels.
 Privacy and about copy must stay accurate if placements change.
+
+## ADR-17: Historical 2022 district results, not seat projections (2026-09-01)
+
+**Decision.** Each Victorian Assembly district page publishes the **2022
+first-preference and two-candidate preferred (2CP)** result for that seat,
+plus a **two-party preferred (2PP)** Labor–Coalition count when the VEC
+published one. An optional statewide strip compares 2022 Assembly primaries
+with the current Victorian tracker average. That strip is labelled as
+**statewide context, not a seat model**. The product does **not** apply a
+uniform swing, reallocate 2022 preferences from the poll average, name a
+2026 likely winner, or publish a pendulum.
+
+**Why.** Classic ALP–Coalition 2PP is a poor 2026 headline (ADR-10): One
+Nation was 0.28% of the 2022 Assembly primary and is a large share of the
+current tracker average, and many seats did not finish Labor versus
+Coalition (Greens–Labor, Nationals–Independent, Liberal–Independent). A
+uniform 2PP swing from current statewide polling would invent a contest
+that is not on the ballot. Historical VEC figures are sourced facts that
+belong on the district page.
+
+**Rules**
+
+- Data lives in `data/vic2026/district-results-2022.yaml`. Each district
+  cites the VEC district results URL. Wikipedia is discovery only (ADR-14).
+- 2CP is required; ALP–Coalition 2PP is optional (Narracan has no 2PP).
+- The sitting-member line may note that the current MLA is not the 2022
+  winner. By-election YAML is out of scope for this ADR.
+- Polls stay primary-vote only. Do not derive a 2026 2PP or seat total
+  from this ledger.
+
+**Consequences.** District pages show last-election facts. Forecasting,
+MRP, seat totals and how-to-vote remain out of scope (`scope.md`).

@@ -1,11 +1,17 @@
 ---
 import Base from "../../layouts/Base.astro";
 import SourceLink from "../../components/SourceLink.astro";
+import DistrictResult2022 from "../../components/DistrictResult2022.astro";
 import {
   loadElection,
   LIVE_STATUSES,
   STATUS_LABELS,
 } from "../../../../scripts/lib/data.mjs";
+import { loadPolls, computePollAverage } from "../../../../scripts/lib/polls.mjs";
+import {
+  loadDistrictResults2022,
+  resultForDistrict,
+} from "../../../../scripts/lib/district-results.mjs";
 import { SITE, partyColour, formatDate } from "../../lib/site.mjs";
 
 export async function getStaticPaths() {
@@ -16,6 +22,9 @@ export async function getStaticPaths() {
 const data = loadElection("vic2026");
 const district = data.districts.find((d) => d.slug === Astro.props.slug);
 const region = data.regions.find((r) => r.slug === district.region);
+const results2022 = loadDistrictResults2022("vic2026");
+const result2022 = resultForDistrict(district.slug, results2022);
+const pollAverage = computePollAverage(loadPolls("vic2026"));
 
 const live = district.candidates
   .filter((c) => LIVE_STATUSES.includes(c.status))
@@ -84,6 +93,17 @@ const schema = {
             </p>
           ))}
         </div>
+      )
+    }
+
+    {
+      result2022 && (
+        <DistrictResult2022
+          result={result2022}
+          incumbentName={district.incumbent}
+          pollAverage={pollAverage}
+          statewide={results2022?.statewide}
+        />
       )
     }
 

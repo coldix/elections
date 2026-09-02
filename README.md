@@ -39,7 +39,8 @@ Other jurisdictions keep permanent outline URLs that expand in place later.
 ```
 
 88 Assembly districts, eight Council regions, progressive sourced candidates,
-polls and policy matrix. Open data: `/data/vic2026/`.
+polls, policy matrix, and 2022 first-preference / 2CP results on each district
+page (historical facts, not a 2026 forecast). Open data: `/data/vic2026/`.
 
 ### NSW 2027 (sitting members)
 
@@ -115,7 +116,7 @@ Full rules: [docs/methodology.md](docs/methodology.md),
 data/
   election-calendar.yaml          national election calendar
   election-placeholders.yaml      outline / chamber structure facts
-  vic2026/                        full Victorian ledger (candidates, polls, policies)
+  vic2026/                        full Victorian ledger (candidates, polls, policies, 2022 results)
   nsw2027/                        NSW sitting members (state-foundation)
   federal-49/                     federal sitting members, polls, policies
 

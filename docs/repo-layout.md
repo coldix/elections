@@ -38,7 +38,7 @@ data/
 ├── LICENSE                       CC BY 4.0 for data
 ├── election-calendar.yaml        next Australian elections and date certainty
 ├── election-placeholders.yaml    chamber structure for outline + dedicated pages
-├── vic2026/                      full Victorian ledger (candidates, polls, policies)
+├── vic2026/                      full Victorian ledger (candidates, polls, policies, 2022 results)
 ├── nsw2027/                      NSW sitting members (kind: state-foundation)
 │   ├── election.yaml
 │   ├── districts.yaml            93 Assembly districts
@@ -70,7 +70,8 @@ schema/
 ├── candidate.schema.json
 ├── poll.schema.json
 ├── issue.schema.json
-└── policy.schema.json
+├── policy.schema.json
+└── district-result-2022.schema.json
 ```
 
 ## `scripts/`
@@ -91,6 +92,7 @@ scripts/
 └── lib/
     ├── data.mjs                 election loader and derived figures
     ├── polls.mjs                poll loader and average
+    ├── district-results.mjs     2022 Vic Assembly results (historical)
     ├── policies.mjs             policy matrix and exports
     ├── ledger-index.mjs
     └── scan-fetch.mjs

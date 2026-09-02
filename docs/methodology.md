@@ -137,6 +137,23 @@ details. Only information already public in a political context may be used.
 If occupation or background is filled, it should be checkable against a public
 source such as a campaign biography, party page or news profile.
 
+## Historical Assembly results (Victoria 2022)
+
+Each Assembly district page may publish the **2022 first-preference vote**
+and the **two-candidate preferred (2CP)** finish for that seat, with a
+Labor–Coalition **two-party preferred (2PP)** count when the VEC published
+one. These are last-election facts on the current boundaries.
+
+Rules:
+
+- Cite the VEC district results page as the source of truth. Wikipedia may
+  be used to discover figures; it is not the durable citation (ADR-14).
+- 2CP is who actually finished. It is not always Labor versus Coalition.
+- A statewide comparison of 2022 primaries with the current tracker average
+  is context only. It is not applied as a swing to the seat.
+- Do not publish a 2026 likely winner, uniform swing, MRP, or seat total
+  from this ledger (ADR-17, ADR-10).
+
 ## Corrections
 
 - Errors are corrected by a new commit; history is never rewritten.

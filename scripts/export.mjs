@@ -32,6 +32,11 @@ import {
 } from "./lib/state-foundation.mjs";
 import { loadPolls, computePollAverage, POLL_CAVEAT } from "./lib/polls.mjs";
 import {
+  loadDistrictResults2022,
+  flattenDistrictResults,
+  RESULT_CAVEAT,
+} from "./lib/district-results.mjs";
+import {
   loadIssues,
   loadPolicies,
   loadCoalitions,
@@ -357,6 +362,32 @@ for (const id of listElections()) {
     )
   );
 
+  const districtResults = loadDistrictResults2022(id);
+  const resultFiles = [];
+  if (districtResults) {
+    write("district-results-2022.json", {
+      generated: new Date().toISOString(),
+      caveat: RESULT_CAVEAT,
+      methodology: "docs/methodology.md",
+      ...districtResults,
+    });
+    writeFileSync(
+      join(out, "district-results-2022.csv"),
+      csv(
+        flattenDistrictResults(districtResults),
+        [
+          "slug", "formal", "informal", "turnout",
+          "labor_pct", "liberal_pct", "nationals_pct", "greens_pct", "onp_pct", "others_pct",
+          "tcp_winner_name", "tcp_winner_party", "tcp_winner_pct",
+          "tcp_runner_name", "tcp_runner_party", "tcp_runner_pct", "tcp_margin_pp",
+          "tpp_winner_party", "tpp_winner_pct", "tpp_runner_party", "tpp_runner_pct",
+          "source_url",
+        ]
+      )
+    );
+    resultFiles.push("district-results-2022.json", "district-results-2022.csv");
+  }
+
   // Policy matrix + issues ledger (secondary product; may be sparse)
   const issues = loadIssues(id);
   const policies = loadPolicies(id);
@@ -444,6 +475,7 @@ for (const id of listElections()) {
       "issues.json", "coalitions.json", "policies.json",
       "districts.csv", "candidates.csv", "retirements.csv", "council-members.csv",
       "polls.csv", "policies.csv",
+      ...resultFiles,
     ],
     polls: polls.length,
     poll_average_status: pollAverage.status,
@@ -453,7 +485,7 @@ for (const id of listElections()) {
   });
 
   console.log(
-    `${id}: exported ${summary.candidates} candidates, ${polls.length} polls, ${issues.length} issues, ${coalitions.length} coalition ledger(s), ${policies.length} policies -> site/public/data/${id}/`
+    `${id}: exported ${summary.candidates} candidates, ${polls.length} polls, ${districtResults ? districtResults.districts.length : 0} district-results-2022, ${issues.length} issues, ${coalitions.length} coalition ledger(s), ${policies.length} policies -> site/public/data/${id}/`
   );
 }
 

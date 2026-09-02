@@ -1,0 +1,249 @@
+---
+/**
+ * Historical 2022 Assembly result for one district.
+ * Facts only — not a 2026 swing or forecast.
+ */
+import SourceLink from "./SourceLink.astro";
+import { partyColour, VIC2026 } from "../lib/site.mjs";
+import { partyResultLabel } from "../../../scripts/lib/district-results.mjs";
+
+const { result, incumbentName, pollAverage, statewide } = Astro.props;
+const tcp = result.two_candidate_preferred;
+const tpp = result.two_party_preferred;
+const tcpIsAlpCoalition =
+  tcp &&
+  new Set([tcp.winner.party, tcp.runner_up.party]).has("labor") &&
+  (tcp.winner.party === "liberal" ||
+    tcp.winner.party === "nationals" ||
+    tcp.runner_up.party === "liberal" ||
+    tcp.runner_up.party === "nationals");
+
+const winnerName = tcp?.winner?.name?.toLowerCase().replace(/[^a-z]/g, "") ?? "";
+const sittingName = (incumbentName ?? "").toLowerCase().replace(/[^a-z]/g, "");
+const sittingChanged = winnerName && sittingName && winnerName !== sittingName;
+
+function pollPct(key) {
+  const v = pollAverage?.primaries?.[key];
+  return typeof v === "number" ? v : null;
+}
+
+function statewidePct(key) {
+  const rows = statewide?.primaries ?? [];
+  if (key === "lnp") {
+    return (
+      (rows.find((r) => r.party === "liberal")?.pct ?? 0) +
+      (rows.find((r) => r.party === "nationals")?.pct ?? 0)
+    );
+  }
+  return rows.find((r) => r.party === key)?.pct ?? null;
+}
+
+const contextRows = [
+  { key: "alp", label: "Labor", colour: "labor", y2022: statewidePct("labor"), now: pollPct("alp") },
+  { key: "lnp", label: "Coalition", colour: "coalition", y2022: statewidePct("lnp"), now: pollPct("lnp") },
+  { key: "onp", label: "One Nation", colour: "one-nation", y2022: statewidePct("one-nation"), now: pollPct("onp") },
+  { key: "grn", label: "Greens", colour: "greens", y2022: statewidePct("greens"), now: pollPct("grn") },
+  { key: "oth", label: "Others", colour: "independent", y2022: statewidePct("others"), now: pollPct("others") },
+];
+---
+
+<section class="result-2022" aria-labelledby="result-2022-h">
+  <h2 id="result-2022-h">Last election (2022)</h2>
+  <p class="muted">
+    Official result on these boundaries. This is not a forecast of 2026 and is not a
+    uniform swing applied to current polls.
+  </p>
+
+  {
+    tcp && (
+      <div class="tcp">
+        <p class="tcp-kicker">
+          Two-candidate preferred
+          {!tcpIsAlpCoalition && <span> — not Labor versus Coalition</span>}
+        </p>
+        <p class="tcp-line">
+          <strong>{tcp.winner.name}</strong>
+          <span class="muted"> ({partyResultLabel(tcp.winner.party)})</span>
+          {" "}
+          <span class="mono">{tcp.winner.pct.toFixed(2)}%</span>
+          <span class="muted"> to </span>
+          <strong>{tcp.runner_up.name}</strong>
+          <span class="muted"> ({partyResultLabel(tcp.runner_up.party)})</span>
+          {" "}
+          <span class="mono">{tcp.runner_up.pct.toFixed(2)}%</span>
+        </p>
+        <div
+          class="tcp-bar"
+          style={`--w:${tcp.winner.pct}%;--win:${partyColour(tcp.winner.party)};--lose:${partyColour(tcp.runner_up.party)}`}
+          aria-hidden="true"
+        >
+          <span></span>
+          <span></span>
+        </div>
+        <p class="muted">
+          Margin {tcp.margin_pp.toFixed(2)} pp.
+          {" "}
+          <a href={`${VIC2026}/voting#preferences`}>What 2CP means</a>.
+        </p>
+      </div>
+    )
+  }
+
+  {
+    tpp && tcp && (tpp.winner.party !== tcp.winner.party || tpp.runner_up.party !== tcp.runner_up.party) && (
+      <p class="muted tpp-note">
+        Separate Labor–Coalition two-party preferred count:
+        {" "}
+        {partyResultLabel(tpp.winner.party)} {tpp.winner.pct.toFixed(2)}% to
+        {" "}
+        {partyResultLabel(tpp.runner_up.party)} {tpp.runner_up.pct.toFixed(2)}%.
+      </p>
+    )
+  }
+
+  {
+    sittingChanged && (
+      <p class="notice" role="note">
+        The sitting member is no longer the 2022 winner. A by-election or mid-term
+        replacement has occurred since.
+      </p>
+    )
+  }
+
+  <div class="table-scroll">
+    <table class="data">
+      <caption>2022 first-preference vote</caption>
+      <thead>
+        <tr>
+          <th scope="col">Party</th>
+          <th scope="col" class="num">Votes</th>
+          <th scope="col" class="num">%</th>
+        </tr>
+      </thead>
+      <tbody>
+        {result.primaries.map((row) => (
+          <tr>
+            <th scope="row">
+              <span class="swatch" style={`--party-colour:${partyColour(row.party === "others" ? "independent" : row.party)}`} aria-hidden="true" />
+              {partyResultLabel(row.party)}
+            </th>
+            <td class="num mono">{row.votes.toLocaleString("en-AU")}</td>
+            <td class="num mono">{row.pct.toFixed(1)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {
+    result.formal && (
+      <p class="muted formal-line">
+        Formal votes {result.formal.toLocaleString("en-AU")}
+        {result.informal != null ? ` · informal ${result.informal.toLocaleString("en-AU")}` : ""}.
+      </p>
+    )
+  }
+
+  {
+    pollAverage?.status === "ok" && statewide && (
+      <div class="context">
+        <h3>Statewide picture, not this seat</h3>
+        <p class="muted">
+          Recent Victorian tracker average versus 2022 Assembly first preferences statewide.
+          One Nation was barely on the 2022 Assembly ballot. These figures are not applied
+          as a swing to the 2CP above.
+        </p>
+        <div class="table-scroll">
+          <table class="data">
+            <thead>
+              <tr>
+                <th scope="col">Party</th>
+                <th scope="col" class="num">2022</th>
+                <th scope="col" class="num">Recent polls</th>
+              </tr>
+            </thead>
+            <tbody>
+              {contextRows.map((row) => (
+                <tr>
+                  <th scope="row">
+                    <span class="swatch" style={`--party-colour:${partyColour(row.colour)}`} aria-hidden="true" />
+                    {row.label}
+                  </th>
+                  <td class="num mono">{row.y2022 != null ? `${Number(row.y2022).toFixed(1)}%` : "—"}</td>
+                  <td class="num mono">{row.now != null ? `${Number(row.now).toFixed(1)}%` : "—"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">
+          <a href={`${VIC2026}/polls`}>Victorian poll average</a>
+        </p>
+      </div>
+    )
+  }
+
+  <p class="muted source-line">
+    Source: <SourceLink source={result.source} />
+  </p>
+</section>
+
+<style>
+  .result-2022 {
+    margin: 2rem 0 2.5rem;
+    max-width: 42rem;
+  }
+  .tcp-kicker {
+    margin: 0 0 0.25rem;
+    font-size: 0.78rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .tcp-line {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+  .tcp-bar {
+    display: flex;
+    height: 0.55rem;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 0.35rem 0 0.7rem;
+    background: var(--rule);
+  }
+  .tcp-bar > span:first-child {
+    width: var(--w);
+    background: var(--win);
+  }
+  .tcp-bar > span:last-child {
+    flex: 1;
+    background: var(--lose);
+  }
+  .tpp-note { margin: 0.5rem 0 1rem; }
+  .swatch {
+    display: inline-block;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 999px;
+    background: var(--party-colour);
+    margin-right: 0.4rem;
+    vertical-align: middle;
+  }
+  caption {
+    text-align: left;
+    font-weight: 650;
+    margin-bottom: 0.4rem;
+  }
+  .formal-line { margin: 0.55rem 0 0; }
+  .context {
+    margin-top: 1.5rem;
+  }
+  .context h3 {
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+  .source-line { margin-top: 0.85rem; }
+  .notice { margin: 1rem 0; }
+</style>

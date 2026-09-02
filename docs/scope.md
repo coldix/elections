@@ -42,6 +42,8 @@ Site (static):
 Secondary products (implemented; not required for original kill criteria):
 - [x] Poll average + inventory
 - [x] Policy matrix, issue comparisons, party policy profiles, key differences
+- [x] 2022 Assembly district results (first preferences + 2CP/2PP) on each
+  district page — historical facts, not a 2026 projection (ADR-17)
 
 ## Explicitly out of scope (first release)
 

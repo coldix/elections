@@ -15,7 +15,7 @@ broken.
 | What's new | `/latest` | [changelog.md](changelog.md), [poll-methodology.md](poll-methodology.md) |
 | Upcoming elections | `/elections` | [methodology.md](methodology.md) |
 | Victoria 2026 (full) | `/elections/vic/2026` | [methodology.md](methodology.md) |
-| Assembly and districts | `/elections/vic/2026/assembly`, `/elections/vic/2026/districts/*` | [methodology.md](methodology.md) |
+| Assembly and districts | `/elections/vic/2026/assembly`, `/elections/vic/2026/districts/*` | [methodology.md](methodology.md), ADR-17 |
 | Council and regions | `/elections/vic/2026/council`, `/elections/vic/2026/regions/*` | [methodology.md](methodology.md) |
 | Parties and policies | `/elections/vic/2026/parties/*`, `/elections/vic/2026/policies/*` | [policy-methodology.md](policy-methodology.md) |
 | Polls (Vic) | `/elections/vic/2026/polls` | [poll-methodology.md](poll-methodology.md) |

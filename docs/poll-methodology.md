@@ -43,6 +43,10 @@ Headline outputs:
 Not in v1 average: preferred premier, approvals, 2PP/3PP headlines, MRP,
 seat projections, invented preference flows.
 
+District pages may show **2022 Assembly first preferences and 2CP** next to
+the current statewide tracker average as labelled context. That is not a
+seat model and is not part of the average (ADR-17).
+
 ### Display-only two-bloc grouping
 
 The `/polls` page may show a **Left / Right** graphic derived from the same

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://electiontracker.au/schema/district-result-2022.schema.json",
+  "title": "2022 Victorian Assembly district results file",
+  "description": "Historical first-preference and two-candidate / two-party preferred figures for all 88 Assembly districts. Runtime validation is in scripts/validate.mjs. Not a 2026 forecast.",
+  "type": "object",
+  "required": ["election_day", "districts"],
+  "properties": {
+    "election_day": { "type": "string", "format": "date" },
+    "boundaries": { "type": "string" },
+    "statewide": {
+      "type": "object",
+      "required": ["primaries", "source"],
+      "properties": {
+        "formal": { "type": "integer", "minimum": 1 },
+        "two_party_preferred": {
+          "type": "object",
+          "properties": {
+            "labor_pct": { "type": "number" },
+            "coalition_pct": { "type": "number" }
+          }
+        },
+        "primaries": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/primaryRow" }
+        },
+        "source": { "$ref": "#/$defs/source" }
+      }
+    },
+    "districts": {
+      "type": "array",
+      "minItems": 88,
+      "maxItems": 88,
+      "items": { "$ref": "#/$defs/district" }
+    }
+  },
+  "$defs": {
+    "district": {
+      "type": "object",
+      "required": ["slug", "formal", "primaries", "two_candidate_preferred", "source"],
+      "properties": {
+        "slug": { "type": "string", "minLength": 1 },
+        "formal": { "type": "integer", "minimum": 1 },
+        "informal": { "type": "integer", "minimum": 0 },
+        "turnout": { "type": "integer", "minimum": 1 },
+        "turnout_pct": { "type": "number" },
+        "first_pref_votes": { "type": "integer", "minimum": 1 },
+        "primaries": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/primaryRow" }
+        },
+        "two_candidate_preferred": { "$ref": "#/$defs/finish" },
+        "two_party_preferred": { "$ref": "#/$defs/finish" },
+        "source": { "$ref": "#/$defs/source" }
+      }
+    },
+    "primaryRow": {
+      "type": "object",
+      "required": ["party", "votes", "pct"],
+      "properties": {
+        "party": {
+          "type": "string",
+          "enum": ["labor", "liberal", "nationals", "greens", "one-nation", "others"]
+        },
+        "votes": { "type": "integer", "minimum": 0 },
+        "pct": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "finish": {
+      "type": "object",
+      "required": ["winner", "runner_up", "margin_pp"],
+      "properties": {
+        "winner": { "$ref": "#/$defs/candidateShare" },
+        "runner_up": { "$ref": "#/$defs/candidateShare" },
+        "margin_pp": { "type": "number" }
+      }
+    },
+    "candidateShare": {
+      "type": "object",
+      "required": ["name", "party", "votes", "pct"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "party": {
+          "type": "string",
+          "enum": ["labor", "liberal", "nationals", "greens", "one-nation", "independent"]
+        },
+        "votes": { "type": "integer", "minimum": 0 },
+        "pct": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["url", "publisher", "accessed"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "publisher": { "type": "string" },
+        "title": { "type": "string" },
+        "published": { "type": "string", "format": "date" },
+        "accessed": { "type": "string", "format": "date" }
+      }
+    }
+  }
+}
