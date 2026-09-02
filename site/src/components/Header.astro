@@ -1,22 +1,9 @@
 ---
-import { SITE, OZE_MONTHLY_POLL, VIC2026, FEDERAL_49 } from "../lib/site.mjs";
-const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+import { SITE, VIC2026 } from "../lib/site.mjs";
+import { navFor } from "../lib/nav.mjs";
+
+const nav = navFor(Astro.url.pathname);
 const VIC = VIC2026;
-const nav = [
-  { href: "/elections", label: "Upcoming elections", exact: true, featured: true },
-  { href: "/latest", label: "What's new", exact: true },
-  { href: VIC, label: "Victoria 2026" },
-  { href: `${VIC}/assembly`, label: "Assembly" },
-  { href: `${VIC}/council`, label: "Council" },
-  { href: `${VIC}/parties`, label: "Parties" },
-  { href: `${VIC}/voting`, label: "Voting" },
-  { href: `${VIC}/polls`, label: "Vic polls" },
-  { href: `${FEDERAL_49}/polls`, label: "Federal polls" },
-  { href: `${VIC}/data`, label: "Open data" },
-  { href: "/methodology", label: "Methodology" },
-  { href: "/about", label: "About" },
-];
-const isCurrent = (item) => item.exact ? path === item.href : path === item.href || path.startsWith(item.href + "/");
 ---
 
 <header class="site-header no-print">
@@ -28,26 +15,50 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
         <span class="brand-sub">by {SITE.publisher}</span>
       </span>
     </a>
+
+    <nav class="desktop-nav" aria-label="Site">
+      <ul>
+        {nav.global.map((item) => (
+          <li>
+            <a href={item.href} aria-current={item.current ? "page" : undefined}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
     <div class="header-end">
+      <details class="more-drawer desktop-more">
+        <summary class="more-toggle">More</summary>
+        <nav class="flyout" aria-label="More">
+          <ul>
+            {nav.more.map((item) => (
+              <li>
+                <a href={item.href} aria-current={item.current ? "page" : undefined} rel={item.external ? "noopener" : undefined}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </details>
+
       <details class="nav-drawer">
         <summary class="nav-toggle" aria-label="Open menu">
           <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
           <span class="nav-toggle-label">Menu</span>
         </summary>
         <nav class="primary-nav" aria-label="Primary">
+          <p class="nav-kicker">Trackers</p>
           <ul>
-            <li>
-              <a class="nav-survey" href={OZE_MONTHLY_POLL.url}>Survey</a>
-            </li>
-            {nav.map((item) => (
+            {nav.global.map((item) => (
               <li>
-                <a
-                  href={item.href}
-                  class={item.featured ? "featured-nav" : undefined}
-                  aria-current={isCurrent(item) ? "page" : undefined}
-                >
-                  {item.label}
-                </a>
+                <a href={item.href} aria-current={item.current ? "page" : undefined}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+          <p class="nav-kicker">More</p>
+          <ul>
+            {nav.more.map((item) => (
+              <li>
+                <a href={item.href} class={item.label === "Survey" ? "nav-survey" : undefined} aria-current={item.current ? "page" : undefined} rel={item.external ? "noopener" : undefined}>{item.label}</a>
               </li>
             ))}
           </ul>
@@ -63,6 +74,25 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
       </button>
     </div>
   </div>
+
+  {
+    nav.election && (
+      <div class="section-bar">
+        <div class="wrap section-bar-inner">
+          <a class="section-kicker" href={nav.election.hub}>{nav.election.label}</a>
+          <nav aria-label={`${nav.election.label} sections`}>
+            <ul>
+              {nav.sections.map((item) => (
+                <li>
+                  <a href={item.href} aria-current={item.current ? "page" : undefined}>{item.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    )
+  }
 </header>
 
 <script is:inline define:vars={{ VIC }}>
@@ -87,15 +117,17 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
     apply(current());
     if (btn) btn.addEventListener("click", function () { apply(current() === "dark" ? "light" : "dark"); });
 
-    var drawer = document.querySelector(".nav-drawer");
-    if (drawer) {
-      var toggle = drawer.querySelector(".nav-toggle");
-      function syncToggleLabel() {
+    function wireDrawer(drawer) {
+      if (!drawer) return;
+      var toggle = drawer.querySelector("summary");
+      function sync() {
         if (!toggle) return;
-        toggle.setAttribute("aria-label", drawer.open ? "Close menu" : "Open menu");
+        if (drawer.classList.contains("nav-drawer")) {
+          toggle.setAttribute("aria-label", drawer.open ? "Close menu" : "Open menu");
+        }
       }
-      syncToggleLabel();
-      drawer.addEventListener("toggle", syncToggleLabel);
+      sync();
+      drawer.addEventListener("toggle", sync);
       document.addEventListener("click", function (event) {
         if (!drawer.open) return;
         if (!drawer.contains(event.target)) drawer.removeAttribute("open");
@@ -104,9 +136,8 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
         if (event.key === "Escape" && drawer.open) drawer.removeAttribute("open");
       });
     }
+    document.querySelectorAll(".nav-drawer, .more-drawer").forEach(wireDrawer);
 
-    // Source templates retain their original short links. Rewrite them in dev;
-    // the production build also rewrites the static HTML before deployment.
     document.addEventListener("DOMContentLoaded", function () {
       if (!location.pathname.startsWith(VIC)) return;
       var prefixes = ["assembly", "council", "districts", "regions", "parties", "policies", "polls", "open-seats", "voting"];
@@ -129,58 +160,240 @@ const isCurrent = (item) => item.exact ? path === item.href : path === item.href
 </script>
 
 <style>
-  .site-header { border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 20; }
-  .bar { display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; padding-block: 0.7rem; }
-  .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; min-width: 0; }
+  .site-header {
+    border-bottom: 1px solid var(--rule);
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .bar {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    padding-block: 0.65rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--ink);
+    text-decoration: none;
+    min-width: 0;
+  }
   .brand-mark { width: 2.15rem; height: 2.15rem; border-radius: 50%; flex: none; }
   .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
   .brand-text strong { font-size: 0.98rem; letter-spacing: -0.015em; font-weight: 660; }
   .brand-sub { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
-  .header-end { display: flex; flex-wrap: nowrap; align-items: center; gap: 0.65rem; margin-left: auto; }
-  .nav-drawer { position: relative; display: inline-block; flex: none; }
-  .nav-toggle { display: inline-flex; align-items: center; gap: 0.45rem; list-style: none; cursor: pointer; margin: 0; padding: 0.34rem 0.7rem; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); font: inherit; font-size: 0.82rem; font-weight: 650; line-height: 1.2; box-shadow: var(--shadow); user-select: none; }
+
+  .desktop-nav { display: none; margin-left: auto; }
+  .desktop-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .desktop-nav a {
+    display: inline-block;
+    padding: 0.4rem 0.7rem;
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 560;
+    border-radius: 999px;
+    letter-spacing: -0.01em;
+  }
+  .desktop-nav a:hover { color: var(--ink); background: var(--accent-wash); }
+  .desktop-nav a[aria-current="page"] {
+    color: var(--accent-ink);
+    background: var(--accent-wash);
+    font-weight: 650;
+  }
+
+  .header-end { display: flex; flex-wrap: nowrap; align-items: center; gap: 0.55rem; margin-left: auto; }
+
+  .more-drawer, .nav-drawer { position: relative; display: inline-block; flex: none; }
+  .more-toggle, .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    list-style: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0.34rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 650;
+    line-height: 1.2;
+    box-shadow: var(--shadow);
+    user-select: none;
+  }
+  .more-toggle::-webkit-details-marker,
   .nav-toggle::-webkit-details-marker { display: none; }
+  .more-drawer[open] .more-toggle,
   .nav-drawer[open] .nav-toggle { border-color: var(--accent); background: var(--accent-wash); }
   .nav-toggle-bars { display: flex; flex-direction: column; justify-content: space-between; width: 1rem; height: 0.72rem; }
   .nav-toggle-bars span { display: block; height: 2px; border-radius: 1px; background: currentColor; }
-  .primary-nav { display: none; }
+
+  .desktop-more { display: none; }
+  .flyout, .primary-nav { display: none; }
+  .more-drawer[open] .flyout,
   .nav-drawer[open] .primary-nav {
     display: block;
     position: absolute;
     right: 0;
     top: calc(100% + 0.45rem);
-    min-width: 16.5rem;
+    min-width: 15.5rem;
     max-height: min(70vh, 32rem);
     overflow: auto;
     padding: 0.55rem;
     border: 1px solid var(--rule-strong);
-    border-radius: 0.65rem;
+    border-radius: 0.75rem;
     background: var(--surface);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lift);
     z-index: 30;
   }
-  .nav-drawer[open] .primary-nav ul { display: flex; flex-direction: column; gap: 0.15rem; list-style: none; margin: 0; padding: 0; }
-  .nav-drawer[open] .primary-nav a { display: block; padding: 0.5rem 0.65rem; color: var(--ink-2); text-decoration: none; font-size: 0.9rem; font-weight: 520; border-radius: 0.4rem; }
-  .nav-drawer[open] .primary-nav a:hover { color: var(--ink); background: var(--accent-wash); }
-  .nav-drawer[open] .primary-nav a[aria-current="page"] { color: var(--ink); background: var(--accent-wash); font-weight: 650; }
-  .nav-drawer[open] .primary-nav a.nav-survey {
+  .flyout ul, .primary-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.12rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .flyout a, .primary-nav a {
+    display: block;
+    padding: 0.48rem 0.65rem;
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 520;
+    border-radius: 0.45rem;
+  }
+  .flyout a:hover, .primary-nav a:hover { color: var(--ink); background: var(--accent-wash); }
+  .flyout a[aria-current="page"], .primary-nav a[aria-current="page"] {
+    color: var(--ink);
+    background: var(--accent-wash);
+    font-weight: 650;
+  }
+  .nav-kicker {
+    margin: 0.55rem 0.35rem 0.2rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .nav-kicker:first-child { margin-top: 0.15rem; }
+  .primary-nav a.nav-survey {
     display: flex;
     justify-content: center;
-    margin-bottom: 0.25rem;
+    margin-top: 0.2rem;
     border: 1px solid var(--accent);
     background: var(--accent);
     color: #fff;
     font-weight: 650;
   }
-  .nav-drawer[open] .primary-nav a.nav-survey:hover { background: var(--accent-ink); color: #fff; }
-  .theme-toggle { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0; padding: 0.28rem 0.7rem 0.28rem 0.55rem; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink-2); font: inherit; font-size: 0.78rem; font-weight: 600; line-height: 1.2; cursor: pointer; box-shadow: var(--shadow); flex: none; }
+  .primary-nav a.nav-survey:hover { background: var(--accent-ink); color: #fff; }
+
+  .section-bar {
+    border-top: 1px solid var(--rule);
+    background: var(--surface-2);
+  }
+  .section-bar-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 2.55rem;
+  }
+  .section-kicker {
+    flex: none;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .section-kicker:hover { color: var(--accent-ink); }
+  .section-bar nav { min-width: 0; flex: 1; }
+  .section-bar ul {
+    display: flex;
+    gap: 0.15rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .section-bar ul::-webkit-scrollbar { display: none; }
+  .section-bar a {
+    display: inline-flex;
+    align-items: center;
+    height: 2.55rem;
+    padding: 0 0.85rem;
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 560;
+    white-space: nowrap;
+    box-shadow: inset 0 -2px 0 transparent;
+  }
+  .section-bar a:hover { color: var(--ink); }
+  .section-bar a[aria-current="page"] {
+    color: var(--accent-ink);
+    font-weight: 650;
+    box-shadow: inset 0 -2px 0 var(--accent);
+  }
+
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0.28rem 0.7rem 0.28rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+    background: var(--surface);
+    color: var(--ink-2);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    flex: none;
+  }
   .theme-toggle:hover { color: var(--ink); border-color: var(--accent); background: var(--accent-wash); }
   .theme-icon { display: inline-flex; width: 1rem; height: 1rem; position: relative; }
   .theme-icon svg { position: absolute; inset: 0; width: 1rem; height: 1rem; }
   .icon-sun { display: none; } .icon-moon { display: block; }
   :global(:root[data-theme="dark"]) .icon-sun { display: block; }
   :global(:root[data-theme="dark"]) .icon-moon { display: none; }
-  @media (prefers-color-scheme: dark) { :global(:root:not([data-theme])) .icon-sun { display: block; } :global(:root:not([data-theme])) .icon-moon { display: none; } }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme])) .icon-sun { display: block; }
+    :global(:root:not([data-theme])) .icon-moon { display: none; }
+  }
+
+  @media (min-width: 64rem) {
+    .desktop-nav { display: block; }
+    .desktop-more { display: inline-block; }
+    .nav-drawer { display: none; }
+    .header-end { margin-left: 0; }
+  }
   @media (max-width: 36rem) { .theme-label { display: none; } }
-  @media (max-width: 30rem) { .brand-text strong { font-size: 0.9rem; } }
+  @media (max-width: 30rem) {
+    .brand-text strong { font-size: 0.9rem; }
+    .section-kicker { display: none; }
+  }
 </style>

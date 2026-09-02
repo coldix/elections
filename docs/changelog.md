@@ -6,6 +6,14 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
+## 2026-09-02 — Election-scoped header and footer
+
+| Area | What shipped |
+|---|---|
+| **Header** | Victoria, Federal, Elections and What’s new on every page. A second bar of Seats / Polls / Policies (etc.) only inside that election. Desktop shows the links; mobile keeps a grouped drawer |
+| **Footer** | Trackers for Vic, federal and NSW. No more Vic `/polls` or `/data` shorts on federal pages |
+| **Docs** | [nav-tree.md](nav-tree.md) is the public sitemap |
+
 ## 2026-09-02 — One Nation Assembly wave; DemosAU federal poll
 
 | Area | What shipped |

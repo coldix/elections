@@ -1,5 +1,6 @@
 ---
 import { SITE, ATTRIBUTION, socialLinks } from "../lib/site.mjs";
+import { navFor } from "../lib/nav.mjs";
 import buildMeta from "../generated/build-meta.json";
 
 const year = new Date().getFullYear();
@@ -9,6 +10,7 @@ const builtAest = buildMeta?.built_at_aest ?? null;
 const repoCommit = buildMeta?.git_sha_full
   ? `${SITE.repo}/commit/${buildMeta.git_sha_full}`
   : SITE.repo;
+const { footer } = navFor(Astro.url.pathname);
 ---
 
 <footer class="site-footer">
@@ -17,31 +19,52 @@ const repoCommit = buildMeta?.git_sha_full
       <div>
         <p class="eyebrow">Australian Election Tracker</p>
         <p class="muted">
-          {SITE.tagline}. Published by {SITE.publisher}. Not affiliated with the Victorian
-          Electoral Commission, any political party or any candidate.
+          {SITE.tagline}. Published by {SITE.publisher}. Not affiliated with any electoral
+          commission, political party or candidate.
         </p>
       </div>
 
       <div>
-        <p class="eyebrow">Data &amp; method</p>
+        <p class="eyebrow">Trackers</p>
         <ul>
-          <li><a href="/latest">What's new</a></li>
-          <li><a href="/methodology">Methodology &amp; source standards</a></li>
-          <li><a href="/polls">Poll average</a></li>
-          <li><a href="/open-seats">Open seats &amp; retirements</a></li>
-          <li><a href="/data">Open data (JSON &amp; CSV)</a></li>
-          <li><a href={SITE.repo}>Source repository</a></li>
-          <li><a href={SITE.issues}>Submit a correction</a></li>
+          {footer.trackers.map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      {
+        footer.thisElection.length > 0 && (
+          <div>
+            <p class="eyebrow">This election</p>
+            <ul>
+              {footer.thisElection.map((item) => (
+                <li><a href={item.href}>{item.label}</a></li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
+      <div>
+        <p class="eyebrow">Evidence</p>
+        <ul>
+          {footer.evidence.map((item) => (
+            <li>
+              <a href={item.href} rel={item.external ? "noopener" : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div>
         <p class="eyebrow">About</p>
         <ul>
-          <li><a href="/voting">Voting in Victoria</a></li>
-          <li><a href="/about">Independence statement</a></li>
-          <li><a href="/about#authorisation">Legal authorisation</a></li>
-          <li><a href="/about#contact">Contact</a></li>
+          {footer.about.map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
           {
             social.map((s) => (
               <li>
@@ -57,9 +80,9 @@ const repoCommit = buildMeta?.git_sha_full
       <div>
         <p class="eyebrow">Legal</p>
         <ul>
-          <li><a href="/disclaimer">Disclaimer</a></li>
-          <li><a href="/privacy">Privacy policy</a></li>
-          <li><a href="/terms">Terms of use</a></li>
+          {footer.legal.map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
         </ul>
       </div>
     </div>
@@ -115,11 +138,11 @@ const repoCommit = buildMeta?.git_sha_full
   }
   .cols {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1.75rem 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
+    gap: 1.75rem 2rem;
   }
   .cols p.muted {
-    max-width: 32rem;
+    max-width: 28rem;
   }
   ul {
     list-style: none;
@@ -178,9 +201,7 @@ const repoCommit = buildMeta?.git_sha_full
     opacity: 0.5;
   }
   @media (max-width: 40rem) {
-    .build-stamp {
-      white-space: normal;
-    }
+    .build-stamp { white-space: normal; }
   }
   .design-credit {
     display: inline-flex;
@@ -192,15 +213,9 @@ const repoCommit = buildMeta?.git_sha_full
     font-weight: 520;
     flex: none;
   }
-  .design-credit:hover {
-    color: var(--ink);
-  }
-  .design-credit:hover .design-credit-logo {
-    opacity: 1;
-  }
-  .design-credit-text {
-    letter-spacing: 0.01em;
-  }
+  .design-credit:hover { color: var(--ink); }
+  .design-credit:hover .design-credit-logo { opacity: 1; }
+  .design-credit-text { letter-spacing: 0.01em; }
   .design-credit-logo {
     width: 4.4rem;
     height: auto;

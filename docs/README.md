@@ -14,6 +14,7 @@ broken.
 | National home | `/` | [scope.md](scope.md) |
 | What's new | `/latest` | [changelog.md](changelog.md), [poll-methodology.md](poll-methodology.md) |
 | Upcoming elections | `/elections` | [methodology.md](methodology.md) |
+| Site menu and sitemap | header, footer, public tree | [nav-tree.md](nav-tree.md) |
 | Victoria 2026 (full) | `/elections/vic/2026` | [methodology.md](methodology.md) |
 | Assembly and districts | `/elections/vic/2026/assembly`, `/elections/vic/2026/districts/*` | [methodology.md](methodology.md), ADR-17 |
 | Council and regions | `/elections/vic/2026/council`, `/elections/vic/2026/regions/*` | [methodology.md](methodology.md) |
@@ -43,6 +44,7 @@ New documentation and internal links must use the scoped paths.
 - [ops.md](ops.md) — maintenance cadence and human/agent responsibilities
 - [deployment.md](deployment.md) — Cloudflare Workers build and DNS
 - [routes.md](routes.md) — canonical national/election route architecture and redirects
+- [nav-tree.md](nav-tree.md) — public sitemap and what the header/footer show
 - [discovery.md](discovery.md) — sitemap, search discovery and IndexNow
 - [social.md](social.md) — social/video implementation notes
 - [repo-layout.md](repo-layout.md) — annotated repository structure
