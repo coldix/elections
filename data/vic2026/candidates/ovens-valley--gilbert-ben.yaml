@@ -1,0 +1,22 @@
+candidate:
+  name: Ben Gilbert
+  party: greens
+  contest: ovens-valley
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-07
+      source:
+        url: https://greens.org.au/vic/person/ben-gilbert
+        title: "Ben Gilbert, Candidate for Ovens Valley"
+        publisher: Victorian Greens
+        accessed: 2026-09-07
+      note: >-
+        Victorian Greens candidate page lists Ben Gilbert as the candidate
+        for Ovens Valley.
+  links:
+    - url: https://greens.org.au/vic/person/ben-gilbert
+      kind: party-profile
+    - url: https://greens.org.au/vic/candidates
+      kind: party

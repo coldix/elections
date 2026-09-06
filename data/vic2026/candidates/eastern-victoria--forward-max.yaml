@@ -1,0 +1,20 @@
+candidate:
+  name: Max Forward
+  party: victorian-socialists
+  contest: eastern-victoria
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-07
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/max-forward
+        title: "Max Forward – Victorian Socialists"
+        publisher: Victorian Socialists
+        accessed: 2026-09-07
+      note: >-
+        Party candidate page lists Max as a Victorian Socialists
+        candidate for Eastern Victoria.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/max-forward
+      kind: party-profile

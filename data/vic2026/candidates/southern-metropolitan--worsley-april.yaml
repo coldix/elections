@@ -1,0 +1,20 @@
+candidate:
+  name: April Worsley
+  party: victorian-socialists
+  contest: southern-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-07
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/april-worsley
+        title: "April Worsley – Victorian Socialists"
+        publisher: Victorian Socialists
+        accessed: 2026-09-07
+      note: >-
+        Party candidate page lists April as a Victorian Socialists
+        candidate for Southern Metropolitan.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/april-worsley
+      kind: party-profile

@@ -298,6 +298,22 @@ retirements:
       media treated her as recontesting; see bendigo-east--allan-jacinta.yaml
       (withdrawn).
 
+  - name: Maree Edwards
+    party: labor
+    role: MLA
+    seat: bendigo-west
+    announced: 2026-08-28
+    source:
+      url: https://www.abc.net.au/news/2026-08-28/maree-edwards-labor-bendigo-jacinta-allan-state-election/107088088
+      title: Maree Edwards's departure leaves Labor heartland exposed, three months from election
+      publisher: ABC News
+      published: 2026-08-28
+      accessed: 2026-09-07
+    note: >-
+      Speaker of the Legislative Assembly and MLA for Bendigo West announced
+      she will not re-contest the seat at the November 2026 election after
+      almost 16 years in parliament.
+
   - name: David Ettershank
     party: legalise-cannabis
     role: MLC

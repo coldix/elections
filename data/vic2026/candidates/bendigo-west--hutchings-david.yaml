@@ -1,0 +1,23 @@
+candidate:
+  name: David Hutchings
+  party: nationals
+  contest: bendigo-west
+  chamber: assembly
+  status: endorsed
+  occupation: "Accountant; CFA volunteer"
+  history:
+    - status: endorsed
+      date: 2026-08-14
+      source:
+        url: https://vic.nationals.org.au/candidates-david-hutchings/
+        title: Candidates - David Hutchings
+        publisher: The Nationals Victoria
+        accessed: 2026-09-07
+      note: >-
+        Nationals Victoria candidate page lists David Hutchings as the
+        candidate for Bendigo West; also listed on the party Our Team page.
+  links:
+    - url: https://vic.nationals.org.au/candidates-david-hutchings/
+      kind: party-profile
+    - url: https://vic.nationals.org.au/our-team/
+      kind: party

@@ -1,0 +1,20 @@
+candidate:
+  name: Lucas Deviesseux
+  party: victorian-socialists
+  contest: north-eastern-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-07
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/lucas-deviesseux
+        title: "Lucas Deviesseux – Victorian Socialists"
+        publisher: Victorian Socialists
+        accessed: 2026-09-07
+      note: >-
+        Party candidate page lists Lucas as a Victorian Socialists
+        candidate for North-Eastern Metropolitan.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/lucas-deviesseux
+      kind: party-profile

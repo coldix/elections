@@ -1,0 +1,20 @@
+candidate:
+  name: Jorge Jorquera
+  party: victorian-socialists
+  contest: western-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-07
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/jorge-jorquera
+        title: "Jorge Jorquera – Victorian Socialists"
+        publisher: Victorian Socialists
+        accessed: 2026-09-07
+      note: >-
+        Party candidate page lists Jorge as a Victorian Socialists
+        candidate for Western Metropolitan.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/jorge-jorquera
+      kind: party-profile

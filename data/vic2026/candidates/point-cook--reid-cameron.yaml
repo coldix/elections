@@ -1,0 +1,22 @@
+candidate:
+  name: Cameron Reid
+  party: one-nation
+  contest: point-cook
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-07
+      source:
+        url: https://vic.onenation.org.au/cameron-reid
+        title: Cameron Reid for Point Cook
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-07
+      note: >-
+        Party candidate page lists Cameron as One Nation's candidate
+        for Point Cook.
+  links:
+    - url: https://vic.onenation.org.au/cameron-reid
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

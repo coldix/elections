@@ -1,0 +1,20 @@
+candidate:
+  name: Omar Hassan
+  party: victorian-socialists
+  contest: northern-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-07
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/omar-hassan
+        title: "Omar Hassan – Victorian Socialists"
+        publisher: Victorian Socialists
+        accessed: 2026-09-07
+      note: >-
+        Party candidate page lists Omar as a Victorian Socialists
+        candidate for Northern Metropolitan.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/omar-hassan
+      kind: party-profile

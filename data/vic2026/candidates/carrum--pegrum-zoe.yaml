@@ -1,0 +1,22 @@
+candidate:
+  name: Zoe Pegrum
+  party: greens
+  contest: carrum
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-07
+      source:
+        url: https://greens.org.au/vic/person/zoe-pegrum
+        title: "Zoe Pegrum, Candidate for Carrum"
+        publisher: Victorian Greens
+        accessed: 2026-09-07
+      note: >-
+        Victorian Greens candidate page lists Zoe Pegrum as the candidate
+        for Carrum.
+  links:
+    - url: https://greens.org.au/vic/person/zoe-pegrum
+      kind: party-profile
+    - url: https://greens.org.au/vic/candidates
+      kind: party
