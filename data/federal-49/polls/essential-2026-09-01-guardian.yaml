@@ -1,0 +1,36 @@
+id: essential-2026-09-01-guardian
+pollster: Essential
+commissioner: the-guardian
+commissioner_type: media
+fieldwork_start: 2026-08-26
+fieldwork_end: 2026-08-30
+sample_size: 1000
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Guardian Essential Report federal voting intention. Primaries as reported with ~5% undecided; others residual after allocating undecided into the published decided+undecided frame (26+26+23+13+12). Fieldwork Wed–Sun and sample ~1000 per Poll Bludger pending Essential full tables; Guardian notes more than 1,000 respondents."
+primaries:
+  alp: 26
+  lnp: 26
+  onp: 23
+  grn: 13
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theguardian.com/australia-news/2026/sep/02/guardian-essential-poll-one-nation-popularity-slips-albanese-records-lowest-approval-as-prime-minister-ntwnfb
+    publisher: The Guardian
+    title: "Guardian Essential poll: One Nation’s popularity slips as Albanese records lowest approval as prime minister"
+    published: 2026-09-01
+    accessed: 2026-09-07
+  - url: https://www.pollbludger.net/2026/09/03/federal-polls-roy-morgan-and-essential-research-open-thread-2/
+    publisher: The Poll Bludger
+    title: "Federal polls: Roy Morgan and Essential Research (open thread)"
+    published: 2026-09-03
+    accessed: 2026-09-07
+  - url: https://essentialreport.com.au/reports/01-september-2026
+    publisher: Essential Report
+    title: "The Essential Report: 01 September 2026"
+    published: 2026-09-01
+    accessed: 2026-09-07

@@ -3,7 +3,7 @@ candidate:
   party: labor
   contest: evelyn
   chamber: assembly
-  status: endorsed
+  status: withdrawn
   history:
     - status: endorsed
       date: 2026-06-21
@@ -12,3 +12,15 @@ candidate:
         title: "Indah Johannes: Labor Candidates"
         publisher: Victorian Labor
         accessed: 2026-06-21
+    - status: withdrawn
+      date: 2026-08-25
+      source:
+        url: https://upperyarra.mailcommunity.com.au/news/2026-09-01/analise-sherlock-announced-as-the-labor-candidate-for-evelyn/
+        title: Analise Sherlock announced as the Labor candidate for Evelyn
+        publisher: Upper Yarra Star Mail
+        published: 2026-08-31
+        accessed: 2026-09-07
+      note: >-
+        Local news reports Johannes was originally selected as Labor’s Evelyn
+        candidate but withdrew due to a personal health battle; Labor then
+        announced Analise Sherlock. Prior Labor profile URL now returns 404.

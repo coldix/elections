@@ -1,0 +1,19 @@
+candidate:
+  name: Raja Reddy
+  party: liberal
+  contest: point-cook
+  chamber: assembly
+  status: endorsed
+  occupation: "Migration agent; small business owner"
+  history:
+    - status: endorsed
+      date: 2026-08-22
+      source:
+        url: https://www.wyndhamtv.com.au/reddy-to-challenge-hilakari/
+        title: Reddy To Challenge Hilakari
+        publisher: Wyndham TV
+        published: 2026-08-22
+        accessed: 2026-09-07
+      note: >-
+        Local outlet reports the Liberals selected Raja Reddy as Point Cook
+        candidate, completing the party’s Wyndham lower-house line-up.

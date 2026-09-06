@@ -1,0 +1,21 @@
+candidate:
+  name: Matthew De Angelis
+  party: independent
+  contest: werribee
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-09-06
+      source:
+        url: https://www.deangelis.com.au/
+        title: DE ANGELIS — Independent candidate for Werribee
+        publisher: Matthew De Angelis campaign site
+        published: 2026-09-06
+        accessed: 2026-09-07
+      note: >-
+        Campaign site states he is an independent candidate for Werribee in the
+        2026 Victorian election.
+  links:
+    - url: https://www.deangelis.com.au/
+      kind: campaign-site

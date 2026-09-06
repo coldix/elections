@@ -4,6 +4,8 @@ candidate:
   contest: berwick
   chamber: assembly
   status: endorsed
+  occupation: "Victoria Police officer"
+  background: "Proud Berwick local; more than 13 years with Victoria Police."
   history:
     - status: endorsed
       date: 2026-06-21
@@ -15,3 +17,5 @@ candidate:
   links:
     - url: https://www.viclabor.org.au/our-team/rana-khan
       kind: party-profile
+    - url: https://facebook.com/RanaforBerwick
+      kind: Facebook

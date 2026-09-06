@@ -1,0 +1,31 @@
+candidate:
+  name: Analise Sherlock
+  party: labor
+  contest: evelyn
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-08-31
+      source:
+        url: https://www.viclabor.org.au/our-team/analise-sherlock
+        title: Analise Sherlock
+        publisher: Victorian Labor
+        accessed: 2026-09-07
+      note: >-
+        Victorian Labor candidate page lists Analise Sherlock as Candidate for
+        Evelyn.
+    - status: endorsed
+      date: 2026-08-31
+      source:
+        url: https://upperyarra.mailcommunity.com.au/news/2026-09-01/analise-sherlock-announced-as-the-labor-candidate-for-evelyn/
+        title: Analise Sherlock announced as the Labor candidate for Evelyn
+        publisher: Upper Yarra Star Mail
+        published: 2026-08-31
+        accessed: 2026-09-07
+      note: >-
+        Local news: Victorian Labor announced Sherlock for Evelyn; notes prior
+        candidate Indah Johannes withdrew due to a personal health battle.
+  links:
+    - url: https://www.viclabor.org.au/our-team/analise-sherlock
+      kind: party-profile

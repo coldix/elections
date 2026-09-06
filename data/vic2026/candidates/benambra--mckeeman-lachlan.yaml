@@ -1,0 +1,23 @@
+candidate:
+  name: Lachlan McKeeman
+  party: independent
+  contest: benambra
+  chamber: assembly
+  status: announced
+  occupation: "General practitioner"
+  background: "Wodonga/Wooragee GP; CFA volunteer; Border Medical Association secretary."
+  history:
+    - status: announced
+      date: 2026-06-17
+      source:
+        url: https://www.bordermail.com.au/story/9292222/lachlan-mckeeman-named-independent-candidate-for-benambra/
+        title: Lachlan McKeeman named independent candidate for Benambra
+        publisher: The Border Mail
+        published: 2026-06-17
+        accessed: 2026-09-07
+      note: >-
+        Community for Benambra announced Wodonga GP Lachlan McKeeman as its
+        community-backed independent candidate for the November 2026 election.
+  links:
+    - url: https://www.bordermail.com.au/story/9292222/lachlan-mckeeman-named-independent-candidate-for-benambra/
+      kind: profile
