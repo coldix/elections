@@ -1,0 +1,41 @@
+id: roy-morgan-2026-09-07
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-08-31
+fieldwork_end: 2026-09-06
+sample_size: 1541
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Finding 10333. L-NP reported as Liberals 17% + Nationals 4.5%. Primaries among decided (can't say 6.5% reported separately)."
+primaries:
+  alp: 27
+  lnp: 21.5
+  onp: 26.5
+  grn: 14.5
+  others: 10.5
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10333-federal-voting-intention-september-7-2026
+    publisher: Roy Morgan
+    title: ALP retains lead, but One Nation builds support after stunning victory in Secret Harbour by-election in Western Australia
+    published: 2026-09-07
+    accessed: 2026-09-09
+  - url: https://roymorgan-cms-prod.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2026/09/07062957/10333-Federal-Voting-Intention-September-7-2026.pdf
+    publisher: Roy Morgan
+    title: Federal Voting Intention September 7 2026 (PDF)
+    published: 2026-09-07
+    accessed: 2026-09-09
+  - url: https://www.pollbludger.net/2026/09/08/morgan-labor-27-one-nation-26-5-coalition-21-5-open-thread/
+    publisher: The Poll Bludger
+    title: "Morgan: Labor 27, One Nation 26.5, Coalition 21.5 (open thread)"
+    published: 2026-09-08
+    accessed: 2026-09-09
+  - url: https://www.roymorgan.com/findings/roy-morgan-update-september-8-2026
+    publisher: Roy Morgan
+    title: "Roy Morgan Update September 8, 2026: Federal Vote, Consumer Confidence and Business Confidence"
+    published: 2026-09-08
+    accessed: 2026-09-09
