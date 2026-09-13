@@ -27,7 +27,7 @@ printed, and that cache is gitignored.
 
 | Lead | Checked | Why not encoded |
 |---|---|---|
-| Catherine D'Arcy — Greens, Dandenong | 2026-08-23 | Wikipedia's candidates table lists her, citing a [Star Journal report on a Dandenong anti-racism rally](https://endeavourhillshallamdoveton.starcommunity.com.au/news/2026-08-19/dandenong-rally-calls-for-solidarity-against-rising-racism/). The full article does not mention her at all. The Victorian Greens' own candidate list (80 candidates) has no D'Arcy and no Dandenong candidate. No evidence supports the claim. Re-check if the Greens publish a Dandenong candidate. |
+| Catherine D'Arcy — Greens, Dandenong | 2026-08-23 (superseded 2026-09-14) | Held Aug 2026: Wikipedia cited a Star Journal rally piece that did not name her, and the Greens list had no Dandenong candidate. **Encoded 2026-09-14** after Victorian Greens published a person page (`greens.org.au/vic/person/catherine-darcy`) and listed her on the candidates index. |
 
 A rejected lead is not a statement that the claim is false — only that nothing
 found so far supports it. Encode it the moment a real source appears.

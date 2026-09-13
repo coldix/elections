@@ -1,0 +1,46 @@
+candidate:
+  name: Sonny Stephens
+  party: labor
+  contest: gippsland-east
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: announced
+      date: 2026-05-05
+      source:
+        url: "https://latrobevalleyexpress.com.au/news/2026/05/05/lund-officially-running-for-labor/"
+        title: Lund officially running for Labor
+        publisher: Latrobe Valley Express
+        published: 2026-05-05
+        accessed: 2026-05-19
+      note: >-
+        Article names Stephens as Labor's state candidate but incorrectly says
+        Gippsland South. Victorian Labor's candidate page confirms Gippsland
+        East (see corrections).
+    - status: endorsed
+      date: 2026-08-14
+      source:
+        url: https://www.viclabor.org.au/our-team/sonny-stephens
+        title: Sonny Stephens | Labor Candidates
+        publisher: Victorian Labor
+        accessed: 2026-09-14
+      note: >-
+        Party candidate page lists Sonny Stephens as Candidate for Gippsland
+        East.
+  corrections:
+    - date: 2026-09-14
+      was: contest gippsland-south
+      now: contest gippsland-east
+      reason: >-
+        Ledger previously followed the Latrobe Valley Express (5 May 2026),
+        which said Stephens was running for Gippsland South. Victorian Labor's
+        own candidate page is the primary source and lists Gippsland East.
+        GitHub issue #35 flagged the mismatch.
+      source:
+        url: https://www.viclabor.org.au/our-team/sonny-stephens
+        publisher: Victorian Labor
+        title: Sonny Stephens | Labor Candidates
+        accessed: 2026-09-14
+  links:
+    - url: https://www.viclabor.org.au/our-team/sonny-stephens
+      kind: party-profile

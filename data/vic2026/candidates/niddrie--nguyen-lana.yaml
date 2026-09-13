@@ -1,0 +1,22 @@
+candidate:
+  name: Lana Nguyen
+  party: greens
+  contest: niddrie
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-14
+      source:
+        url: https://greens.org.au/vic/person/lana-nguyen
+        title: "Lana Nguyen, Candidate for Niddrie"
+        publisher: Victorian Greens
+        accessed: 2026-09-14
+      note: >-
+        Victorian Greens person page lists Lana as Candidate for Niddrie.
+        Also listed on the party candidates index.
+  links:
+    - url: https://greens.org.au/vic/person/lana-nguyen
+      kind: party-profile
+    - url: https://greens.org.au/vic/candidates
+      kind: party

@@ -1,0 +1,24 @@
+candidate:
+  name: Payal Tiwari
+  party: greens
+  contest: kalkallo
+  chamber: assembly
+  status: endorsed
+  occupation: "Engineer; technology advisor; family violence advocate"
+  background: "Local mum, engineer, technology advisor, family violence advocate and union member."
+  history:
+    - status: endorsed
+      date: 2026-09-14
+      source:
+        url: https://greens.org.au/vic/person/payal-tiwari
+        title: "Payal Tiwari, Candidate for Kalkallo"
+        publisher: Victorian Greens
+        accessed: 2026-09-14
+      note: >-
+        Victorian Greens person page lists Payal as Candidate for Kalkallo.
+        Also listed on the party candidates index.
+  links:
+    - url: https://greens.org.au/vic/person/payal-tiwari
+      kind: party-profile
+    - url: https://greens.org.au/vic/candidates
+      kind: party

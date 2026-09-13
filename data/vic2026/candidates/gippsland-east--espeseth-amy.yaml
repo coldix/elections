@@ -1,0 +1,21 @@
+candidate:
+  name: Amy Espeseth
+  party: victorian-socialists
+  contest: gippsland-east
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-13
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/amy-espeseth
+        title: Amy Espeseth – Victorian Socialists
+        publisher: Victorian Socialists
+        accessed: 2026-09-14
+      note: >-
+        Party candidate page lists Amy as Candidate for Gippsland East.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/amy-espeseth
+      kind: party-profile
+    - url: https://www.victoriansocialists.org.au/candidates
+      kind: party

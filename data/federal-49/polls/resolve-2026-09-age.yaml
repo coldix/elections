@@ -1,0 +1,31 @@
+id: resolve-2026-09-age
+pollster: "Resolve Strategic"
+commissioner: nine-newspapers
+commissioner_type: media
+fieldwork_start: 2026-09-06
+fieldwork_end: 2026-09-12
+sample_size: 2250
+design_effect: null
+mode: mixed
+population: australian-electors
+question_notes: "Federal primary voting intention for SMH/The Age (Resolve Political Monitor). Sample 2250 per Poll Bludger / SMH. Others residual after ALP+LNP+GRN+ONP (10)."
+primaries:
+  alp: 28
+  lnp: 24
+  onp: 27
+  grn: 11
+  others: 10
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.smh.com.au/politics/federal/debt-fears-grip-voters-as-albanese-s-approval-rating-slides-20260913-p60wv8.html
+    publisher: The Sydney Morning Herald
+    title: "Resolve Political Monitor: Federal debt and spending cuts dominate voter priorities as Labor support falters"
+    published: 2026-09-13
+    accessed: 2026-09-14
+  - url: https://www.pollbludger.net/2026/09/14/resolve-strategic-labor-28-one-nation-27-coalition-24-open-thread/
+    publisher: The Poll Bludger
+    title: "Resolve Strategic: Labor 28, One Nation 27, Coalition 24 (open thread)"
+    published: 2026-09-14
+    accessed: 2026-09-14
