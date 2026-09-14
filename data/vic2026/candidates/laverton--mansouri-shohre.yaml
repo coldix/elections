@@ -1,0 +1,25 @@
+candidate:
+  name: Shohre Mansouri
+  party: animal-justice
+  contest: laverton
+  chamber: assembly
+  status: endorsed
+  occupation: "Software engineer"
+  background: >-
+    Software engineer; founded a children's education charity; animal rights and
+    environmental volunteer in Melbourne's west.
+  history:
+    - status: endorsed
+      date: 2026-09-14
+      source:
+        url: https://vic.animaljusticeparty.org/shohre-mansouri
+        publisher: Animal Justice Party Victoria
+        title: Shohre Mansouri for Laverton
+        accessed: 2026-09-14
+      note: >-
+        Official Animal Justice Party Victoria candidate page for Laverton.
+        Page does not show a separate endorsement publish date; accessed
+        14 September 2026.
+  links:
+    - url: https://vic.animaljusticeparty.org/shohre-mansouri
+      kind: party-profile

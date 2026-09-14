@@ -1,0 +1,25 @@
+candidate:
+  name: Ghada Noune
+  party: liberal
+  contest: laverton
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-08-22
+      source:
+        url: https://www.wyndhamtv.com.au/reddy-to-challenge-hilakari/
+        publisher: Wyndham TV
+        title: Reddy To Challenge Hilakari
+        published: 2026-08-22
+        accessed: 2026-09-14
+      note: >-
+        Local outlet reports the Liberals' Wyndham lower-house line-up is locked
+        in, with Ghada Noune to contest Laverton (alongside Reece Clark in
+        Werribee and Venkat Ram Upparlapalle in Tarneit). Victorian Liberal
+        team URL https://vicliberal.org.au/team/ghada-noune is cited on
+        Wikipedia but returned a browser-unsupported shell when accessed
+        14 September 2026.
+  links:
+    - url: https://vicliberal.org.au/team/ghada-noune
+      kind: party-profile

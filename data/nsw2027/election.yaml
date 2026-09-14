@@ -27,7 +27,7 @@ election:
     - url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
       publisher: NSW Electoral Commission
       title: 2027 NSW State election
-      accessed: "2026-08-09"
+      accessed: "2026-09-14"
     - url: https://www.parliament.nsw.gov.au/members-and-electorates/members-and-ministers/downloadable-lists
       publisher: Parliament of New South Wales
       title: Downloadable lists — members
@@ -51,3 +51,32 @@ election:
       Council term class (up/continuing) uses end-term years for the 58th Parliament
       (2019 class expires 2027; 2023 class expires 2031). Mid-term replacements inherit the
       predecessor remaining term — Barrett for Taylor (2031), Overall for Farraway (2027).
+    - >-
+      Sitting-member hygiene (not a candidacy ledger): Liberal MLA James Griffin
+      (Manly) announced on 2 September 2026 he will not recontest at the 13 March
+      2027 election (SMH; Manly Observer). Liberal MLA Alister Henskens
+      (Wahroonga) announced on 11 September 2026 he will retire at the same
+      election (SMH). Key date unchanged: NSWEC confirms polling day 13 March 2027.
+  sitting_member_signals:
+    - name: James Griffin
+      district: manly
+      party: liberal
+      signal: will-not-recontest
+      announced: "2026-09-02"
+      source:
+        url: https://www.smh.com.au/politics/nsw/liberal-frontbencher-announces-exit-ahead-of-nsw-election-20260902-p60tsg.html
+        publisher: The Sydney Morning Herald
+        title: Liberal frontbencher announces exit ahead of NSW election
+        published: "2026-09-02"
+        accessed: "2026-09-14"
+    - name: Alister Henskens
+      district: wahroonga
+      party: liberal
+      signal: will-not-recontest
+      announced: "2026-09-11"
+      source:
+        url: https://www.smh.com.au/politics/nsw/kellie-sloane-loses-second-senior-frontbencher-in-as-many-weeks-20260911-p60wm4.html
+        publisher: The Sydney Morning Herald
+        title: Kellie Sloane loses second senior frontbencher in as many weeks
+        published: "2026-09-11"
+        accessed: "2026-09-14"

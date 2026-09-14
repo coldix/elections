@@ -1,0 +1,31 @@
+id: roy-morgan-2026-09-14
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-09-07
+fieldwork_end: 2026-09-13
+sample_size: 1583
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Finding 10343. L-NP reported as Liberals 19% + Nationals 2.5%. Primaries among decided (can't say 6.5% reported separately)."
+primaries:
+  alp: 25
+  lnp: 21.5
+  onp: 25
+  grn: 16
+  others: 12.5
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10343-federal-voting-intention-september-14-2026
+    publisher: Roy Morgan
+    title: ALP and One Nation both lose support as Prime Minister Albanese and One Nation Leader Pauline Hanson trade insults
+    published: 2026-09-14
+    accessed: 2026-09-14
+  - url: https://roymorgan-cms-prod.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2026/09/14081733/10343-Federal-Voting-Intention-September-14-2026-1.pdf
+    publisher: Roy Morgan
+    title: Federal Voting Intention September 14 2026 (PDF)
+    published: 2026-09-14
+    accessed: 2026-09-14

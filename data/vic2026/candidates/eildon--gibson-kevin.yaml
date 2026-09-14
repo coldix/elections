@@ -1,0 +1,20 @@
+candidate:
+  name: Kevin Gibson
+  party: labor
+  contest: eildon
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-14
+      source:
+        url: https://www.viclabor.org.au/our-team/kevin-gibson
+        publisher: Victorian Labor
+        title: "Kevin Gibson | Labor Candidates"
+        accessed: 2026-09-14
+      note: >-
+        Official Victorian Labor candidates page states "Candidate for Eildon".
+        Verified 14 September 2026.
+  links:
+    - url: https://www.viclabor.org.au/our-team/kevin-gibson
+      kind: party-profile

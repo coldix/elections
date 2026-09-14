@@ -28,6 +28,8 @@ printed, and that cache is gitignored.
 | Lead | Checked | Why not encoded |
 |---|---|---|
 | Catherine D'Arcy — Greens, Dandenong | 2026-08-23 (superseded 2026-09-14) | Held Aug 2026: Wikipedia cited a Star Journal rally piece that did not name her, and the Greens list had no Dandenong candidate. **Encoded 2026-09-14** after Victorian Greens published a person page (`greens.org.au/vic/person/catherine-darcy`) and listed her on the candidates index. |
+| Rufo Paredes — One Nation, Laverton | 2026-09-14 | Tip via GitHub #36 (Facebook self-claim). Official One Nation Victoria candidates index (`vic.onenation.org.au/candidates`) lists no Laverton candidate as of 14 September 2026. Held pending a party primary. |
+| Ghada Noune — Liberal, Laverton | 2026-09-14 (encoded) | Previously awaiting Liberal primary; encoded 2026-09-14 from Wyndham TV (22 Aug 2026) reporting Liberals' Wyndham line-up includes Noune for Laverton. Party team URL cited on Wikipedia but browser-unsupported when opened. |
 
 A rejected lead is not a statement that the claim is false — only that nothing
 found so far supports it. Encode it the moment a real source appears.

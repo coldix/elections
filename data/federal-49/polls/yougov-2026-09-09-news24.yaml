@@ -1,0 +1,26 @@
+id: yougov-2026-09-09-news24
+pollster: YouGov
+commissioner: news24
+commissioner_type: media
+fieldwork_start: 2026-09-01
+fieldwork_end: 2026-09-08
+sample_size: 1510
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention (News24 Pulse / YouGov). Fieldwork Tuesday–Tuesday per Poll Bludger. Others residual after ALP+LNP+GRN+ONP (14)."
+primaries:
+  alp: 26
+  lnp: 18
+  onp: 30
+  grn: 12
+  others: 14
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/09/09/yougov-labor-26-one-nation-30-coalition-18-open-thread/
+    publisher: The Poll Bludger
+    title: "YouGov: Labor 26, One Nation 30, Coalition 18 (open thread)"
+    published: 2026-09-09
+    accessed: 2026-09-14
