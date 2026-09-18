@@ -1,0 +1,24 @@
+candidate:
+  name: Anna Malcolm
+  party: one-nation
+  contest: polwarth
+  chamber: assembly
+  status: endorsed
+  occupation: Small business owner
+  background: Larpent local; former flight attendant with a background in financial services.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/anna-malcolm
+        title: Anna Malcolm for Polwarth
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Anna as One Nation's candidate for Polwarth.
+  links:
+    - url: https://vic.onenation.org.au/anna-malcolm
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

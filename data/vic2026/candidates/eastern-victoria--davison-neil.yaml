@@ -1,0 +1,23 @@
+candidate:
+  name: Neil Davison
+  party: one-nation
+  contest: eastern-victoria
+  chamber: council
+  status: endorsed
+  background: Raised in Melbourne; 35 years in business and community work.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/neil-davison
+        title: Neil Davison for Eastern Victoria
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Neil as One Nation's candidate for Eastern Victoria Region.
+  links:
+    - url: https://vic.onenation.org.au/neil-davison
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

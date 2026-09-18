@@ -1,0 +1,24 @@
+candidate:
+  name: Tim Barber
+  party: one-nation
+  contest: eildon
+  chamber: assembly
+  status: endorsed
+  occupation: Small business owner
+  background: Grew up on a farm; operates a steel fabrication and car restoration business.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/tim-barber
+        title: Tim Barber for Eildon
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Tim as One Nation's candidate for Eildon.
+  links:
+    - url: https://vic.onenation.org.au/tim-barber
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

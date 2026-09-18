@@ -1,0 +1,24 @@
+candidate:
+  name: Mark Burnside
+  party: one-nation
+  contest: warrandyte
+  chamber: assembly
+  status: endorsed
+  occupation: Aged care hospitality leader
+  background: Community advocate; raised in rural Western Australia.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/mark-burnside
+        title: Mark Burnside for Warrandyte
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Mark as One Nation's candidate for Warrandyte.
+  links:
+    - url: https://vic.onenation.org.au/mark-burnside
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

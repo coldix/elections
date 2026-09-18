@@ -1,0 +1,23 @@
+candidate:
+  name: James Rouel
+  party: one-nation
+  contest: ovens-valley
+  chamber: assembly
+  status: endorsed
+  background: Grew up in Yarrawonga; returned to the region more than four years ago.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/james-rouel
+        title: James Rouel for Ovens Valley
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists James as One Nation's candidate for Ovens Valley.
+  links:
+    - url: https://vic.onenation.org.au/james-rouel
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

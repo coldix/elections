@@ -1,0 +1,22 @@
+candidate:
+  name: Shaun Virsu
+  party: one-nation
+  contest: prahran
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/shaun-virsu
+        title: Shaun Virsu for Prahran
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Shaun as One Nation's candidate for Prahran.
+  links:
+    - url: https://vic.onenation.org.au/shaun-virsu
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

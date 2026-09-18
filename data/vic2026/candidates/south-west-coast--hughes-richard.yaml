@@ -1,0 +1,24 @@
+candidate:
+  name: Richard Hughes
+  party: one-nation
+  contest: south-west-coast
+  chamber: assembly
+  status: endorsed
+  occupation: Victoria Police detective
+  background: Member of Victoria Police for over 28 years; Detective at Warrnambool CIU for 20 years.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/richard-hughes
+        title: Richard Hughes for South-West Coast
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Richard as One Nation's candidate for South-West Coast.
+  links:
+    - url: https://vic.onenation.org.au/richard-hughes
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

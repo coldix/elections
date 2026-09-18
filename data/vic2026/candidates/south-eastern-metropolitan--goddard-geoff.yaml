@@ -1,0 +1,24 @@
+candidate:
+  name: Geoff Goddard
+  party: one-nation
+  contest: south-eastern-metropolitan
+  chamber: council
+  status: endorsed
+  occupation: Finance professional
+  background: Commerce graduate (Monash); 20+ years in banking and treasury.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/geoff-goddard
+        title: Geoff Goddard for South-Eastern Metropolitan
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Geoff as One Nation's candidate for South-Eastern Metropolitan Region.
+  links:
+    - url: https://vic.onenation.org.au/geoff-goddard
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

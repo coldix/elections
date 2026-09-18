@@ -1,0 +1,23 @@
+candidate:
+  name: Ross McRae
+  party: one-nation
+  contest: bellarine
+  chamber: assembly
+  status: endorsed
+  background: Served 10 years in the Australian military.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/ross-mcrae
+        title: Ross McRae for Bellarine
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Ross as One Nation's candidate for Bellarine.
+  links:
+    - url: https://vic.onenation.org.au/ross-mcrae
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

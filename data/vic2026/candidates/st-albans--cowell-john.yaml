@@ -1,0 +1,24 @@
+candidate:
+  name: John Cowell
+  party: one-nation
+  contest: st-albans
+  chamber: assembly
+  status: endorsed
+  occupation: Construction professional
+  background: Born and raised in Western Victoria; lived in Melbourne’s western suburbs since 2019, including St Albans since 2023.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/john-cowell
+        title: John Cowell for St Albans
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists John as One Nation's candidate for St Albans.
+  links:
+    - url: https://vic.onenation.org.au/john-cowell
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

@@ -1,0 +1,22 @@
+candidate:
+  name: Paul Stafford
+  party: one-nation
+  contest: frankston
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/paul-stafford
+        title: Paul Stafford for Frankston
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Paul as One Nation's candidate for Frankston.
+  links:
+    - url: https://vic.onenation.org.au/paul-stafford
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

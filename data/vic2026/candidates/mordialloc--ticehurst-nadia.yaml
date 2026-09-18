@@ -1,0 +1,24 @@
+candidate:
+  name: Nadia Ticehurst
+  party: one-nation
+  contest: mordialloc
+  chamber: assembly
+  status: endorsed
+  occupation: Nurse
+  background: Critical care and operating suite nurse in the public health system for 26 years.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/nadia-ticehurst
+        title: Nadia Ticehurst for Mordialloc
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Nadia as One Nation's candidate for Mordialloc.
+  links:
+    - url: https://vic.onenation.org.au/nadia-ticehurst
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

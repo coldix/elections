@@ -1,0 +1,24 @@
+candidate:
+  name: Gavin Bain
+  party: one-nation
+  contest: clarinda
+  chamber: assembly
+  status: endorsed
+  occupation: Police officer
+  background: Almost 30 years as a police officer serving and protecting the community.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/gavin-bain
+        title: Gavin Bain for Clarinda
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Gavin as One Nation's candidate for Clarinda.
+  links:
+    - url: https://vic.onenation.org.au/gavin-bain
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

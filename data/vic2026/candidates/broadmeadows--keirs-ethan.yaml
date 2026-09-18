@@ -1,0 +1,22 @@
+candidate:
+  name: Ethan Keirs
+  party: one-nation
+  contest: broadmeadows
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/ethan-keirs
+        title: Ethan Keirs for Broadmeadows
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Ethan as One Nation's candidate for Broadmeadows.
+  links:
+    - url: https://vic.onenation.org.au/ethan-keirs
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

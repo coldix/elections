@@ -1,0 +1,24 @@
+candidate:
+  name: Troy Steans
+  party: one-nation
+  contest: kalkallo
+  chamber: assembly
+  status: endorsed
+  occupation: Transport professional
+  background: Community advocate and emergency services volunteer.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/troy-steans
+        title: Troy Steans for Kalkallo
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Troy as One Nation's candidate for Kalkallo.
+  links:
+    - url: https://vic.onenation.org.au/troy-steans
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

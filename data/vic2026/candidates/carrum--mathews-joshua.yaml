@@ -1,0 +1,23 @@
+candidate:
+  name: Joshua Mathews
+  party: one-nation
+  contest: carrum
+  chamber: assembly
+  status: endorsed
+  background: Advanced Diploma in Legal Practice (Victoria University); worked in family construction business and as a school bus driver.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/joshua-mathews
+        title: Joshua Mathews for Carrum
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Joshua as One Nation's candidate for Carrum.
+  links:
+    - url: https://vic.onenation.org.au/joshua-mathews
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

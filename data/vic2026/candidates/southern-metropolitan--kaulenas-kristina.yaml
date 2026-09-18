@@ -1,0 +1,24 @@
+candidate:
+  name: Kristina Kaulenas
+  party: one-nation
+  contest: southern-metropolitan
+  chamber: council
+  status: endorsed
+  occupation: Higher education professional
+  background: 25+ years in higher education with science and postgraduate IT qualifications.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/kristina-kaulenas
+        title: Kristina Kaulenas for Southern Metropolitan
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Kristina as One Nation's candidate for Southern Metropolitan Region.
+  links:
+    - url: https://vic.onenation.org.au/kristina-kaulenas
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

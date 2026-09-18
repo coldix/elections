@@ -1,0 +1,23 @@
+candidate:
+  name: Wayne Hutchinson
+  party: one-nation
+  contest: ivanhoe
+  chamber: assembly
+  status: endorsed
+  background: Started in the family business in Heidelberg West.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/wayne-hutchinson
+        title: Wayne Hutchinson for Ivanhoe
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Wayne as One Nation's candidate for Ivanhoe.
+  links:
+    - url: https://vic.onenation.org.au/wayne-hutchinson
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

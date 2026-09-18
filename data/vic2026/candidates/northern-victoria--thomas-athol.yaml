@@ -1,0 +1,23 @@
+candidate:
+  name: Athol Thomas
+  party: one-nation
+  contest: northern-victoria
+  chamber: council
+  status: endorsed
+  background: Long-time Tawonga resident with experience from the land and heavy industry.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/athol-thomas
+        title: Athol Thomas for Northern Victoria
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Athol as One Nation's candidate for Northern Victoria Region.
+  links:
+    - url: https://vic.onenation.org.au/athol-thomas
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

@@ -1,0 +1,24 @@
+candidate:
+  name: Anthony Blight
+  party: one-nation
+  contest: sandringham
+  chamber: assembly
+  status: endorsed
+  occupation: Business owner
+  background: Royal Australian Navy veteran; senior operational leader with 30+ years across Defence, infrastructure, engineering, transport and energy.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/anthony-blight
+        title: Anthony Blight for Sandringham
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Anthony as One Nation's candidate for Sandringham.
+  links:
+    - url: https://vic.onenation.org.au/anthony-blight
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

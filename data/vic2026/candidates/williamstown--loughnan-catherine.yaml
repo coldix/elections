@@ -1,0 +1,24 @@
+candidate:
+  name: Catherine Loughnan
+  party: one-nation
+  contest: williamstown
+  chamber: assembly
+  status: endorsed
+  occupation: Logistics and transport manager
+  background: Lived in the West for 45 years; almost 40 years in business.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/catherine-loughnan
+        title: Catherine Loughnan for Williamstown
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Catherine as One Nation's candidate for Williamstown.
+  links:
+    - url: https://vic.onenation.org.au/catherine-loughnan
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

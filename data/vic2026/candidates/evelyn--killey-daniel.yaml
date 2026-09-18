@@ -1,0 +1,24 @@
+candidate:
+  name: Daniel Killey
+  party: one-nation
+  contest: evelyn
+  chamber: assembly
+  status: endorsed
+  occupation: Psychologist
+  background: Practising psychologist and small business founder.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/daniel-killey
+        title: Daniel Killey for Evelyn
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Daniel as One Nation's candidate for Evelyn.
+  links:
+    - url: https://vic.onenation.org.au/daniel-killey
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

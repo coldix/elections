@@ -1,0 +1,23 @@
+candidate:
+  name: Edward Bode
+  party: one-nation
+  contest: malvern
+  chamber: assembly
+  status: endorsed
+  background: Born to an Australian father and Canadian mother; migrated to Melbourne as an infant.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/edward-bode
+        title: Edward Bode for Malvern
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Edward as One Nation's candidate for Malvern.
+  links:
+    - url: https://vic.onenation.org.au/edward-bode
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

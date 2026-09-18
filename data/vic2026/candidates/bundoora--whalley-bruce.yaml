@@ -1,0 +1,23 @@
+candidate:
+  name: Bruce Whalley
+  party: one-nation
+  contest: bundoora
+  chamber: assembly
+  status: endorsed
+  background: Greensborough resident for more than three decades; roots in country Victoria.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/bruce-whalley
+        title: Bruce Whalley for Bundoora
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Bruce as One Nation's candidate for Bundoora.
+  links:
+    - url: https://vic.onenation.org.au/bruce-whalley
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

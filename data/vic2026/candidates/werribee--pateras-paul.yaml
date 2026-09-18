@@ -1,0 +1,23 @@
+candidate:
+  name: Paul Pateras
+  party: one-nation
+  contest: werribee
+  chamber: assembly
+  status: endorsed
+  background: Born in Werribee; family connection to the community goes back generations.
+  history:
+    - status: endorsed
+      date: 2026-09-16
+      source:
+        url: https://vic.onenation.org.au/paul-pateras
+        title: Paul Pateras for Werribee
+        publisher: Pauline Hanson's One Nation Victoria
+        published: 2026-09-16
+        accessed: 2026-09-19
+      note: >-
+        Party candidate page lists Paul as One Nation's candidate for Werribee.
+  links:
+    - url: https://vic.onenation.org.au/paul-pateras
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party
