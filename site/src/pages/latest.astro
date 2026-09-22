@@ -10,7 +10,7 @@ const schema = {
   "@type": "CollectionPage",
   name: "What's new — Australian Election Tracker",
   description:
-    "Recent sourced additions to the Australian Election Tracker: new statewide and federal primary-vote polls, and newly encoded Victorian candidacies.",
+    "Recent sourced additions to the Australian Election Tracker: new statewide and federal primary-vote polls, Victorian candidacies, and foundation ledger opens.",
   url: `${SITE.url}/latest`,
   isPartOf: { "@id": `${SITE.url}/#website` },
   dateModified: newest,
@@ -19,7 +19,7 @@ const schema = {
 
 <Base
   title="What's new"
-  description="Latest sourced polls and Victorian candidacies added to the Australian Election Tracker. Not a forecast."
+  description="Latest sourced polls, Victorian candidacies and foundation ledger updates on the Australian Election Tracker. Not a forecast."
   schema={schema}
   breadcrumbs={[{ name: "What's new", href: "/latest" }]}
 >
@@ -27,9 +27,9 @@ const schema = {
     <p class="eyebrow">Ledger updates</p>
     <h1>What's new</h1>
     <p class="lede">
-      Sourced records added or dated in the last {latest.windowDays} days. Victorian
-      statewide polling last moved on 15 August; federal House polls continue weekly.
-      Nothing here is a forecast.
+      Sourced records added or dated in the last {latest.windowDays} days —
+      Vic, federal and NSW statewide polls (by release published date), Victorian
+      candidacies, and notable foundation opens. Nothing here is a forecast.
     </p>
 
     <section aria-labelledby="polls-h">
@@ -56,6 +56,29 @@ const schema = {
         )
       }
     </section>
+
+    {
+      latest.foundations.length > 0 && (
+        <section aria-labelledby="foundations-h">
+          <h2 id="foundations-h">Foundation updates</h2>
+          <ol class="latest-list">
+            {latest.foundations.map((item) => (
+              <li>
+                <a class="card card-interactive latest-card" href={item.href}>
+                  <p class="kicker">
+                    <time datetime={item.date}>{formatDate(item.date)}</time>
+                    <span aria-hidden="true"> · </span>
+                    {item.kicker}
+                  </p>
+                  <h2>{item.title}</h2>
+                  <p>{item.body}</p>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
 
     <section aria-labelledby="cands-h">
       <h2 id="cands-h">Victorian candidacies</h2>
@@ -94,7 +117,9 @@ const schema = {
     <p class="section-aside">
       Full ledgers: <a href="/elections/vic/2026/polls">Victorian polls</a>,
       <a href="/elections/federal/49/polls">federal polls</a>,
-      <a href="/elections/vic/2026">Victoria 2026 tracker</a>.
+      <a href="/elections/nsw/2027/polls">NSW polls</a>,
+      <a href="/elections/vic/2026">Victoria 2026 tracker</a>,
+      <a href="/elections/nsw/2027">NSW 2027 foundation</a>.
     </p>
   </div>
 </Base>

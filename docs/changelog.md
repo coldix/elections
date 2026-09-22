@@ -6,6 +6,13 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
+## 2026-09-22 — What's new includes NSW polls and foundation opens
+
+| Area | What shipped |
+|---|---|
+| **Bug** | `/latest` only loaded Vic and federal polls and dated them by `fieldwork_end`, so the Insightfully/MCA NSW poll (fieldwork Aug, published mid-Sep) and the NSW 2027 foundation open never appeared |
+| **Fix** | Feed loads `nsw2027` polls too; feed date prefers source `published` then `fieldwork_end`; out-of-average polls stay visible; foundation-open notes from `election.yaml` get a Foundation updates section |
+
 ## 2026-09-03 — End-of-day docs checkpoint
 
 | Area | What shipped |

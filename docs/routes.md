@@ -11,7 +11,7 @@ What the header and footer show, and the full public tree, is in
 ## National routes
 
 - `/` — national homepage
-- `/latest` — recent sourced polls and Victorian candidacies
+- `/latest` — recent sourced Vic/federal/NSW polls, Victorian candidacies, foundation opens
 - `/elections` — upcoming election calendar
 - `/methodology`, `/about` and legal pages — site-wide material
 - `/people/<slug>` — permanent person pages when introduced
@@ -44,6 +44,7 @@ Sitting members only — data id `nsw2027`, `kind: state-foundation`.
 /elections/nsw/2027/parties
 /elections/nsw/2027/parties/<slug>
 /elections/nsw/2027/data
+/elections/nsw/2027/polls
 ```
 
 | | Value |
@@ -51,7 +52,7 @@ Sitting members only — data id `nsw2027`, `kind: state-foundation`.
 | Data | `data/nsw2027/` → `/data/nsw2027/` |
 | Sitting parliament | 58th (members listed) |
 | Election forms | 59th Parliament |
-| Candidates / polls / policies | Not yet |
+| Candidates / policies | Not yet (poll ledger open) |
 
 Loader: `scripts/lib/state-foundation.mjs`. Dedicated pages; not the generic
 placeholder template.
