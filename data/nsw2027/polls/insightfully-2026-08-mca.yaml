@@ -1,0 +1,44 @@
+id: insightfully-2026-08-mca
+pollster: insightfully
+commissioner: minerals-council-of-australia
+commissioner_type: excluded_advocacy
+fieldwork_start: 2026-08-05
+fieldwork_end: 2026-08-12
+sample_size: 1000
+design_effect: null
+mode: online
+population: nsw-electors
+question_notes: >-
+  NSW Legislative Assembly statewide primary voting intention from Insightfully
+  research commissioned by the Minerals Council of Australia (MCA). Fieldwork
+  5–12 August 2026; online sample of 1,000 NSW voters; margin of error ±2.9% as
+  reported via One News Australia from the MCA research pack. Statewide VI:
+  Labor 29, One Nation 29, Coalition 18, Greens 13, Independent 9, Others 2
+  (Independents folded into others → 11). MCA’s public release emphasises uranium
+  mining / ban-awareness issues questions; those issues numbers are not encoded
+  as VI. Advocacy-commissioned — ledgered for transparency, out of the average.
+primaries:
+  alp: 29
+  lnp: 18
+  onp: 29
+  grn: 13
+  others: 11
+undecided_handling: allocated
+eligible_for_average: false
+exclusion_reason: >-
+  Advocacy-commissioned (Minerals Council of Australia). Party / union / advocacy
+  polls are excluded from the tracker average by default under
+  docs/poll-methodology.md; no eligibility_exception applied. Insightfully is not
+  yet on the NSW media/self allowlist for averages.
+eligibility_exception: null
+sources:
+  - url: https://minerals.org.au/resources/solid-majority-of-nsw-voters-support-uranium-mining-for-zero-emissions-energy/
+    publisher: Minerals Council of Australia
+    title: Solid majority of NSW voters support uranium mining for zero-emissions energy
+    published: 2026-09-15
+    accessed: 2026-09-22
+  - url: https://www.onenewsaustralia.com/pauline-hanson-outranks-minns-and-albanese-in-exclusive-nsw-favourability-poll/
+    publisher: One News Australia
+    title: Pauline Hanson outranks Minns and Albanese in exclusive NSW favourability poll as voters back lifting uranium ban
+    published: 2026-09-18
+    accessed: 2026-09-22
