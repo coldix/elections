@@ -1,0 +1,93 @@
+---
+/**
+ * Visible “data used” note: which polls sit in the average vs ledger-excluded /
+ * outside the window, with pollster, dates, n, and eligible_for_average.
+ */
+import { formatDate } from "../lib/site.mjs";
+
+const { polls, average } = Astro.props;
+
+const includedIds = new Set(average?.included_poll_ids ?? []);
+const sorted = [...(polls ?? [])].sort((a, b) =>
+  a.fieldwork_end < b.fieldwork_end ? 1 : -1
+);
+
+function statusFor(p) {
+  if (includedIds.has(p.id)) return { label: "In average", kind: "in" };
+  if (p.eligible_for_average) return { label: "Eligible · outside window / superseded", kind: "window" };
+  return { label: "Excluded from average", kind: "out" };
+}
+
+function fmtRange(p) {
+  if (p.fieldwork_start && p.fieldwork_start !== p.fieldwork_end) {
+    return `${formatDate(p.fieldwork_start)} – ${formatDate(p.fieldwork_end)}`;
+  }
+  return formatDate(p.fieldwork_end);
+}
+---
+
+<section class="data-used" aria-labelledby="data-used-heading">
+  <h2 id="data-used-heading">Data used</h2>
+  <p>
+    Every statewide VI poll in this ledger is listed below with pollster, fieldwork
+    dates, sample size when published, and whether it enters the tracker average
+    (<code>eligible_for_average</code>).
+    {
+      average?.thin_series ? (
+        <>
+          {" "}
+          <strong>Thin series:</strong> the usual 45/60-day window did not yield two
+          pollsters, so older eligible polls were included (window{" "}
+          {average.window_days_used} days).
+        </>
+      ) : null
+    }
+    {" "}Not a forecast.
+  </p>
+  {
+    sorted.length === 0 ? (
+      <p class="muted">No polls encoded yet.</p>
+    ) : (
+      <div class="table-scroll">
+        <table class="data">
+          <thead>
+            <tr>
+              <th scope="col">Pollster</th>
+              <th scope="col">Fieldwork</th>
+              <th scope="col" class="num">n</th>
+              <th scope="col">Eligible</th>
+              <th scope="col">Role in average</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map((p) => {
+              const st = statusFor(p);
+              return (
+                <tr>
+                  <th scope="row">{p.pollster}</th>
+                  <td class="mono">{fmtRange(p)}</td>
+                  <td class="num mono">{p.sample_size ?? "—"}</td>
+                  <td class="mono">{p.eligible_for_average ? "true" : "false"}</td>
+                  <td>
+                    <span class={`pill ${st.kind === "in" ? "in" : "out"}`} title={p.exclusion_reason ?? p.eligibility_exception ?? undefined}>
+                      {st.label}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .data-used {
+    margin: 1.5rem 0 1.75rem;
+  }
+  .data-used h2 {
+    margin-bottom: 0.4rem;
+  }
+</style>

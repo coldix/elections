@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import PollCharts from "../components/PollCharts.astro";
 import PollAverageBoard from "../components/PollAverageBoard.astro";
+import PollDataUsed from "../components/PollDataUsed.astro";
 import OzeMonthlySurvey from "../components/OzeMonthlySurvey.astro";
 import AdRow from "../components/AdRow.astro";
 import { SITE, VIC2026, FEDERAL_49, formatDate } from "../lib/site.mjs";
@@ -154,6 +155,8 @@ const schema = [
         <PollCharts primaries={average.primaries} blocs={average.bloc_split} />
       )
     }
+
+    <PollDataUsed polls={polls} average={average} />
 
     <p class="muted">
       Weights combine effective sample size and exponential time decay. Full formula:

@@ -2,6 +2,7 @@
 import Base from "../../../../layouts/Base.astro";
 import PollCharts from "../../../../components/PollCharts.astro";
 import PollAverageBoard from "../../../../components/PollAverageBoard.astro";
+import PollDataUsed from "../../../../components/PollDataUsed.astro";
 import { SITE, NSW2027, FEDERAL_49, VIC2026, formatDate } from "../../../../lib/site.mjs";
 import {
   loadPolls,
@@ -98,6 +99,15 @@ const schema = [
 
     <div class="notice" role="note">
       <strong>Read the bands carefully.</strong> {POLL_CAVEAT}
+      {
+        average.thin_series && average.status === "ok" ? (
+          <>
+            {" "}
+            <strong>Thin NSW series:</strong> older eligible polls are included so the
+            average and graphs still publish — see Data used below.
+          </>
+        ) : null
+      }
     </div>
 
     <p class="btn-row">
@@ -113,6 +123,8 @@ const schema = [
         <PollCharts primaries={average.primaries} blocs={average.bloc_split} />
       )
     }
+
+    <PollDataUsed polls={polls} average={average} />
 
     <p class="muted">
       Weights combine effective sample size and exponential time decay. Full formula:

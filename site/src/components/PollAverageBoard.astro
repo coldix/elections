@@ -95,9 +95,15 @@ function fmt(n) {
             <time datetime={average.as_of}>{asOfLabel}</time>
           </p>
           <p class="muted board-meta">
-            {pollCount} polls · {average.window_days_used}-day window · half-life{" "}
+            {pollCount} polls · {average.window_days_used}-day window
+            {average.thin_series ? " (thin series · older polls allowed)" : ""} · half-life{" "}
             {average.parameters.half_life_days} days · {copy.frame} · not a forecast
           </p>
+          {
+            average.note && average.thin_series ? (
+              <p class="muted board-meta">{average.note}</p>
+            ) : null
+          }
         </div>
         <ul class="shares" role="list">
           {PARTY_ORDER.map((p) => (

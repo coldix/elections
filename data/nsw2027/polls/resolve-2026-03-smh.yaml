@@ -1,0 +1,39 @@
+id: resolve-2026-03-smh
+pollster: resolve
+commissioner: sydney-morning-herald
+commissioner_type: media
+fieldwork_start: 2026-03-09
+fieldwork_end: 2026-03-14
+sample_size: 1100
+design_effect: null
+mode: online
+population: nsw-electors
+question_notes: >-
+  NSW Legislative Assembly statewide primary VI from Resolve Political Monitor
+  for the Sydney Morning Herald — first bi-monthly NSW state release to prompt
+  One Nation as a named response option. SMH primary: survey of 1,100 voters,
+  fieldwork 9–14 March 2026. Primaries from Poll Bludger / SMH: Labor 29,
+  Coalition 25, One Nation 23, Greens 10. Others = residual 13 (independents +
+  other minors); Conversation later implies March IND ~8 / other ~5 when reporting
+  May deltas (IND −2 to 6, other −1 to 4). Preferred premier not encoded.
+primaries:
+  alp: 29
+  lnp: 25
+  onp: 23
+  grn: 10
+  others: 13
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+eligibility_exception: null
+sources:
+  - url: https://www.smh.com.au/politics/nsw/cannibalising-labor-s-vote-one-nation-s-insurgence-into-nsw-20260317-p5ob5g.html
+    publisher: The Sydney Morning Herald
+    title: "‘Cannibalising Labor’s vote’: One Nation’s insurgence into NSW"
+    published: 2026-03-19
+    accessed: 2026-09-22
+  - url: https://www.pollbludger.net/2026/03/20/resolve-strategic-labor-29-coalition-25-one-nation-23-in-new-south-wales/
+    publisher: The Poll Bludger
+    title: "Resolve Strategic: Labor 29, Coalition 25, One Nation 23 in New South Wales"
+    published: 2026-03-20
+    accessed: 2026-09-22

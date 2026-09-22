@@ -1,0 +1,39 @@
+id: resolve-2026-05-smh
+pollster: resolve
+commissioner: sydney-morning-herald
+commissioner_type: media
+fieldwork_start: 2026-05-13
+fieldwork_end: 2026-05-16
+sample_size: 1100
+design_effect: null
+mode: online
+population: nsw-electors
+question_notes: >-
+  NSW Legislative Assembly statewide primary VI from Resolve Political Monitor
+  for the Sydney Morning Herald (bi-monthly NSW pad). Conversation reports
+  fieldwork 13–16 May 2026, n=1,100: Labor 32, Coalition 26, One Nation 22,
+  Greens 10, independents 6, others 4 (independents folded into others → 10).
+  Poll Bludger reports the same four-party topline with an overall sample of
+  1,000 from the last two national surveys — Conversation’s n and dates used
+  here. Preferred premier not encoded.
+primaries:
+  alp: 32
+  lnp: 26
+  onp: 22
+  grn: 10
+  others: 10
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+eligibility_exception: null
+sources:
+  - url: https://theconversation.com/further-post-budget-polls-have-labor-down-but-retaining-a-clear-lead-283143
+    publisher: The Conversation
+    title: Further post-budget polls have Labor down, but retaining a clear lead
+    published: 2026-05-20
+    accessed: 2026-09-22
+  - url: https://www.pollbludger.net/2026/05/20/resolve-strategic-labor-32-coalition-26-one-nation-22-greens-10-in-new-south-wales/
+    publisher: The Poll Bludger
+    title: "Resolve Strategic: Labor 32, Coalition 26, One Nation 22, Greens 10 in New South Wales"
+    published: 2026-05-20
+    accessed: 2026-09-22

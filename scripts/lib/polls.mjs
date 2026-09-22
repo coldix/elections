@@ -37,6 +37,14 @@ const HALF_LIFE_DAYS = 21;
 const LAMBDA = Math.LN2 / HALF_LIFE_DAYS;
 const WINDOW_DAYS = 45;
 const WINDOW_EXTEND_DAYS = 60;
+/** Sparse-state fallback after 60 days (methodology: never beyond 90 without a note). */
+const WINDOW_SPARSE_DAYS = 90;
+/**
+ * Thin-series fallback: if still fewer than two pollsters after 90 days, keep
+ * extending (capped) so NSW and other thin ledgers can still publish an average
+ * and graphs. Product rule: allow older polls when there are not enough recent ones.
+ */
+const WINDOW_THIN_MAX_DAYS = 400;
 const MIN_POLLS = 2;
 const MIN_POLLSTERS = 2;
 const SIGMA_MIN_PP = 1.0; // percentage points
@@ -153,10 +161,28 @@ function effectiveN(poll) {
  * @param {object[]} polls
  * @param {string} [asOf] ISO date; default = latest fieldwork_end among eligible
  */
+function dedupeOnePerPollster(pool) {
+  const byPollster = new Map();
+  for (const p of pool) {
+    const prev = byPollster.get(p.pollster);
+    if (!prev || p.fieldwork_end > prev.fieldwork_end) byPollster.set(p.pollster, p);
+  }
+  const included = [...byPollster.values()].sort((a, b) =>
+    a.fieldwork_end < b.fieldwork_end ? 1 : -1
+  );
+  return { included, pollsterCount: byPollster.size };
+}
+
 export function selectForAverage(polls, asOf) {
   const eligible = polls.filter((p) => p.eligible_for_average === true);
   if (!eligible.length) {
-    return { included: [], asOf: asOf ?? null, windowDays: WINDOW_DAYS, reason: "no_eligible" };
+    return {
+      included: [],
+      asOf: asOf ?? null,
+      windowDays: WINDOW_DAYS,
+      reason: "no_eligible",
+      thinSeries: false,
+    };
   }
 
   const latest = eligible.reduce(
@@ -171,6 +197,7 @@ export function selectForAverage(polls, asOf) {
       return age >= 0 && age <= maxAge;
     });
 
+  // Standard rolling window: 45 days; extend to 60 if fewer than 3 eligible.
   let windowDays = WINDOW_DAYS;
   let pool = inWindow(WINDOW_DAYS);
   if (pool.length < 3) {
@@ -178,27 +205,41 @@ export function selectForAverage(polls, asOf) {
     pool = inWindow(WINDOW_EXTEND_DAYS);
   }
 
-  // One poll per pollster: newest fieldwork_end wins
-  const byPollster = new Map();
-  for (const p of pool) {
-    const prev = byPollster.get(p.pollster);
-    if (!prev || p.fieldwork_end > prev.fieldwork_end) byPollster.set(p.pollster, p);
-  }
-  const included = [...byPollster.values()].sort((a, b) =>
-    a.fieldwork_end < b.fieldwork_end ? 1 : -1
-  );
-
-  if (included.length < MIN_POLLS || byPollster.size < MIN_POLLSTERS) {
+  let attempt = dedupeOnePerPollster(pool);
+  if (attempt.included.length >= MIN_POLLS && attempt.pollsterCount >= MIN_POLLSTERS) {
     return {
-      included: [],
-      candidates: included,
+      included: attempt.included,
       asOf: T,
       windowDays,
-      reason: "insufficient",
+      reason: null,
+      thinSeries: false,
     };
   }
 
-  return { included, asOf: T, windowDays, reason: null };
+  // Thin / sparse series: escalate to 90 days, then a capped older window so
+  // graphs and averages still publish when recent polling is too thin.
+  for (const maxAge of [WINDOW_SPARSE_DAYS, WINDOW_THIN_MAX_DAYS]) {
+    windowDays = maxAge;
+    attempt = dedupeOnePerPollster(inWindow(maxAge));
+    if (attempt.included.length >= MIN_POLLS && attempt.pollsterCount >= MIN_POLLSTERS) {
+      return {
+        included: attempt.included,
+        asOf: T,
+        windowDays,
+        reason: null,
+        thinSeries: true,
+      };
+    }
+  }
+
+  return {
+    included: [],
+    candidates: attempt.included,
+    asOf: T,
+    windowDays,
+    reason: "insufficient",
+    thinSeries: true,
+  };
 }
 
 function weightedMean(items, getP) {
@@ -249,12 +290,15 @@ export function computePollAverage(polls, options = {}) {
       half_life_days: HALF_LIFE_DAYS,
       window_days_default: WINDOW_DAYS,
       window_days_extended: WINDOW_EXTEND_DAYS,
+      window_days_sparse: WINDOW_SPARSE_DAYS,
+      window_days_thin_max: WINDOW_THIN_MAX_DAYS,
       sigma_min_pp: SIGMA_MIN_PP,
       min_polls: MIN_POLLS,
       min_pollsters: MIN_POLLSTERS,
     },
     as_of: selection.asOf,
     window_days_used: selection.windowDays,
+    thin_series: Boolean(selection.thinSeries),
     status: selection.reason ? "insufficient" : "ok",
     status_reason: selection.reason,
     included_poll_ids: [],
@@ -274,9 +318,16 @@ export function computePollAverage(polls, options = {}) {
     base.note =
       selection.reason === "no_eligible"
         ? "No eligible polls in the ledger yet."
-        : "Fewer than two pollsters in the rolling window after de-duplication; no numeric average published.";
+        : "Fewer than two pollsters after extending the window for a thin series; no numeric average published.";
     base.near_miss_ids = (selection.candidates ?? []).map((p) => p.id);
     return base;
+  }
+
+  if (selection.thinSeries) {
+    base.note =
+      selection.windowDays > WINDOW_SPARSE_DAYS
+        ? `Thin poll series: fewer than two eligible pollsters inside the usual 45/60-day window, so the average includes older eligible polls (window extended to ${selection.windowDays} days). Not a forecast.`
+        : `Sparse polling: window extended to ${selection.windowDays} days to reach the minimum pollster set. Not a forecast.`;
   }
 
   const T = selection.asOf;

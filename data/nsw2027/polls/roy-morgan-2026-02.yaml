@@ -1,0 +1,35 @@
+id: roy-morgan-2026-02
+pollster: roy-morgan
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-02-16
+fieldwork_end: 2026-02-19
+sample_size: 2108
+design_effect: null
+mode: sms
+population: nsw-electors
+question_notes: >-
+  Special SMS Roy Morgan survey of New South Wales statewide Legislative
+  Assembly voting intention, 16–19 February 2026, n=2,108 electors (Roy Morgan
+  primary). Primaries: One Nation 30, ALP 25, L-NP Coalition 19, Greens 12.5,
+  other minor parties and Independents 13.5. Better Premier / approval questions
+  not encoded as VI.
+primaries:
+  alp: 25
+  lnp: 19
+  onp: 30
+  grn: 12.5
+  others: 13.5
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+eligibility_exception: null
+sources:
+  - url: https://www.roymorgan.com/findings/10143-new-south-wales-state-voting-intention-february-2026
+    publisher: Roy Morgan Research
+    title: >-
+      New South Wales State Voting Intention: One Nation (30%) now ahead of ALP
+      (25%) and L-NP Coalition (19%) on primary vote one year before New South
+      Wales State Election
+    published: 2026-02-23
+    accessed: 2026-09-22

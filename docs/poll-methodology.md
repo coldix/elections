@@ -179,9 +179,10 @@ Among eligible polls, the average uses a **rolling window**, not all history:
 
 | Rule | Value | Justification |
 |---|---|---|
-| Time window | Fieldwork end within **last 45 days**; if fewer than **3** eligible after de-dupe, extend to **60 days**. Never beyond **90 days** without a manual methodology note on the release. | Sparse state polling vs recency |
+| Time window | Fieldwork end within **last 45 days**; if fewer than **3** eligible before de-dupe, extend to **60 days**. | Sparse state polling vs recency |
+| Sparse / thin fallback | If still **&lt; 2 pollsters** after de-dupe at 60 days, extend to **90 days**, then (thin series) up to **400 days**, and **still publish** the numeric average and graphs. Flag `thin_series: true` and show a **Data used** note (pollster, dates, *n*, eligible flag). | NSW and other thin ledgers must not go blank |
 | One poll per pollster | Keep only the **most recent** eligible poll per pollster inside the window | Stops frequent series drowning monthly ones |
-| Minimum set | Publish a numeric average only if **≥ 2 pollsters** and **≥ 2 polls** after de-dupe; otherwise “insufficient recent polling” + eligible list | No single-poll “averages” |
+| Minimum set | Publish a numeric average only if **≥ 2 pollsters** and **≥ 2 polls** after de-dupe; otherwise “insufficient” + eligible list. Thin-series escalation runs before giving up. | No single-poll “averages” |
 | Sort key | Fieldwork **end** | Publication lag can reverse true order |
 
 ---
@@ -399,15 +400,24 @@ jurisdiction substitutions:
 | `population: victorian-electors` | `population: nsw-electors` |
 | Path `data/vic2026/polls/` | Path `data/nsw2027/polls/` |
 
+**Thin series (product rule).** NSW (and any other thin poll ledger) **allows
+older eligible polls** when the usual 45/60-day window cannot reach two
+pollsters. The site **still produces graphs** and the average board, and must
+show a visible **Data used** note listing each poll’s pollster, fieldwork /
+published dates, *n* when known, and `eligible_for_average` true/false
+(including which rows are in the average vs excluded / outside the window).
+
 Party / union / advocacy commissions remain **out of the average by default**
 (`eligible_for_average: false` + `exclusion_reason`). Do not invent statewide
 VI numbers from issues-only releases. Prefer the pollster or commissioner
 primary over advocacy press rewrites when both exist.
 
-Insightfully and other firms not yet listed in the Vic allowlist may be
-**ledgered** when fieldwork, *n*, mode and five-way primaries are public; they
-enter the average only after an allowlist edit (media/self/academic) or a
-documented `eligibility_exception`.
+Resolve Strategic (SMH) and Roy Morgan (self) are on the allowlist for NSW
+statewide VI. Insightfully and other firms not yet listed may be **ledgered**
+when fieldwork, *n*, mode and five-way primaries are public; they enter the
+average only after an allowlist edit (media/self/academic) or a documented
+`eligibility_exception`. The Insightfully / MCA August 2026 pack remains
+`eligible_for_average: false`.
 
 ---
 

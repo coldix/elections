@@ -1,0 +1,45 @@
+id: resolve-2026-07-smh
+pollster: resolve
+commissioner: sydney-morning-herald
+commissioner_type: media
+fieldwork_start: 2026-06-08
+fieldwork_end: 2026-07-11
+sample_size: 1100
+design_effect: null
+mode: online
+population: nsw-electors
+question_notes: >-
+  NSW Legislative Assembly statewide primary VI from Resolve Political Monitor
+  for Nine / SMH — bi-monthly NSW pad combining mid-June and mid-July national
+  waves (Particle; Poll Bludger). Exact June NSW interview dates were not in
+  the SMH/WA Today online write-up; fieldwork span uses the federal Resolve
+  July wave (6–11 July 2026) as the end bound and a mid-June start consistent
+  with the published “mid-June and mid-July” description. Sample 1,100 (PB).
+  Primaries (Bonham / Wikipedia / PB): Labor 29, Coalition 23, One Nation 25,
+  Greens 11, IND 8 + other 4 → others 12. Preferred premier not encoded.
+primaries:
+  alp: 29
+  lnp: 23
+  onp: 25
+  grn: 11
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+eligibility_exception: null
+sources:
+  - url: https://www.watoday.com.au/politics/nsw/guilt-by-association-as-nsw-politicians-take-a-dive-along-with-national-parties-20260716-p60fwd.html
+    publisher: WAtoday (Nine)
+    title: Guilt by association as NSW politicians take a dive along with national parties
+    published: 2026-07-20
+    accessed: 2026-09-22
+  - url: https://www.pollbludger.net/2026/07/23/non-federal-polls-resolve-strategic-nsw-and-demosau-act/
+    publisher: The Poll Bludger
+    title: "Non-federal polls: Resolve Strategic NSW and DemosAU ACT"
+    published: 2026-07-23
+    accessed: 2026-09-22
+  - url: https://en.wikipedia.org/wiki/Opinion_polling_for_the_2027_New_South_Wales_state_election
+    publisher: Wikipedia
+    title: Opinion polling for the 2027 New South Wales state election (Bonham IND/OTH split)
+    published: 2026-07-20
+    accessed: 2026-09-22

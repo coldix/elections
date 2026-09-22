@@ -6,6 +6,14 @@ Product and discovery work from the **polls module** (`d9861da`, 2026-07-29)
 onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
+
+## 2026-09-22 — NSW 2027 poll backfill + thin-series averages
+
+- Encoded Resolve Strategic / SMH NSW statewide VI for Mar, May, Jul, Sep 2026 and Roy Morgan SMS Feb 2026 under `data/nsw2027/polls/`.
+- Kept Insightfully / MCA Aug 2026 out of the average (`eligible_for_average: false`).
+- Rolling window now escalates 45 → 60 → 90 → 400 days when fewer than two pollsters remain (thin series); graphs and average still publish with `thin_series` flag.
+- `/elections/nsw/2027/polls` (and Vic/federal polls pages) show a visible **Data used** table: pollster, fieldwork, n, eligible flag, in-average vs excluded/window.
+
 ## 2026-09-22 — What's new includes NSW polls and foundation opens
 
 | Area | What shipped |

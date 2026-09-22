@@ -1,0 +1,38 @@
+id: resolve-2026-09-smh
+pollster: resolve
+commissioner: sydney-morning-herald
+commissioner_type: media
+fieldwork_start: 2026-08-09
+fieldwork_end: 2026-09-12
+sample_size: 1100
+design_effect: null
+mode: online
+population: nsw-electors
+question_notes: >-
+  NSW Legislative Assembly statewide primary VI from Resolve Political Monitor
+  for the Sydney Morning Herald. SMH primary: combined NSW samples 9–15 August
+  and 7–12 September 2026; overall n=1,100. Primaries (SMH / Poll Bludger /
+  Resolve Monitor): Labor 29 (unchanged), One Nation 25 (unchanged), Coalition
+  24 (up one), Greens 11 (unchanged). Others residual 11. Preferred premier /
+  gun-law issues questions not encoded as VI.
+primaries:
+  alp: 29
+  lnp: 24
+  onp: 25
+  grn: 11
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+eligibility_exception: null
+sources:
+  - url: https://www.smh.com.au/politics/nsw/voters-deliver-verdict-on-guns-as-political-division-widens-20260918-p60y9d.html
+    publisher: The Sydney Morning Herald
+    title: Voters deliver verdict on guns as political division widens
+    published: 2026-09-18
+    accessed: 2026-09-22
+  - url: https://www.pollbludger.net/2026/09/18/resolve-strategic-labor-29-one-nation-25-coalition-24-in-new-south-wales/
+    publisher: The Poll Bludger
+    title: "Resolve Strategic: Labor 29, One Nation 25, Coalition 24 in New South Wales"
+    published: 2026-09-18
+    accessed: 2026-09-22
