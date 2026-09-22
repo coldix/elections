@@ -40,9 +40,22 @@ const files = [
     name: "summary.json",
     note: "Headline counts for this snapshot.",
   },
+  {
+    name: "polls.json",
+    note: "Statewide Legislative Assembly VI poll ledger (eligible and excluded).",
+  },
+  {
+    name: "poll-average.json",
+    note: "Weighted average of eligible recent polls (may be insufficient).",
+  },
+  {
+    name: "issues.json",
+    note: "Issue taxonomy skeleton for a future NSW policy matrix.",
+  },
   { name: "districts.csv", note: "Districts spreadsheet export." },
   { name: "assembly-members.csv", note: "Assembly members spreadsheet export." },
   { name: "council-members.csv", note: "Council members spreadsheet export." },
+  { name: "polls.csv", note: "Poll ledger spreadsheet export." },
 ];
 
 const schema = {
@@ -55,7 +68,7 @@ const schema = {
 
 <Base
   title="Open data"
-  description={`JSON and CSV for the nsw2027 ledger: districts, sitting members, parties and representation. CC BY 4.0.`}
+  description={`JSON and CSV for the nsw2027 ledger: districts, sitting members, parties, polls, issues and representation. CC BY 4.0.`}
   schema={schema}
   breadcrumbs={[
     { name: "Upcoming elections", href: "/elections" },

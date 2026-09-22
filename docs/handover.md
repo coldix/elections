@@ -38,7 +38,7 @@ placeholder template in `site/src/pages/elections/[...path].astro`.
 | Path | Data id | Depth |
 |---|---|---|
 | `/elections/vic/2026` | `vic2026` | Full (candidates, polls, policies) |
-| `/elections/nsw/2027` | `nsw2027` | Sitting members (`state-foundation`) |
+| `/elections/nsw/2027` | `nsw2027` | Sitting members + polls/issues foundation (`state-foundation`) |
 | `/elections/federal/49` | `federal-49` | Sitting members + polls + policies |
 | Other calendar paths | — | Outline placeholder only |
 
@@ -218,12 +218,19 @@ Active under `/elections/nsw/2027` (data id `nsw2027`). Sitting members are the
 - Legislative Assembly: 93 districts + sitting MLAs
 - Legislative Council: 42 members + half-Council term status (`up` / `continuing`)
 - Parties index + per-party member lists
+- Key dates from NSWEC (capped period → writs → nominations → early voting → polling day)
+- Statewide VI poll ledger + tracker average page (`/elections/nsw/2027/polls`)
+- Issue taxonomy skeleton (`issues.yaml`) — no policy claim files yet
 - Open data page + exports: `/data/nsw2027/`
-- No candidates, polls, or policies yet (thin clone of federal sitting-members tier)
+- No candidacy ledger yet (foundation tier, not Vic-depth)
 
 Membership from **Parliament of NSW** official downloads (LA xlsx / LC csv).
 Council term class uses end-term years (secondary cross-check) with mid-term
 replacement inheritance (Barrett→Taylor 2031; Overall→Farraway 2027).
+
+Poll eligibility follows [poll-methodology.md](poll-methodology.md) adapted to NSW
+Legislative Assembly statewide primaries. Advocacy / party / union commissions
+default out of the average.
 
 ## Federal scaffold (federal-49)
 
@@ -268,7 +275,7 @@ See [methodology.md](methodology.md) and ADR-14 in
 4. Maintain Vic/federal policy and poll ledgers (primary sources preferred).
 5. Federal: thicken empty policy cells; keep APH membership current; park
    candidates until announcements warrant it.
-6. NSW: optional next steps are polls and state policies; candidates later.
+6. NSW: thicken eligible media/self statewide VI polls; optional state policies; candidates later.
 7. Obtain qualified legal review of the living-person and electoral-matter
    publication approach before campaigns intensify.
 

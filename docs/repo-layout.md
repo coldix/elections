@@ -39,12 +39,14 @@ data/
 ├── election-calendar.yaml        next Australian elections and date certainty
 ├── election-placeholders.yaml    chamber structure for outline + dedicated pages
 ├── vic2026/                      full Victorian ledger (candidates, polls, policies, 2022 results)
-├── nsw2027/                      NSW sitting members (kind: state-foundation)
-│   ├── election.yaml
+├── nsw2027/                      NSW sitting members + polls/issues (kind: state-foundation)
+│   ├── election.yaml             key dates (NSWEC) + sitting-member hygiene
 │   ├── districts.yaml            93 Assembly districts
 │   ├── assembly-members.yaml
 │   ├── council-members.yaml      42 MLCs + term_status
-│   └── parties.yaml
+│   ├── parties.yaml
+│   ├── issues.yaml               issue taxonomy skeleton (no policies yet)
+│   └── polls/                    statewide VI ledger + eligibility stub
 └── federal-49/                   federal sitting members, polls, policies
     ├── election.yaml
     ├── divisions.yaml

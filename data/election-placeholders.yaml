@@ -15,7 +15,8 @@ placeholders:
       contest_summary: 93 Assembly districts and 21 of 42 Council places
       tracking_status: >-
         Sitting members of the 58th Parliament are published under this path
-        (data id nsw2027). Individual candidacies for 2027 are not yet tracked.
+        (data id nsw2027). Statewide poll ledger and issue taxonomy are open
+        (foundation tier). Individual candidacies for 2027 are not yet tracked.
       chambers:
         - name: Legislative Assembly
           role: Lower house

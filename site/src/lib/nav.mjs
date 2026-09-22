@@ -118,6 +118,11 @@ const ELECTIONS = {
         label: "Council",
         current: (path) => under(path, NSW2027, "council"),
       },
+      {
+        href: `${NSW2027}/polls`,
+        label: "Polls",
+        current: (path) => under(path, NSW2027, "polls"),
+      },
     ],
   },
 };

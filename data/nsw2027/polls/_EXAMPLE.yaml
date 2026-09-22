@@ -1,0 +1,35 @@
+# NSW 2027 statewide VI poll example / eligibility pointer.
+# Files starting with _ are ignored by loadPolls and validate.
+#
+# Eligibility: docs/poll-methodology.md applied to NSW Legislative Assembly
+# statewide primary voting intention (not federal VI; not seat-only cuts).
+# Party / union / advocacy commissioners default to eligible_for_average: false
+# unless a documented eligibility_exception is set.
+#
+# Copy a real media/self/academic poll YAML from data/federal-49/polls/ or
+# data/vic2026/polls/ and adapt population to nsw-electors.
+id: example-do-not-load
+pollster: example
+commissioner: example
+commissioner_type: media
+fieldwork_start: 2026-01-01
+fieldwork_end: 2026-01-07
+sample_size: 1000
+design_effect: null
+mode: online
+population: nsw-electors
+question_notes: "Example only — not loaded."
+primaries:
+  alp: 35
+  lnp: 35
+  onp: 10
+  grn: 10
+  others: 10
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://elections.nsw.gov.au/
+    publisher: NSW Electoral Commission
+    title: Placeholder source — replace before encoding a real poll
+    accessed: 2026-09-22

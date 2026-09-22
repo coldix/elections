@@ -265,6 +265,70 @@ for (const id of listElections()) {
       csv(data.councilMembers, ["name", "party", "parliament", "end_term", "term_status"])
     );
 
+    const polls = loadPolls(id);
+    const pollAverage = computePollAverage(polls);
+    write("polls.json", {
+      generated: new Date().toISOString(),
+      caveat: POLL_CAVEAT,
+      methodology: "docs/poll-methodology.md",
+      jurisdiction: "nsw",
+      population: "nsw-electors",
+      polls: polls.map(({ file, ...p }) => p),
+    });
+    write("poll-average.json", pollAverage);
+    writeFileSync(
+      join(out, "polls.csv"),
+      csv(
+        polls.map((p) => ({
+          id: p.id,
+          pollster: p.pollster,
+          commissioner: p.commissioner,
+          commissioner_type: p.commissioner_type,
+          fieldwork_start: p.fieldwork_start,
+          fieldwork_end: p.fieldwork_end,
+          sample_size: p.sample_size,
+          alp: p.primaries?.alp,
+          lnp: p.primaries?.lnp,
+          onp: p.primaries?.onp,
+          grn: p.primaries?.grn,
+          others: p.primaries?.others,
+          eligible_for_average: p.eligible_for_average,
+          eligibility_exception: p.eligibility_exception ?? "",
+          source_url: p.sources?.[0]?.url,
+        })),
+        [
+          "id", "pollster", "commissioner", "commissioner_type",
+          "fieldwork_start", "fieldwork_end", "sample_size",
+          "alp", "lnp", "onp", "grn", "others",
+          "eligible_for_average", "eligibility_exception", "source_url",
+        ]
+      )
+    );
+
+    const issues = loadIssues(id);
+    write("issues.json", {
+      generated: new Date().toISOString(),
+      methodology: "docs/policy-methodology.md",
+      issues: issues.map(({ jurisdiction_label, ...rest }) => rest),
+    });
+
+    const files = [
+      "election.json",
+      "districts.json",
+      "assembly-members.json",
+      "council-members.json",
+      "parties.json",
+      "representation.json",
+      "summary.json",
+      "districts.csv",
+      "assembly-members.csv",
+      "council-members.csv",
+      "polls.json",
+      "poll-average.json",
+      "polls.csv",
+      "issues.json",
+    ];
+
     index.elections.push({
       id,
       name: data.election.name,
@@ -274,22 +338,13 @@ for (const id of listElections()) {
       assembly_members: summary.assembly_members,
       council_members: summary.council_members,
       council_up: summary.council_up,
-      files: [
-        "election.json",
-        "districts.json",
-        "assembly-members.json",
-        "council-members.json",
-        "parties.json",
-        "representation.json",
-        "summary.json",
-        "districts.csv",
-        "assembly-members.csv",
-        "council-members.csv",
-      ],
+      polls: polls.length,
+      issues: issues.length,
+      files,
     });
 
     console.log(
-      `${id}: exported state-foundation · ${summary.assembly_members} MLAs, ${summary.council_members} MLCs -> site/public/data/${id}/`
+      `${id}: exported state-foundation · ${summary.assembly_members} MLAs, ${summary.council_members} MLCs, ${polls.length} polls, ${issues.length} issues -> site/public/data/${id}/`
     );
     continue;
   }

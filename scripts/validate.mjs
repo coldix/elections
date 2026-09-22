@@ -574,6 +574,16 @@ for (const election of readdirSync(DATA_DIR)) {
 
   if (meta.kind === "state-foundation") {
     validateStateFoundation(election, dir, load);
+    for (const d of meta.dates ?? []) {
+      checkSource(`${election}/election.yaml`, `date ${d.date}`, d.source);
+    }
+    const pollCount = validatePolls(election, dir);
+    const parties = load("parties.yaml").parties;
+    const partySlugs = new Set(parties.map((p) => p.slug));
+    const { issueCount, policyCount } = validateIssuesPolicies(election, dir, load, partySlugs);
+    console.log(
+      `${election}: ${pollCount} poll(s), ${issueCount} issues, ${policyCount} policies`
+    );
     continue;
   }
 

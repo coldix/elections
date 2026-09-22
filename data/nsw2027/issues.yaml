@@ -1,0 +1,120 @@
+# NSW 2027 issue taxonomy skeleton (foundation tier).
+# Order here is display order. Edit to add, rename, merge or split issues.
+# Methodology: docs/policy-methodology.md
+# No policy claim files yet — issues only until state policy encoding starts.
+#
+# jurisdiction enum:
+#   state_primary | shared_fed_state | federal_primary | local_primary | shared_state_local
+
+issues:
+  - slug: cost-of-living
+    name: Cost of Living
+    summary: >-
+      Household expenses such as energy bills, rents, transport fares, food prices
+      and state taxes and charges in New South Wales.
+    jurisdiction: shared_fed_state
+    jurisdiction_note: >-
+      Cost of living is not one portfolio. The Commonwealth sets income tax, most
+      welfare payments and monetary policy; NSW sets state taxes and charges, energy
+      consumer protections within the National Electricity Market framework, public
+      transport fares, stamp duty and many service fees.
+    state_role: >-
+      State taxes and charges, public transport fares, energy consumer protections,
+      concessions, and land tax / stamp duty settings.
+    federal_role: Income tax, most social security, competition policy, and national economic settings.
+    related: [energy, housing, health]
+
+  - slug: energy
+    name: Energy
+    summary: >-
+      Electricity and gas supply, prices, generation mix, networks, uranium mining
+      settings and consumer protections in New South Wales.
+    jurisdiction: shared_fed_state
+    jurisdiction_note: >-
+      Energy is a shared field. NSW participates in the National Electricity Market and
+      can set state energy policy, mining bans or approvals, consumer protections and
+      some generation decisions; the Commonwealth influences national market rules,
+      emissions targets and major funding programs.
+    state_role: >-
+      State energy policy, uranium mining prohibition settings, licensing and consumer
+      protection agencies, state projects and household energy concessions.
+    federal_role: National Electricity Market architecture, national emissions and energy funding.
+    related: [cost-of-living, climate-environment]
+
+  - slug: housing
+    name: Housing
+    summary: Housing supply, affordability, rental settings and planning that affect homes in NSW.
+    jurisdiction: shared_fed_state
+    jurisdiction_note: >-
+      Planning and zoning are largely state and local; the Commonwealth funds national
+      housing programs and some finance settings. NSW contests supply, tenancy and
+      planning reforms at state elections.
+    state_role: Planning, zoning, public housing stock, tenancy laws and many development approvals.
+    federal_role: National housing funds, Help to Buy-style programs and tax settings affecting investment.
+    related: [cost-of-living, planning-population]
+
+  - slug: health
+    name: Health
+    summary: Public hospitals, ambulance services, primary care interfaces and state health funding in NSW.
+    jurisdiction: shared_fed_state
+    jurisdiction_note: >-
+      Medicare and major hospital funding agreements are Commonwealth; public hospital
+      operation and many community health services are state-run under those agreements.
+    state_role: NSW Health, public hospitals, ambulance and many community health services.
+    federal_role: Medicare, PBS, aged care frameworks and hospital funding agreements.
+    related: [cost-of-living]
+
+  - slug: education
+    name: Education
+    summary: Public schools, TAFE and early childhood services run or regulated by New South Wales.
+    jurisdiction: state_primary
+    jurisdiction_note: >-
+      Schooling is primarily a state responsibility. The Commonwealth provides major
+      school funding and national curriculum and higher-education frameworks.
+    state_role: Public schools, state curriculum implementation, TAFE and many early childhood programs.
+    federal_role: School funding agreements, national curriculum frameworks and universities.
+    related: [cost-of-living]
+
+  - slug: crime-justice
+    name: Crime & Justice
+    summary: Policing, courts, corrections, youth justice and criminal law in New South Wales.
+    jurisdiction: state_primary
+    jurisdiction_note: >-
+      Criminal law, police and prisons for ordinary offences are primarily state
+      responsibilities. The Commonwealth runs federal courts and agencies for federal offences.
+    state_role: NSW Police, state courts, Corrective Services NSW, youth justice and most criminal offences.
+    federal_role: Federal offences, AFP responsibility for federal matters and national-security frameworks.
+    related: [cost-of-living]
+
+  - slug: immigration
+    name: Immigration
+    summary: Permanent and temporary migration levels, visas and settlement — largely Commonwealth powers.
+    jurisdiction: federal_primary
+    jurisdiction_note: >-
+      Immigration, visas and citizenship are Commonwealth powers. NSW can advocate, run
+      settlement services and set some nomination pathways within federal caps.
+    state_role: Settlement services, multicultural programs and limited state-nominated skilled pathways.
+    federal_role: Visas, migration planning levels, citizenship, border control and refugee determination.
+    related: [housing, planning-population, cost-of-living]
+
+  - slug: planning-population
+    name: Planning & Population
+    summary: Urban growth, infrastructure sequencing and development assessment settings in NSW.
+    jurisdiction: state_primary
+    jurisdiction_note: >-
+      Strategic planning, major project assessment and most development consent are state
+      and local. Population growth is driven largely by federal migration settings.
+    state_role: Strategic planning, transport corridors, Independent Planning Commission settings and local government oversight.
+    federal_role: Migration levels and national infrastructure funding programs.
+    related: [housing, immigration, cost-of-living]
+
+  - slug: climate-environment
+    name: Climate & Environment
+    summary: Emissions, biodiversity, land use and environmental protection settings contested in NSW.
+    jurisdiction: shared_fed_state
+    jurisdiction_note: >-
+      National emissions targets and market architecture are Commonwealth-led; NSW sets
+      many land-use, biodiversity and state climate policy details within that framework.
+    state_role: State climate targets, environmental assessment, biodiversity offsets and land-use rules.
+    federal_role: National emissions targets, CER/NEM architecture and major environmental funding.
+    related: [energy, planning-population]

@@ -15,9 +15,74 @@ election:
   assembly_seats: 93
   council_seats: 42
   council_seats_up: 21
+  dates:
+    - date: "2026-10-01"
+      event: Start of capped expenditure period and pre-election donation disclosure period
+      source:
+        url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+        publisher: NSW Electoral Commission
+        title: 2027 NSW State election — key dates
+        accessed: "2026-09-22"
+    - date: "2027-02-15"
+      event: Lodgement of nominations commences (8am)
+      source:
+        url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+        publisher: NSW Electoral Commission
+        title: 2027 NSW State election — key dates
+        accessed: "2026-09-22"
+    - date: "2027-02-22"
+      event: Issue of writs expected; electoral roll closes 6pm for candidate confirmation
+      source:
+        url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+        publisher: NSW Electoral Commission
+        title: 2027 NSW State election — key dates
+        accessed: "2026-09-22"
+    - date: "2027-02-24"
+      event: Close of nominations (12 noon)
+      source:
+        url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+        publisher: NSW Electoral Commission
+        title: 2027 NSW State election — key dates
+        accessed: "2026-09-22"
+    - date: "2027-02-25"
+      event: Announcement of candidates and ballot draw (10am)
+      source:
+        url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+        publisher: NSW Electoral Commission
+        title: 2027 NSW State election — key dates
+        accessed: "2026-09-22"
+    - date: "2027-03-06"
+      event: Early voting period opens
+      source:
+        url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+        publisher: NSW Electoral Commission
+        title: 2027 NSW State election — key dates
+        accessed: "2026-09-22"
+    - date: "2027-03-12"
+      event: Early voting period closes (6pm)
+      source:
+        url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+        publisher: NSW Electoral Commission
+        title: 2027 NSW State election — key dates
+        accessed: "2026-09-22"
+    - date: "2027-03-13"
+      event: Election day (8am–6pm)
+      source:
+        url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+        publisher: NSW Electoral Commission
+        title: 2027 NSW State election — key dates
+        accessed: "2026-09-22"
+    - date: "2027-04-23"
+      event: Expected last day for the return of writs
+      source:
+        url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
+        publisher: NSW Electoral Commission
+        title: 2027 NSW State election — key dates
+        accessed: "2026-09-22"
   tracking_status: >-
     Sitting members of the 58th Parliament of New South Wales are published under this path.
-    Individual candidacies for the 2027 election are not yet tracked.
+    Statewide primary-vote poll ledger and issue taxonomy are open (foundation tier).
+    Individual candidacies and a full policy matrix for 2027 are not yet tracked.
   authorities:
     - name: NSW Electoral Commission
       url: https://elections.nsw.gov.au/
@@ -27,7 +92,7 @@ election:
     - url: https://elections.nsw.gov.au/elections/state-elections/2027-nsw-state-election
       publisher: NSW Electoral Commission
       title: 2027 NSW State election
-      accessed: "2026-09-14"
+      accessed: "2026-09-22"
     - url: https://www.parliament.nsw.gov.au/members-and-electorates/members-and-ministers/downloadable-lists
       publisher: Parliament of New South Wales
       title: Downloadable lists — members
@@ -57,6 +122,10 @@ election:
       2027 election (SMH; Manly Observer). Liberal MLA Alister Henskens
       (Wahroonga) announced on 11 September 2026 he will retire at the same
       election (SMH). Key date unchanged: NSWEC confirms polling day 13 March 2027.
+    - >-
+      Foundation open (2026-09-22): statewide VI poll ledger under data/nsw2027/polls/
+      and issue taxonomy under issues.yaml. Same eligibility rules as docs/poll-methodology.md
+      adapted to NSW Legislative Assembly statewide primaries. Not a candidacy ledger.
   sitting_member_signals:
     - name: James Griffin
       district: manly

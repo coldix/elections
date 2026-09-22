@@ -1,0 +1,221 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import PollCharts from "../../../../components/PollCharts.astro";
+import PollAverageBoard from "../../../../components/PollAverageBoard.astro";
+import { SITE, NSW2027, FEDERAL_49, VIC2026, formatDate } from "../../../../lib/site.mjs";
+import {
+  loadPolls,
+  computePollAverage,
+  POLL_CAVEAT,
+} from "../../../../../../scripts/lib/polls.mjs";
+
+const electionId = "nsw2027";
+const polls = loadPolls(electionId);
+const average = computePollAverage(polls);
+const included = new Set(average.included_poll_ids ?? []);
+
+const sortedPolls = [...polls].sort((a, b) =>
+  a.fieldwork_end < b.fieldwork_end ? 1 : -1
+);
+
+const avgLine =
+  average.status === "ok" && average.primaries
+    ? `Latest tracker average (as of ${average.as_of}): Labor ${average.primaries.alp}%, ` +
+      `Coalition ${average.primaries.lnp}%, One Nation ${average.primaries.onp}%, ` +
+      `Greens ${average.primaries.grn}%, Others ${average.primaries.others}%. Not a forecast.`
+    : "Sourced NSW Legislative Assembly primary-vote poll ledger with transparent average rules.";
+
+const schema = [
+  {
+    "@type": "Dataset",
+    name: "2027 NSW state election — poll ledger and average",
+    description:
+      "Public NSW Legislative Assembly voting-intention polls for the 2027 state election, " +
+      "each with sources, plus a weighted primary-vote average with uncertainty bands when enough " +
+      "eligible polls exist. Not a forecast.",
+    url: `${SITE.url}${NSW2027}/polls`,
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    isAccessibleForFree: true,
+    creator: { "@id": `${SITE.url}/#organization` },
+    temporalCoverage: "2026/2027",
+    spatialCoverage: { "@type": "Place", name: "New South Wales, Australia" },
+    variableMeasured: [
+      "Primary vote ALP",
+      "Primary vote L-NP",
+      "Primary vote One Nation",
+      "Primary vote Greens",
+      "Primary vote Others",
+    ],
+    distribution: [
+      {
+        "@type": "DataDownload",
+        encodingFormat: "application/json",
+        contentUrl: `${SITE.url}/data/${electionId}/polls.json`,
+      },
+      {
+        "@type": "DataDownload",
+        encodingFormat: "application/json",
+        contentUrl: `${SITE.url}/data/${electionId}/poll-average.json`,
+      },
+      {
+        "@type": "DataDownload",
+        encodingFormat: "text/csv",
+        contentUrl: `${SITE.url}/data/${electionId}/polls.csv`,
+      },
+    ],
+  },
+];
+---
+
+<Base
+  title="NSW 2027 election polls — average and ledger"
+  description={`NSW Legislative Assembly voting intention: sourced public primary-vote polls and a transparent weighted average when eligible. ${avgLine}`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "NSW 2027", href: NSW2027 },
+    { name: "Polls", href: `${NSW2027}/polls` },
+  ]}
+>
+  <div class="wrap wrap-polls section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={NSW2027}>NSW 2027</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Polls</span>
+    </nav>
+
+    <p class="eyebrow">New South Wales · Legislative Assembly VI · nsw2027</p>
+    <h1>NSW state election poll average</h1>
+    <p class="lede">
+      <strong>NSW</strong> Legislative Assembly primary vote — not federal numbers. Same published
+      maths as the Victorian and federal ledgers. A summary of recent polling,
+      {" "}<strong>not a forecast</strong>. Foundation tier: candidacies are not yet tracked.
+    </p>
+
+    <PollAverageBoard average={average} jurisdiction="nsw" />
+
+    <div class="notice" role="note">
+      <strong>Read the bands carefully.</strong> {POLL_CAVEAT}
+    </div>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={NSW2027}>Overview</a>
+      <a class="btn btn-ghost btn-sm" href={`${NSW2027}/parties`}>Parties</a>
+      <a class="btn btn-ghost btn-sm" href={`/data/${electionId}/poll-average.json`}>poll-average.json</a>
+      <a class="btn btn-ghost btn-sm" href={`${VIC2026}/polls`}>Vic polls</a>
+      <a class="btn btn-ghost btn-sm" href={`${FEDERAL_49}/polls`}>Federal polls</a>
+    </p>
+
+    {
+      average.status === "ok" && average.bloc_split && (
+        <PollCharts primaries={average.primaries} blocs={average.bloc_split} />
+      )
+    }
+
+    <p class="muted">
+      Weights combine effective sample size and exponential time decay. Full formula:
+      <a href="https://github.com/coldix/elections/blob/main/docs/poll-methodology.md">
+        poll methodology
+      </a>
+      · machine-readable
+      <a href={`/data/${electionId}/poll-average.json`}>poll-average.json</a>.
+      Party, union and advocacy-commissioned polls are ledgered with
+      <code>eligible_for_average: false</code> unless a documented exception applies.
+    </p>
+
+    <h2 id="polls">Polls in the ledger</h2>
+    <p>
+      Every row is a sourced record in the repository. Polls marked
+      <strong>Excluded</strong> fail inclusion rules and are kept for transparency.
+      <strong>In*</strong> means a documented case-by-case exception.
+      <strong>Window</strong> means eligible but outside the rolling average window (or replaced by a
+      newer poll from the same pollster).
+    </p>
+    {
+      sortedPolls.length === 0 ? (
+        <p class="muted">No statewide NSW VI polls encoded yet.</p>
+      ) : (
+        <div class="table-scroll">
+          <table class="data">
+            <thead>
+              <tr>
+                <th scope="col">Fieldwork</th>
+                <th scope="col">Pollster</th>
+                <th scope="col" class="num">n</th>
+                <th scope="col" class="num">ALP</th>
+                <th scope="col" class="num">L-NP</th>
+                <th scope="col" class="num">ONP</th>
+                <th scope="col" class="num">GRN</th>
+                <th scope="col" class="num">OTH</th>
+                <th scope="col">Average</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                sortedPolls.map((p) => (
+                  <tr>
+                    <th scope="row" class="mono">
+                      {formatDate(p.fieldwork_end)}
+                    </th>
+                    <td>
+                      {p.pollster}
+                      <span class="muted block-sm">{p.commissioner_type}</span>
+                    </td>
+                    <td class="num mono">{p.sample_size}</td>
+                    <td class="num mono">{p.primaries.alp}</td>
+                    <td class="num mono">{p.primaries.lnp}</td>
+                    <td class="num mono">{p.primaries.onp}</td>
+                    <td class="num mono">{p.primaries.grn}</td>
+                    <td class="num mono">{p.primaries.others}</td>
+                    <td>
+                      {included.has(p.id) ? (
+                        <span
+                          class="pill in"
+                          title={p.eligibility_exception ?? undefined}
+                        >
+                          {p.eligibility_exception ? "In*" : "In"}
+                        </span>
+                      ) : p.eligible_for_average ? (
+                        <span
+                          class="pill out"
+                          title={p.eligibility_exception ?? undefined}
+                        >
+                          {p.eligibility_exception ? "Window*" : "Window"}
+                        </span>
+                      ) : (
+                        <span class="pill out" title={p.exclusion_reason ?? ""}>
+                          Excluded
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      )
+    }
+
+    <h2 id="rules">Which polls count</h2>
+    <ul>
+      <li>
+        <strong>NSW</strong> Legislative Assembly statewide voting intention only (not federal
+        intention; not seat-only cuts).
+      </li>
+      <li>Published fieldwork dates and sample size (n ≥ 800 under methodology).</li>
+      <li>
+        Commissioner is media, the pollster, or neutral academic by default — party, union or
+        advocacy are out unless a documented exception applies.
+      </li>
+      <li>
+        Same rolling window and one-per-pollster rules as Vic/federal — see
+        <a href="https://github.com/coldix/elections/blob/main/docs/poll-methodology.md">
+          poll methodology
+        </a>.
+      </li>
+    </ul>
+  </div>
+</Base>

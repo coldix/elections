@@ -388,6 +388,29 @@ against `redbridge-accent`). Recompute via `scripts/lib/polls.mjs` / the
 
 ---
 
+## NSW 2027 (state-foundation)
+
+Same inclusion, exclusion, window and weighting rules as above, with these
+jurisdiction substitutions:
+
+| Vic rule | NSW adaptation |
+|---|---|
+| Victorian Legislative Assembly statewide VI | NSW Legislative Assembly statewide VI |
+| `population: victorian-electors` | `population: nsw-electors` |
+| Path `data/vic2026/polls/` | Path `data/nsw2027/polls/` |
+
+Party / union / advocacy commissions remain **out of the average by default**
+(`eligible_for_average: false` + `exclusion_reason`). Do not invent statewide
+VI numbers from issues-only releases. Prefer the pollster or commissioner
+primary over advocacy press rewrites when both exist.
+
+Insightfully and other firms not yet listed in the Vic allowlist may be
+**ledgered** when fieldwork, *n*, mode and five-way primaries are public; they
+enter the average only after an allowlist edit (media/self/academic) or a
+documented `eligibility_exception`.
+
+---
+
 ## Data shape
 
 Path: `data/vic2026/polls/<id>.yaml`. Source object matches candidates.
