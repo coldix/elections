@@ -1,0 +1,21 @@
+candidate:
+  name: Lachlan McCracken
+  party: victorian-socialists
+  contest: narre-warren-north
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-28
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/lachlan-mccracken
+        title: Lachlan McCracken – Victorian Socialists
+        publisher: Victorian Socialists
+        accessed: 2026-09-28
+      note: >-
+        Party candidate page lists Lachlan as Candidate for Narre Warren North.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/lachlan-mccracken
+      kind: party-profile
+    - url: https://www.victoriansocialists.org.au/candidates
+      kind: party

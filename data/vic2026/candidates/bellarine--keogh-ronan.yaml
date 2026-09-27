@@ -1,0 +1,21 @@
+candidate:
+  name: Ronan Keogh
+  party: victorian-socialists
+  contest: bellarine
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-28
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/ronan-keogh
+        title: Ronan Keogh – Victorian Socialists
+        publisher: Victorian Socialists
+        accessed: 2026-09-28
+      note: >-
+        Party candidate page lists Ronan as Candidate for Bellarine.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/ronan-keogh
+      kind: party-profile
+    - url: https://www.victoriansocialists.org.au/candidates
+      kind: party

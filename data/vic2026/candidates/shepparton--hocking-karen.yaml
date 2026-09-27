@@ -1,0 +1,21 @@
+candidate:
+  name: Karen Hocking
+  party: victorian-socialists
+  contest: shepparton
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-28
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/karen-hocking
+        title: Karen Hocking – Victorian Socialists
+        publisher: Victorian Socialists
+        accessed: 2026-09-28
+      note: >-
+        Party candidate page lists Karen as Candidate for Shepparton.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/karen-hocking
+      kind: party-profile
+    - url: https://www.victoriansocialists.org.au/candidates
+      kind: party

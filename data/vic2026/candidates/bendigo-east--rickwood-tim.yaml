@@ -1,0 +1,23 @@
+candidate:
+  name: Tim Rickwood
+  party: labor
+  contest: bendigo-east
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-18
+      source:
+        url: https://www.viclabor.org.au/our-team/tim-rickwood
+        publisher: Victorian Labor
+        title: "Tim Rickwood | Labor Candidates"
+        accessed: 2026-09-28
+      note: >-
+        Official Victorian Labor candidates page states "Candidate for Bendigo East".
+        Castlemaine Mail (18 September 2026) reported Labor's announcement of
+        new Bendigo East and Bendigo West candidates.
+  links:
+    - url: https://www.viclabor.org.au/our-team/tim-rickwood
+      kind: party-profile
+    - url: https://castlemainemail.com.au/latest-news/2026/09/18/bendigo-labor-candidates-announced/
+      kind: news

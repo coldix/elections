@@ -1,0 +1,31 @@
+id: demosau-2026-09-capital-brief
+pollster: DemosAU
+commissioner: capital-brief
+commissioner_type: media
+fieldwork_start: 2026-09-10
+fieldwork_end: 2026-09-14
+sample_size: 1583
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for Capital Brief / DemosAU. Fieldwork Thursday–Monday per Poll Bludger. Others residual after ALP+LNP+GRN+ONP (13)."
+primaries:
+  alp: 28
+  lnp: 20
+  onp: 26
+  grn: 13
+  others: 13
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/09/18/federal-polling-demosau-morgan-one-nation-breakdowns-open-thread/
+    publisher: The Poll Bludger
+    title: "Federal polling: DemosAU, Morgan, One Nation breakdowns (open thread)"
+    published: 2026-09-18
+    accessed: 2026-09-28
+  - url: https://www.onenewsaustralia.com/australian-poll-tracker/
+    publisher: One News Australia
+    title: "Australian Poll Tracker (DemosAU 10–14 Sep entry)"
+    published: 2026-09-18
+    accessed: 2026-09-28

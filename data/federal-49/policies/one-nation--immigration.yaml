@@ -1,20 +1,36 @@
 policy:
   party: one-nation
   issue: immigration
-  headline: Net-zero / sharply lower migration to ease housing pressure
+  headline: Net-negative migration for three years, then a 130,000 NOM ceiling
   claims:
-    - id: on-net-zero-migration
+    - id: on-net-negative-750k-2026-09
       statement: >-
-        Reporting on One Nation’s platform states the party will extend a zero-net migration
-        policy and focus on permitting only highly skilled migrants from countries it describes
-        as culturally cohesive.
+        In September 2026 One Nation unveiled a plan ABC News reports as cutting about
+        750,000 visa places over three years, including “net-negative” net overseas migration
+        for those three years, then a year-by-year NOM ceiling of 130,000; student visas
+        capped near a third of current intake; and family visas for standard students and
+        skilled migrants cut to zero (with limited exceptions described for high-value
+        student visas).
+      kind: pledge
+      source:
+        url: https://www.abc.net.au/news/2026-09-14/750k-visas-cut-under-one-nation-plan/107149702
+        publisher: ABC News
+        title: One Nation migration plan to cut students and migrant worker families
+        published: 2026-09-14
+        accessed: 2026-09-28
+    - id: on-immigration-platform-page
+      statement: >-
+        One Nation’s immigration policy page states the party will deport 75,000 people it
+        describes as illegal migrants, cap visas at 130,000 a year, end what it calls student
+        visa loopholes, reintroduce Temporary Protection Visas, impose an eight-year wait for
+        citizenship and welfare, refuse entry from countries it says foster extremist
+        ideologies, and withdraw from the UN Refugee Convention.
       kind: position
       source:
-        url: https://www.smh.com.au/politics/federal/does-one-nation-s-migration-policy-actually-add-up-20260721-p60h6v.html
-        publisher: The Sydney Morning Herald
-        title: Does One Nation's migration policy actually add up?
-        published: 2026-07-22
-        accessed: 2026-08-09
+        url: https://www.onenation.org.au/immigration
+        publisher: Pauline Hanson's One Nation
+        title: Immigration Reform for a Stronger Australia
+        accessed: 2026-09-28
     - id: on-migration-housing
       statement: >-
         ABC reporting summarises that One Nation links high migration to housing pressure and

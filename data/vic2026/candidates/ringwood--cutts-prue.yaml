@@ -1,0 +1,24 @@
+candidate:
+  name: Prue Cutts
+  party: independent
+  contest: ringwood
+  chamber: assembly
+  status: announced
+  occupation: "Councillor"
+  background: "Whitehorse City Councillor for Simpson Ward."
+  history:
+    - status: announced
+      date: 2026-07-27
+      source:
+        url: https://www.easternmelburnian.com.au/p/independent-candidates-croydon-ringwood-victorian-election-2026
+        publisher: The Eastern Melburnian
+        title: Meet the Whitehorse councillor and government economist endorsed to run as independents in the state election
+        published: 2026-07-27
+        accessed: 2026-09-28
+      note: >-
+        Eastern Melburnian reports Voices of Deakin endorsed Whitehorse
+        councillor Prue Cutts as an independent candidate for Ringwood
+        (announced 26 July 2026). Tip also lodged via GitHub issue #39.
+  links:
+    - url: https://www.prue4ringwood.com.au/
+      kind: campaign-site

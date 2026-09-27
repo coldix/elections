@@ -1,0 +1,36 @@
+id: roy-morgan-2026-09-21
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-09-14
+fieldwork_end: 2026-09-20
+sample_size: 1561
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Finding 10353. L-NP reported as Liberals 19.5% + Nationals 2%. Primaries among decided (can't say 5.5% reported separately)."
+primaries:
+  alp: 25
+  lnp: 21.5
+  onp: 25.5
+  grn: 15.5
+  others: 12.5
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10353-federal-voting-intention-september-21-2026
+    publisher: Roy Morgan
+    title: One Nation takes the lead on primary in a week where One Nation and Labor both announced immigration policies; ALP maintains an election winning two-party preferred lead
+    published: 2026-09-21
+    accessed: 2026-09-28
+  - url: https://roymorgan-cms-prod.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2026/09/21055335/10353-Federal-Voting-Intention-September-21-2026-003.pdf
+    publisher: Roy Morgan
+    title: Federal Voting Intention September 21 2026 (PDF)
+    published: 2026-09-21
+    accessed: 2026-09-28
+  - url: https://www.pollbludger.net/2026/09/23/federal-polls-yougov-and-roy-morgan-open-thread-6/
+    publisher: The Poll Bludger
+    title: "Federal polls: YouGov and Roy Morgan (open thread)"
+    published: 2026-09-23
+    accessed: 2026-09-28

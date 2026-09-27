@@ -1,0 +1,36 @@
+id: yougov-2026-09-21-news24
+pollster: YouGov
+commissioner: news24
+commissioner_type: media
+fieldwork_start: 2026-09-15
+fieldwork_end: 2026-09-21
+sample_size: 1471
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention (News24 Pulse / YouGov). Fieldwork Tuesday–Tuesday per Poll Bludger. Others residual after ALP+LNP+GRN+ONP (12) — One News splits as independents 6 / Others 5 / Community Strong Australia 1."
+primaries:
+  alp: 26
+  lnp: 21
+  onp: 27
+  grn: 14
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/09/23/federal-polls-yougov-and-roy-morgan-open-thread-6/
+    publisher: The Poll Bludger
+    title: "Federal polls: YouGov and Roy Morgan (open thread)"
+    published: 2026-09-23
+    accessed: 2026-09-28
+  - url: https://www.onenewsaustralia.com/australian-poll-tracker/
+    publisher: One News Australia
+    title: "Australian Poll Tracker (YouGov 15–21 Sep entry)"
+    published: 2026-09-23
+    accessed: 2026-09-28
+  - url: https://www.news24.com.au/politics/australian-politics/one-nation-holds-the-lead-over-labor-as-hanson-captures-millennial-and-gen-x-voters/news-story/40e134f4ad5a17de499da9548ee56209
+    publisher: News24
+    title: One Nation holds the lead over Labor as Hanson captures millennial and Gen X voters
+    published: 2026-09-23
+    accessed: 2026-09-28

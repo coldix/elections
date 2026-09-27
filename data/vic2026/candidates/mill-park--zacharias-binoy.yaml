@@ -1,0 +1,22 @@
+candidate:
+  name: Binoy Zacharias
+  party: greens
+  contest: mill-park
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-28
+      source:
+        url: https://greens.org.au/vic/person/binoy-zacharias
+        title: "Binoy Zacharias, Candidate for Mill Park"
+        publisher: Victorian Greens
+        accessed: 2026-09-28
+      note: >-
+        Victorian Greens person page lists Binoy as Candidate for
+        Mill Park. Also listed on greens.org.au/vic/candidates.
+  links:
+    - url: https://greens.org.au/vic/person/binoy-zacharias
+      kind: party-profile
+    - url: https://greens.org.au/vic/candidates
+      kind: party

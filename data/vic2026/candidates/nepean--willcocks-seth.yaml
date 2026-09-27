@@ -1,0 +1,21 @@
+candidate:
+  name: Seth Willcocks
+  party: victorian-socialists
+  contest: nepean
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-28
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/seth-willcocks
+        title: Seth Willcocks – Victorian Socialists
+        publisher: Victorian Socialists
+        accessed: 2026-09-28
+      note: >-
+        Party candidate page lists Seth as Candidate for Nepean.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/seth-willcocks
+      kind: party-profile
+    - url: https://www.victoriansocialists.org.au/candidates
+      kind: party

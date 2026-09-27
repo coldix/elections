@@ -3,7 +3,7 @@ candidate:
   party: liberal
   contest: macedon
   chamber: assembly
-  status: announced
+  status: endorsed
   occupation: "Mayor"
   background: "Macedon Ranges mayor; Liberal candidate for Macedon"
   history:
@@ -15,3 +15,18 @@ candidate:
         publisher: Midland Express
         published: 2026-07-21
         accessed: 2026-07-22
+    - status: endorsed
+      date: 2026-07-21
+      source:
+        url: https://vicliberal.org.au/team/kate-kendall
+        title: Kate Kendall — Liberal Victoria
+        publisher: Liberal Victoria
+        accessed: 2026-09-28
+      note: >-
+        Liberal Victoria team profile lists Kate Kendall. Midland Express
+        (21 July 2026) reported she had been announced as the Victorian Liberal
+        candidate for Macedon. Status upgraded from announced to endorsed;
+        party-profile link added (GitHub issue #41).
+  links:
+    - url: https://vicliberal.org.au/team/kate-kendall
+      kind: party-profile

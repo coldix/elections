@@ -1,0 +1,41 @@
+id: redbridge-accent-2026-09-afr
+pollster: redbridge-accent
+commissioner: australian-financial-review
+commissioner_type: media
+fieldwork_start: 2026-09-01
+fieldwork_end: 2026-09-14
+sample_size: 2371
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "AFR / RedBridge / Accent Victorian state voting intention. Online panel; n=2,371 (effective n≈2,009, weight efficiency 85%). Undecided after leaner (9%) excluded from published VI. Others residual after ALP+LNP+GRN+ONP (7)."
+primaries:
+  alp: 24
+  lnp: 29
+  onp: 25
+  grn: 15
+  others: 7
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.accent-research.com/projects/afr-redbridge-group-and-accent-research-september-2026-victorian-state-poll
+    publisher: Accent Research
+    title: AFR, RedBridge Group and Accent Research September 2026 Victorian state poll
+    published: 2026-09-15
+    accessed: 2026-09-28
+  - url: https://www.theaustraliatoday.com.au/victorian-labor-slips-to-third-on-primary-vote-as-coalition-leads-and-one-nation-surges-in-new-poll/
+    publisher: The Australia Today
+    title: Victorian Labor slips to third on primary vote as Coalition leads and One Nation surges in new poll
+    published: 2026-09-16
+    accessed: 2026-09-28
+  - url: https://www.abc.net.au/news/2026-09-23/ben-carroll-one-nation-victorian-election-jess-wilson-liberals/107186180
+    publisher: ABC News
+    title: Victorian Premier Ben Carroll is terrified of One Nation, his main Liberal rival is not
+    published: 2026-09-23
+    accessed: 2026-09-28
+  - url: https://www.onenewsaustralia.com/australian-poll-tracker/
+    publisher: One News Australia
+    title: "Australian Poll Tracker (RedBridge Victoria 1–14 Sep entry)"
+    published: 2026-09-16
+    accessed: 2026-09-28

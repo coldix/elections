@@ -1,0 +1,21 @@
+candidate:
+  name: Zoe Lyle
+  party: victorian-socialists
+  contest: euroa
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-28
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/zoe-lyle
+        title: Zoe Lyle – Victorian Socialists
+        publisher: Victorian Socialists
+        accessed: 2026-09-28
+      note: >-
+        Party candidate page lists Zoe as Candidate for Euroa.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/zoe-lyle
+      kind: party-profile
+    - url: https://www.victoriansocialists.org.au/candidates
+      kind: party

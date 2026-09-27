@@ -1,0 +1,36 @@
+id: newspoll-2026-09-17
+pollster: "Newspoll / Pyxis"
+commissioner: the-australian
+commissioner_type: media
+fieldwork_start: 2026-09-14
+fieldwork_end: 2026-09-17
+sample_size: 1244
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for The Australian (Newspoll / Pyxis). Fieldwork Monday–Thursday per Poll Bludger. Others residual after ALP+LNP+GRN+ONP (11)."
+primaries:
+  alp: 27
+  lnp: 19
+  onp: 30
+  grn: 13
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/09/20/newspoll-labor-27-one-nation-30-coalition-19-open-thread/
+    publisher: The Poll Bludger
+    title: "Newspoll: Labor 27, One Nation 30, Coalition 19 (open thread)"
+    published: 2026-09-20
+    accessed: 2026-09-28
+  - url: https://www.nine.com.au/australia-news/newspoll-september-labor-falls-to-near-record-low-20260921-p60z1g.html
+    publisher: Nine.com.au
+    title: Labor falls to near record low in polls for first time in almost 15 years
+    published: 2026-09-21
+    accessed: 2026-09-28
+  - url: https://www.theaustraliatoday.com.au/one-nation-leads-primary-vote-as-labor-falls-to-27-with-petrol-prices-inflation-and-rate-fears-deepening-pressure/
+    publisher: The Australia Today
+    title: One Nation leads primary vote as Labor falls to 27%, with petrol prices, inflation and rate fears deepening pressure
+    published: 2026-09-21
+    accessed: 2026-09-28

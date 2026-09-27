@@ -1,0 +1,21 @@
+candidate:
+  name: David Meyer
+  party: independent
+  contest: richmond
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-09-20
+      source:
+        url: https://meyerforrichmond.au/
+        publisher: David Meyer for Richmond
+        title: David Meyer for Richmond
+        accessed: 2026-09-28
+      note: >-
+        Campaign site presents David Meyer as Independent for Richmond for the
+        2026 Victorian state election (safer streets, simpler government, local
+        businesses). Tip also lodged via GitHub issue #38.
+  links:
+    - url: https://meyerforrichmond.au/
+      kind: campaign-site

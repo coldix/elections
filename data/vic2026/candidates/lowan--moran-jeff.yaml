@@ -1,0 +1,22 @@
+candidate:
+  name: Jeff Moran
+  party: greens
+  contest: lowan
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-28
+      source:
+        url: https://greens.org.au/vic/person/jeff-moran
+        title: "Jeff Moran, Candidate for Lowan"
+        publisher: Victorian Greens
+        accessed: 2026-09-28
+      note: >-
+        Victorian Greens person page lists Jeff as Candidate for
+        Lowan. Also listed on greens.org.au/vic/candidates.
+  links:
+    - url: https://greens.org.au/vic/person/jeff-moran
+      kind: party-profile
+    - url: https://greens.org.au/vic/candidates
+      kind: party

@@ -1,0 +1,22 @@
+candidate:
+  name: Karli McRostie
+  party: greens
+  contest: bentleigh
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-09-28
+      source:
+        url: https://greens.org.au/vic/person/karli-mcrostie
+        title: "Karli McRostie, Candidate for Bentleigh"
+        publisher: Victorian Greens
+        accessed: 2026-09-28
+      note: >-
+        Victorian Greens person page lists Karli as Candidate for
+        Bentleigh. Also listed on greens.org.au/vic/candidates.
+  links:
+    - url: https://greens.org.au/vic/person/karli-mcrostie
+      kind: party-profile
+    - url: https://greens.org.au/vic/candidates
+      kind: party

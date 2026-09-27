@@ -1,0 +1,41 @@
+id: resolve-2026-09-age
+pollster: resolve
+commissioner: the-age
+commissioner_type: media
+fieldwork_start: 2026-09-06
+fieldwork_end: 2026-09-12
+sample_size: 1000
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Resolve Political Monitor Victorian state VI for The Age / Nine. Fieldwork Sunday–Saturday padded from national RPM (same week as federal Resolve 6–12 Sep). Others residual after ALP+LNP+GRN+ONP (12). Age masthead confirms ALP 25 / L-NP 28 / ONP 23; Greens 12 from Nine/AAP write-ups."
+primaries:
+  alp: 25
+  lnp: 28
+  onp: 23
+  grn: 12
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theage.com.au/politics/victoria/debt-concern-looms-large-for-voters-as-carroll-struggles-to-break-through-20260914-p60x45.html
+    publisher: The Age
+    title: Carroll fails to gain traction as debt fears grip Victorian voters, poll shows
+    published: 2026-09-14
+    accessed: 2026-09-28
+  - url: https://theqldr.com.au/politics/2026/09/15/pollvic-31/
+    publisher: The Queenslander (AAP)
+    title: Labor struggles to turn election tide under new premier
+    published: 2026-09-15
+    accessed: 2026-09-28
+  - url: https://www.onenewsaustralia.com/australian-poll-tracker/
+    publisher: One News Australia
+    title: "Australian Poll Tracker (Resolve Victoria 6–12 Sep entry)"
+    published: 2026-09-16
+    accessed: 2026-09-28
+  - url: https://www.theaustraliatoday.com.au/victorian-labor-slips-to-third-on-primary-vote-as-coalition-leads-and-one-nation-surges-in-new-poll/
+    publisher: The Australia Today
+    title: Victorian Labor slips to third on primary vote as Coalition leads and One Nation surges in new poll
+    published: 2026-09-16
+    accessed: 2026-09-28

@@ -2,8 +2,8 @@
 policy:
   party: labor
   issue: crime-justice
-  headline: Tougher bail and youth sentencing alongside permanent violence prevention
-  blind_claim: "Tougher bail and youth sentences"
+  headline: Tougher bail, youth sentencing, and Jack’s Law stop-and-search powers
+  blind_claim: "Tougher bail, youth sentences, Jack’s Law searches"
   claims:
     - id: labor-crime-safety-budget
       statement: >-
@@ -83,3 +83,17 @@ policy:
         publisher: Premier of Victoria
         title: Sentencing Must Meet Community Expectations
         accessed: '2026-08-02'
+
+    - id: labor-crime-jacks-law-2026-09
+      statement: >-
+        A re-elected Carroll Labor Government says it will implement Jack’s Law stop-and-search
+        powers statewide by early 2027, giving police handheld metal-detector “wand” powers to
+        search for knives in public places without declaring a designated search area, and will
+        deliver 1,200 additional handheld metal detectors.
+      kind: pledge
+      source:
+        url: https://www.viclabor.org.au/news/labor-will-implement-jacks-law-stop-and-search-powers
+        publisher: Victorian Labor
+        title: Labor Will Implement 'Jack's Law' Stop and Search Powers
+        published: 2026-09-16
+        accessed: 2026-09-28

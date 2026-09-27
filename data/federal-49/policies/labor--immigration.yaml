@@ -1,7 +1,7 @@
 policy:
   party: labor
   issue: immigration
-  headline: Migration law changes tied to hate and extremism offences
+  headline: NOM targets with temporary-visa crackdown and student/backpacker limits
   claims:
     - id: labor-migration-hate-laws
       statement: >-
@@ -15,3 +15,18 @@ policy:
         title: Albanese Government passes legislation to combat antisemitism, hate and extremism
         published: 2026-01-21
         accessed: 2026-08-09
+    - id: labor-nom-targets-burke-2026-09
+      statement: >-
+        Home Affairs Minister Tony Burke told the National Press Club that Budget net
+        overseas migration forecasts of 245,000 this year and 225,000 next financial year
+        are now treated as targets the government must meet, citing housing pressure, and
+        outlined tighter temporary-visa settings including limits on international students
+        bringing family, backpacker second- and third-year ballots, visitor “no further stay”
+        conditions, and more compliance capacity against overstayers.
+      kind: position
+      source:
+        url: https://www.abc.net.au/news/2026-09-17/labor-immigration-crackdown-students-backpackers-overstay-visa/107164354
+        publisher: ABC News
+        title: Labor tightens visa rules as Tony Burke vows migration targets will be met
+        published: 2026-09-17
+        accessed: 2026-09-28

@@ -1,0 +1,21 @@
+candidate:
+  name: Rowan Tuckfield
+  party: independent
+  contest: melbourne
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-09-17
+      source:
+        url: https://rowantuckfield.vote/
+        publisher: Rowan Tuckfield for Melbourne
+        title: Rowan Tuckfield for Melbourne
+        accessed: 2026-09-28
+      note: >-
+        Campaign site states Independent candidacy for the Legislative Assembly
+        seat of Melbourne at the 28 November 2026 election. Press release also
+        attached to GitHub issue #37.
+  links:
+    - url: https://rowantuckfield.vote/
+      kind: campaign-site
