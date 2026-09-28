@@ -12,7 +12,7 @@ policy:
         services and supply-chain productivity outside Melbourne.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/rebuilding-our-regions
+        url: https://web.archive.org/web/20260611064954/https://vic.onenation.org.au/rebuilding-our-regions
         publisher: One Nation Victoria
         title: Rebuilding our Regions
         accessed: 2026-08-02
@@ -23,7 +23,7 @@ policy:
         infrastructure.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/economic-recovery
+        url: https://web.archive.org/web/20260715095438/https://vic.onenation.org.au/economic-recovery
         publisher: One Nation Victoria
         title: Economic Recovery
         accessed: 2026-08-02
@@ -34,7 +34,7 @@ policy:
         ownership and public clinical services.
       kind: position
       source:
-        url: https://vic.onenation.org.au/rosebud-rebuild-ppp
+        url: https://web.archive.org/web/20260815114516/https://vic.onenation.org.au/rosebud-rebuild-ppp
         publisher: One Nation Victoria
         title: One Nation will redevelop the Rosebud Hospital through PPP
         published: 2026-04-27

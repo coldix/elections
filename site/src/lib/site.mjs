@@ -177,3 +177,27 @@ export const formatDate = (iso, opts = {}) =>
 
 export const formatDateLong = (iso) =>
   formatDate(iso, { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+
+/** Sibling evidence sites. Same lines as the "Same family" block on cantexplain.au. */
+export const FAMILY = [
+  {
+    name: "Can’t Explain",
+    href: "https://cantexplain.au",
+    line: "A receipt-first hall of ridiculous claims.",
+  },
+  {
+    name: "Ministry of Doubt",
+    href: "https://ministryofdoubt.com",
+    line: "Suspicion is not proof. Authority is not proof either.",
+  },
+  {
+    name: "FixMap",
+    href: "https://fixmap.au/",
+    line: "Spot it. Map it. Fix it. Civic reporting for Australia.",
+  },
+  {
+    name: "Oze Unleashed",
+    href: "https://ozeunleashed.substack.com",
+    line: "Longer essays. Still sourced.",
+  },
+];

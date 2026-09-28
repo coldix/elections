@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { SITE, ATTRIBUTION, MAINTAINER } from "../lib/site.mjs";
+import { SITE, ATTRIBUTION, MAINTAINER, FAMILY } from "../lib/site.mjs";
 ---
 
 <Base
@@ -127,6 +127,17 @@ import { SITE, ATTRIBUTION, MAINTAINER } from "../lib/site.mjs";
       <strong>Region atlas</strong> — map of the 8 upper-house regions, land area by region,
       and how the current system was introduced.
     </p>
+
+    <h2 id="family">Same family</h2>
+    <ul>
+      {
+        FAMILY.map((f) => (
+          <li>
+            <a href={f.href} rel="noopener">{f.name}</a> — {f.line}
+          </li>
+        ))
+      }
+    </ul>
 
     <h2 id="licence">Reuse</h2>
     <p>

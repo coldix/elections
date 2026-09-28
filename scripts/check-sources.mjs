@@ -13,7 +13,8 @@ const UA =
   "electiontracker-source-check/1.0 (+https://electiontracker.au; ops; source health)";
 
 const FAIL_STATUSES = new Set([404, 410]);
-const WARN_STATUSES = new Set([401, 403, 429, 451, 500, 502, 503, 504]);
+// 999 is LinkedIn's bot wall, not a dead page.
+const WARN_STATUSES = new Set([401, 403, 429, 451, 500, 502, 503, 504, 999]);
 
 /** @type {Map<string, string[]>} url -> ["file path", ...] */
 const refs = new Map();

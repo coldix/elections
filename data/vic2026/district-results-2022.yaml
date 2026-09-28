@@ -2277,10 +2277,10 @@ districts:
         pct: 36.98
       margin_pp: 13.02
     source:
-      url: "https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/narracan-district-results"
+      url: "https://www.vec.vic.gov.au/results/state-election-results/state-by-elections-timeline/narracan-district-supplementary-election-results"
       publisher: Victorian Electoral Commission
-      title: Narracan District results
-      accessed: 2026-09-01
+      title: Narracan District supplementary election results
+      accessed: 2026-09-28
     first_pref_votes: 37205
   - slug: narre-warren-north
     formal: 41370

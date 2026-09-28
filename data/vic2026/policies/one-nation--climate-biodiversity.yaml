@@ -12,7 +12,7 @@ policy:
         resources.
       kind: opposition_to
       source:
-        url: https://vic.onenation.org.au/our-environment
+        url: https://web.archive.org/web/20260611062728/https://vic.onenation.org.au/our-environment
         publisher: One Nation Victoria
         title: Looking After Our Environment
         accessed: 2026-08-02
@@ -23,7 +23,7 @@ policy:
         flora from poorly sited energy projects.
       kind: position
       source:
-        url: https://vic.onenation.org.au/our-environment
+        url: https://web.archive.org/web/20260611062728/https://vic.onenation.org.au/our-environment
         publisher: One Nation Victoria
         title: Looking After Our Environment
         accessed: 2026-08-02
