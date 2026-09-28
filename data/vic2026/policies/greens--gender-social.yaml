@@ -36,7 +36,7 @@ policy:
         financing: taxpayer
         pbo_status: uncosted
       source:
-        url: https://greens.org.au/vic/platform/community-services
+        url: https://web.archive.org/web/20260325071134/https://greens.org.au/vic/platform/community-services
         publisher: Australian Greens Victoria
         title: Community services
         accessed: '2026-08-02'

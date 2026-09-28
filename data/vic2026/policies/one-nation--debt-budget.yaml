@@ -15,7 +15,7 @@ policy:
         taxpayer_label: Not specified
         pbo_status: uncosted
       source:
-        url: https://vic.onenation.org.au/economic-recovery
+        url: https://web.archive.org/web/20260715095438/https://vic.onenation.org.au/economic-recovery
         publisher: One Nation Victoria
         title: Economic Recovery
         accessed: 2026-08-02
@@ -25,7 +25,7 @@ policy:
         expenditure and cap spending on high-profile projects it regards as wasteful.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/economic-recovery
+        url: https://web.archive.org/web/20260715095438/https://vic.onenation.org.au/economic-recovery
         publisher: One Nation Victoria
         title: Economic Recovery
         accessed: 2026-08-02
@@ -40,7 +40,7 @@ policy:
         financing: taxpayer
         pbo_status: uncosted
       source:
-        url: https://vic.onenation.org.au/economic-recovery
+        url: https://web.archive.org/web/20260715095438/https://vic.onenation.org.au/economic-recovery
         publisher: One Nation Victoria
         title: Economic Recovery
         accessed: 2026-08-02

@@ -5,6 +5,11 @@ import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, basename } from "node:path";
 import { parse } from "yaml";
 
+const VEC_RESULTS_URL_OVERRIDES = {
+  narracan:
+    "https://www.vec.vic.gov.au/results/state-election-results/state-by-elections-timeline/narracan-district-supplementary-election-results",
+};
+
 const DATA_DIR = new URL("../data/", import.meta.url).pathname;
 const STATUSES = ["announced", "endorsed", "nominated", "withdrawn", "disendorsed", "elected", "defeated"];
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
@@ -216,7 +221,10 @@ function validateDistrictResults2022(election, dir, districtSlugs) {
     checkPreferredFinish(file, d.slug, "two_candidate_preferred", d.two_candidate_preferred, true);
     checkPreferredFinish(file, d.slug, "two_party_preferred", d.two_party_preferred, false);
     checkSource(file, d.slug, d.source);
+    // Narracan's 2022 poll was a supplementary election (28 Jan 2023); VEC now
+    // files its results under the by-elections timeline, not results-by-district.
     const vecUrl =
+      VEC_RESULTS_URL_OVERRIDES[d.slug] ??
       `https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-district/${d.slug}-district-results`;
     if (d.source?.url && d.source.url !== vecUrl) {
       fail(file, `${d.slug}: source.url must be the VEC district results page`);

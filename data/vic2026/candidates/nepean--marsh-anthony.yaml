@@ -19,5 +19,5 @@ candidate:
       kind: campaign-site
     - url: https://www.parliament.vic.gov.au/members/anthony-marsh/
       kind: parliament
-    - url: https://en.wikipedia.org/wiki/Anthony_Marsh_(politician)
+    - url: https://en.wikipedia.org/wiki/Anthony_Marsh
       kind: wikipedia

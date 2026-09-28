@@ -23,7 +23,7 @@ policy:
         Victorian government department’s spending in real time.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/economic-recovery
+        url: https://web.archive.org/web/20260715095438/https://vic.onenation.org.au/economic-recovery
         publisher: One Nation Victoria
         title: Economic Recovery
         accessed: 2026-08-02

@@ -122,10 +122,10 @@ calendar:
         Calculated from the fixed cycle: conjoint general elections are held on
         the second Saturday in March every four years.
       source:
-        url: https://www.elections.wa.gov.au/about-us/media/state-elections-information
-        publisher: Western Australian Electoral Commission
-        title: State Elections Information
-        accessed: 2026-08-03
+        url: https://www.wa.gov.au/service/justice/administrative-law/state-elections
+        publisher: Government of Western Australia
+        title: State elections
+        accessed: 2026-09-28
 
     - jurisdiction: tas
       name: Tasmania
