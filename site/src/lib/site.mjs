@@ -33,19 +33,19 @@ export const SITE = {
   // Google Analytics 4 Measurement ID. Loaded sitewide from Base.astro.
   // See docs/decisions.md ADR-12. Empty string disables the tag.
   gaMeasurementId: "G-CLH6BNKFEV",
-  publisherUrl: "https://oze.net.au",
+  publisherUrl: "https://oze.au",
 };
 
 /** Open oze monthly voting survey — not a scientific poll, not in the tracker average. */
 export const OZE_MONTHLY_POLL = {
   url: "https://survey.oze.net.au/s/monthly-poll",
-  repo: "https://github.com/coldix/survey-oze-au",
+  home: "https://survey.oze.net.au",
 };
 
 /** Open oze Vic issues survey — public opinion, not a matrix ranking. */
 export const OZE_ISSUES_SURVEY = {
   url: "https://survey.oze.net.au/s/vic-issues",
-  repo: "https://github.com/coldix/survey-oze-au",
+  home: "https://survey.oze.net.au",
 };
 
 /** Canonical path prefix for the active Vic 2026 tracker (HTML pages). */

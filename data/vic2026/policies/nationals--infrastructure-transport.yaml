@@ -34,7 +34,8 @@ policy:
     statement: Pause the Suburban Rail Loop as part of the Coalition’s reprioritisation of infrastructure and budget spending.
     kind: pledge
     source:
-      url: https://vic.nationals.org.au/policy/
-      publisher: The Nationals Victoria
-      title: Policies
-      accessed: '2026-08-02'
+      url: https://www.afr.com/politics/federal/victorian-liberals-will-pause-rail-loop-despite-6b-already-spent-20260508-p5zuz9
+      publisher: Australian Financial Review
+      title: Victorian Liberals will pause rail loop despite $6b already spent
+      published: '2026-05-08'
+      accessed: '2026-09-28'
