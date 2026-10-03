@@ -1,0 +1,36 @@
+id: freshwater-2026-09
+pollster: freshwater
+commissioner: herald-sun
+commissioner_type: media
+fieldwork_start: 2026-09-24
+fieldwork_end: 2026-09-28
+sample_size: 1030
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Herald Sun / Freshwater Strategy Victorian state primary (squeezed & valid). 2PP Coalition 53–47. Undecideds removed after leaner for published valid result. Others residual after ALP+LNP+GRN+ONP (11). Supersedes freshwater-2026-08 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 24
+  lnp: 29
+  onp: 22
+  grn: 14
+  others: 11
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://freshwaterstrategy.com/2026/10/02/herald-sun-freshwater-strategy-september-polling-data/
+    publisher: Freshwater Strategy
+    title: Herald Sun / Freshwater Strategy September Polling Data
+    published: 2026-10-02
+    accessed: 2026-10-04
+  - url: https://www.heraldsun.com.au/news/victoria/state-election/jess-wilson-extends-lead-as-labors-primary-vote-crashes-to-24-per-cent-in-victoria/news-story/7511ab7a982b91a898db91af9d5a0377
+    publisher: Herald Sun
+    title: Jess Wilson extends lead as Labor’s primary vote crashes to 24 per cent in Victoria
+    published: 2026-10-01
+    accessed: 2026-10-04
+  - url: https://www.pollbludger.net/2026/09/29/victorian-election-demosau-poll-election-guide-and-seat-projection-model/
+    publisher: The Poll Bludger
+    title: "Victorian election: DemosAU poll, election guide and seat projection model (1 Oct update: Freshwater)"
+    published: 2026-10-01
+    accessed: 2026-10-04

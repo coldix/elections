@@ -1,0 +1,36 @@
+id: roy-morgan-2026-09-29
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-09-14
+fieldwork_end: 2026-09-27
+sample_size: 2569
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Finding 10363. Two-week combined sample (14–27 Sep) released for state breakdowns; overlaps and supersedes the 14–20 Sep weekly result (roy-morgan-2026-09-21), which stays in the ledger as history — one-poll-per-pollster de-dupe keeps only this newer fieldwork end in the average. L-NP reported as Liberals 20% + Nationals 2.5%. Published primaries sum to 99.5 (rounding); encoded as published."
+primaries:
+  alp: 26
+  lnp: 22.5
+  onp: 25.5
+  grn: 14.5
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10363-federal-voting-intention-september-29-2026
+    publisher: Roy Morgan
+    title: ALP holds an election winning lead; One Nation strongest in Queensland, Labor strongest in New South Wales
+    published: 2026-09-29
+    accessed: 2026-10-04
+  - url: https://www.roymorgan.com/findings/roy-morgan-update-september-29-2026
+    publisher: Roy Morgan
+    title: "Roy Morgan Update September 29, 2026: Federal Vote, Consumer Confidence and Mortgage Stress"
+    published: 2026-09-29
+    accessed: 2026-10-04
+  - url: https://www.pollbludger.net/2026/10/02/federal-polls-essential-research-and-roy-morgan-open-thread/
+    publisher: The Poll Bludger
+    title: "Federal polls: Essential Research and Roy Morgan (open thread)"
+    published: 2026-10-02
+    accessed: 2026-10-04

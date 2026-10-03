@@ -1,0 +1,31 @@
+id: demosau-2026-09
+pollster: demosau
+commissioner: premier-national
+commissioner_type: media
+fieldwork_start: 2026-09-10
+fieldwork_end: 2026-09-20
+sample_size: 1020
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "DemosAU/Premier National Victoria state poll as reported by the Herald Sun (2PP Coalition 52–48). Others residual after ALP+LNP+GRN+ONP (11). DemosAU had not posted its own release or effective n at encode time, so design_effect is left at default; update with the DemosAU report URL when published. Supersedes demosau-2026-08 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 25
+  lnp: 30
+  onp: 20
+  grn: 14
+  others: 11
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/09/29/victorian-election-demosau-poll-election-guide-and-seat-projection-model/
+    publisher: The Poll Bludger
+    title: "Victorian election: DemosAU poll, election guide and seat projection model"
+    published: 2026-09-29
+    accessed: 2026-10-04
+  - url: https://acestrategies.au/victoria-election-2026/poll-accuracy/
+    publisher: Ace Strategies
+    title: "Victorian Election Polls 2026: Accuracy Scorecard (DemosAU 10–20 Sep entry)"
+    published: 2026-09-29
+    accessed: 2026-10-04

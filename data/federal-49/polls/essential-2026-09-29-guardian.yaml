@@ -1,0 +1,36 @@
+id: essential-2026-09-29-guardian
+pollster: Essential
+commissioner: the-guardian
+commissioner_type: media
+fieldwork_start: 2026-09-23
+fieldwork_end: 2026-09-28
+sample_size: 1008
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Guardian Essential Report federal voting intention. Primaries as reported with 6% undecided; others residual after allocating undecided into the published decided+undecided frame (29+22+25+12+12). 2PP+ Labor 48 / Coalition 46 (remainder undecided) not encoded. Fieldwork Wed–Mon and sample 1008 per Poll Bludger; Wikipedia lists n=1,022 pending Essential full tables."
+primaries:
+  alp: 29
+  lnp: 22
+  onp: 25
+  grn: 12
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theguardian.com/australia-news/2026/sep/29/guardian-essential-poll-coalitions-primary-vote-sinks-to-lowest-ever-as-majority-support-hardline-immigration-ideas
+    publisher: The Guardian
+    title: "Guardian Essential poll: Coalition’s primary vote sinks to lowest ever as majority support hardline immigration ideas"
+    published: 2026-09-29
+    accessed: 2026-10-04
+  - url: https://essentialreport.com.au/reports/30-september-2026
+    publisher: Essential Report
+    title: "The Essential Report: 30 September 2026"
+    published: 2026-09-30
+    accessed: 2026-10-04
+  - url: https://www.pollbludger.net/2026/10/02/federal-polls-essential-research-and-roy-morgan-open-thread/
+    publisher: The Poll Bludger
+    title: "Federal polls: Essential Research and Roy Morgan (open thread)"
+    published: 2026-10-02
+    accessed: 2026-10-04
