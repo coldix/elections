@@ -1,0 +1,31 @@
+id: redbridge-accent-2026-10-04-afr
+pollster: "RedBridge / Accent"
+commissioner: australian-financial-review
+commissioner_type: media
+fieldwork_start: 2026-09-28
+fieldwork_end: 2026-10-02
+sample_size: 1000
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for the Australian Financial Review (monthly RedBridge Group/Accent Research poll). Fieldwork Monday–Friday 28 Sep–2 Oct per Poll Bludger and Wikipedia. Primaries ONP 29, ALP 28, L-NP 21, GRN 11; others residual 11. Respondent-allocated 2PP Coalition 54–46 over Labor (2025-flow measure 50–50) and Labor 52–48 over One Nation not encoded. Supersedes redbridge-accent-2026-08-30-afr in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 28
+  lnp: 21
+  onp: 29
+  grn: 11
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.afr.com/politics/federal/voters-turn-on-albanese-and-chalmers-as-economic-concerns-bite-20261004-p612n5
+    publisher: Australian Financial Review
+    title: Voters turn on Albanese and Chalmers as economic concerns bite
+    published: 2026-10-04
+    accessed: 2026-10-05
+  - url: https://www.pollbludger.net/2026/10/05/redbridge-group-labor-28-one-nation-29-coalition-21-open-thread/
+    publisher: The Poll Bludger
+    title: "RedBridge Group: Labor 28, One Nation 29, Coalition 21 (open thread)"
+    published: 2026-10-05
+    accessed: 2026-10-05
