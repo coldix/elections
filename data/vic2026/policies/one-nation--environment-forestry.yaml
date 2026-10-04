@@ -48,3 +48,37 @@ policy:
         publisher: Pauline Hanson's One Nation
         title: Forestry
         accessed: 2026-08-02
+    - id: onp-forestry-booklet-selective-harvest
+      statement: >-
+        Rebuild native forestry on a selective-harvesting model rather than clear-fell,
+        starting from Tasmania's Forest Practices Plan approach, designed to be self-
+        funding with monitoring at each stage, alongside a 'local wood first' government
+        procurement policy.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-env-booklet-great-forest-np
+      statement: >-
+        Oppose the Great Forest National Park and any proposal that locks hunters, four-
+        wheel drivers, trail bike and horse riders, climbers and fossickers out of state
+        forest.
+      kind: opposition_to
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-env-booklet-energy-land-ban
+      statement: >-
+        Ban industrial solar, wind, battery storage and transmission projects on land in a
+        domestic water catchment, or land that is irrigated, flood prone or bushfire
+        prone, and require full rehabilitation bonds on every energy project.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05

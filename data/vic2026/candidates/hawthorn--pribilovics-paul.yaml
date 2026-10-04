@@ -1,0 +1,26 @@
+candidate:
+  name: Paul Pribilovics
+  party: one-nation
+  contest: hawthorn
+  chamber: assembly
+  status: endorsed
+  background: "31 years of frontline policing with Victoria Police."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/paul-pribilovics
+        title: "Paul Pribilovics for Hawthorn"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Paul as One Nation's candidate for
+        Hawthorn. The profile page's HTML title spells the surname
+        "Priblovics"; the candidates index card and page URL use
+        "Pribilovics", which is recorded here. Page carries no publication
+        date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/paul-pribilovics
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

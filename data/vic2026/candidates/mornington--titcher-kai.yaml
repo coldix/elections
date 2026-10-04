@@ -1,0 +1,24 @@
+candidate:
+  name: Kai Titcher
+  party: greens
+  contest: mornington
+  chamber: assembly
+  status: endorsed
+  background: "Community volunteer and advocate born and raised in Mornington."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://greens.org.au/vic/person/kai-titcher
+        title: "Kai Titcher, Candidate for Mornington"
+        publisher: Victorian Greens
+        accessed: 2026-10-05
+      note: >-
+        Victorian Greens person page lists Kai as Candidate for Mornington.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: https://greens.org.au/vic/person/kai-titcher
+      kind: party-profile
+    - url: https://greens.org.au/vic/candidates
+      kind: party

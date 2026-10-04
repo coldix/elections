@@ -2,7 +2,7 @@
 policy:
   party: one-nation
   issue: debt-budget
-  headline: Spending review, lower debt and a phase-out of payroll tax
+  headline: Spending review, cancel the Suburban Rail Loop and lift the payroll tax threshold
   blind_claim: "Cut spending and payroll tax"
   claims:
     - id: onp-debt-spending-review
@@ -44,3 +44,36 @@ policy:
         publisher: One Nation Victoria
         title: Economic Recovery
         accessed: 2026-08-02
+    - id: onp-debt-booklet-srl
+      statement: >-
+        Cancel the Suburban Rail Loop, redirect its funding to other infrastructure, and
+        publish the cost of continuing the project alongside the cost of stopping it.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-debt-booklet-bureaucracy-sunset
+      statement: >-
+        Cut the senior executive layer of the public service while protecting and
+        increasing frontline police, teachers, nurses, paramedics and firefighters, and
+        introduce public sunset reviews so public entities expire unless Parliament votes
+        to continue them.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-debt-booklet-payroll-threshold
+      statement: >-
+        The October 2026 policy booklet commits to lifting the payroll tax threshold so
+        more small employers fall outside the tax; it does not repeat the earlier stated
+        phase-out of payroll tax.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05

@@ -1,0 +1,25 @@
+candidate:
+  name: Tim Chang
+  party: liberal
+  contest: footscray
+  chamber: assembly
+  status: endorsed
+  occupation: "Dentist and small business owner"
+  background: "Long-time Yarraville local."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: "https://vic.liberal.org.au/team/tim-chang"
+        title: "Tim Chang: Liberal for Footscray"
+        publisher: Victorian Liberal Party
+        accessed: 2026-10-05
+      note: >-
+        Official Victorian Liberal team page lists Tim as Liberal for Footscray.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: "https://vic.liberal.org.au/team/tim-chang"
+      kind: party-profile
+    - url: "https://www.tim-chang.com.au"
+      kind: campaign-site

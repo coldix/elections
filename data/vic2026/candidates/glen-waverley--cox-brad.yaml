@@ -1,0 +1,25 @@
+candidate:
+  name: Brad Cox
+  party: one-nation
+  contest: glen-waverley
+  chamber: assembly
+  status: endorsed
+  occupation: "Television producer"
+  background: "More than 35 years in media and business; NDIS community advocate."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/brad-cox
+        title: "Brad Cox for Glen Waverley"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Brad as One Nation's candidate for Glen
+        Waverley. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/brad-cox
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

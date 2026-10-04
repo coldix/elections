@@ -38,3 +38,15 @@ policy:
         publisher: Parliament of Victoria
         title: Petition — Repeal the Statewide Treaty Act 2025
         accessed: 2026-08-02
+    - id: onp-treaty-booklet-gellung-warl
+      statement: >-
+        One Nation Victoria's October 2026 policy booklet commits to scrapping the
+        Statewide Treaty entirely, abolishing Gellung Warl and ending its legislated
+        funding, which the booklet puts at roughly $70 million a year rising by 2.5 per
+        cent annually.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05

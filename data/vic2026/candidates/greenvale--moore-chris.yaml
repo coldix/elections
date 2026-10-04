@@ -1,0 +1,25 @@
+candidate:
+  name: Chris Moore
+  party: one-nation
+  contest: greenvale
+  chamber: assembly
+  status: endorsed
+  occupation: "Small business owner"
+  background: "CFA firefighter; more than 20 years in civil construction."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/chris-moore
+        title: "Chris Moore for Greenvale"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Chris as One Nation's candidate for
+        Greenvale. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/chris-moore
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

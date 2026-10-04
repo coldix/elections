@@ -49,3 +49,25 @@ policy:
         publisher: One Nation Victoria
         title: Education Policy
         accessed: 2026-08-02
+    - id: onp-edu-booklet-syllabus
+      statement: >-
+        Replace the Victorian Curriculum with a sequenced, knowledge-rich syllabus setting
+        out what students must learn year by year, prioritising literacy, numeracy,
+        science, history and civics, with explicit instruction and systematic phonics.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-edu-booklet-vouchers-trade-schools
+      statement: >-
+        Introduce school vouchers so public funding follows the student across government,
+        independent, faith-based and specialist schools, and expand dedicated trade
+        schools with pathways into apprenticeships.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05

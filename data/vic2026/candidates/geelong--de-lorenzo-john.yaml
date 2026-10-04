@@ -1,0 +1,24 @@
+candidate:
+  name: John De Lorenzo
+  party: one-nation
+  contest: geelong
+  chamber: assembly
+  status: endorsed
+  background: "More than 20 years in Geelong manufacturing and export industries; former regional health service board chair."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/john-de-lorenzo
+        title: "John De Lorenzo for Geelong"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists John as One Nation's candidate for Geelong.
+        Page carries no publication date; status dated to when verified on the
+        party site.
+  links:
+    - url: https://vic.onenation.org.au/john-de-lorenzo
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

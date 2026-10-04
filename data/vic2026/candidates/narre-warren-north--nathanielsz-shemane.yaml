@@ -1,0 +1,25 @@
+candidate:
+  name: Shemane Nathanielsz
+  party: liberal
+  contest: narre-warren-north
+  chamber: assembly
+  status: endorsed
+  occupation: "Registered nurse"
+  background: "Long-time Casey resident; board member of Community Bank Beaconsfield District."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: "https://vic.liberal.org.au/team/shemane-nathanielsz"
+        title: "Shemane Nathanielsz: Liberal for Narre Warren North"
+        publisher: Victorian Liberal Party
+        accessed: 2026-10-05
+      note: >-
+        Official Victorian Liberal team page lists Shemane as Liberal for Narre Warren North.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: "https://vic.liberal.org.au/team/shemane-nathanielsz"
+      kind: party-profile
+    - url: "https://www.shemanenathanielsz.com.au"
+      kind: campaign-site

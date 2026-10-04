@@ -41,3 +41,25 @@ policy:
       title: Driving down energy costs and protecting farmer rights
       published: '2026-05-06'
       accessed: '2026-08-02'
+  - id: liberal-energy-security-requirement-our-plan
+    statement: >-
+      Establish a technology-agnostic Energy Security Requirement for Victoria to
+      address the forecast energy shortfall, identifying commercial proposals that
+      deliver reliable, low-cost supply and more firming capacity.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/Uploads/1784863237800WVVXJGP_our-plan/2026-plan.pdf
+      publisher: Liberal Victoria (joint Liberal–Nationals plan)
+      title: Our Plan to Deliver for Victorians
+      accessed: '2026-10-05'
+  - id: liberal-energy-wind-buffer-our-plan
+    statement: >-
+      Bring back 2 km buffer zones so wind turbines cannot be built close to people's
+      homes, and restore landholders' right to appeal major planning and infrastructure
+      decisions to VCAT.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/Uploads/1784863237800WVVXJGP_our-plan/2026-plan.pdf
+      publisher: Liberal Victoria (joint Liberal–Nationals plan)
+      title: Our Plan to Deliver for Victorians
+      accessed: '2026-10-05'

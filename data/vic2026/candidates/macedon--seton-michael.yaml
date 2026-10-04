@@ -1,0 +1,25 @@
+candidate:
+  name: Michael Seton
+  party: independent
+  contest: macedon
+  chamber: assembly
+  status: announced
+  occupation: "Former superannuation fund chief executive"
+  background: "Former Chief Executive of AGEST Super and MilitarySuper; lives in Woodend."
+  history:
+    - status: announced
+      date: 2026-08-17
+      source:
+        url: https://www.michael4macedon.com.au/s/Media-Release-Michael-Seton-Independent-for-Macedon.pdf
+        title: "Independent candidate to run for Macedon in the State Election"
+        publisher: Michael Seton (campaign)
+        published: 2026-08-17
+        accessed: 2026-10-05
+      note: >-
+        Candidate's own media release announces that he will run as an
+        independent candidate for Macedon at the 28 November 2026 state
+        election. The campaign site also describes him as the independent
+        candidate for the Macedon District.
+  links:
+    - url: https://www.michael4macedon.com.au/
+      kind: campaign-site

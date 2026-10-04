@@ -1,0 +1,26 @@
+candidate:
+  name: Maxwell Gratton
+  party: one-nation
+  contest: north-eastern-metropolitan
+  chamber: council
+  status: endorsed
+  occupation: "Management consultant"
+  background: "Ivanhoe local; four-time chief executive across sport, business and the arts."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/maxwell-gratton
+        title: "Maxwell Gratton for North-East Metro"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page describes Maxwell as a One Nation candidate for
+        the North-Eastern Metropolitan Region (Legislative Council). Page
+        carries no publication date; status dated to when verified on the
+        party site.
+  links:
+    - url: https://vic.onenation.org.au/maxwell-gratton
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

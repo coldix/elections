@@ -46,3 +46,49 @@ policy:
         publisher: One Nation Victoria
         title: Tackling Crime
         accessed: 2026-08-02
+    - id: onp-crime-booklet-youth-adult-sentencing
+      statement: >-
+        Children charged with a serious violent offence would be sentenced as adults under
+        the Sentencing Act 1991, and the minimum age of criminal responsibility would be
+        returned from 12 to 10.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-crime-booklet-bail
+      statement: >-
+        Establish a 24/7 Bail Court within existing Magistrates' Court infrastructure;
+        apply a presumption against bail (exceptional circumstances test) to repeat
+        offenders and anyone charged with an indictable offence while on bail; require
+        published reasons when bail is granted for serious offences; and make
+        electronically monitored supervised bail mandatory for listed serious offences.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-crime-booklet-courts
+      statement: >-
+        Build new Magistrates' Courts at Melton, Epping and Pakenham, increase active
+        magistrates toward about 170, double judicial registrars from 18 to 36, and set a
+        ninety-day charge-to-trial clock for serious violent charges supported by night
+        and weekend sittings.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-crime-booklet-emergency-worker-assault
+      statement: >-
+        Apply a mandatory minimum prison sentence to assaults on police officers,
+        paramedics, nurses and firefighters.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05

@@ -1,0 +1,25 @@
+candidate:
+  name: Alexander Fagan
+  party: one-nation
+  contest: brighton
+  chamber: assembly
+  status: endorsed
+  occupation: "Director of a technology business"
+  background: "Engineering and science graduate."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/alexander-fagan
+        title: "Alexander Fagan for Brighton"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Alexander as One Nation's candidate for
+        Brighton. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/alexander-fagan
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

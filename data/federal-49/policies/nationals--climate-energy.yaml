@@ -13,3 +13,16 @@ policy:
         publisher: The Nationals
         title: Our Plan for Regional Australia
         accessed: 2026-08-09
+    - id: nats-fuel-security-2026-04
+      statement: >-
+        The Coalition would more than double Australia's minimum fuel reserves to 60 days and
+        deliver at least 1 billion litres of new storage through an $800 million Australian Fuel
+        Security Facility, and calls for baseline stockholding levels to be lifted from 1 January
+        2027.
+      kind: pledge
+      source:
+        url: https://nationals.org.au/news-posts/our-plan-for-more-fuel-more-storage-and-more-security
+        publisher: The Nationals (Coalition media release)
+        title: Our plan for more fuel, more storage, and more security
+        published: 2026-04-28
+        accessed: 2026-10-05

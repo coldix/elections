@@ -1,0 +1,27 @@
+candidate:
+  name: Rufo Paredes
+  party: one-nation
+  contest: laverton
+  chamber: assembly
+  status: endorsed
+  occupation: "Company director and migration professional"
+  background: "Long-time western suburbs resident."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/rufo-paredes
+        title: "Rufo Paredes for Laverton"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Rufo as One Nation's candidate for
+        Laverton. Previously held (GitHub #36, social-only self-claim); the
+        party index did not list a Laverton candidate on 28 September 2026.
+        Page carries no publication date; status dated to when verified on the
+        party site.
+  links:
+    - url: https://vic.onenation.org.au/rufo-paredes
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

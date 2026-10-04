@@ -1,0 +1,21 @@
+candidate:
+  name: Christine Grundy
+  party: labor
+  contest: murray-plains
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://www.viclabor.org.au/our-team/christine-grundy
+        publisher: Victorian Labor
+        title: "Christine Grundy: Candidate for Murray Plains"
+        accessed: 2026-10-05
+      note: >-
+        Official Victorian Labor team page lists Christine Grundy as Candidate for
+        Murray Plains. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.viclabor.org.au/our-team/christine-grundy
+      kind: party-profile

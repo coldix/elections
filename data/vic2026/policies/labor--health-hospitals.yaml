@@ -91,3 +91,17 @@ policy:
         title: Labor Delivers Better, Free Healthcare
         published: '2026-05-05'
         accessed: '2026-08-02'
+
+    - id: labor-health-free-dental-2026-08
+      statement: >-
+        A re-elected Carroll Labor Government says it will invest $230 million to open 10 free
+        walk-in Public Dental Clinics (seven in Melbourne, three in regional Victoria), modelled
+        on Medicare Urgent Care Clinics, offering free check-ups and treatment and seeing more
+        than 100,000 Victorians a year.
+      kind: pledge
+      source:
+        url: https://www.viclabor.org.au/news/only-labor-will-deliver-free-dental-care-for-all-victorians
+        publisher: Victorian Labor
+        title: Only Labor Will Deliver Free Dental Care For All Victorians
+        published: 2026-08-22
+        accessed: 2026-10-05

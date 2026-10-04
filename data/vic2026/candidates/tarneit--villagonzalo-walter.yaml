@@ -1,0 +1,24 @@
+candidate:
+  name: Walter Villagonzalo
+  party: one-nation
+  contest: tarneit
+  chamber: assembly
+  status: endorsed
+  background: "Order of Australia Medal recipient; former Wyndham Deputy Mayor; background in the military and IT."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/walter-villagonzalo
+        title: "Walter Villagonzalo OAM for Tarneit"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Walter as One Nation's candidate for
+        Tarneit. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/walter-villagonzalo
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

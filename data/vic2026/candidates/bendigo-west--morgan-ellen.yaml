@@ -1,0 +1,25 @@
+candidate:
+  name: Ellen Morgan
+  party: one-nation
+  contest: bendigo-west
+  chamber: assembly
+  status: endorsed
+  occupation: "Community services professional"
+  background: "Frontline experience in youth justice and case management."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/ellen-morgan
+        title: "Ellen Morgan for Bendigo West"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Ellen as One Nation's candidate for Bendigo
+        West. Page carries no publication date; status dated to when verified
+        on the party site.
+  links:
+    - url: https://vic.onenation.org.au/ellen-morgan
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

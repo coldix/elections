@@ -48,3 +48,36 @@ policy:
         publisher: One Nation Victoria
         title: Affordable Energy
         accessed: 2026-08-02
+    - id: onp-energy-booklet-transmission
+      statement: >-
+        Cancel VNI West, the Western Renewables Link and other large transmission projects
+        the booklet ties to net zero, and disband the Western Renewable Energy Zone and
+        remove its compulsory acquisition powers.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-energy-booklet-nuclear
+      statement: >-
+        Repeal the Nuclear Activities (Prohibitions) Act 1983 to end Victoria's state ban
+        on nuclear energy.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-energy-booklet-gas
+      statement: >-
+        Give Victorian household and industrial demand first call on Victorian gas while
+        allowing genuine surplus to be exported, hold that Victorian users should not pay
+        more than the export price, support offshore gas exploration, and reverse the ban
+        on gas connections in new homes.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05

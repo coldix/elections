@@ -1,0 +1,21 @@
+candidate:
+  name: Sue Pavlovich
+  party: labor
+  contest: lowan
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://www.viclabor.org.au/our-team/sue-pavlovich
+        publisher: Victorian Labor
+        title: "Sue Pavlovich: Candidate for Lowan"
+        accessed: 2026-10-05
+      note: >-
+        Official Victorian Labor team page lists Sue Pavlovich as Candidate for
+        Lowan. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.viclabor.org.au/our-team/sue-pavlovich
+      kind: party-profile

@@ -1,0 +1,25 @@
+candidate:
+  name: Bradley Watt
+  party: one-nation
+  contest: rowville
+  chamber: assembly
+  status: endorsed
+  occupation: "Senior business manager"
+  background: "Former state and national badminton representative."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/bradley-watt
+        title: "Bradley Watt for Rowville"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Bradley as One Nation's candidate for
+        Rowville. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/bradley-watt
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

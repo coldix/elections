@@ -1,0 +1,25 @@
+candidate:
+  name: Baris Duzova
+  party: liberal
+  contest: broadmeadows
+  chamber: assembly
+  status: endorsed
+  occupation: "Law student and retail worker"
+  background: "Glenroy local; Justice of the Peace."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: "https://vic.liberal.org.au/team/baris-duzova"
+        title: "Baris Duzova: Liberal for Broadmeadows"
+        publisher: Victorian Liberal Party
+        accessed: 2026-10-05
+      note: >-
+        Official Victorian Liberal team page lists Baris as Liberal for Broadmeadows.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: "https://vic.liberal.org.au/team/baris-duzova"
+      kind: party-profile
+    - url: "https://www.barisduzova.com.au"
+      kind: campaign-site

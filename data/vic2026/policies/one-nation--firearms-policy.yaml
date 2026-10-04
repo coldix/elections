@@ -45,3 +45,14 @@ policy:
       publisher: One Nation Victoria
       title: Firearms Policy — Safe, Fair and Responsible
       accessed: '2026-08-02'
+  - id: onp-firearms-booklet-hunting-storage
+    statement: >-
+      Protect duck hunting with current bag limits, support deer hunting for recreation
+      and pest control, and allow secure firearm storage options at approved clubs and
+      ranges.
+    kind: pledge
+    source:
+      url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+      publisher: One Nation Victoria
+      title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+      accessed: 2026-10-05

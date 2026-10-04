@@ -1,0 +1,24 @@
+candidate:
+  name: Brooke Carter
+  party: one-nation
+  contest: oakleigh
+  chamber: assembly
+  status: endorsed
+  background: "More than 25 years in the legal system and public sector."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/brooke-carter
+        title: "Brooke Carter for Oakleigh"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Brooke as One Nation's candidate for
+        Oakleigh. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/brooke-carter
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

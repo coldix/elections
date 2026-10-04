@@ -1,0 +1,25 @@
+candidate:
+  name: Kellie Sheppard
+  party: one-nation
+  contest: benambra
+  chamber: assembly
+  status: endorsed
+  occupation: "Professional writer and small business owner"
+  background: "From Osbornes Flat; professional writer for 30 years."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/kellie-sheppard
+        title: "Kellie Sheppard for Benambra"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Kellie as One Nation's candidate for
+        Benambra. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/kellie-sheppard
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

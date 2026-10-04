@@ -1,0 +1,25 @@
+candidate:
+  name: Rob Dunstan
+  party: liberal
+  contest: st-albans
+  chamber: assembly
+  status: endorsed
+  occupation: "Police officer"
+  background: "Police officer for 30 years in Melbourne's west."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: "https://vic.liberal.org.au/team/robert-dunstan"
+        title: "Rob Dunstan: Liberal for St Albans"
+        publisher: Victorian Liberal Party
+        accessed: 2026-10-05
+      note: >-
+        Official Victorian Liberal team page lists Rob as Liberal for St Albans.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: "https://vic.liberal.org.au/team/robert-dunstan"
+      kind: party-profile
+    - url: "https://www.robertdunstan.com.au"
+      kind: campaign-site

@@ -1,0 +1,25 @@
+candidate:
+  name: Kayte Bleakney
+  party: one-nation
+  contest: bayswater
+  chamber: assembly
+  status: endorsed
+  occupation: "Financial services professional"
+  background: "Bayswater local of more than 25 years."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/kayte-bleakney
+        title: "Kayte Bleakney for Bayswater"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Kayte as One Nation's candidate for
+        Bayswater. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/kayte-bleakney
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

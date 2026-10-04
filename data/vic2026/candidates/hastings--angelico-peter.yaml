@@ -1,0 +1,24 @@
+candidate:
+  name: Peter Angelico
+  party: one-nation
+  contest: hastings
+  chamber: assembly
+  status: endorsed
+  occupation: "Manufacturer and business leader"
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/peter-angelico
+        title: "Peter Angelico for Hastings"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Peter as One Nation's candidate for
+        Hastings. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/peter-angelico
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

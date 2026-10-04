@@ -1,0 +1,24 @@
+candidate:
+  name: Jason Taverna
+  party: one-nation
+  contest: niddrie
+  chamber: assembly
+  status: endorsed
+  occupation: "Local business owner"
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/jason-taverna
+        title: "Jason Taverna for Niddrie"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Jason as One Nation's candidate for
+        Niddrie. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/jason-taverna
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

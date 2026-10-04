@@ -59,3 +59,15 @@ policy:
         publisher: One Nation Victoria
         title: Housing Policy
         accessed: 2026-08-02
+    - id: onp-housing-booklet-duty-consultation
+      statement: >-
+        Raise the foreign purchaser duty on residential property, wind back land tax
+        increases on rental properties, release under-used government land, and require
+        genuine community consultation before high-rise development in established
+        suburbs.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05

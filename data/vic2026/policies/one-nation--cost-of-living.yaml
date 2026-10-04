@@ -46,3 +46,14 @@ policy:
         publisher: One Nation Victoria
         title: Cost of Living
         accessed: 2026-08-02
+    - id: onp-col-booklet-state-taxes
+      statement: >-
+        The October 2026 policy booklet commits to winding back land tax increases on
+        rental properties and small property owners, lifting the payroll tax threshold,
+        and abolishing the 10 per cent stamp duty on home, contents and car insurance.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05

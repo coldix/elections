@@ -36,3 +36,14 @@ policy:
       title: Liberals and Nationals comprehensive 10-year economic plan
       published: '2026-05-12'
       accessed: '2026-08-02'
+  - id: liberal-col-land-tax-threshold-our-plan
+    statement: >-
+      Reverse land tax increases by lifting the land-tax-free threshold from its current
+      $50,000 back to $300,000 over five years; the plan says this would save 280,000
+      Victorians up to $975 a year.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/Uploads/1784863237800WVVXJGP_our-plan/2026-plan.pdf
+      publisher: Liberal Victoria (joint Liberal–Nationals plan)
+      title: Our Plan to Deliver for Victorians
+      accessed: '2026-10-05'

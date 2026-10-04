@@ -38,3 +38,14 @@ policy:
         publisher: One Nation Victoria
         title: Affordable Energy
         accessed: 2026-08-02
+    - id: onp-climate-booklet-net-zero
+      statement: >-
+        The October 2026 policy booklet commits to scrapping all net-zero targets and
+        subsidies, saying energy policy should be judged on price, reliability and what is
+        best for Victorian families and industry.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05

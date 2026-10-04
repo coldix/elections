@@ -1,0 +1,25 @@
+candidate:
+  name: Arthur Tsoutsoulis
+  party: one-nation
+  contest: mill-park
+  chamber: assembly
+  status: endorsed
+  occupation: "Traffic and transport engineer"
+  background: "More than 20 years in civil project management."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/arthur-tsoutsoulis
+        title: "Arthur Tsoutsoulis for Mill Park"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Arthur as One Nation's candidate for Mill
+        Park. Page carries no publication date; status dated to when verified
+        on the party site.
+  links:
+    - url: https://vic.onenation.org.au/arthur-tsoutsoulis
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

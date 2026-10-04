@@ -39,3 +39,25 @@ policy:
         title: One Nation will redevelop the Rosebud Hospital through PPP
         published: 2026-04-27
         accessed: 2026-08-02
+    - id: onp-infra-booklet-rail
+      statement: >-
+        Cancel the Suburban Rail Loop and redirect funding; finish regional freight and
+        commuter track duplication, electrify the Melton line, complete the Airport Rail
+        Link and support full completion of Inland Rail.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-infra-booklet-roads
+      statement: >-
+        Lock in ongoing funding to clear the regional road maintenance backlog, publish
+        the condition and funding of every major regional road, and create a public
+        Pothole Portal that tracks repair times.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05

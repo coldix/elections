@@ -38,3 +38,26 @@ policy:
       title: Liberals and Nationals comprehensive 10-year economic plan
       published: '2026-05-12'
       accessed: '2026-08-02'
+  - id: liberal-health-triple-zero-psos-our-plan
+    statement: >-
+      Put experienced paramedics into the Triple Zero call-taking process, build new
+      ambulance stations including at Armstrong Creek, Mansfield and Donnybrook, and
+      recruit additional Protective Services Officers for around-the-clock security at
+      major hospitals.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/Uploads/1784863237800WVVXJGP_our-plan/2026-plan.pdf
+      publisher: Liberal Victoria (joint Liberal–Nationals plan)
+      title: Our Plan to Deliver for Victorians
+      accessed: '2026-10-05'
+  - id: liberal-health-regional-upgrades-our-plan
+    statement: >-
+      As part of the Fair Share Guarantee, upgrade regional hospitals including a
+      Mildura Base Public Hospital expansion, Wonthaggi Hospital stages 2 and 3, and a
+      new emergency department at Hamilton Base Hospital.
+    kind: pledge
+    source:
+      url: https://vic.liberal.org.au/Uploads/1784863237800WVVXJGP_our-plan/2026-plan.pdf
+      publisher: Liberal Victoria (joint Liberal–Nationals plan)
+      title: Our Plan to Deliver for Victorians
+      accessed: '2026-10-05'

@@ -1,0 +1,27 @@
+candidate:
+  name: Shane Sali
+  party: nationals
+  contest: shepparton
+  chamber: assembly
+  status: endorsed
+  occupation: "Councillor"
+  background: "Born and raised in Shepparton; previously worked in small local businesses."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.nationals.org.au/candidates-shane-sali
+        title: Candidates - Shane Sali
+        publisher: The Nationals Victoria
+        accessed: 2026-10-05
+      note: >-
+        Nationals Victoria candidate page lists Shane Sali as Candidate for
+        Shepparton; the party Our Team page also lists a Candidate for
+        Shepparton. Sitting Nationals MP Kim O'Keeffe is not recontesting
+        (see retirements). Page carries no publication date; status dated to
+        when verified on the party site.
+  links:
+    - url: https://vic.nationals.org.au/candidates-shane-sali
+      kind: party-profile
+    - url: https://vic.nationals.org.au/our-team/
+      kind: party

@@ -1,0 +1,24 @@
+candidate:
+  name: Andrew Cook
+  party: liberal
+  contest: albert-park
+  chamber: assembly
+  status: endorsed
+  occupation: "Businessman"
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: "https://vic.liberal.org.au/team/andrew-cook"
+        title: "Andrew Cook: Liberal for Albert Park"
+        publisher: Victorian Liberal Party
+        accessed: 2026-10-05
+      note: >-
+        Official Victorian Liberal team page lists Andrew as Liberal for Albert Park.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: "https://vic.liberal.org.au/team/andrew-cook"
+      kind: party-profile
+    - url: "https://www.andrewcook.com.au"
+      kind: campaign-site

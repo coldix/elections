@@ -3,7 +3,7 @@ candidate:
   party: independent
   contest: werribee
   chamber: assembly
-  status: announced
+  status: withdrawn
   history:
     - status: announced
       date: 2026-09-06
@@ -16,6 +16,17 @@ candidate:
       note: >-
         Campaign site states he is an independent candidate for Werribee in the
         2026 Victorian election.
+    - status: withdrawn
+      date: 2026-10-05
+      source:
+        url: https://www.deangelis.com.au/
+        title: "Matthew De Angelis // Independent for Sydenham"
+        publisher: Matthew De Angelis campaign site
+        accessed: 2026-10-05
+      note: >-
+        Campaign site homepage now describes him as the Independent for Sydenham and
+        no longer refers to Werribee. The Werribee candidacy is recorded as
+        ended before nomination; the Sydenham candidacy is a separate record.
   links:
     - url: https://www.deangelis.com.au/
       kind: campaign-site

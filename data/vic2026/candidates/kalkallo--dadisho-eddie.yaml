@@ -1,0 +1,24 @@
+candidate:
+  name: Eddie Dadisho
+  party: liberal
+  contest: kalkallo
+  chamber: assembly
+  status: endorsed
+  background: "Wallan local; background in law and finance."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: "https://vic.liberal.org.au/team/eddie-dadisho"
+        title: "Eddie Dadisho: Liberal for Kalkallo"
+        publisher: Victorian Liberal Party
+        accessed: 2026-10-05
+      note: >-
+        Official Victorian Liberal team page lists Eddie as Liberal for Kalkallo.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: "https://vic.liberal.org.au/team/eddie-dadisho"
+      kind: party-profile
+    - url: "https://www.eddiedadisho.com.au"
+      kind: campaign-site

@@ -1,0 +1,24 @@
+candidate:
+  name: Jack Chakoma
+  party: liberal
+  contest: kororoit
+  chamber: assembly
+  status: endorsed
+  background: "Truganina local; career supporting victims of family violence and housing insecurity."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: "https://vic.liberal.org.au/team/jack-chakoma"
+        title: "Jack Chakoma: Liberal for Kororoit"
+        publisher: Victorian Liberal Party
+        accessed: 2026-10-05
+      note: >-
+        Official Victorian Liberal team page lists Jack as Liberal for Kororoit.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: "https://vic.liberal.org.au/team/jack-chakoma"
+      kind: party-profile
+    - url: "https://www.jackchakoma.com.au"
+      kind: campaign-site

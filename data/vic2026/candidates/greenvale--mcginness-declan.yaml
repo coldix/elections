@@ -1,0 +1,24 @@
+candidate:
+  name: Declan McGinness
+  party: greens
+  contest: greenvale
+  chamber: assembly
+  status: endorsed
+  background: "Westmeadows local with a background in community services, retail leadership and grassroots organising."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://greens.org.au/vic/person/declan-mcginness
+        title: "Declan McGinness, Candidate for Greenvale"
+        publisher: Victorian Greens
+        accessed: 2026-10-05
+      note: >-
+        Victorian Greens person page lists Declan as Candidate for Greenvale.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: https://greens.org.au/vic/person/declan-mcginness
+      kind: party-profile
+    - url: https://greens.org.au/vic/candidates
+      kind: party

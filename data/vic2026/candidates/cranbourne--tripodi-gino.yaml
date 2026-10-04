@@ -1,0 +1,25 @@
+candidate:
+  name: Gino Tripodi
+  party: liberal
+  contest: cranbourne
+  chamber: assembly
+  status: endorsed
+  occupation: "Transport business owner"
+  background: "Runs a fresh fruit and vegetable transportation business."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: "https://vic.liberal.org.au/team/gino-tripodi"
+        title: "Gino Tripodi: Liberal for Cranbourne"
+        publisher: Victorian Liberal Party
+        accessed: 2026-10-05
+      note: >-
+        Official Victorian Liberal team page lists Gino as Liberal for Cranbourne.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: "https://vic.liberal.org.au/team/gino-tripodi"
+      kind: party-profile
+    - url: "https://www.ginotripodi.com.au"
+      kind: campaign-site

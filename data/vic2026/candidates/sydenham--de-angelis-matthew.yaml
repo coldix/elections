@@ -1,0 +1,21 @@
+candidate:
+  name: Matthew De Angelis
+  party: independent
+  contest: sydenham
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-10-05
+      source:
+        url: https://www.deangelis.com.au/
+        title: "Matthew De Angelis // Independent for Sydenham"
+        publisher: Matthew De Angelis campaign site
+        accessed: 2026-10-05
+      note: >-
+        Campaign site headline reads "Matthew De Angelis, Independent for
+        Sydenham". He was previously recorded as an independent candidate for
+        Werribee (September 2026). Page carries no publication date.
+  links:
+    - url: https://www.deangelis.com.au/
+      kind: campaign-site

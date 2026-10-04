@@ -1,0 +1,24 @@
+candidate:
+  name: Cody Rebbechi
+  party: one-nation
+  contest: mulgrave
+  chamber: assembly
+  status: endorsed
+  occupation: "Logistics professional"
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/cody-rebbechi
+        title: "Cody Rebbechi for Mulgrave"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Cody as One Nation's candidate for
+        Mulgrave. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/cody-rebbechi
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

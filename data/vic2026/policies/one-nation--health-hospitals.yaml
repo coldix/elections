@@ -50,3 +50,25 @@ policy:
         title: One Nation will redevelop the Rosebud Hospital through PPP
         published: 2026-04-27
         accessed: 2026-08-02
+    - id: onp-health-booklet-regional-guarantee
+      statement: >-
+        Guarantee minimum regional services, including 24/7 emergency departments and core
+        maternity and surgical capacity in major regional hospitals, with a Local Access
+        Test before any major specialty is removed, downgraded or relocated.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05
+    - id: onp-health-booklet-waitlists-records
+      statement: >-
+        Create a real-time statewide view of surgical and specialist waiting lists,
+        require linked interoperable electronic medical records across health networks,
+        and redirect administrative savings into more nurses, doctors and beds.
+      kind: pledge
+      source:
+        url: https://assets.nationbuilder.com/viconenation/pages/951/attachments/original/1791077151/The_Real_Deal_One_Nation_Vic_Policy_Booklet_Oct2026.pdf
+        publisher: One Nation Victoria
+        title: "The Real Deal for Victoria: One Nation's Policy Platform (policy booklet, October 2026)"
+        accessed: 2026-10-05

@@ -51,3 +51,18 @@ policy:
         publisher: Australian Greens Victoria
         title: Biodiversity Policy
         accessed: '2026-08-02'
+    - id: greens-climate-polluters-pay-bill-2026-09
+      statement: >-
+        The Victorian Greens have introduced the Liability for Climate Change Damage (Make
+        Polluters Pay) Bill 2026, which would create a duty of care on major fossil fuel
+        producers and coal-fired power plant operators emitting more than 1 million tonnes in
+        any 12-month period since 1 September 1990, letting victims of climate disasters sue for
+        damages and courts order emission cuts; the party also says it would double coal and gas
+        royalties to fund $3,000 household energy vouchers.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/news/media-release/bushfire-and-flood-victims-could-sue-coal-and-gas-giants-climate-change
+        publisher: Australian Greens Victoria
+        title: Bushfire and flood victims could sue coal and gas giants for climate change damage, under Victorian Greens’ bill to ‘Make Polluters Pay’
+        published: '2026-09-28'
+        accessed: '2026-10-05'

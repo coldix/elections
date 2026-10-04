@@ -1,0 +1,25 @@
+candidate:
+  name: John Paganis
+  party: liberal
+  contest: clarinda
+  chamber: assembly
+  status: endorsed
+  occupation: "Senior journalist"
+  background: "Monash University graduate."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: "https://vic.liberal.org.au/team/john-paganis"
+        title: "John Paganis: Liberal for Clarinda"
+        publisher: Victorian Liberal Party
+        accessed: 2026-10-05
+      note: >-
+        Official Victorian Liberal team page lists John as Liberal for Clarinda.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: "https://vic.liberal.org.au/team/john-paganis"
+      kind: party-profile
+    - url: "https://www.johnpaganis.com.au"
+      kind: campaign-site

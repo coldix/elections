@@ -1,0 +1,25 @@
+candidate:
+  name: Mahdi Athari
+  party: one-nation
+  contest: bulleen
+  chamber: assembly
+  status: endorsed
+  occupation: "Railway engineer and small business owner"
+  background: "More than 23 years in the rail industry."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/mahdi-athari
+        title: "Mahdi Athari for Bulleen"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Mahdi as One Nation's candidate for
+        Bulleen. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/mahdi-athari
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

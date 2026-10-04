@@ -1,0 +1,24 @@
+candidate:
+  name: Seva Melnikov
+  party: one-nation
+  contest: kororoit
+  chamber: assembly
+  status: endorsed
+  occupation: "Cybersecurity professional"
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/seva-melnikov
+        title: "Seva Melnikov for Kororoit"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Seva as One Nation's candidate for
+        Kororoit. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/seva-melnikov
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

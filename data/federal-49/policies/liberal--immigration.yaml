@@ -23,3 +23,17 @@ policy:
         publisher: Liberal Party of Australia
         title: Our Plan to Fix The Economy. Protect Our Way Of Life.
         accessed: 2026-08-09
+    - id: lib-values-migration-plan-2026-04
+      statement: >-
+        The first instalment of the Coalition's Australian Values Migration Plan would make
+        compliance with the Australian Values Statement a binding visa condition (with refusal
+        or cancellation for breaches), introduce a Safe Country List to fast-track refusal of
+        unfounded protection claims, restore Temporary Protection and Safe Haven Enterprise
+        visas, and make social media screening a standard part of visa vetting.
+      kind: pledge
+      source:
+        url: https://nationals.org.au/news-posts/coalition-launches-first-wave-of-australian-values-migration-plan
+        publisher: The Nationals (Coalition media release)
+        title: Coalition Launches First Wave of Australian Values Migration Plan
+        published: 2026-04-14
+        accessed: 2026-10-05

@@ -1,0 +1,24 @@
+candidate:
+  name: Joh Bauch
+  party: one-nation
+  contest: sydenham
+  chamber: assembly
+  status: endorsed
+  occupation: "Councillor and business owner"
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/joh-bauch
+        title: "Joh Bauch for Sydenham"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Joh as One Nation's candidate for Sydenham.
+        Page carries no publication date; status dated to when verified on the
+        party site.
+  links:
+    - url: https://vic.onenation.org.au/joh-bauch
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

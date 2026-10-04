@@ -1,0 +1,25 @@
+candidate:
+  name: Adrian Dowell
+  party: one-nation
+  contest: monbulk
+  chamber: assembly
+  status: endorsed
+  occupation: "Registered building inspector"
+  background: "Cockatoo local."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/adrian-dowell
+        title: "Adrian Dowell for Monbulk"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Adrian as One Nation's candidate for
+        Monbulk. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/adrian-dowell
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

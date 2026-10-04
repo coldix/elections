@@ -1,0 +1,25 @@
+candidate:
+  name: Stephen Spyros
+  party: one-nation
+  contest: lara
+  chamber: assembly
+  status: endorsed
+  occupation: "Police officer"
+  background: "Geelong-born; lives in Lara."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/stephen-spyros
+        title: "Stephen Spyros for Lara"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Stephen as One Nation's candidate for Lara.
+        Page carries no publication date; status dated to when verified on the
+        party site.
+  links:
+    - url: https://vic.onenation.org.au/stephen-spyros
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

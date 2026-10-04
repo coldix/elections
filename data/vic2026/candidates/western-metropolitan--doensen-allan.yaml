@@ -1,0 +1,25 @@
+candidate:
+  name: Allan Doensen
+  party: one-nation
+  contest: western-metropolitan
+  chamber: council
+  status: endorsed
+  occupation: "Engineering consultant and technology business owner"
+  background: "Western Metropolitan resident of more than 30 years."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/allan-doensen
+        title: "Allan Doensen for Western Metro"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Allan as One Nation's candidate for the
+        Western Metropolitan Region (Legislative Council). Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/allan-doensen
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

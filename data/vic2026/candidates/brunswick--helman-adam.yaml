@@ -1,0 +1,24 @@
+candidate:
+  name: Adam Helman
+  party: one-nation
+  contest: brunswick
+  chamber: assembly
+  status: endorsed
+  background: "Royal Australian Air Force veteran of more than 15 years; volunteer firefighter."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/adam-helman
+        title: "Adam Helman for Brunswick"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Adam as One Nation's candidate for
+        Brunswick. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/adam-helman
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

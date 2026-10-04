@@ -1,0 +1,23 @@
+candidate:
+  name: Herbert Lonsing
+  party: one-nation
+  contest: bentleigh
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/herbert-lonsing
+        title: "Herbert Lonsing for Bentleigh"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Herbert as One Nation's candidate for
+        Bentleigh. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/herbert-lonsing
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

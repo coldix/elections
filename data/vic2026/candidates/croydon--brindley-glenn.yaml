@@ -1,0 +1,24 @@
+candidate:
+  name: Glenn Brindley
+  party: one-nation
+  contest: croydon
+  chamber: assembly
+  status: endorsed
+  background: "Former president of an Eastern Football League club."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/glenn-brindley
+        title: "Glenn Brindley for Croydon"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Glenn as One Nation's candidate for
+        Croydon. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/glenn-brindley
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

@@ -1,0 +1,25 @@
+candidate:
+  name: Damien Parolin
+  party: one-nation
+  contest: macedon
+  chamber: assembly
+  status: endorsed
+  occupation: "Automotive tradesperson and small transport business owner"
+  background: "Macedon Ranges local since 1994."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/damien-parolin
+        title: "Damien Parolin for Macedon"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Damien as One Nation's candidate for
+        Macedon. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/damien-parolin
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

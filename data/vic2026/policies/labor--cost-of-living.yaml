@@ -82,3 +82,17 @@ policy:
         title: Helping with the cost of living
         published: '2026-05-02'
         accessed: '2026-08-02'
+
+    - id: labor-col-land-tax-2026-10
+      statement: >-
+        A re-elected Carroll Labor Government says it will reverse the 2023 land tax threshold
+        change, progressively lifting the threshold from $50,000 back to a $300,000 site value
+        over six years (starting with a $25,000 rise in 2027–28), which it says will save more
+        than 250,000 Victorians up to $975 a year at a cost of $230 million over five years.
+      kind: pledge
+      source:
+        url: https://www.viclabor.org.au/news/labor-will-cut-land-tax-to-help-with-the-cost-of-living
+        publisher: Victorian Labor
+        title: Labor Will Cut Land Tax to Help with the Cost of Living
+        published: 2026-10-04
+        accessed: 2026-10-05
