@@ -1,0 +1,36 @@
+id: yougov-2026-10-07-news24
+pollster: YouGov
+commissioner: news24
+commissioner_type: media
+fieldwork_start: 2026-09-29
+fieldwork_end: 2026-10-06
+sample_size: 1505
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention (fortnightly News24 Pulse / YouGov). Fieldwork Tuesday–Tuesday 29 Sep–6 Oct; n=1505 per Poll Bludger (One News reports ~1,500). Others residual after ALP+LNP+GRN+ONP (11) — One News splits as independents 5 / Others 5 / Community Strong Australia 1. Respondent-allocated 2PP Labor 53–47 over One Nation and previous-election-flows 2PP Labor 52–48 over the Coalition not encoded. Supersedes yougov-2026-09-21-news24 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 25
+  lnp: 21
+  onp: 28
+  grn: 15
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.news24.com.au/politics/australian-politics/albanese-government-hits-new-polling-low-as-pauline-hansons-one-nation-surges-ahead-in-news24-pulse/news-story/dc75633341ddf1d90db9c3eb78061e20
+    publisher: News24
+    title: Albanese government hits new polling low as Pauline Hanson's One Nation surges ahead in News24 Pulse
+    published: 2026-10-07
+    accessed: 2026-10-07
+  - url: https://www.pollbludger.net/2026/10/07/yougov-labor-25-one-nation-28-coalition-21-open-thread/
+    publisher: The Poll Bludger
+    title: "YouGov: Labor 25, One Nation 28, Coalition 21 (open thread)"
+    published: 2026-10-07
+    accessed: 2026-10-07
+  - url: https://www.onenewsaustralia.com/australian-poll-tracker/
+    publisher: One News Australia
+    title: "Australian Poll Tracker (YouGov 29 Sep–6 Oct entry)"
+    published: 2026-10-07
+    accessed: 2026-10-07
