@@ -24,11 +24,15 @@ import { partyColour } from "../lib/site.mjs";
 
 const { data, coverage } = Astro.props;
 
-// Only parties that actually have at least one Assembly candidate get a panel.
-// Rendering all 17 would add ~1,500 cells of markup for mostly-empty grids;
-// the full table below covers every party regardless.
+// Only parties that have at least one Assembly candidate, or hold an Assembly
+// seat today, get a panel. Rendering all 17 would add ~1,500 cells of markup
+// for mostly-empty grids; the full table below covers every party regardless.
 const shown = coverage
-  .filter((c) => c.by_status.announced + c.by_status.endorsed + c.by_status.nominated > 0)
+  .filter(
+    (c) =>
+      c.by_status.announced + c.by_status.endorsed + c.by_status.nominated > 0 ||
+      (c.current?.assembly ?? 0) > 0
+  )
   .sort((a, b) => a.name.localeCompare(b.name));
 
 const districts = data.districts;

@@ -10,7 +10,12 @@
  * candidacy in the region. Status colour uses the strongest live status
  * (nominated > endorsed > announced). Tooltip lists all names.
  */
-import { LIVE_STATUSES, ENDED_STATUSES, STATUS_LABELS } from "../../../scripts/lib/data.mjs";
+import {
+  LIVE_STATUSES,
+  ENDED_STATUSES,
+  STATUS_LABELS,
+  representationFor,
+} from "../../../scripts/lib/data.mjs";
 import { partyColour } from "../lib/site.mjs";
 
 const { data } = Astro.props;
@@ -41,8 +46,11 @@ function cellFor(region, partySlug) {
 }
 
 const totalCouncilSeats = data.regions.reduce((n, r) => n + (r.seats || 5), 0);
+const rep = representationFor(data);
 
-// Parties with any Council candidacy on file (live or ended).
+// Parties with any Council candidacy on file (live or ended), plus every party
+// that holds a Council seat today — a sitting party with no sourced 2026
+// candidacy yet still gets a tab (0/40) rather than silently disappearing.
 const partyStats = data.parties
   .map((p) => {
     const live = data.candidates.filter(
@@ -59,6 +67,7 @@ const partyStats = data.parties
       ])
     );
     const seatsCovered = live.length;
+    const sitting = rep[p.slug]?.council ?? 0;
     return {
       party: p.slug,
       name: p.name,
@@ -72,9 +81,16 @@ const partyStats = data.parties
       by_status: byStatus,
       ended_count: ended.length,
       live_count: live.length,
+      sitting,
+      // Context only — seats held today are not 2026 candidacies.
+      sitting_note:
+        sitting > 0
+          ? `Holds ${sitting} Council seat${sitting === 1 ? "" : "s"} today` +
+            (live.length + ended.length === 0 ? "; no 2026 Council candidacy sourced yet." : ".")
+          : null,
     };
   })
-  .filter((p) => p.live_count + p.ended_count > 0)
+  .filter((p) => p.live_count + p.ended_count > 0 || p.sitting > 0)
   .sort((a, b) => b.seats_covered - a.seats_covered || a.name.localeCompare(b.name));
 
 const panels = partyStats.map((p) => ({
@@ -167,6 +183,7 @@ function shortLabel(name) {
                   {p.by_status.announced > 0 && <> {p.by_status.announced} announced only.</>}
                   {p.by_status.nominated > 0 && <> {p.by_status.nominated} formally nominated.</>}
                   {p.ended_count > 0 && <> {p.ended_count} withdrawn or disendorsed.</>}
+                  {p.sitting_note && <> {p.sitting_note}</>}
                 </p>
 
                 <ul class="grid" role="list">
