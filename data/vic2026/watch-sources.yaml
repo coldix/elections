@@ -24,6 +24,11 @@ sources:
     url: https://vic.onenation.org.au/candidates
     note: Party list; often thin until bulk announce.
 
+  - id: lcv-vic
+    type: html
+    url: https://www.lcvicparty.org.au/ourcandidates
+    note: Legalise Cannabis Victoria candidate list (change detection only; encode by hand).
+
   - id: gnews-vic-candidates
     type: rss
     url: "https://news.google.com/rss/search?q=%22Victorian%22+(candidate+OR+preselected+OR+endorsed+OR+retirement)+election+2026&hl=en-AU&gl=AU&ceid=AU:en"

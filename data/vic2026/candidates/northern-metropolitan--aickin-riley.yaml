@@ -1,0 +1,22 @@
+candidate:
+  name: Riley Aickin
+  party: legalise-cannabis
+  contest: northern-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-07
+      source:
+        url: https://www.lcvicparty.org.au/riley_aickin_candidate_for_northern_metropolitan
+        publisher: Legalise Cannabis Victoria
+        title: "Riley Aickin - Candidate for Northern Metropolitan"
+        accessed: 2026-10-07
+      note: >-
+        Listed as Legalise Cannabis Victoria's candidate for the Northern Metropolitan
+        Region on the party's official Our Candidates page
+        (https://www.lcvicparty.org.au/ourcandidates, accessed 2026-10-07).
+        Page does not show a separate endorsement publish date.
+  links:
+    - url: https://www.lcvicparty.org.au/riley_aickin_candidate_for_northern_metropolitan
+      kind: party-profile

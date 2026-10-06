@@ -1,0 +1,22 @@
+candidate:
+  name: Peter Mitchell
+  party: legalise-cannabis
+  contest: western-victoria
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-07
+      source:
+        url: https://www.lcvicparty.org.au/peter_mitchell_candidate_for_western_victoria
+        publisher: Legalise Cannabis Victoria
+        title: "Peter Mitchell - Candidate for Western Victoria"
+        accessed: 2026-10-07
+      note: >-
+        Listed as Legalise Cannabis Victoria's candidate for the Western Victoria
+        Region on the party's official Our Candidates page
+        (https://www.lcvicparty.org.au/ourcandidates, accessed 2026-10-07).
+        Page does not show a separate endorsement publish date.
+  links:
+    - url: https://www.lcvicparty.org.au/peter_mitchell_candidate_for_western_victoria
+      kind: party-profile
