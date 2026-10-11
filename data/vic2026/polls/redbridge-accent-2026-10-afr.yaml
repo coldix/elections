@@ -1,0 +1,31 @@
+id: redbridge-accent-2026-10-afr
+pollster: redbridge-accent
+commissioner: australian-financial-review
+commissioner_type: media
+fieldwork_start: 2026-10-02
+fieldwork_end: 2026-10-08
+sample_size: 1008
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "AFR / RedBridge / Accent Victorian state voting intention, fieldwork 2–8 Oct 2026, n=1,008. Others residual after ALP+LNP+GRN+ONP (6). Reported 2PP L/NP 56–44 vs ALP; ALP 55–45 vs ONP. Figures via AFR report as tabulated on Wikipedia; Accent project page not yet published at access."
+primaries:
+  alp: 24
+  lnp: 30
+  onp: 24
+  grn: 16
+  others: 6
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.afr.com/politics/coalition-firms-for-majority-in-victoria-as-voters-warm-to-wilson-20261011-p6146e
+    publisher: Australian Financial Review
+    title: Coalition firms for majority in Victoria as voters warm to Wilson
+    published: 2026-10-11
+    accessed: 2026-10-12
+  - url: https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Victorian_state_election
+    publisher: Wikipedia
+    title: Opinion polling for the 2026 Victorian state election (discovery; RedBridge/Accent 2–8 Oct row)
+    published: 2026-10-11
+    accessed: 2026-10-12
