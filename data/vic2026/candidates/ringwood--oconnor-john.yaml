@@ -1,0 +1,19 @@
+candidate:
+  name: "John O'Connor"
+  party: one-nation
+  contest: ringwood
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-12
+      source:
+        url: https://vic.onenation.org.au/candidates
+        title: "One Nation Victoria candidates"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-12
+      note: >-
+        Party candidates page lists John O'Connor as One Nation's candidate for Ringwood.
+  links:
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

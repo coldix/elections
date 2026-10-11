@@ -1,0 +1,17 @@
+candidate:
+  name: Dylan Little
+  party: victorian-socialists
+  contest: eildon
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-12
+      source:
+        url: "https://www.victoriansocialists.org.au/candidates/dylan-little"
+        title: Dylan Little – Victorian Socialists
+        publisher: www.victoriansocialists.org.au
+        accessed: 2026-10-12
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/dylan-little
+      kind: party-profile

@@ -1,0 +1,19 @@
+candidate:
+  name: "Franco Guardiani"
+  party: one-nation
+  contest: preston
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-12
+      source:
+        url: https://vic.onenation.org.au/candidates
+        title: "One Nation Victoria candidates"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-12
+      note: >-
+        Party candidates page lists Franco Guardiani as One Nation's candidate for Preston.
+  links:
+    - url: https://vic.onenation.org.au/candidates
+      kind: party
