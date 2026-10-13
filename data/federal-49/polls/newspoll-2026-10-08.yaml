@@ -1,0 +1,36 @@
+id: newspoll-2026-10-08
+pollster: "Newspoll / Pyxis"
+commissioner: the-australian
+commissioner_type: media
+fieldwork_start: 2026-10-05
+fieldwork_end: 2026-10-08
+sample_size: 1241
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for The Australian (Newspoll / Pyxis). Fieldwork 5–8 Oct 2026 per The Conversation and Wikipedia (Poll Bludger text reads 'Monday to Tuesday', taken as a typo for Thursday). Others residual after ALP+LNP+GRN+ONP (9)."
+primaries:
+  alp: 29
+  lnp: 20
+  onp: 28
+  grn: 14
+  others: 9
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theaustralian.com.au/nation/politics/terrible-20s-albanese-taylor-and-hanson-all-stuck-below-30-per-cent-primary-vote-in-newspoll/news-story/70c714118c3eb262e222be862e0a1850
+    publisher: The Australian
+    title: "Terrible 20s: Albanese, Taylor and Hanson all stuck below 30 per cent primary vote in Newspoll"
+    published: 2026-10-11
+    accessed: 2026-10-14
+  - url: https://www.pollbludger.net/2026/10/11/federal-polls-newspoll-and-resolve-strategic-open-thread-3/
+    publisher: The Poll Bludger
+    title: "Federal polls: Newspoll and Resolve Strategic (open thread)"
+    published: 2026-10-11
+    accessed: 2026-10-14
+  - url: https://theconversation.com/labor-and-the-greens-improve-in-newspoll-and-resolve-and-one-nation-drops-293931
+    publisher: The Conversation
+    title: Labor and the Greens improve in Newspoll and Resolve and One Nation drops
+    published: 2026-10-13
+    accessed: 2026-10-14

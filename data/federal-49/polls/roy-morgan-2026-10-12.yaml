@@ -1,0 +1,31 @@
+id: roy-morgan-2026-10-12
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-09-28
+fieldwork_end: 2026-10-11
+sample_size: 2655
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Finding 10366. Series has moved from weekly to fortnightly; two-week sample 28 Sep–11 Oct, no overlap with the 14–27 Sep result (roy-morgan-2026-09-29). L-NP reported as Liberals 18.5% + Nationals 3%. Independent/Others 13.5%."
+primaries:
+  alp: 26
+  lnp: 21.5
+  onp: 24
+  grn: 15
+  others: 13.5
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10366-federal-voting-intention-october-12-2026
+    publisher: Roy Morgan
+    title: ALP continues to hold an election winning lead; One Nation is highest in Western Australia and Queensland, Labor is strongest in New South Wales and South Australia
+    published: 2026-10-12
+    accessed: 2026-10-14
+  - url: https://www.pollbludger.net/2026/10/13/federal-polls-demosau-and-roy-morgan-open-thread-4/
+    publisher: The Poll Bludger
+    title: "Federal polls: DemosAU and Roy Morgan (open thread)"
+    published: 2026-10-13
+    accessed: 2026-10-14

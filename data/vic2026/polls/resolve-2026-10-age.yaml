@@ -1,0 +1,36 @@
+id: resolve-2026-10-age
+pollster: resolve
+commissioner: the-age
+commissioner_type: media
+fieldwork_start: 2026-10-06
+fieldwork_end: 2026-10-10
+sample_size: 1000
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Resolve Political Monitor Victorian state VI for The Age / Nine, fieldwork 6–10 Oct 2026 (same week as federal Resolve 6–10 Oct), n=1,000. Wikipedia row lists IND 4 and Others 5; encoded as others residual after ALP+LNP+GRN+ONP (9), consistent with earlier Resolve Vic files. Greens up three to 15 per Poll Bludger; main parties unchanged on September."
+primaries:
+  alp: 25
+  lnp: 28
+  onp: 23
+  grn: 15
+  others: 9
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theage.com.au/politics/victoria/wilson-is-gaining-economic-traction-as-carroll-s-popularity-takes-a-further-dive-20261012-p614pi.html
+    publisher: The Age
+    title: Wilson is gaining economic traction as Carroll’s popularity takes a further dive
+    published: 2026-10-12
+    accessed: 2026-10-14
+  - url: https://www.pollbludger.net/2026/10/13/victorian-polls-redbridge-group-and-resolve-strategic-2/
+    publisher: The Poll Bludger
+    title: "Victorian polls: RedBridge Group and Resolve Strategic"
+    published: 2026-10-13
+    accessed: 2026-10-14
+  - url: https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Victorian_state_election
+    publisher: Wikipedia
+    title: Opinion polling for the 2026 Victorian state election (discovery; Resolve 6–10 Oct row)
+    published: 2026-10-12
+    accessed: 2026-10-14
