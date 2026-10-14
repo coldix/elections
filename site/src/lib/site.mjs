@@ -38,14 +38,14 @@ export const SITE = {
 
 /** Open oze monthly voting survey — not a scientific poll, not in the tracker average. */
 export const OZE_MONTHLY_POLL = {
-  url: "https://survey.oze.net.au/s/monthly-poll",
-  home: "https://survey.oze.net.au",
+  url: "https://survey.oze.au/s/monthly-poll",
+  home: "https://survey.oze.au",
 };
 
 /** Open oze Vic issues survey — public opinion, not a matrix ranking. */
 export const OZE_ISSUES_SURVEY = {
-  url: "https://survey.oze.net.au/s/vic-issues",
-  home: "https://survey.oze.net.au",
+  url: "https://survey.oze.au/s/vic-issues",
+  home: "https://survey.oze.au",
 };
 
 /** Canonical path prefix for the active Vic 2026 tracker (HTML pages). */

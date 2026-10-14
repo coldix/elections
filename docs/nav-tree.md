@@ -24,7 +24,7 @@ More
   Methodology                     →  /methodology
   Open data                       →  data for the current election (Vic default)
   About                           →  /about
-  Survey                          →  survey.oze.net.au
+  Survey                          →  survey.oze.au
 ```
 
 Victoria 2026 section bar (`/elections/vic/2026…`):

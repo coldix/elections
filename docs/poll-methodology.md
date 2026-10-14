@@ -118,8 +118,8 @@ A poll enters the **eligible set** only if every row holds:
    source; prefer pollster PDF or commissioning masthead).
 7. Polls that **omit sample size or fieldwork dates**.
 8. **Open oze / self-select surveys** (anyone-with-the-link, unweighted). The
-   monthly questionnaire at [survey.oze.net.au/s/monthly-poll](https://survey.oze.net.au/s/monthly-poll)
-   and the issues survey at [survey.oze.net.au/s/vic-issues](https://survey.oze.net.au/s/vic-issues)
+   monthly questionnaire at [survey.oze.au/s/monthly-poll](https://survey.oze.au/s/monthly-poll)
+   and the issues survey at [survey.oze.au/s/vic-issues](https://survey.oze.au/s/vic-issues)
    are linked as invitations only. They are **not** ledger rows and **must not**
    enter the average — the monthly poll’s August charts are seeded from this
    tracker’s average, so including them would be circular.
