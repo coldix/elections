@@ -8,7 +8,7 @@ sample_size: 1020
 design_effect: null
 mode: online
 population: victorian-electors
-question_notes: "DemosAU/Premier National Victoria state poll as reported by the Herald Sun (2PP Coalition 52–48). Others residual after ALP+LNP+GRN+ONP (11). DemosAU had not posted its own release or effective n at encode time, so design_effect is left at default; update with the DemosAU report URL when published. Supersedes demosau-2026-08 in the average via one-poll-per-pollster de-dupe."
+question_notes: "DemosAU/Premier National Victoria state poll as reported by the Herald Sun (2PP Coalition 52–48). Others residual after ALP+LNP+GRN+ONP (11). DemosAU had not posted its own release or effective n at encode time, so design_effect is left at default; update with the DemosAU report URL when published. Supersedes demosau-2026-08 in the average via one-poll-per-pollster de-dupe. Note (2026-10-16): DemosAU published its own release and report on 14 Oct 2026 confirming fieldwork 10–20 Sep, n 1,020, internet panels, primaries as encoded, and an effective sample size after weighting of 572 (effective MoE ±4.1%, implied design effect ≈1.783); design_effect left unchanged pending maintainer review."
 primaries:
   alp: 25
   lnp: 30
@@ -29,3 +29,13 @@ sources:
     title: "Victorian Election Polls 2026: Accuracy Scorecard (DemosAU 10–20 Sep entry)"
     published: 2026-09-29
     accessed: 2026-10-04
+  - url: https://demosau.com/news/coalition-lead-narrows-as-labor-rises-in-latest-victorian-poll/
+    publisher: DemosAU
+    title: Coalition lead narrows as Labor rises in latest Victorian poll
+    published: 2026-10-14
+    accessed: 2026-10-16
+  - url: https://demosau.com/wp-content/uploads/2026/10/DemosAU-Report-Victoria-Poll-September-2026.pdf
+    publisher: DemosAU
+    title: DemosAU/PremierNational Victoria Poll (September 2026)
+    published: 2026-10-14
+    accessed: 2026-10-16
