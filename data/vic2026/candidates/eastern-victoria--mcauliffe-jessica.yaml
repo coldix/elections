@@ -1,0 +1,23 @@
+candidate:
+  name: "Jessica McAuliffe"
+  party: animal-justice
+  contest: eastern-victoria
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/jessica-mcauliffe
+        title: "Jessica McAuliffe for Eastern Victoria"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Jessica as the party's candidate for Eastern Victoria. Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/jessica-mcauliffe
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party

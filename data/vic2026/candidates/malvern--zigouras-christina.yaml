@@ -1,0 +1,20 @@
+candidate:
+  name: Christina Zigouras
+  party: independent
+  contest: malvern
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-10-19
+      source:
+        url: "https://www.christinazigouras.com.au/"
+        title: "Christina Zigouras for Malvern"
+        publisher: Christina Zigouras campaign
+        accessed: 2026-10-19
+      note: >-
+        The candidate's own campaign site says she is "your Community Independent candidate for Malvern at this year's state election". Verified 19 October 2026; the site carries no announcement
+        date, so the status is dated to when it was verified.
+  links:
+    - url: "https://www.christinazigouras.com.au/"
+      kind: campaign-site

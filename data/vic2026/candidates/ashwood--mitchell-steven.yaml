@@ -1,0 +1,22 @@
+candidate:
+  name: Steven Mitchell
+  party: one-nation
+  contest: ashwood
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.onenation.org.au/steven-mitchell
+        title: "Steven Mitchell for Ashwood"
+        publisher: "Pauline Hanson's One Nation Victoria"
+        accessed: 2026-10-19
+      note: >-
+        Party candidate page lists Steven as One Nation's candidate for Ashwood. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/steven-mitchell
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

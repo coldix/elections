@@ -1,0 +1,23 @@
+candidate:
+  name: "Chloe Nicolosi"
+  party: animal-justice
+  contest: bundoora
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/chloe-nicolosi
+        title: "Chloe Nicolosi for Bundoora"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Chloe as the party's candidate for Bundoora. Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/chloe-nicolosi
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party

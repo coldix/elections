@@ -1,0 +1,23 @@
+candidate:
+  name: "Carolyn Moore"
+  party: animal-justice
+  contest: carrum
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/carolyn-moore
+        title: "Carolyn Moore for Carrum"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Carolyn as the party's candidate for Carrum. Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/carolyn-moore
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party

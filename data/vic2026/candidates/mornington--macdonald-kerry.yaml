@@ -1,0 +1,20 @@
+candidate:
+  name: Kerry Macdonald
+  party: labor
+  contest: mornington
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://www.viclabor.org.au/our-team/kerry-macdonald
+        title: "Kerry Macdonald: Candidate for Mornington"
+        publisher: "Victorian Labor"
+        accessed: 2026-10-19
+      note: >-
+        Official Victorian Labor team page lists Kerry Macdonald as Candidate for Mornington. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.viclabor.org.au/our-team/kerry-macdonald
+      kind: party-profile

@@ -1,5 +1,5 @@
 candidate:
-  name: Fiona Adin-Jones
+  name: Fiona Adin-James
   party: animal-justice
   contest: melton
   chamber: assembly
@@ -9,6 +9,18 @@ candidate:
       date: 2026-06-03
       source:
         url: "https://vic.animaljusticeparty.org/fiona-adinjames"
-        title: Fiona Adin-Jones for Melton
+        title: Fiona Adin-James for Melton
         publisher: Animal Justice Party Victoria
         accessed: 2026-06-03
+  corrections:
+    - date: 2026-10-19
+      was: "name Fiona Adin-Jones"
+      now: "name Fiona Adin-James"
+      reason: >-
+        Name was misspelt. The Animal Justice Party Victoria candidate page
+        spells it "Fiona Adin-James".
+      source:
+        url: https://vic.animaljusticeparty.org/fiona-adinjames
+        publisher: Animal Justice Party Victoria
+        title: "Fiona Adin-James for Melton"
+        accessed: 2026-10-19

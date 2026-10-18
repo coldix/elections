@@ -1,0 +1,23 @@
+candidate:
+  name: "Alyssa Wormald"
+  party: animal-justice
+  contest: monbulk
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/alyssa-wormald
+        title: "Alyssa Wormald for Monbulk"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Alyssa as the party's candidate for Monbulk. Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/alyssa-wormald
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party

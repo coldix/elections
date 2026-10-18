@@ -1,0 +1,22 @@
+candidate:
+  name: Andrew Hirst
+  party: one-nation
+  contest: cranbourne
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.onenation.org.au/andrew-hirst
+        title: "Andrew Hirst for Cranbourne"
+        publisher: "Pauline Hanson's One Nation Victoria"
+        accessed: 2026-10-19
+      note: >-
+        Party candidates page lists Andrew as One Nation's candidate for Cranbourne. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/andrew-hirst
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

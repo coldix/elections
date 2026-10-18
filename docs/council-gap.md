@@ -18,13 +18,11 @@ individual dated source. Region pages: `/regions/<slug>`.
 | eastern-victoria | labor | Tom McIntosh |
 | north-eastern-metropolitan | liberal | Nick McGowan |
 | north-eastern-metropolitan | liberal | Richard Welch |
-| north-eastern-metropolitan | labor | Sonja Terpstra |
 | northern-metropolitan | independent | Adem Somyurek |
 | northern-metropolitan | labor | Enver Erdogan |
 | northern-metropolitan | liberal | Evan Mulholland |
 | northern-metropolitan | labor | Sheena Watt |
 | northern-victoria | nationals | Gaelle Broad |
-| northern-victoria | animal-justice | Georgie Purcell |
 | northern-victoria | labor | Jaclyn Symes |
 | south-eastern-metropolitan | liberal | Ann-Marie Hermans |
 | south-eastern-metropolitan | libertarian | David Limbrick |

@@ -1,0 +1,20 @@
+candidate:
+  name: Belinda Stojcevski
+  party: liberal
+  contest: thomastown
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vicliberal.org.au/team/belinda-stojcevksi
+        title: "Belinda Stojcevski: Liberal for Thomastown"
+        publisher: "Victorian Liberal Party"
+        accessed: 2026-10-19
+      note: >-
+        Official Victorian Liberal team page lists Belinda as Liberal for Thomastown (the party URL slug is spelt "stojcevksi"). Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vicliberal.org.au/team/belinda-stojcevksi
+      kind: party-profile

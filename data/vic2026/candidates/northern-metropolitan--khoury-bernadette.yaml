@@ -1,0 +1,20 @@
+candidate:
+  name: Bernadette Khoury
+  party: liberal
+  contest: northern-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vicliberal.org.au/team/bernadette-khoury
+        title: "Bernadette Khoury: Liberal for Northern Metropolitan Region"
+        publisher: "Victorian Liberal Party"
+        accessed: 2026-10-19
+      note: >-
+        Official Victorian Liberal team page lists Bernadette as Liberal for Northern Metropolitan Region. Ticket position not published on the page. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vicliberal.org.au/team/bernadette-khoury
+      kind: party-profile

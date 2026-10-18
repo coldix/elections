@@ -1,0 +1,23 @@
+candidate:
+  name: "Helen Jeges"
+  party: animal-justice
+  contest: eastern-victoria
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/helen-jeges
+        title: "Dr Helen Jeges for Eastern Victoria"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Helen as the party's candidate for Eastern Victoria. Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/helen-jeges
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party

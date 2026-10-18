@@ -1,0 +1,20 @@
+candidate:
+  name: Keeley Hopper
+  party: victorian-socialists
+  contest: south-eastern-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/keeley-hopper
+        title: "Keeley Hopper – Victorian Socialists"
+        publisher: "Victorian Socialists"
+        accessed: 2026-10-19
+      note: >-
+        Party candidate page lists Keeley as a Victorian Socialists candidate for South Eastern Metropolitan. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/keeley-hopper
+      kind: party-profile

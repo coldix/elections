@@ -1,0 +1,20 @@
+candidate:
+  name: Matt Green
+  party: liberal
+  contest: eastern-victoria
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vicliberal.org.au/team/matt-green
+        title: "Matt Green: Liberal for Eastern Victoria Region"
+        publisher: "Victorian Liberal Party"
+        accessed: 2026-10-19
+      note: >-
+        Official Victorian Liberal team page lists Matt as Liberal for Eastern Victoria Region. Ticket position not published on the page. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vicliberal.org.au/team/matt-green
+      kind: party-profile

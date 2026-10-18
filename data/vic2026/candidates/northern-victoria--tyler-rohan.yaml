@@ -1,0 +1,20 @@
+candidate:
+  name: Rohan Tyler
+  party: victorian-socialists
+  contest: northern-victoria
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/rohan-tyler
+        title: "Rohan Tyler – Victorian Socialists"
+        publisher: "Victorian Socialists"
+        accessed: 2026-10-19
+      note: >-
+        Party candidate page lists Rohan as a Victorian Socialists candidate for Northern Victoria. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/rohan-tyler
+      kind: party-profile

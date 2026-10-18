@@ -1,0 +1,25 @@
+candidate:
+  name: Toby Wooldridge
+  party: liberal
+  contest: croydon
+  chamber: assembly
+  status: endorsed
+  occupation: "Demographer"
+  history:
+    - status: endorsed
+      date: 2026-10-12
+      source:
+        url: https://www.abc.net.au/news/2026-10-13/croydon-liberal-candidate-grant-hutchinson-replaced/107260434
+        title: "Liberals replace Croydon candidate Grant Hutchinson, weeks out from Victorian election"
+        publisher: ABC News
+        published: 2026-10-13
+        accessed: 2026-10-19
+      note: >-
+        Selected by the Victorian Liberal state executive on Monday 12 October
+        2026 to replace Grant Hutchinson as the Liberal candidate for Croydon
+        (see croydon--hutchinson-grant.yaml). Official Victorian Liberal team
+        page (https://vicliberal.org.au/team/toby-wooldridge) lists Toby as
+        Liberal for Croydon, verified 19 October 2026.
+  links:
+    - url: https://vicliberal.org.au/team/toby-wooldridge
+      kind: party-profile

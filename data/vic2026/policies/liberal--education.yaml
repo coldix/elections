@@ -48,3 +48,37 @@ policy:
       title: Three more Victorian schools hit by Labor’s schools tax
       published: '2025-06-26'
       accessed: '2026-08-02'
+  - id: liberal-edu-technical-colleges-2026-10
+    statement: >-
+      A Liberal and Nationals Government would establish 10 new full-time Technical Colleges for Years 10 to 12, co-located at existing secondary schools and TAFEs and giving 5,000 students vocational training in trades, healthcare and hospitality, at a cost of $222 million over eight years.
+    kind: pledge
+    fiscal:
+      taxpayer_label: Not specified
+      amount_aud: 222000000
+      amount_display: $222 million
+      timeframe: Eight years
+      financing: taxpayer
+      pbo_status: uncosted
+    source:
+      url: https://vicliberal.org.au/media-releases/2026-10-10-bringing-back-technical-colleges-to-boost-our-economy-and-upskill-the-next-generation-of-tradies-sooner
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: "Bringing back Technical Colleges to boost our economy and upskill the next generation of tradies sooner"
+      published: '2026-10-11'
+      accessed: '2026-10-19'
+  - id: liberal-edu-apprenticeships-fund-2026-10
+    statement: >-
+      A Liberal and Nationals Government would create an Accelerating Apprenticeships Fund covering half the off-the-job training costs per apprentice for businesses employing apprentices in Australian Apprenticeships Priority List occupations, paid as quarterly rebates, at a cost of $115 million.
+    kind: pledge
+    fiscal:
+      taxpayer_label: Not specified
+      amount_aud: 115000000
+      amount_display: $115 million
+      timeframe: Not specified
+      financing: taxpayer
+      pbo_status: uncosted
+    source:
+      url: https://vicliberal.org.au/media-releases/2026-10-12-growing-our-economy-by-halving-training-costs-for-businesses-to-hire-more-apprentices
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: "Growing our economy by halving training costs for businesses to hire more apprentices"
+      published: '2026-10-13'
+      accessed: '2026-10-19'

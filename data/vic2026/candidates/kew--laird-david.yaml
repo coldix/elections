@@ -1,0 +1,22 @@
+candidate:
+  name: David Laird
+  party: one-nation
+  contest: kew
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.onenation.org.au/david-laird
+        title: "David Laird for Kew"
+        publisher: "Pauline Hanson's One Nation Victoria"
+        accessed: 2026-10-19
+      note: >-
+        Party candidates page lists David as One Nation's candidate for Kew. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/david-laird
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

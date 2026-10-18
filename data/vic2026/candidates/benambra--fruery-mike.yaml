@@ -1,5 +1,5 @@
 candidate:
-  name: Mike Fruery
+  name: Mike Fuery
   party: animal-justice
   contest: benambra
   chamber: assembly
@@ -12,3 +12,15 @@ candidate:
         title: Mike Fuery for Benambra
         publisher: Animal Justice Party Victoria
         accessed: 2026-06-03
+  corrections:
+    - date: 2026-10-19
+      was: "name Mike Fruery"
+      now: "name Mike Fuery"
+      reason: >-
+        Name was misspelt. The Animal Justice Party Victoria candidate page
+        spells it "Mike Fuery".
+      source:
+        url: https://vic.animaljusticeparty.org/mike-fuery
+        publisher: Animal Justice Party Victoria
+        title: "Mike Fuery for Benambra"
+        accessed: 2026-10-19

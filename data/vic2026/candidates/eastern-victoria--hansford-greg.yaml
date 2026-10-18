@@ -3,7 +3,7 @@ candidate:
   party: one-nation
   contest: eastern-victoria
   chamber: council
-  status: endorsed
+  status: withdrawn
   occupation: "Gippsland campaigner"
   background: "Newborough-based; previous One Nation candidate for federal Gippsland (2025)."
   history:
@@ -20,3 +20,17 @@ candidate:
         Council ticket for the Eastern Victoria region at the November 2026
         state election (filling the upper-house lead after Warren Pickering’s
         Assembly candidacy for Pakenham was confirmed).
+    - status: withdrawn
+      date: 2026-10-01
+      source:
+        url: https://www.gippslandtimes.com.au/news/2026/10/01/07-10-greg-hansford-is-out/
+        publisher: Gippsland Times
+        title: "Hansford forced to step away, One Nation looks for new candidate"
+        published: 2026-10-01
+        accessed: 2026-10-19
+      note: >-
+        Local report that Greg Hansford will no longer be One Nation's
+        candidate for the Eastern Victoria upper house region at the November
+        2026 election, and that the party is looking for a new candidate.
+        One Nation Victoria's candidates page still listed him on
+        19 October 2026.

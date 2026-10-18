@@ -1,0 +1,23 @@
+candidate:
+  name: "Tamara Champion"
+  party: animal-justice
+  contest: nepean
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/tamara-champion
+        title: "Tamara Champion - Animal Justice Party Victoria"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Tamara as the party's candidate for Nepean. Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/tamara-champion
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party

@@ -1,0 +1,26 @@
+candidate:
+  name: Georgie Purcell
+  party: animal-justice
+  contest: northern-victoria
+  chamber: council
+  status: endorsed
+  occupation: "Member of Parliament"
+  background: "MLC for Northern Victoria since 2022"
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/candidates
+        title: "Animal Justice Party Candidates – VIC State Election"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        The party's 2026 state election candidates page lists Georgie Purcell
+        MP under Northern Victoria and asks supporters to help "re-elect
+        Georgie Purcell MP". Page carries no publication date; status dated
+        to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party
+    - url: https://www.parliament.vic.gov.au/members/georgie-purcell/
+      kind: parliament

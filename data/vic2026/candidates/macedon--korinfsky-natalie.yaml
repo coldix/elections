@@ -1,0 +1,23 @@
+candidate:
+  name: "Natalie Korinfsky"
+  party: animal-justice
+  contest: macedon
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/natalie-korinfsky
+        title: "Natalie Korinfsky for Macedon"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Natalie as the party's candidate for Macedon. Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/natalie-korinfsky
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party

@@ -1,0 +1,23 @@
+candidate:
+  name: "Sinan Okatan"
+  party: animal-justice
+  contest: yan-yean
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/sinan-okatan
+        title: "Sinan Okatan for Yan Yean"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Sinan as the party's candidate for Yan Yean. Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/sinan-okatan
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party

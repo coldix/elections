@@ -1,0 +1,23 @@
+candidate:
+  name: "Daniel O'Neill"
+  party: animal-justice
+  contest: albert-park
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/daniel-oneill
+        title: "Daniel O'Neill for Albert Park"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Daniel as the party's candidate for Albert Park. Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/daniel-oneill
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party

@@ -1,0 +1,22 @@
+candidate:
+  name: Michael Abelman
+  party: one-nation
+  contest: caulfield
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.onenation.org.au/michael-abelman
+        title: "Michael Abelman for Caulfield"
+        publisher: "Pauline Hanson's One Nation Victoria"
+        accessed: 2026-10-19
+      note: >-
+        Party candidates page lists Michael as One Nation's candidate for Caulfield. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vic.onenation.org.au/michael-abelman
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

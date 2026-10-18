@@ -1,0 +1,20 @@
+candidate:
+  name: Charles Aponso
+  party: liberal
+  contest: richmond
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vicliberal.org.au/team/charles-aponso
+        title: "Charles Aponso: Liberal for Richmond"
+        publisher: "Victorian Liberal Party"
+        accessed: 2026-10-19
+      note: >-
+        Official Victorian Liberal team page lists Charles as Liberal for Richmond. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vicliberal.org.au/team/charles-aponso
+      kind: party-profile

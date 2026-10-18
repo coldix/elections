@@ -3,7 +3,7 @@ candidate:
   party: liberal
   contest: croydon
   chamber: assembly
-  status: endorsed
+  status: disendorsed
   history:
     - status: endorsed
       date: 2026-01-30
@@ -12,3 +12,18 @@ candidate:
         title: "Grant Hutchinson: Candidate for Croydon"
         publisher: Victorian Liberals
         accessed: 2026-01-30
+    - status: disendorsed
+      date: 2026-10-12
+      source:
+        url: https://www.abc.net.au/news/2026-10-13/croydon-liberal-candidate-grant-hutchinson-replaced/107260434
+        title: "Liberals replace Croydon candidate Grant Hutchinson, weeks out from Victorian election"
+        publisher: ABC News
+        published: 2026-10-13
+        accessed: 2026-10-19
+      note: >-
+        Disendorsed by the Victorian Liberal state executive on Monday 12
+        October 2026. Opposition Leader Jess Wilson said further details had
+        come to the party's attention about a civil case Mr Hutchinson is
+        involved in. Replaced by Toby Wooldridge (see
+        croydon--wooldridge-toby.yaml). His party team page no longer
+        resolves as of 19 October 2026.

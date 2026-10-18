@@ -105,3 +105,32 @@ policy:
         title: Only Labor Will Deliver Free Dental Care For All Victorians
         published: 2026-08-22
         accessed: 2026-10-05
+
+    - id: labor-health-free-abortion-2026-10
+      statement: >-
+        A re-elected Carroll Labor Government says it will eliminate out-of-pocket costs for medical and surgical abortion care under 16 weeks' gestation at participating providers (no consultation, imaging, testing or medication fees), extend the medical abortion window to 10 weeks, and widen Victorian Patient Travel Assistance Scheme eligibility.
+      kind: pledge
+      source:
+        url: https://www.viclabor.org.au/news/an-abortion-can-cost-1000-labor-will-change-this
+        publisher: Victorian Labor
+        title: "An Abortion Can Cost $1,000 – Labor Will Change This"
+        published: 2026-10-15
+        accessed: 2026-10-19
+
+    - id: labor-health-vptas-2026-10
+      statement: >-
+        A re-elected Carroll Labor Government says it will invest $53.6 million to expand the Victorian Patient Transport Assistance Scheme, lifting the fuel reimbursement from 21 to 35 cents per kilometre and moving to a flat accommodation subsidy of $125 per night.
+      kind: pledge
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 53600000
+        amount_display: $53.6 million
+        timeframe: Not specified
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.viclabor.org.au/news/labor-will-close-the-regional-health-gap
+        publisher: Victorian Labor
+        title: "Labor Will Close the Regional Health Gap"
+        published: 2026-10-13
+        accessed: 2026-10-19

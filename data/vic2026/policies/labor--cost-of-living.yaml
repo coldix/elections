@@ -96,3 +96,39 @@ policy:
         title: Labor Will Cut Land Tax to Help with the Cost of Living
         published: 2026-10-04
         accessed: 2026-10-05
+
+    - id: labor-col-toll-cap-2026-10
+      statement: >-
+        A re-elected Carroll Labor Government says it will cap tolls on CityLink, EastLink and the West Gate Tunnel at $30 a week per vehicle in 2027 through quarterly rebates claimed via Service Victoria (cars, light commercial vehicles and motorbikes; up to five vehicles for small businesses), costing $191 million, and will allow electronic notification instead of paper toll bills with a $16 administration fee.
+      kind: pledge
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 191000000
+        amount_display: $191 million
+        timeframe: 2027 (one year)
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.viclabor.org.au/news/capping-tolls
+        publisher: Victorian Labor
+        title: "Labor Will Cap Tolls at $30 A Week"
+        published: 2026-10-18
+        accessed: 2026-10-19
+
+    - id: labor-col-fare-cap-2026-10
+      statement: >-
+        Labor says it will cap public transport fares at $30 a week ($15 a week for concession holders) for two years from 1 January, when half-price fares are scheduled to end, at a cost of $206 million; free weekend travel for seniors and free travel for children remain.
+      kind: pledge
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 206000000
+        amount_display: $206 million
+        timeframe: Two years from 1 January 2027
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.viclabor.org.au/news/capping-fares
+        publisher: Victorian Labor
+        title: "Labor Will Cap Public Transport Fares at $30 A Week"
+        published: 2026-10-19
+        accessed: 2026-10-19

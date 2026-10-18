@@ -1,0 +1,20 @@
+candidate:
+  name: Jess Marsh
+  party: independent
+  contest: footscray
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-10-19
+      source:
+        url: "https://www.jessmarsh.com.au/"
+        title: "Jess Marsh Community Independent for Footscray"
+        publisher: Jess Marsh campaign
+        accessed: 2026-10-19
+      note: >-
+        The candidate's own campaign site presents her as "Independent for Footscray" and asks voters to "Vote 1 Jess Marsh on 28 November". Verified 19 October 2026; the site carries no announcement
+        date, so the status is dated to when it was verified.
+  links:
+    - url: "https://www.jessmarsh.com.au/"
+      kind: campaign-site

@@ -1,0 +1,20 @@
+candidate:
+  name: William Billings
+  party: liberal
+  contest: dandenong
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vicliberal.org.au/team/william-billings
+        title: "William Billings: Liberal for Dandenong"
+        publisher: "Victorian Liberal Party"
+        accessed: 2026-10-19
+      note: >-
+        Official Victorian Liberal team page lists William as Liberal for Dandenong. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vicliberal.org.au/team/william-billings
+      kind: party-profile

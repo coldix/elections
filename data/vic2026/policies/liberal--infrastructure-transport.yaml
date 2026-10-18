@@ -39,3 +39,20 @@ policy:
       title: Victorian Liberals will pause rail loop despite $6b already spent
       published: '2026-05-08'
       accessed: '2026-09-28'
+  - id: liberal-infra-wimmera-mallee-rail-2026-10
+    statement: >-
+      The Liberals and Nationals would return passenger rail to Mildura and Dimboola by mid-2029 under a $51.2 million Wimmera Mallee Rail Plan, with three return services a week on each corridor connecting at Maryborough and Ararat.
+    kind: pledge
+    fiscal:
+      taxpayer_label: Not specified
+      amount_aud: 51200000
+      amount_display: $51.2 million
+      timeframe: Four years
+      financing: taxpayer
+      pbo_status: uncosted
+    source:
+      url: https://vicliberal.org.au/media-releases/2026-10-18-next-stop-reconnecting-the-wimmera-and-mallee-by-rail
+      publisher: Liberal Victoria (joint Liberal–Nationals statement)
+      title: "Next Stop: Reconnecting the Wimmera and Mallee by rail"
+      published: '2026-10-19'
+      accessed: '2026-10-19'

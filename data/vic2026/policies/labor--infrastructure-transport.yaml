@@ -80,3 +80,14 @@ policy:
         publisher: Premier of Victoria
         title: Keeping Victoria's Rail Freight On Track
         accessed: '2026-08-02'
+
+    - id: labor-infra-royalties-for-regions-2026-10
+      statement: >-
+        A re-elected Carroll Labor Government says it will establish Royalties for the Regions, guaranteeing that every cent Victoria collects in resource royalties is invested back into regional Victoria for schools, hospitals and roads.
+      kind: pledge
+      source:
+        url: https://www.viclabor.org.au/news/labor-will-guarantee-royalties-for-the-regions
+        publisher: Victorian Labor
+        title: "Labor Will Guarantee Royalties for the Regions"
+        published: 2026-10-11
+        accessed: 2026-10-19

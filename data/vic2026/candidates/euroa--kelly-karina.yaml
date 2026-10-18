@@ -1,0 +1,23 @@
+candidate:
+  name: "Karina Kelly"
+  party: animal-justice
+  contest: euroa
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/karina_kelly
+        title: "Karina Kelly for Euroa"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Karina as the party's candidate for Euroa. Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/karina_kelly
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party

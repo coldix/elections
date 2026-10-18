@@ -1,0 +1,20 @@
+candidate:
+  name: Gav Ronan
+  party: liberal
+  contest: wendouree
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vicliberal.org.au/team/gav-ronan
+        title: "Gav Ronan: Liberal for Wendouree"
+        publisher: "Victorian Liberal Party"
+        accessed: 2026-10-19
+      note: >-
+        Official Victorian Liberal team page lists Gav (Gavin) Ronan as Liberal for Wendouree. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vicliberal.org.au/team/gav-ronan
+      kind: party-profile

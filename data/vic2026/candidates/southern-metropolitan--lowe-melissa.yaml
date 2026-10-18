@@ -1,0 +1,20 @@
+candidate:
+  name: Melissa Lowe
+  party: independent
+  contest: southern-metropolitan
+  chamber: council
+  status: announced
+  history:
+    - status: announced
+      date: 2026-10-19
+      source:
+        url: "https://melissalowe.au/"
+        title: "Melissa Lowe"
+        publisher: Melissa Lowe campaign
+        accessed: 2026-10-19
+      note: >-
+        The candidate's own campaign site says she is a "community independent for the Victorian Legislative Council, Southern Metropolitan Region" at the 28 November 2026 election. Verified 19 October 2026; the site carries no announcement
+        date, so the status is dated to when it was verified.
+  links:
+    - url: "https://melissalowe.au/"
+      kind: campaign-site

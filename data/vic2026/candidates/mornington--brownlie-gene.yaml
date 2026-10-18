@@ -1,0 +1,20 @@
+candidate:
+  name: Gene Brownlie
+  party: victorian-socialists
+  contest: mornington
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/gene-brownlie
+        title: "Gene Brownlie – Victorian Socialists"
+        publisher: "Victorian Socialists"
+        accessed: 2026-10-19
+      note: >-
+        Party candidate page lists Gene as the Victorian Socialists candidate for Mornington. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/gene-brownlie
+      kind: party-profile

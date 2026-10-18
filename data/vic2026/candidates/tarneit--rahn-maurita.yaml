@@ -1,0 +1,23 @@
+candidate:
+  name: "Maurita Rahn"
+  party: animal-justice
+  contest: tarneit
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/maurita-rahn
+        title: "Maurita Rahn for Tarneit"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Maurita as the party's candidate for Tarneit. Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://vic.animaljusticeparty.org/maurita-rahn
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party

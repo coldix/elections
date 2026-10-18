@@ -1,0 +1,20 @@
+candidate:
+  name: Dorothy Lamond
+  party: victorian-socialists
+  contest: northern-victoria
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/dorothy-lamond
+        title: "Dorothy Lamond – Victorian Socialists"
+        publisher: "Victorian Socialists"
+        accessed: 2026-10-19
+      note: >-
+        Party candidate page lists Dorothy as a Victorian Socialists candidate for Northern Victoria. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/dorothy-lamond
+      kind: party-profile

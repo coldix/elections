@@ -1,0 +1,20 @@
+candidate:
+  name: Graham Watt
+  party: liberal
+  contest: western-victoria
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vicliberal.org.au/team/graham-watt
+        title: "Graham Watt: Liberal for Western Victoria Region"
+        publisher: "Victorian Liberal Party"
+        accessed: 2026-10-19
+      note: >-
+        Official Victorian Liberal team page lists Graham as Liberal for Western Victoria Region. Ticket position not published on the page. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://vicliberal.org.au/team/graham-watt
+      kind: party-profile

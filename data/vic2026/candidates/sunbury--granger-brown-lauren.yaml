@@ -1,0 +1,22 @@
+candidate:
+  name: Lauren Granger-Brown
+  party: greens
+  contest: sunbury
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://greens.org.au/vic/person/lauren-granger-brown
+        title: "Lauren Granger-Brown, Candidate for Sunbury"
+        publisher: "Victorian Greens"
+        accessed: 2026-10-19
+      note: >-
+        Victorian Greens person page lists Lauren as Candidate for Sunbury. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://greens.org.au/vic/person/lauren-granger-brown
+      kind: party-profile
+    - url: https://greens.org.au/vic/candidates
+      kind: party
