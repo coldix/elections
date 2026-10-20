@@ -1,0 +1,31 @@
+id: yougov-2026-10-20-news24
+pollster: YouGov
+commissioner: news24
+commissioner_type: media
+fieldwork_start: 2026-10-13
+fieldwork_end: 2026-10-20
+sample_size: 1542
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention (fortnightly News24 Pulse / YouGov). Fieldwork Tuesday–Tuesday 13–20 Oct; n=1542 per Poll Bludger (Wikipedia lists ~1,500). Others residual after ALP+LNP+GRN+ONP (12) — News24 reports independents and other parties 10 plus Community Strong Australia 2. Previous-election-flows 2PP Labor 50–50 Coalition and respondent-allocated 2PP Labor 53–47 over One Nation not encoded. Supersedes yougov-2026-10-07-news24 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 24
+  lnp: 23
+  onp: 27
+  grn: 14
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.news24.com.au/politics/australian-politics/unclear-who-forms-government-albanese-loses-twopartypreferred-lead-as-one-nation-remains-ahead-in-primary-vote/news-story/f82666671e83cb159897d384d413ecae
+    publisher: News24
+    title: "‘Unclear who would form government’: Labor loses two-party-preferred lead as government hits new polling low"
+    published: 2026-10-20
+    accessed: 2026-10-21
+  - url: https://www.pollbludger.net/2026/10/21/yougov-labor-24-one-nation-27-coalition-23-open-thread/
+    publisher: The Poll Bludger
+    title: "YouGov: Labor 24, One Nation 27, Coalition 23 (open thread)"
+    published: 2026-10-21
+    accessed: 2026-10-21
