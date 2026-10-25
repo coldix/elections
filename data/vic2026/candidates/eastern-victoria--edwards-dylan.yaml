@@ -1,0 +1,21 @@
+candidate:
+  name: Dylan Edwards
+  party: victorian-socialists
+  contest: eastern-victoria
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/dylan-edwards
+        title: "Dylan Edwards – Victorian Socialists"
+        publisher: "Victorian Socialists"
+        accessed: 2026-10-26
+      note: >-
+        Party candidate page lists Dylan as a Victorian Socialists candidate for
+        Eastern Victoria Region (Legislative Council). Page carries no
+        publication date; status dated to when verified on the party site.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/dylan-edwards
+      kind: party-profile

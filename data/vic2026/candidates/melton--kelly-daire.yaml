@@ -1,0 +1,21 @@
+candidate:
+  name: Daire Kelly
+  party: victorian-socialists
+  contest: melton
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/daire-kelly
+        title: "Daire Kelly – Victorian Socialists"
+        publisher: "Victorian Socialists"
+        accessed: 2026-10-26
+      note: >-
+        Party candidate page lists Daire as the Victorian Socialists candidate
+        for Melton. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/daire-kelly
+      kind: party-profile

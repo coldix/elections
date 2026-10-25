@@ -1,0 +1,21 @@
+candidate:
+  name: Noah Briggs
+  party: victorian-socialists
+  contest: monbulk
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/noah-briggs
+        title: "Noah Briggs – Victorian Socialists"
+        publisher: "Victorian Socialists"
+        accessed: 2026-10-26
+      note: >-
+        Party candidate page lists Noah as the Victorian Socialists candidate
+        for Monbulk. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/noah-briggs
+      kind: party-profile

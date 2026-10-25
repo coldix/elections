@@ -1,0 +1,21 @@
+candidate:
+  name: Bronwyn Murphy
+  party: victorian-socialists
+  contest: ovens-valley
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/bronwyn-murphy
+        title: "Bronwyn Murphy – Victorian Socialists"
+        publisher: "Victorian Socialists"
+        accessed: 2026-10-26
+      note: >-
+        Party candidate page lists Bronwyn as the Victorian Socialists candidate
+        for Ovens Valley. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/bronwyn-murphy
+      kind: party-profile

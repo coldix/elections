@@ -1,0 +1,27 @@
+candidate:
+  name: Clay Esler
+  party: one-nation
+  contest: eastern-victoria
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://vic.onenation.org.au/clay-esler
+        title: "Clay Ester for Eastern Victoria Region"
+        publisher: "Pauline Hanson's One Nation Victoria"
+        accessed: 2026-10-26
+      note: >-
+        One Nation Victoria's candidates index names Clay Esler as the party's
+        lead candidate for Eastern Victoria Region, and his profile page
+        describes him as a One Nation candidate for the Legislative Council. The
+        profile page title misspells the surname as "Ester"; the candidates
+        index and his party email address use "Esler". Page carries no
+        publication date; status dated to when verified on the party site. He
+        stood as an independent in Gippsland South in 2022.
+  links:
+    - url: https://vic.onenation.org.au/clay-esler
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party

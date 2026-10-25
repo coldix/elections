@@ -1,0 +1,23 @@
+candidate:
+  name: Hamza Al Katranji
+  party: liberal
+  contest: preston
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://vicliberal.org.au/team/hamza-al-katranji
+        title: "Hamza Al Katranji: Liberal for Preston"
+        publisher: "Victorian Liberal Party"
+        accessed: 2026-10-26
+      note: >-
+        Official Victorian Liberal team page lists Hamza as Liberal for Preston.
+        Page carries no publication date; status dated to when verified on the
+        party site.
+  links:
+    - url: https://vicliberal.org.au/team/hamza-al-katranji
+      kind: party-profile
+    - url: https://www.hamzaalkatranji.com.au
+      kind: campaign-site

@@ -1,0 +1,25 @@
+candidate:
+  name: Ava Adams
+  party: independent
+  contest: essendon
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-10-26
+      source:
+        url: https://www.avaforessendon.com.au/blank
+        title: "About | Vote 1 Ava Adams"
+        publisher: "Ava Adams (campaign site)"
+        accessed: 2026-10-26
+      note: >-
+        Her authorised campaign site (Vote 1 Ava Adams, Essendon District)
+        says she is running for the Victorian Parliament as "a strong, local
+        and independent voice" for Essendon; its donations page says she is
+        registered as an independent candidate new entrant. She is a Moonee
+        Valley City councillor and former mayor.
+  links:
+    - url: https://www.avaforessendon.com.au/
+      kind: campaign-site
+    - url: https://mvcc.vic.gov.au/my-council/councillors/cr-ava-adams/
+      kind: profile

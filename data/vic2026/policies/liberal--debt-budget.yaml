@@ -59,3 +59,20 @@ policy:
       publisher: Liberal Victoria (joint Liberal–Nationals plan)
       title: Our Plan to Deliver for Victorians
       accessed: '2026-10-05'
+  - id: liberal-debt-melbourne-market-2026-10
+    statement: >-
+      Transfer ownership of the state-owned Melbourne Wholesale Fruit and Vegetable Market at Epping to industry participants and wind up the Melbourne Market Authority, with public-interest safeguards on rents, fees and competition. The Coalition says this would reduce net debt by $578 million and brings its announced savings to more than $24.5 billion, as part of its plan for a cash surplus by 2032.
+    kind: pledge
+    fiscal:
+      taxpayer_label: Debt / interest
+      amount_aud: 578000000
+      amount_display: $578 million net debt reduction (Coalition estimate)
+      timeframe: Not specified
+      financing: unspecified
+      pbo_status: uncosted
+    source:
+      url: https://vicliberal.org.au/media-releases/2026-10-20-a-better-future-for-melbourne-market
+      publisher: Victorian Liberal Party (joint Liberal–Nationals statement)
+      title: A better future for Melbourne Market
+      published: '2026-10-21'
+      accessed: '2026-10-26'

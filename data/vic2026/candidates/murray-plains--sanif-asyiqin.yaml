@@ -1,0 +1,25 @@
+candidate:
+  name: Asyiqin Sanif
+  party: victorian-socialists
+  contest: murray-plains
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/asyiqin-sanif
+        title: "Asyiqin Sanif – Victorian Socialists"
+        publisher: "Victorian Socialists"
+        accessed: 2026-10-26
+      note: >-
+        Party candidate page lists Asyiqin as the Victorian Socialists candidate
+        for Murray Plains. Page carries no publication date; status dated to
+        when verified on the party site. The Riverine Herald (23 October 2026)
+        reported she replaces Hamish Bethune, who withdrew for personal reasons;
+        Bethune was not previously recorded in this ledger.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/asyiqin-sanif
+      kind: party-profile
+    - url: https://www.riverineherald.com.au/news/socialist-switch-up-confirmed/
+      kind: news

@@ -1,0 +1,24 @@
+candidate:
+  name: Anthony Hain
+  party: libertarian
+  contest: brighton
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.vic.libertarians.org.au/election26
+        title: "Election 2026 - Libertarians Victoria"
+        publisher: "Libertarian Party (Victoria)"
+        accessed: 2026-10-26
+      note: >-
+        The Libertarians Victoria Election 2026 page lists Anthony Hain as the
+        Libertarian candidate for Brighton (Legislative Assembly). Page carries
+        no publication date; status dated to when verified on the party site.
+        His campaign site describes him as Libertarian for Brighton.
+  links:
+    - url: https://www.vic.libertarians.org.au/election26
+      kind: party
+    - url: https://hain-for-brighton.netlify.app/
+      kind: campaign-site

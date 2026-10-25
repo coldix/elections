@@ -1,0 +1,25 @@
+candidate:
+  name: Rebecca Paterson
+  party: labor
+  contest: warrandyte
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.viclabor.org.au/our-team/rebecca-paterson
+        title: "Rebecca Paterson | Labor"
+        publisher: "Victorian Labor"
+        accessed: 2026-10-26
+      note: >-
+        Victorian Labor's Our Team profile presents Rebecca as Labor's candidate
+        in Warrandyte: it says she will "always be a strong voice for
+        Warrandyte", sets out Labor's plans "so every family in Warrandyte gets
+        the support they need", and links the RebeccaForWarrandyte campaign
+        accounts. The page does not carry the "Candidate for" label used on
+        other Labor profiles. Page carries no publication date; status dated to
+        when verified on the party site.
+  links:
+    - url: https://www.viclabor.org.au/our-team/rebecca-paterson
+      kind: party-profile

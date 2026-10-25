@@ -1,0 +1,23 @@
+candidate:
+  name: Vanessa Muradian
+  party: greens
+  contest: warrandyte
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://greens.org.au/vic/person/vanessa-muradian
+        title: "Vanessa Muradian, Candidate for Warrandyte"
+        publisher: "Victorian Greens"
+        accessed: 2026-10-26
+      note: >-
+        Victorian Greens person page titles her Candidate for Warrandyte, and
+        she appears on the party's candidates index. Page carries no publication
+        date; status dated to when verified on the party site.
+  links:
+    - url: https://greens.org.au/vic/person/vanessa-muradian
+      kind: party-profile
+    - url: https://greens.org.au/vic/candidates
+      kind: party

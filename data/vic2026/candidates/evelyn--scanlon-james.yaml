@@ -1,0 +1,21 @@
+candidate:
+  name: James Scanlon
+  party: victorian-socialists
+  contest: evelyn
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/james-scanlon
+        title: "James Scanlon – Victorian Socialists"
+        publisher: "Victorian Socialists"
+        accessed: 2026-10-26
+      note: >-
+        Party candidate page lists James as the Victorian Socialists candidate
+        for Evelyn. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/james-scanlon
+      kind: party-profile

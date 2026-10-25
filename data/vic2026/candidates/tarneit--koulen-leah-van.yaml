@@ -1,5 +1,5 @@
 candidate:
-  name: Leah Van Koulen
+  name: Leah Van Keulen
   party: victorian-socialists
   contest: tarneit
   chamber: assembly
@@ -12,3 +12,15 @@ candidate:
         title: "Leah Van Keulen: Candidate for Tarneit"
         publisher: Victorian Socialists
         accessed: 2026-07-13
+  corrections:
+    - date: 2026-10-26
+      was: "name Leah Van Koulen"
+      now: "name Leah Van Keulen"
+      reason: >-
+        Name was misspelt. The Victorian Socialists candidate page spells it
+        "Leah Van Keulen".
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/leah-van-keulen
+        publisher: Victorian Socialists
+        title: "Leah Van Keulen – Victorian Socialists"
+        accessed: 2026-10-26

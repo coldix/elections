@@ -61,3 +61,30 @@ policy:
       publisher: Liberal Victoria (joint Liberal–Nationals plan)
       title: Our Plan to Deliver for Victorians
       accessed: '2026-10-05'
+  - id: liberal-health-aboriginal-urgent-care-pathways-2026-10
+    statement: >-
+      A Liberal and Nationals government says it will invest $52 million over four years to expand the Urgent Care Pathways initiative, renewing funding for 11 Aboriginal Community Controlled Organisations and extending it to five more, to support preventative care, extended GP hours and chronic disease management for Aboriginal Victorians.
+    kind: pledge
+    fiscal:
+      taxpayer_label: Ongoing operational
+      amount_aud: 52000000
+      amount_display: $52 million
+      timeframe: Four years
+      financing: taxpayer
+      pbo_status: uncosted
+    source:
+      url: https://vicliberal.org.au/media-releases/2026-10-20-expanding-urgent-care-pathways-for-aboriginal-victorians
+      publisher: Victorian Liberal Party (joint Liberal–Nationals statement)
+      title: Expanding urgent care pathways for Aboriginal Victorians
+      published: '2026-10-21'
+      accessed: '2026-10-26'
+  - id: liberal-health-transit-lounges-2026-10
+    statement: >-
+      Deliver 10 new or expanded patient transit lounges to help patient flow and ease bed block, as part of a health plan the Coalition says is offset by $24.5 billion in savings.
+    kind: pledge
+    source:
+      url: https://vicliberal.org.au/media-releases/2026-10-24-labors-health-promises-cannot-be-trusted
+      publisher: Victorian Liberal Party (joint Liberal–Nationals statement)
+      title: Labor's health promises cannot be trusted
+      published: '2026-10-25'
+      accessed: '2026-10-26'

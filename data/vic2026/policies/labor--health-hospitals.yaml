@@ -134,3 +134,21 @@ policy:
         title: "Labor Will Close the Regional Health Gap"
         published: 2026-10-13
         accessed: 2026-10-19
+
+    - id: labor-health-ed-wait-times-2026-10
+      statement: >-
+        A re-elected Carroll Labor Government says it will expand 12 hospital emergency departments (Alfred, Austin, Ballarat Base, Bendigo, Footscray, Latrobe Regional, Royal Children's, Shepparton, Swan Hill, Werribee Mercy, Wonthaggi and University Hospital Geelong) by an average of 25 per cent, hiring 1,500 health workers including 750 nurses and adding 250 beds, which it says will cut wait times at those EDs by up to 20 per cent. Labor describes it as an ongoing $1.5 billion investment.
+      kind: pledge
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 1500000000
+        amount_display: $1.5 billion
+        timeframe: Not specified
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.viclabor.org.au/news/labor-will-slash-wait-times
+        publisher: Victorian Labor
+        title: "Labor Will Slash ED Wait Times by up to 20%"
+        published: 2026-10-25
+        accessed: 2026-10-26

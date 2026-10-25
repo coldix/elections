@@ -1,0 +1,21 @@
+candidate:
+  name: Natalie Acreman
+  party: victorian-socialists
+  contest: morwell
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.victoriansocialists.org.au/candidates/natalie-acreman
+        title: "Natalie Acreman – Victorian Socialists"
+        publisher: "Victorian Socialists"
+        accessed: 2026-10-26
+      note: >-
+        Party candidate page lists Natalie as the Victorian Socialists candidate
+        for Morwell. Page carries no publication date; status dated to when
+        verified on the party site.
+  links:
+    - url: https://www.victoriansocialists.org.au/candidates/natalie-acreman
+      kind: party-profile

@@ -1,0 +1,22 @@
+candidate:
+  name: Will Vandermeer
+  party: libertarian
+  contest: south-eastern-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.vic.libertarians.org.au/election26
+        title: "Election 2026 - Libertarians Victoria"
+        publisher: "Libertarian Party (Victoria)"
+        accessed: 2026-10-26
+      note: >-
+        The Libertarians Victoria Election 2026 page lists Will Vandermeer as a
+        Legislative Council candidate for South Eastern Metropolitan Region.
+        Page carries no publication date; status dated to when verified on the
+        party site.
+  links:
+    - url: https://www.vic.libertarians.org.au/election26
+      kind: party

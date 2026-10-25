@@ -93,3 +93,21 @@ policy:
         title: "Working With Industry to Build More Homes"
         published: 2026-10-14
         accessed: 2026-10-19
+
+    - id: labor-housing-first-home-buyers-2026-10
+      statement: >-
+        A re-elected Carroll Labor Government says it will partner with the Commonwealth to build 25,600 new homes in more than 20 locations, reserved for first home buyers for a period after completion and sold at market prices, with the first homes expected in 2027. Labor describes it as a $499 million investment that includes supporting infrastructure.
+      kind: pledge
+      fiscal:
+        taxpayer_label: Upfront capital
+        amount_aud: 499000000
+        amount_display: $499 million
+        timeframe: Not specified
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.viclabor.org.au/news/labor-will-build-25-000-homes-for-first-home-buyers
+        publisher: Victorian Labor
+        title: "Labor will Build 25,000 Homes for First Home Buyers"
+        published: 2026-10-21
+        accessed: 2026-10-26

@@ -3,7 +3,7 @@ candidate:
   party: labor
   contest: brunswick
   chamber: assembly
-  status: announced
+  status: endorsed
   history:
     - status: announced
       date: 2026-04-13
@@ -13,6 +13,18 @@ candidate:
         publisher: Brunswick Voice
         published: 2026-04-13
         accessed: 2026-04-15
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.viclabor.org.au/our-team/gabe-steger
+        title: "Gabe Steger | Labor"
+        publisher: Victorian Labor
+        accessed: 2026-10-26
+      note: >-
+        Victorian Labor's Our Team page lists Gabe Steger under Candidates as
+        "Candidate for Brunswick". Page carries no publication date; status
+        dated to when verified on the party site. The earlier profile URL
+        (our-team/gabriel-steger) now redirects to this page.
   links:
-    - url: https://www.viclabor.org.au/our-team/gabriel-steger
+    - url: https://www.viclabor.org.au/our-team/gabe-steger
       kind: party-profile
