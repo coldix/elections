@@ -69,3 +69,19 @@ test("multi-party forecast: every seat accounted for, Labor/Coalition layer kept
   assert.equal(p.alp, 40);
   for (const s of mp.seats.filter((x) => x.method === "two-party swing")) assert.ok(["alp", "lnp"].includes(s.leader));
 });
+
+test("ONP baseline: 6% start where it did not stand, districts still sum to ~100", async () => {
+  const { buildMultiPartyForecast, loadVicInputs, ONP_BASELINE_PP } = await import("../scripts/lib/forecast.mjs");
+  const { results, districts } = await loadVicInputs();
+  const avg = { alp: 30, lnp: 30, grn: 12, onp: 15, others: 13 };
+  const f = buildMultiPartyForecast(avg, results, districts);
+  assert.equal(ONP_BASELINE_PP, 6);
+  assert.equal(f.onp_statewide_2022, 0.28);
+  assert.ok(f.onp_baseline_seats >= 80);
+  for (const s of f.seats.filter((x) => x.primaries)) {
+    const t = Object.values(s.primaries).reduce((a, b) => a + b, 0);
+    assert.ok(Math.abs(t - 100) < 0.6, `${s.slug} sums to ${t}`);
+  }
+  const off = buildMultiPartyForecast(avg, results, districts, { onpBaseline: 0 });
+  assert.ok(f.onp_implied_statewide > off.onp_implied_statewide);
+});

@@ -7,9 +7,9 @@
 
 /** Assumed share of each party's preferences reaching Labor ahead of the Coalition. */
 export const FLOW_SCENARIOS = [
-  { id: "low", label: "Lower flows to Labor", grn: 0.8, onp: 0.2, others: 0.4 },
-  { id: "central", label: "Central", grn: 0.85, onp: 0.25, others: 0.45 },
-  { id: "high", label: "Higher flows to Labor", grn: 0.88, onp: 0.35, others: 0.52 },
+  { id: "low", label: "Lower flows to Labor", grn: 0.8, onp: 0.2, others: 0.4, lnp_onp: 0.6 },
+  { id: "central", label: "Central", grn: 0.85, onp: 0.25, others: 0.45, lnp_onp: 0.8 },
+  { id: "high", label: "Higher flows to Labor", grn: 0.88, onp: 0.35, others: 0.52, lnp_onp: 0.9 },
 ];
 export const IN_DOUBT_PP = 3;
 export const LEANING_PP = 6;
@@ -161,16 +161,32 @@ const SUMMARY_PARTY = { alp: "labor", lnp: "coalition", grn: "greens", onp: "one
 export function prefWeights(f) {
   return {
     alp: { grn: 0.8, lnp: 0.3, onp: 0.1 },
-    lnp: { alp: 0.4, grn: 0.2, onp: 0.5 },
+    // Coalition voters when One Nation is a finalist: lnp_onp to ONP (0.6/0.8/0.9 by scenario), rest to Labor.
+    lnp: { alp: 1 - f.lnp_onp, grn: (1 - f.lnp_onp) * 0.5, onp: f.lnp_onp },
     grn: { alp: f.grn, lnp: (1 - f.grn) * 0.67, onp: (1 - f.grn) * 0.33 },
     onp: { alp: f.onp, lnp: 1 - f.onp, grn: f.onp * 0.4 },
-    others: { alp: f.others, lnp: 1 - f.others, onp: 0.5 * (1 - f.others), grn: 0.6 * f.others },
+    // The 2022 "others" lump was mostly right-of-centre minors (Family First, Freedom, Libertarian, DLP, etc.),
+    // so when ONP is a finalist it gets the same right-leaning share (1 − others→Labor) the Coalition would.
+    others: { alp: f.others, lnp: 1 - f.others, onp: 1 - f.others, grn: 0.6 * f.others },
   };
 }
 
-function districtPrimaries(d) {
+/**
+ * Editor-set assumption (Colin, Oct 2026): where One Nation did not stand in
+ * 2022, it starts from this share instead of 0, taken off the other parties
+ * proportionally so the district still sums to 100. Not a sourced figure: the
+ * real 2022 VEC statewide ONP primary was 0.28% (it stood in 5 of 88 districts,
+ * averaging about 5% where it stood).
+ */
+export const ONP_BASELINE_PP = 6;
+
+function districtPrimaries(d, onpBaseline = ONP_BASELINE_PP) {
   const pct = (p) => d.primaries.filter((x) => x.party === p).reduce((a, x) => a + x.pct, 0);
-  return { alp: pct("labor"), lnp: pct("liberal") + pct("nationals"), grn: pct("greens"), onp: pct("one-nation"), others: pct("others") };
+  const p = { alp: pct("labor"), lnp: pct("liberal") + pct("nationals"), grn: pct("greens"), onp: pct("one-nation"), others: pct("others") };
+  if (p.onp > 0 || !onpBaseline) return { ...p, onp_baseline: false };
+  const rest = p.alp + p.lnp + p.grn + p.others;
+  const scale = rest > 0 ? (100 - onpBaseline) / rest : 0;
+  return { alp: p.alp * scale, lnp: p.lnp * scale, grn: p.grn * scale, onp: onpBaseline, others: p.others * scale, onp_baseline: true };
 }
 
 export function projectPrimaries(d2022, average, base) {
@@ -196,7 +212,7 @@ export function twoCandidate(prim, a, b, weights) {
   return r1((va / (va + vb)) * 100);
 }
 
-export function buildMultiPartyForecast(average, results, districts) {
+export function buildMultiPartyForecast(average, results, districts, { onpBaseline = ONP_BASELINE_PP } = {}) {
   const twoParty = buildForecast(average, results, districts);
   const base = twoParty.baseline;
   const names = new Map(districts.map((d) => [d.slug, d.name]));
@@ -205,7 +221,7 @@ export function buildMultiPartyForecast(average, results, districts) {
   const seats = results.districts.map((d) => {
     const name = names.get(d.slug) ?? d.slug;
     const winner2022 = d.two_candidate_preferred?.winner?.party ?? null;
-    const p2022 = districtPrimaries(d);
+    const p2022 = districtPrimaries(d, onpBaseline);
     if (!d.primaries.some((x) => x.party === "labor")) {
       return { slug: d.slug, name, winner2022, status: "not-modelled", reason: "No Labor candidate in the 2022 count (supplementary election), so there is no baseline to swing" };
     }
@@ -213,7 +229,7 @@ export function buildMultiPartyForecast(average, results, districts) {
     const order = [...PARTY_KEYS].sort((x, y) => prim[y] - prim[x]);
     const [a, b] = order;
     if (a === "others" || b === "others") {
-      return { slug: d.slug, name, winner2022, status: "ind-contest", primaries: prim, finalists: [a, b], reason: "Independent/other vote projected in the top two — Greens/IND contest, not modelled" };
+      return { slug: d.slug, name, winner2022, onp_baseline: p2022.onp_baseline, status: "ind-contest", primaries: prim, finalists: [a, b], reason: "Independent/other vote projected in the top two — Greens/IND contest, not modelled" };
     }
     const byScenario = {};
     const pair = [a, b].sort().join("-");
@@ -233,6 +249,7 @@ export function buildMultiPartyForecast(average, results, districts) {
       slug: d.slug,
       name,
       winner2022,
+      onp_baseline: p2022.onp_baseline,
       status: "modelled",
       method: pair === "alp-lnp" && tppSeat?.modelled ? "two-party swing" : "primary layer + assumed preferences",
       primaries: prim,
@@ -254,8 +271,21 @@ export function buildMultiPartyForecast(average, results, districts) {
     for (const s of modelled) r[SUMMARY_PARTY[s.by_scenario[sc.id].leader]]++;
     ranges[sc.id] = r;
   }
+  // Implied statewide ONP: formal-vote-weighted mean of projected district ONP.
+  let wSum = 0, onpSum = 0;
+  for (const s of seats) {
+    if (!s.primaries) continue;
+    const f = results.districts.find((x) => x.slug === s.slug)?.formal ?? 1;
+    wSum += f; onpSum += f * s.primaries.onp;
+  }
+  const onpImplied = wSum ? r1(onpSum / wSum) : null;
   return {
     kind: "forecast-model",
+    onp_baseline_pp: onpBaseline,
+    onp_baseline_seats: seats.filter((s) => s.onp_baseline).length,
+    onp_statewide_2022: base.onp,
+    onp_implied_statewide: onpImplied,
+    onp_poll_average: average.onp,
     banner: twoParty.banner,
     baseline: base,
     average,
