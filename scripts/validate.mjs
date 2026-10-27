@@ -564,6 +564,8 @@ function validateStateFoundation(election, dir, load) {
 for (const election of readdirSync(DATA_DIR)) {
   const dir = join(DATA_DIR, election);
   if (!statSync(dir).isDirectory()) continue;
+  // _state-polls / _poll-extras are feed data, validated separately below.
+  if (election.startsWith("_")) continue;
 
   const load = (name) => parse(readFileSync(join(dir, name), "utf8"));
   const meta = load("election.yaml").election;
@@ -713,6 +715,50 @@ for (const election of readdirSync(DATA_DIR)) {
   console.log(
     `${election}: ${districts.length} districts, ${regions.length} regions, ${parties.length} parties, ${count} candidates, ${pollCount} polls, ${resultCount} district-results-2022, ${issueCount} issues, ${policyCount} policies`
   );
+}
+
+// State poll ledgers without a full election ledger (feed only).
+const STATE_POLLS = join(DATA_DIR, "_state-polls");
+if (existsSync(STATE_POLLS)) {
+  for (const j of readdirSync(STATE_POLLS)) {
+    const dir = join(STATE_POLLS, j);
+    if (!statSync(dir).isDirectory()) continue;
+    console.log(`_state-polls/${j}: ${validatePolls(`_state-polls/${j}`, dir)} poll(s)`);
+  }
+}
+
+// Published voter-group breakdowns and pollster upper-house projections.
+const EXTRAS = join(DATA_DIR, "_poll-extras");
+if (existsSync(EXTRAS)) {
+  const vgFile = "_poll-extras/voter-groups.yaml";
+  const vg = parse(readFileSync(join(EXTRAS, "voter-groups.yaml"), "utf8"));
+  const DIMS = new Set(["state", "age", "gender", "housing"]);
+  for (const t of vg.tables ?? []) {
+    if (!t.id || !Array.isArray(t.parties) || !t.groups) fail(vgFile, `table ${t.id}: id, parties, groups required`);
+    checkSource(vgFile, `table ${t.id}`, t.source);
+    for (const [dim, rows] of Object.entries(t.groups ?? {})) {
+      if (!DIMS.has(dim)) fail(vgFile, `table ${t.id}: unknown dimension ${dim}`);
+      for (const row of rows) {
+        if (!row.label) fail(vgFile, `table ${t.id}: row label required`);
+        const vals = t.parties.map((k) => row[k]);
+        if (vals.some((v) => v !== null && (typeof v !== "number" || v < 0 || v > 100))) {
+          fail(vgFile, `table ${t.id} ${row.label}: values must be 0–100 or null`);
+        }
+        if (vals.every((v) => typeof v === "number")) {
+          const sum = vals.reduce((a, b) => a + b, 0);
+          if (Math.abs(sum - 100) > 1.5) fail(vgFile, `table ${t.id} ${row.label}: sums to ${sum}`);
+        }
+      }
+    }
+  }
+  const uhFile = "_poll-extras/upper-house-projections.yaml";
+  const uh = parse(readFileSync(join(EXTRAS, "upper-house-projections.yaml"), "utf8"));
+  for (const p of uh.projections ?? []) {
+    checkSource(uhFile, `projection ${p.id}`, p.source);
+    const total = (p.seats ?? []).reduce((a, s) => a + s.seats, 0);
+    if (total !== p.seats_total) fail(uhFile, `projection ${p.id}: seats sum ${total} != ${p.seats_total}`);
+  }
+  console.log(`_poll-extras: ${(vg.tables ?? []).length} voter-group tables, ${(uh.projections ?? []).length} upper-house projections`);
 }
 
 if (errors) { console.error(`\n${errors} error(s)`); process.exit(1); }

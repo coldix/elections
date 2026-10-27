@@ -77,7 +77,7 @@ function loadOptional(dir, name, key) {
 /** List of election ids present in data/ (e.g. ["vic2026"]). */
 export function listElections() {
   return readdirSync(DATA_DIR)
-    .filter((f) => statSync(join(DATA_DIR, f)).isDirectory())
+    .filter((f) => !f.startsWith("_") && statSync(join(DATA_DIR, f)).isDirectory())
     .sort();
 }
 

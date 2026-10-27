@@ -1,0 +1,105 @@
+# Published voter-group breakdowns of voting intention.
+# Each table is transcribed from a pollster's own published report. Rows are
+# exactly as published; a group the pollster did not publish (or whose row
+# could not be read unambiguously) is left out, never estimated.
+# Columns use the ledger party keys; null means "not published".
+# Sub-samples are small (a few hundred): pollsters advise caution.
+updated: 2026-10-27
+tables:
+  - id: demosau-nsw-2026-08
+    jurisdiction: nsw
+    poll_id: demosau-nsw-2026-08
+    pollster: DemosAU / PremierNational
+    question: NSW Legislative Assembly voting intention
+    fieldwork: 19–26 Aug 2026
+    sample_size: 1028
+    parties: [alp, lnp, onp, grn, others]
+    groups:
+      gender:
+        - { label: Male, alp: 35, lnp: 22, onp: 22, grn: 13, others: 8 }
+        - { label: Female, alp: 29, lnp: 27, onp: 24, grn: 14, others: 6 }
+      age:
+        - { label: "18–34", alp: 36, lnp: 19, onp: 12, grn: 26, others: 7 }
+        - { label: "35–54", alp: 33, lnp: 25, onp: 22, grn: 14, others: 6 }
+        - { label: "55+", alp: 29, lnp: 28, onp: 29, grn: 6, others: 8 }
+      housing:
+        - { label: Own home outright, alp: 31, lnp: 31, onp: 22, grn: 9, others: 7 }
+        - { label: Mortgage holder, alp: 33, lnp: 26, onp: 20, grn: 15, others: 6 }
+        - { label: Renter, alp: 33, lnp: 14, onp: 27, grn: 17, others: 9 }
+    source:
+      url: https://demosau.com/wp-content/uploads/2026/09/DemosAUPremierNational-NSW-Poll-August-2026.pdf
+      publisher: DemosAU
+      title: DemosAU/PremierNational NSW Poll August 2026 — demographic breakdowns
+      accessed: 2026-10-27
+
+  - id: demosau-nsw-2026-06
+    jurisdiction: nsw
+    poll_id: demosau-nsw-2026-06
+    pollster: DemosAU / PremierNational
+    question: NSW Legislative Assembly voting intention
+    fieldwork: 15–18 Jun 2026
+    sample_size: 1038
+    parties: [alp, lnp, onp, grn, others]
+    groups:
+      gender:
+        - { label: Male, alp: 35, lnp: 22, onp: 23, grn: 12, others: 8 }
+        - { label: Female, alp: 29, lnp: 18, onp: 31, grn: 14, others: 8 }
+      age:
+        - { label: "18–34", alp: 36, lnp: 16, onp: 15, grn: 25, others: 8 }
+        - { label: "35–54", alp: 30, lnp: 21, onp: 29, grn: 13, others: 7 }
+        - { label: "55+", alp: 30, lnp: 22, onp: 33, grn: 6, others: 9 }
+      housing:
+        - { label: Renter, alp: 29, lnp: 26, onp: 24, grn: 10, others: 11 }
+        - { label: Mortgage holder, alp: 35, lnp: 17, onp: 27, grn: 15, others: 6 }
+        - { label: Own home outright, alp: 32, lnp: 17, onp: 30, grn: 14, others: 7 }
+    source:
+      url: https://demosau.com/wp-content/uploads/2026/06/DemosAUPremierNational-NSW-Poll-June-2026.pdf
+      publisher: DemosAU
+      title: DemosAU/PremierNational NSW Poll June 2026 — demographic breakdowns
+      accessed: 2026-10-27
+
+  - id: demosau-wa-2026-08
+    jurisdiction: wa
+    poll_id: demosau-wa-2026-08
+    pollster: DemosAU
+    question: WA Legislative Assembly voting intention
+    fieldwork: 6–25 Aug 2026
+    sample_size: 990
+    parties: [alp, lnp, nationals, onp, grn, others]
+    note: "lnp = Liberal; WA Nationals shown separately. The published housing-tenure chart could not be read unambiguously, so housing is left empty."
+    groups:
+      gender:
+        - { label: Male, alp: 36, lnp: 21, nationals: 4, onp: 23, grn: 9, others: 7 }
+        - { label: Female, alp: 30, lnp: 21, nationals: 5, onp: 18, grn: 15, others: 11 }
+      age:
+        - { label: "18–34", alp: 36, lnp: 14, nationals: 5, onp: 14, grn: 26, others: 5 }
+        - { label: "35–54", alp: 34, lnp: 19, nationals: 4, onp: 23, grn: 10, others: 10 }
+        - { label: "55+", alp: 31, lnp: 28, nationals: 4, onp: 22, grn: 5, others: 10 }
+    source:
+      url: https://demosau.com/wp-content/uploads/2026/09/DemosAU-WA-Poll-August-2026.pdf
+      publisher: DemosAU
+      title: DemosAU WA Poll August 2026 — demographic breakdowns
+      accessed: 2026-10-27
+
+  - id: roy-morgan-federal-2026-10-26-by-state
+    jurisdiction: federal
+    poll_id: null
+    pollster: Roy Morgan
+    question: Federal voting intention, by state (Roy Morgan Poll, 12–25 Oct 2026)
+    fieldwork: 12–25 Oct 2026
+    sample_size: 2711
+    parties: [alp, lnp, onp, grn, others]
+    note: "Only the state figures stated in Roy Morgan's release text. Cells the release does not state are empty (null)."
+    groups:
+      state:
+        - { label: NSW, alp: 27, lnp: 23, onp: 23, grn: 14, others: null }
+        - { label: Victoria, alp: 27, lnp: 25, onp: 20, grn: 17, others: null }
+        - { label: Queensland, alp: null, lnp: 25, onp: 28.5, grn: null, others: null }
+        - { label: South Australia, alp: 26.5, lnp: 22.5, onp: 19, grn: 20, others: null }
+        - { label: Western Australia, alp: 26.5, lnp: 21, onp: 24, grn: 14, others: null }
+    source:
+      url: https://www.roymorgan.com/findings/10376-federal-voting-intention-october-26-2026
+      publisher: Roy Morgan
+      title: "ALP holds a narrow election winning lead; L-NP (23.5%) overtakes One Nation (22.5%)"
+      published: 2026-10-26
+      accessed: 2026-10-27

@@ -19,7 +19,7 @@ export const SITE = {
   descriptionLong:
     "Independent Australian election tracker: sourced candidates, parties, policies, " +
     "poll averages and open JSON/CSV for federal, state and territory contests. " +
-    "Victoria 2026 is the first active ledger. Not the electoral commission. Not a forecast.",
+    "Victoria 2026 is the first active ledger. Not the electoral commission. Forecasts appear only in the labelled Forecast section.",
   repo: "https://github.com/coldix/elections",
   issues: "https://github.com/coldix/elections/issues/new",
   email: "elections@electiontracker.au",

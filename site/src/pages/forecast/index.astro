@@ -1,0 +1,151 @@
+---
+import Base from "../../layouts/Base.astro";
+import { formatDate } from "../../lib/site.mjs";
+import { loadPolls, computePollAverage } from "../../../../scripts/lib/polls.mjs";
+import { buildForecast, loadVicInputs, IN_DOUBT_PP, LEANING_PP } from "../../../../scripts/lib/forecast.mjs";
+import buildMeta from "../../generated/build-meta.json";
+
+const average = computePollAverage(loadPolls("vic2026"));
+const { results, districts } = await loadVicInputs();
+const fc = average.status === "ok" ? buildForecast(average.primaries, results, districts) : null;
+const seats = fc ? [...fc.seats].sort((a, b) => (a.modelled ? a.margin_central : 99) - (b.modelled ? b.margin_central : 99)) : [];
+const updated = buildMeta?.built_at_utc ? buildMeta.built_at_utc.slice(0, 10) : null;
+const RATING = { firm: "Firm", leaning: "Leaning", doubt: "In doubt" };
+const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" };
+---
+
+<Base
+  title="Forecast — our model, not a prediction"
+  description="This site's own seat model for the Victorian election: uniform swing from the latest poll average with three preference scenarios. Kept separate from the sourced poll data."
+  breadcrumbs={[{ name: "Forecast", href: "/forecast" }]}
+>
+  <div class="forecast-zone">
+    <div class="forecast-banner" role="note">
+      <strong>Forecast: our model, not a prediction of the result</strong>
+      <span>Everything on this page is our own calculation. It is not sourced data and it is not
+      part of the poll ledger. <a href="/forecast/methodology">How the model works</a></span>
+    </div>
+    <div class="wrap section">
+      <p class="eyebrow">Forecast section · model output</p>
+      <h1>Victorian Assembly seat model</h1>
+      <p class="lede">
+        What the current poll average would mean for each of the 88 districts if every seat swung
+        by the same amount, under three different assumptions about preferences.
+      </p>
+      <p class="fc-updated">
+        Last updated {updated ? formatDate(updated) : "—"} · poll average as of {fc ? formatDate(average.as_of) : "—"}
+      </p>
+
+      {!fc && <p class="empty">The poll average is not available, so the model has nothing to run on.</p>}
+
+      {fc && (
+        <>
+          <section class="fc-summary">
+            <div class="card">
+              <h2>Scenario ranges</h2>
+              <table class="fc-table">
+                <thead><tr><th scope="col">Preference scenario</th><th scope="col">Labor 2PP (est.)</th><th scope="col">Labor ahead</th><th scope="col">Coalition ahead</th></tr></thead>
+                <tbody>
+                  {fc.scenarios.map((s) => (
+                    <tr>
+                      <th scope="row">{s.label}</th>
+                      <td>{s.tpp_alp}%</td>
+                      <td>{fc.ranges[s.id].labor_ahead}</td>
+                      <td>{fc.ranges[s.id].coalition_ahead}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p class="small muted">
+                Range across scenarios: Labor ahead in {fc.range.labor_ahead[0]}–{fc.range.labor_ahead[1]} seats,
+                Coalition ahead in {fc.range.coalition_ahead[0]}–{fc.range.coalition_ahead[1]}.
+                {fc.not_modelled} seats are not modelled (see below). 45 seats are needed for a majority.
+              </p>
+            </div>
+            <div class="card">
+              <h2>Central scenario by rating</h2>
+              <table class="fc-table">
+                <thead><tr><th scope="col"></th><th scope="col">Firm</th><th scope="col">Leaning</th><th scope="col">In doubt</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Labor ahead</th><td>{fc.summary.labor.firm}</td><td>{fc.summary.labor.leaning}</td><td>{fc.summary.labor.doubt}</td></tr>
+                  <tr><th scope="row">Coalition ahead</th><td>{fc.summary.coalition.firm}</td><td>{fc.summary.coalition.leaning}</td><td>{fc.summary.coalition.doubt}</td></tr>
+                </tbody>
+              </table>
+              <p class="small muted">In doubt: within {IN_DOUBT_PP} points of 50–50. Leaning: {IN_DOUBT_PP}–{LEANING_PP} points. Firm: more than {LEANING_PP}.</p>
+            </div>
+          </section>
+
+          <section>
+            <h2>Seat map (central scenario)</h2>
+            <p class="small muted">Each tile is one district, ordered from the strongest Coalition margin to the strongest Labor margin. Hover or tap for the modelled margin.</p>
+            <ul class="legend">
+              <li><span class="sw labor-firm"></span>Labor firm</li>
+              <li><span class="sw labor-leaning"></span>Labor leaning</li>
+              <li><span class="sw doubt"></span>In doubt</li>
+              <li><span class="sw coalition-leaning"></span>Coalition leaning</li>
+              <li><span class="sw coalition-firm"></span>Coalition firm</li>
+              <li><span class="sw none"></span>Not modelled</li>
+            </ul>
+            <ol class="seatmap">
+              {seats.map((s) => {
+                const cls = !s.modelled ? "none" : s.rating === "doubt" ? "doubt" : `${s.ahead}-${s.rating}`;
+                const tip = s.modelled
+                  ? `${s.name}: ${SIDE[s.ahead]} by ${Math.abs(s.margin_central)} pts (${RATING[s.rating]}); scenarios ${s.by_scenario.low} to ${s.by_scenario.high} (Labor margin)`
+                  : `${s.name}: not modelled — ${s.reason}`;
+                return (
+                  <li class={`tile ${cls}`} title={tip}>
+                    <a href={`/elections/vic/2026/districts/${s.slug}`} aria-label={tip}>{s.name}</a>
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+
+          <section>
+            <h2>Seats the model leaves out</h2>
+            <ul>
+              {fc.seats.filter((s) => !s.modelled).map((s) => <li>{s.name} — {s.reason}.</li>)}
+            </ul>
+            <p class="small muted">A uniform two-party swing cannot say anything useful about contests that were not Labor against the Coalition in 2022.</p>
+          </section>
+
+          <section>
+            <h2>Other contests</h2>
+            <p class="empty">
+              NSW (13 March 2027): not modelled yet. The ledger does not hold 2023 district results, which
+              the model needs. Queensland, South Australia, Western Australia, Tasmania and federal: not modelled.
+            </p>
+          </section>
+        </>
+      )}
+    </div>
+  </div>
+</Base>
+
+<style>
+  .forecast-zone { background: repeating-linear-gradient(135deg, transparent 0 22px, var(--accent-wash) 22px 24px); border-top: 4px solid var(--st-announced); }
+  .forecast-banner { background: var(--st-announced-bg); color: var(--st-announced); padding: 0.9rem clamp(1rem, 4vw, 2rem); display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; align-items: baseline; border-bottom: 1px solid var(--rule-strong); }
+  .forecast-banner strong { font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .forecast-banner a { color: inherit; text-decoration: underline; }
+  .fc-updated { color: var(--ink-2); font-weight: 600; }
+  .fc-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .fc-summary h2 { font-size: 1.1rem; margin-top: 0; }
+  .fc-table { border-collapse: collapse; font-variant-numeric: tabular-nums; width: 100%; }
+  .fc-table th, .fc-table td { text-align: left; padding: 0.3rem 0.6rem 0.3rem 0; border-bottom: 1px solid var(--rule); }
+  .legend { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; font-size: 0.88rem; }
+  .legend li { display: flex; align-items: center; gap: 0.35rem; }
+  .sw { width: 1rem; height: 1rem; border-radius: 3px; display: inline-block; border: 1px solid var(--rule-strong); }
+  .seatmap { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr)); gap: 4px; }
+  .tile a { display: block; padding: 0.45rem 0.35rem; font-size: 0.72rem; line-height: 1.15; border-radius: 4px; text-decoration: none; color: #111; min-height: 2.6rem; }
+  .labor-firm, .tile.labor-firm a { background: #c8434a; }
+  .tile.labor-firm a { color: #fff; }
+  .labor-leaning, .tile.labor-leaning a { background: #eba3a6; }
+  .coalition-firm, .tile.coalition-firm a { background: #2f5d9e; }
+  .tile.coalition-firm a { color: #fff; }
+  .coalition-leaning, .tile.coalition-leaning a { background: #a5bde0; }
+  .doubt, .tile.doubt a { background: repeating-linear-gradient(45deg, #e9e3d3 0 6px, #d6cdb6 6px 12px); }
+  .none, .tile.none a { background: #ddd; color: #555; }
+  .empty { color: var(--ink-3); font-style: italic; }
+  .small { font-size: 0.85rem; }
+  .muted { color: var(--ink-3); }
+</style>

@@ -1,0 +1,72 @@
+---
+import Base from "../../layouts/Base.astro";
+import { FLOW_SCENARIOS, IN_DOUBT_PP, LEANING_PP } from "../../../../scripts/lib/forecast.mjs";
+---
+
+<Base
+  title="Forecast methodology — how our seat model works"
+  description="How the Forecast section's seat model works: uniform swing from the latest poll average, three preference-flow scenarios, and firm, leaning and in-doubt ratings."
+  breadcrumbs={[
+    { name: "Forecast", href: "/forecast" },
+    { name: "Methodology", href: "/forecast/methodology" },
+  ]}
+>
+  <div class="forecast-banner" role="note">
+    <strong>Forecast: our model, not a prediction of the result</strong>
+    <span>This page explains a model. The model's output is not sourced data.</span>
+  </div>
+  <div class="wrap wrap-narrow section">
+    <p class="eyebrow">Forecast section · methodology</p>
+    <h1>How the seat model works</h1>
+    <p class="lede">A deliberately simple model, so anyone can check it. Its code is public in the repository (<code>scripts/lib/forecast.mjs</code>).</p>
+
+    <h2>1. Start from the poll average</h2>
+    <p>The model takes the site's existing Victorian primary-vote average (see the <a href="/methodology">poll methodology</a>). It does not use any poll the average excludes.</p>
+
+    <h2>2. Turn primaries into a two-party estimate</h2>
+    <p>Victoria counts full preferences, so every vote ends up with Labor or the Coalition in a Labor-versus-Coalition count. We estimate the statewide Labor two-party-preferred vote as the 2022 result (55.0%) plus the change since 2022 in:</p>
+    <p class="formula">Labor primary + (Greens × g) + (One Nation × o) + (Others × x)</p>
+    <p>where g, o and x are the shares of each party's preferences assumed to reach Labor before the Coalition. These shares are <strong>our assumptions</strong>, not measured flows:</p>
+    <table class="fc-table">
+      <thead><tr><th scope="col">Scenario</th><th scope="col">Greens → Labor</th><th scope="col">One Nation → Labor</th><th scope="col">Others → Labor</th></tr></thead>
+      <tbody>
+        {FLOW_SCENARIOS.map((s) => (
+          <tr><th scope="row">{s.label}</th><td>{Math.round(s.grn * 100)}%</td><td>{Math.round(s.onp * 100)}%</td><td>{Math.round(s.others * 100)}%</td></tr>
+        ))}
+      </tbody>
+    </table>
+
+    <h2>3. Apply a uniform swing</h2>
+    <p>The statewide change in the Labor two-party vote is added to every district's 2022 Labor-versus-Coalition result from the VEC (2021 boundaries, the same seats as 2026).</p>
+
+    <h2>4. Rate each seat</h2>
+    <ul>
+      <li><strong>In doubt:</strong> the modelled margin is within {IN_DOUBT_PP} points of 50–50.</li>
+      <li><strong>Leaning:</strong> {IN_DOUBT_PP} to {LEANING_PP} points.</li>
+      <li><strong>Firm:</strong> more than {LEANING_PP} points.</li>
+    </ul>
+    <p>The ratings use the central scenario. The scenario range shows how many seats each side leads under the lower and higher preference assumptions.</p>
+
+    <h2>What the model cannot do</h2>
+    <ul>
+      <li>It ignores local factors: candidates, retirements, sophomore effects and campaigns.</li>
+      <li>It cannot rate seats won by Greens or independent candidates in 2022, or contests where One Nation, the Greens or an independent finish in the top two. With One Nation polling above 20%, many seats may not end as Labor against the Coalition. Those seats are shown as "not modelled" or should be read with extra caution.</li>
+      <li>Swings are not uniform in practice.</li>
+      <li>Polls carry error; the scenarios reflect preference assumptions, not polling error.</li>
+    </ul>
+
+    <h2>Updates</h2>
+    <p>The model reruns whenever the site is rebuilt. The Forecast page shows the build date and the date of the poll average it used.</p>
+
+    <h2>Where forecasts appear</h2>
+    <p>Only in the labelled Forecast section (<a href="/forecast">/forecast</a> and this page). Everything else on the site is sourced data.</p>
+  </div>
+</Base>
+
+<style>
+  .forecast-banner { background: var(--st-announced-bg); color: var(--st-announced); padding: 0.9rem clamp(1rem, 4vw, 2rem); display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; align-items: baseline; border-top: 4px solid var(--st-announced); border-bottom: 1px solid var(--rule-strong); }
+  .forecast-banner strong { font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .formula { font-family: var(--font-mono); background: var(--surface); border: 1px solid var(--rule); padding: 0.6rem 0.8rem; border-radius: var(--radius-sm); }
+  .fc-table { border-collapse: collapse; width: 100%; margin: 0.5rem 0 1rem; }
+  .fc-table th, .fc-table td { text-align: left; padding: 0.3rem 0.6rem 0.3rem 0; border-bottom: 1px solid var(--rule); }
+</style>

@@ -1,0 +1,30 @@
+id: resolve-qld-2026-10-bt
+pollster: resolve
+commissioner: brisbane-times
+commissioner_type: media
+fieldwork_start: 2026-09-01
+fieldwork_end: 2026-10-10
+sample_size: 868
+design_effect: null
+mode: online
+population: queensland-electors
+question_notes: "Resolve Political Monitor for Brisbane Times: two waves, 1–5 Sep and 6–10 Oct 2026, combined n=868. Published primaries LNP 32, Labor 24, One Nation 21, Greens 11, independents 7, others 4 (published figures sum to 99 after rounding). Others encoded as residual 12 (independents + others + rounding)."
+primaries:
+  alp: 24
+  lnp: 32
+  onp: 21
+  grn: 11
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.brisbanetimes.com.au/politics/queensland/one-nation-steadies-within-striking-range-of-lagging-queensland-labor-20261013-p614v1.html
+    publisher: Brisbane Times
+    title: One Nation steadies in striking range of lagging Queensland Labor
+    published: 2026-10-13
+    accessed: 2026-10-27
+  - url: https://en.wikipedia.org/wiki/Opinion_polling_for_the_2028_Queensland_state_election
+    publisher: Wikipedia
+    title: Opinion polling for the 2028 Queensland state election (discovery; Resolve Sep–Oct row)
+    accessed: 2026-10-27

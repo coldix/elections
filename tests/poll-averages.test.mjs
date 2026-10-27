@@ -36,10 +36,9 @@ test("Vic polls page loads vic2026, not listElections()[0]", () => {
   );
 });
 
-test("NSW thin series still publishes an average from older eligible polls", () => {
+test("NSW average uses the latest eligible poll per pollster", () => {
   const nsw = computePollAverage(loadPolls("nsw2027"));
   assert.equal(nsw.status, "ok", nsw.note ?? "expected ok average");
-  assert.equal(nsw.thin_series, true);
   assert.ok(nsw.primaries, "primaries present");
   assert.ok(nsw.bloc_split, "bloc charts data present");
   assert.ok(
@@ -47,8 +46,12 @@ test("NSW thin series still publishes an average from older eligible polls", () 
     "latest Resolve in average"
   );
   assert.ok(
-    nsw.included_poll_ids.includes("roy-morgan-2026-02"),
-    "older Roy Morgan allowed under thin series"
+    nsw.included_poll_ids.includes("demosau-nsw-2026-08"),
+    "latest DemosAU in average"
+  );
+  assert.ok(
+    !nsw.included_poll_ids.includes("demosau-nsw-2026-06"),
+    "one poll per pollster"
   );
   assert.ok(
     !nsw.included_poll_ids.includes("insightfully-2026-08-mca"),

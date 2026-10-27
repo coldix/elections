@@ -1,0 +1,31 @@
+id: demosau-wa-2026-06
+pollster: demosau
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-05-29
+fieldwork_end: 2026-06-11
+sample_size: 1015
+design_effect: null
+margin_of_error: 3.9
+mode: online
+population: west-australian-electors
+question_notes: "DemosAU WA poll, fieldwork 29 May – 11 Jun 2026, n=1,015 (effective n=616), stated effective MoE ±3.9. Liberal (23) encoded as lnp; WA Nationals (3) included in others (11 + 3 = 14). Reported 2PP Labor 53–47 (not encoded)."
+primaries:
+  alp: 33
+  lnp: 23
+  onp: 18
+  grn: 12
+  others: 14
+  nationals: 3
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://demosau.com/news/labor-remains-ahead-in-wa-but-2pp-gap-closes/
+    publisher: DemosAU
+    title: Labor Remains Ahead in WA but 2PP Gap Closes
+    accessed: 2026-10-27
+  - url: https://demosau.com/wp-content/uploads/2026/06/DemosAU-WA-Poll-June-2026-2.pdf
+    publisher: DemosAU
+    title: DemosAU WA Poll June 2026 (report)
+    accessed: 2026-10-27

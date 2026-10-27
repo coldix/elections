@@ -1,0 +1,31 @@
+id: emrs-tas-2026-08
+pollster: emrs
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-08-17
+fieldwork_end: 2026-08-18
+sample_size: 1000
+design_effect: null
+margin_of_error: 3.1
+mode: mixed
+population: tasmanian-electors
+question_notes: "EMRS quarterly Tasmanian State Omnibus, 17–18 Aug 2026, n=1,000 (CATI + online), stated MoE ±3.1. Undecided excluded. Liberal encoded as lnp; independents (14) encoded as others. House of Assembly is multi-member (Hare-Clark)."
+primaries:
+  alp: 23
+  lnp: 26
+  onp: 21
+  grn: 16
+  others: 14
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.emrs.com.au/sites/default/files/documents/State%20Omnibus%20August%202026.pdf
+    publisher: EMRS
+    title: Media release — State Omnibus August 2026
+    accessed: 2026-10-27
+  - url: https://www.pollbludger.net/2026/08/22/state-polls-tasmanian-emrs-and-queensland-resolve-strategic/
+    publisher: The Poll Bludger
+    title: "State polls: Tasmanian EMRS and Queensland Resolve Strategic"
+    published: 2026-08-22
+    accessed: 2026-10-27

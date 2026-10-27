@@ -1,0 +1,106 @@
+---
+import Base from "../../layouts/Base.astro";
+import SourceLink from "../../components/SourceLink.astro";
+import { loadVoterGroups, partyLabel } from "../../../../scripts/lib/poll-feed.mjs";
+
+const data = loadVoterGroups();
+const DIMENSIONS = [
+  { id: "state", label: "State" },
+  { id: "age", label: "Age" },
+  { id: "gender", label: "Gender" },
+  { id: "housing", label: "Housing" },
+];
+const cell = (v) => (v == null ? "—" : `${v}%`);
+---
+
+<Base
+  title="Voter-group explorer — published poll breakdowns"
+  description="Voting intention by state, age, gender and housing, exactly as published in pollsters' own breakdown tables. Empty where a pollster did not publish a group."
+  breadcrumbs={[
+    { name: "Poll tracker", href: "/poll-tracker" },
+    { name: "Voter groups", href: "/poll-tracker/voter-groups" },
+  ]}
+>
+  <div class="wrap section">
+    <p class="eyebrow">Sourced data · published breakdown tables only</p>
+    <h1>Voter-group explorer</h1>
+    <p class="lede">
+      How different groups said they would vote, taken straight from the tables pollsters published.
+      Nothing is modelled or filled in: a dash means the pollster did not publish that figure.
+    </p>
+    <div class="notice" role="note">
+      <strong>Small groups, bigger error.</strong> Each group is a few hundred people at most, so
+      its margin of error is much wider than the headline poll's.
+    </div>
+
+    <div class="vg-filter">
+      <label for="vg-dim">Breakdown</label>
+      <select id="vg-dim">
+        {DIMENSIONS.map((d) => <option value={d.id}>{d.label}</option>)}
+      </select>
+    </div>
+
+    {DIMENSIONS.map((d) => {
+      const tables = data.tables.filter((t) => t.groups?.[d.id]?.length);
+      return (
+        <section class="vg-dim" data-dim={d.id}>
+          <h2>By {d.label.toLowerCase()}</h2>
+          {tables.length === 0 && (
+            <p class="empty">No published {d.label.toLowerCase()} breakdown in the ledger yet.</p>
+          )}
+          {tables.map((t) => (
+            <div class="card vg-card">
+              <h3>{t.pollster} · {t.question}</h3>
+              <p class="muted">Fieldwork {t.fieldwork} · n = {t.sample_size.toLocaleString("en-AU")}</p>
+              <div class="vg-scroll">
+                <table class="vg-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Group</th>
+                      {t.parties.map((k) => <th scope="col">{partyLabel(k, t.jurisdiction)}</th>)}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {t.groups[d.id].map((row) => (
+                      <tr>
+                        <th scope="row">{row.label}</th>
+                        {t.parties.map((k) => <td>{cell(row[k])}</td>)}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {t.note && <p class="muted small">{t.note}</p>}
+              <p class="small">Source: <SourceLink source={t.source} /></p>
+            </div>
+          ))}
+        </section>
+      );
+    })}
+    <p class="small muted">Tables last checked {data.updated}. <a href="/poll-tracker">Back to the poll tracker</a>.</p>
+  </div>
+</Base>
+
+<script is:inline>
+  (function () {
+    var sel = document.getElementById("vg-dim");
+    var secs = document.querySelectorAll(".vg-dim");
+    function apply() { secs.forEach(function (s) { s.hidden = s.getAttribute("data-dim") !== sel.value; }); }
+    sel.addEventListener("change", apply);
+    apply();
+  })();
+</script>
+
+<style>
+  .vg-filter { display: flex; gap: 0.6rem; align-items: center; margin: 1.2rem 0; }
+  .vg-filter select { padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); }
+  .vg-card { margin: 1rem 0; }
+  .vg-card h3 { margin: 0 0 0.2rem; font-size: 1.05rem; }
+  .vg-scroll { overflow-x: auto; }
+  .vg-table { border-collapse: collapse; font-variant-numeric: tabular-nums; min-width: 28rem; }
+  .vg-table th, .vg-table td { padding: 0.3rem 0.8rem 0.3rem 0; text-align: left; border-bottom: 1px solid var(--rule); }
+  .vg-table thead th { font-size: 0.78rem; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.05em; }
+  .empty { color: var(--ink-3); font-style: italic; }
+  .small { font-size: 0.85rem; }
+  .muted { color: var(--ink-3); }
+</style>
