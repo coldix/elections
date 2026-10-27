@@ -55,35 +55,35 @@ const pc = (x) => `${Math.round(x * 100)}%`;
     <h2>5. Primary-vote layer: One Nation, Greens and independents</h2>
     <p>Steps 2–4 assume every seat ends Labor against the Coalition. With One Nation polling far above its 2022 vote, that is not safe, so the seat map uses a second layer:</p>
     <ol>
-      <li>Each party's 2022 primary vote in each district (VEC results) moves by the same number of points as its statewide change since 2022 in the poll average. One Nation starts from its 2022 district vote where it stood, or from a 6% baseline where it did not (see below). Negative values are set to zero and the district is rescaled to 100%.</li>
+      <li>Each party's 2022 primary vote in each district (VEC results) moves by the same number of points as its statewide change since 2022 in the poll average. One Nation starts from its 2022 district vote where it stood, or from a {ONP_BASELINE_PP}% baseline where it did not (see below). Negative values are set to zero and the district is rescaled to 100%.</li>
       <li>The two highest projected primaries are treated as the final two.</li>
       <li>If the final two are Labor and the Coalition, the seat uses the two-party swing from step 3, so the Labor/Coalition ratings match the original model.</li>
       <li>Otherwise, the other parties' votes are split between the final two using assumed preference weights (below), and the seat is rated firm, leaning or in doubt on that two-candidate margin.</li>
       <li>If "independent/other" is projected in the final two, the seat is shown as <strong>Greens/IND contest, not modelled</strong>, because "others" lumps many candidates together.</li>
     </ol>
     <h3 id="onp-baseline">One Nation {ONP_BASELINE_PP}% starting point (editor-set assumption)</h3>
-    <p><strong>The 6% start is an editor-set assumption based roughly on One Nation's average in the seats it contested in 2022. It is not a statewide figure.</strong> In the 2022 Victorian election One Nation won <strong>0.28%</strong> of the statewide primary vote (10,323 votes, VEC). It stood in only 5 of 88 districts and averaged about <strong>5.0%</strong> where it stood (range 3.4%–6.1%). In the other {mp?.onp_baseline_seats ?? 83} districts the model starts One Nation at 6% instead of 0, taking the 6 points off the other parties in proportion to their 2022 shares so each district still sums to 100%.</p>
-    <p>The statewide swing is then applied as normal and is unchanged: One Nation's swing is its poll average minus its real 2022 statewide figure (0.28%), not minus 6%. Because the baseline is added on top of that swing, it lifts One Nation in every district where it did not stand, so the model's implied statewide One Nation vote is about <strong>{mp?.onp_implied_statewide ?? "—"}%</strong>, against a poll average of <strong>{mp?.onp_poll_average ?? "—"}%</strong>. In other words, the baseline effectively inflates One Nation's statewide total by roughly {mp ? (mp.onp_implied_statewide - mp.onp_poll_average).toFixed(1) : "—"} points compared with the polls, and the other parties are correspondingly a little below their poll averages.</p>
+    <p><strong>The {ONP_BASELINE_PP}% start is an editor-set assumption based roughly on One Nation's average in the seats it contested in 2022. It is not a statewide figure.</strong> In the 2022 Victorian election One Nation won <strong>0.28%</strong> of the statewide primary vote (10,323 votes, VEC). It stood in only 5 of 88 districts and averaged about <strong>5.0%</strong> where it stood (range 3.4%–6.1%). In the other {mp?.onp_baseline_seats ?? 83} districts the model starts One Nation at {ONP_BASELINE_PP}% instead of 0, taking those points off the other parties in proportion to their 2022 shares so each district still sums to 100%.</p>
+    <p>The statewide swing is then applied as normal and is unchanged: One Nation's swing is its poll average minus its real 2022 statewide figure (0.28%), not minus {ONP_BASELINE_PP}%. Because the baseline is added on top of that swing, it lifts One Nation in every district where it did not stand, so the model's implied statewide One Nation vote is about <strong>{mp?.onp_implied_statewide ?? "—"}%</strong>, against a poll average of <strong>{mp?.onp_poll_average ?? "—"}%</strong>. In other words, the baseline effectively inflates One Nation's statewide total by roughly {mp ? (mp.onp_implied_statewide - mp.onp_poll_average).toFixed(1) : "—"} points compared with the polls, and the other parties are correspondingly a little below their poll averages.</p>
     <h3 id="prefs">Preference assumptions in non-Labor/Coalition contests</h3>
     <p>Where the final two are not Labor and the Coalition, each excluded party's votes are split between the two finalists in proportion to the weights below. Only the ratio between the two finalists matters. All of these are <strong>our assumptions</strong>: no 2022 count tested One Nation against Labor, the Coalition or the Greens in Victoria.</p>
     <table class="fc-table">
       <thead><tr><th scope="col">From</th><th scope="col">Labor</th><th scope="col">Coalition</th><th scope="col">Greens</th><th scope="col">One Nation</th></tr></thead>
       <tbody>
         <tr><th scope="row">Labor</th><td>—</td><td>0.3</td><td>0.8</td><td>0.1</td></tr>
-        <tr><th scope="row">Coalition</th><td>1−c</td><td>—</td><td>(1−c)×0.5</td><td>c</td></tr>
+        <tr><th scope="row">Coalition</th><td>o</td><td>—</td><td>o×0.5</td><td>1−o</td></tr>
         <tr><th scope="row">Greens</th><td>g</td><td>(1−g)×0.67</td><td>—</td><td>(1−g)×0.33</td></tr>
         <tr><th scope="row">One Nation</th><td>o</td><td>1−o</td><td>o×0.4</td><td>—</td></tr>
         <tr><th scope="row">Others</th><td>x</td><td>1−x</td><td>x×0.6</td><td>1−x</td></tr>
       </tbody>
     </table>
     <table class="fc-table">
-      <thead><tr><th scope="col">Scenario</th><th scope="col">g</th><th scope="col">o</th><th scope="col">x</th><th scope="col">c (Coalition → One Nation)</th></tr></thead>
+      <thead><tr><th scope="col">Scenario</th><th scope="col">g</th><th scope="col">o</th><th scope="col">x</th><th scope="col">Coalition ↔ One Nation (1−o)</th></tr></thead>
       <tbody>
-        {FLOW_SCENARIOS.map((s) => (<tr><th scope="row">{s.label}</th><td>{pc(s.grn)}</td><td>{pc(s.onp)}</td><td>{pc(s.others)}</td><td>{pc(s.lnp_onp)}</td></tr>))}
+        {FLOW_SCENARIOS.map((s) => (<tr><th scope="row">{s.label}</th><td>{pc(s.grn)}</td><td>{pc(s.onp)}</td><td>{pc(s.others)}</td><td>{pc(1 - s.onp)}</td></tr>))}
       </tbody>
     </table>
     <ul>
-      <li><strong>Coalition → One Nation (c = 60% / 80% / 90%, central 80%).</strong> Why: Coalition how-to-vote cards and voters have usually ranked One Nation above Labor; 80% is a central guess and the range tests weaker and stronger flows. Note that the scenario names describe flows to Labor in Labor v Coalition seats; in Labor v One Nation seats the "higher" scenario is the one most favourable to One Nation, because c is highest there.</li>
+      <li><strong>Coalition → One Nation = One Nation → Coalition (1 − o: 80% / 75% / 65%, central 75%).</strong> Why: we have no measured Coalition-to-One-Nation flow in Victoria, so we assume the flow is symmetric: Coalition voters favour One Nation over Labor at the same rate One Nation voters favour the Coalition over Labor. The code derives one from the other, so they cannot drift apart. The rest (o) goes to Labor.</li>
       <li><strong>Others → One Nation (1 − x, so 60% / 55% / 48%).</strong> Why: in 2022 the "others" vote was mostly right-of-centre minor parties (for example Family First, Freedom, Liberal Democrats and the DLP) plus independents. We give One Nation the same right-leaning share the Coalition would get from that vote, instead of the earlier half-share.</li>
       <li><strong>Labor → others (fixed).</strong> Why: Labor voters mostly prefer the Greens and rarely One Nation.</li>
     </ul>
@@ -91,10 +91,20 @@ const pc = (x) => `${Math.round(x * 100)}%`;
     <p>Not modelled individually. The VEC district results in this repository record independents and minor parties only as one combined "others" figure, so there is no sourced primary vote for the largest single independent. Estimating one would mean inventing data. Seats where "others" is projected in the final two stay marked <strong>Greens/IND contest, not modelled</strong>{mp && <> ({mp.seats.filter((s) => s.status === "ind-contest").map((s) => s.name).join(", ")})</>}. Adding candidate-level VEC results would let the model handle them in a future update.</p>
     <p>Narracan is not modelled: its 2022 count was a supplementary election with no Labor candidate, so there is no baseline to swing.</p>
 
+    <h2 id="sliders">6. Try your own assumptions</h2>
+    <p>The <a href="/forecast">Forecast page</a> has sliders for the main assumptions. Their defaults are exactly the values on this page, and the page's static results are the model run at those defaults. Moving a slider reruns the same model code (<code>scripts/lib/forecast.mjs</code>) in your browser and labels the output <strong>Your scenario</strong>; it is not our forecast. Nothing is saved or sent.</p>
+    <ul>
+      <li><strong>One Nation starting share</strong> (default {ONP_BASELINE_PP}%): replaces the start in the districts it did not contest in 2022.</li>
+      <li><strong>Coalition ↔ One Nation flow</strong> (default 75%): sets both directions at once, and so also One Nation → Labor (1 − value).</li>
+      <li><strong>Others → One Nation</strong> (default 55%) and <strong>Others → Labor</strong> (default 45%), and <strong>Greens → Labor</strong> (default 85%).</li>
+      <li><strong>One Nation poll average shift</strong> (default 0): adds or removes points from One Nation's poll average, taken off the other parties proportionally.</li>
+    </ul>
+    <p>The sliders set the central scenario. The lower and higher scenarios keep the same gaps from central as in the table above, limited to 0–100%.</p>
+
     <h2>What the model cannot do</h2>
     <ul>
       <li>It ignores local factors: candidates, retirements, sophomore effects and campaigns.</li>
-      <li>Uniform swing spreads One Nation's rise evenly across all 88 seats. One Nation did not stand in most seats in 2022, so there is no district-level baseline showing where its vote is stronger; the flat 6% starting point is an assumption that also does not vary by region. If its vote is concentrated in particular regions, it could lead seats this model does not show it leading. The model does not invent a regional pattern without sourced data.</li>
+      <li>Uniform swing spreads One Nation's rise evenly across all 88 seats. One Nation did not stand in most seats in 2022, so there is no district-level baseline showing where its vote is stronger; the flat {ONP_BASELINE_PP}% starting point is an assumption that also does not vary by region. If its vote is concentrated in particular regions, it could lead seats this model does not show it leading. The model does not invent a regional pattern without sourced data.</li>
       <li>Independents, including teal-style candidates, are lumped into "others" and are not modelled as individual candidates.</li>
       <li>Preference weights between minor parties are assumptions. One Nation v Coalition and Greens v One Nation contests have no 2022 count to check them against.</li>
       <li>Swings are not uniform in practice.</li>
