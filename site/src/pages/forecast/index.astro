@@ -3,12 +3,23 @@ import Base from "../../layouts/Base.astro";
 import { formatDate } from "../../lib/site.mjs";
 import { loadPolls, computePollAverage } from "../../../../scripts/lib/polls.mjs";
 import { buildMultiPartyForecast, loadVicInputs, IN_DOUBT_PP, LEANING_PP, PARTY_LABEL } from "../../../../scripts/lib/forecast.mjs";
+import { renderResults, SLIDERS } from "../../lib/forecast-view.mjs";
+import { DEFAULT_PARAMS } from "../../../../scripts/lib/forecast.mjs";
 import buildMeta from "../../generated/build-meta.json";
 
 const average = computePollAverage(loadPolls("vic2026"));
 const { results, districts } = await loadVicInputs();
 const mp = average.status === "ok" ? buildMultiPartyForecast(average.primaries, results, districts) : null;
 const fc = mp ? mp.twoParty : null;
+// Slim seat data bundled for the in-browser model (same fields the module reads).
+const clientData = mp ? {
+  average: average.primaries,
+  districts: districts.map((d) => ({ slug: d.slug, name: d.name })),
+  results: {
+    statewide: results.statewide,
+    districts: results.districts.map((d) => ({ slug: d.slug, formal: d.formal, primaries: d.primaries.map((x) => ({ party: x.party, pct: x.pct })), two_candidate_preferred: d.two_candidate_preferred ? { winner: { party: d.two_candidate_preferred.winner.party } } : null, two_party_preferred: d.two_party_preferred ? { winner: { party: d.two_party_preferred.winner.party, pct: d.two_party_preferred.winner.pct }, runner_up: { party: d.two_party_preferred.runner_up.party, pct: d.two_party_preferred.runner_up.pct } } : null })),
+  },
+} : null;
 const ORDER = { lnp: 0, onp: 1, alp: 2, grn: 3 };
 const seats = mp ? [...mp.seats].sort((a, b) => {
   const ka = a.status === "modelled" ? ORDER[a.leader] * 100 - a.margin_central * (a.leader === "lnp" ? 1 : -1) : 999;
@@ -49,68 +60,25 @@ const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" 
 
       {fc && (
         <>
-          <section class="fc-summary">
-            <div class="card">
-              <h2>Seats by party and rating (central scenario)</h2>
-              <table class="fc-table">
-                <thead><tr><th scope="col">Ahead</th><th scope="col">Firm</th><th scope="col">Leaning</th><th scope="col">In doubt</th><th scope="col">Total</th></tr></thead>
-                <tbody>
-                  {PARTIES.map(([k, l]) => (
-                    <tr><th scope="row">{l}</th><td>{mp.summary[k].firm}</td><td>{mp.summary[k].leaning}</td><td>{mp.summary[k].doubt}</td><td>{mp.summary[k].firm + mp.summary[k].leaning + mp.summary[k].doubt}</td></tr>
-                  ))}
-                  <tr><th scope="row">Greens/IND contest, not modelled</th><td colspan="3"></td><td>{mp.ind_contest}</td></tr>
-                  <tr><th scope="row">Not modelled (no baseline)</th><td colspan="3"></td><td>{mp.not_modelled}</td></tr>
-                </tbody>
-              </table>
-              <p class="small muted">In doubt: two-candidate margin within {IN_DOUBT_PP} points of 50–50. Leaning: {IN_DOUBT_PP}–{LEANING_PP} points. Firm: more than {LEANING_PP}. 45 seats are needed for a majority.</p>
-              <p class="small">One Nation is projected in the final two in {onpTopTwo} seats but {mp.summary["one-nation"].firm + mp.summary["one-nation"].leaning + mp.summary["one-nation"].doubt === 0 ? "does not lead in any of them under this model, in any scenario." : "leads in the seats shown above."} One Nation starts from an editor-set 6% where it did not stand in 2022 (its real 2022 statewide vote was 0.28%). A uniform swing spreads One Nation's rise evenly; a real vote that is more concentrated in some regions could change this. See the <a href="/forecast/methodology">limits</a>.</p>
-            </div>
-            <div class="card">
-              <h2>Scenario ranges</h2>
-              <table class="fc-table">
-                <thead><tr><th scope="col">Preference scenario</th><th scope="col">Labor 2PP (est.)</th>{PARTIES.map(([, l]) => <th scope="col">{l}</th>)}</tr></thead>
-                <tbody>
-                  {mp.scenarios.map((s) => (
-                    <tr>
-                      <th scope="row">{s.label}</th>
-                      <td>{s.tpp_alp}%</td>
-                      {PARTIES.map(([k]) => <td>{mp.ranges[s.id][k]}</td>)}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <p class="small muted">Seats each party leads under each assumption about preference flows. {mp.ind_contest + mp.not_modelled} seats are not modelled in any scenario.</p>
-            </div>
+          <section class="fc-assume" aria-labelledby="assume-h">
+            <h2 id="assume-h">Assumptions: try your own</h2>
+            <p class="small">The results below use our default assumptions. Move a slider to see <strong>your scenario</strong>: the counts, One Nation's closest seats and the seat map update in your browser. Nothing is saved or sent. Needs JavaScript; without it you see our defaults.</p>
+            <form id="fc-form" class="fc-sliders" hidden>
+              {SLIDERS.map((sl) => (
+                <div class="sl">
+                  <label for={`sl-${sl.key}`}>{sl.label}</label>
+                  <input type="range" id={`sl-${sl.key}`} name={sl.key} min={sl.min} max={sl.max} step={sl.step} value={DEFAULT_PARAMS[sl.key]} aria-describedby={`out-${sl.key}`} />
+                  <output id={`out-${sl.key}`} for={`sl-${sl.key}`}>{sl.fmt(DEFAULT_PARAMS[sl.key])}</output>
+                  <span class="def small muted">default {sl.fmt(DEFAULT_PARAMS[sl.key])}</span>
+                </div>
+              ))}
+              <p><button type="reset" id="fc-reset">Reset to defaults</button></p>
+            </form>
+            <p id="fc-status" class="fc-status" aria-live="polite"></p>
           </section>
 
-          <section>
-            <h2>Seat map (central scenario)</h2>
-            <p class="small muted">Each tile is one district, grouped by the party ahead and ordered by margin. Hover or tap for the projected final two and margin.</p>
-            <ul class="legend">
-              <li><span class="sw labor-firm"></span>Labor firm</li>
-              <li><span class="sw labor-leaning"></span>Labor leaning</li>
-              <li><span class="sw coalition-firm"></span>Coalition firm</li>
-              <li><span class="sw coalition-leaning"></span>Coalition leaning</li>
-              <li><span class="sw greens-firm"></span>Greens</li>
-              <li><span class="sw onp-firm"></span>One Nation</li>
-              <li><span class="sw doubt"></span>In doubt</li>
-              <li><span class="sw indc"></span>Greens/IND contest, not modelled</li>
-              <li><span class="sw none"></span>Not modelled</li>
-            </ul>
-            <ol class="seatmap">
-              {seats.map((s) => {
-                const cls = s.status === "ind-contest" ? "indc" : s.status !== "modelled" ? "none" : s.rating === "doubt" ? "doubt" : `${CLS[s.leader]}-${s.rating === "firm" ? "firm" : "leaning"}`;
-                const tip = s.status === "modelled"
-                  ? `${s.name}: ${PARTY_LABEL[s.finalists[0]]} v ${PARTY_LABEL[s.finalists[1]]}; ${PARTY_LABEL[s.leader]} ahead by ${s.margin_central} pts (${RATING[s.rating]}); method: ${s.method}`
-                  : `${s.name}: ${s.reason}`;
-                return (
-                  <li class={`tile ${cls}`} title={tip}>
-                    <a href={`/elections/vic/2026/districts/${s.slug}`} aria-label={tip}>{s.name}{s.status === "modelled" && <span class="fin">{PARTY_LABEL[s.finalists[0]]} v {PARTY_LABEL[s.finalists[1]]}</span>}</a>
-                  </li>
-                );
-              })}
-            </ol>
-          </section>
+          <div id="fc-results" set:html={renderResults(mp)} />
+          <script type="application/json" id="fc-data" set:html={JSON.stringify(clientData)} />
 
           <section>
             <h2>Seats the model does not rate</h2>
@@ -146,7 +114,49 @@ const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" 
   </div>
 </Base>
 
-<style>
+<script>
+  import { buildMultiPartyForecast, DEFAULT_PARAMS } from "../../../../scripts/lib/forecast.mjs";
+  import { renderResults } from "../../lib/forecast-view.mjs";
+  const dataEl = document.getElementById("fc-data");
+  const form = document.getElementById("fc-form") as HTMLFormElement | null;
+  const out = document.getElementById("fc-results");
+  const status = document.getElementById("fc-status");
+  if (dataEl && form && out) {
+    const data = JSON.parse(dataEl.textContent || "{}");
+    form.hidden = false;
+    const read = () => Object.fromEntries([...form.querySelectorAll("input[type=range]")].map((i) => [(i as HTMLInputElement).name, Number((i as HTMLInputElement).value)]));
+    const isDefault = (p) => Object.keys(DEFAULT_PARAMS).every((k) => Math.abs(p[k] - DEFAULT_PARAMS[k]) < 1e-9);
+    const run = () => {
+      const p = read();
+      for (const i of form.querySelectorAll("input[type=range]")) {
+        const inp = i as HTMLInputElement;
+        const o = document.getElementById(`out-${inp.name}`);
+        const v = Number(inp.value);
+        if (o) o.textContent = inp.name === "onpShift" ? `${v > 0 ? "+" : ""}${v} pts` : inp.name === "onpBaseline" ? `${v}%` : `${Math.round(v * 100)}%`;
+      }
+      const mp = buildMultiPartyForecast(data.average, data.results, data.districts, p);
+      const def = isDefault(p);
+      out.innerHTML = renderResults(mp, { label: def ? "Our default assumptions" : "Your scenario — your assumptions, not ours" });
+      out.classList.toggle("yours", !def);
+      if (status) status.textContent = def ? "" : "Showing your scenario. Use Reset to return to our defaults.";
+    };
+    form.addEventListener("input", run);
+    form.addEventListener("reset", () => setTimeout(run, 0));
+  }
+</script>
+
+<style is:global>
+  .fc-assume { margin: 1.5rem 0 0.5rem; }
+  .fc-sliders { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 0.8rem 1.5rem; }
+  .sl { display: grid; grid-template-columns: 1fr auto; gap: 0.2rem 0.6rem; align-items: center; }
+  .sl label { grid-column: 1 / -1; font-weight: 600; font-size: 0.9rem; }
+  .sl input[type=range] { width: 100%; min-height: 2rem; accent-color: var(--st-announced); }
+  .sl output { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 4.5rem; text-align: right; }
+  .sl .def { grid-column: 1 / -1; }
+  .fc-sliders button { padding: 0.5rem 1rem; font: inherit; cursor: pointer; }
+  .fc-status { font-weight: 600; color: var(--st-announced); min-height: 1.2em; }
+  .fc-label { margin: 1rem 0 0; padding: 0.5rem 0.75rem; background: var(--paper, transparent); border-left: 4px solid var(--rule-strong); font-size: 0.85rem; }
+  #fc-results.yours .fc-label { border-left-color: var(--st-announced); background: var(--st-announced-bg); color: var(--st-announced); }
   .forecast-zone { background: repeating-linear-gradient(135deg, transparent 0 22px, var(--accent-wash) 22px 24px); border-top: 4px solid var(--st-announced); }
   .forecast-banner { background: var(--st-announced-bg); color: var(--st-announced); padding: 0.9rem clamp(1rem, 4vw, 2rem); display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; align-items: baseline; border-bottom: 1px solid var(--rule-strong); }
   .forecast-banner strong { font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.04em; }

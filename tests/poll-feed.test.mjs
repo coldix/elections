@@ -70,12 +70,12 @@ test("multi-party forecast: every seat accounted for, Labor/Coalition layer kept
   for (const s of mp.seats.filter((x) => x.method === "two-party swing")) assert.ok(["alp", "lnp"].includes(s.leader));
 });
 
-test("ONP baseline: 6% start where it did not stand, districts still sum to ~100", async () => {
+test("ONP baseline: 5% start where it did not stand, districts still sum to ~100", async () => {
   const { buildMultiPartyForecast, loadVicInputs, ONP_BASELINE_PP } = await import("../scripts/lib/forecast.mjs");
   const { results, districts } = await loadVicInputs();
   const avg = { alp: 30, lnp: 30, grn: 12, onp: 15, others: 13 };
   const f = buildMultiPartyForecast(avg, results, districts);
-  assert.equal(ONP_BASELINE_PP, 6);
+  assert.equal(ONP_BASELINE_PP, 5);
   assert.equal(f.onp_statewide_2022, 0.28);
   assert.ok(f.onp_baseline_seats >= 80);
   for (const s of f.seats.filter((x) => x.primaries)) {
@@ -84,4 +84,29 @@ test("ONP baseline: 6% start where it did not stand, districts still sum to ~100
   }
   const off = buildMultiPartyForecast(avg, results, districts, { onpBaseline: 0 });
   assert.ok(f.onp_implied_statewide > off.onp_implied_statewide);
+});
+
+test("sliders: defaults reproduce the fixed scenarios and the static page equals a default module run", async () => {
+  const { buildMultiPartyForecast, loadVicInputs, DEFAULT_PARAMS, scenariosFor, FLOW_SCENARIOS, ONP_BASELINE_PP } = await import("../scripts/lib/forecast.mjs");
+  const { renderResults } = await import("../site/src/lib/forecast-view.mjs");
+  const { loadPolls, computePollAverage } = await import("../scripts/lib/polls.mjs");
+  const { readFileSync, existsSync } = await import("node:fs");
+  assert.equal(DEFAULT_PARAMS.onpBaseline, ONP_BASELINE_PP);
+  assert.equal(ONP_BASELINE_PP, 5);
+  scenariosFor().forEach((s, i) => {
+    for (const k of ["grn", "onp", "others"]) assert.equal(s[k], FLOW_SCENARIOS[i][k]);
+    assert.equal(s.others_onp, Math.round((1 - FLOW_SCENARIOS[i].others) * 100) / 100);
+  });
+  const { results, districts } = await loadVicInputs();
+  const avg = computePollAverage(loadPolls("vic2026")).primaries;
+  const a = buildMultiPartyForecast(avg, results, districts);
+  const b = buildMultiPartyForecast(avg, results, districts, { ...DEFAULT_PARAMS });
+  assert.deepEqual(a.summary, b.summary);
+  const html = renderResults(b);
+  const built = "site/dist/forecast/index.html";
+  if (existsSync(built)) {
+    const page = readFileSync(built, "utf8");
+    const norm = (x) => x.replace(/\s+/g, " ").replace(/ data-astro-cid-[a-z0-9]+/g, "");
+    assert.ok(norm(page).includes(norm(html).trim()), "static /forecast results differ from a default module run");
+  }
 });

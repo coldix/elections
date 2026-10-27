@@ -11,6 +11,47 @@ export const FLOW_SCENARIOS = [
   { id: "central", label: "Central", grn: 0.85, onp: 0.25, others: 0.45 },
   { id: "high", label: "Higher flows to Labor", grn: 0.88, onp: 0.35, others: 0.52 },
 ];
+/**
+ * Adjustable assumptions (central-scenario values). The /forecast sliders and the
+ * static page both run buildMultiPartyForecast with these; low/high scenarios keep
+ * their offsets from central.
+ */
+export const DEFAULT_PARAMS = Object.freeze({
+  onpBaseline: 5, // ONP start (%) where it did not stand in 2022
+  lnpOnp: 0.75, // Coalition <-> One Nation flow (symmetric; = 1 - ONP->Labor)
+  othersOnp: 0.55, // Others -> One Nation, relative to Others -> Labor
+  grn: 0.85, // Greens -> Labor
+  othersAlp: 0.45, // Others -> Labor
+  onpShift: 0, // poll-average override: points added to ONP, taken off others proportionally
+});
+const clamp01 = (x) => Math.min(1, Math.max(0, x));
+const r2 = (x) => Math.round(x * 100) / 100;
+
+/** Scenario flows for a parameter set (defaults reproduce FLOW_SCENARIOS exactly). */
+export function scenariosFor(params = DEFAULT_PARAMS) {
+  const p = { ...DEFAULT_PARAMS, ...params };
+  const c = FLOW_SCENARIOS[1];
+  return FLOW_SCENARIOS.map((s) => ({
+    ...s,
+    grn: r2(clamp01(s.grn + p.grn - c.grn)),
+    onp: r2(clamp01(s.onp + (1 - p.lnpOnp) - c.onp)),
+    others: r2(clamp01(s.others + p.othersAlp - c.others)),
+    others_onp: r2(clamp01(1 - s.others + p.othersOnp - (1 - c.others))),
+  }));
+}
+
+/** Apply the poll-average override: shift ONP, take the points off the rest proportionally. */
+export function adjustAverage(average, onpShift = 0) {
+  if (!onpShift) return average;
+  const keys = ["alp", "lnp", "grn", "others"];
+  const rest = keys.reduce((a, k) => a + average[k], 0);
+  const onp = Math.max(0, Math.min(100, average.onp + onpShift));
+  const scale = rest > 0 ? (100 - onp) / rest : 0;
+  const out = { ...average, onp: r1(onp) };
+  for (const k of keys) out[k] = r1(average[k] * scale);
+  return out;
+}
+
 export const IN_DOUBT_PP = 3;
 export const LEANING_PP = 6;
 const MAJORS = new Set(["labor", "liberal", "nationals"]);
@@ -50,10 +91,10 @@ export function classify(marginPp) {
  * @param {object} results parsed district-results-2022.yaml
  * @param {object[]} districts [{slug,name}]
  */
-export function buildForecast(average, results, districts) {
+export function buildForecast(average, results, districts, flows = FLOW_SCENARIOS) {
   const base = baselineFromResults(results);
   const names = new Map(districts.map((d) => [d.slug, d.name]));
-  const scenarios = FLOW_SCENARIOS.map((f) => {
+  const scenarios = flows.map((f) => {
     const tpp = statewideTpp(average, base, f);
     return { ...f, tpp_alp: tpp, swing_to_alp: r1(tpp - base.tpp_alp) };
   });
@@ -170,18 +211,18 @@ export function prefWeights(f) {
     onp: { alp: f.onp, lnp: 1 - f.onp, grn: f.onp * 0.4 },
     // The 2022 "others" lump was mostly right-of-centre minors (Family First, Freedom, Libertarian, DLP, etc.),
     // so when ONP is a finalist it gets the same right-leaning share (1 − others→Labor) the Coalition would.
-    others: { alp: f.others, lnp: 1 - f.others, onp: 1 - f.others, grn: 0.6 * f.others },
+    others: { alp: f.others, lnp: 1 - f.others, onp: f.others_onp ?? 1 - f.others, grn: 0.6 * f.others },
   };
 }
 
 /**
- * Editor-set assumption (Colin, Oct 2026): where One Nation did not stand in
+ * Editor-set assumption (Colin, Oct 2026; 5% since 28 Oct): where One Nation did not stand in
  * 2022, it starts from this share instead of 0, taken off the other parties
  * proportionally so the district still sums to 100. Not a sourced figure: the
  * real 2022 VEC statewide ONP primary was 0.28% (it stood in 5 of 88 districts,
  * averaging about 5% where it stood).
  */
-export const ONP_BASELINE_PP = 6;
+export const ONP_BASELINE_PP = 5;
 
 function districtPrimaries(d, onpBaseline = ONP_BASELINE_PP) {
   const pct = (p) => d.primaries.filter((x) => x.party === p).reduce((a, x) => a + x.pct, 0);
@@ -215,8 +256,11 @@ export function twoCandidate(prim, a, b, weights) {
   return r1((va / (va + vb)) * 100);
 }
 
-export function buildMultiPartyForecast(average, results, districts, { onpBaseline = ONP_BASELINE_PP } = {}) {
-  const twoParty = buildForecast(average, results, districts);
+export function buildMultiPartyForecast(rawAverage, results, districts, params = {}) {
+  const p = { ...DEFAULT_PARAMS, ...params };
+  const onpBaseline = p.onpBaseline;
+  const average = adjustAverage(rawAverage, p.onpShift);
+  const twoParty = buildForecast(average, results, districts, scenariosFor(p));
   const base = twoParty.baseline;
   const names = new Map(districts.map((d) => [d.slug, d.name]));
   const tppBySlug = new Map(twoParty.seats.map((s) => [s.slug, s]));
@@ -284,6 +328,7 @@ export function buildMultiPartyForecast(average, results, districts, { onpBaseli
   const onpImplied = wSum ? r1(onpSum / wSum) : null;
   return {
     kind: "forecast-model",
+    params: p,
     onp_baseline_pp: onpBaseline,
     onp_baseline_seats: seats.filter((s) => s.onp_baseline).length,
     onp_statewide_2022: base.onp,
