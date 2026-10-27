@@ -1,0 +1,31 @@
+id: roy-morgan-2026-10-26
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-10-12
+fieldwork_end: 2026-10-25
+sample_size: 2711
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Finding 10376. Fortnightly two-week sample 12–25 Oct, no overlap with the 28 Sep–11 Oct result (roy-morgan-2026-10-12). L-NP reported as Liberals 21% + Nationals 2.5%. Independent/Others 12.5%. Respondent-allocated 2PP ALP 52.5–47.5 L-NP, previous-election-flows 2PP ALP 53–47, and ALP 55–45 over One Nation not encoded. Supersedes roy-morgan-2026-10-12 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 26
+  lnp: 23.5
+  onp: 22.5
+  grn: 15.5
+  others: 12.5
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10376-federal-voting-intention-october-26-2026
+    publisher: Roy Morgan
+    title: "ALP holds a narrow election winning lead; L-NP (23.5%) overtakes One Nation (22.5%) for first time since mid-July"
+    published: 2026-10-26
+    accessed: 2026-10-28
+  - url: https://www.pollbludger.net/2026/10/27/morgan-labor-26-coalition-23-5-one-nation-22-5-open-thread/
+    publisher: The Poll Bludger
+    title: "Morgan: Labor 26, Coalition 23.5, One Nation 22.5 (open thread)"
+    published: 2026-10-27
+    accessed: 2026-10-28

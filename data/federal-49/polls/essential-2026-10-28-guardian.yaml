@@ -1,0 +1,36 @@
+id: essential-2026-10-28-guardian
+pollster: Essential
+commissioner: the-guardian
+commissioner_type: media
+fieldwork_start: 2026-10-21
+fieldwork_end: 2026-10-26
+sample_size: 1087
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Guardian Essential Report federal voting intention, n=1,087. Primaries as reported with 4% undecided; others residual after ALP+LNP+GRN+ONP (28+23+12+28) in the published decided+undecided frame (Wikipedia lists 6% other + 4% undecided). Fieldwork Wed 21 – Mon 26 Oct per Wikipedia, matching Essential's usual Wed–Mon pattern (Poll Bludger also assumes Wed–Mon; The Guardian says only 'conducted last week'). 2PP+ Coalition 52 / Labor 44 (remainder undecided) not encoded. Supersedes essential-2026-09-29-guardian in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 28
+  lnp: 23
+  onp: 28
+  grn: 12
+  others: 9
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theguardian.com/australia-news/2026/oct/28/guardian-essential-poll-labor-albanese-one-nation-hanson-coalition-ntwnfb
+    publisher: The Guardian
+    title: "Guardian Essential poll: One Nation and Labor’s primary vote on par as discontent with Albanese rises"
+    published: 2026-10-28
+    accessed: 2026-10-28
+  - url: https://essentialreport.com.au/reports/28-october-2026
+    publisher: Essential Report
+    title: "The Essential Report: 28 October 2026"
+    published: 2026-10-28
+    accessed: 2026-10-28
+  - url: https://www.pollbludger.net/2026/10/27/morgan-labor-26-coalition-23-5-one-nation-22-5-open-thread/
+    publisher: The Poll Bludger
+    title: "Morgan: Labor 26, Coalition 23.5, One Nation 22.5 (open thread)"
+    published: 2026-10-28
+    accessed: 2026-10-28
