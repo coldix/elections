@@ -136,3 +136,136 @@ export async function loadVicInputs() {
     districts: parse(readFileSync(join(root, "vic2026", "districts.yaml"), "utf8")).districts,
   };
 }
+
+// ---------------------------------------------------------------------------
+// Primary-vote layer (multi-party). Our model, not sourced data.
+// 1. Each party's 2022 district primary is moved by the same number of points
+//    as its statewide change since 2022 (uniform additive swing). One Nation
+//    starts from its 2022 district vote, or 0 where it did not stand.
+//    Negative values are clamped to 0 and the district renormalised to 100.
+// 2. The two highest projected primaries are the finalists.
+// 3. Labor v Coalition finalists: the existing uniform two-party swing above
+//    (keeps the Labor/Coalition layer unchanged). Any other pair: excluded
+//    parties' votes are split between the finalists using the assumed
+//    preference weights below (our assumptions, not measured flows).
+// 4. If "others" (independents and minor parties lumped together) is a
+//    finalist, the seat is shown as an IND contest, not modelled, because the
+//    lump is not one candidate.
+// ---------------------------------------------------------------------------
+
+export const PARTY_KEYS = ["alp", "lnp", "grn", "onp", "others"];
+export const PARTY_LABEL = { alp: "Labor", lnp: "Coalition", grn: "Greens", onp: "One Nation", others: "Independent/other" };
+const SUMMARY_PARTY = { alp: "labor", lnp: "coalition", grn: "greens", onp: "one-nation" };
+
+/** Preference weights from each excluded party; only ratios between the two finalists matter. */
+export function prefWeights(f) {
+  return {
+    alp: { grn: 0.8, lnp: 0.3, onp: 0.1 },
+    lnp: { alp: 0.4, grn: 0.2, onp: 0.5 },
+    grn: { alp: f.grn, lnp: (1 - f.grn) * 0.67, onp: (1 - f.grn) * 0.33 },
+    onp: { alp: f.onp, lnp: 1 - f.onp, grn: f.onp * 0.4 },
+    others: { alp: f.others, lnp: 1 - f.others, onp: 0.5 * (1 - f.others), grn: 0.6 * f.others },
+  };
+}
+
+function districtPrimaries(d) {
+  const pct = (p) => d.primaries.filter((x) => x.party === p).reduce((a, x) => a + x.pct, 0);
+  return { alp: pct("labor"), lnp: pct("liberal") + pct("nationals"), grn: pct("greens"), onp: pct("one-nation"), others: pct("others") };
+}
+
+export function projectPrimaries(d2022, average, base) {
+  const raw = {};
+  for (const k of PARTY_KEYS) raw[k] = Math.max(0, d2022[k] + (average[k] - base[k]));
+  const total = PARTY_KEYS.reduce((a, k) => a + raw[k], 0) || 1;
+  return Object.fromEntries(PARTY_KEYS.map((k) => [k, r1((raw[k] / total) * 100)]));
+}
+
+/** Two-candidate share for finalist a over b from projected primaries. */
+export function twoCandidate(prim, a, b, weights) {
+  let va = prim[a];
+  let vb = prim[b];
+  for (const k of PARTY_KEYS) {
+    if (k === a || k === b) continue;
+    const w = weights[k] ?? {};
+    const wa = w[a] ?? 0.5;
+    const wb = w[b] ?? 0.5;
+    const share = wa + wb > 0 ? wa / (wa + wb) : 0.5;
+    va += prim[k] * share;
+    vb += prim[k] * (1 - share);
+  }
+  return r1((va / (va + vb)) * 100);
+}
+
+export function buildMultiPartyForecast(average, results, districts) {
+  const twoParty = buildForecast(average, results, districts);
+  const base = twoParty.baseline;
+  const names = new Map(districts.map((d) => [d.slug, d.name]));
+  const tppBySlug = new Map(twoParty.seats.map((s) => [s.slug, s]));
+
+  const seats = results.districts.map((d) => {
+    const name = names.get(d.slug) ?? d.slug;
+    const winner2022 = d.two_candidate_preferred?.winner?.party ?? null;
+    const p2022 = districtPrimaries(d);
+    if (!d.primaries.some((x) => x.party === "labor")) {
+      return { slug: d.slug, name, winner2022, status: "not-modelled", reason: "No Labor candidate in the 2022 count (supplementary election), so there is no baseline to swing" };
+    }
+    const prim = projectPrimaries(p2022, average, base);
+    const order = [...PARTY_KEYS].sort((x, y) => prim[y] - prim[x]);
+    const [a, b] = order;
+    if (a === "others" || b === "others") {
+      return { slug: d.slug, name, winner2022, status: "ind-contest", primaries: prim, finalists: [a, b], reason: "Independent/other vote projected in the top two — Greens/IND contest, not modelled" };
+    }
+    const byScenario = {};
+    const pair = [a, b].sort().join("-");
+    const tppSeat = tppBySlug.get(d.slug);
+    for (const s of twoParty.scenarios) {
+      let shareA;
+      if (pair === "alp-lnp" && tppSeat?.modelled) {
+        const alpShare = 50 + tppSeat.by_scenario[s.id];
+        shareA = a === "alp" ? alpShare : 100 - alpShare;
+      } else {
+        shareA = twoCandidate(prim, a, b, prefWeights(s));
+      }
+      byScenario[s.id] = { leader: shareA >= 50 ? a : b, margin: r1(Math.abs(shareA - 50)) };
+    }
+    const c = byScenario.central;
+    return {
+      slug: d.slug,
+      name,
+      winner2022,
+      status: "modelled",
+      method: pair === "alp-lnp" && tppSeat?.modelled ? "two-party swing" : "primary layer + assumed preferences",
+      primaries: prim,
+      finalists: [a, b],
+      leader: c.leader,
+      margin_central: c.margin,
+      rating: classify(c.margin),
+      by_scenario: byScenario,
+    };
+  });
+
+  const modelled = seats.filter((s) => s.status === "modelled");
+  const summary = {};
+  for (const k of Object.values(SUMMARY_PARTY)) summary[k] = { firm: 0, leaning: 0, doubt: 0 };
+  for (const s of modelled) summary[SUMMARY_PARTY[s.leader]][s.rating]++;
+  const ranges = {};
+  for (const sc of twoParty.scenarios) {
+    const r = Object.fromEntries(Object.values(SUMMARY_PARTY).map((k) => [k, 0]));
+    for (const s of modelled) r[SUMMARY_PARTY[s.by_scenario[sc.id].leader]]++;
+    ranges[sc.id] = r;
+  }
+  return {
+    kind: "forecast-model",
+    banner: twoParty.banner,
+    baseline: base,
+    average,
+    scenarios: twoParty.scenarios,
+    seats,
+    summary,
+    ranges,
+    ind_contest: seats.filter((s) => s.status === "ind-contest").length,
+    not_modelled: seats.filter((s) => s.status === "not-modelled").length,
+    total: seats.length,
+    twoParty,
+  };
+}

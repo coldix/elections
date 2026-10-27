@@ -2,13 +2,22 @@
 import Base from "../../layouts/Base.astro";
 import { formatDate } from "../../lib/site.mjs";
 import { loadPolls, computePollAverage } from "../../../../scripts/lib/polls.mjs";
-import { buildForecast, loadVicInputs, IN_DOUBT_PP, LEANING_PP } from "../../../../scripts/lib/forecast.mjs";
+import { buildMultiPartyForecast, loadVicInputs, IN_DOUBT_PP, LEANING_PP, PARTY_LABEL } from "../../../../scripts/lib/forecast.mjs";
 import buildMeta from "../../generated/build-meta.json";
 
 const average = computePollAverage(loadPolls("vic2026"));
 const { results, districts } = await loadVicInputs();
-const fc = average.status === "ok" ? buildForecast(average.primaries, results, districts) : null;
-const seats = fc ? [...fc.seats].sort((a, b) => (a.modelled ? a.margin_central : 99) - (b.modelled ? b.margin_central : 99)) : [];
+const mp = average.status === "ok" ? buildMultiPartyForecast(average.primaries, results, districts) : null;
+const fc = mp ? mp.twoParty : null;
+const ORDER = { lnp: 0, onp: 1, alp: 2, grn: 3 };
+const seats = mp ? [...mp.seats].sort((a, b) => {
+  const ka = a.status === "modelled" ? ORDER[a.leader] * 100 - a.margin_central * (a.leader === "lnp" ? 1 : -1) : 999;
+  const kb = b.status === "modelled" ? ORDER[b.leader] * 100 - b.margin_central * (b.leader === "lnp" ? 1 : -1) : 999;
+  return ka - kb;
+}) : [];
+const onpTopTwo = mp ? mp.seats.filter((s) => s.finalists?.includes("onp")).length : 0;
+const PARTIES = [["labor", "Labor"], ["coalition", "Coalition"], ["greens", "Greens"], ["one-nation", "One Nation"]];
+const CLS = { alp: "labor", lnp: "coalition", grn: "greens", onp: "onp" };
 const updated = buildMeta?.built_at_utc ? buildMeta.built_at_utc.slice(0, 10) : null;
 const RATING = { firm: "Firm", leaning: "Leaning", doubt: "In doubt" };
 const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" };
@@ -29,8 +38,8 @@ const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" 
       <p class="eyebrow">Forecast section · model output</p>
       <h1>Victorian Assembly seat model</h1>
       <p class="lede">
-        What the current poll average would mean for each of the 88 districts if every seat swung
-        by the same amount, under three different assumptions about preferences.
+        What the current poll average would mean for each of the 88 districts if every party's primary vote
+        moved by the same amount in every seat, including One Nation and the Greens, under three assumptions about preferences.
       </p>
       <p class="fc-updated">
         Last updated {updated ? formatDate(updated) : "—"} · poll average as of {fc ? formatDate(average.as_of) : "—"}
@@ -42,59 +51,61 @@ const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" 
         <>
           <section class="fc-summary">
             <div class="card">
+              <h2>Seats by party and rating (central scenario)</h2>
+              <table class="fc-table">
+                <thead><tr><th scope="col">Ahead</th><th scope="col">Firm</th><th scope="col">Leaning</th><th scope="col">In doubt</th><th scope="col">Total</th></tr></thead>
+                <tbody>
+                  {PARTIES.map(([k, l]) => (
+                    <tr><th scope="row">{l}</th><td>{mp.summary[k].firm}</td><td>{mp.summary[k].leaning}</td><td>{mp.summary[k].doubt}</td><td>{mp.summary[k].firm + mp.summary[k].leaning + mp.summary[k].doubt}</td></tr>
+                  ))}
+                  <tr><th scope="row">Greens/IND contest, not modelled</th><td colspan="3"></td><td>{mp.ind_contest}</td></tr>
+                  <tr><th scope="row">Not modelled (no baseline)</th><td colspan="3"></td><td>{mp.not_modelled}</td></tr>
+                </tbody>
+              </table>
+              <p class="small muted">In doubt: two-candidate margin within {IN_DOUBT_PP} points of 50–50. Leaning: {IN_DOUBT_PP}–{LEANING_PP} points. Firm: more than {LEANING_PP}. 45 seats are needed for a majority.</p>
+              <p class="small">One Nation is projected in the final two in {onpTopTwo} seats but {mp.summary["one-nation"].firm + mp.summary["one-nation"].leaning + mp.summary["one-nation"].doubt === 0 ? "does not lead in any of them under this model, in any scenario." : "leads in the seats shown above."} A uniform swing spreads One Nation's rise evenly; a real vote that is more concentrated in some regions could change this. See the <a href="/forecast/methodology">limits</a>.</p>
+            </div>
+            <div class="card">
               <h2>Scenario ranges</h2>
               <table class="fc-table">
-                <thead><tr><th scope="col">Preference scenario</th><th scope="col">Labor 2PP (est.)</th><th scope="col">Labor ahead</th><th scope="col">Coalition ahead</th></tr></thead>
+                <thead><tr><th scope="col">Preference scenario</th><th scope="col">Labor 2PP (est.)</th>{PARTIES.map(([, l]) => <th scope="col">{l}</th>)}</tr></thead>
                 <tbody>
-                  {fc.scenarios.map((s) => (
+                  {mp.scenarios.map((s) => (
                     <tr>
                       <th scope="row">{s.label}</th>
                       <td>{s.tpp_alp}%</td>
-                      <td>{fc.ranges[s.id].labor_ahead}</td>
-                      <td>{fc.ranges[s.id].coalition_ahead}</td>
+                      {PARTIES.map(([k]) => <td>{mp.ranges[s.id][k]}</td>)}
                     </tr>
                   ))}
                 </tbody>
               </table>
-              <p class="small muted">
-                Range across scenarios: Labor ahead in {fc.range.labor_ahead[0]}–{fc.range.labor_ahead[1]} seats,
-                Coalition ahead in {fc.range.coalition_ahead[0]}–{fc.range.coalition_ahead[1]}.
-                {fc.not_modelled} seats are not modelled (see below). 45 seats are needed for a majority.
-              </p>
-            </div>
-            <div class="card">
-              <h2>Central scenario by rating</h2>
-              <table class="fc-table">
-                <thead><tr><th scope="col"></th><th scope="col">Firm</th><th scope="col">Leaning</th><th scope="col">In doubt</th></tr></thead>
-                <tbody>
-                  <tr><th scope="row">Labor ahead</th><td>{fc.summary.labor.firm}</td><td>{fc.summary.labor.leaning}</td><td>{fc.summary.labor.doubt}</td></tr>
-                  <tr><th scope="row">Coalition ahead</th><td>{fc.summary.coalition.firm}</td><td>{fc.summary.coalition.leaning}</td><td>{fc.summary.coalition.doubt}</td></tr>
-                </tbody>
-              </table>
-              <p class="small muted">In doubt: within {IN_DOUBT_PP} points of 50–50. Leaning: {IN_DOUBT_PP}–{LEANING_PP} points. Firm: more than {LEANING_PP}.</p>
+              <p class="small muted">Seats each party leads under each assumption about preference flows. {mp.ind_contest + mp.not_modelled} seats are not modelled in any scenario.</p>
             </div>
           </section>
 
           <section>
             <h2>Seat map (central scenario)</h2>
-            <p class="small muted">Each tile is one district, ordered from the strongest Coalition margin to the strongest Labor margin. Hover or tap for the modelled margin.</p>
+            <p class="small muted">Each tile is one district, grouped by the party ahead and ordered by margin. Hover or tap for the projected final two and margin.</p>
             <ul class="legend">
               <li><span class="sw labor-firm"></span>Labor firm</li>
               <li><span class="sw labor-leaning"></span>Labor leaning</li>
-              <li><span class="sw doubt"></span>In doubt</li>
-              <li><span class="sw coalition-leaning"></span>Coalition leaning</li>
               <li><span class="sw coalition-firm"></span>Coalition firm</li>
+              <li><span class="sw coalition-leaning"></span>Coalition leaning</li>
+              <li><span class="sw greens-firm"></span>Greens</li>
+              <li><span class="sw onp-firm"></span>One Nation</li>
+              <li><span class="sw doubt"></span>In doubt</li>
+              <li><span class="sw indc"></span>Greens/IND contest, not modelled</li>
               <li><span class="sw none"></span>Not modelled</li>
             </ul>
             <ol class="seatmap">
               {seats.map((s) => {
-                const cls = !s.modelled ? "none" : s.rating === "doubt" ? "doubt" : `${s.ahead}-${s.rating}`;
-                const tip = s.modelled
-                  ? `${s.name}: ${SIDE[s.ahead]} by ${Math.abs(s.margin_central)} pts (${RATING[s.rating]}); scenarios ${s.by_scenario.low} to ${s.by_scenario.high} (Labor margin)`
-                  : `${s.name}: not modelled — ${s.reason}`;
+                const cls = s.status === "ind-contest" ? "indc" : s.status !== "modelled" ? "none" : s.rating === "doubt" ? "doubt" : `${CLS[s.leader]}-${s.rating === "firm" ? "firm" : "leaning"}`;
+                const tip = s.status === "modelled"
+                  ? `${s.name}: ${PARTY_LABEL[s.finalists[0]]} v ${PARTY_LABEL[s.finalists[1]]}; ${PARTY_LABEL[s.leader]} ahead by ${s.margin_central} pts (${RATING[s.rating]}); method: ${s.method}`
+                  : `${s.name}: ${s.reason}`;
                 return (
                   <li class={`tile ${cls}`} title={tip}>
-                    <a href={`/elections/vic/2026/districts/${s.slug}`} aria-label={tip}>{s.name}</a>
+                    <a href={`/elections/vic/2026/districts/${s.slug}`} aria-label={tip}>{s.name}{s.status === "modelled" && <span class="fin">{PARTY_LABEL[s.finalists[0]]} v {PARTY_LABEL[s.finalists[1]]}</span>}</a>
                   </li>
                 );
               })}
@@ -102,11 +113,24 @@ const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" 
           </section>
 
           <section>
-            <h2>Seats the model leaves out</h2>
+            <h2>Seats the model does not rate</h2>
             <ul>
-              {fc.seats.filter((s) => !s.modelled).map((s) => <li>{s.name} — {s.reason}.</li>)}
+              {mp.seats.filter((s) => s.status !== "modelled").map((s) => <li><strong>{s.name}</strong> — {s.reason}.</li>)}
             </ul>
-            <p class="small muted">A uniform two-party swing cannot say anything useful about contests that were not Labor against the Coalition in 2022.</p>
+            <p class="small muted">"Others" lumps every independent and minor-party candidate together, so it cannot be treated as one candidate. 2022 Greens seats (Brunswick, Melbourne, Prahran, Richmond) are modelled in the primary layer above.</p>
+          </section>
+
+          <section>
+            <h2>Labor v Coalition layer</h2>
+            <p class="small muted">The original two-party model, kept for comparison: uniform swing on each district's 2022 Labor v Coalition count. It assumes every seat ends Labor v Coalition.</p>
+            <table class="fc-table">
+              <thead><tr><th scope="col"></th><th scope="col">Firm</th><th scope="col">Leaning</th><th scope="col">In doubt</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Labor ahead</th><td>{fc.summary.labor.firm}</td><td>{fc.summary.labor.leaning}</td><td>{fc.summary.labor.doubt}</td></tr>
+                <tr><th scope="row">Coalition ahead</th><td>{fc.summary.coalition.firm}</td><td>{fc.summary.coalition.leaning}</td><td>{fc.summary.coalition.doubt}</td></tr>
+              </tbody>
+            </table>
+            <p class="small muted">Range across scenarios: Labor ahead in {fc.range.labor_ahead[0]}–{fc.range.labor_ahead[1]}, Coalition ahead in {fc.range.coalition_ahead[0]}–{fc.range.coalition_ahead[1]}; {fc.not_modelled} seats have no 2022 Labor v Coalition count.</p>
           </section>
 
           <section>
@@ -144,6 +168,11 @@ const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" 
   .tile.coalition-firm a { color: #fff; }
   .coalition-leaning, .tile.coalition-leaning a { background: #a5bde0; }
   .doubt, .tile.doubt a { background: repeating-linear-gradient(45deg, #e9e3d3 0 6px, #d6cdb6 6px 12px); }
+  .greens-firm, .tile.greens-firm a, .tile.greens-leaning a { background: #3a8a4a; }
+  .tile.greens-firm a { color: #fff; }
+  .onp-firm, .tile.onp-firm a, .tile.onp-leaning a { background: #e08a1e; }
+  .indc, .tile.indc a { background: repeating-linear-gradient(-45deg, #cfe3d2 0 6px, #f0f0f0 6px 12px); color: #333; }
+  .fin { display: block; font-size: 0.62rem; opacity: 0.85; margin-top: 2px; }
   .none, .tile.none a { background: #ddd; color: #555; }
   .empty { color: var(--ink-3); font-style: italic; }
   .small { font-size: 0.85rem; }
