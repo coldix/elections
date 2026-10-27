@@ -54,3 +54,18 @@ test("forecast: ratings, scenario ordering and no-change identity", () => {
   assert.ok(fc.ranges.central.labor_ahead <= fc.ranges.high.labor_ahead);
   assert.equal(fc.banner, "Forecast: our model, not a prediction of the result");
 });
+
+test("multi-party forecast: every seat accounted for, Labor/Coalition layer kept", async () => {
+  const { buildMultiPartyForecast, projectPrimaries } = await import("../scripts/lib/forecast.mjs");
+  const results = parse(readFileSync(new URL("../data/vic2026/district-results-2022.yaml", import.meta.url), "utf8"));
+  const districts = parse(readFileSync(new URL("../data/vic2026/districts.yaml", import.meta.url), "utf8")).districts;
+  const mp = buildMultiPartyForecast({ alp: 24.3, lnp: 30.4, grn: 14.6, onp: 21.8, others: 8.9 }, results, districts);
+  assert.equal(mp.seats.length, 88);
+  const counted = Object.values(mp.summary).reduce((a, r) => a + r.firm + r.leaning + r.doubt, 0);
+  assert.equal(counted + mp.ind_contest + mp.not_modelled, 88);
+  for (const slug of ["brunswick", "melbourne", "prahran", "richmond", "narracan"]) assert.ok(mp.seats.find((s) => s.slug === slug));
+  assert.equal(mp.seats.find((s) => s.slug === "narracan").status, "not-modelled");
+  const p = projectPrimaries({ alp: 40, lnp: 40, grn: 10, onp: 0, others: 10 }, { alp: 40, lnp: 40, grn: 10, onp: 0, others: 10 }, { alp: 40, lnp: 40, grn: 10, onp: 0, others: 10 });
+  assert.equal(p.alp, 40);
+  for (const s of mp.seats.filter((x) => x.method === "two-party swing")) assert.ok(["alp", "lnp"].includes(s.leader));
+});
