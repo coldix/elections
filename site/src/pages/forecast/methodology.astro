@@ -70,20 +70,20 @@ const pc = (x) => `${Math.round(x * 100)}%`;
       <thead><tr><th scope="col">From</th><th scope="col">Labor</th><th scope="col">Coalition</th><th scope="col">Greens</th><th scope="col">One Nation</th></tr></thead>
       <tbody>
         <tr><th scope="row">Labor</th><td>—</td><td>0.3</td><td>0.8</td><td>0.1</td></tr>
-        <tr><th scope="row">Coalition</th><td>1−c</td><td>—</td><td>(1−c)×0.5</td><td>c</td></tr>
+        <tr><th scope="row">Coalition</th><td>o</td><td>—</td><td>o×0.5</td><td>1−o</td></tr>
         <tr><th scope="row">Greens</th><td>g</td><td>(1−g)×0.67</td><td>—</td><td>(1−g)×0.33</td></tr>
         <tr><th scope="row">One Nation</th><td>o</td><td>1−o</td><td>o×0.4</td><td>—</td></tr>
         <tr><th scope="row">Others</th><td>x</td><td>1−x</td><td>x×0.6</td><td>1−x</td></tr>
       </tbody>
     </table>
     <table class="fc-table">
-      <thead><tr><th scope="col">Scenario</th><th scope="col">g</th><th scope="col">o</th><th scope="col">x</th><th scope="col">c (Coalition → One Nation)</th></tr></thead>
+      <thead><tr><th scope="col">Scenario</th><th scope="col">g</th><th scope="col">o</th><th scope="col">x</th><th scope="col">Coalition ↔ One Nation (1−o)</th></tr></thead>
       <tbody>
-        {FLOW_SCENARIOS.map((s) => (<tr><th scope="row">{s.label}</th><td>{pc(s.grn)}</td><td>{pc(s.onp)}</td><td>{pc(s.others)}</td><td>{pc(s.lnp_onp)}</td></tr>))}
+        {FLOW_SCENARIOS.map((s) => (<tr><th scope="row">{s.label}</th><td>{pc(s.grn)}</td><td>{pc(s.onp)}</td><td>{pc(s.others)}</td><td>{pc(1 - s.onp)}</td></tr>))}
       </tbody>
     </table>
     <ul>
-      <li><strong>Coalition → One Nation (c = 60% / 80% / 90%, central 80%).</strong> Why: Coalition how-to-vote cards and voters have usually ranked One Nation above Labor; 80% is a central guess and the range tests weaker and stronger flows. Note that the scenario names describe flows to Labor in Labor v Coalition seats; in Labor v One Nation seats the "higher" scenario is the one most favourable to One Nation, because c is highest there.</li>
+      <li><strong>Coalition → One Nation = One Nation → Coalition (1 − o: 80% / 75% / 65%, central 75%).</strong> Why: we have no measured Coalition-to-One-Nation flow in Victoria, so we assume the flow is symmetric: Coalition voters favour One Nation over Labor at the same rate One Nation voters favour the Coalition over Labor. The code derives one from the other, so they cannot drift apart. The rest (o) goes to Labor.</li>
       <li><strong>Others → One Nation (1 − x, so 60% / 55% / 48%).</strong> Why: in 2022 the "others" vote was mostly right-of-centre minor parties (for example Family First, Freedom, Liberal Democrats and the DLP) plus independents. We give One Nation the same right-leaning share the Coalition would get from that vote, instead of the earlier half-share.</li>
       <li><strong>Labor → others (fixed).</strong> Why: Labor voters mostly prefer the Greens and rarely One Nation.</li>
     </ul>

@@ -7,9 +7,9 @@
 
 /** Assumed share of each party's preferences reaching Labor ahead of the Coalition. */
 export const FLOW_SCENARIOS = [
-  { id: "low", label: "Lower flows to Labor", grn: 0.8, onp: 0.2, others: 0.4, lnp_onp: 0.6 },
-  { id: "central", label: "Central", grn: 0.85, onp: 0.25, others: 0.45, lnp_onp: 0.8 },
-  { id: "high", label: "Higher flows to Labor", grn: 0.88, onp: 0.35, others: 0.52, lnp_onp: 0.9 },
+  { id: "low", label: "Lower flows to Labor", grn: 0.8, onp: 0.2, others: 0.4 },
+  { id: "central", label: "Central", grn: 0.85, onp: 0.25, others: 0.45 },
+  { id: "high", label: "Higher flows to Labor", grn: 0.88, onp: 0.35, others: 0.52 },
 ];
 export const IN_DOUBT_PP = 3;
 export const LEANING_PP = 6;
@@ -157,12 +157,15 @@ export const PARTY_KEYS = ["alp", "lnp", "grn", "onp", "others"];
 export const PARTY_LABEL = { alp: "Labor", lnp: "Coalition", grn: "Greens", onp: "One Nation", others: "Independent/other" };
 const SUMMARY_PARTY = { alp: "labor", lnp: "coalition", grn: "greens", onp: "one-nation" };
 
+/** Coalition -> One Nation flow, defined as equal to One Nation -> Coalition (1 - o) in the same scenario. */
+export const lnpToOnp = (f) => 1 - f.onp;
+
 /** Preference weights from each excluded party; only ratios between the two finalists matter. */
 export function prefWeights(f) {
   return {
     alp: { grn: 0.8, lnp: 0.3, onp: 0.1 },
-    // Coalition voters when One Nation is a finalist: lnp_onp to ONP (0.6/0.8/0.9 by scenario), rest to Labor.
-    lnp: { alp: 1 - f.lnp_onp, grn: (1 - f.lnp_onp) * 0.5, onp: f.lnp_onp },
+    // Symmetric with One Nation -> Coalition: Coalition voters send 1 - f.onp to ONP (rest to Labor).
+    lnp: { alp: f.onp, grn: f.onp * 0.5, onp: lnpToOnp(f) },
     grn: { alp: f.grn, lnp: (1 - f.grn) * 0.67, onp: (1 - f.grn) * 0.33 },
     onp: { alp: f.onp, lnp: 1 - f.onp, grn: f.onp * 0.4 },
     // The 2022 "others" lump was mostly right-of-centre minors (Family First, Freedom, Libertarian, DLP, etc.),
