@@ -1,0 +1,62 @@
+# Upper house seat projections published BY POLLSTERS. These are the
+# pollster's own projection, not this site's. Shown only with that label.
+updated: 2026-10-27
+projections:
+  - id: roy-morgan-vic-lc-2026-09
+    jurisdiction: vic
+    chamber: Victorian Legislative Council
+    pollster: Roy Morgan
+    fieldwork: Jul–Sep 2026
+    sample_size: 2845
+    seats_total: 40
+    seats:
+      - { party: lnp, label: Coalition, seats: 12 }
+      - { party: alp, label: Labor, seats: 10 }
+      - { party: grn, label: Greens, seats: 8 }
+      - { party: onp, label: One Nation, seats: 6 }
+      - { party: doubt, label: Undecided (pollster says preference-dependent), seats: 4 }
+    note: "All 40 seats are elected in 2026. Roy Morgan's method: a party with 12% in a region is projected a seat after preferences (group voting tickets abolished)."
+    source:
+      url: https://www.roymorgan.com/findings/10361-victorian-state-voting-intention-september-2026
+      publisher: Roy Morgan
+      title: "Victorian State Voting Intention: Victoria's Upper House (Jul–Sep 2026)"
+      published: 2026-10-20
+      accessed: 2026-10-27
+  - id: demosau-nsw-lc-2026-08
+    jurisdiction: nsw
+    chamber: NSW Legislative Council (21 seats contested)
+    pollster: DemosAU / PremierNational
+    fieldwork: 19–26 Aug 2026
+    sample_size: 1028
+    seats_total: 21
+    seats:
+      - { party: alp, label: Labor, seats: 7 }
+      - { party: lnp, label: Coalition, seats: 5 }
+      - { party: onp, label: One Nation, seats: 5 }
+      - { party: grn, label: Greens, seats: 3 }
+      - { party: doubt, label: In doubt (per pollster), seats: 1 }
+    note: "Projection covers the 21 periodic seats contested in 2027 only, not continuing members."
+    source:
+      url: https://demosau.com/wp-content/uploads/2026/09/DemosAUPremierNational-NSW-Poll-August-2026.pdf
+      publisher: DemosAU
+      title: DemosAU/PremierNational NSW Poll August 2026 — upper house seat projections
+      accessed: 2026-10-27
+  - id: demosau-nsw-lc-2026-06
+    jurisdiction: nsw
+    chamber: NSW Legislative Council (21 seats contested)
+    pollster: DemosAU / PremierNational
+    fieldwork: 15–18 Jun 2026
+    sample_size: 1038
+    seats_total: 21
+    seats:
+      - { party: alp, label: Labor, seats: 6 }
+      - { party: onp, label: One Nation, seats: 6 }
+      - { party: lnp, label: Coalition, seats: 4 }
+      - { party: grn, label: Greens, seats: 3 }
+      - { party: doubt, label: In doubt (per pollster), seats: 2 }
+    note: "Projection covers the 21 periodic seats contested in 2027 only."
+    source:
+      url: https://demosau.com/wp-content/uploads/2026/06/DemosAUPremierNational-NSW-Poll-June-2026.pdf
+      publisher: DemosAU
+      title: DemosAU/PremierNational NSW Poll June 2026 — upper house seat projections
+      accessed: 2026-10-27

@@ -1,0 +1,26 @@
+id: demosau-qld-2026-10
+pollster: demosau
+commissioner: premier-national
+commissioner_type: media
+fieldwork_start: 2026-10-14
+fieldwork_end: 2026-10-21
+sample_size: 1200
+design_effect: null
+mode: online
+population: queensland-electors
+question_notes: "DemosAU Queensland state voting intention, published by the Sunday Mail. Fieldwork 14–21 Oct 2026, n=1,200. Changes on the previous DemosAU poll per Poll Bludger: LNP steady, Labor down one, One Nation up two, Greens steady. Others is the residual (7). Reported 2PP LNP 57–43 (not encoded)."
+primaries:
+  alp: 25
+  lnp: 34
+  onp: 23
+  grn: 11
+  others: 7
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/10/26/demosau-lnp-34-labor-25-one-nation-23-in-queensland/
+    publisher: The Poll Bludger
+    title: "DemosAU: LNP 34, Labor 25, One Nation 23 in Queensland"
+    published: 2026-10-26
+    accessed: 2026-10-27

@@ -1,0 +1,29 @@
+id: demosau-qld-2026-09
+pollster: demosau
+commissioner: premier-national
+commissioner_type: media
+fieldwork_start: 2026-08-22
+fieldwork_end: 2026-09-02
+sample_size: 1291
+design_effect: null
+mode: online
+population: queensland-electors
+question_notes: "DemosAU/PremierNational Queensland poll, fieldwork 22 Aug – 2 Sep 2026, n=1,291. KAP 1 and Others 7 combined as others (8). Reported 2PP LNP 56–44 (not encoded)."
+primaries:
+  alp: 26
+  lnp: 34
+  onp: 21
+  grn: 11
+  others: 8
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://demosau.com/news/lnp-retains-clear-lead-as-one-nation-slides-in-queensland-state-poll/
+    publisher: DemosAU
+    title: LNP Retains Clear Lead as One Nation Slides in Queensland Poll
+    accessed: 2026-10-27
+  - url: https://demosau.com/wp-content/uploads/2026/09/DemosAUPremierNational-Qld-Poll-August-2026-1.pdf
+    publisher: DemosAU
+    title: DemosAU/PremierNational Qld Poll August 2026 (report)
+    accessed: 2026-10-27

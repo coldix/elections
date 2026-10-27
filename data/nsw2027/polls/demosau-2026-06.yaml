@@ -1,0 +1,27 @@
+id: demosau-nsw-2026-06
+pollster: demosau
+commissioner: premier-national
+commissioner_type: media
+fieldwork_start: 2026-06-15
+fieldwork_end: 2026-06-18
+sample_size: 1038
+design_effect: null
+margin_of_error: 3.8
+mode: online
+population: nsw-electors
+question_notes: "DemosAU/PremierNational NSW poll, fieldwork 15–18 Jun 2026, n=1,038 (effective n=667), stated effective MoE ±3.8. Undecided (5%) excluded."
+primaries:
+  alp: 32
+  lnp: 20
+  onp: 27
+  grn: 13
+  others: 8
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+eligibility_exception: null
+sources:
+  - url: https://demosau.com/wp-content/uploads/2026/06/DemosAUPremierNational-NSW-Poll-June-2026.pdf
+    publisher: DemosAU
+    title: DemosAU/PremierNational NSW Poll June 2026 (report)
+    accessed: 2026-10-27

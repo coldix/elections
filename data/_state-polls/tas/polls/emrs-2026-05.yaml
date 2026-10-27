@@ -1,0 +1,26 @@
+id: emrs-tas-2026-05
+pollster: emrs
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-05-11
+fieldwork_end: 2026-05-13
+sample_size: 1000
+design_effect: null
+margin_of_error: 3.1
+mode: mixed
+population: tasmanian-electors
+question_notes: "EMRS quarterly Tasmanian State Omnibus, 11–13 May 2026, n=1,000, stated MoE ±3.1. Published: Liberal 25, Labor 24, One Nation 19, Greens 14, independent 16 (sum 98). Others encoded as residual 18 (independents + other minor parties + rounding)."
+primaries:
+  alp: 24
+  lnp: 25
+  onp: 19
+  grn: 14
+  others: 18
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.emrs.com.au/sites/default/files/documents/EMRS%20State%20Voting%20Intentions%20Report%20-%20May%202026%20Omnibus.pdf
+    publisher: EMRS
+    title: EMRS State Voting Intentions Report — May 2026 Omnibus
+    accessed: 2026-10-27

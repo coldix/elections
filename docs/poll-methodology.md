@@ -168,6 +168,7 @@ Quality-gated, not open to any brand. Start set for Vic 2026 statewide VI:
 | RedBridge / Accent | Media preferred | Party / union / advocacy **default exclude**; rare exception only with `eligibility_exception` |
 | Roy Morgan | Self-published | Include if state VI + method public |
 | DemosAU | Various | After first verified full metadata |
+| EMRS | Self-published (Tasmania) | Quarterly Tasmanian omnibus since the 1990s; ISO 20252, n=1,000, stated MoE and weighting published |
 | Ipsos, Spectre, others | Case-by-case | Add via allowlist edit, not ad hoc |
 
 **Adding a pollster.** Edit this table with one-line justification (public

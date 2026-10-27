@@ -135,7 +135,9 @@ export function navFor(pathname) {
   const global = [
     { href: VIC2026, label: "Victoria", current: scope === "vic" },
     { href: FEDERAL_49, label: "Federal", current: scope === "federal" },
+    { href: "/poll-tracker", label: "Poll tracker", current: path === "/poll-tracker" || path.startsWith("/poll-tracker/") },
     { href: "/elections", label: "Elections", current: path === "/elections" },
+    { href: "/forecast", label: "Forecast", current: path === "/forecast" || path.startsWith("/forecast/") },
     { href: "/latest", label: "What's new", current: path === "/latest" },
   ];
 

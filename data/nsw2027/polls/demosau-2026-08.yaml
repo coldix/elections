@@ -1,0 +1,31 @@
+id: demosau-nsw-2026-08
+pollster: demosau
+commissioner: premier-national
+commissioner_type: media
+fieldwork_start: 2026-08-19
+fieldwork_end: 2026-08-26
+sample_size: 1028
+design_effect: null
+margin_of_error: 3.9
+mode: online
+population: nsw-electors
+question_notes: "DemosAU/PremierNational NSW poll, fieldwork 19–26 Aug 2026, n=1,028 (effective n=630), stated effective MoE ±3.9. Undecided (6%) excluded. Reported 2PP Labor 57–43 on 2023 flows (not encoded)."
+primaries:
+  alp: 32
+  lnp: 25
+  onp: 23
+  grn: 13
+  others: 7
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+eligibility_exception: null
+sources:
+  - url: https://demosau.com/wp-content/uploads/2026/09/DemosAUPremierNational-NSW-Poll-August-2026.pdf
+    publisher: DemosAU
+    title: DemosAU/PremierNational NSW Poll August 2026 (report)
+    accessed: 2026-10-27
+  - url: https://demosau.com/news/labor-steady-as-coalition-wins-back-voters-from-one-nation-in-new-nsw-state-poll/
+    publisher: DemosAU
+    title: Labor steady as Coalition wins back voters from One Nation in new NSW state poll
+    accessed: 2026-10-27

@@ -1,0 +1,31 @@
+id: demosau-sa-2026-06
+pollster: demosau
+commissioner: ace-strategies
+commissioner_type: media
+fieldwork_start: 2026-05-29
+fieldwork_end: 2026-06-15
+sample_size: 931
+design_effect: null
+margin_of_error: 3.9
+mode: online
+population: south-australian-electors
+question_notes: "DemosAU/Ace Strategies South Australian state poll, fieldwork 29 May – 15 Jun 2026, n=931 (effective n=632), stated MoE ±3.9. First wave after the 21 March 2026 election. Liberal encoded as lnp. Reported 2PP Labor 56 – One Nation 44 (not encoded)."
+primaries:
+  alp: 35
+  lnp: 18
+  onp: 26
+  grn: 13
+  others: 8
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://acestrategies.au/polling/south-australia/
+    publisher: Ace Strategies
+    title: South Australia Polling — State Voting Intention
+    accessed: 2026-10-27
+  - url: https://www.indailysa.com.au/news/just-in/2026/06/25/orange-surge-spoils-malis-post-election-honeymoon
+    publisher: InDaily
+    title: Orange surge spoils Mali's post-election 'honeymoon'
+    published: 2026-06-25
+    accessed: 2026-10-27

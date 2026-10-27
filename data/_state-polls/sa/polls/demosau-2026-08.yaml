@@ -1,0 +1,31 @@
+id: demosau-sa-2026-08
+pollster: demosau
+commissioner: ace-strategies
+commissioner_type: media
+fieldwork_start: 2026-08-05
+fieldwork_end: 2026-08-26
+sample_size: 1012
+design_effect: null
+margin_of_error: 3.9
+mode: online
+population: south-australian-electors
+question_notes: "DemosAU South Australian state poll in association with Ace Strategies, fieldwork 5–26 Aug 2026, n=1,012 (effective n=628), stated MoE ±3.9. Liberal encoded as lnp. Reported 2PP Labor 58 – One Nation 42 (not encoded)."
+primaries:
+  alp: 37
+  lnp: 17
+  onp: 25
+  grn: 13
+  others: 8
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://demosau.com/news/malinauskas-holds-steady-in-south-australia-new-poll/
+    publisher: DemosAU
+    title: Malinauskas holds steady in South Australia — new poll
+    published: 2026-09-07
+    accessed: 2026-10-27
+  - url: https://acestrategies.au/polling/south-australia/
+    publisher: Ace Strategies
+    title: South Australia Polling — State Voting Intention
+    accessed: 2026-10-27

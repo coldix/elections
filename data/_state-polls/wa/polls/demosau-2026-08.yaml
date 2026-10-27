@@ -1,0 +1,32 @@
+id: demosau-wa-2026-08
+pollster: demosau
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-08-06
+fieldwork_end: 2026-08-25
+sample_size: 990
+design_effect: null
+margin_of_error: 3.8
+mode: online
+population: west-australian-electors
+question_notes: "DemosAU WA poll, self-commissioned, fieldwork 6–25 Aug 2026, n=990 (effective n=658), stated effective MoE ±3.8. Liberal (21) encoded as lnp; WA Nationals (4) are a separate party in WA and are included in others (9 + 4 = 13). Reported 2PP Labor 54–46 (not encoded)."
+primaries:
+  alp: 33
+  lnp: 21
+  onp: 21
+  grn: 12
+  others: 13
+  nationals: 4
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://demosau.com/wp-content/uploads/2026/09/DemosAU-WA-Poll-August-2026.pdf
+    publisher: DemosAU
+    title: DemosAU WA Poll August 2026 (report)
+    accessed: 2026-10-27
+  - url: https://www.pollbludger.net/2026/08/27/western-australia-demosau-poll-and-secret-harbour-by-election/
+    publisher: The Poll Bludger
+    title: "Western Australia: DemosAU poll and Secret Harbour by-election"
+    published: 2026-08-27
+    accessed: 2026-10-27

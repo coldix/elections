@@ -19,6 +19,7 @@ const fail = (file, message) => {
 for (const election of readdirSync(DATA_DIR)) {
   const dir = join(DATA_DIR, election);
   if (!statSync(dir).isDirectory()) continue;
+  if (election.startsWith("_")) continue;
 
   const coalitionPath = join(dir, "coalitions.yaml");
   if (!existsSync(coalitionPath)) continue;
