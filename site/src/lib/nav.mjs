@@ -183,6 +183,7 @@ export function navFor(pathname) {
     { href: "/about", label: "Independence statement" },
     { href: "/about#authorisation", label: "Legal authorisation" },
     { href: "/about#contact", label: "Contact" },
+    { href: "/support", label: "Support / Shop" },
   ];
 
   const legal = [
