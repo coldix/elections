@@ -8,8 +8,13 @@ import { SITE } from "../lib/site.mjs";
 // A button only renders when its link is set.
 const env = import.meta.env;
 const isStripe = (u) => typeof u === "string" && /^https:\/\/(buy|donate)\.stripe\.com\//.test(u);
-const donateLink = isStripe(env.PUBLIC_STRIPE_DONATE_LINK) ? env.PUBLIC_STRIPE_DONATE_LINK : "";
-const subscribeLink = isStripe(env.PUBLIC_STRIPE_SUBSCRIBE_LINK) ? env.PUBLIC_STRIPE_SUBSCRIBE_LINK : "";
+// Defaults: Love Mallacoota's LIVE public Payment Links (interim, per Colin
+// 28 Oct 2026). Override with the env vars once ET has its own links.
+const DEFAULT_DONATE = "https://buy.stripe.com/aFaaEX5tk9f42wx0KZ77O0h";
+const DEFAULT_SUBSCRIBE = "https://buy.stripe.com/eVq8wP1d48b06MN3Xb77O0b";
+const pick = (v, d) => (isStripe(v) ? v : d);
+const donateLink = pick(env.PUBLIC_STRIPE_DONATE_LINK, DEFAULT_DONATE);
+const subscribeLink = pick(env.PUBLIC_STRIPE_SUBSCRIBE_LINK, DEFAULT_SUBSCRIBE);
 const isTest = [donateLink, subscribeLink].some((u) => u.includes("/test_"));
 ---
 
