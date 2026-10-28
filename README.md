@@ -42,6 +42,27 @@ Other jurisdictions keep permanent outline URLs that expand in place later.
 polls, policy matrix, and 2022 first-preference / 2CP results on each district
 page (historical facts, not a 2026 forecast). Open data: `/data/vic2026/`.
 
+### Poll tracker and Forecast (added 28 Oct 2026)
+
+```text
+/poll-tracker
+/poll-tracker/voter-groups
+/forecast
+/forecast/methodology
+```
+
+`/poll-tracker` is a dated feed with one entry per poll across the state and
+federal ledgers, with changes since each pollster's previous poll, a margin of
+error flag, plain "what changed" notes and source links. Upper house
+projections are shown only as each pollster's own figures. `/poll-tracker/voter-groups`
+shows published breakdowns by state, age, gender and housing.
+
+`/forecast` is our own model, clearly labelled as such and kept apart from the
+sourced data. It applies a uniform swing to each party's 2022 VEC district
+primaries, with a One Nation, Greens and independents layer, an editor-set One
+Nation baseline and interactive assumption sliders (PRs #58 to #61). Every
+assumption is written out on `/forecast/methodology`.
+
 ### NSW 2027 (sitting members)
 
 ```text
@@ -99,8 +120,10 @@ candidate trackers:
 - **Every material status needs evidence.** Missing or invalid sources fail CI.
 - **Statuses are distinct.** `announced`, `endorsed`, `nominated`, `withdrawn`,
   `disendorsed`, `elected` and `defeated` are not interchangeable.
-- **No forecasting or how-to-vote advice.** Polls summarise recent public
-  primary-vote polling; policy pages publish sourced positions without ratings.
+- **No how-to-vote advice, and forecasts stay labelled.** Polls summarise recent
+  public primary-vote polling; policy pages publish sourced positions without
+  ratings. The only forecast is the separate, labelled `/forecast` section,
+  which is our model and not sourced data.
 - **Neutral structure.** The same fields, ordering rules and display treatment
   apply to every party and independent.
 - **Open exports.** JSON and CSV under `/data/<election-id>/` (e.g. `vic2026`,
@@ -230,7 +253,9 @@ new commits; history is not rewritten.
 The national shell, upcoming-election calendar, future-election foundation
 pages and the full Victoria 2026 tracker are live. Header and footer are
 election-scoped (Victoria / Federal / Elections / What’s new, plus a section
-bar inside each tracker). There are no open pull requests at this checkpoint.
+bar inside each tracker). The poll tracker and the labelled Forecast section
+went live on 28 Oct 2026. PR #62 (a Support page with optional Stripe Payment
+Link buttons) is open and waiting for Colin.
 GitHub issue #32 (extra Berwick details for Rana Khan) remains open.
 
 At this checkpoint the Victorian ledger holds **334** candidacies and **18**
