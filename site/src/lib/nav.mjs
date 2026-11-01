@@ -39,7 +39,8 @@ const ELECTIONS = {
         current: (path) =>
           under(path, VIC2026, "assembly") ||
           under(path, VIC2026, "districts") ||
-          under(path, VIC2026, "open-seats"),
+          under(path, VIC2026, "open-seats") ||
+          under(path, VIC2026, "marginal-seats"),
       },
       {
         href: `${VIC2026}/council`,

@@ -16,6 +16,7 @@ const prefixes = [
   "/policies",
   "/polls",
   "/open-seats",
+  "/marginal-seats",
   "/voting",
 ];
 
