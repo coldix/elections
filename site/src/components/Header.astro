@@ -140,7 +140,7 @@ const VIC = VIC2026;
 
     document.addEventListener("DOMContentLoaded", function () {
       if (!location.pathname.startsWith(VIC)) return;
-      var prefixes = ["assembly", "council", "districts", "regions", "parties", "policies", "polls", "open-seats", "voting"];
+      var prefixes = ["assembly", "council", "districts", "regions", "parties", "policies", "polls", "open-seats", "marginal-seats", "voting"];
       document.querySelectorAll("a[href]").forEach(function (a) {
         var href = a.getAttribute("href");
         if (!href) return;

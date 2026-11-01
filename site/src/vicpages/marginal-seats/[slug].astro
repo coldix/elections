@@ -1,0 +1,163 @@
+---
+import Base from "../../layouts/Base.astro";
+import SourceLink from "../../components/SourceLink.astro";
+import DistrictResult2022 from "../../components/DistrictResult2022.astro";
+import { loadElection, LIVE_STATUSES, STATUS_LABELS } from "../../../../scripts/lib/data.mjs";
+import { loadPolls, computePollAverage } from "../../../../scripts/lib/polls.mjs";
+import { loadDistrictResults2022, partyResultLabel } from "../../../../scripts/lib/district-results.mjs";
+import { SITE, partyColour, formatDate } from "../../lib/site.mjs";
+import { marginalSeats, MARGINAL_THRESHOLD_PP } from "../../lib/marginals.mjs";
+
+export async function getStaticPaths() {
+  return marginalSeats().map(({ district }) => ({
+    params: { slug: district.slug },
+    props: { slug: district.slug },
+  }));
+}
+
+const data = loadElection("vic2026");
+const seats = marginalSeats();
+const rank = seats.findIndex((s) => s.district.slug === Astro.props.slug);
+const { district, result } = seats[rank];
+const region = data.regions.find((r) => r.slug === district.region);
+const statewide = loadDistrictResults2022("vic2026")?.statewide;
+const pollAverage = computePollAverage(loadPolls("vic2026"));
+const tcp = result.two_candidate_preferred;
+const partyName = (slug) => data.partyBySlug.get(slug)?.short_name ?? partyResultLabel(slug);
+const live = district.candidates
+  .filter((c) => LIVE_STATUSES.includes(c.status))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: `${district.name}: marginal seat, 2026 Victorian state election`,
+  url: `${SITE.url}/marginal-seats/${district.slug}`,
+  isPartOf: { "@type": "WebSite", name: SITE.name, url: SITE.url },
+  about: { "@type": "AdministrativeArea", name: `Electoral district of ${district.name}, Victoria` },
+};
+---
+
+<Base
+  title={`${district.name}: marginal seat`}
+  description={`${district.name} was decided by ${tcp.margin_pp.toFixed(2)} points in 2022. Sitting member ${district.incumbent}, 2022 result and sourced 2026 candidates for the Victorian state election.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Assembly", href: "/assembly" },
+    { name: "Marginal seats", href: "/marginal-seats" },
+    { name: district.name, href: `/marginal-seats/${district.slug}` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/assembly">Assembly</a> <span aria-hidden="true">/</span>
+      <a href="/marginal-seats">Marginal seats</a> <span aria-hidden="true">/</span>
+      <span aria-current="page">{district.name}</span>
+    </nav>
+    <p class="eyebrow">Marginal seat {rank + 1} of {seats.length}</p>
+    <h1>{district.name}</h1>
+    <p class="lede">
+      {tcp.winner.name} ({partyName(tcp.winner.party)}) won {district.name} in 2022 with
+      {" "}{tcp.winner.pct.toFixed(2)}% of the two-candidate preferred vote against
+      {" "}{tcp.runner_up.name} ({partyName(tcp.runner_up.party)}), a margin of
+      {" "}<strong>{tcp.margin_pp.toFixed(2)} points</strong>. That puts it under the
+      {" "}{MARGINAL_THRESHOLD_PP}-point marginal line.
+    </p>
+
+    <dl class="facts">
+      <div><dt>2022 margin</dt><dd class="mono">{tcp.margin_pp.toFixed(2)} pts</dd></div>
+      <div>
+        <dt>Sitting member</dt>
+        <dd>
+          <span class="swatch" style={`--party-colour:${partyColour(district.incumbent_party)}`} aria-hidden="true"></span>
+          {district.incumbent} <span class="muted">({partyName(district.incumbent_party)})</span>
+        </dd>
+      </div>
+      <div><dt>Council region</dt><dd>{region ? <a href={`/regions/${region.slug}`}>{region.name}</a> : "Not recorded"}</dd></div>
+      <div><dt>2026 candidates recorded</dt><dd>{live.length}</dd></div>
+    </dl>
+
+    {
+      district.retirements.length > 0 && (
+        <div class="notice" role="note">
+          {district.retirements.map((r) => (
+            <p style="margin:0">
+              <strong>{r.name} is not recontesting.</strong> Announced {formatDate(r.announced)}.{" "}
+              <SourceLink source={r.source} />
+            </p>
+          ))}
+        </div>
+      )
+    }
+
+    <DistrictResult2022
+      result={result}
+      incumbentName={district.incumbent}
+      pollAverage={pollAverage}
+      statewide={statewide}
+    />
+
+    <h2 class="sh">Polling context</h2>
+    <p>
+      We have no published seat-level poll for {district.name} on record. The comparison
+      above uses the site's statewide polling average, which can't tell you how one seat
+      will vote. <a href="/polls">See all Victorian polls</a>.
+    </p>
+
+    <h2 class="sh">Declared and recorded candidates</h2>
+    {
+      live.length === 0 ? (
+        <p class="empty card">
+          No sourced 2026 candidacy is recorded for {district.name} yet. That means we haven't
+          verified one, not that nobody is standing.{" "}
+          <a href={SITE.issues}>Tip a public source</a>
+        </p>
+      ) : (
+        <ul class="cand-list" role="list">
+          {live.map((c) => {
+            const latest = c.history[c.history.length - 1];
+            return (
+              <li class="card cand">
+                <h3>{c.name}</h3>
+                <p class="cand-party">
+                  <span class="swatch" style={`--party-colour:${partyColour(c.party)}`} aria-hidden="true" />
+                  <a href={`/parties/${c.party}`}>{partyName(c.party)}</a>
+                  {" "}<span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
+                </p>
+                {latest?.source && (
+                  <p class="muted small">
+                    {formatDate(latest.date)}: <SourceLink source={latest.source} />
+                  </p>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )
+    }
+    <p class="muted">
+      Full candidate histories and sources are on the{" "}
+      <a href={`/districts/${district.slug}`}>{district.name} district page</a>. The VEC
+      publishes the official list of nominated candidates.
+    </p>
+
+    <p class="btn-row">
+      <a class="btn" href="/marginal-seats">All marginal seats</a>
+      <a class="btn btn-ghost" href={`/districts/${district.slug}`}>{district.name} district page</a>
+      <a class="btn btn-ghost" href="/voting">How to vote</a>
+    </p>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; margin-bottom: 1rem; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .facts dt { font-size: 0.8rem; color: var(--ink-2); }
+  .facts dd { margin: 0.2rem 0 0; font-weight: 600; }
+  .notice { margin: 1rem 0; }
+  .sh { margin-top: 2.5rem; }
+  .cand-list { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); padding: 0; list-style: none; }
+  .cand h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
+  .cand p { margin: 0.2rem 0; }
+  .small { font-size: 0.85rem; }
+</style>

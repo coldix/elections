@@ -1,0 +1,124 @@
+---
+import Base from "../../layouts/Base.astro";
+import SourceLink from "../../components/SourceLink.astro";
+import { loadElection, LIVE_STATUSES } from "../../../../scripts/lib/data.mjs";
+import { partyResultLabel } from "../../../../scripts/lib/district-results.mjs";
+import { SITE, partyColour } from "../../lib/site.mjs";
+import { marginalSeats, MARGINAL_THRESHOLD_PP } from "../../lib/marginals.mjs";
+
+const data = loadElection("vic2026");
+const seats = marginalSeats();
+const partyName = (slug) => data.partyBySlug.get(slug)?.short_name ?? partyResultLabel(slug);
+const liveCount = (d) => d.candidates.filter((c) => LIVE_STATUSES.includes(c.status)).length;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Marginal seats: 2026 Victorian state election",
+  url: `${SITE.url}/marginal-seats`,
+  isPartOf: { "@type": "WebSite", name: SITE.name, url: SITE.url },
+};
+---
+
+<Base
+  title="Marginal seats, Victoria 2026"
+  description={`The ${seats.length} Victorian Legislative Assembly seats won by less than ${MARGINAL_THRESHOLD_PP} points at the 2022 election, with sitting members, 2022 margins and sourced 2026 candidates.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Assembly", href: "/assembly" },
+    { name: "Marginal seats", href: "/marginal-seats" },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/assembly">Assembly</a> <span aria-hidden="true">/</span>
+      <span aria-current="page">Marginal seats</span>
+    </nav>
+    <p class="eyebrow">Victoria 2026 · Lower house</p>
+    <h1>Marginal seats</h1>
+    <p class="lede">
+      These are the <strong>{seats.length} Assembly districts</strong> where the winner's
+      two-candidate preferred (2CP) margin at the 2022 election was under
+      <strong>{MARGINAL_THRESHOLD_PP} points</strong>, the usual cut-off for a marginal seat
+      on an electoral pendulum. Margins come from the official VEC district results, on the
+      same boundaries used in 2026.
+    </p>
+    <div class="notice" role="note">
+      <strong>A 2022 margin is history, not a prediction.</strong> By-elections, retirements,
+      new candidates and a very different polling picture (One Nation and others are polling
+      far above their 2022 vote) mean a seat's 2026 contest can look nothing like its last
+      result. In some seats the 2022 final two was not Labor against the Coalition, so the
+      margin shown is against a Greens or independent runner-up. This page does not forecast
+      winners.
+    </div>
+
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">Marginal seats ordered by 2022 margin</caption>
+        <thead>
+          <tr>
+            <th scope="col">District</th>
+            <th scope="col">Sitting member</th>
+            <th scope="col">2022 final two</th>
+            <th scope="col" class="num">2022 margin</th>
+            <th scope="col" class="num">2026 candidates recorded</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            seats.map(({ district: d, result: r }) => {
+              const t = r.two_candidate_preferred;
+              return (
+                <tr>
+                  <th scope="row">
+                    <a href={`/marginal-seats/${d.slug}`}>{d.name}</a>
+                  </th>
+                  <td>
+                    <span class="swatch" style={`--party-colour:${partyColour(d.incumbent_party)}`} aria-hidden="true"></span>
+                    {d.incumbent} <span class="muted">({partyName(d.incumbent_party)})</span>
+                  </td>
+                  <td>
+                    {partyName(t.winner.party)} v {partyName(t.runner_up.party)}
+                  </td>
+                  <td class="num mono">{t.margin_pp.toFixed(2)}</td>
+                  <td class="num">{liveCount(d)}</td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="sh">How the list is built</h2>
+    <p>
+      For each district we take the 2022 2CP result and subtract 50 from the winner's share.
+      Seats under {MARGINAL_THRESHOLD_PP} points are listed. The figures are on each seat page
+      with a link to the VEC district result, for example{" "}
+      <SourceLink source={seats[0].result.source} />. Statewide 2022 results:{" "}
+      <a href="https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results" rel="noopener">VEC 2022 state election results</a>.
+    </p>
+    <p>
+      Where a seat changed hands or members at a by-election after 2022, the seat page says
+      so. The 2022 margin is still shown because it is the last general election result on
+      these boundaries.
+    </p>
+    <p class="btn-row">
+      <a class="btn" href="/assembly">All 88 districts</a>
+      <a class="btn btn-ghost" href="/open-seats">Open seats</a>
+      <a class="btn btn-ghost" href="/polls">Polls</a>
+      <a class="btn btn-ghost" href="/voting">How to vote</a>
+    </p>
+    <p class="foot-note muted">
+      Spotted an error? <a href={SITE.issues}>Submit a correction</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; margin-bottom: 1rem; }
+  .notice { margin: 1.25rem 0 1.5rem; }
+  .num { text-align: right; }
+  .sh { margin-top: 2.5rem; }
+  .foot-note { margin-top: 2rem; }
+</style>
