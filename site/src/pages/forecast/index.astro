@@ -189,3 +189,26 @@ const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" 
   .small { font-size: 0.85rem; }
   .muted { color: var(--ink-3); }
 </style>
+<style is:global>
+  .hc { margin: 1.5rem 0; }
+  .hc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; text-align: center; }
+  .hc-stat { display: flex; flex-direction: column; align-items: center; padding: 0.5rem; border-top: 5px solid; }
+  .hc-left { border-color: #c8434a; } .hc-mid { border-color: #cbbd92; } .hc-right { border-color: #2f5d9e; }
+  .hc-num { font-size: clamp(1.8rem, 6vw, 2.8rem); font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+  .hc-lab { font-size: 0.85rem; font-weight: 600; }
+  .hc-lab small { font-weight: 400; color: var(--ink-3); }
+  .hc-fig { margin: 0.5rem 0; }
+  .hc-svg { width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; }
+  .hc-seat circle { transition: transform 0.1s; transform-box: fill-box; transform-origin: center; }
+  .hc-seat:hover circle, .hc-seat:focus circle { transform: scale(1.3); stroke: #111; stroke-width: 2; }
+  .hc-maj { stroke: #111; stroke-width: 2; stroke-dasharray: 5 4; }
+  .hc-maj-t { font-size: 13px; font-weight: 700; fill: #111; }
+  .hc-big { font-size: 44px; font-weight: 800; fill: #111; }
+  .hc-sub { font-size: 13px; fill: #555; }
+  .hc-bar { position: relative; display: flex; height: 14px; border-radius: 7px; overflow: hidden; max-width: 640px; margin: 0.5rem auto; }
+  .hc-bar-seg.l { background: #c8434a; } .hc-bar-seg.m { background: #ddd3b6; } .hc-bar-seg.r { background: #2f5d9e; }
+  .hc-bar-maj { position: absolute; top: 0; bottom: 0; width: 2px; background: #111; }
+  .hc-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem 2rem; }
+  .hc-doubt { columns: 2 11rem; padding-left: 1.4rem; }
+  .hc-doubt li { break-inside: avoid; }
+</style>
