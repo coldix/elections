@@ -130,7 +130,7 @@ export function renderHemicycle(mp) {
   const ordered = [...byGroup.entries()].flatMap(([g, list]) => list.map((s) => ({ s, g })));
   const n = ordered.length;
   const pts = hemicyclePoints(n);
-  const W = 600, R = 270, cx = 300, cy = 292, dot = 11.5;
+  const W = 600, R = 270, cx = 300, cy = 322, dot = 11.5;
   const count = (k) => (byGroup.get(k) || []).length;
   const party = (p) => count(`${p}-firm`) + count(`${p}-leaning`);
   const left = party("alp") + party("grn");
@@ -161,7 +161,7 @@ export function renderHemicycle(mp) {
     <div class="hc-stat hc-right"><span class="hc-num">${right}</span><span class="hc-lab">Right bloc<br><small>Coalition ${party("lnp")} · One Nation ${party("onp")}</small></span></div>
   </div>
   <figure class="hc-fig">
-    <svg viewBox="0 0 ${W} 310" role="img" aria-labelledby="hc-t hc-d" class="hc-svg">
+    <svg viewBox="0 0 ${W} 340" role="img" aria-labelledby="hc-t hc-d" class="hc-svg">
       <title id="hc-t">Projected Victorian Legislative Assembly, ${n} seats</title>
       <desc id="hc-d">Left bloc ${left} seats, right bloc ${right}, ${doubt} in doubt, ${other} not modelled. ${MAJORITY} seats are needed to govern. The table below lists the same numbers.</desc>
       <defs>
@@ -169,8 +169,8 @@ export function renderHemicycle(mp) {
         <pattern id="hc-indc" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="6" height="6" fill="#f0f0f0"/><rect width="3" height="6" fill="#bcd9c1"/></pattern>
       </defs>
       ${dots}
-      <line x1="${cx}" y1="${cy - R - 16}" x2="${cx}" y2="${cy - 0.42 * R + 16}" class="hc-maj"/>
-      <text x="${cx}" y="${cy - R - 20}" text-anchor="middle" class="hc-maj-t">${MAJORITY} to govern</text>
+      <line x1="${cx}" y1="${cy - R - 18}" x2="${cx}" y2="${cy - 0.42 * R + 16}" class="hc-maj"/>
+      <text x="${cx}" y="${cy - R - 24}" text-anchor="middle" class="hc-maj-t">${MAJORITY} to govern</text>
       <text x="${cx}" y="${cy - 30}" text-anchor="middle" class="hc-big">${leader}</text>
       <text x="${cx}" y="${cy - 8}" text-anchor="middle" class="hc-sub">largest party</text>
     </svg>
