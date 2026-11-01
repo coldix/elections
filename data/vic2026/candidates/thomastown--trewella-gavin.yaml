@@ -1,0 +1,19 @@
+candidate:
+  name: "Gavin Trewella"
+  party: greens
+  contest: thomastown
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-02
+      source:
+        url: "https://greens.org.au/vic/person/gavin-trewella"
+        title: "Gavin Trewella, Candidate for Thomastown"
+        publisher: "Victorian Greens"
+        accessed: 2026-11-02
+      note: >-
+        Victorian Greens candidate page lists Gavin Trewella as the Greens candidate for Thomastown. Page carries no publication date; status dated to when verified on the party site.
+  links:
+    - url: "https://greens.org.au/vic/person/gavin-trewella"
+      kind: party-profile

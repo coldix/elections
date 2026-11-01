@@ -3,7 +3,7 @@ candidate:
   party: one-nation
   contest: melbourne
   chamber: assembly
-  status: endorsed
+  status: withdrawn
   occupation: "Sales, local small business"
   history:
     - status: endorsed
@@ -17,6 +17,20 @@ candidate:
         Party candidate page lists Matthew as One Nation's candidate for
         Melbourne. Page carries no publication date; status dated to when
         verified on the party site.
+    - status: withdrawn
+      date: 2026-10-31
+      source:
+        url: https://www.abc.net.au/news/2026-11-01/one-nation-melbourne-candidate-matthew-collins-steps-down/107333132
+        title: "One Nation Melbourne candidate Matthew Collins steps down, apologises for past 'unacceptable' comments"
+        publisher: ABC News
+        published: 2026-11-01
+        accessed: 2026-11-02
+      note: >-
+        A One Nation spokesperson said the party accepted his resignation from
+        candidacy after offensive past social media comments came to light; he
+        acknowledged the comments were offensive and unacceptable. The party
+        had not named a replacement. His party page no longer resolves as of
+        2 November 2026.
   links:
     - url: https://vic.onenation.org.au/matthew-collins
       kind: party-profile

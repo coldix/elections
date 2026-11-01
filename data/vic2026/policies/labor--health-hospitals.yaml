@@ -106,6 +106,20 @@ policy:
         published: 2026-08-22
         accessed: 2026-10-05
 
+    - id: labor-health-free-dental-2026-10
+      statement: >-
+        A re-elected Carroll Labor Government says it will double its free dental clinic pledge
+        to 20 walk-in clinics (14 in Melbourne, six in regional Victoria) opening from July 2027,
+        a $230 million investment, plus $20,000 (metropolitan) or $30,000 (regional) sign-on
+        bonuses for public dentists. Expands the August 2026 pledge of 10 clinics.
+      kind: pledge
+      source:
+        url: https://www.viclabor.org.au/news/labor-will-deliver-20-new-dental-clinics
+        publisher: Victorian Labor
+        title: 20 New Dental Clinics
+        published: 2026-10-31
+        accessed: 2026-11-02
+
     - id: labor-health-free-abortion-2026-10
       statement: >-
         A re-elected Carroll Labor Government says it will eliminate out-of-pocket costs for medical and surgical abortion care under 16 weeks' gestation at participating providers (no consultation, imaging, testing or medication fees), extend the medical abortion window to 10 weeks, and widen Victorian Patient Travel Assistance Scheme eligibility.

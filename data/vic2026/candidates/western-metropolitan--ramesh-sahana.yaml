@@ -1,0 +1,19 @@
+candidate:
+  name: "Sahana Ramesh"
+  party: west-party
+  contest: western-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-02
+      source:
+        url: "https://thewestparty.org.au/local-representation/"
+        title: "Local Representation - The West Party"
+        publisher: "The West Party"
+        accessed: 2026-11-02
+      note: >-
+        The West Party candidates page lists Sahana Ramesh as an upper house candidate for Western Metropolitan Region. Ticket position not published. Page carries no publication date; status dated to when verified.
+  links:
+    - url: "https://thewestparty.org.au/local-representation/"
+      kind: party

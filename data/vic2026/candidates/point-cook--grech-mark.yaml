@@ -1,0 +1,19 @@
+candidate:
+  name: "Mark Grech"
+  party: west-party
+  contest: point-cook
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-02
+      source:
+        url: "https://thewestparty.org.au/local-representation/markgrech/"
+        title: "Mark Grech - The West Party for Point Cook"
+        publisher: "The West Party"
+        accessed: 2026-11-02
+      note: >-
+        The West Party candidate page lists Mark Grech as its candidate for Point Cook. Page carries no publication date; status dated to when verified.
+  links:
+    - url: "https://thewestparty.org.au/local-representation/markgrech/"
+      kind: party-profile

@@ -1,0 +1,19 @@
+candidate:
+  name: "Bruce Lancashire"
+  party: west-party
+  contest: sydenham
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-02
+      source:
+        url: "https://thewestparty.org.au/local-representation/"
+        title: "Local Representation - The West Party"
+        publisher: "The West Party"
+        accessed: 2026-11-02
+      note: >-
+        The West Party candidates page lists Bruce Lancashire for Sydenham (his individual profile link did not resolve on 2 November 2026). Page carries no publication date; status dated to when verified.
+  links:
+    - url: "https://thewestparty.org.au/local-representation/"
+      kind: party

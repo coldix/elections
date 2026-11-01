@@ -1,0 +1,19 @@
+candidate:
+  name: "Hayden Legro"
+  party: west-party
+  contest: melton
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-02
+      source:
+        url: "https://thewestparty.org.au/local-representation/haydenlegro/"
+        title: "Hayden Legro - The West Party for Melton"
+        publisher: "The West Party"
+        accessed: 2026-11-02
+      note: >-
+        The West Party candidate page lists Hayden Legro as its candidate for Melton. Page carries no publication date; status dated to when verified.
+  links:
+    - url: "https://thewestparty.org.au/local-representation/haydenlegro/"
+      kind: party-profile

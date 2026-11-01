@@ -1,0 +1,19 @@
+candidate:
+  name: "Joe Garra"
+  party: west-party
+  contest: western-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-02
+      source:
+        url: "https://thewestparty.org.au/local-representation/joegarra/"
+        title: "Dr Joe Garra - The West Party for Western Metropolitan Region"
+        publisher: "The West Party"
+        accessed: 2026-11-02
+      note: >-
+        The West Party candidate page lists Dr Joe Garra as an upper house candidate for Western Metropolitan Region. Ticket position not published. Page carries no publication date; status dated to when verified.
+  links:
+    - url: "https://thewestparty.org.au/local-representation/joegarra/"
+      kind: party-profile

@@ -1,0 +1,19 @@
+candidate:
+  name: "Kim Robbins"
+  party: independent
+  contest: nepean
+  chamber: assembly
+  status: announced
+  history:
+    - status: announced
+      date: 2026-11-02
+      source:
+        url: "https://www.kimrobbins.com.au/"
+        title: "Kim Robbins | Independent for Nepean, 2026"
+        publisher: "Kim Robbins campaign"
+        accessed: 2026-11-02
+      note: >-
+        Candidate's own campaign site presents Kim Robbins as an independent for Nepean at the 28 November 2026 election. Page carries no publication date; status dated to when verified.
+  links:
+    - url: "https://www.kimrobbins.com.au/"
+      kind: campaign-site

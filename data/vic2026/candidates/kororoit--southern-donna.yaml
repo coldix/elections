@@ -1,0 +1,19 @@
+candidate:
+  name: "Donna Southern"
+  party: west-party
+  contest: kororoit
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-02
+      source:
+        url: "https://thewestparty.org.au/local-representation/donnasouthern/"
+        title: "Donna Southern - The West Party for Kororoit"
+        publisher: "The West Party"
+        accessed: 2026-11-02
+      note: >-
+        The West Party candidate page lists Donna Southern as its candidate for Kororoit. The party is not yet registered, so she may appear on the ballot without a party name. Page carries no publication date; status dated to when verified.
+  links:
+    - url: "https://thewestparty.org.au/local-representation/donnasouthern/"
+      kind: party-profile

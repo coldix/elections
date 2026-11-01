@@ -1,0 +1,19 @@
+candidate:
+  name: "Brett Patrikeos"
+  party: west-party
+  contest: niddrie
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-02
+      source:
+        url: "https://thewestparty.org.au/local-representation/brettpatrikeos/"
+        title: "Brett Patrikeos - The West Party for Niddrie"
+        publisher: "The West Party"
+        accessed: 2026-11-02
+      note: >-
+        The West Party candidates page lists Brett Patrikeos for Niddrie, where the ledger previously recorded Elisabetta Celata for the party (her page no longer resolves). No statement on Celata's candidacy has been found, so her status is unchanged pending a source. Page carries no publication date; status dated to when verified.
+  links:
+    - url: "https://thewestparty.org.au/local-representation/brettpatrikeos/"
+      kind: party-profile
