@@ -1,0 +1,31 @@
+id: roy-morgan-2026-10
+pollster: roy-morgan
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-10-26
+fieldwork_end: 2026-10-29
+sample_size: 3610
+design_effect: null
+mode: sms
+population: victorian-electors
+question_notes: "Special SMS Roy Morgan survey of Victorian state voting intention (Finding 10373), Victoria-wide cross-section of 3,610 electors, 26–29 Oct 2026. Others = independents (7.5) + other parties (6). Respondent 2PP L-NP 56–44 ALP; ALP 54.5–45.5 ONP; L-NP 74 v ONP not encoded. The release also tabulates an earlier 8–9 Oct SMS wave (L-NP 26, ALP 22.5, ONP 25, GRN 14, IND 7, Oth 5.5) but publishes no sample size for it, so that wave is not ledgered (sample_size required). Supersedes roy-morgan-2026-08 via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 22.5
+  lnp: 29.5
+  onp: 22
+  grn: 12.5
+  others: 13.5
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10373-victorian-state-voting-intention-october-2026
+    publisher: Roy Morgan Research
+    title: "Victorian State Voting Intention: Liberal-National Coalition opens a significant lead one month before the Victorian State Election"
+    published: 2026-10-30
+    accessed: 2026-11-02
+  - url: https://roymorgan-cms-prod.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2026/10/30060517/10373-Victorian-State-Voting-Intention-October-2026-1.pdf
+    publisher: Roy Morgan Research
+    title: Victorian State Voting Intention October 2026 (PDF)
+    published: 2026-10-30
+    accessed: 2026-11-02

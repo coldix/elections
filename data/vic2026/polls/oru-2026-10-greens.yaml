@@ -1,0 +1,36 @@
+id: oru-2026-10-greens
+pollster: online-research-unit
+commissioner: victorian-greens
+commissioner_type: party
+fieldwork_start: 2026-10-14
+fieldwork_end: 2026-10-26
+sample_size: 1488
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: >-
+  Internal Victorian Greens poll by the Online Research Unit, shared with
+  Guardian Australia; fieldwork 14–26 October 2026, effective sample 1,488,
+  MoE ±3%. Guardian reports L-NP 32, ALP 25, GRN 15, ONP 14 and 2PP L-NP 54–46.
+  Others residual after ALP+LNP+GRN+ONP (14). Party-commissioned — ledgered for
+  transparency, out of the average.
+primaries:
+  alp: 25
+  lnp: 32
+  onp: 14
+  grn: 15
+  others: 14
+undecided_handling: not-stated
+eligible_for_average: false
+exclusion_reason: >-
+  Party-commissioned internal poll (Victorian Greens). Party / union / advocacy
+  polls are excluded from the tracker average by default under
+  docs/poll-methodology.md; no eligibility_exception applied. Online Research
+  Unit is not on the Victorian media/self allowlist.
+eligibility_exception: null
+sources:
+  - url: https://www.theguardian.com/australia-news/2026/nov/01/is-one-nation-losing-steam-victoria-new-polling-greens-state-election-ntwnfb
+    publisher: The Guardian (Australia)
+    title: "Is One Nation losing steam in Victoria? New poll points to possible shift as election nears"
+    published: 2026-11-01
+    accessed: 2026-11-02

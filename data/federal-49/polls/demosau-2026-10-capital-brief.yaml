@@ -1,0 +1,41 @@
+id: demosau-2026-10-capital-brief
+pollster: DemosAU
+commissioner: capital-brief
+commissioner_type: media
+fieldwork_start: 2026-10-23
+fieldwork_end: 2026-10-26
+sample_size: 1500
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for Capital Brief / DemosAU, fieldwork 23–26 Oct 2026 via internet panels, n=1,500 (effective n 849, MoE ±3.4%; 6% undecided after leaner excluded from decided shares). Pollster-published primaries: ALP 26, L-NP 24, ONP 26, GRN 13, Others 11 (Coalition up four, Labor down two on September). MRP seat ranges not encoded. Supersedes demosau-2026-09-capital-brief in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 26
+  lnp: 24
+  onp: 26
+  grn: 13
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://demosau.com/news/labor-one-nation-tied-on-primary-votes-while-coalition-vote-climbs-new-poll/
+    publisher: DemosAU
+    title: "Labor, One Nation tied on primary votes while Coalition vote climbs — new poll"
+    published: 2026-11-01
+    accessed: 2026-11-02
+  - url: https://demosau.com/wp-content/uploads/DemosAU/capital-brief-poll-trends-2026.html
+    publisher: DemosAU
+    title: "Capital Brief / DemosAU National Poll: Trends, January–October 2026 (October wave: 23–26 Oct, n=1,500)"
+    published: 2026-11-01
+    accessed: 2026-11-02
+  - url: https://www.capitalbrief.com/article/coalition-gets-crucial-polling-boost-ahead-of-bruising-week-for-labor-1cdc69fb-9d9a-4995-9640-6f8e3304cb8c/
+    publisher: Capital Brief
+    title: Coalition gets crucial polling boost ahead of bruising week for Labor
+    published: 2026-11-01
+    accessed: 2026-11-02
+  - url: https://www.pollbludger.net/2026/11/01/newspoll-labor-27-one-nation-28-coalition-21-open-thread/
+    publisher: The Poll Bludger
+    title: "Federal polls: Newspoll and DemosAU (open thread)"
+    published: 2026-11-01
+    accessed: 2026-11-02

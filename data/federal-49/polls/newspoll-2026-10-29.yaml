@@ -1,0 +1,36 @@
+id: newspoll-2026-10-29
+pollster: "Newspoll / Pyxis"
+commissioner: the-australian
+commissioner_type: media
+fieldwork_start: 2026-10-26
+fieldwork_end: 2026-10-29
+sample_size: 1200
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for The Australian (Newspoll / Pyxis), published 1–2 Nov 2026. Poll Bludger: 'conducted Monday to Thursday from a sample of 1200' (26–29 Oct); Wikipedia row (discovery) agrees. Labor down two to 27, One Nation steady 28, Coalition up one to 21, Greens down one to 13 (AAP confirms 27/28/21). Others residual after ALP+LNP+GRN+ONP (11). Supersedes newspoll-2026-10-08 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 27
+  lnp: 21
+  onp: 28
+  grn: 13
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theaustralian.com.au/nation/politics/newspoll-labor-slumps-as-voters-mark-down-jim-chalmers/news-story/7b4064ac2f0cb1bb1944e6409216eae9
+    publisher: The Australian
+    title: "Newspoll: Labor slumps as voters mark down Jim Chalmers"
+    published: 2026-11-01
+    accessed: 2026-11-02
+  - url: https://www.pollbludger.net/2026/11/01/newspoll-labor-27-one-nation-28-coalition-21-open-thread/
+    publisher: The Poll Bludger
+    title: "Federal polls: Newspoll and DemosAU (open thread)"
+    published: 2026-11-01
+    accessed: 2026-11-02
+  - url: https://aapnews.aap.com.au/news/pm-in-caribbean-as-rate-pain-and-poll-woes-mount
+    publisher: AAP
+    title: PM in Caribbean as rate pain and poll woes mount
+    published: 2026-11-02
+    accessed: 2026-11-02
