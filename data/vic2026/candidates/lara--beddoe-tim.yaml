@@ -1,0 +1,21 @@
+candidate:
+  name: Tim Beddoe
+  party: liberal
+  contest: lara
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-03
+      source:
+        url: "https://vicliberal.org.au/team/tim-beddoe"
+        title: "Tim Beddoe - Liberal for Lara"
+        publisher: vicliberal.org.au
+        accessed: 2026-11-03
+      note: >-
+        Liberal Victoria team page lists Tim Beddoe as "Liberal for Lara" and
+        he is the only Lara entry on the party's Our Team page. Page carries no
+        publication date; status dated to when verified.
+  links:
+    - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
+      kind: wikipedia
