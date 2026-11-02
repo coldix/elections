@@ -120,17 +120,6 @@ parties:
         accessed: 2026-07-29
   - slug: west-party
     name: The West Party
-    short_name: The West Party
-    registered: false
+    short_name: West
+    registered: true
     family: null
-    registration:
-      status: application received by the VEC 11 June 2026
-      note: >-
-        Registration applied for but not yet granted. Until it is, candidates
-        appear on the ballot without a party name.
-      source:
-        url: https://wyndham.starweekly.com.au/news/the-west-party-applies-for-registration/
-        title: The West Party applies for registration
-        publisher: Star Weekly (Wyndham)
-        published: 2026-06-11
-        accessed: 2026-07-29

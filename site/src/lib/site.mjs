@@ -139,7 +139,7 @@ export const PARTY_COLOURS = {
   "new-democrats": "#3D6B99",
   "freedom-party": "#7A5C99",
   "socialist-alliance": "#D0342C",
-  "west-party": "#8C6A3F",
+  "west-party": "#00BF6F",
   independent: "#6E6E7A",
 };
 
