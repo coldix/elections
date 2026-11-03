@@ -49,6 +49,7 @@ page (historical facts, not a 2026 forecast). Open data: `/data/vic2026/`.
 /poll-tracker/voter-groups
 /forecast
 /forecast/methodology
+/forecast/council
 ```
 
 `/poll-tracker` is a dated feed with one entry per poll across the state and
@@ -62,6 +63,15 @@ sourced data. It applies a uniform swing to each party's 2022 VEC district
 primaries, with a One Nation, Greens and independents layer, an editor-set One
 Nation baseline and interactive assumption sliders (PRs #58 to #61). Every
 assumption is written out on `/forecast/methodology`.
+
+Since 3 Nov 2026 every one of the 88 Assembly seats has a rating. Benambra,
+Melton, Mildura, Preston, Shepparton and Narracan are marked lower confidence,
+each with a note explaining why (PR #77). `/forecast/council` is the Legislative
+Council forecast (PR #78): 40 seats across eight regions, built from the VEC
+2022 upper house results in `data/vic2026/council-results-2022.yaml` plus the
+statewide poll swing, with three scenarios, a check against 2022 and a note on
+the abolition of group voting tickets. The model lives in
+`scripts/lib/council.mjs`. Like `/forecast`, it is our own labelled model.
 
 ### NSW 2027 (sitting members)
 
