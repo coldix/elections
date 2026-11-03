@@ -1,0 +1,21 @@
+candidate:
+  name: Julian Kelly
+  party: labor
+  contest: euroa
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-04
+      source:
+        url: https://www.viclabor.org.au/our-team/julian-kelly
+        publisher: Victorian Labor
+        title: "Julian Kelly | Labor Candidates"
+        accessed: 2026-11-04
+      note: >-
+        Official Victorian Labor candidates page lists "Candidate for
+        Euroa". Party does not publish a preselection date; 4 November
+        2026 is the date the official profile was verified for this ledger.
+  links:
+    - url: https://www.viclabor.org.au/our-team/julian-kelly
+      kind: party-profile

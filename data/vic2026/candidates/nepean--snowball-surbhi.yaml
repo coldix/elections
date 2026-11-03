@@ -1,0 +1,21 @@
+candidate:
+  name: Surbhi Snowball
+  party: labor
+  contest: nepean
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-04
+      source:
+        url: https://www.viclabor.org.au/our-team/surbhi-snowball
+        publisher: Victorian Labor
+        title: "Surbhi Snowball | Labor Candidates"
+        accessed: 2026-11-04
+      note: >-
+        Official Victorian Labor candidates page lists "Candidate for
+        Nepean". Party does not publish a preselection date; 4 November
+        2026 is the date the official profile was verified for this ledger.
+  links:
+    - url: https://www.viclabor.org.au/our-team/surbhi-snowball
+      kind: party-profile
