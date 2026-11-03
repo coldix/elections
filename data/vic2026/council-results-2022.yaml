@@ -1,0 +1,338 @@
+# 2022 Victorian Legislative Council first preferences by region, aggregated by group.
+# Source: VEC 'Votes Received' spreadsheet for each region (REGION TOTAL row; each group's
+# TOTAL column is its above-the-line votes plus its candidates' below-the-line votes).
+# Group totals plus ungrouped candidates sum exactly to VEC total formal votes (checked by
+# tests). Elected members: VEC region results page, 1st to 5th elected.
+# Party slugs: a 2022 party with no confirmed 2026 match in parties.yaml keeps its own
+# slug ending in -2022 (for example liberal-democrats-2022); we do not merge it.
+# 'Liberal / The Nationals' was a joint Coalition ticket in the three country regions.
+# Historical results only, not a forecast.
+election_day: 2022-11-26
+regions:
+  - slug: eastern-victoria
+    name: Eastern Victoria
+    formal: 473318
+    informal: 14948
+    total_votes: 488266
+    groups:
+      - { group: "A", party: victorian-socialists, name: "Victorian Socialists", votes: 2300, pct: 0.49 }
+      - { group: "B", party: justice-party-2022, name: "Derryn Hinch's Justice Party", votes: 9500, pct: 2.01 }
+      - { group: "C", party: liberal-nationals, name: "Liberal / The Nationals", votes: 172208, pct: 36.38 }
+      - { group: "D", party: angry-victorians-2022, name: "Angry Victorians Party", votes: 2280, pct: 0.48 }
+      - { group: "E", party: freedom-party, name: "Freedom Party of Victoria", votes: 8385, pct: 1.77 }
+      - { group: "F", party: reason-2022, name: "Fiona Patten's Reason Party", votes: 3498, pct: 0.74 }
+      - { group: "G", party: dlp, name: "Labour DLP", votes: 18117, pct: 3.83 }
+      - { group: "H", party: health-australia-2022, name: "Health Australia Party", votes: 1921, pct: 0.41 }
+      - { group: "I", party: new-democrats, name: "New Democrats", votes: 533, pct: 0.11 }
+      - { group: "J", party: one-nation, name: "Pauline Hanson's One Nation", votes: 16964, pct: 3.58 }
+      - { group: "K", party: family-first, name: "Family First Victoria", votes: 7634, pct: 1.61 }
+      - { group: "L", party: liberal-democrats-2022, name: "Liberal Democrats", votes: 12130, pct: 2.56 }
+      - { group: "M", party: greens, name: "Australian Greens", votes: 37795, pct: 7.99 }
+      - { group: "N", party: legalise-cannabis, name: "Legalise Cannabis Victoria", votes: 19654, pct: 4.15 }
+      - { group: "O", party: shooters-fishers-farmers, name: "Shooters, Fishers & Farmers Vic", votes: 14217, pct: 3.0 }
+      - { group: "P", party: united-australia-2022, name: "United Australia Party", votes: 3382, pct: 0.71 }
+      - { group: "Q", party: animal-justice, name: "Animal Justice Party", votes: 8413, pct: 1.78 }
+      - { group: "R", party: sustainable-australia, name: "Sustainable Australia Party – Stop Overdevelopment / Corruption", votes: 1772, pct: 0.37 }
+      - { group: "S", party: companions-and-pets-2022, name: "Companions and Pets Party", votes: 2251, pct: 0.48 }
+      - { group: "T", party: labor, name: "Australian Labor Party - Victorian Branch", votes: 125481, pct: 26.51 }
+      - { group: "U", party: transport-matters-2022, name: "Transport Matters", votes: 729, pct: 0.15 }
+      - { group: "V", party: sack-dan-andrews-2022, name: "Sack Dan Andrews Restore Democracy", votes: 3984, pct: 0.84 }
+      - { group: ungrouped, party: ungrouped, name: "Ungrouped: O'BRIEN, John", votes: 170, pct: 0.04 }
+    elected_2022:
+      - { order: 1, name: "HEATH, Renee", party: liberal }
+      - { order: 2, name: "McINTOSH, Tom", party: labor }
+      - { order: 3, name: "BATH, Melina", party: nationals }
+      - { order: 4, name: "SHING, Harriet", party: labor }
+      - { order: 5, name: "BOURMAN, Jeff", party: shooters-fishers-farmers }
+    source:
+      url: https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-region/eastern-victoria-region-results
+      spreadsheet: "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/State/Reports/Eastern Victoria Region-Votes Received.xls"
+      title: Eastern Victoria Region results, 2022 State election
+      publisher: Victorian Electoral Commission
+      accessed: 2026-11-03
+  - slug: north-eastern-metropolitan
+    name: North-Eastern Metropolitan
+    formal: 480878
+    informal: 13794
+    total_votes: 494672
+    groups:
+      - { group: "A", party: health-australia-2022, name: "Health Australia Party", votes: 3171, pct: 0.66 }
+      - { group: "B", party: dlp, name: "Labour DLP", votes: 25055, pct: 5.21 }
+      - { group: "C", party: new-democrats, name: "New Democrats", votes: 879, pct: 0.18 }
+      - { group: "D", party: liberal-democrats-2022, name: "Liberal Democrats", votes: 20379, pct: 4.24 }
+      - { group: "E", party: angry-victorians-2022, name: "Angry Victorians Party", votes: 1673, pct: 0.35 }
+      - { group: "F", party: shooters-fishers-farmers, name: "Shooters, Fishers & Farmers Vic", votes: 4401, pct: 0.92 }
+      - { group: "G", party: justice-party-2022, name: "Derryn Hinch's Justice Party", votes: 6759, pct: 1.41 }
+      - { group: "H", party: sack-dan-andrews-2022, name: "Sack Dan Andrews Restore Democracy", votes: 3236, pct: 0.67 }
+      - { group: "I", party: victorian-socialists, name: "Victorian Socialists", votes: 2585, pct: 0.54 }
+      - { group: "J", party: reason-2022, name: "Fiona Patten's Reason Party", votes: 4774, pct: 0.99 }
+      - { group: "K", party: companions-and-pets-2022, name: "Companions and Pets Party", votes: 1738, pct: 0.36 }
+      - { group: "L", party: one-nation, name: "Pauline Hanson's One Nation", votes: 6086, pct: 1.27 }
+      - { group: "M", party: animal-justice, name: "Animal Justice Party", votes: 6799, pct: 1.41 }
+      - { group: "N", party: legalise-cannabis, name: "Legalise Cannabis Victoria", votes: 15357, pct: 3.19 }
+      - { group: "O", party: labor, name: "Australian Labor Party - Victorian Branch", votes: 162183, pct: 33.73 }
+      - { group: "P", party: sustainable-australia, name: "Sustainable Australia Party – Stop Overdevelopment / Corruption", votes: 1875, pct: 0.39 }
+      - { group: "Q", party: liberal, name: "Liberal", votes: 145788, pct: 30.32 }
+      - { group: "R", party: greens, name: "Australian Greens", votes: 49934, pct: 10.38 }
+      - { group: "S", party: family-first, name: "Family First Victoria", votes: 10063, pct: 2.09 }
+      - { group: "T", party: transport-matters-2022, name: "Transport Matters", votes: 1023, pct: 0.21 }
+      - { group: "U", party: freedom-party, name: "Freedom Party of Victoria", votes: 4684, pct: 0.97 }
+      - { group: "V", party: united-australia-2022, name: "United Australia Party", votes: 2436, pct: 0.51 }
+    elected_2022:
+      - { order: 1, name: "LEANE, Shaun", party: labor }
+      - { order: 2, name: "BACH, Matthew", party: liberal }
+      - { order: 3, name: "TERPSTRA, Sonja", party: labor }
+      - { order: 4, name: "McGOWAN, Nick", party: liberal }
+      - { order: 5, name: "PUGLIELLI, Aiv", party: greens }
+    source:
+      url: https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-region/north-eastern-metropolitan-region-results
+      spreadsheet: "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/State/Reports/North-Eastern Metropolitan Region-Votes Received.xls"
+      title: North-Eastern Metropolitan Region results, 2022 State election
+      publisher: Victorian Electoral Commission
+      accessed: 2026-11-03
+  - slug: northern-metropolitan
+    name: Northern Metropolitan
+    formal: 452430
+    informal: 17223
+    total_votes: 469653
+    groups:
+      - { group: "A", party: family-first, name: "Family First Victoria", votes: 11646, pct: 2.57 }
+      - { group: "B", party: liberal, name: "Liberal", votes: 85359, pct: 18.87 }
+      - { group: "C", party: transport-matters-2022, name: "Transport Matters", votes: 1964, pct: 0.43 }
+      - { group: "D", party: new-democrats, name: "New Democrats", votes: 1456, pct: 0.32 }
+      - { group: "E", party: united-australia-2022, name: "United Australia Party", votes: 5601, pct: 1.24 }
+      - { group: "F", party: freedom-party, name: "Freedom Party of Victoria", votes: 4937, pct: 1.09 }
+      - { group: "G", party: liberal-democrats-2022, name: "Liberal Democrats", votes: 5612, pct: 1.24 }
+      - { group: "H", party: justice-party-2022, name: "Derryn Hinch's Justice Party", votes: 4773, pct: 1.05 }
+      - { group: "I", party: sustainable-australia, name: "Sustainable Australia Party – Stop Overdevelopment / Corruption", votes: 1480, pct: 0.33 }
+      - { group: "J", party: health-australia-2022, name: "Health Australia Party", votes: 1642, pct: 0.36 }
+      - { group: "K", party: companions-and-pets-2022, name: "Companions and Pets Party", votes: 1582, pct: 0.35 }
+      - { group: "L", party: dlp, name: "Labour DLP", votes: 21684, pct: 4.79 }
+      - { group: "M", party: animal-justice, name: "Animal Justice Party", votes: 6320, pct: 1.4 }
+      - { group: "N", party: greens, name: "Australian Greens", votes: 84127, pct: 18.59 }
+      - { group: "O", party: shooters-fishers-farmers, name: "Shooters, Fishers & Farmers Vic", votes: 3470, pct: 0.77 }
+      - { group: "P", party: labor, name: "Australian Labor Party - Victorian Branch", votes: 151062, pct: 33.39 }
+      - { group: "Q", party: angry-victorians-2022, name: "Angry Victorians Party", votes: 1186, pct: 0.26 }
+      - { group: "R", party: reason-2022, name: "Fiona Patten's Reason Party", votes: 16322, pct: 3.61 }
+      - { group: "S", party: sack-dan-andrews-2022, name: "Sack Dan Andrews Restore Democracy", votes: 2711, pct: 0.6 }
+      - { group: "T", party: legalise-cannabis, name: "Legalise Cannabis Victoria", votes: 13822, pct: 3.06 }
+      - { group: "U", party: one-nation, name: "Pauline Hanson's One Nation", votes: 4251, pct: 0.94 }
+      - { group: "V", party: victorian-socialists, name: "Victorian Socialists", votes: 21305, pct: 4.71 }
+      - { group: ungrouped, party: ungrouped, name: "Ungrouped: MANCELL, Colin John", votes: 118, pct: 0.03 }
+    elected_2022:
+      - { order: 1, name: "WATT, Sheena", party: labor }
+      - { order: 2, name: "MULHOLLAND, Evan", party: liberal }
+      - { order: 3, name: "RATNAM, Samantha", party: greens }
+      - { order: 4, name: "ERDOGAN, Enver", party: labor }
+      - { order: 5, name: "SOMYUREK, Adem", party: dlp }
+    source:
+      url: https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-region/northern-metropolitan-region-results
+      spreadsheet: "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/State/Reports/Northern Metropolitan Region-Votes Received.xls"
+      title: Northern Metropolitan Region results, 2022 State election
+      publisher: Victorian Electoral Commission
+      accessed: 2026-11-03
+  - slug: northern-victoria
+    name: Northern Victoria
+    formal: 464784
+    informal: 14734
+    total_votes: 479518
+    groups:
+      - { group: "A", party: health-australia-2022, name: "Health Australia Party", votes: 4835, pct: 1.04 }
+      - { group: "B", party: reason-2022, name: "Fiona Patten's Reason Party", votes: 3755, pct: 0.81 }
+      - { group: "C", party: shooters-fishers-farmers, name: "Shooters, Fishers & Farmers Vic", votes: 23715, pct: 5.1 }
+      - { group: "D", party: companions-and-pets-2022, name: "Companions and Pets Party", votes: 2861, pct: 0.62 }
+      - { group: "E", party: victorian-socialists, name: "Victorian Socialists", votes: 1893, pct: 0.41 }
+      - { group: "F", party: legalise-cannabis, name: "Legalise Cannabis Victoria", votes: 22103, pct: 4.76 }
+      - { group: "G", party: united-australia-2022, name: "United Australia Party", votes: 3620, pct: 0.78 }
+      - { group: "H", party: labor, name: "Australian Labor Party - Victorian Branch", votes: 134057, pct: 28.84 }
+      - { group: "I", party: liberal-nationals, name: "Liberal / The Nationals", votes: 162860, pct: 35.04 }
+      - { group: "J", party: liberal-democrats-2022, name: "Liberal Democrats", votes: 9249, pct: 1.99 }
+      - { group: "K", party: angry-victorians-2022, name: "Angry Victorians Party", votes: 2229, pct: 0.48 }
+      - { group: "L", party: justice-party-2022, name: "Derryn Hinch's Justice Party", votes: 9140, pct: 1.97 }
+      - { group: "M", party: sack-dan-andrews-2022, name: "Sack Dan Andrews Restore Democracy", votes: 4570, pct: 0.98 }
+      - { group: "N", party: greens, name: "Australian Greens", votes: 32399, pct: 6.97 }
+      - { group: "O", party: sustainable-australia, name: "Sustainable Australia Party – Stop Overdevelopment / Corruption", votes: 1599, pct: 0.34 }
+      - { group: "P", party: new-democrats, name: "New Democrats", votes: 576, pct: 0.12 }
+      - { group: "Q", party: transport-matters-2022, name: "Transport Matters", votes: 1368, pct: 0.29 }
+      - { group: "R", party: one-nation, name: "Pauline Hanson's One Nation", votes: 17306, pct: 3.72 }
+      - { group: "S", party: animal-justice, name: "Animal Justice Party", votes: 7239, pct: 1.56 }
+      - { group: "T", party: dlp, name: "Labour DLP", votes: 6842, pct: 1.47 }
+      - { group: "U", party: freedom-party, name: "Freedom Party of Victoria", votes: 4968, pct: 1.07 }
+      - { group: "V", party: family-first, name: "Family First Victoria", votes: 7600, pct: 1.64 }
+    elected_2022:
+      - { order: 1, name: "LOVELL, Wendy", party: liberal }
+      - { order: 2, name: "SYMES, Jaclyn", party: labor }
+      - { order: 3, name: "BROAD, Gaelle", party: nationals }
+      - { order: 4, name: "PURCELL, Georgie", party: animal-justice }
+      - { order: 5, name: "TYRRELL, Rikkie-Lee", party: one-nation }
+    source:
+      url: https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-region/northern-victoria-region-results
+      spreadsheet: "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/State/Reports/Northern Victoria Region-Votes Received.xls"
+      title: Northern Victoria Region results, 2022 State election
+      publisher: Victorian Electoral Commission
+      accessed: 2026-11-03
+  - slug: south-eastern-metropolitan
+    name: South-Eastern Metropolitan
+    formal: 469775
+    informal: 18076
+    total_votes: 487851
+    groups:
+      - { group: "A", party: legalise-cannabis, name: "Legalise Cannabis Victoria", votes: 24672, pct: 5.25 }
+      - { group: "B", party: health-australia-2022, name: "Health Australia Party", votes: 3461, pct: 0.74 }
+      - { group: "C", party: liberal-democrats-2022, name: "Liberal Democrats", votes: 16971, pct: 3.61 }
+      - { group: "D", party: one-nation, name: "Pauline Hanson's One Nation", votes: 8299, pct: 1.77 }
+      - { group: "E", party: justice-party-2022, name: "Derryn Hinch's Justice Party", votes: 9334, pct: 1.99 }
+      - { group: "F", party: victorian-socialists, name: "Victorian Socialists", votes: 1895, pct: 0.4 }
+      - { group: "G", party: sack-dan-andrews-2022, name: "Sack Dan Andrews Restore Democracy", votes: 4554, pct: 0.97 }
+      - { group: "H", party: greens, name: "Australian Greens", votes: 31577, pct: 6.72 }
+      - { group: "I", party: angry-victorians-2022, name: "Angry Victorians Party", votes: 1345, pct: 0.29 }
+      - { group: "J", party: new-democrats, name: "New Democrats", votes: 600, pct: 0.13 }
+      - { group: "K", party: transport-matters-2022, name: "Transport Matters", votes: 1380, pct: 0.29 }
+      - { group: "L", party: companions-and-pets-2022, name: "Companions and Pets Party", votes: 2425, pct: 0.52 }
+      - { group: "M", party: reason-2022, name: "Fiona Patten's Reason Party", votes: 2118, pct: 0.45 }
+      - { group: "N", party: labor, name: "Australian Labor Party - Victorian Branch", votes: 184810, pct: 39.34 }
+      - { group: "O", party: dlp, name: "Labour DLP", votes: 15399, pct: 3.28 }
+      - { group: "P", party: liberal, name: "Liberal", votes: 125762, pct: 26.77 }
+      - { group: "Q", party: freedom-party, name: "Freedom Party of Victoria", votes: 8306, pct: 1.77 }
+      - { group: "R", party: sustainable-australia, name: "Sustainable Australia Party – Stop Overdevelopment / Corruption", votes: 1512, pct: 0.32 }
+      - { group: "S", party: shooters-fishers-farmers, name: "Shooters, Fishers & Farmers Vic", votes: 4112, pct: 0.88 }
+      - { group: "T", party: animal-justice, name: "Animal Justice Party", votes: 6481, pct: 1.38 }
+      - { group: "U", party: united-australia-2022, name: "United Australia Party", votes: 5495, pct: 1.17 }
+      - { group: "V", party: family-first, name: "Family First Victoria", votes: 9025, pct: 1.92 }
+      - { group: ungrouped, party: ungrouped, name: "Ungrouped: SAYED, Mehdi", votes: 242, pct: 0.05 }
+    elected_2022:
+      - { order: 1, name: "TARLAMIS, Lee", party: labor }
+      - { order: 2, name: "HERMANS, Ann-Marie", party: liberal }
+      - { order: 3, name: "GALEA, Michael", party: labor }
+      - { order: 4, name: "PAYNE, Rachel", party: legalise-cannabis }
+      - { order: 5, name: "LIMBRICK, David", party: liberal-democrats-2022 }
+    source:
+      url: https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-region/south-eastern-metropolitan-region-results
+      spreadsheet: "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/State/Reports/South-Eastern Metropolitan Region-Votes Received.xls"
+      title: South-Eastern Metropolitan Region results, 2022 State election
+      publisher: Victorian Electoral Commission
+      accessed: 2026-11-03
+  - slug: southern-metropolitan
+    name: Southern Metropolitan
+    formal: 469853
+    informal: 9702
+    total_votes: 479555
+    groups:
+      - { group: "A", party: sustainable-australia, name: "Sustainable Australia Party – Stop Overdevelopment / Corruption", votes: 5170, pct: 1.1 }
+      - { group: "B", party: new-democrats, name: "New Democrats", votes: 688, pct: 0.15 }
+      - { group: "C", party: freedom-party, name: "Freedom Party of Victoria", votes: 2810, pct: 0.6 }
+      - { group: "D", party: transport-matters-2022, name: "Transport Matters", votes: 1480, pct: 0.31 }
+      - { group: "E", party: health-australia-2022, name: "Health Australia Party", votes: 1935, pct: 0.41 }
+      - { group: "F", party: sack-dan-andrews-2022, name: "Sack Dan Andrews Restore Democracy", votes: 3542, pct: 0.75 }
+      - { group: "G", party: legalise-cannabis, name: "Legalise Cannabis Victoria", votes: 13681, pct: 2.91 }
+      - { group: "H", party: companions-and-pets-2022, name: "Companions and Pets Party", votes: 1257, pct: 0.27 }
+      - { group: "I", party: one-nation, name: "Pauline Hanson's One Nation", votes: 3072, pct: 0.65 }
+      - { group: "J", party: dlp, name: "Labour DLP", votes: 10385, pct: 2.21 }
+      - { group: "K", party: liberal-democrats-2022, name: "Liberal Democrats", votes: 11696, pct: 2.49 }
+      - { group: "L", party: reason-2022, name: "Fiona Patten's Reason Party", votes: 9511, pct: 2.02 }
+      - { group: "M", party: angry-victorians-2022, name: "Angry Victorians Party", votes: 915, pct: 0.19 }
+      - { group: "N", party: shooters-fishers-farmers, name: "Shooters, Fishers & Farmers Vic", votes: 1966, pct: 0.42 }
+      - { group: "O", party: greens, name: "Australian Greens", votes: 72410, pct: 15.41 }
+      - { group: "P", party: liberal, name: "Liberal", votes: 169681, pct: 36.11 }
+      - { group: "Q", party: labor, name: "Australian Labor Party - Victorian Branch", votes: 139722, pct: 29.74 }
+      - { group: "R", party: victorian-socialists, name: "Victorian Socialists", votes: 2516, pct: 0.54 }
+      - { group: "S", party: united-australia-2022, name: "United Australia Party", votes: 2177, pct: 0.46 }
+      - { group: "T", party: animal-justice, name: "Animal Justice Party", votes: 6698, pct: 1.43 }
+      - { group: "U", party: justice-party-2022, name: "Derryn Hinch's Justice Party", votes: 3807, pct: 0.81 }
+      - { group: "V", party: family-first, name: "Family First Victoria", votes: 4734, pct: 1.01 }
+    elected_2022:
+      - { order: 1, name: "DAVIS, David", party: liberal }
+      - { order: 2, name: "BERGER, John", party: labor }
+      - { order: 3, name: "CROZIER, Georgie", party: liberal }
+      - { order: 4, name: "COPSEY, Katherine", party: greens }
+      - { order: 5, name: "BATCHELOR, Ryan", party: labor }
+    source:
+      url: https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-region/southern-metropolitan-region-results
+      spreadsheet: "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/State/Reports/Southern Metropolitan Region-Votes Received.xls"
+      title: Southern Metropolitan Region results, 2022 State election
+      publisher: Victorian Electoral Commission
+      accessed: 2026-11-03
+  - slug: western-metropolitan
+    name: Western Metropolitan
+    formal: 449155
+    informal: 19025
+    total_votes: 468180
+    groups:
+      - { group: "A", party: family-first, name: "Family First Victoria", votes: 14261, pct: 3.18 }
+      - { group: "B", party: reason-2022, name: "Fiona Patten's Reason Party", votes: 3617, pct: 0.81 }
+      - { group: "C", party: sustainable-australia, name: "Sustainable Australia Party – Stop Overdevelopment / Corruption", votes: 2046, pct: 0.46 }
+      - { group: "D", party: shooters-fishers-farmers, name: "Shooters, Fishers & Farmers Vic", votes: 6401, pct: 1.43 }
+      - { group: "E", party: independent-group, name: "Independent group (Ackerman and Barrow)", votes: 1845, pct: 0.41 }
+      - { group: "F", party: liberal, name: "Liberal", votes: 109895, pct: 24.47 }
+      - { group: "G", party: legalise-cannabis, name: "Legalise Cannabis Victoria", votes: 19295, pct: 4.3 }
+      - { group: "H", party: companions-and-pets-2022, name: "Companions and Pets Party", votes: 1806, pct: 0.4 }
+      - { group: "I", party: greens, name: "Australian Greens", votes: 36239, pct: 8.07 }
+      - { group: "J", party: one-nation, name: "Pauline Hanson's One Nation", votes: 7691, pct: 1.71 }
+      - { group: "K", party: angry-victorians-2022, name: "Angry Victorians Party", votes: 2569, pct: 0.57 }
+      - { group: "L", party: united-australia-2022, name: "United Australia Party", votes: 4747, pct: 1.06 }
+      - { group: "M", party: new-democrats, name: "New Democrats", votes: 2470, pct: 0.55 }
+      - { group: "N", party: animal-justice, name: "Animal Justice Party", votes: 6209, pct: 1.38 }
+      - { group: "O", party: liberal-democrats-2022, name: "Liberal Democrats", votes: 6546, pct: 1.46 }
+      - { group: "P", party: health-australia-2022, name: "Health Australia Party", votes: 2122, pct: 0.47 }
+      - { group: "Q", party: dlp, name: "Labour DLP", votes: 23422, pct: 5.21 }
+      - { group: "R", party: sack-dan-andrews-2022, name: "Sack Dan Andrews Restore Democracy", votes: 3653, pct: 0.81 }
+      - { group: "S", party: justice-party-2022, name: "Derryn Hinch's Justice Party", votes: 5371, pct: 1.2 }
+      - { group: "T", party: victorian-socialists, name: "Victorian Socialists", votes: 16095, pct: 3.58 }
+      - { group: "U", party: independent-group, name: "Independent group (Villagonzalo and Alcordo)", votes: 1623, pct: 0.36 }
+      - { group: "V", party: transport-matters-2022, name: "Transport Matters", votes: 1204, pct: 0.27 }
+      - { group: "W", party: freedom-party, name: "Freedom Party of Victoria", votes: 3513, pct: 0.78 }
+      - { group: "X", party: labor, name: "Australian Labor Party - Victorian Branch", votes: 166371, pct: 37.04 }
+      - { group: ungrouped, party: ungrouped, name: "Ungrouped: DEMIAN, Esther", votes: 144, pct: 0.03 }
+    elected_2022:
+      - { order: 1, name: "BLANDTHORN, Lizzie", party: labor }
+      - { order: 2, name: "DEEMING, Moira", party: liberal }
+      - { order: 3, name: "STITT, Ingrid", party: labor }
+      - { order: 4, name: "ETTERSHANK, David", party: legalise-cannabis }
+      - { order: 5, name: "LUU, Trung", party: liberal }
+    source:
+      url: https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-region/western-metropolitan-region-results
+      spreadsheet: "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/State/Reports/Western Metropolitan Region-Votes Received.xls"
+      title: Western Metropolitan Region results, 2022 State election
+      publisher: Victorian Electoral Commission
+      accessed: 2026-11-03
+  - slug: western-victoria
+    name: Western Victoria
+    formal: 492213
+    informal: 17224
+    total_votes: 509437
+    groups:
+      - { group: "A", party: victorian-socialists, name: "Victorian Socialists", votes: 3656, pct: 0.74 }
+      - { group: "B", party: shooters-fishers-farmers, name: "Shooters, Fishers & Farmers Vic", votes: 18460, pct: 3.75 }
+      - { group: "C", party: one-nation, name: "Pauline Hanson's One Nation", votes: 13065, pct: 2.65 }
+      - { group: "D", party: health-australia-2022, name: "Health Australia Party", votes: 2607, pct: 0.53 }
+      - { group: "E", party: legalise-cannabis, name: "Legalise Cannabis Victoria", votes: 24763, pct: 5.03 }
+      - { group: "F", party: reason-2022, name: "Fiona Patten's Reason Party", votes: 3475, pct: 0.71 }
+      - { group: "G", party: sustainable-australia, name: "Sustainable Australia Party – Stop Overdevelopment / Corruption", votes: 2083, pct: 0.42 }
+      - { group: "H", party: labor, name: "Australian Labor Party - Victorian Branch", votes: 175024, pct: 35.56 }
+      - { group: "I", party: family-first, name: "Family First Victoria", votes: 10320, pct: 2.1 }
+      - { group: "J", party: freedom-party, name: "Freedom Party of Victoria", votes: 2307, pct: 0.47 }
+      - { group: "K", party: sack-dan-andrews-2022, name: "Sack Dan Andrews Restore Democracy", votes: 5012, pct: 1.02 }
+      - { group: "L", party: liberal-democrats-2022, name: "Liberal Democrats", votes: 16471, pct: 3.35 }
+      - { group: "M", party: companions-and-pets-2022, name: "Companions and Pets Party", votes: 2544, pct: 0.52 }
+      - { group: "N", party: new-democrats, name: "New Democrats", votes: 541, pct: 0.11 }
+      - { group: "O", party: transport-matters-2022, name: "Transport Matters", votes: 1457, pct: 0.3 }
+      - { group: "P", party: justice-party-2022, name: "Derryn Hinch's Justice Party", votes: 8697, pct: 1.77 }
+      - { group: "Q", party: united-australia-2022, name: "United Australia Party", votes: 3585, pct: 0.73 }
+      - { group: "R", party: dlp, name: "Labour DLP", votes: 10696, pct: 2.17 }
+      - { group: "S", party: angry-victorians-2022, name: "Angry Victorians Party", votes: 2699, pct: 0.55 }
+      - { group: "T", party: animal-justice, name: "Animal Justice Party", votes: 8660, pct: 1.76 }
+      - { group: "U", party: greens, name: "Australian Greens", votes: 42709, pct: 8.68 }
+      - { group: "V", party: liberal-nationals, name: "Liberal / The Nationals", votes: 133221, pct: 27.07 }
+      - { group: ungrouped, party: ungrouped, name: "Ungrouped: HELLMUTH, Storm", votes: 161, pct: 0.03 }
+    elected_2022:
+      - { order: 1, name: "ERMACORA, Jacinta", party: labor }
+      - { order: 2, name: "McARTHUR, Bev", party: liberal }
+      - { order: 3, name: "TIERNEY, Gayle", party: labor }
+      - { order: 4, name: "MANSFIELD, Sarah", party: greens }
+      - { order: 5, name: "McCRACKEN, Joe", party: liberal }
+    source:
+      url: https://www.vec.vic.gov.au/results/state-election-results/2022-state-election-results/results-by-region/western-victoria-region-results
+      spreadsheet: "https://itsitecoreblobvecprd01.blob.core.windows.net/public-files/State/Reports/Western Victoria Region-Votes Received.xls"
+      title: Western Victoria Region results, 2022 State election
+      publisher: Victorian Electoral Commission
+      accessed: 2026-11-03

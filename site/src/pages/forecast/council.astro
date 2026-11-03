@@ -1,0 +1,172 @@
+---
+import Base from "../../layouts/Base.astro";
+import { formatDate } from "../../lib/site.mjs";
+import { loadPolls, computePollAverage } from "../../../../scripts/lib/polls.mjs";
+import { baselineFromResults, loadVicInputs } from "../../../../scripts/lib/forecast.mjs";
+import { buildCouncilForecast, backtest2022, loadCouncilResults, COUNCIL_SCENARIOS, BLOC, QUOTA_PCT } from "../../../../scripts/lib/council.mjs";
+import { renderCouncilChamber, labelFor, colourFor, MAJORITY } from "../../lib/council-view.mjs";
+import buildMeta from "../../generated/build-meta.json";
+
+const average = computePollAverage(loadPolls("vic2026"));
+const { results } = await loadVicInputs();
+const council = await loadCouncilResults();
+const base = baselineFromResults(results);
+const fc = average.status === "ok" ? buildCouncilForecast(average.primaries, base, council) : null;
+const bt = backtest2022(council);
+const updated = buildMeta?.built_at_utc ? buildMeta.built_at_utc.slice(0, 10) : null;
+const RATING = { firm: "Firm", leaning: "Leaning", doubt: "In doubt" };
+const HOW = { quota: "full quota on first preferences", "quota-after-preferences": "full quota after preferences", remainder: "leftover votes and preferences" };
+const parties = fc ? Object.keys(fc.totals) : [];
+const left = Object.entries(BLOC).filter(([, b]) => b === "left").map(([p]) => p);
+const right = Object.entries(BLOC).filter(([, b]) => b === "right").map(([p]) => p);
+const names = Object.assign({}, ...council.regions.map((r) => Object.fromEntries(r.groups.map((g) => [g.party, g.name]))));
+const pct = (x) => `${Math.round(x * 100)}%`;
+---
+
+<Base
+  title="Council forecast: our model, not a prediction"
+  description="This site's own seat model for the Victorian Legislative Council: 2022 upper house vote by region, moved by the statewide poll swing, counted with a one-sixth quota under three preference assumptions."
+  breadcrumbs={[{ name: "Forecast", href: "/forecast" }, { name: "Council", href: "/forecast/council" }]}
+>
+  <div class="forecast-zone">
+    <div class="forecast-banner" role="note">
+      <strong>Forecast: our model, not a prediction of the result</strong>
+      <span>Everything on this page is our own calculation. It is not sourced data. <a href="#method">How the model works</a></span>
+    </div>
+    <div class="wrap section">
+      <p class="eyebrow">Forecast section · model output · <a href="/forecast">Assembly forecast</a></p>
+      <h1>Victorian Legislative Council seat model</h1>
+      <p class="lede">What the current poll average would mean for the 40 upper house seats: 8 regions, 5 members each. We take each party's 2022 upper house vote in each region, move it by the statewide swing, and count it with a one-sixth quota.</p>
+      <p class="fc-updated">Last updated {updated ? formatDate(updated) : "not known"} · poll average as of {fc ? formatDate(average.as_of) : "not available"}</p>
+
+      <aside class="rule-box" aria-labelledby="gvt-h">
+        <h2 id="gvt-h">The voting rules changed for 2026</h2>
+        <p>Group voting tickets are gone. In 2022 you could put a 1 above the line for one party and that party decided where your preferences went. Several small parties won seats through those preference deals. Parliament abolished the tickets on 11 August 2026. Now you number at least 5 boxes above the line, or at least 5 candidates below it, like the Senate.</p>
+        <p>That makes small-party wins harder, and it means nobody has measured how Victorian upper house preferences will flow under the new rules. Treat the last seat in each region with care.</p>
+        <p class="small">Sources: <a href="https://www.vec.vic.gov.au/about-us/legislation/electoral-act-amendments-2026">VEC, 2026 Electoral Act amendments</a>; <a href="https://www.theguardian.com/australia-news/2026/aug/12/victorian-microparty-mps-including-georgie-purcell-to-face-re-election-struggle-after-group-voting-tickets-abolished">The Guardian, 12 August 2026</a>; <a href="https://aapnews.aap.com.au/news/upper-house-shake-up-looms-as-old-voting-system-binned">AAP</a>.</p>
+      </aside>
+
+      {!fc && <p class="empty">The poll average is not available, so the model has nothing to run on.</p>}
+      {fc && (
+        <>
+          <section>
+            <h2>Projected chamber (central scenario)</h2>
+            <Fragment set:html={renderCouncilChamber(fc)} />
+          </section>
+
+          <section class="fc-summary">
+            <div class="card">
+              <h2>Seats by party</h2>
+              <table class="fc-table">
+                <thead><tr><th scope="col">Party</th>{COUNCIL_SCENARIOS.map((s) => <th scope="col">{s.label}</th>)}</tr></thead>
+                <tbody>
+                  {parties.map((p) => <tr><th scope="row"><span class="sw" style={`background:${colourFor(p)}`}></span> {labelFor(p, names)}</th>{COUNCIL_SCENARIOS.map((s) => <td>{fc.ranges[s.id][p] ?? 0}</td>)}</tr>)}
+                </tbody>
+              </table>
+              <p class="small muted">{MAJORITY} seats are a majority of 40. {fc.lower_confidence} of the {fc.total} seats are lower confidence.</p>
+            </div>
+            <div class="card">
+              <h2>2022 check</h2>
+              <p>Run on the actual 2022 votes with no swing, the model gets <strong>{bt.matched} of {bt.total}</strong> seats right by party.</p>
+              <p class="small muted">The misses are mostly small parties that won through 2022 group voting ticket deals, which the model does not try to copy. Those deals no longer exist.</p>
+            </div>
+          </section>
+
+          <section>
+            <h2>Regions</h2>
+            <div class="region-grid">
+              {fc.regions.map((r) => (
+                <article class="card region" id={`region-${r.slug}`}>
+                  <h3>{r.name}</h3>
+                  <ol class="seats">
+                    {r.seats.map((s) => (
+                      <li class={s.lower_confidence ? "lowconf" : ""}>
+                        <span class="sw" style={`background:${colourFor(s.seat_party)}`}></span>
+                        <strong>{labelFor(s.seat_party, r.group_names)}</strong> <span class="muted">{RATING[s.rating]}, {HOW[s.how]}</span>
+                        {s.lower_confidence && <p class="small note">Lower confidence. {s.note}</p>}
+                      </li>
+                    ))}
+                  </ol>
+                  {r.closest && <p class="small">Closest for the last seat: {labelFor(r.closest.excluded, r.group_names)} was last out on {r.closest.excluded_share}% against {labelFor(r.closest.next, r.group_names)} on {r.closest.next_share}%.</p>}
+                  <details class="small">
+                    <summary>Projected first preferences and quotas</summary>
+                    <table class="fc-table"><thead><tr><th scope="col">Party</th><th scope="col">Vote</th><th scope="col">Quotas</th></tr></thead>
+                      <tbody>{Object.entries(r.quotas).map(([p, q]) => <tr><td>{labelFor(p, r.group_names)}</td><td>{r.primaries[p]}%</td><td>{q}</td></tr>)}</tbody></table>
+                    <p class="muted">Parties under 1% are not listed. Won in 2022: {r.elected_2022.map((p) => labelFor(p === "liberal" || p === "nationals" ? "coalition" : p, r.group_names)).join(", ")}.</p>
+                  </details>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2>2022 check by region</h2>
+            <table class="fc-table">
+              <thead><tr><th scope="col">Region</th><th scope="col">Model (2022 votes, no swing)</th><th scope="col">Actually elected</th><th scope="col">Right</th></tr></thead>
+              <tbody>{bt.regions.map((r) => <tr><th scope="row">{r.name}</th><td>{r.model.map((p) => labelFor(p, names)).join(", ")}</td><td>{r.actual.map((p) => labelFor(p, names)).join(", ")}</td><td>{r.matched} of 5</td></tr>)}</tbody>
+            </table>
+          </section>
+        </>
+      )}
+
+      <section id="method">
+        <h2>How the model works</h2>
+        <ol>
+          <li><strong>Start.</strong> Each party's share of the 2022 upper house first preferences in each region, from the VEC's "Votes Received" spreadsheets. Above-the-line and below-the-line votes for a group are added together.</li>
+          <li><strong>Swing.</strong> Labor, the Coalition, the Greens and One Nation move by their statewide change in the poll average since the 2022 Assembly result. There is no upper house polling, so we use the Assembly polls. Every other party shares the change in the "others" vote in proportion to its 2022 vote. Shares below zero become zero and each region is rescaled to 100%.</li>
+          <li><strong>Quota.</strong> With 5 seats, a quota is one sixth of the vote, about {QUOTA_PCT.toFixed(2)}%. A party with a full quota wins a seat and keeps its surplus for its next candidate.</li>
+          <li><strong>Preferences.</strong> When no party has a quota, the smallest party is knocked out. Some of its votes exhaust (stop counting), some go to parties on the same side, and the rest spread across everyone still in the count. The parties left standing when they equal the seats left win them.</li>
+          <li><strong>Ratings.</strong> Firm: a full quota on first preferences. Leaning: a quota after preferences, or a last seat won by more than 2 points. In doubt: a last seat won by under 2 points.</li>
+          <li><strong>Lower confidence.</strong> The last seat in every region is flagged, as is any seat won on leftover votes rather than a full quota, when the party is not in the polls, or when it changes hands under the weaker or stronger preference assumptions.</li>
+        </ol>
+        <h3>Preference assumptions (ours, not measured)</h3>
+        <table class="fc-table">
+          <thead><tr><th scope="col">Scenario</th><th scope="col">Votes that exhaust</th><th scope="col">Of the rest, share to the same side</th></tr></thead>
+          <tbody>{COUNCIL_SCENARIOS.map((s) => <tr><th scope="row">{s.label}</th><td>{pct(s.exhaust)}</td><td>{pct(s.sameBloc)}</td></tr>)}</tbody>
+        </table>
+        <p class="small">Left side: {left.map((p) => labelFor(p, names)).join(", ")}. Right side: {right.map((p) => labelFor(p, names)).join(", ")}. Every other party spreads its preferences across all parties still in the count. These groupings are our judgement for the model, not a statement about any party's policies.</p>
+        <h3>Party names</h3>
+        <p class="small">Parties are kept as they ran in 2022. Where a 2022 party has no confirmed match in our 2026 party list (for example the Liberal Democrats, Reason and the Justice Party), it keeps its 2022 name and its vote is scaled with the other minor parties. We do not merge parties without a source. "Liberal / The Nationals" was a joint Coalition ticket in the three country regions and counts as Coalition.</p>
+        <h3>Limits</h3>
+        <ul class="small">
+          <li>Upper house voters usually back small parties more than lower house voters do, so the big parties may be slightly overstated.</li>
+          <li>The 2026 groups and ballot order are not in the model yet. A party that did not run in 2022 has no starting vote.</li>
+          <li>The 2022 check is run under the new-style preference assumptions, not the old tickets, so it tests the vote base, not the 2022 deals.</li>
+        </ul>
+        <p class="small">Data: <code>data/vic2026/council-results-2022.yaml</code> (VEC, each region's results page is cited on its record). Code: <code>scripts/lib/council.mjs</code>.</p>
+      </section>
+    </div>
+  </div>
+</Base>
+
+<style is:global>
+  .forecast-zone { background: repeating-linear-gradient(135deg, transparent 0 22px, var(--accent-wash) 22px 24px); border-top: 4px solid var(--st-announced); }
+  .forecast-banner { background: var(--st-announced-bg); color: var(--st-announced); padding: 0.9rem clamp(1rem, 4vw, 2rem); display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; align-items: baseline; border-bottom: 1px solid var(--rule-strong); }
+  .forecast-banner strong { font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .forecast-banner a { color: inherit; text-decoration: underline; }
+  .fc-updated { color: var(--ink-2); font-weight: 600; }
+  .fc-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .fc-summary h2 { font-size: 1.1rem; margin-top: 0; }
+  .fc-table { border-collapse: collapse; font-variant-numeric: tabular-nums; width: 100%; }
+  .fc-table th, .fc-table td { text-align: left; padding: 0.3rem 0.6rem 0.3rem 0; border-bottom: 1px solid var(--rule); }
+  .legend { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; font-size: 0.88rem; }
+  .legend li { display: flex; align-items: center; gap: 0.35rem; }
+  .sw { width: 1rem; height: 1rem; border-radius: 3px; display: inline-block; border: 1px solid var(--rule-strong); vertical-align: middle; }
+  .sw.lowconf-key { background: #fff; outline: 2px dashed #111; outline-offset: -3px; }
+  .hc-fig { margin: 0.5rem 0; }
+  .hc-svg { width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; }
+  .hc-seat:hover circle, .hc-seat:focus circle { stroke: #111; stroke-width: 2; }
+  .hc-maj { stroke: #111; stroke-width: 2; stroke-dasharray: 5 4; }
+  .hc-maj-t { font-size: 13px; font-weight: 700; fill: #111; }
+  .hc-big { font-size: 44px; font-weight: 800; fill: #111; }
+  .hc-sub { font-size: 13px; fill: #555; }
+  .rule-box { border: 2px solid var(--rule-strong); border-left: 6px solid var(--st-announced); background: var(--paper, #fff); padding: 0.8rem 1rem; margin: 1.25rem 0; }
+  .rule-box h2 { margin-top: 0; font-size: 1.15rem; }
+  .region-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1rem; }
+  .region h3 { margin-top: 0; }
+  .seats { padding-left: 1.4rem; }
+  .seats li { margin: 0.35rem 0; }
+  .seats li.lowconf { outline: 2px dashed #111; outline-offset: 2px; padding: 0.15rem 0.3rem; border-radius: 3px; }
+  .seats .note { margin: 0.2rem 0 0; }
+  .empty { color: var(--ink-3); font-style: italic; }
+</style>
