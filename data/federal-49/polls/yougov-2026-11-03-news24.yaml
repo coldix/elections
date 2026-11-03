@@ -1,0 +1,31 @@
+id: yougov-2026-11-03-news24
+pollster: YouGov
+commissioner: news24
+commissioner_type: media
+fieldwork_start: 2026-10-27
+fieldwork_end: 2026-11-03
+sample_size: 1500
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention (fortnightly News24 Pulse / YouGov). Fieldwork Tuesday–Tuesday 27 Oct–3 Nov; n=1500 per Poll Bludger (Wikipedia also lists 1,500). Others residual after ALP+LNP+GRN+ONP (12) — Wikipedia breaks this down as independents 5, Community Strong Australia 2, other 5. Previous-election-flows 2PP Labor 50–50 Coalition and respondent-allocated 2PP Labor over One Nation (54–46 per Wikipedia/pollingforecast; Poll Bludger text gives 53–47) not encoded. Supersedes yougov-2026-10-20-news24 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 25
+  lnp: 23
+  onp: 27
+  grn: 13
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.news24.com.au/politics/australian-politics/albaneses-poll-nightmare-deepens-as-voters-turn-on-labor-and-angus-taylor-takes-over-as-preferred-pm/news-story/756ce5bbfcc617e4c05a17856655861b
+    publisher: News24
+    title: "Albanese's nightmare numbers revealed as voters turn against the PM"
+    published: 2026-11-03
+    accessed: 2026-11-04
+  - url: https://www.pollbludger.net/2026/11/04/yougov-labor-25-one-nation-27-coalition-23-open-thread/
+    publisher: The Poll Bludger
+    title: "YouGov: Labor 25, One Nation 27, Coalition 23 (open thread)"
+    published: 2026-11-04
+    accessed: 2026-11-04
