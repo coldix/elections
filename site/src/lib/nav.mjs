@@ -152,6 +152,7 @@ export function navFor(pathname) {
   const dataLabel = scope === "federal" ? "Federal data" : scope === "nsw" ? "NSW data" : "Open data";
 
   const more = [
+    { href: "/forecast/council", label: "Council forecast", current: path === "/forecast/council" },
     { href: "/methodology", label: "Methodology", current: path === "/methodology" },
     { href: dataHref, label: dataLabel, current: path === dataHref },
     { href: "/about", label: "About", current: path === "/about" || path.startsWith("/about/") },
