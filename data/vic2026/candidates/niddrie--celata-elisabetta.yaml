@@ -3,7 +3,7 @@ candidate:
   party: west-party
   contest: niddrie
   chamber: assembly
-  status: endorsed
+  status: withdrawn
   history:
     - status: endorsed
       date: 2026-06-21
@@ -12,3 +12,14 @@ candidate:
         title: Elisabetta Celata – Candidate for Niddrie
         publisher: www.thewestparty.org.au
         accessed: 2026-06-21
+    - status: withdrawn
+      date: 2026-11-04
+      source:
+        url: https://thewestparty.org.au/local-representation/
+        title: Local Representation - The West Party
+        publisher: The West Party
+        accessed: 2026-11-04
+      note: >-
+        The West Party's candidates page no longer lists Celata and names Brett
+        Patrikeos as its Niddrie candidate; her former profile page now returns
+        404. No reason published.
