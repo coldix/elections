@@ -189,18 +189,20 @@ council_members:
       publisher: Wikipedia
       accessed: 2026-07-28
   - name: Moira Deeming
-    party: liberal
+    party: family-first
     region: western-metropolitan
     note: >-
-      Expelled from the parliamentary Liberal Party in May 2023, sat as an Ind
-      ependent Liberal, and returned to the party room in December 2024. Separ
-      ately disendorsed as a Liberal candidate for the 2026 election in July 2
-      026 — she remains a sitting Liberal MLC.
+      Elected as a Liberal in 2022. Expelled from the parliamentary Liberal
+      Party in May 2023, sat as an Independent Liberal, and returned to the
+      party room in December 2024. Disendorsed as a Liberal candidate in July
+      2026, she left the Liberal party room and sits on the crossbench. On 10
+      September 2026 Family First endorsed her as its lead Western Metropolitan
+      candidate and appointed her Victorian Party Leader.
     source:
-      url: https://en.wikipedia.org/wiki/Members_of_the_Victorian_Legislative_Council,_2022%E2%80%932026
-      title: Members of the Victorian Legislative Council, 2022-2026
-      publisher: Wikipedia
-      accessed: 2026-07-28
+      url: https://www.abc.net.au/news/2026-09-10/moira-deeming-joins-family-first-party/107136754
+      title: Former Liberal MP Moira Deeming to run as Family First candidate in Victorian election
+      publisher: ABC News
+      accessed: 2026-11-04
   - name: Ingrid Stitt
     party: labor
     region: western-metropolitan
