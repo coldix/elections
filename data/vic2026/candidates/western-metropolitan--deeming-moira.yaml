@@ -1,11 +1,11 @@
 candidate:
   name: Moira Deeming
-  party: liberal
+  party: family-first
   contest: western-metropolitan
   chamber: council
-  status: disendorsed
+  status: endorsed
   occupation: "Teacher"
-  background: "Former high school teacher; MLC for Western Metropolitan"
+  background: "Former high school teacher; sitting MLC for Western Metropolitan (crossbench). Family First lead (#1) Legislative Council candidate for Western Metropolitan and Victorian Party Leader. Previously a Liberal candidate (disendorsed July 2026)."
   history:
     - status: disendorsed
       date: 2026-03-24
@@ -16,13 +16,12 @@ candidate:
         published: 2026-03-24
         accessed: 2026-07-28
       note: >-
-        Lost a Liberal preselection ballot for the Western Metropolitan
-        Legislative Council ticket to Dinesh Gourisetty, who himself
-        withdrew days later (see western-metropolitan--gourisetty-dinesh.yaml).
-        The chronology between this loss and the July disendorsement below —
-        including whether/how she returned to the ticket in the interim —
-        is not fully confirmed from sources gathered so far; needs
-        verification before treating as a clean timeline.
+        As a Liberal candidate. Lost a Liberal preselection ballot for the
+        Western Metropolitan Legislative Council ticket to Dinesh Gourisetty,
+        who himself withdrew days later (see
+        western-metropolitan--gourisetty-dinesh.yaml). How she returned to the
+        Liberal ticket before the July disendorsement is not fully confirmed
+        from sources gathered so far.
     - status: disendorsed
       date: 2026-07-17
       source:
@@ -32,7 +31,38 @@ candidate:
         published: 2026-07-17
         accessed: 2026-07-28
       note: >-
-        Disendorsed after falsely accusing fellow MP Matthew Guy of assault.
+        As a Liberal candidate. Disendorsed after falsely accusing fellow MP
+        Matthew Guy of assault. AAP reports the Liberal state executive
+        unanimously revoked her candidacy on 18 July 2026, and that Roshena
+        Campbell replaced her at the top of the Liberal Western Metropolitan
+        ticket. She then left the Liberal party room and sits on the crossbench.
+    - status: endorsed
+      date: 2026-09-10
+      source:
+        url: https://www.familyfirstparty.org.au/moira_deeming_joins_family_first_as_western_metro_lead_candidate
+        title: Moira Deeming joins Family First as Western Metro lead candidate
+        publisher: Family First Party
+        published: 2026-09-10
+        accessed: 2026-11-04
+      note: >-
+        Family First's Federal Executive endorsed her as its lead candidate
+        for the Western Metropolitan Region of the Legislative Council and
+        appointed her Victorian Party Leader. Also reported by ABC News
+        (https://www.abc.net.au/news/2026-09-10/moira-deeming-joins-family-first-party/107136754)
+        and AAP
+        (https://aapnews.aap.com.au/news/dumped-liberal-makes-major-move-before-election).
+  corrections:
+    - date: 2026-11-04
+      was: "Liberal, disendorsed"
+      now: "Family First, endorsed (Western Metropolitan, #1)"
+      reason: >-
+        The record had not been updated after she joined Family First on
+        10 September 2026. Her Liberal history is kept above.
+      source:
+        url: https://aapnews.aap.com.au/news/dumped-liberal-makes-major-move-before-election
+        title: Dumped Liberal makes major move before election
+        publisher: AAP
+        accessed: 2026-11-04
   links:
     - url: https://moiradeemingmp.com/
       kind: campaign-site
