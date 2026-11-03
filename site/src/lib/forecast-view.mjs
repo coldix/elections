@@ -4,9 +4,9 @@
 import { IN_DOUBT_PP, LEANING_PP, PARTY_LABEL } from "../../../scripts/lib/forecast.mjs";
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-export const PARTIES = [["labor", "Labor"], ["coalition", "Coalition"], ["greens", "Greens"], ["one-nation", "One Nation"]];
-const CLS = { alp: "labor", lnp: "coalition", grn: "greens", onp: "onp" };
-const ORDER = { lnp: 0, onp: 1, alp: 2, grn: 3 };
+export const PARTIES = [["labor", "Labor"], ["coalition", "Coalition"], ["greens", "Greens"], ["one-nation", "One Nation"], ["independent", "Independent"]];
+const CLS = { alp: "labor", lnp: "coalition", grn: "greens", onp: "onp", others: "ind" };
+const ORDER = { lnp: 0, onp: 1, alp: 2, grn: 3, others: 4 };
 const RATING = { firm: "Firm", leaning: "Leaning", doubt: "In doubt" };
 
 export function sortSeats(seats) {
@@ -28,10 +28,10 @@ export function renderResults(mp, { label = "Our default assumptions" } = {}) {
   const tiles = sortSeats(mp.seats).map((s) => {
     const cls = s.status === "ind-contest" ? "indc" : s.status !== "modelled" ? "none" : s.rating === "doubt" ? "doubt" : `${CLS[s.leader]}-${s.rating === "firm" ? "firm" : "leaning"}`;
     const tip = s.status === "modelled"
-      ? `${s.name}: ${PARTY_LABEL[s.finalists[0]]} v ${PARTY_LABEL[s.finalists[1]]}; ${PARTY_LABEL[s.leader]} ahead by ${s.margin_central} pts (${RATING[s.rating]}); method: ${s.method}`
+      ? `${s.name}: ${PARTY_LABEL[s.finalists[0]]} v ${PARTY_LABEL[s.finalists[1]]}; ${PARTY_LABEL[s.leader]} ahead by ${s.margin_central} pts (${RATING[s.rating]}); method: ${s.method}${s.lower_confidence ? `. ${s.note}` : ""}`
       : `${s.name}: ${s.reason}`;
     const fin = s.status === "modelled" ? `<span class="fin">${PARTY_LABEL[s.finalists[0]]} v ${PARTY_LABEL[s.finalists[1]]}</span>` : "";
-    return `<li class="tile ${cls}" title="${esc(tip)}"><a href="/elections/vic/2026/districts/${esc(s.slug)}" aria-label="${esc(tip)}">${esc(s.name)}${fin}</a></li>`;
+    return `<li class="tile ${cls}${s.lower_confidence ? " lowconf" : ""}" title="${esc(tip)}"><a href="/elections/vic/2026/districts/${esc(s.slug)}" aria-label="${esc(tip)}">${esc(s.name)}${s.lower_confidence ? "*" : ""}${fin}</a></li>`;
   }).join("");
   const c = onpClosest(mp);
   const li = (s, sign) => `<li><strong>${esc(s.name)}</strong> — One Nation ${sign} ${PARTY_LABEL[s.finalists.find((x) => x !== "onp")]} by ${s.margin_central} pts (${RATING[s.rating].toLowerCase()})</li>`;
@@ -42,7 +42,7 @@ ${renderHemicycle(mp)}
   <div class="card">
     <h2>Seats by party and rating (central scenario)</h2>
     <table class="fc-table"><thead><tr><th scope="col">Ahead</th><th scope="col">Firm</th><th scope="col">Leaning</th><th scope="col">In doubt</th><th scope="col">Total</th></tr></thead>
-    <tbody>${rows}<tr><th scope="row">Greens/IND contest, not modelled</th><td colspan="3"></td><td>${mp.ind_contest}</td></tr><tr><th scope="row">Not modelled (no baseline)</th><td colspan="3"></td><td>${mp.not_modelled}</td></tr></tbody></table>
+    <tbody>${rows}<tr><th scope="row">Independent/other contest, not modelled</th><td colspan="3"></td><td>${mp.ind_contest}</td></tr><tr><th scope="row">Not modelled (no baseline)</th><td colspan="3"></td><td>${mp.not_modelled}</td></tr></tbody></table>
     <p class="small muted">In doubt: two-candidate margin within ${IN_DOUBT_PP} points of 50–50. Leaning: ${IN_DOUBT_PP}–${LEANING_PP} points. Firm: more than ${LEANING_PP}. 45 seats are needed for a majority. Implied statewide One Nation vote: ${mp.onp_implied_statewide}% (poll average ${mp.onp_poll_average}%).</p>
   </div>
   <div class="card">
@@ -60,7 +60,7 @@ ${renderHemicycle(mp)}
 <section>
   <h2>Seat map (central scenario)</h2>
   <p class="small muted">Each tile is one district, grouped by the party ahead and ordered by margin. Hover or tap for the projected final two and margin.</p>
-  <ul class="legend"><li><span class="sw labor-firm"></span>Labor firm</li><li><span class="sw labor-leaning"></span>Labor leaning</li><li><span class="sw coalition-firm"></span>Coalition firm</li><li><span class="sw coalition-leaning"></span>Coalition leaning</li><li><span class="sw greens-firm"></span>Greens</li><li><span class="sw onp-firm"></span>One Nation</li><li><span class="sw doubt"></span>In doubt</li><li><span class="sw indc"></span>Greens/IND contest, not modelled</li><li><span class="sw none"></span>Not modelled</li></ul>
+  <ul class="legend"><li><span class="sw labor-firm"></span>Labor firm</li><li><span class="sw labor-leaning"></span>Labor leaning</li><li><span class="sw coalition-firm"></span>Coalition firm</li><li><span class="sw coalition-leaning"></span>Coalition leaning</li><li><span class="sw greens-firm"></span>Greens</li><li><span class="sw onp-firm"></span>One Nation</li><li><span class="sw doubt"></span>In doubt</li><li><span class="sw lowconf-key"></span>* Lower confidence (see notes below)</li><li><span class="sw ind-firm"></span>Independent</li><li><span class="sw indc"></span>Independent/other contest, not modelled</li><li><span class="sw none"></span>Not modelled</li></ul>
   <ol class="seatmap">${tiles}</ol>
 </section>`;
 }
@@ -84,13 +84,14 @@ const MAJORITY = 45;
 const GROUPS = [
   ["grn", "firm"], ["grn", "leaning"], ["alp", "firm"], ["alp", "leaning"],
   ["doubt", null], ["indc", null], ["none", null],
-  ["lnp", "leaning"], ["lnp", "firm"], ["onp", "leaning"], ["onp", "firm"],
+  ["others", "leaning"], ["others", "firm"], ["lnp", "leaning"], ["lnp", "firm"], ["onp", "leaning"], ["onp", "firm"],
 ];
 const FILL = {
   "grn-firm": "#2f7d3f", "grn-leaning": "#9fd0a8",
   "alp-firm": "#c8434a", "alp-leaning": "#eba3a6",
   "lnp-firm": "#2f5d9e", "lnp-leaning": "#a5bde0",
   "onp-firm": "#d97a0f", "onp-leaning": "#f4c98f",
+  "others-firm": "#6b4fa0", "others-leaning": "#c3b3e0",
   doubt: "url(#hc-doubt)", indc: "url(#hc-indc)", none: "#d4d4d4",
 };
 
@@ -138,12 +139,12 @@ export function renderHemicycle(mp) {
   const doubt = count("doubt");
   const other = count("indc") + count("none");
   const tip = (s) => s.status === "modelled"
-    ? `${s.name}: ${PARTY_LABEL[s.leader]} ahead by ${s.margin_central} pts (${RATING[s.rating].toLowerCase()}), ${PARTY_LABEL[s.finalists[0]]} v ${PARTY_LABEL[s.finalists[1]]}`
+    ? `${s.name}: ${PARTY_LABEL[s.leader]} ahead by ${s.margin_central} pts (${RATING[s.rating].toLowerCase()}), ${PARTY_LABEL[s.finalists[0]]} v ${PARTY_LABEL[s.finalists[1]]}${s.lower_confidence ? " (lower confidence)" : ""}`
     : `${s.name}: not modelled`;
   const dots = ordered.map(({ s, g }, i) => {
     const p = pts[i];
     const x = (cx + p.x * R).toFixed(1), y = (cy - p.y * R).toFixed(1);
-    return `<a href="/elections/vic/2026/districts/${esc(s.slug)}" class="hc-seat"><title>${esc(tip(s))}</title><circle cx="${x}" cy="${y}" r="${dot}" fill="${FILL[g]}"${g === "doubt" ? ' stroke="#7a6a3a" stroke-width="1.2"' : ""}/></a>`;
+    return `<a href="/elections/vic/2026/districts/${esc(s.slug)}" class="hc-seat"><title>${esc(tip(s))}</title><circle cx="${x}" cy="${y}" r="${dot}" fill="${FILL[g]}"${s.lower_confidence ? ' stroke="#111" stroke-width="2.2" stroke-dasharray="3 2"' : g === "doubt" ? ' stroke="#7a6a3a" stroke-width="1.2"' : ""}/></a>`;
   }).join("");
   const verdict = (k, label) => k >= MAJORITY ? `${label} has a majority` : `${MAJORITY - k} short of a majority`;
   const leader = Math.max(...["alp", "lnp", "onp", "grn"].map(party));
@@ -157,13 +158,13 @@ export function renderHemicycle(mp) {
   <h2 id="hc-h">Projected chamber (central scenario)</h2>
   <div class="hc-stats">
     <div class="hc-stat hc-left"><span class="hc-num">${left}</span><span class="hc-lab">Left bloc<br><small>Labor ${party("alp")} · Greens ${party("grn")}</small></span></div>
-    <div class="hc-stat hc-mid"><span class="hc-num">${doubt}</span><span class="hc-lab">In doubt<br><small>${other ? `+${other} not modelled` : "within " + IN_DOUBT_PP + " pts"}</small></span></div>
+    <div class="hc-stat hc-mid"><span class="hc-num">${doubt}</span><span class="hc-lab">In doubt<br><small>${[party("others") ? `+${party("others")} independent` : "", other ? `+${other} not modelled` : ""].filter(Boolean).join(" · ") || "within " + IN_DOUBT_PP + " pts"}</small></span></div>
     <div class="hc-stat hc-right"><span class="hc-num">${right}</span><span class="hc-lab">Right bloc<br><small>Coalition ${party("lnp")} · One Nation ${party("onp")}</small></span></div>
   </div>
   <figure class="hc-fig">
     <svg viewBox="0 0 ${W} 340" role="img" aria-labelledby="hc-t hc-d" class="hc-svg">
       <title id="hc-t">Projected Victorian Legislative Assembly, ${n} seats</title>
-      <desc id="hc-d">Left bloc ${left} seats, right bloc ${right}, ${doubt} in doubt, ${other} not modelled. ${MAJORITY} seats are needed to govern. The table below lists the same numbers.</desc>
+      <desc id="hc-d">Left bloc ${left} seats, right bloc ${right}, ${doubt} in doubt, ${party("others")} independent, ${other} not modelled. ${MAJORITY} seats are needed to govern. The table below lists the same numbers.</desc>
       <defs>
         <pattern id="hc-doubt" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#efe8d4"/><rect width="3" height="6" fill="#cbbd92"/></pattern>
         <pattern id="hc-indc" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="6" height="6" fill="#f0f0f0"/><rect width="3" height="6" fill="#bcd9c1"/></pattern>
@@ -176,12 +177,12 @@ export function renderHemicycle(mp) {
     </svg>
     <figcaption class="small muted">Each dot is a district (click for the seat page). Solid = firm, pale = leaning, hatched = in doubt (within ${IN_DOUBT_PP} pts of 50–50). Safest seats sit at the outer edges; the closest sit beside the middle.</figcaption>
   </figure>
-  <div class="hc-bar" aria-hidden="true">${bar(left, "l")}${bar(doubt + other, "m")}${bar(right, "r")}<span class="hc-bar-maj" style="left:${((MAJORITY / n) * 100).toFixed(2)}%"></span><span class="hc-bar-maj" style="left:${(100 - (MAJORITY / n) * 100).toFixed(2)}%"></span></div>
+  <div class="hc-bar" aria-hidden="true">${bar(left, "l")}${bar(doubt + other + party("others"), "m")}${bar(right, "r")}<span class="hc-bar-maj" style="left:${((MAJORITY / n) * 100).toFixed(2)}%"></span><span class="hc-bar-maj" style="left:${(100 - (MAJORITY / n) * 100).toFixed(2)}%"></span></div>
   <p class="small">${verdict(left, "The left bloc").replace(/^(\d+)/, "Left bloc: $1")} · ${verdict(right, "The right bloc").replace(/^(\d+)/, "Right bloc: $1")}.</p>
-  <ul class="legend">${legend}<li><span class="sw doubt"></span>In doubt</li>${other ? `<li><span class="sw indc"></span>Not modelled</li>` : ""}</ul>
+  <ul class="legend">${legend}<li><span class="sw doubt"></span>In doubt</li>${party("others") ? `<li><span class="sw" style="background:${FILL["others-firm"]}"></span>Independent</li>` : ""}<li><span class="sw lowconf-key"></span>Ringed = lower confidence</li>${other ? `<li><span class="sw indc"></span>Not modelled</li>` : ""}</ul>
   <div class="hc-cols">
     <table class="fc-table"><caption class="small muted">Chamber in numbers</caption><thead><tr><th scope="col">Party ahead</th><th scope="col">Firm</th><th scope="col">Leaning</th><th scope="col">Total</th></tr></thead>
-      <tbody>${["lnp", "onp", "alp", "grn"].map(row).join("")}<tr><th scope="row">In doubt</th><td colspan="2"></td><td>${doubt}</td></tr>${other ? `<tr><th scope="row">Not modelled</th><td colspan="2"></td><td>${other}</td></tr>` : ""}</tbody></table>
+      <tbody>${["lnp", "onp", "alp", "grn", "others"].filter((p) => p !== "others" || party(p)).map(row).join("")}<tr><th scope="row">In doubt</th><td colspan="2"></td><td>${doubt}</td></tr>${other ? `<tr><th scope="row">Not modelled</th><td colspan="2"></td><td>${other}</td></tr>` : ""}</tbody></table>
     <div>
       <h3 class="small">Seats in doubt, closest first</h3>
       ${doubtSeats.length ? `<ol class="hc-doubt small">${doubtSeats.map((s) => `<li><a href="/elections/vic/2026/districts/${esc(s.slug)}">${esc(s.name)}</a> <span class="muted">${PARTY_LABEL[s.leader]} by ${s.margin_central} v ${PARTY_LABEL[s.finalists.find((x) => x !== s.leader)]}</span></li>`).join("")}</ol>` : `<p class="small muted">None.</p>`}

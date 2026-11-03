@@ -64,7 +64,13 @@ test("multi-party forecast: every seat accounted for, Labor/Coalition layer kept
   const counted = Object.values(mp.summary).reduce((a, r) => a + r.firm + r.leaning + r.doubt, 0);
   assert.equal(counted + mp.ind_contest + mp.not_modelled, 88);
   for (const slug of ["brunswick", "melbourne", "prahran", "richmond", "narracan"]) assert.ok(mp.seats.find((s) => s.slug === slug));
-  assert.equal(mp.seats.find((s) => s.slug === "narracan").status, "not-modelled");
+  for (const slug of ["benambra", "melton", "mildura", "preston", "shepparton", "narracan"]) {
+    const s = mp.seats.find((x) => x.slug === slug);
+    assert.equal(s.status, "modelled", slug);
+    if (s.lower_confidence) assert.ok(s.note && !s.note.includes("\u2014"), slug);
+  }
+  assert.equal(mp.seats.find((s) => s.slug === "narracan").lower_confidence, true);
+  assert.equal(mp.ind_contest + mp.not_modelled, 0);
   const p = projectPrimaries({ alp: 40, lnp: 40, grn: 10, onp: 0, others: 10 }, { alp: 40, lnp: 40, grn: 10, onp: 0, others: 10 }, { alp: 40, lnp: 40, grn: 10, onp: 0, others: 10 });
   assert.equal(p.alp, 40);
   for (const s of mp.seats.filter((x) => x.method === "two-party swing")) assert.ok(["alp", "lnp"].includes(s.leader));

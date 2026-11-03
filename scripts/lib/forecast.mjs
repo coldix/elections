@@ -189,14 +189,21 @@ export async function loadVicInputs() {
 //    (keeps the Labor/Coalition layer unchanged). Any other pair: excluded
 //    parties' votes are split between the finalists using the assumed
 //    preference weights below (our assumptions, not measured flows).
-// 4. If "others" (independents and minor parties lumped together) is a
-//    finalist, the seat is shown as an IND contest, not modelled, because the
-//    lump is not one candidate.
+// 4. If "others" (independents and minor parties lumped together) is
+//    projected in the top two, or the seat has no Labor baseline:
+//    a. If the 2022 final count was Coalition v Independent, the seat starts
+//       from that 2022 two-candidate result and moves by the statewide
+//       Coalition primary swing (method "2022 final two + Coalition swing").
+//    b. Otherwise "others" is set aside (it is not one candidate) and the top
+//       two parties are the finalists.
+//    Both are flagged lower_confidence with a plain-English note.
 // ---------------------------------------------------------------------------
 
 export const PARTY_KEYS = ["alp", "lnp", "grn", "onp", "others"];
 export const PARTY_LABEL = { alp: "Labor", lnp: "Coalition", grn: "Greens", onp: "One Nation", others: "Independent/other" };
-const SUMMARY_PARTY = { alp: "labor", lnp: "coalition", grn: "greens", onp: "one-nation" };
+const SUMMARY_PARTY = { alp: "labor", lnp: "coalition", grn: "greens", onp: "one-nation", others: "independent" };
+const COALITION = new Set(["liberal", "nationals"]);
+const PARTY_WORD = { liberal: "Liberal", nationals: "Nationals", independent: "Independent" };
 
 /** Coalition -> One Nation flow, defined as equal to One Nation -> Coalition (1 - o) in the same scenario. */
 export const lnpToOnp = (f) => 1 - f.onp;
@@ -269,15 +276,32 @@ export function buildMultiPartyForecast(rawAverage, results, districts, params =
     const name = names.get(d.slug) ?? d.slug;
     const winner2022 = d.two_candidate_preferred?.winner?.party ?? null;
     const p2022 = districtPrimaries(d, onpBaseline);
-    if (!d.primaries.some((x) => x.party === "labor")) {
-      return { slug: d.slug, name, winner2022, status: "not-modelled", reason: "No Labor candidate in the 2022 count (supplementary election), so there is no baseline to swing" };
+    const hasLabor = d.primaries.some((x) => x.party === "labor");
+    const prim = hasLabor ? projectPrimaries(p2022, average, base) : null;
+    const order = prim ? [...PARTY_KEYS].sort((x, y) => prim[y] - prim[x]) : [];
+    const othersTop = order.slice(0, 2).includes("others");
+    if (!hasLabor || othersTop) {
+      const tcp = d.two_candidate_preferred;
+      const w = tcp?.winner, r = tcp?.runner_up;
+      const coal = [w, r].find((x) => x && COALITION.has(x.party));
+      const ind = [w, r].find((x) => x && x.party === "independent");
+      if (coal && ind) {
+        const swing = average.lnp - base.lnp;
+        const share = Math.min(100, Math.max(0, coal.pct + swing));
+        const leader = share >= 50 ? "lnp" : "others";
+        const margin = r1(Math.abs(share - 50));
+        const byScenario = Object.fromEntries(twoParty.scenarios.map((sc) => [sc.id, { leader, margin }]));
+        const supp = hasLabor ? "" : " The 2022 count was a supplementary election with no Labor candidate, so the usual method cannot run.";
+        const note = `Lower confidence. Starts from the 2022 final count (${PARTY_WORD[coal.party]} ${r1(coal.pct)}% v Independent ${r1(ind.pct)}%) and moves it by the statewide Coalition swing (${swing >= 0 ? "+" : ""}${r1(swing)} pts). It assumes a similar independent runs again and ignores any One Nation or Labor change here.${supp}`;
+        return { slug: d.slug, name, winner2022, onp_baseline: p2022.onp_baseline, status: "modelled", lower_confidence: true, note, method: "2022 final two + Coalition swing", primaries: prim, finalists: ["lnp", "others"], leader, margin_central: margin, rating: classify(margin), by_scenario: byScenario };
+      }
+      if (!hasLabor) {
+        return { slug: d.slug, name, winner2022, status: "not-modelled", reason: "No Labor candidate in the 2022 count (supplementary election), so there is no baseline to swing" };
+      }
     }
-    const prim = projectPrimaries(p2022, average, base);
-    const order = [...PARTY_KEYS].sort((x, y) => prim[y] - prim[x]);
-    const [a, b] = order;
-    if (a === "others" || b === "others") {
-      return { slug: d.slug, name, winner2022, onp_baseline: p2022.onp_baseline, status: "ind-contest", primaries: prim, finalists: [a, b], reason: "Independent/other vote projected in the top two — Greens/IND contest, not modelled" };
-    }
+    const parties = othersTop ? order.filter((k) => k !== "others") : order;
+    const [a, b] = parties;
+    const lower = othersTop ? { lower_confidence: true, note: `Lower confidence. Independents and minor parties are projected at ${prim.others}% here, enough for the top two, but that vote is split across many candidates, so the model sets it aside and rates the two leading parties. A strong single independent could change this seat.` } : {};
     const byScenario = {};
     const pair = [a, b].sort().join("-");
     const tppSeat = tppBySlug.get(d.slug);
@@ -305,6 +329,7 @@ export function buildMultiPartyForecast(rawAverage, results, districts, params =
       margin_central: c.margin,
       rating: classify(c.margin),
       by_scenario: byScenario,
+      ...lower,
     };
   });
 
@@ -342,6 +367,7 @@ export function buildMultiPartyForecast(rawAverage, results, districts, params =
     summary,
     ranges,
     ind_contest: seats.filter((s) => s.status === "ind-contest").length,
+    lower_confidence: seats.filter((s) => s.lower_confidence).length,
     not_modelled: seats.filter((s) => s.status === "not-modelled").length,
     total: seats.length,
     twoParty,
