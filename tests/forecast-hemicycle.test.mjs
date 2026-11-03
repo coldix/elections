@@ -18,7 +18,8 @@ test("renders 88 linked seats from model data with consistent totals", async () 
   assert.equal((html.match(/<circle /g) || []).length, 88);
   assert.match(html, /45 to govern/);
   const nums = [...html.matchAll(/class="hc-num">(\d+)</g)].map((m) => +m[1]);
-  const other = mp.ind_contest + mp.not_modelled;
+  const ind = mp.summary.independent.firm + mp.summary.independent.leaning;
+  const other = mp.ind_contest + mp.not_modelled + ind;
   assert.equal(nums.reduce((a, b) => a + b, 0) + other, 88);
   const doubt = mp.seats.filter((s) => s.status === "modelled" && s.rating === "doubt");
   for (const s of doubt) assert.ok(html.includes(`hc-doubt`) && html.includes(`/districts/${s.slug}"`));

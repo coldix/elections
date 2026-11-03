@@ -17,18 +17,18 @@ const clientData = mp ? {
   districts: districts.map((d) => ({ slug: d.slug, name: d.name })),
   results: {
     statewide: results.statewide,
-    districts: results.districts.map((d) => ({ slug: d.slug, formal: d.formal, primaries: d.primaries.map((x) => ({ party: x.party, pct: x.pct })), two_candidate_preferred: d.two_candidate_preferred ? { winner: { party: d.two_candidate_preferred.winner.party } } : null, two_party_preferred: d.two_party_preferred ? { winner: { party: d.two_party_preferred.winner.party, pct: d.two_party_preferred.winner.pct }, runner_up: { party: d.two_party_preferred.runner_up.party, pct: d.two_party_preferred.runner_up.pct } } : null })),
+    districts: results.districts.map((d) => ({ slug: d.slug, formal: d.formal, primaries: d.primaries.map((x) => ({ party: x.party, pct: x.pct })), two_candidate_preferred: d.two_candidate_preferred ? { winner: { party: d.two_candidate_preferred.winner.party, pct: d.two_candidate_preferred.winner.pct }, runner_up: d.two_candidate_preferred.runner_up ? { party: d.two_candidate_preferred.runner_up.party, pct: d.two_candidate_preferred.runner_up.pct } : null } : null, two_party_preferred: d.two_party_preferred ? { winner: { party: d.two_party_preferred.winner.party, pct: d.two_party_preferred.winner.pct }, runner_up: { party: d.two_party_preferred.runner_up.party, pct: d.two_party_preferred.runner_up.pct } } : null })),
   },
 } : null;
-const ORDER = { lnp: 0, onp: 1, alp: 2, grn: 3 };
+const ORDER = { lnp: 0, onp: 1, alp: 2, grn: 3, others: 4 };
 const seats = mp ? [...mp.seats].sort((a, b) => {
   const ka = a.status === "modelled" ? ORDER[a.leader] * 100 - a.margin_central * (a.leader === "lnp" ? 1 : -1) : 999;
   const kb = b.status === "modelled" ? ORDER[b.leader] * 100 - b.margin_central * (b.leader === "lnp" ? 1 : -1) : 999;
   return ka - kb;
 }) : [];
 const onpTopTwo = mp ? mp.seats.filter((s) => s.finalists?.includes("onp")).length : 0;
-const PARTIES = [["labor", "Labor"], ["coalition", "Coalition"], ["greens", "Greens"], ["one-nation", "One Nation"]];
-const CLS = { alp: "labor", lnp: "coalition", grn: "greens", onp: "onp" };
+const PARTIES = [["labor", "Labor"], ["coalition", "Coalition"], ["greens", "Greens"], ["one-nation", "One Nation"], ["independent", "Independent"]];
+const CLS = { alp: "labor", lnp: "coalition", grn: "greens", onp: "onp", others: "ind" };
 const updated = buildMeta?.built_at_utc ? buildMeta.built_at_utc.slice(0, 10) : null;
 const RATING = { firm: "Firm", leaning: "Leaning", doubt: "In doubt" };
 const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" };
@@ -79,6 +79,14 @@ const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" 
 
           <div id="fc-results" set:html={renderResults(mp)} />
           <script type="application/json" id="fc-data" set:html={JSON.stringify(clientData)} />
+
+          <section>
+            <h2>Lower-confidence seats</h2>
+            <p class="small muted">These seats are rated, but with a simpler method than the rest, so treat them with more caution. They are marked * on the seat map and ringed in the chamber.</p>
+            <ul>
+              {mp.seats.filter((s) => s.lower_confidence).map((s) => <li><strong>{s.name}</strong>: {PARTY_LABEL[s.leader]} ahead by {s.margin_central} pts ({s.rating === "doubt" ? "in doubt" : s.rating}). {s.note}</li>)}
+            </ul>
+          </section>
 
           <section>
             <h2>Seats the model does not rate</h2>
@@ -182,6 +190,10 @@ const SIDE = { labor: "Labor ahead", coalition: "Coalition ahead", tied: "Tied" 
   .greens-firm, .tile.greens-firm a, .tile.greens-leaning a { background: #3a8a4a; }
   .tile.greens-firm a { color: #fff; }
   .onp-firm, .tile.onp-firm a, .tile.onp-leaning a { background: #e08a1e; }
+  .ind-firm, .tile.ind-firm a { background: #6b4fa0; color: #fff; }
+  .ind-leaning, .tile.ind-leaning a { background: #c3b3e0; color: #222; }
+  .tile.lowconf a { outline: 2px dashed #111; outline-offset: -3px; }
+  .sw.lowconf-key { background: #fff; outline: 2px dashed #111; outline-offset: -3px; }
   .indc, .tile.indc a { background: repeating-linear-gradient(-45deg, #cfe3d2 0 6px, #f0f0f0 6px 12px); color: #333; }
   .fin { display: block; font-size: 0.62rem; opacity: 0.85; margin-top: 2px; }
   .none, .tile.none a { background: #ddd; color: #555; }
