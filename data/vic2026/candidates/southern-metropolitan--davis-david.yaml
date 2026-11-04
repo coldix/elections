@@ -1,0 +1,24 @@
+candidate:
+  name: David Davis
+  party: liberal
+  contest: southern-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-03-17
+      source:
+        url: https://vicliberal.org.au/media-releases/2026-03-17-victorian-liberal-party-endorses-new-upper-house-candidates
+        publisher: Victorian Liberal Party
+        title: Victorian Liberal Party Endorses New Upper House Candidates
+        published: 2026-03-17
+        accessed: 2026-11-04
+      note: >-
+        Official Liberal media release states David Davis MP was endorsed for the
+        first position on the Liberal Legislative Council ticket for the
+        Southern Metropolitan Region. The release notes sitting MLCs were endorsed by the
+        State Executive after their nominations were not opposed. Page is
+        client-rendered; verified by rendering it in a browser.
+  links:
+    - url: https://vicliberal.org.au/team/david-davis
+      kind: party-profile
