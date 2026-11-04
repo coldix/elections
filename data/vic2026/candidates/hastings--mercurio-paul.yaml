@@ -1,0 +1,21 @@
+candidate:
+  name: "Paul Mercurio"
+  party: labor
+  contest: hastings
+  chamber: assembly
+  status: provisional
+  history:
+    - status: provisional
+      date: 2026-11-04
+      source:
+        url: https://www.viclabor.org.au/our-team/paul-mercurio
+        publisher: Victorian Labor
+        title: "Paul Mercurio | Labor State Team"
+        accessed: 2026-11-04
+      note: >-
+        Victorian Labor profile lists Paul Mercurio as State Member for Hastings. No
+        retirement announced. Provisional: expected to recontest, but the
+        party has not yet officially named them as its 2026 candidate.
+  links:
+    - url: https://www.viclabor.org.au/our-team/paul-mercurio
+      kind: party-profile

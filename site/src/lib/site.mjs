@@ -147,6 +147,7 @@ export const partyColour = (slug) => PARTY_COLOURS[slug] ?? "#6E6E7A";
 
 /** Where a status sits on the announced -> endorsed -> nominated pipeline. */
 export const STATUS_STAGE = {
+  provisional: 0,
   announced: 1,
   endorsed: 2,
   nominated: 3,

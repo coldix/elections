@@ -12,6 +12,7 @@ history with dates and sources.
 
 | Status | Meaning | Minimum evidence |
 |---|---|---|
+| `provisional` | Sitting MP expected to recontest; party has not yet officially named them as its 2026 candidate | The party's official profile page for the sitting MP (e.g. "State Member for ..."), and no announced retirement in `retirements.yaml`. Labelled on the site; upgrade to `endorsed` or `nominated` once a party announcement or the VEC list names them |
 | `announced` | Person or media state an intention to stand; party endorsement not confirmed | Public statement by the person, party or a named news report |
 | `endorsed` | Party has preselected or endorsed the person for the seat | Party announcement, or news report citing the party |
 | `nominated` | Formal nomination accepted by the electoral commission | Commission nominations list |

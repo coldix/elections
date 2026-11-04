@@ -11,7 +11,7 @@ const VEC_RESULTS_URL_OVERRIDES = {
 };
 
 const DATA_DIR = new URL("../data/", import.meta.url).pathname;
-const STATUSES = ["announced", "endorsed", "nominated", "withdrawn", "disendorsed", "elected", "defeated"];
+const STATUSES = ["provisional", "announced", "endorsed", "nominated", "withdrawn", "disendorsed", "elected", "defeated"];
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 let errors = 0;

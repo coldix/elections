@@ -39,12 +39,13 @@ function findDataDir() {
 const DATA_DIR = findDataDir();
 
 /** Statuses that mean a person is currently standing (or has won). */
-export const LIVE_STATUSES = ["announced", "endorsed", "nominated", "elected"];
+export const LIVE_STATUSES = ["provisional", "announced", "endorsed", "nominated", "elected"];
 /** Statuses that mean a candidacy has ended. */
 export const ENDED_STATUSES = ["withdrawn", "disendorsed", "defeated"];
 export const ALL_STATUSES = [...LIVE_STATUSES, ...ENDED_STATUSES];
 
 export const STATUS_LABELS = {
+  provisional: "Provisional",
   announced: "Announced",
   endorsed: "Endorsed",
   nominated: "Formally nominated",
@@ -52,6 +53,23 @@ export const STATUS_LABELS = {
   withdrawn: "Withdrawn",
   disendorsed: "Disendorsed",
   defeated: "Defeated",
+};
+
+/**
+ * Plain-English meaning of each status, shown as badge tooltips and in the
+ * candidates legend on the site.
+ */
+export const STATUS_DESCRIPTIONS = {
+  provisional:
+    "Sitting MP expected to recontest, but the party has not yet officially named them as its 2026 candidate.",
+  announced:
+    "The person, or a named news report, says they will stand; party endorsement not yet confirmed by a primary source.",
+  endorsed: "The party has officially preselected or endorsed this person.",
+  nominated: "Formal nomination accepted by the Victorian Electoral Commission.",
+  elected: "Declared elected by the electoral commission.",
+  withdrawn: "Candidacy ended.",
+  disendorsed: "The party revoked its endorsement.",
+  defeated: "Contested and not elected.",
 };
 
 /**
@@ -64,7 +82,8 @@ export const COVERAGE_CAVEAT =
   "presumed to be recontesting but lacking a specific dated announcement are " +
   "NOT counted, so parties holding many seats (notably the governing party) " +
   "undercount relative to their likely ballot presence until each seat is " +
-  "individually verified.";
+  "individually verified. Candidacies marked Provisional (a sitting MP " +
+  "expected to recontest, not yet officially named) are counted but labelled.";
 
 const load = (dir, name) => parse(readFileSync(join(dir, name), "utf8"));
 

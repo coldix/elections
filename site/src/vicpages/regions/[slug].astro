@@ -1,10 +1,12 @@
 ---
+import StatusLegend from "../../components/StatusLegend.astro";
 import Base from "../../layouts/Base.astro";
 import SourceLink from "../../components/SourceLink.astro";
 import {
   loadElection,
   LIVE_STATUSES,
   STATUS_LABELS,
+  STATUS_DESCRIPTIONS,
 } from "../../../../scripts/lib/data.mjs";
 import { SITE, partyColour, formatDate } from "../../lib/site.mjs";
 
@@ -116,6 +118,7 @@ const schema = {
     </ul>
 
     <h2 class="sh">Recorded 2026 candidates</h2>
+    <StatusLegend />
     {
       live.length === 0 ? (
         <p class="empty card">
@@ -147,7 +150,7 @@ const schema = {
                     </p>
                   )}
                 </div>
-                <span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
+                <span class={`pill pill-${c.status}`} title={STATUS_DESCRIPTIONS[c.status]}>{STATUS_LABELS[c.status]}</span>
               </div>
               <ol class="history" role="list">
                 {c.history.map((h) => (
@@ -209,7 +212,7 @@ const schema = {
                       {partyName(c.party)}
                     </p>
                   </div>
-                  <span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
+                  <span class={`pill pill-${c.status}`} title={STATUS_DESCRIPTIONS[c.status]}>{STATUS_LABELS[c.status]}</span>
                 </div>
                 <ol class="history" role="list">
                   {c.history.map((h) => (

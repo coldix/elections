@@ -1,0 +1,21 @@
+candidate:
+  name: "Steve Dimopoulos"
+  party: labor
+  contest: oakleigh
+  chamber: assembly
+  status: provisional
+  history:
+    - status: provisional
+      date: 2026-11-04
+      source:
+        url: https://www.viclabor.org.au/our-team/steve-dimopoulos
+        publisher: Victorian Labor
+        title: "Steve Dimopoulos | Labor State Team"
+        accessed: 2026-11-04
+      note: >-
+        Victorian Labor profile lists Steve Dimopoulos as State Member for Oakleigh. No
+        retirement announced. Provisional: expected to recontest, but the
+        party has not yet officially named them as its 2026 candidate.
+  links:
+    - url: https://www.viclabor.org.au/our-team/steve-dimopoulos
+      kind: party-profile

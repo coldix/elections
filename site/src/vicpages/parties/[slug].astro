@@ -1,4 +1,5 @@
 ---
+import StatusLegend from "../../components/StatusLegend.astro";
 import Base from "../../layouts/Base.astro";
 import SourceLink from "../../components/SourceLink.astro";
 import {
@@ -6,6 +7,7 @@ import {
   coverageFor,
   LIVE_STATUSES,
   STATUS_LABELS,
+  STATUS_DESCRIPTIONS,
   COVERAGE_CAVEAT,
 } from "../../../../scripts/lib/data.mjs";
 import { SITE, partyColour, formatDate } from "../../lib/site.mjs";
@@ -128,6 +130,7 @@ const sittingMLCs = data.councilMembers.filter((m) => m.party === party.slug);
     <div class="notice muted-notice" role="note">{COVERAGE_CAVEAT}</div>
 
     <h2 class="sh">Legislative Assembly candidates</h2>
+    <StatusLegend />
     {
       assembly.length === 0 ? (
         <p class="card empty">No individually sourced candidate recorded yet.</p>
@@ -154,7 +157,7 @@ const sittingMLCs = data.councilMembers.filter((m) => m.party === party.slug);
                   </th>
                   <td>{c.name}</td>
                   <td>
-                    <span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
+                    <span class={`pill pill-${c.status}`} title={STATUS_DESCRIPTIONS[c.status]}>{STATUS_LABELS[c.status]}</span>
                   </td>
                   <td class="muted">{formatDate(c.latest_date)}</td>
                   <td><SourceLink source={c.latest_source} showAccessed={false} /></td>
@@ -192,7 +195,7 @@ const sittingMLCs = data.councilMembers.filter((m) => m.party === party.slug);
                     </th>
                     <td>{c.name}</td>
                     <td>
-                      <span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
+                      <span class={`pill pill-${c.status}`} title={STATUS_DESCRIPTIONS[c.status]}>{STATUS_LABELS[c.status]}</span>
                     </td>
                     <td class="muted">{formatDate(c.latest_date)}</td>
                     <td><SourceLink source={c.latest_source} showAccessed={false} /></td>

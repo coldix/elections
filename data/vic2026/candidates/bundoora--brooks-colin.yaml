@@ -1,0 +1,21 @@
+candidate:
+  name: "Colin Brooks"
+  party: labor
+  contest: bundoora
+  chamber: assembly
+  status: provisional
+  history:
+    - status: provisional
+      date: 2026-11-04
+      source:
+        url: https://www.viclabor.org.au/our-team/colin-brooks
+        publisher: Victorian Labor
+        title: "Colin Brooks | Labor State Team"
+        accessed: 2026-11-04
+      note: >-
+        Victorian Labor profile lists Colin Brooks as State Member for Bundoora. No
+        retirement announced. Provisional: expected to recontest, but the
+        party has not yet officially named them as its 2026 candidate.
+  links:
+    - url: https://www.viclabor.org.au/our-team/colin-brooks
+      kind: party-profile

@@ -1,0 +1,21 @@
+candidate:
+  name: "Belinda Wilson"
+  party: labor
+  contest: narre-warren-north
+  chamber: assembly
+  status: provisional
+  history:
+    - status: provisional
+      date: 2026-11-04
+      source:
+        url: https://www.viclabor.org.au/our-team/belinda-wilson
+        publisher: Victorian Labor
+        title: "Belinda Wilson | Labor State Team"
+        accessed: 2026-11-04
+      note: >-
+        Victorian Labor profile lists Belinda Wilson as State Member for Narre Warren North. No
+        retirement announced. Provisional: expected to recontest, but the
+        party has not yet officially named them as its 2026 candidate.
+  links:
+    - url: https://www.viclabor.org.au/our-team/belinda-wilson
+      kind: party-profile

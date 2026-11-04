@@ -1,0 +1,17 @@
+candidate:
+  name: "Ann-Marie Hermans"
+  party: liberal
+  contest: south-eastern-metropolitan
+  chamber: council
+  status: announced
+  history:
+    - status: announced
+      date: 2026-03-22
+      source:
+        url: "https://www.theage.com.au/national/victoria/conservative-liberal-mp-rolled-for-top-spot-amid-fiery-preselection-battles-20260322-p5rmhn.html"
+        publisher: "The Age"
+        title: "Conservative Liberal MP rolled for top spot amid fiery preselection battles"
+        published: 2026-03-22
+        accessed: 2026-11-04
+      note: >-
+        The Age reports the South-Eastern Metropolitan Liberal preselection, with sitting MLC Hermans on the ticket behind Phillip Pease.

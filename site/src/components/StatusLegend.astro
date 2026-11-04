@@ -1,0 +1,13 @@
+---
+/** Short legend explaining candidate status badges. */
+import { STATUS_LABELS, STATUS_DESCRIPTIONS } from "../../../scripts/lib/data.mjs";
+const shown = ["provisional", "announced", "endorsed", "nominated"];
+---
+<details class="status-legend-wrap" open>
+  <summary>What the status badges mean</summary>
+  <ul class="status-legend">
+    {shown.map((s) => (
+      <li><span class={`pill pill-${s}`}>{STATUS_LABELS[s]}</span> {STATUS_DESCRIPTIONS[s]}</li>
+    ))}
+  </ul>
+</details>

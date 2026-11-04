@@ -1,0 +1,21 @@
+candidate:
+  name: "Anthony Carbines"
+  party: labor
+  contest: ivanhoe
+  chamber: assembly
+  status: provisional
+  history:
+    - status: provisional
+      date: 2026-11-04
+      source:
+        url: https://www.viclabor.org.au/our-team/anthony-carbines
+        publisher: Victorian Labor
+        title: "Anthony Carbines | Labor State Team"
+        accessed: 2026-11-04
+      note: >-
+        Victorian Labor profile lists Anthony Carbines as State Member for Ivanhoe. No
+        retirement announced. Provisional: expected to recontest, but the
+        party has not yet officially named them as its 2026 candidate.
+  links:
+    - url: https://www.viclabor.org.au/our-team/anthony-carbines
+      kind: party-profile

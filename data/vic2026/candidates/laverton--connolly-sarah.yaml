@@ -1,0 +1,21 @@
+candidate:
+  name: "Sarah Connolly"
+  party: labor
+  contest: laverton
+  chamber: assembly
+  status: provisional
+  history:
+    - status: provisional
+      date: 2026-11-04
+      source:
+        url: https://www.viclabor.org.au/our-team/sarah-connolly
+        publisher: Victorian Labor
+        title: "Sarah Connolly | Labor State Team"
+        accessed: 2026-11-04
+      note: >-
+        Victorian Labor profile lists Sarah Connolly as State Member for Laverton. No
+        retirement announced. Provisional: expected to recontest, but the
+        party has not yet officially named them as its 2026 candidate.
+  links:
+    - url: https://www.viclabor.org.au/our-team/sarah-connolly
+      kind: party-profile

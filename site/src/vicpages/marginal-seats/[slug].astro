@@ -2,7 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import SourceLink from "../../components/SourceLink.astro";
 import DistrictResult2022 from "../../components/DistrictResult2022.astro";
-import { loadElection, LIVE_STATUSES, STATUS_LABELS } from "../../../../scripts/lib/data.mjs";
+import { loadElection, LIVE_STATUSES, STATUS_LABELS, STATUS_DESCRIPTIONS } from "../../../../scripts/lib/data.mjs";
 import { loadPolls, computePollAverage } from "../../../../scripts/lib/polls.mjs";
 import { loadDistrictResults2022, partyResultLabel } from "../../../../scripts/lib/district-results.mjs";
 import { SITE, partyColour, formatDate } from "../../lib/site.mjs";
@@ -122,7 +122,7 @@ const schema = {
                 <p class="cand-party">
                   <span class="swatch" style={`--party-colour:${partyColour(c.party)}`} aria-hidden="true" />
                   <a href={`/parties/${c.party}`}>{partyName(c.party)}</a>
-                  {" "}<span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
+                  {" "}<span class={`pill pill-${c.status}`} title={STATUS_DESCRIPTIONS[c.status]}>{STATUS_LABELS[c.status]}</span>
                 </p>
                 {latest?.source && (
                   <p class="muted small">

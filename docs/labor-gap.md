@@ -23,7 +23,11 @@ A blank Labor cell is usually **missing public recontest source**, not “Labor 
 4. **Also valid:** challenger coverage that explicitly frames the sitting MLA as seeking
    re-election or as Labor’s 2026 opponent (same bar as Alison Marchant).
 
-## What does **not** count alone
+## Provisional records (2026-11-04)
+
+Sitting Labor MLAs not in `retirements.yaml` may be encoded with status `provisional`, citing their official "State Member for ..." profile. This is a labelled placeholder, not evidence of endorsement; upgrade each one when a party announcement or the VEC nominations list names them.
+
+## What does **not** count alone (for `endorsed` or `announced`)
 
 - Wikipedia “incumbent” / candidates tables
 - `viclabor.org.au/our-team` **“Candidate for …”** labels on the index, or **“State Member for …”**

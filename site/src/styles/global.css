@@ -352,6 +352,14 @@ code,
   background: var(--st-announced-bg);
   border-color: color-mix(in srgb, var(--st-announced) 25%, transparent);
 }
+.pill-provisional {
+  color: var(--st-ended);
+  background: transparent;
+  border: 1px dashed color-mix(in srgb, var(--st-ended) 60%, transparent);
+}
+.pill[title] { cursor: help; }
+.status-legend { font-size: 0.85rem; margin: 0.5rem 0 1rem; padding: 0; list-style: none; display: grid; gap: 0.3rem; }
+.status-legend li { display: flex; gap: 0.5rem; align-items: baseline; }
 .pill-endorsed {
   color: var(--st-endorsed);
   background: var(--st-endorsed-bg);

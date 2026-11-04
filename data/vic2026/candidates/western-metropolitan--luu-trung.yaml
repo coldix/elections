@@ -1,0 +1,17 @@
+candidate:
+  name: "Trung Luu"
+  party: liberal
+  contest: western-metropolitan
+  chamber: council
+  status: announced
+  history:
+    - status: announced
+      date: 2026-08-10
+      source:
+        url: "https://www.pollbludger.net/2026/08/10/victorian-election-minus-16-weeks/"
+        publisher: "The Poll Bludger"
+        title: "Victorian election minus 16 weeks"
+        published: 2026-08-10
+        accessed: 2026-11-04
+      note: >-
+        Reports sitting MLC Trung Luu lost the lead Western Metropolitan spot to Roshena Campbell and nominated for the second ticket position. Outcome of that process not confirmed by a primary source.

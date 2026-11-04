@@ -1,0 +1,17 @@
+candidate:
+  name: "Melina Bath"
+  party: nationals
+  contest: eastern-victoria
+  chamber: council
+  status: announced
+  history:
+    - status: announced
+      date: 2026-09-21
+      source:
+        url: "https://upperyarra.mailcommunity.com.au/news/2026-09-21/nationals-melina-bath-seeking-a-third-full-term-serving-eastern-victoria/"
+        publisher: "Upper Yarra Star Mail"
+        title: "Nationals' Melina Bath seeking a third full term serving Eastern Victoria"
+        published: 2026-09-21
+        accessed: 2026-11-04
+      note: >-
+        Star Mail reports and quotes Bath seeking re-election for the Nationals in Eastern Victoria.
