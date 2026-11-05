@@ -3,7 +3,7 @@ candidate:
   party: nationals
   contest: bendigo-east
   chamber: assembly
-  status: announced
+  status: endorsed
   occupation: "Publican"
   background: "Bendigo hospitality business owner; former federal Nationals candidate for Bendigo"
   history:
@@ -15,6 +15,17 @@ candidate:
         publisher: ABC News
         published: 2026-04-04
         accessed: 2026-04-04
+    - status: endorsed
+      date: 2026-11-06
+      source:
+        url: "https://vic.nationals.org.au/media-releases/andrew-lethlean-selected-as-nationals-candidate-for-bendigo-east/"
+        title: "Andrew Lethlean selected as Nationals' candidate for Bendigo East"
+        publisher: The Nationals Victoria
+        accessed: 2026-11-06
+      note: >-
+        Party media release says The Nationals have selected Andrew Lethlean as their
+        candidate for Bendigo East. The release page shows no publication date; status
+        dated to when verified.
   links:
     - url: https://vic.nationals.org.au/candidates-andrew-lethlean/
       kind: party-profile

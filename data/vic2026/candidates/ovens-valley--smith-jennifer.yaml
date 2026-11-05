@@ -1,0 +1,19 @@
+candidate:
+  name: "Jennifer Smith"
+  party: labor
+  contest: ovens-valley
+  chamber: assembly
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-06
+      source:
+        url: "https://www.viclabor.org.au/our-team/jennifer-smith"
+        title: "Jennifer Smith | Labor Candidates"
+        publisher: "Victorian Labor"
+        accessed: 2026-11-06
+      note: >-
+        Official Victorian Labor candidates page lists "Candidate for Ovens Valley". Party does not publish a preselection date; 6 November 2026 is the date the official profile was verified for this ledger.
+  links:
+    - url: "https://www.viclabor.org.au/our-team/jennifer-smith"
+      kind: party-profile

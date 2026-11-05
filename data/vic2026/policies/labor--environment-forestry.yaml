@@ -62,3 +62,16 @@ policy:
         publisher: Victorian Government
         title: Biodiversity 2037 Progress Report
         accessed: '2026-08-02'
+    - id: labor-env-fire-trucks-2026-10
+      statement: >-
+        A re-elected Carroll Labor Government says it will deliver 150 new fire trucks by 2030
+        (50 FRV trucks, 50 CFA pumpers and pumper-tankers, 50 CFA tankers), a $167 million
+        investment, with locally manufactured vehicles, replacement of all single-cab CFA
+        tankers, and no FRV truck operating beyond its 15-year service life by 2035.
+      kind: pledge
+      source:
+        url: https://www.viclabor.org.au/news/150-new-fire-trucks-for-the-frontline-to-keep-us-safe
+        publisher: Victorian Labor
+        title: 150 New Fire Trucks for the Frontline to Keep Us Safe
+        published: '2026-10-08'
+        accessed: '2026-11-06'

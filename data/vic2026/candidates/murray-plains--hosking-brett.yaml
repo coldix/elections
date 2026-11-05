@@ -3,7 +3,7 @@ candidate:
   party: nationals
   contest: murray-plains
   chamber: assembly
-  status: announced
+  status: endorsed
   history:
     - status: announced
       date: 2026-04-27
@@ -12,3 +12,14 @@ candidate:
         title: "It's official: Hosking gets Nationals' nod | Loddon Herald"
         publisher: www.loddonherald.com.au
         accessed: 2026-04-27
+    - status: endorsed
+      date: 2026-04-24
+      source:
+        url: "https://vic.nationals.org.au/media-releases/brett-hosking-selected-as-the-nationals-candidate-for-murray-plains/"
+        title: "Brett Hosking selected as The Nationals' candidate for Murray Plains"
+        publisher: The Nationals Victoria
+        published: 2026-04-24
+        accessed: 2026-11-06
+      note: >-
+        Party media release says The Nationals have selected Brett Hosking as their
+        candidate for Murray Plains.

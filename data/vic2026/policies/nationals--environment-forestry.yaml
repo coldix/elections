@@ -40,3 +40,17 @@ policy:
       title: Auditor-General report exposes failure of native timber transition
       published: '2026-04-10'
       accessed: '2026-08-02'
+  - id: nationals-env-cfa-fleet-2026-11
+    statement: >-
+      A Liberal and Nationals government says it will deliver 335 new CFA trucks over five
+      years (building to 100 a year, retiring single-cab tankers within 10 years), 17 new and
+      upgraded CFA stations, a recruitment target of 10,000 volunteers over a decade and an
+      Emergency Services Volunteer Ombudsman, in a $200 million plan costed by the
+      Parliamentary Budget Office. The truck program would begin on 1 July 2027.
+    kind: pledge
+    source:
+      url: https://vic.nationals.org.au/media-releases/danny-obrien-mp-annabelle-cleeland-mp-335-new-fire-trucks-to-back-our-cfa-heroes/
+      publisher: The Nationals Victoria (joint Liberal–Nationals statement)
+      title: 335 new fire trucks to back our CFA heroes
+      published: '2026-11-04'
+      accessed: '2026-11-06'

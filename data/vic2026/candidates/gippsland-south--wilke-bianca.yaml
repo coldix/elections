@@ -1,5 +1,5 @@
 candidate:
-  name: Bianca Wilke
+  name: Bianca Wilkie
   party: one-nation
   contest: gippsland-south
   chamber: assembly
@@ -15,8 +15,21 @@ candidate:
       note: >-
         Party candidate page lists Bianca as One Nation's candidate
         for Gippsland South.
+  corrections:
+    - date: 2026-11-06
+      was: "name Bianca Wilke"
+      now: "name Bianca Wilkie"
+      reason: >-
+        One Nation Victoria now spells her surname "Wilkie" on its candidates
+        list and on her candidate page, which has moved to a new URL. The
+        earlier page spelt it "Wilke".
+      source:
+        url: https://vic.onenation.org.au/candidate/bianca-wilkie
+        publisher: Pauline Hanson's One Nation Victoria
+        title: "Bianca Wilkie - VIC One Nation"
+        accessed: 2026-11-06
   links:
-    - url: https://vic.onenation.org.au/bianca-wilke
+    - url: https://vic.onenation.org.au/candidate/bianca-wilkie
       kind: party-profile
     - url: https://vic.onenation.org.au/candidates
       kind: party

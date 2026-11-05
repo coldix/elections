@@ -3,7 +3,7 @@ candidate:
   party: nationals
   contest: ripon
   chamber: assembly
-  status: announced
+  status: endorsed
   history:
     - status: announced
       date: 2026-04-14
@@ -17,3 +17,14 @@ candidate:
         Wikipedia's citation reads "Retrieved 15 April 2016" — an evident
         typo (article is from 2026, cited alongside other 2026 sources).
         Accessed date corrected to reflect when this record was verified.
+    - status: endorsed
+      date: 2026-04-14
+      source:
+        url: "https://vic.nationals.org.au/media-releases/jo-armstrong-selected-as-nationals-candidate-for-ripon/"
+        title: "Jo Armstrong selected as Nationals' candidate for Ripon"
+        publisher: The Nationals Victoria
+        published: 2026-04-14
+        accessed: 2026-11-06
+      note: >-
+        Party media release says The Nationals have selected Jo Armstrong as their
+        candidate for Ripon.

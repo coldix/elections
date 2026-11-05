@@ -1,0 +1,19 @@
+candidate:
+  name: "Kane Afford"
+  party: one-nation
+  contest: north-eastern-metropolitan
+  chamber: council
+  status: endorsed
+  history:
+    - status: endorsed
+      date: 2026-11-06
+      source:
+        url: "https://vic.onenation.org.au/candidate/kane-afford"
+        title: "Kane Afford - VIC One Nation"
+        publisher: "Pauline Hanson's One Nation Victoria"
+        accessed: 2026-11-06
+      note: >-
+        One Nation Victoria candidate page lists Kane Afford as One Nation's candidate for North-Eastern Metropolitan (upper house). Ticket position not stated. Page carries no publication date; status dated to when verified.
+  links:
+    - url: "https://vic.onenation.org.au/candidate/kane-afford"
+      kind: party-profile
