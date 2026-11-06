@@ -46,3 +46,67 @@ export function renderCouncilChamber(fc) {
 </figure>
 <ul class="legend">${legend}<li><span class="sw lowconf-key"></span>Dashed ring = lower confidence</li></ul>`;
 }
+
+/** Slider definitions for /forecast/council (exhaust + same-side). */
+export const COUNCIL_SLIDERS = [
+  { key: "exhaust", label: "Share of excluded votes that exhaust", min: 0.05, max: 0.5, step: 0.05, fmt: (v) => `${Math.round(v * 100)}%` },
+  { key: "sameBloc", label: "Of the rest, share that stay on the same side", min: 0.3, max: 0.9, step: 0.05, fmt: (v) => `${Math.round(v * 100)}%` },
+];
+
+const RATING_LABEL = { firm: "Firm", leaning: "Leaning", doubt: "In doubt" };
+const HOW_LABEL = { quota: "full quota on first preferences", "quota-after-preferences": "full quota after preferences", remainder: "leftover votes and preferences" };
+
+/** One-row-per-region last-seat table (updates with the sliders). */
+export function renderLastSeatTable(fc) {
+  const rows = fc.regions.map((r) => {
+    const last = r.seats[r.seats.length - 1];
+    const closest = r.closest
+      ? `${esc(labelFor(r.closest.excluded, r.group_names))} last out on ${r.closest.excluded_share}% against ${esc(labelFor(r.closest.next, r.group_names))} on ${r.closest.next_share}%`
+      : "—";
+    return `<tr class="${last.lower_confidence ? "lowconf-row" : ""}"><th scope="row"><a href="#region-${esc(r.slug)}">${esc(r.name)}</a></th><td><span class="sw" style="background:${colourFor(last.seat_party)}"></span> ${esc(labelFor(last.seat_party, r.group_names))}</td><td>${RATING_LABEL[last.rating]}</td><td class="small">${closest}</td></tr>`;
+  }).join("");
+  return `<table class="fc-table cc-last"><thead><tr><th scope="col">Region</th><th scope="col">Last seat</th><th scope="col">Rating</th><th scope="col">Closest for the last seat</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+/** Live party totals for the current flow (single column). */
+export function renderCurrentTotals(fc) {
+  const rows = Object.entries(fc.totals).map(([p, n]) => `<tr><th scope="row"><span class="sw" style="background:${colourFor(p)}"></span> ${esc(labelFor(p))}</th><td>${n}</td></tr>`).join("");
+  return `<table class="fc-table"><thead><tr><th scope="col">Party</th><th scope="col">Seats</th></tr></thead><tbody>${rows}</tbody></table><p class="small muted">${MAJORITY} seats are a majority of 40. ${fc.lower_confidence} of the ${fc.total} seats are lower confidence.</p>`;
+}
+
+/** Seat list markup for one region card (so sliders can refresh the last-seat call). */
+export function renderRegionSeatList(r) {
+  const items = r.seats.map((s) => {
+    const note = s.lower_confidence ? `<p class="small note">Lower confidence. ${esc(s.note)}</p>` : "";
+    return `<li class="${s.lower_confidence ? "lowconf" : ""}"><span class="sw" style="background:${colourFor(s.seat_party)}"></span> <strong>${esc(labelFor(s.seat_party, r.group_names))}</strong> <span class="muted">${RATING_LABEL[s.rating]}, ${HOW_LABEL[s.how]}</span>${note}</li>`;
+  }).join("");
+  const closest = r.closest
+    ? `<p class="small cc-closest">Closest for the last seat: ${esc(labelFor(r.closest.excluded, r.group_names))} was last out on ${r.closest.excluded_share}% against ${esc(labelFor(r.closest.next, r.group_names))} on ${r.closest.next_share}%.</p>`
+    : `<p class="small cc-closest"></p>`;
+  return `<ol class="seats">${items}</ol>${closest}`;
+}
+
+/**
+ * Live block re-rendered by the Council sliders: chamber, current totals, last-seat table.
+ * Scenario comparison table stays outside this block as a static reference.
+ */
+export function renderCouncilLive(fc, { label = "Our default assumptions" } = {}) {
+  const p = fc.params ?? { exhaust: 0.2, sameBloc: 0.6 };
+  return `
+<p class="fc-label"><strong>${esc(label)}</strong> · Exhaust ${Math.round(p.exhaust * 100)}% · Same side ${Math.round(p.sameBloc * 100)}%</p>
+<section>
+  <h2>Projected chamber</h2>
+  ${renderCouncilChamber(fc)}
+</section>
+<section class="fc-summary">
+  <div class="card">
+    <h2>Seats by party (this scenario)</h2>
+    ${renderCurrentTotals(fc)}
+  </div>
+  <div class="card">
+    <h2>Last seat in each region</h2>
+    <p class="small muted">The fifth seat in every region is decided on preferences. These eight contests move with the sliders.</p>
+    ${renderLastSeatTable(fc)}
+  </div>
+</section>`;
+}

@@ -3,8 +3,8 @@ import Base from "../../layouts/Base.astro";
 import { formatDate } from "../../lib/site.mjs";
 import { loadPolls, computePollAverage } from "../../../../scripts/lib/polls.mjs";
 import { baselineFromResults, loadVicInputs } from "../../../../scripts/lib/forecast.mjs";
-import { buildCouncilForecast, backtest2022, loadCouncilResults, COUNCIL_SCENARIOS, BLOC, QUOTA_PCT } from "../../../../scripts/lib/council.mjs";
-import { renderCouncilChamber, labelFor, colourFor, MAJORITY } from "../../lib/council-view.mjs";
+import { buildCouncilForecast, backtest2022, loadCouncilResults, COUNCIL_SCENARIOS, BLOC, QUOTA_PCT, DEFAULT_COUNCIL_PARAMS } from "../../../../scripts/lib/council.mjs";
+import { renderCouncilLive, renderRegionSeatList, labelFor, colourFor, MAJORITY, COUNCIL_SLIDERS } from "../../lib/council-view.mjs";
 import buildMeta from "../../generated/build-meta.json";
 
 const average = computePollAverage(loadPolls("vic2026"));
@@ -14,13 +14,21 @@ const base = baselineFromResults(results);
 const fc = average.status === "ok" ? buildCouncilForecast(average.primaries, base, council) : null;
 const bt = backtest2022(council);
 const updated = buildMeta?.built_at_utc ? buildMeta.built_at_utc.slice(0, 10) : null;
-const RATING = { firm: "Firm", leaning: "Leaning", doubt: "In doubt" };
-const HOW = { quota: "full quota on first preferences", "quota-after-preferences": "full quota after preferences", remainder: "leftover votes and preferences" };
 const parties = fc ? Object.keys(fc.totals) : [];
 const left = Object.entries(BLOC).filter(([, b]) => b === "left").map(([p]) => p);
 const right = Object.entries(BLOC).filter(([, b]) => b === "right").map(([p]) => p);
 const names = Object.assign({}, ...council.regions.map((r) => Object.fromEntries(r.groups.map((g) => [g.party, g.name]))));
 const pct = (x) => `${Math.round(x * 100)}%`;
+// Slim region data for the in-browser model (same primaries the server already swung).
+const clientData = fc ? {
+  regions: fc.regions.map((r) => ({
+    slug: r.slug,
+    name: r.name,
+    primaries: r.primaries,
+    group_names: r.group_names,
+    elected_2022: r.elected_2022,
+  })),
+} : null;
 ---
 
 <Base
@@ -49,22 +57,39 @@ const pct = (x) => `${Math.round(x * 100)}%`;
       {!fc && <p class="empty">The poll average is not available, so the model has nothing to run on.</p>}
       {fc && (
         <>
+          <section class="fc-assume" aria-labelledby="cc-assume-h">
+            <h2 id="cc-assume-h">Assumptions: try your own</h2>
+            <p class="small">The results below use our default assumptions (exhaust {pct(DEFAULT_COUNCIL_PARAMS.exhaust)}, same side {pct(DEFAULT_COUNCIL_PARAMS.sameBloc)}). Move a slider to see <strong>your scenario</strong>: the chamber, party totals and each region's last seat update in your browser. Nothing is saved or sent. Needs JavaScript; without it you see our defaults. Coalition and One Nation are already on the same side in this model, so that flow is bundled into "same side".</p>
+            <form id="cc-form" class="fc-sliders" hidden>
+              {COUNCIL_SLIDERS.map((sl) => (
+                <div class="sl">
+                  <label for={`cc-${sl.key}`}>{sl.label}</label>
+                  <input type="range" id={`cc-${sl.key}`} name={sl.key} min={sl.min} max={sl.max} step={sl.step} value={DEFAULT_COUNCIL_PARAMS[sl.key]} aria-describedby={`cc-out-${sl.key}`} />
+                  <output id={`cc-out-${sl.key}`} for={`cc-${sl.key}`}>{sl.fmt(DEFAULT_COUNCIL_PARAMS[sl.key])}</output>
+                  <span class="def small muted">default {sl.fmt(DEFAULT_COUNCIL_PARAMS[sl.key])}</span>
+                </div>
+              ))}
+              <p><button type="reset" id="cc-reset">Reset to defaults</button></p>
+            </form>
+            <p id="cc-status" class="fc-status" aria-live="polite"></p>
+          </section>
+
+          <div id="cc-results" set:html={renderCouncilLive(fc)} />
+          <script type="application/json" id="cc-data" set:html={JSON.stringify(clientData)} />
+
           <section>
-            <h2>Projected chamber (central scenario)</h2>
-            <Fragment set:html={renderCouncilChamber(fc)} />
+            <h2>Scenario ranges (fixed reference)</h2>
+            <p class="small muted">The three preference assumptions below stay put as a reference. The chamber and last-seat table above follow the sliders.</p>
+            <table class="fc-table">
+              <thead><tr><th scope="col">Party</th>{COUNCIL_SCENARIOS.map((s) => <th scope="col">{s.label}</th>)}</tr></thead>
+              <tbody>
+                {parties.map((p) => <tr><th scope="row"><span class="sw" style={`background:${colourFor(p)}`}></span> {labelFor(p, names)}</th>{COUNCIL_SCENARIOS.map((s) => <td>{fc.ranges[s.id][p] ?? 0}</td>)}</tr>)}
+              </tbody>
+            </table>
+            <p class="small muted">{MAJORITY} seats are a majority of 40.</p>
           </section>
 
           <section class="fc-summary">
-            <div class="card">
-              <h2>Seats by party</h2>
-              <table class="fc-table">
-                <thead><tr><th scope="col">Party</th>{COUNCIL_SCENARIOS.map((s) => <th scope="col">{s.label}</th>)}</tr></thead>
-                <tbody>
-                  {parties.map((p) => <tr><th scope="row"><span class="sw" style={`background:${colourFor(p)}`}></span> {labelFor(p, names)}</th>{COUNCIL_SCENARIOS.map((s) => <td>{fc.ranges[s.id][p] ?? 0}</td>)}</tr>)}
-                </tbody>
-              </table>
-              <p class="small muted">{MAJORITY} seats are a majority of 40. {fc.lower_confidence} of the {fc.total} seats are lower confidence.</p>
-            </div>
             <div class="card">
               <h2>2022 check</h2>
               <p>Run on the actual 2022 votes with no swing, the model gets <strong>{bt.matched} of {bt.total}</strong> seats right by party.</p>
@@ -76,18 +101,9 @@ const pct = (x) => `${Math.round(x * 100)}%`;
             <h2>Regions</h2>
             <div class="region-grid">
               {fc.regions.map((r) => (
-                <article class="card region" id={`region-${r.slug}`}>
+                <article class="card region" id={`region-${r.slug}`} data-region={r.slug}>
                   <h3>{r.name}</h3>
-                  <ol class="seats">
-                    {r.seats.map((s) => (
-                      <li class={s.lower_confidence ? "lowconf" : ""}>
-                        <span class="sw" style={`background:${colourFor(s.seat_party)}`}></span>
-                        <strong>{labelFor(s.seat_party, r.group_names)}</strong> <span class="muted">{RATING[s.rating]}, {HOW[s.how]}</span>
-                        {s.lower_confidence && <p class="small note">Lower confidence. {s.note}</p>}
-                      </li>
-                    ))}
-                  </ol>
-                  {r.closest && <p class="small">Closest for the last seat: {labelFor(r.closest.excluded, r.group_names)} was last out on {r.closest.excluded_share}% against {labelFor(r.closest.next, r.group_names)} on {r.closest.next_share}%.</p>}
+                  <div class="cc-region-seats" set:html={renderRegionSeatList(r)} />
                   <details class="small">
                     <summary>Projected first preferences and quotas</summary>
                     <table class="fc-table"><thead><tr><th scope="col">Party</th><th scope="col">Vote</th><th scope="col">Quotas</th></tr></thead>
@@ -139,6 +155,43 @@ const pct = (x) => `${Math.round(x * 100)}%`;
   </div>
 </Base>
 
+<script>
+  import { forecastFromPrimaries, councilScenariosFor, DEFAULT_COUNCIL_PARAMS } from "../../../../scripts/lib/council.mjs";
+  import { renderCouncilLive, renderRegionSeatList } from "../../lib/council-view.mjs";
+  const dataEl = document.getElementById("cc-data");
+  const form = document.getElementById("cc-form") as HTMLFormElement | null;
+  const out = document.getElementById("cc-results");
+  const status = document.getElementById("cc-status");
+  if (dataEl && form && out) {
+    const data = JSON.parse(dataEl.textContent || "{}");
+    form.hidden = false;
+    const read = () => Object.fromEntries([...form.querySelectorAll("input[type=range]")].map((i) => {
+      const inp = i as HTMLInputElement;
+      return [inp.name, Number(inp.value)];
+    }));
+    const isDefault = (p) => Math.abs(p.exhaust - DEFAULT_COUNCIL_PARAMS.exhaust) < 1e-9 && Math.abs(p.sameBloc - DEFAULT_COUNCIL_PARAMS.sameBloc) < 1e-9;
+    const run = () => {
+      const p = read();
+      for (const i of form.querySelectorAll("input[type=range]")) {
+        const inp = i as HTMLInputElement;
+        const o = document.getElementById(`cc-out-${inp.name}`);
+        if (o) o.textContent = `${Math.round(Number(inp.value) * 100)}%`;
+      }
+      const fc = forecastFromPrimaries(data.regions, councilScenariosFor(p));
+      const def = isDefault(p);
+      out.innerHTML = renderCouncilLive(fc, { label: def ? "Our default assumptions" : "Your scenario — your assumptions, not ours" });
+      out.classList.toggle("yours", !def);
+      for (const r of fc.regions) {
+        const box = document.querySelector(`[data-region="${r.slug}"] .cc-region-seats`);
+        if (box) box.innerHTML = renderRegionSeatList(r);
+      }
+      if (status) status.textContent = def ? "" : "Showing your scenario. Use Reset to return to our defaults.";
+    };
+    form.addEventListener("input", run);
+    form.addEventListener("reset", () => setTimeout(run, 0));
+  }
+</script>
+
 <style is:global>
   .forecast-zone { background: repeating-linear-gradient(135deg, transparent 0 22px, var(--accent-wash) 22px 24px); border-top: 4px solid var(--st-announced); }
   .forecast-banner { background: var(--st-announced-bg); color: var(--st-announced); padding: 0.9rem clamp(1rem, 4vw, 2rem); display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; align-items: baseline; border-bottom: 1px solid var(--rule-strong); }
@@ -169,4 +222,19 @@ const pct = (x) => `${Math.round(x * 100)}%`;
   .seats li.lowconf { outline: 2px dashed #111; outline-offset: 2px; padding: 0.15rem 0.3rem; border-radius: 3px; }
   .seats .note { margin: 0.2rem 0 0; }
   .empty { color: var(--ink-3); font-style: italic; }
+  .fc-sliders[hidden] { display: none; }
+  .fc-assume { margin: 1.5rem 0 0.5rem; }
+  .fc-sliders { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 0.8rem 1.5rem; }
+  .sl { display: grid; grid-template-columns: 1fr auto; gap: 0.2rem 0.6rem; align-items: center; }
+  .sl label { grid-column: 1 / -1; font-weight: 600; font-size: 0.9rem; }
+  .sl input[type=range] { width: 100%; min-height: 2rem; accent-color: var(--st-announced); }
+  .sl output { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 4.5rem; text-align: right; }
+  .sl .def { grid-column: 1 / -1; }
+  .fc-sliders button { padding: 0.5rem 1rem; font: inherit; cursor: pointer; }
+  .fc-status { font-weight: 600; color: var(--st-announced); min-height: 1.2em; }
+  .fc-label { margin: 1rem 0 0; padding: 0.5rem 0.75rem; background: var(--paper, transparent); border-left: 4px solid var(--rule-strong); font-size: 0.85rem; }
+  #cc-results.yours .fc-label { border-left-color: var(--st-announced); background: var(--st-announced-bg); color: var(--st-announced); }
+  .cc-last tr.lowconf-row th, .cc-last tr.lowconf-row td { background: var(--accent-wash, transparent); }
+  .small { font-size: 0.85rem; }
+  .muted { color: var(--ink-3); }
 </style>

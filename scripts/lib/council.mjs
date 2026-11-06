@@ -131,10 +131,18 @@ export function matchCount(a, b) {
   return n;
 }
 
-export function buildCouncilForecast(average, base, council, scenarios = COUNCIL_SCENARIOS) {
-  const regions = council.regions.map((r) => {
-    const s2022 = regionShares2022(r);
-    const prim = swingRegion(s2022, average, base);
+/** Central defaults for the /forecast/council "try your own" sliders. */
+export const DEFAULT_COUNCIL_PARAMS = Object.freeze({ exhaust: 0.2, sameBloc: 0.6 });
+
+/**
+ * Count and rate seats from already-swung region primaries.
+ * Used by buildCouncilForecast (server) and the in-browser Council sliders.
+ * @param {Array<{slug:string,name:string,primaries:Record<string,number>,group_names?:Record<string,string>,elected_2022?:string[]}>} regionInputs
+ * @param {typeof COUNCIL_SCENARIOS} scenarios
+ */
+export function forecastFromPrimaries(regionInputs, scenarios = COUNCIL_SCENARIOS) {
+  const regions = regionInputs.map((r) => {
+    const prim = r.primaries;
     const by = Object.fromEntries(scenarios.map((sc) => [sc.id, countRegion(prim, sc)]));
     const central = by.central ?? Object.values(by)[0];
     const altSeats = scenarios.filter((sc) => sc.id !== "central").map((sc) => by[sc.id].winners.map((w) => seatParty(w.party)));
@@ -158,8 +166,8 @@ export function buildCouncilForecast(average, base, council, scenarios = COUNCIL
       seats,
       closest: runnerUp,
       by_scenario: Object.fromEntries(Object.entries(by).map(([k, v]) => [k, v.winners.map((w) => seatParty(w.party))])),
-      elected_2022: r.elected_2022.map((e) => e.party),
-      group_names: Object.fromEntries(r.groups.map((g) => [g.party === "independent-group" || g.party === "ungrouped" ? `${g.party}-${g.group}` : g.party, g.name])),
+      elected_2022: r.elected_2022 ?? [],
+      group_names: r.group_names ?? {},
     };
   });
   const totals = {};
@@ -178,7 +186,33 @@ export function buildCouncilForecast(average, base, council, scenarios = COUNCIL
     scenarios,
     lower_confidence: regions.reduce((a, r) => a + r.seats.filter((s) => s.lower_confidence).length, 0),
     total: regions.reduce((a, r) => a + r.seats.length, 0),
+    params: scenarios.find((s) => s.id === "central") ?? scenarios[0],
   };
+}
+
+/** Scenarios for a custom exhaust/sameBloc pair: fixed low/high brackets, custom as central. */
+export function councilScenariosFor(params = DEFAULT_COUNCIL_PARAMS) {
+  const p = { ...DEFAULT_COUNCIL_PARAMS, ...params };
+  return [
+    COUNCIL_SCENARIOS[0],
+    { id: "central", label: "Central", exhaust: p.exhaust, sameBloc: p.sameBloc },
+    COUNCIL_SCENARIOS[2],
+  ];
+}
+
+export function buildCouncilForecast(average, base, council, scenarios = COUNCIL_SCENARIOS) {
+  const regionInputs = council.regions.map((r) => {
+    const s2022 = regionShares2022(r);
+    const prim = swingRegion(s2022, average, base);
+    return {
+      slug: r.slug,
+      name: r.name,
+      primaries: prim,
+      elected_2022: r.elected_2022.map((e) => e.party),
+      group_names: Object.fromEntries(r.groups.map((g) => [g.party === "independent-group" || g.party === "ungrouped" ? `${g.party}-${g.group}` : g.party, g.name])),
+    };
+  });
+  return forecastFromPrimaries(regionInputs, scenarios);
 }
 
 /** 2022 check: the same count with zero swing, compared with who actually won. */

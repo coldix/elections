@@ -2,9 +2,9 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { parse } from "yaml";
-import { buildCouncilForecast, backtest2022, countRegion, swingRegion, regionShares2022, QUOTA_PCT, COUNCIL_SCENARIOS } from "../scripts/lib/council.mjs";
+import { buildCouncilForecast, forecastFromPrimaries, councilScenariosFor, backtest2022, countRegion, swingRegion, regionShares2022, QUOTA_PCT, COUNCIL_SCENARIOS, DEFAULT_COUNCIL_PARAMS } from "../scripts/lib/council.mjs";
 import { baselineFromResults } from "../scripts/lib/forecast.mjs";
-import { renderCouncilChamber } from "../site/src/lib/council-view.mjs";
+import { renderCouncilChamber, renderCouncilLive, renderLastSeatTable } from "../site/src/lib/council-view.mjs";
 
 const council = parse(readFileSync(new URL("../data/vic2026/council-results-2022.yaml", import.meta.url), "utf8"));
 const results = parse(readFileSync(new URL("../data/vic2026/district-results-2022.yaml", import.meta.url), "utf8"));
@@ -55,4 +55,34 @@ test("2022 check runs over all 40 seats", () => {
   const bt = backtest2022(council);
   assert.equal(bt.total, 40);
   assert.ok(bt.matched >= 30, `matched ${bt.matched}`);
+});
+
+test("forecastFromPrimaries matches buildCouncilForecast at central defaults", () => {
+  const avg = { alp: 24.3, lnp: 30.4, grn: 14.6, onp: 21.8, others: 8.9 };
+  const fc = buildCouncilForecast(avg, base, council);
+  const rebuilt = forecastFromPrimaries(
+    fc.regions.map((r) => ({ slug: r.slug, name: r.name, primaries: r.primaries, group_names: r.group_names, elected_2022: r.elected_2022 })),
+    councilScenariosFor(DEFAULT_COUNCIL_PARAMS),
+  );
+  assert.deepEqual(rebuilt.totals, fc.totals);
+  assert.equal(rebuilt.regions.length, 8);
+  for (let i = 0; i < 8; i++) {
+    assert.deepEqual(rebuilt.regions[i].seats.map((s) => s.seat_party), fc.regions[i].seats.map((s) => s.seat_party));
+  }
+});
+
+test("custom exhaust/sameBloc changes last seats without breaking 40-seat total", () => {
+  const avg = { alp: 24.3, lnp: 30.4, grn: 14.6, onp: 21.8, others: 8.9 };
+  const fc = buildCouncilForecast(avg, base, council);
+  const strong = forecastFromPrimaries(
+    fc.regions.map((r) => ({ slug: r.slug, name: r.name, primaries: r.primaries, group_names: r.group_names, elected_2022: r.elected_2022 })),
+    councilScenariosFor({ exhaust: 0.1, sameBloc: 0.75 }),
+  );
+  assert.equal(strong.total, 40);
+  assert.equal(Object.values(strong.totals).reduce((a, b) => a + b, 0), 40);
+  const live = renderCouncilLive(strong, { label: "Your scenario" });
+  assert.match(live, /Last seat in each region/);
+  assert.equal((live.match(/<circle /g) || []).length, 40);
+  const table = renderLastSeatTable(strong);
+  assert.equal((table.match(/<tr/g) || []).length, 9); // header + 8 regions
 });

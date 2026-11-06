@@ -36,7 +36,7 @@ export function renderResults(mp, { label = "Our default assumptions" } = {}) {
   const c = onpClosest(mp);
   const li = (s, sign) => `<li><strong>${esc(s.name)}</strong> — One Nation ${sign} ${PARTY_LABEL[s.finalists.find((x) => x !== "onp")]} by ${s.margin_central} pts (${RATING[s.rating].toLowerCase()})</li>`;
   return `
-<p class="fc-label"><strong>${esc(label)}</strong> · One Nation start ${mp.params.onpBaseline}% · Coalition↔One Nation ${Math.round(mp.params.lnpOnp * 100)}% · Others→One Nation ${Math.round(mp.params.othersOnp * 100)}% · Greens→Labor ${Math.round(mp.params.grn * 100)}% · Others→Labor ${Math.round(mp.params.othersAlp * 100)}% · One Nation poll shift ${mp.params.onpShift > 0 ? "+" : ""}${mp.params.onpShift} pts</p>
+<p class="fc-label"><strong>${esc(label)}</strong> · One Nation start ${mp.params.onpBaseline}% · Coalition↔One Nation (both ways) ${Math.round(mp.params.lnpOnp * 100)}% · Others→One Nation ${Math.round(mp.params.othersOnp * 100)}% · Greens→Labor ${Math.round(mp.params.grn * 100)}% · Others→Labor ${Math.round(mp.params.othersAlp * 100)}% · One Nation poll shift ${mp.params.onpShift > 0 ? "+" : ""}${mp.params.onpShift} pts</p>
 ${renderHemicycle(mp)}
 <section class="fc-summary">
   <div class="card">
@@ -68,7 +68,7 @@ ${renderHemicycle(mp)}
 /** Slider definitions: key, label, min, max, step, unit scale. */
 export const SLIDERS = [
   { key: "onpBaseline", label: "One Nation starting share where it did not stand in 2022", min: 0, max: 12, step: 0.5, fmt: (v) => `${v}%` },
-  { key: "lnpOnp", label: "Coalition ↔ One Nation preference flow (symmetric)", min: 0.4, max: 0.95, step: 0.05, fmt: (v) => `${Math.round(v * 100)}%` },
+  { key: "lnpOnp", label: "Coalition to One Nation, and One Nation to Coalition (same rate both ways)", min: 0.4, max: 0.95, step: 0.05, fmt: (v) => `${Math.round(v * 100)}%` },
   { key: "othersOnp", label: "Others → One Nation (vs Labor)", min: 0.3, max: 0.8, step: 0.05, fmt: (v) => `${Math.round(v * 100)}%` },
   { key: "grn", label: "Greens → Labor", min: 0.6, max: 0.95, step: 0.01, fmt: (v) => `${Math.round(v * 100)}%` },
   { key: "othersAlp", label: "Others → Labor (vs Coalition)", min: 0.3, max: 0.65, step: 0.01, fmt: (v) => `${Math.round(v * 100)}%` },
