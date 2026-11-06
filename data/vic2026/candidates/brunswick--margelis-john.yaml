@@ -1,0 +1,26 @@
+candidate:
+  name: John Margelis
+  party: liberal
+  contest: brunswick
+  chamber: assembly
+  status: endorsed
+  occupation: "Small business owner"
+  background: "Supplies medical products to aged-care homes and radiology clinics."
+  history:
+    - status: endorsed
+      date: 2026-11-07
+      source:
+        url: https://vicliberal.org.au/team/john-margelis
+        title: "John Margelis - Liberal for Brunswick"
+        publisher: Victorian Liberal Party
+        accessed: 2026-11-07
+      note: >-
+        Official Victorian Liberal team page lists John as Liberal for
+        Brunswick and states he is the Liberal candidate for Brunswick.
+        Page carries no publication date; status dated to when verified on
+        the party site.
+  links:
+    - url: https://vicliberal.org.au/team/john-margelis
+      kind: party-profile
+    - url: https://www.johnmargelis.com.au
+      kind: campaign-site
