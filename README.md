@@ -1,6 +1,6 @@
 # Australian Election Tracker
 
-> **Updated** 2026-09-03  
+> **Updated** 2026-11-06  
 > Live at [electiontracker.au](https://electiontracker.au) · `main` deploys automatically
 
 **[electiontracker.au](https://electiontracker.au)** is an open, sourced and
@@ -72,6 +72,11 @@ Council forecast (PR #78): 40 seats across eight regions, built from the VEC
 statewide poll swing, with three scenarios, a check against 2022 and a note on
 the abolition of group voting tickets. The model lives in
 `scripts/lib/council.mjs`. Like `/forecast`, it is our own labelled model.
+
+Since 6 Nov 2026 `/forecast/council` also has try-your-own exhaust and same-side
+sliders, and the Assembly forecast preference label for Coalition-One Nation is
+clearer (maths unchanged) (PR #81). The Council page uses a dedicated share image
+`images/og-forecast-council.jpg` as its `og:image` (PR #82).
 
 ### NSW 2027 (sitting members)
 
