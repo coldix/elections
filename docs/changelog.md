@@ -7,6 +7,10 @@ onward. For poll *method*, see [poll-methodology.md](poll-methodology.md). For
 ongoing SEO/dashboard ops, see [discovery.md](discovery.md).
 
 
+## 2026-11-06 — Council forecast share image
+
+- `/forecast/council` uses `/images/og-forecast-council.jpg` (1200×630) for `og:image` / `twitter:image` instead of the site-wide banner, so social shares show the preference sliders and default chamber.
+
 ## 2026-10-14 — Election Tracker OG image + survey.oze.au
 
 - Site-wide `og:image` / `twitter:image` now `/images/og-electiontracker-2026.jpg` (1200×630, site branding) instead of the "Have your say" survey ad; new filename busts Facebook's cache.
