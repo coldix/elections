@@ -5,7 +5,7 @@ commissioner_type: media
 fieldwork_start: 2026-10-19
 fieldwork_end: 2026-11-01
 sample_size: 1289
-design_effect: null
+design_effect: 1.453
 mode: other
 population: victorian-electors
 question_notes: >-
@@ -13,15 +13,18 @@ question_notes: >-
   conducted by Growth Intelligence Centre (News Corp's internal research and
   data analytics operation). Campaign tracking poll run as weekly surveys and
   published as a two-week rolling average; this release covers 19 Oct – 1 Nov
-  2026, n=1,289. Reported primaries L-NP 31, ALP 23, ONP 22, GRN 14; Others is
-  the residual after ALP+LNP+ONP+GRN (10), not a published figure. No 2PP
+  2026, n=1,289, weighted effective sample 887 (design effect 1289/887), MoE
+  3.3 points. Reported primaries L-NP 31, ONP 23, ALP 22, GRN 14, others and
+  independents 10 (News24 / Daily Telegraph reports of the Herald Sun poll).
+  Correction 8 Nov 2026: first encoded from Poll Bludger as ALP 23, ONP 22;
+  News Corp's own reports give ALP 22, ONP 23, so the topline was corrected. No 2PP
   reported in the source read. Net favourability Carroll −21, Wilson +9 (not
   encoded). Survey mode and weighting not stated in the source read, so mode
   recorded as "other".
 primaries:
-  alp: 23
+  alp: 22
   lnp: 31
-  onp: 22
+  onp: 23
   grn: 14
   others: 10
 undecided_handling: not-stated
@@ -39,3 +42,8 @@ sources:
     title: "Victorian election minus three weeks"
     published: 2026-11-06
     accessed: 2026-11-06
+  - url: https://www.news24.com.au/politics/australian-politics/victorian-labor-tracks-towards-election-nightmare-as-support-plunges-ahead-of-voters-going-to-the-polls/news-story/e18c3cfbb5a23ae17d16253caeafe32e
+    publisher: News24
+    title: "Victorian Labor tracks towards election nightmare as support plunges"
+    published: 2026-11-06
+    accessed: 2026-11-08
