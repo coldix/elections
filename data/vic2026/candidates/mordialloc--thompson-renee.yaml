@@ -1,0 +1,28 @@
+candidate:
+  name: Renee Thompson
+  party: legalise-cannabis
+  contest: mordialloc
+  chamber: assembly
+  status: nominated
+  occupation: "Marriage celebrant and community advocate (self-stated)"
+  background: "Former local government Community Development Officer (party profile)."
+  history:
+    - status: nominated
+      date: 2026-11-07
+      source:
+        url: "https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls"
+        title: "Candidate Contact Persons' Details Summary Report — State Election 2026 (as at 7 Nov 2026 3:01 pm)"
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-08
+      note: >-
+        VEC interim nominations spreadsheet lists Renee Thompson as a
+        nominated candidate for Mordialloc District for Legalise Cannabis
+        Victoria. Also listed on the party's Our Candidates page and
+        individual profile
+        (https://www.lcvicparty.org.au/renee_thompson_candidate_for_mordialloc,
+        accessed 2026-11-08).
+  links:
+    - url: https://www.lcvicparty.org.au/renee_thompson_candidate_for_mordialloc
+      kind: party-profile
+    - url: https://www.lcvicparty.org.au/ourcandidates
+      kind: party

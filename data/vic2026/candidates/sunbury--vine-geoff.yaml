@@ -1,0 +1,22 @@
+candidate:
+  name: Geoff Vine
+  party: west-party
+  contest: sunbury
+  chamber: assembly
+  status: nominated
+  history:
+    - status: nominated
+      date: 2026-11-07
+      source:
+        url: "https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls"
+        title: "Candidate Contact Persons' Details Summary Report — State Election 2026 (as at 7 Nov 2026 3:01 pm)"
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-08
+      note: >-
+        VEC interim nominations spreadsheet lists Geoff Vine as a nominated
+        candidate for Sunbury District for The West Party. Not listed on the
+        party's Local Representation page when checked on 8 November 2026;
+        nomination is from the VEC primary.
+  links:
+    - url: https://thewestparty.org.au/local-representation/
+      kind: party

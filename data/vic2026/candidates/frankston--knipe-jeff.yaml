@@ -1,0 +1,25 @@
+candidate:
+  name: Jeff Knipe
+  party: legalise-cannabis
+  contest: frankston
+  chamber: assembly
+  status: nominated
+  history:
+    - status: nominated
+      date: 2026-11-07
+      source:
+        url: "https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls"
+        title: "Candidate Contact Persons' Details Summary Report — State Election 2026 (as at 7 Nov 2026 3:01 pm)"
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-08
+      note: >-
+        VEC interim nominations spreadsheet lists Jeff Knipe as a nominated
+        candidate for Frankston District for Legalise Cannabis Victoria.
+        Party profile spells the name "Jeffrey"
+        (https://www.lcvicparty.org.au/jeffrey_knipe_candidate_for_frankston,
+        accessed 2026-11-08); ledger name follows the VEC form.
+  links:
+    - url: https://www.lcvicparty.org.au/jeffrey_knipe_candidate_for_frankston
+      kind: party-profile
+    - url: https://www.lcvicparty.org.au/ourcandidates
+      kind: party

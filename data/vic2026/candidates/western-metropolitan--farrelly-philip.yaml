@@ -1,0 +1,23 @@
+candidate:
+  name: Philip Farrelly
+  party: west-party
+  contest: western-metropolitan
+  chamber: council
+  status: nominated
+  history:
+    - status: nominated
+      date: 2026-11-07
+      source:
+        url: "https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls"
+        title: "Candidate Contact Persons' Details Summary Report — State Election 2026 (as at 7 Nov 2026 3:01 pm)"
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-08
+      note: >-
+        VEC interim nominations spreadsheet lists Philip Farrelly as a
+        nominated candidate for Western Metropolitan Region for The West Party.
+        Party website Local Representation page still listed only Joe Garra and
+        Sahana Ramesh for this region when checked on 8 November 2026;
+        nomination is from the VEC primary. Tipster spelling "Phil Farrelly".
+  links:
+    - url: https://thewestparty.org.au/local-representation/
+      kind: party
