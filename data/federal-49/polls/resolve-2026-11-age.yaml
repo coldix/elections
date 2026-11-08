@@ -1,0 +1,31 @@
+id: resolve-2026-11-age
+pollster: "Resolve Strategic"
+commissioner: nine-newspapers
+commissioner_type: media
+fieldwork_start: 2026-11-02
+fieldwork_end: 2026-11-07
+sample_size: 2250
+design_effect: null
+mode: mixed
+population: australian-electors
+question_notes: "Federal primary voting intention for SMH/The Age (Resolve Political Monitor), fieldwork 2–7 Nov 2026 per SMH, n=2,250, MoE ±2.1%. Others residual after ALP+LNP+GRN+ONP (12); the independents/others split was not in the accessible SMH text."
+primaries:
+  alp: 28
+  lnp: 22
+  onp: 25
+  grn: 13
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.smh.com.au/politics/federal/only-one-in-five-voters-trust-albanese-now-as-blame-sticks-for-cost-of-living-20261108-p61cbo.html
+    publisher: The Sydney Morning Herald
+    title: Only one in five voters trust Albanese now as blame sticks for cost of living
+    published: 2026-11-08
+    accessed: 2026-11-09
+  - url: https://www.pollbludger.net/2026/11/09/federal-polls-resolve-strategic-and-redbridge-group-open-thread/
+    publisher: The Poll Bludger
+    title: "Federal polls: Resolve Strategic and RedBridge Group (open thread)"
+    published: 2026-11-09
+    accessed: 2026-11-09

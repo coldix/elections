@@ -1,0 +1,26 @@
+id: demosau-2026-11
+pollster: demosau
+commissioner: premier-national
+commissioner_type: media
+fieldwork_start: 2026-10-30
+fieldwork_end: 2026-11-05
+sample_size: 1562
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "DemosAU/Premier National Victoria state poll as reported by the Herald Sun (2PP Coalition 56–44, out from 52–48). Fieldwork dates inferred from The Poll Bludger's 'conducted last Friday to Thursday' in a post dated Monday 9 Nov 2026 (Fri 30 Oct to Thu 5 Nov); confirm against the DemosAU release when published. Others residual after ALP+LNP+GRN+ONP (11). DemosAU had not posted its own release or effective n at encode time, so design_effect is left at default. Supersedes demosau-2026-09 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 18
+  lnp: 33
+  onp: 21
+  grn: 17
+  others: 11
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/11/09/demosau-labor-18-coalition-33-one-nation-21-in-victoria/
+    publisher: The Poll Bludger
+    title: "DemosAU: Labor 18, Coalition 33, One Nation 21 in Victoria"
+    published: 2026-11-09
+    accessed: 2026-11-09
