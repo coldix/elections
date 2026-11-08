@@ -1,0 +1,26 @@
+id: redbridge-accent-2026-11-08-afr
+pollster: "RedBridge / Accent"
+commissioner: australian-financial-review
+commissioner_type: media
+fieldwork_start: 2026-11-02
+fieldwork_end: 2026-11-06
+sample_size: 1005
+design_effect: null
+mode: other
+population: australian-electors
+question_notes: "Federal primary voting intention. Fieldwork, sample and all five primaries transcribed from the AFR graphic supplied by Colin Dixon on 8 November, credited to Redbridge Group and Accent Research, accompanying the linked AFR report. Stated margin of error +/-3.5 percentage points; changes compare with September figures. Interview mode is not established from the available graphic (mode other denotes unspecified, not a verified alternative method); undecided handling is not stated. Respondent-allocated preferences: Labor-Coalition 47-53 and Labor-One Nation 54-46. Separately, 2025 preference flows give Labor-Coalition 49-51. These distinct preference measures are not encoded as primaries. Supersedes the previous RedBridge/Accent poll in the average through existing pollster de-duplication."
+primaries:
+  alp: 26
+  lnp: 25
+  onp: 28
+  grn: 13
+  others: 8
+undecided_handling: not-stated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.afr.com/politics/federal/blow-for-pm-as-coalition-closes-in-on-labor-20261108-p61cbv
+    publisher: Australian Financial Review
+    title: Blow for PM as Coalition closes in on Labor
+    published: 2026-11-08
+    accessed: 2026-11-08
