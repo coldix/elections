@@ -1,6 +1,6 @@
 # Australian Election Tracker
 
-> **Updated** 2026-11-06  
+> **Updated** 2026-11-08  
 > Live at [electiontracker.au](https://electiontracker.au) · `main` deploys automatically
 
 **[electiontracker.au](https://electiontracker.au)** is an open, sourced and
@@ -77,6 +77,18 @@ Since 6 Nov 2026 `/forecast/council` also has try-your-own exhaust and same-side
 sliders, and the Assembly forecast preference label for Coalition-One Nation is
 clearer (maths unchanged) (PR #81). The Council page uses a dedicated share image
 `images/og-forecast-council.jpg` as its `og:image` (PR #82).
+
+Since 7 Nov 2026 the Victoria 2026 ledger includes John Margelis
+(Liberal, Brunswick). Since 8 Nov 2026 a Lighthouse 19 October to
+1 November topline correction records ALP 22 and One Nation 23
+(News24; Poll Bludger had them swapped), with effective n 887;
+West Party nominations for Emma Mendelsohn (Laverton), Philip
+Farrelly (Western Metropolitan) and Geoff Vine (Sunbury), plus four
+Legalise Cannabis Assembly nominees (Harley Mackenzie in Carrum,
+Liam Urquiola in Cranbourne, Jeff Knipe in Frankston and Renee
+Thompson in Mordialloc); and the federal ledger adds an 8 November
+RedBridge / Accent poll (PR #84, fieldwork 2 to 6 November, n=1005:
+ALP 26, Coalition 25, One Nation 28, Greens 13, Other 8).
 
 ### NSW 2027 (sitting members)
 
