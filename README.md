@@ -90,6 +90,14 @@ Thompson in Mordialloc); and the federal ledger adds an 8 November
 RedBridge / Accent poll (PR #84, fieldwork 2 to 6 November, n=1005:
 ALP 26, Coalition 25, One Nation 28, Greens 13, Other 8).
 
+Since 9 Nov 2026 the Victoria ledger includes a DemosAU / Premier
+National poll (fieldwork 30 October to 5 November, n=1562: ALP 18,
+Coalition 33, One Nation 21, Greens 17), and the federal ledger adds a
+Resolve Strategic poll for the SMH and The Age (2 to 7 November,
+n=2250: ALP 28, Coalition 22, One Nation 25, Greens 13). Ten One Nation
+Victoria candidate and policy source links were repointed to the
+party's new /candidate/ and /policies/ pages (PR #86, links only).
+
 ### NSW 2027 (sitting members)
 
 ```text
