@@ -34,7 +34,7 @@ policy:
         unacceptable.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/affordable-energy
+        url: https://vic.onenation.org.au/policies/energy
         publisher: One Nation Victoria
         title: Affordable Energy
         accessed: 2026-08-02

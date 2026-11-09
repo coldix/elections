@@ -12,7 +12,7 @@ policy:
         determine investment.
       kind: position
       source:
-        url: https://vic.onenation.org.au/affordable-energy
+        url: https://vic.onenation.org.au/policies/energy
         publisher: One Nation Victoria
         title: Affordable Energy
         accessed: 2026-08-02
@@ -23,7 +23,7 @@ policy:
         Victorian coal power infrastructure.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/affordable-energy
+        url: https://vic.onenation.org.au/policies/energy
         publisher: One Nation Victoria
         title: Affordable Energy
         accessed: 2026-08-02
@@ -33,7 +33,7 @@ policy:
         while allowing existing agreements to run their course.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/energy-policy
+        url: https://vic.onenation.org.au/policies/energy
         publisher: One Nation Victoria
         title: Affordable Energy Policy
         accessed: 2026-08-02
@@ -44,7 +44,7 @@ policy:
         rehabilitation bonds for energy projects.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/affordable-energy
+        url: https://vic.onenation.org.au/policies/energy
         publisher: One Nation Victoria
         title: Affordable Energy
         accessed: 2026-08-02
