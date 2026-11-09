@@ -11,7 +11,7 @@ policy:
         premiums to reduce a major household and business expense.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/cost-of-living
+        url: https://vic.onenation.org.au/policies/cost-of-living
         publisher: One Nation Victoria
         title: Cost of Living
         accessed: 2026-08-02
@@ -21,7 +21,7 @@ policy:
         support new coal and gas generation to pursue lower, more reliable power prices.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/cost-of-living
+        url: https://vic.onenation.org.au/policies/cost-of-living
         publisher: One Nation Victoria
         title: Cost of Living
         accessed: 2026-08-02
@@ -31,7 +31,7 @@ policy:
         public resources towards releasing land and easing housing costs.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/cost-of-living
+        url: https://vic.onenation.org.au/policies/cost-of-living
         publisher: One Nation Victoria
         title: Cost of Living
         accessed: 2026-08-02
@@ -42,7 +42,7 @@ policy:
         competition.
       kind: position
       source:
-        url: https://vic.onenation.org.au/cost-of-living
+        url: https://vic.onenation.org.au/policies/cost-of-living
         publisher: One Nation Victoria
         title: Cost of Living
         accessed: 2026-08-02

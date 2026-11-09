@@ -9,7 +9,7 @@ candidate:
     - status: endorsed
       date: 2026-10-05
       source:
-        url: https://vic.onenation.org.au/walter-villagonzalo
+        url: https://vic.onenation.org.au/candidate/walter-villagonzalo-oam
         title: "Walter Villagonzalo OAM for Tarneit"
         publisher: Pauline Hanson's One Nation Victoria
         accessed: 2026-10-05
@@ -18,7 +18,7 @@ candidate:
         Tarneit. Page carries no publication date; status dated to when
         verified on the party site.
   links:
-    - url: https://vic.onenation.org.au/walter-villagonzalo
+    - url: https://vic.onenation.org.au/candidate/walter-villagonzalo-oam
       kind: party-profile
     - url: https://vic.onenation.org.au/candidates
       kind: party
