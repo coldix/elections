@@ -21,9 +21,9 @@ policy:
         support new coal and gas generation to pursue lower, more reliable power prices.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/policies/cost-of-living
+        url: https://vic.onenation.org.au/policies/energy
         publisher: One Nation Victoria
-        title: Cost of Living
+        title: Energy
         accessed: 2026-08-02
     - id: onp-col-spending-housing
       statement: >-
@@ -31,9 +31,9 @@ policy:
         public resources towards releasing land and easing housing costs.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/policies/cost-of-living
+        url: https://web.archive.org/web/20251204005845/https://vic.onenation.org.au/cost-of-living
         publisher: One Nation Victoria
-        title: Cost of Living
+        title: "Cost of Living (archived 4 Dec 2025)"
         accessed: 2026-08-02
     - id: onp-col-supermarkets
       statement: >-
@@ -42,9 +42,9 @@ policy:
         competition.
       kind: position
       source:
-        url: https://vic.onenation.org.au/policies/cost-of-living
+        url: https://web.archive.org/web/20251204005845/https://vic.onenation.org.au/cost-of-living
         publisher: One Nation Victoria
-        title: Cost of Living
+        title: "Cost of Living (archived 4 Dec 2025)"
         accessed: 2026-08-02
     - id: onp-col-booklet-state-taxes
       statement: >-

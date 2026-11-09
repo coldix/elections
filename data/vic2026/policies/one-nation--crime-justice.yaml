@@ -32,9 +32,9 @@ policy:
         offenders where appropriate.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/policies/crime
+        url: https://web.archive.org/web/20251204005843/https://vic.onenation.org.au/crime
         publisher: One Nation Victoria
-        title: Tackling Crime
+        title: "Tackling Crime (archived 4 Dec 2025)"
         accessed: 2026-08-02
     - id: onp-crime-intervention-review
       statement: >-
@@ -42,9 +42,9 @@ policy:
         and a panel to review serious crimes committed by offenders released on bail.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/policies/crime
+        url: https://web.archive.org/web/20251204005843/https://vic.onenation.org.au/crime
         publisher: One Nation Victoria
-        title: Tackling Crime
+        title: "Tackling Crime (archived 4 Dec 2025)"
         accessed: 2026-08-02
     - id: onp-crime-booklet-youth-adult-sentencing
       statement: >-

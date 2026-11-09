@@ -12,9 +12,9 @@ policy:
         completing general-practice specialisation.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/policies/health-and-emergency-services
+        url: https://web.archive.org/web/20260303141357/https://vic.onenation.org.au/health
         publisher: One Nation Victoria
-        title: Health Policy
+        title: "Health Policy (archived 3 Mar 2026)"
         accessed: 2026-08-02
     - id: onp-health-nursing
       statement: >-
@@ -23,9 +23,9 @@ policy:
         more men into nursing.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/policies/health-and-emergency-services
+        url: https://web.archive.org/web/20260303141357/https://vic.onenation.org.au/health
         publisher: One Nation Victoria
-        title: Health Policy
+        title: "Health Policy (archived 3 Mar 2026)"
         accessed: 2026-08-02
     - id: onp-health-paramedics
       statement: >-
@@ -34,9 +34,9 @@ policy:
         frontline ambulance staff.
       kind: pledge
       source:
-        url: https://vic.onenation.org.au/policies/health-and-emergency-services
+        url: https://web.archive.org/web/20260303141357/https://vic.onenation.org.au/health
         publisher: One Nation Victoria
-        title: Health Policy
+        title: "Health Policy (archived 3 Mar 2026)"
         accessed: 2026-08-02
     - id: onp-health-rosebud-ppp
       statement: >-
