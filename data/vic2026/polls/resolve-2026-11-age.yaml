@@ -1,0 +1,36 @@
+id: resolve-2026-11-age
+pollster: resolve
+commissioner: the-age
+commissioner_type: media
+fieldwork_start: 2026-11-02
+fieldwork_end: 2026-11-07
+sample_size: 1000
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Resolve Political Monitor Victorian state VI for The Age / Nine, fieldwork 2–7 Nov 2026 per The Age (same survey as federal Resolve 2–7 Nov; Poll Bludger describes the state fieldwork as Mon–Thu), n=1,000. ALP 22, L-NP 30, ONP 23 confirmed in The Age text; Greens 13 per Poll Bludger and Wikipedia (discovery). Others residual after ALP+LNP+GRN+ONP (12); Wikipedia lists IND 6 and Others 7, which does not sum to 100 with the four main parties."
+primaries:
+  alp: 22
+  lnp: 30
+  onp: 23
+  grn: 13
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theage.com.au/politics/victoria/half-of-victorians-open-to-a-one-nation-coalition-as-carroll-faces-labor-wipeout-20261109-p61cjv.html
+    publisher: The Age
+    title: Half of Victorians open to a One Nation coalition as Carroll faces Labor wipeout
+    published: 2026-11-09
+    accessed: 2026-11-10
+  - url: https://www.pollbludger.net/2026/11/10/victorian-election-resolve-strategic-and-pakenham-seat-poll/
+    publisher: The Poll Bludger
+    title: "Victorian election: Resolve Strategic and Pakenham seat poll"
+    published: 2026-11-10
+    accessed: 2026-11-10
+  - url: https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Victorian_state_election
+    publisher: Wikipedia
+    title: Opinion polling for the 2026 Victorian state election (discovery; Resolve 2–7 Nov row)
+    published: 2026-11-09
+    accessed: 2026-11-10
