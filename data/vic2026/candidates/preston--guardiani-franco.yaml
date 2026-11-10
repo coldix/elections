@@ -3,7 +3,7 @@ candidate:
   party: one-nation
   contest: preston
   chamber: assembly
-  status: endorsed
+  status: disendorsed
   history:
     - status: endorsed
       date: 2026-10-12
@@ -14,6 +14,28 @@ candidate:
         accessed: 2026-10-12
       note: >-
         Party candidates page lists Franco Guardiani as One Nation's candidate for Preston.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: "https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls"
+        title: "Candidate Contact Persons' Details Summary Report — State Election 2026 (as at 9 Nov 2026 7:58 pm)"
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-11
+      note: >-
+        VEC final nominations spreadsheet lists Franco Guardiani as a
+        candidate for Preston District for One Nation Victoria.
+    - status: disendorsed
+      date: 2026-11-10
+      source:
+        url: https://www.abc.net.au/news/2026-11-10/vic-one-nation-preston-candidate-guardiani-dumped/107368834
+        title: "One Nation Victoria dumps Preston candidate Franco Guardiani over Hitler comments"
+        publisher: ABC News
+        published: 2026-11-10
+        accessed: 2026-11-11
+      note: >-
+        One Nation Victoria leader Warren Pickering said Guardiani was no
+        longer part of the party after social media posts about Hitler and
+        the Holocaust circulated.
   links:
     - url: https://vic.onenation.org.au/candidates
       kind: party
