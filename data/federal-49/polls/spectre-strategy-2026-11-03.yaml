@@ -1,0 +1,31 @@
+id: spectre-strategy-2026-11-03
+pollster: "Spectre Strategy"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-10-28
+fieldwork_end: 2026-11-03
+sample_size: 2093
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention, Spectre Strategy national online poll 28 Oct–3 Nov 2026, n=2,093. Published primaries ALP 25, L-NP 24, ONP 28, GRN 13, Others 10. Respondent-preference 2PP Coalition 53–47 ALP and ALP 52–48 over One Nation not encoded. Figures read from The Conversation's report of the poll; Spectre's own post was not read in full."
+primaries:
+  alp: 25
+  lnp: 24
+  onp: 28
+  grn: 13
+  others: 10
+undecided_handling: not-stated
+eligible_for_average: false
+exclusion_reason: "Spectre Strategy is not on the pollster allowlist in docs/poll-methodology.md ('Spectre, others: case-by-case, add via allowlist edit'), and the primary release was not read for method and weighting. Ledgered for transparency; out of the average pending a maintainer allowlist decision."
+sources:
+  - url: https://theconversation.com/labor-slumps-to-new-lows-in-two-victorian-polls-296132
+    publisher: The Conversation
+    title: "Labor slumps to new lows in two Victorian polls"
+    published: 2026-11-10
+    accessed: 2026-11-11
+  - url: https://www.spectrestrategy.com/blog-3-1/australian-federal-political-update-november-2026-lrxjw-682xb
+    publisher: Spectre Strategy
+    title: "Australian Federal Political Update - November 2026"
+    published: 2026-11-09
+    accessed: 2026-11-11

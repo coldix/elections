@@ -1,0 +1,26 @@
+id: roy-morgan-2026-11-09
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-10-26
+fieldwork_end: 2026-11-08
+sample_size: 2574
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Finding 10377. Fortnightly two-week sample 26 Oct–8 Nov, no overlap with the 12–25 Oct result (roy-morgan-2026-10-26). L-NP reported as Liberals 19% + Nationals 3%. Independent/Others 13%. Respondent-allocated 2PP ALP 51–49 L-NP, previous-election-flows 2PP ALP 52.5–47.5, and ALP 54–46 over One Nation not encoded. Supersedes roy-morgan-2026-10-26 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 25.5
+  lnp: 22
+  onp: 24.5
+  grn: 15
+  others: 13
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10377-federal-voting-intention-november-9-2026
+    publisher: Roy Morgan
+    title: "Federal Election is now 'too close to call' as ALP (25.5%) holds narrow primary vote lead over One Nation (24.5%) and L-NP Coalition (22%)"
+    published: 2026-11-09
+    accessed: 2026-11-11
