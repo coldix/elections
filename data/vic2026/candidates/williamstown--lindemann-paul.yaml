@@ -3,7 +3,7 @@ candidate:
   party: liberal
   contest: williamstown
   chamber: assembly
-  status: nominated
+  status: disendorsed
   history:
     - status: endorsed
       date: 2026-07-15
@@ -24,3 +24,15 @@ candidate:
       note: VEC final nominations report lists LINDEMANN, Paul for williamstown
         (assembly); spreadsheet row 1079. Only candidate name, electorate and
         party were extracted, not contact details.
+    - status: disendorsed
+      date: 2026-11-11
+      source:
+        url: https://www.abc.net.au/news/2026-11-11/victorian-liberals-dump-williamstown-candidate-paul-lindemann/107375112
+        title: "Victorian Liberals dump Williamstown candidate Paul Lindemann over offensive comments"
+        publisher: ABC News
+        published: 2026-11-11
+        accessed: 2026-11-12
+      note: >-
+        Victorian Liberal Party statement says it withdrew its support and
+        endorsement of Lindemann over comments about Indigenous Australians.
+        Nominations had closed, so his name stays on the ballot.

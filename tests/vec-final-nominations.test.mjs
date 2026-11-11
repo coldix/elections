@@ -18,7 +18,10 @@ test('every final VEC nomination has exactly one party/seat/chamber/name match a
   const found=candidates.filter(c=>matches(c,r));
   assert.equal(found.length,1,`${r.name}, ${r.contest}`);
   assert.ok(found[0].history.some(h=>h.status==='nominated'&&h.date==='2026-11-09'&&h.source.url===fixture.source.url),r.name);
-  assert.equal(found[0].status,r.name==='Franco Guardiani'?'disendorsed':'nominated',r.name);
+  const c=found[0],last=c.history[c.history.length-1];
+  // A party can disendorse after nominations close; the name stays on the ballot.
+  if(c.status==='disendorsed') assert.ok(last.status==='disendorsed'&&last.date>'2026-11-09'&&last.source?.url,r.name);
+  else assert.equal(c.status,'nominated',r.name);
  }
 });
 test('all 14 unmatched ledger entries retain their previous status, with no inferred withdrawals',()=>{
