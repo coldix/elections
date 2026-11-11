@@ -98,6 +98,15 @@ n=2250: ALP 28, Coalition 22, One Nation 25, Greens 13). Ten One Nation
 Victoria candidate and policy source links were repointed to the
 party's new /candidate/ and /policies/ pages (PR #86, links only).
 
+Since 11 Nov 2026 the Victoria 2026 ledger is reconciled against the VEC's
+final nominations report (as at 9 November 2026, 7:58 pm AEDT): all 1,037
+official nominations across 88 Assembly districts and 8 Council regions are
+recorded, 432 missing candidates were added, 594 existing records moved to
+nominated and 19 ballot-name or electorate corrections were made, with earlier
+history kept. Fourteen unmatched older records were left unchanged rather than
+marked withdrawn. Only names, electorates, chambers and party names were taken
+from the report, never contact details (PR #89).
+
 ### NSW 2027 (sitting members)
 
 ```text
