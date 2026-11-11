@@ -3,18 +3,20 @@ candidate:
   party: liberal
   contest: berwick
   chamber: assembly
-  status: announced
+  status: nominated
   occupation: "Former police officer"
   background: "Ex-Victoria Police senior constable; former Bakers Delight franchisee"
   history:
     - status: announced
       date: 2026-06-30
       note: >-
-        Sitting Liberal MLA. Opposition Leader Jess Wilson Fresh Start Tour video names Battin as on her team in Berwick for the campaign.
+        Sitting Liberal MLA. Opposition Leader Jess Wilson Fresh Start Tour
+        video names Battin as on her team in Berwick for the campaign.
       source:
         url: https://www.instagram.com/reel/DaFfeFDBJN0/
         publisher: Instagram (Jess Wilson MP)
-        title: "Berwick locals know Victoria needs a fresh start, and with Brad Battin on my team…"
+        title: "Berwick locals know Victoria needs a fresh start, and with Brad Battin
+          on my team…"
         published: 2026-06-30
         accessed: 2026-07-30
     - status: announced
@@ -27,6 +29,18 @@ candidate:
         title: "It was great to attend Brad Battin MP's campaign launch…"
         published: 2026-07-12
         accessed: 2026-07-30
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists BATTIN, Brad for berwick (assembly);
+        spreadsheet row 117. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://www.bradbattin.com.au
       kind: campaign-site

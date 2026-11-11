@@ -3,9 +3,10 @@ candidate:
   party: one-nation
   contest: polwarth
   chamber: assembly
-  status: endorsed
+  status: nominated
   occupation: Small business owner
-  background: Larpent local; former flight attendant with a background in financial services.
+  background: Larpent local; former flight attendant with a background in
+    financial services.
   history:
     - status: endorsed
       date: 2026-09-16
@@ -17,6 +18,18 @@ candidate:
         accessed: 2026-09-19
       note: >-
         Party candidate page lists Anna as One Nation's candidate for Polwarth.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists MALCOLM, Anna for polwarth (assembly);
+        spreadsheet row 831. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://vic.onenation.org.au/anna-malcolm
       kind: party-profile

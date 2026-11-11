@@ -1,0 +1,49 @@
+candidate:
+  name: "Jessica McAuliffe"
+  party: animal-justice
+  contest: gippsland-south
+  chamber: assembly
+  status: nominated
+  history:
+    - status: endorsed
+      date: 2026-10-19
+      source:
+        url: https://vic.animaljusticeparty.org/jessica-mcauliffe
+        title: "Jessica McAuliffe for Eastern Victoria"
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-10-19
+      note: >-
+        Animal Justice Party Victoria candidate page and candidates index list
+        Jessica as the party's candidate for Eastern Victoria. Page carries no
+        publication date; status dated to when verified on the party site.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists McAULIFFE, Jessica for gippsland-south
+        (assembly); spreadsheet row 398. Only candidate name, electorate and
+        party were extracted, not contact details.
+  links:
+    - url: https://vic.animaljusticeparty.org/jessica-mcauliffe
+      kind: party-profile
+    - url: https://vic.animaljusticeparty.org/candidates
+      kind: party
+  corrections:
+    - date: 2026-11-11
+      was: Jessica McAuliffe, eastern-victoria (council)
+      now: Jessica McAuliffe, gippsland-south (assembly)
+      reason: Reconcile the unique candidate and party match to the electorate in the
+        final VEC nominations report. Previous endorsement sources describe the
+        earlier electorate and are retained.
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11

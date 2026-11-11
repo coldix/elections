@@ -3,14 +3,16 @@ candidate:
   party: nationals
   contest: bendigo-east
   chamber: assembly
-  status: endorsed
+  status: nominated
   occupation: "Publican"
-  background: "Bendigo hospitality business owner; former federal Nationals candidate for Bendigo"
+  background: "Bendigo hospitality business owner; former federal Nationals
+    candidate for Bendigo"
   history:
     - status: announced
       date: 2026-04-04
       source:
-        url: "https://www.abc.net.au/news/2026-04-04/andrew-lethlean-to-challenge-jacinta-allan-victorian-election/106531610"
+        url: "https://www.abc.net.au/news/2026-04-04/andrew-lethlean-to-challenge-jacin\
+          ta-allan-victorian-election/106531610"
         title: Andrew Lethlean to challenge Jacinta Allan in Bendigo East
         publisher: ABC News
         published: 2026-04-04
@@ -18,14 +20,27 @@ candidate:
     - status: endorsed
       date: 2026-11-06
       source:
-        url: "https://vic.nationals.org.au/media-releases/andrew-lethlean-selected-as-nationals-candidate-for-bendigo-east/"
+        url: "https://vic.nationals.org.au/media-releases/andrew-lethlean-selected-as-n\
+          ationals-candidate-for-bendigo-east/"
         title: "Andrew Lethlean selected as Nationals' candidate for Bendigo East"
         publisher: The Nationals Victoria
         accessed: 2026-11-06
       note: >-
-        Party media release says The Nationals have selected Andrew Lethlean as their
-        candidate for Bendigo East. The release page shows no publication date; status
-        dated to when verified.
+        Party media release says The Nationals have selected Andrew Lethlean as
+        their candidate for Bendigo East. The release page shows no publication
+        date; status dated to when verified.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists LETHLEAN, Andrew for bendigo-east
+        (assembly); spreadsheet row 83. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://vic.nationals.org.au/candidates-andrew-lethlean/
       kind: party-profile

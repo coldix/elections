@@ -3,16 +3,30 @@ candidate:
   party: labor
   contest: caulfield
   chamber: assembly
-  status: announced
+  status: nominated
   history:
     - status: announced
       date: 2026-05-06
       source:
-        url: "https://www.facebook.com/johnbergermp/posts/it-was-great-to-join-labor-candidate-mikaela-stafrace-at-the-caufield-campaign-l/956988920429651/"
-        title: It was great to join Labor Candidate Mikaela Stafrace at the Caufield campaign launch on Sunday
+        url: "https://www.facebook.com/johnbergermp/posts/it-was-great-to-join-labor-ca\
+          ndidate-mikaela-stafrace-at-the-caufield-campaign-l/956988920429651/"
+        title: It was great to join Labor Candidate Mikaela Stafrace at the Caufield
+          campaign launch on Sunday
         publisher: Facebook
         published: 2026-05-06
         accessed: 2026-05-20
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists STAFRACE, Mikaela for caulfield
+        (assembly); spreadsheet row 215. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://www.viclabor.org.au/our-team/mikaela-stafrace
       kind: party-profile

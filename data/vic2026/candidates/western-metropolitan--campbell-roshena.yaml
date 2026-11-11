@@ -3,7 +3,7 @@ candidate:
   party: liberal
   contest: western-metropolitan
   chamber: council
-  status: endorsed
+  status: nominated
   occupation: "Barrister; Melbourne Deputy Lord Mayor"
   background: "Former Liberal candidate for Aston (2023 by-election)."
   history:
@@ -22,3 +22,15 @@ candidate:
         spot on the party’s Western Metropolitan Legislative Council ticket for
         the November 2026 election, filling the vacancy after Moira Deeming’s
         disendorsement (see western-metropolitan--deeming-moira.yaml).
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists CAMPBELL, Roshena for
+        western-metropolitan (council); spreadsheet row 1340. Only candidate
+        name, electorate and party were extracted, not contact details.

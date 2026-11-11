@@ -1,0 +1,46 @@
+candidate:
+  name: Oliver Young
+  party: labor
+  contest: benambra
+  chamber: assembly
+  status: nominated
+  history:
+    - status: endorsed
+      date: 2026-11-04
+      source:
+        url: https://www.viclabor.org.au/our-team/ollie-young
+        publisher: Victorian Labor
+        title: "Ollie Young | Labor Candidates"
+        accessed: 2026-11-04
+      note: >-
+        Official Victorian Labor candidates page lists "Candidate for Benambra".
+        Party does not publish a preselection date; 4 November 2026 is the date
+        the official profile was verified for this ledger.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists YOUNG, Oliver for benambra (assembly);
+        spreadsheet row 68. Only candidate name, electorate and party were
+        extracted, not contact details.
+  links:
+    - url: https://www.viclabor.org.au/our-team/ollie-young
+      kind: party-profile
+  corrections:
+    - date: 2026-11-11
+      was: Ollie Young, benambra (assembly)
+      now: Oliver Young, benambra (assembly)
+      reason: Reconcile ballot name with the unique VEC entry for the same party and
+        electorate. Existing endorsement sources are retained.
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11

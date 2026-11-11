@@ -3,9 +3,10 @@ candidate:
   party: liberal
   contest: polwarth
   chamber: assembly
-  status: announced
+  status: nominated
   occupation: "Company director"
-  background: "Managing director of family retail business before parliament; MLA for Polwarth"
+  background: "Managing director of family retail business before parliament; MLA
+    for Polwarth"
   history:
     - status: announced
       date: 2026-07-27
@@ -15,9 +16,22 @@ candidate:
       source:
         url: https://www.facebook.com/BevMcArthurMP/posts/the-fresh-start-tour-has-come-to-an-end-but-the-real-work-is-only-just-beginning/1630601579064974/
         publisher: Facebook (Bev McArthur MP)
-        title: Fresh Start Tour — Coalition candidates for Western Victoria (incl. Richard Riordan)
+        title: Fresh Start Tour — Coalition candidates for Western Victoria (incl.
+          Richard Riordan)
         published: 2026-07-27
         accessed: 2026-07-30
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists RIORDAN, Richard for polwarth
+        (assembly); spreadsheet row 827. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://richardriordan.com.au/
       kind: campaign-site

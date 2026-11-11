@@ -3,7 +3,7 @@ candidate:
   party: nationals
   contest: euroa
   chamber: assembly
-  status: announced
+  status: nominated
   occupation: "Journalist"
   background: "Former Fairfax Media agricultural journalist; MLA for Euroa"
   history:
@@ -11,13 +11,26 @@ candidate:
       date: 2026-05-31
       note: >-
         Sitting Nationals MLA. Official campaign Facebook post seeks volunteers,
-        donors and support "ahead of November" with Nationals donate-to-euroa link.
+        donors and support "ahead of November" with Nationals donate-to-euroa
+        link.
       source:
         url: https://www.facebook.com/Annabelle4Euroa/posts/it-truly-takes-a-village-there-are-so-many-people-who-make-this-job-possible-who/967778249389089/
         publisher: Facebook (Annabelle Cleeland MP / Annabelle4Euroa)
         title: Campaign support ask ahead of November (Euroa)
         published: 2026-05-31
         accessed: 2026-07-30
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists CLEELAND, Annabelle for euroa
+        (assembly); spreadsheet row 318. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://www.annabellecleeland.com.au
       kind: campaign-site

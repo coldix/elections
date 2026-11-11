@@ -3,28 +3,42 @@ candidate:
   party: nationals
   contest: ripon
   chamber: assembly
-  status: endorsed
+  status: nominated
   history:
     - status: announced
       date: 2026-04-14
       source:
-        url: "https://www.westvicnews.com.au/nationals-unveil-their-candidate-for-2026-04-14"
+        url: "https://www.westvicnews.com.au/nationals-unveil-their-candidate-for-2026-\
+          04-14"
         title: Nationals unveil their candidate for Ripon
         publisher: West Vic News
         published: 2026-04-14
         accessed: 2026-07-28
       note: >-
-        Wikipedia's citation reads "Retrieved 15 April 2016" — an evident
-        typo (article is from 2026, cited alongside other 2026 sources).
-        Accessed date corrected to reflect when this record was verified.
+        Wikipedia's citation reads "Retrieved 15 April 2016" — an evident typo
+        (article is from 2026, cited alongside other 2026 sources). Accessed
+        date corrected to reflect when this record was verified.
     - status: endorsed
       date: 2026-04-14
       source:
-        url: "https://vic.nationals.org.au/media-releases/jo-armstrong-selected-as-nationals-candidate-for-ripon/"
+        url: "https://vic.nationals.org.au/media-releases/jo-armstrong-selected-as-nati\
+          onals-candidate-for-ripon/"
         title: "Jo Armstrong selected as Nationals' candidate for Ripon"
         publisher: The Nationals Victoria
         published: 2026-04-14
         accessed: 2026-11-06
       note: >-
-        Party media release says The Nationals have selected Jo Armstrong as their
-        candidate for Ripon.
+        Party media release says The Nationals have selected Jo Armstrong as
+        their candidate for Ripon.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists ARMSTRONG, Jo for ripon (assembly);
+        spreadsheet row 906. Only candidate name, electorate and party were
+        extracted, not contact details.

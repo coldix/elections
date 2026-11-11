@@ -1,0 +1,47 @@
+candidate:
+  name: Tam Lindrum
+  party: one-nation
+  contest: albert-park
+  chamber: assembly
+  status: nominated
+  history:
+    - status: endorsed
+      date: 2026-09-02
+      source:
+        url: https://vic.onenation.org.au/tammy-lindrum
+        title: Tammy Lindrum for Albert Park
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-09-02
+      note: >-
+        Party candidate page lists Tammy as One Nation's candidate for Albert
+        Park.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists LINDRUM, Tam for albert-park
+        (assembly); spreadsheet row 15. Only candidate name, electorate and
+        party were extracted, not contact details.
+  links:
+    - url: https://vic.onenation.org.au/tammy-lindrum
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party
+  corrections:
+    - date: 2026-11-11
+      was: Tammy Lindrum, albert-park (assembly)
+      now: Tam Lindrum, albert-park (assembly)
+      reason: Reconcile ballot name with the unique VEC entry for the same party and
+        electorate. Existing endorsement sources are retained.
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11

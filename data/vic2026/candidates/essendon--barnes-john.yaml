@@ -3,7 +3,7 @@ candidate:
   party: one-nation
   contest: essendon
   chamber: assembly
-  status: endorsed
+  status: nominated
   occupation: "Moonee Valley councillor"
   background: "Former Essendon premiership player; councillor since 2024."
   history:
@@ -12,12 +12,25 @@ candidate:
       source:
         url: https://www.news24.com.au/politics/australian-politics/former-essendon-premiership-player-john-barnes-tops-latest-list-of-one-nations-victorian-election-candidates/news-story/d046fce8f931f1e91b896e145ca398ab
         publisher: News24
-        title: Former Essendon premiership player John Barnes tops latest list of One Nation's Victorian election candidates
+        title: Former Essendon premiership player John Barnes tops latest list of One
+          Nation's Victorian election candidates
         published: 2026-08-19
         accessed: 2026-08-19
       note: >-
         News24 (Patrick Hannaford, 19 August 2026) names Barnes among ten new
         One Nation lower-house candidates and says he will contest Essendon.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists BARNES, John for essendon (assembly);
+        spreadsheet row 293. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://www.news24.com.au/politics/australian-politics/former-essendon-premiership-player-john-barnes-tops-latest-list-of-one-nations-victorian-election-candidates/news-story/d046fce8f931f1e91b896e145ca398ab
       kind: news

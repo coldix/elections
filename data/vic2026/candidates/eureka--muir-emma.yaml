@@ -3,13 +3,27 @@ candidate:
   party: liberal
   contest: eureka
   chamber: assembly
-  status: announced
+  status: nominated
   history:
     - status: announced
       date: 2026-07-15
       source:
-        url: "https://www.facebook.com/JessWilsonMP/videos/with-emma-muir-on-my-team-here-in-eureka-we-will-deliver-a-5-billion-roads-plan-/27702665569387315/"
+        url: "https://www.facebook.com/JessWilsonMP/videos/with-emma-muir-on-my-team-he\
+          re-in-eureka-we-will-deliver-a-5-billion-roads-plan-/2770266556938731\
+          5/"
         title: With Emma Muir on my team here in Eureka
         publisher: Facebook
         published: 2026-07-15
         accessed: 2026-07-16
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists MUIR, Emma for eureka (assembly);
+        spreadsheet row 312. Only candidate name, electorate and party were
+        extracted, not contact details.

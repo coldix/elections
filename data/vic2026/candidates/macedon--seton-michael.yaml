@@ -3,7 +3,7 @@ candidate:
   party: independent
   contest: macedon
   chamber: assembly
-  status: announced
+  status: nominated
   occupation: "Former superannuation fund chief executive"
   background: "Former Chief Executive of AGEST Super and MilitarySuper; lives in Woodend."
   history:
@@ -20,6 +20,18 @@ candidate:
         independent candidate for Macedon at the 28 November 2026 state
         election. The campaign site also describes him as the independent
         candidate for the Macedon District.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists SETON, Michael for macedon (assembly);
+        spreadsheet row 547. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://www.michael4macedon.com.au/
       kind: campaign-site

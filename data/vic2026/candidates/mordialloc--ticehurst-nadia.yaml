@@ -3,9 +3,10 @@ candidate:
   party: one-nation
   contest: mordialloc
   chamber: assembly
-  status: endorsed
+  status: nominated
   occupation: Nurse
-  background: Critical care and operating suite nurse in the public health system for 26 years.
+  background: Critical care and operating suite nurse in the public health system
+    for 26 years.
   history:
     - status: endorsed
       date: 2026-09-16
@@ -16,7 +17,20 @@ candidate:
         published: 2026-09-16
         accessed: 2026-09-19
       note: >-
-        Party candidate page lists Nadia as One Nation's candidate for Mordialloc.
+        Party candidate page lists Nadia as One Nation's candidate for
+        Mordialloc.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists TICEHURST, Nadia for mordialloc
+        (assembly); spreadsheet row 633. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://vic.onenation.org.au/nadia-ticehurst
       kind: party-profile

@@ -3,7 +3,7 @@ candidate:
   party: one-nation
   contest: north-eastern-metropolitan
   chamber: council
-  status: endorsed
+  status: nominated
   occupation: "Office manager"
   history:
     - status: endorsed
@@ -15,6 +15,19 @@ candidate:
         published: 2026-08-03
         accessed: 2026-08-03
       note: >-
-        News report citing One Nation's statewide announcement and naming
-        Adams as the party's lead Legislative Council candidate for the
-        North-Eastern Metropolitan region at the November 2026 state election.
+        News report citing One Nation's statewide announcement and naming Adams
+        as the party's lead Legislative Council candidate for the North-Eastern
+        Metropolitan region at the November 2026 state election.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists ADAMS, Natalie for
+        north-eastern-metropolitan (council); spreadsheet row 1151. Only
+        candidate name, electorate and party were extracted, not contact
+        details.

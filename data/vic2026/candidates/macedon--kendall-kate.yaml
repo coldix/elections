@@ -3,14 +3,16 @@ candidate:
   party: liberal
   contest: macedon
   chamber: assembly
-  status: endorsed
+  status: nominated
   occupation: "Mayor"
   background: "Macedon Ranges mayor; Liberal candidate for Macedon"
   history:
     - status: announced
       date: 2026-07-21
       source:
-        url: "https://midlandexpress.com.au/latest-news/2026/07/21/macedon-ranges-mayor-kate-kendall-has-been-announced-the-victorian-liberal-candidate-for-the-seat-of-macedon-at-novembers-state-election/"
+        url: "https://midlandexpress.com.au/latest-news/2026/07/21/macedon-ranges-mayor\
+          -kate-kendall-has-been-announced-the-victorian-liberal-candidate-for-\
+          the-seat-of-macedon-at-novembers-state-election/"
         title: Kendall to contest Macedon seat
         publisher: Midland Express
         published: 2026-07-21
@@ -23,10 +25,22 @@ candidate:
         publisher: Liberal Victoria
         accessed: 2026-09-28
       note: >-
-        Liberal Victoria team profile lists Kate Kendall. Midland Express
-        (21 July 2026) reported she had been announced as the Victorian Liberal
+        Liberal Victoria team profile lists Kate Kendall. Midland Express (21
+        July 2026) reported she had been announced as the Victorian Liberal
         candidate for Macedon. Status upgraded from announced to endorsed;
         party-profile link added (GitHub issue #41).
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists KENDALL, Kate for macedon (assembly);
+        spreadsheet row 550. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://vicliberal.org.au/team/kate-kendall
       kind: party-profile

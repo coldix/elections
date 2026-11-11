@@ -3,13 +3,26 @@ candidate:
   party: liberal
   contest: geelong
   chamber: assembly
-  status: announced
+  status: nominated
   history:
     - status: announced
       date: 2026-06-14
       source:
-        url: "https://timesnewsgroup.com.au/surfcoasttimes/news/new-liberal-challenger-takes-aim-at-bellarine/"
+        url: "https://timesnewsgroup.com.au/surfcoasttimes/news/new-liberal-challenger-\
+          takes-aim-at-bellarine/"
         title: New Liberal challenger takes aim at Bellarine
         publisher: Times News Group
         published: 2026-06-14
         accessed: 2026-07-16
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists POBJOY, Andy for geelong (assembly);
+        spreadsheet row 375. Only candidate name, electorate and party were
+        extracted, not contact details.

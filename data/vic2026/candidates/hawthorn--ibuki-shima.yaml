@@ -3,7 +3,7 @@ candidate:
   party: independent
   contest: hawthorn
   chamber: assembly
-  status: announced
+  status: nominated
   occupation: "Deputy mayor"
   background: "Boroondara deputy mayor; independent candidate for Hawthorn"
   history:
@@ -16,19 +16,32 @@ candidate:
         accessed: 2026-08-23
       note: >-
         The candidate's own campaign site describes her as "independent
-        candidate for Hawthorn in this year's state election", verified
-        23 August 2026. The 23 April 2026 announcement date comes from The
-        Age's report of her entering the race; that citation's URL was wrong
-        and has been corrected (see corrections).
+        candidate for Hawthorn in this year's state election", verified 23
+        August 2026. The 23 April 2026 announcement date comes from The Age's
+        report of her entering the race; that citation's URL was wrong and has
+        been corrected (see corrections).
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists IBUKI, Shima for hawthorn (assembly);
+        spreadsheet row 446. Only candidate name, electorate and party were
+        extracted, not contact details.
   corrections:
     - date: 2026-08-23
-      was: "source.url https://en.wikipedia.org/wiki/Annika_Smethurst (publisher recorded as The Age)"
+      was: "source.url https://en.wikipedia.org/wiki/Annika_Smethurst (publisher
+        recorded as The Age)"
       now: "source.url https://www.shimaibuki.com.au/"
       reason: >-
         The citation named The Age as publisher but linked to the Wikipedia
         biography of the journalist rather than the article, so the record did
-        not resolve to the evidence it claimed. The Age article URL could not
-        be recovered, so the candidacy is now carried by the candidate's own
+        not resolve to the evidence it claimed. The Age article URL could not be
+        recovered, so the candidacy is now carried by the candidate's own
         campaign site — a stronger source under the methodology hierarchy than
         either.
       source:

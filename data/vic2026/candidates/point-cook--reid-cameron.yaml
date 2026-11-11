@@ -3,7 +3,7 @@ candidate:
   party: one-nation
   contest: point-cook
   chamber: assembly
-  status: endorsed
+  status: nominated
   background: "Lived in Point Cook with his family for more than 20 years."
   history:
     - status: endorsed
@@ -15,9 +15,21 @@ candidate:
         published: 2026-09-07
         accessed: 2026-09-19
       note: >-
-        Party candidate page lists Cameron as One Nation's candidate
-        for Point Cook. Confirmed still listed on the party candidates
-        index as of 2026-09-19.
+        Party candidate page lists Cameron as One Nation's candidate for Point
+        Cook. Confirmed still listed on the party candidates index as of
+        2026-09-19.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists REID, Cameron for point-cook
+        (assembly); spreadsheet row 821. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://vic.onenation.org.au/cameron-reid
       kind: party-profile

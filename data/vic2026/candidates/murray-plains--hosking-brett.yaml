@@ -3,23 +3,37 @@ candidate:
   party: nationals
   contest: murray-plains
   chamber: assembly
-  status: endorsed
+  status: nominated
   history:
     - status: announced
       date: 2026-04-27
       source:
-        url: "https://www.loddonherald.com.au/it-s-official-hosking-gets-nationals-nod-2026-04-22"
+        url: "https://www.loddonherald.com.au/it-s-official-hosking-gets-nationals-nod-\
+          2026-04-22"
         title: "It's official: Hosking gets Nationals' nod | Loddon Herald"
         publisher: www.loddonherald.com.au
         accessed: 2026-04-27
     - status: endorsed
       date: 2026-04-24
       source:
-        url: "https://vic.nationals.org.au/media-releases/brett-hosking-selected-as-the-nationals-candidate-for-murray-plains/"
+        url: "https://vic.nationals.org.au/media-releases/brett-hosking-selected-as-the\
+          -nationals-candidate-for-murray-plains/"
         title: "Brett Hosking selected as The Nationals' candidate for Murray Plains"
         publisher: The Nationals Victoria
         published: 2026-04-24
         accessed: 2026-11-06
       note: >-
-        Party media release says The Nationals have selected Brett Hosking as their
-        candidate for Murray Plains.
+        Party media release says The Nationals have selected Brett Hosking as
+        their candidate for Murray Plains.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists HOSKING, Brett for murray-plains
+        (assembly); spreadsheet row 676. Only candidate name, electorate and
+        party were extracted, not contact details.

@@ -3,15 +3,31 @@ candidate:
   party: liberal
   contest: south-eastern-metropolitan
   chamber: council
-  status: announced
+  status: nominated
   history:
     - status: announced
       date: 2026-03-22
       source:
-        url: "https://www.theage.com.au/national/victoria/conservative-liberal-mp-rolled-for-top-spot-amid-fiery-preselection-battles-20260322-p5rmhn.html"
+        url: "https://www.theage.com.au/national/victoria/conservative-liberal-mp-rolle\
+          d-for-top-spot-amid-fiery-preselection-battles-20260322-p5rmhn.html"
         publisher: "The Age"
-        title: "Conservative Liberal MP rolled for top spot amid fiery preselection battles"
+        title: "Conservative Liberal MP rolled for top spot amid fiery preselection
+          battles"
         published: 2026-03-22
         accessed: 2026-11-04
       note: >-
-        The Age reports the South-Eastern Metropolitan Liberal preselection, with sitting MLC Hermans on the ticket behind Phillip Pease.
+        The Age reports the South-Eastern Metropolitan Liberal preselection,
+        with sitting MLC Hermans on the ticket behind Phillip Pease.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists HERMANS, Ann-Marie for
+        south-eastern-metropolitan (council); spreadsheet row 1290. Only
+        candidate name, electorate and party were extracted, not contact
+        details.

@@ -3,7 +3,7 @@ candidate:
   party: one-nation
   contest: nepean
   chamber: assembly
-  status: endorsed
+  status: nominated
   history:
     - status: endorsed
       date: 2026-07-27
@@ -13,13 +13,25 @@ candidate:
         title: Candidates
         accessed: 2026-07-27
       note: >-
-        Party's own site currently lists Hercus as the One Nation candidate
-        for Nepean. He previously contested the 2 May 2026 Nepean
-        by-election as the One Nation candidate and was defeated (Liberal's
-        Anthony Marsh won on preferences). This entry reflects his current
-        live listing for the seat, not a separately dated Nov 2026
-        re-endorsement announcement — the party page carries no publish
-        date. Re-verify closer to nominations (13 Nov 2026).
+        Party's own site currently lists Hercus as the One Nation candidate for
+        Nepean. He previously contested the 2 May 2026 Nepean by-election as the
+        One Nation candidate and was defeated (Liberal's Anthony Marsh won on
+        preferences). This entry reflects his current live listing for the seat,
+        not a separately dated Nov 2026 re-endorsement announcement — the party
+        page carries no publish date. Re-verify closer to nominations (13 Nov
+        2026).
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists HERCUS, Darren for nepean (assembly);
+        spreadsheet row 723. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://vic.onenation.org.au/candidate/darren-hercus
       kind: candidate-profile

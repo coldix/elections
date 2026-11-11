@@ -3,15 +3,30 @@ candidate:
   party: nationals
   contest: eastern-victoria
   chamber: council
-  status: announced
+  status: nominated
   history:
     - status: announced
       date: 2026-09-21
       source:
-        url: "https://upperyarra.mailcommunity.com.au/news/2026-09-21/nationals-melina-bath-seeking-a-third-full-term-serving-eastern-victoria/"
+        url: "https://upperyarra.mailcommunity.com.au/news/2026-09-21/nationals-melina-\
+          bath-seeking-a-third-full-term-serving-eastern-victoria/"
         publisher: "Upper Yarra Star Mail"
-        title: "Nationals' Melina Bath seeking a third full term serving Eastern Victoria"
+        title: "Nationals' Melina Bath seeking a third full term serving Eastern
+          Victoria"
         published: 2026-09-21
         accessed: 2026-11-04
       note: >-
-        Star Mail reports and quotes Bath seeking re-election for the Nationals in Eastern Victoria.
+        Star Mail reports and quotes Bath seeking re-election for the Nationals
+        in Eastern Victoria.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists BATH, Melina for eastern-victoria
+        (council); spreadsheet row 1102. Only candidate name, electorate and
+        party were extracted, not contact details.

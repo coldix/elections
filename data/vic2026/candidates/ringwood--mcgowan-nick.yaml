@@ -3,12 +3,25 @@ candidate:
   party: liberal
   contest: ringwood
   chamber: assembly
-  status: endorsed
+  status: nominated
   history:
     - status: endorsed
       date: 2026-03-19
       source:
-        url: "https://vic.liberal.org.au/media-releases/2026-03-17-victorian-liberal-party-endorses-new-upper-house-candidates?topic="
+        url: "https://vic.liberal.org.au/media-releases/2026-03-17-victorian-liberal-pa\
+          rty-endorses-new-upper-house-candidates?topic="
         title: Victorian Liberal Party Endorses New Upper House Candidates
         publisher: vic.liberal.org.au
         accessed: 2026-03-19
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists McGOWAN, Nick for ringwood (assembly);
+        spreadsheet row 883. Only candidate name, electorate and party were
+        extracted, not contact details.

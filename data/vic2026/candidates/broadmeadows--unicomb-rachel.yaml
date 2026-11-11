@@ -1,0 +1,40 @@
+candidate:
+  name: Rachel Unicomb
+  party: animal-justice
+  contest: broadmeadows
+  chamber: assembly
+  status: nominated
+  history:
+    - status: endorsed
+      date: 2026-06-03
+      source:
+        url: "https://vic.animaljusticeparty.org/rachel-unicomb"
+        title: Rachel Unicomb for Preston
+        publisher: Animal Justice Party Victoria
+        accessed: 2026-06-03
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists UNICOMB, Rachel for broadmeadows
+        (assembly); spreadsheet row 158. Only candidate name, electorate and
+        party were extracted, not contact details.
+  corrections:
+    - date: 2026-11-11
+      was: Rachel Unicomb, preston (assembly)
+      now: Rachel Unicomb, broadmeadows (assembly)
+      reason: Reconcile the unique candidate and party match to the electorate in the
+        final VEC nominations report. Previous endorsement sources describe the
+        earlier electorate and are retained.
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11

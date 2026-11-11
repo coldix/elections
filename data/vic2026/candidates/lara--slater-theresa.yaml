@@ -3,9 +3,11 @@ candidate:
   party: greens
   contest: lara
   chamber: assembly
-  status: endorsed
+  status: nominated
   occupation: "Social worker"
-  background: "Through my role in social work I’ve gained experience in policy and advocacy, recognising the needs of individuals, families and broader groups across our regio"
+  background: "Through my role in social work I’ve gained experience in policy and
+    advocacy, recognising the needs of individuals, families and broader groups
+    across our regio"
   history:
     - status: endorsed
       date: 2026-04-10
@@ -14,6 +16,18 @@ candidate:
         title: "Theresa Slater: Candidate for Lara"
         publisher: Victorian Greens
         accessed: 2026-04-10
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists SLATER, Theresa for lara (assembly);
+        spreadsheet row 509. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://greens.org.au/vic/person/theresa-slater
       kind: party-profile

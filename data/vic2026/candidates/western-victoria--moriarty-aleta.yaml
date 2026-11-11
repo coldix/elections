@@ -3,9 +3,10 @@ candidate:
   party: independent
   contest: western-victoria
   chamber: council
-  status: announced
+  status: nominated
   occupation: "CEO, Centre for Sustainability"
-  background: "Geelong/Belmont-based humanitarian and advocate; former UN and World Bank roles."
+  background: "Geelong/Belmont-based humanitarian and advocate; former UN and
+    World Bank roles."
   history:
     - status: announced
       date: 2026-06-17
@@ -19,6 +20,18 @@ candidate:
         Local news report of Moriarty declaring as a community independent for
         the Western Victoria Legislative Council region at the November 2026
         state election.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists MORIARTY, Aleta for western-victoria
+        (council); spreadsheet row 1406. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://www.aletamoriarty.com/
       kind: campaign-site

@@ -1,0 +1,50 @@
+candidate:
+  name: Steven Spyros
+  party: one-nation
+  contest: lara
+  chamber: assembly
+  status: nominated
+  occupation: "Police officer"
+  background: "Geelong-born; lives in Lara."
+  history:
+    - status: endorsed
+      date: 2026-10-05
+      source:
+        url: https://vic.onenation.org.au/stephen-spyros
+        title: "Stephen Spyros for Lara"
+        publisher: Pauline Hanson's One Nation Victoria
+        accessed: 2026-10-05
+      note: >-
+        Party candidate page lists Stephen as One Nation's candidate for Lara.
+        Page carries no publication date; status dated to when verified on the
+        party site.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists SPYROS, Steven for lara (assembly);
+        spreadsheet row 510. Only candidate name, electorate and party were
+        extracted, not contact details.
+  links:
+    - url: https://vic.onenation.org.au/stephen-spyros
+      kind: party-profile
+    - url: https://vic.onenation.org.au/candidates
+      kind: party
+  corrections:
+    - date: 2026-11-11
+      was: Stephen Spyros, lara (assembly)
+      now: Steven Spyros, lara (assembly)
+      reason: Reconcile ballot name with the unique VEC entry for the same party and
+        electorate. Existing endorsement sources are retained.
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11

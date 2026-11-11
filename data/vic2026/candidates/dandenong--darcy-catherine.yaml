@@ -3,9 +3,10 @@ candidate:
   party: greens
   contest: dandenong
   chamber: assembly
-  status: endorsed
+  status: nominated
   occupation: "Mental health worker"
-  background: "Local mum, mental health worker and activist; lived in Dandenong for 23 years."
+  background: "Local mum, mental health worker and activist; lived in Dandenong
+    for 23 years."
   history:
     - status: endorsed
       date: 2026-09-14
@@ -15,9 +16,21 @@ candidate:
         publisher: Victorian Greens
         accessed: 2026-09-14
       note: >-
-        Victorian Greens person page lists Catherine as Candidate for
-        Dandenong. Also listed on greens.org.au/vic/candidates. Earlier
-        Wikipedia-only claim (Aug 2026) was held pending a party primary.
+        Victorian Greens person page lists Catherine as Candidate for Dandenong.
+        Also listed on greens.org.au/vic/candidates. Earlier Wikipedia-only
+        claim (Aug 2026) was held pending a party primary.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists D'ARCY, Catherine for dandenong
+        (assembly); spreadsheet row 264. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://greens.org.au/vic/person/catherine-darcy
       kind: party-profile

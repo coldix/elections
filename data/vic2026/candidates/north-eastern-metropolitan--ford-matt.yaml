@@ -1,0 +1,48 @@
+candidate:
+  name: Matt Ford
+  party: libertarian
+  contest: north-eastern-metropolitan
+  chamber: council
+  status: nominated
+  history:
+    - status: endorsed
+      date: 2026-10-26
+      source:
+        url: https://www.vic.libertarians.org.au/election26
+        title: "Election 2026 - Libertarians Victoria"
+        publisher: "Libertarian Party (Victoria)"
+        accessed: 2026-10-26
+      note: >-
+        The Libertarians Victoria Election 2026 page lists Matthew Ford as a
+        Legislative Council candidate for North-Eastern Metropolitan Region.
+        Page carries no publication date; status dated to when verified on the
+        party site.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists FORD, Matt for
+        north-eastern-metropolitan (council); spreadsheet row 1159. Only
+        candidate name, electorate and party were extracted, not contact
+        details.
+  links:
+    - url: https://www.vic.libertarians.org.au/election26
+      kind: party
+  corrections:
+    - date: 2026-11-11
+      was: Matthew Ford, north-eastern-metropolitan (council)
+      now: Matt Ford, north-eastern-metropolitan (council)
+      reason: Reconcile ballot name with the unique VEC entry for the same party and
+        electorate. Existing endorsement sources are retained.
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11

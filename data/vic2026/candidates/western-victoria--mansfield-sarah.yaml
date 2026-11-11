@@ -3,19 +3,32 @@ candidate:
   party: greens
   contest: western-victoria
   chamber: council
-  status: endorsed
+  status: nominated
   history:
     - status: endorsed
       date: 2026-07-31
       source:
         url: https://greens.org.au/vic/person/sarah-mansfield
         publisher: Australian Greens Victoria
-        title: "Sarah Mansfield, Deputy Leader of the Victorian Greens, MLC for Western Victoria"
+        title: "Sarah Mansfield, Deputy Leader of the Victorian Greens, MLC for Western
+          Victoria"
         accessed: 2026-07-31
       note: >-
         Listed as a Victorian Greens candidate on the party's official
         candidates/person pages (accessed 2026-07-31). Page does not show a
         separate endorsement publish date.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists MANSFIELD, Sarah for western-victoria
+        (council); spreadsheet row 1383. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://greens.org.au/vic/person/sarah-mansfield
       kind: party-profile

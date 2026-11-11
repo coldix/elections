@@ -3,7 +3,7 @@ candidate:
   party: liberal
   contest: sunbury
   chamber: assembly
-  status: announced
+  status: nominated
   history:
     - status: announced
       date: 2025-12-12
@@ -11,14 +11,26 @@ candidate:
         url: https://www.facebook.com/watch/?v=850982047896133
         publisher: Facebook (Jess Wilson)
         title: >-
-          The Sunbury community is one of many in Melbourne’s west that have been
-          completely neglected by Labor
+          The Sunbury community is one of many in Melbourne’s west that have
+          been completely neglected by Labor
         published: 2025-12-12
         accessed: 2026-08-14
       note: >-
         Wikipedia cites this Jess Wilson Facebook video (12 December 2025) in
         connection with Cottom as Liberal for Sunbury. Secondary social source
         only; upgrade if a Liberal Victoria team page is verified.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists COTTOM, Simmone for sunbury (assembly);
+        spreadsheet row 982. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
       kind: wikipedia

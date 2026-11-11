@@ -11,7 +11,8 @@ candidate:
       date: 2026-11-07
       source:
         url: "https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls"
-        title: "Candidate Contact Persons' Details Summary Report — State Election 2026 (as at 7 Nov 2026 3:01 pm)"
+        title: "Candidate Contact Persons' Details Summary Report — State Election 2026
+          (as at 7 Nov 2026 3:01 pm)"
         publisher: Victorian Electoral Commission
         accessed: 2026-11-08
       note: >-
@@ -20,6 +21,18 @@ candidate:
         Also listed on the party's Our Candidates page and individual profile
         (https://www.lcvicparty.org.au/harley_mackenzie_candidate_for_carrum,
         accessed 2026-11-08).
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: Final VEC nominations report reconfirms MACKENZIE, Harley for carrum
+        (assembly); spreadsheet row 203. The earlier interim nomination evidence
+        is retained.
   links:
     - url: https://www.lcvicparty.org.au/harley_mackenzie_candidate_for_carrum
       kind: party-profile

@@ -3,18 +3,33 @@ candidate:
   party: labor
   contest: melton
   chamber: assembly
-  status: announced
+  status: nominated
   occupation: "Teacher"
   background: "He became a teacher to give back to the community he grew up in."
   history:
     - status: announced
       date: 2026-03-16
       source:
-        url: "https://www.facebook.com/JacintaAllanBendigoEast/posts/im-proud-to-announce-broden-borg-labor-for-melton-is-our-victorian-labor-candida/1422234416377249/"
-        title: "I'm proud to announce Broden Borg - Labor for Melton is our Victorian Labor candidate"
+        url: "https://www.facebook.com/JacintaAllanBendigoEast/posts/im-proud-to-announ\
+          ce-broden-borg-labor-for-melton-is-our-victorian-labor-candida/142223\
+          4416377249/"
+        title: "I'm proud to announce Broden Borg - Labor for Melton is our Victorian
+          Labor candidate"
         publisher: Facebook
         published: 2026-03-16
         accessed: 2026-03-19
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists BORG, Broden for melton (assembly);
+        spreadsheet row 587. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://www.viclabor.org.au/our-team/broden-borg
       kind: party-profile

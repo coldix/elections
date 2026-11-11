@@ -1,0 +1,48 @@
+candidate:
+  name: Silver Rose Watts
+  party: greens
+  contest: south-west-coast
+  chamber: assembly
+  status: nominated
+  occupation: "Youth worker, facilitator and student"
+  background: "Warrnambool local."
+  history:
+    - status: endorsed
+      date: 2026-08-05
+      source:
+        url: https://greens.org.au/vic/person/silver-rose
+        publisher: Victorian Greens
+        title: "Silver Rose, Candidate for South-West Coast"
+        accessed: 2026-08-06
+      note: >-
+        Official Victorian Greens candidate profile naming Silver Rose as the
+        party’s candidate for the Legislative Assembly district of South-West
+        Coast at the 2026 state election.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists WATTS, Silver Rose for south-west-coast
+        (assembly); spreadsheet row 959. Only candidate name, electorate and
+        party were extracted, not contact details.
+  links:
+    - url: https://greens.org.au/vic/person/silver-rose
+      kind: party-profile
+  corrections:
+    - date: 2026-11-11
+      was: Silver Rose, south-west-coast (assembly)
+      now: Silver Rose Watts, south-west-coast (assembly)
+      reason: Reconcile ballot name with the unique VEC entry for the same party and
+        electorate. Existing endorsement sources are retained.
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11

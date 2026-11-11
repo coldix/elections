@@ -3,18 +3,34 @@ candidate:
   party: greens
   contest: northcote
   chamber: assembly
-  status: announced
+  status: nominated
   occupation: "Teacher"
-  background: "As a local and teacher, I'm going to take this fight up to Labor and into our Parliament."
+  background: "As a local and teacher, I'm going to take this fight up to Labor
+    and into our Parliament."
   history:
     - status: announced
       date: 2025-09-28
       source:
-        url: "https://www.heraldsun.com.au/news/victoria/backroom-baz-shortage-of-quality-election-candidates-has-senior-libs-starting-to-panic/news-story/19bca42e3998db7a0a6c052734044345"
-        title: "Backroom Baz: Shortage of quality election candidates has senior Libs starting to panic"
+        url: "https://www.heraldsun.com.au/news/victoria/backroom-baz-shortage-of-quali\
+          ty-election-candidates-has-senior-libs-starting-to-panic/news-story/1\
+          9bca42e3998db7a0a6c052734044345"
+        title: "Backroom Baz: Shortage of quality election candidates has senior Libs
+          starting to panic"
         publisher: Herald Sun
         published: 2025-09-28
         accessed: 2025-10-21
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists GOME, Campbell for northcote
+        (assembly); spreadsheet row 757. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://greens.org.au/vic/person/campbell-gome
       kind: party-profile
