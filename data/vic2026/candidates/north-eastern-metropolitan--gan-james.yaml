@@ -3,7 +3,7 @@ candidate:
   party: labor
   contest: north-eastern-metropolitan
   chamber: council
-  status: endorsed
+  status: nominated
   history:
     - status: endorsed
       date: 2026-11-06
@@ -13,7 +13,23 @@ candidate:
         publisher: "Victorian Labor"
         accessed: 2026-11-06
       note: >-
-        Official Victorian Labor candidates page lists "Candidate for North Eastern Metropolitan". Ticket position not published. Party does not publish a preselection date; 6 November 2026 is the date the official profile was verified for this ledger.
+        Official Victorian Labor candidates page lists "Candidate for North
+        Eastern Metropolitan". Ticket position not published. Party does not
+        publish a preselection date; 6 November 2026 is the date the official
+        profile was verified for this ledger.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists GAN, James for
+        north-eastern-metropolitan (council); spreadsheet row 1137. Only
+        candidate name, electorate and party were extracted, not contact
+        details.
   links:
     - url: "https://www.viclabor.org.au/our-team/james-gan"
       kind: party-profile

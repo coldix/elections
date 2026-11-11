@@ -9,7 +9,8 @@ candidate:
       date: 2026-11-07
       source:
         url: "https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls"
-        title: "Candidate Contact Persons' Details Summary Report — State Election 2026 (as at 7 Nov 2026 3:01 pm)"
+        title: "Candidate Contact Persons' Details Summary Report — State Election 2026
+          (as at 7 Nov 2026 3:01 pm)"
         publisher: Victorian Electoral Commission
         accessed: 2026-11-08
       note: >-
@@ -17,6 +18,18 @@ candidate:
         candidate for Sunbury District for The West Party. Not listed on the
         party's Local Representation page when checked on 8 November 2026;
         nomination is from the VEC primary.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: Final VEC nominations report reconfirms VINE, Geoff for sunbury
+        (assembly); spreadsheet row 981. The earlier interim nomination evidence
+        is retained.
   links:
     - url: https://thewestparty.org.au/local-representation/
       kind: party

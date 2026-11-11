@@ -3,9 +3,11 @@ candidate:
   party: victorian-socialists
   contest: clarinda
   chamber: assembly
-  status: endorsed
+  status: nominated
   occupation: "Student"
-  background: "I've helped organise student campaigns for our universities and governments to cut ties with the genocide in Palestine and to kick the military off campus."
+  background: "I've helped organise student campaigns for our universities and
+    governments to cut ties with the genocide in Palestine and to kick the
+    military off campus."
   history:
     - status: endorsed
       date: 2026-06-16
@@ -14,6 +16,18 @@ candidate:
         title: Kit Message – Victorian Socialists
         publisher: www.victoriansocialists.org.au
         accessed: 2026-06-16
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists MESSAGE, Kit for clarinda (assembly);
+        spreadsheet row 226. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://www.victoriansocialists.org.au/candidates/kit-message
       kind: party-profile

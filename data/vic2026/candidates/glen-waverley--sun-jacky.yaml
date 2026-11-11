@@ -3,7 +3,7 @@ candidate:
   party: liberal
   contest: glen-waverley
   chamber: assembly
-  status: endorsed
+  status: nominated
   history:
     - status: announced
       date: 2026-05-29
@@ -14,9 +14,9 @@ candidate:
         published: 2026-05-29
         accessed: 2026-06-04
       note: >-
-        Video posted by Nick McGowan MLC. Citation URL corrected 2026-08-23
-        (see corrections) — it previously pointed at his Wikipedia biography
-        rather than the post itself.
+        Video posted by Nick McGowan MLC. Citation URL corrected 2026-08-23 (see
+        corrections) — it previously pointed at his Wikipedia biography rather
+        than the post itself.
     - status: endorsed
       date: 2026-08-23
       source:
@@ -29,14 +29,27 @@ candidate:
         14 August 2026 ABC report that Sun was "counselled" by the party over a
         volunteer intern program; counselling is not a status change under the
         methodology, and the party continues to list him as its candidate.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists SUN, Jacky for glen-waverley
+        (assembly); spreadsheet row 408. Only candidate name, electorate and
+        party were extracted, not contact details.
   corrections:
     - date: 2026-08-23
-      was: "source.url https://en.wikipedia.org/wiki/Nick_McGowan (publisher recorded as Facebook)"
+      was: "source.url https://en.wikipedia.org/wiki/Nick_McGowan (publisher recorded
+        as Facebook)"
       now: "source.url https://www.facebook.com/watch/?v=1677439927113045"
       reason: >-
         The citation named Facebook as publisher but linked to the Wikipedia
-        biography of the MLC who posted the video, so the record did not
-        resolve to the evidence it claimed.
+        biography of the MLC who posted the video, so the record did not resolve
+        to the evidence it claimed.
       source:
         url: https://vic.liberal.org.au/team/jacky-sun
         publisher: Liberal Victoria

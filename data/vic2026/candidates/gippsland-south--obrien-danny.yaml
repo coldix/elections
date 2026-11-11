@@ -3,7 +3,7 @@ candidate:
   party: nationals
   contest: gippsland-south
   chamber: assembly
-  status: announced
+  status: nominated
   occupation: "Member of Parliament"
   background: "MLA for Gippsland South; Leader of The Nationals (Victoria)"
   history:
@@ -11,9 +11,9 @@ candidate:
       date: 2026-04-14
       note: >-
         Sitting Nationals MLA and party leader. Bendigo Times coverage of the
-        Bendigo East Nationals launch identifies him as Nationals Victoria leader
-        endorsing the candidate for the 2026 state election while remaining the
-        member for Gippsland South (see also party media bylines).
+        Bendigo East Nationals launch identifies him as Nationals Victoria
+        leader endorsing the candidate for the 2026 state election while
+        remaining the member for Gippsland South (see also party media bylines).
       source:
         url: https://timesnewsgroup.com.au/bendigotimes/news/lethlean-stands-for-state-bendigo-east-seat/
         publisher: Times News Group (Bendigo Times)
@@ -22,13 +22,26 @@ candidate:
         accessed: 2026-07-30
     - status: announced
       date: 2026-06-23
-      note: Party media release byline still identifies him as Nationals Member for Gippsland South during the 2026 campaign period.
+      note: Party media release byline still identifies him as Nationals Member for
+        Gippsland South during the 2026 campaign period.
       source:
         url: https://vic.nationals.org.au/media-releases/danny-obrien-mp-lte-gemma-ready-to-fight-for-gippsland-east/
         publisher: The Nationals Victoria
         title: "Danny O'Brien MP — Gemma Ready to Fight for Gippsland East"
         published: 2026-06-23
         accessed: 2026-07-30
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists O'BRIEN, Danny for gippsland-south
+        (assembly); spreadsheet row 399. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://www.parliament.vic.gov.au/members/danny-obrien/
       kind: parliament

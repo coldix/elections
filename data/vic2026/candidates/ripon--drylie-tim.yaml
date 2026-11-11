@@ -3,7 +3,7 @@ candidate:
   party: greens
   contest: ripon
   chamber: assembly
-  status: endorsed
+  status: nominated
   occupation: "Councillor"
   background: "Hepburn Shire councillor; Greens candidate for Ripon"
   history:
@@ -11,9 +11,22 @@ candidate:
       date: 2026-03-19
       source:
         url: "https://greens.org.au/vic/person/tim-drylie"
-        title: "Tim Drylie: Candidate for Ripon and Councillor for Hepburn Shire Council"
+        title: "Tim Drylie: Candidate for Ripon and Councillor for Hepburn Shire
+          Council"
         publisher: Victorian Greens
         accessed: 2026-03-19
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists DRYLIE, Tim for ripon (assembly);
+        spreadsheet row 903. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://greens.org.au/vic/person/tim-drylie
       kind: party-profile

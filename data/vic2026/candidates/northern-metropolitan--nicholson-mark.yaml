@@ -3,7 +3,7 @@ candidate:
   party: one-nation
   contest: northern-metropolitan
   chamber: council
-  status: endorsed
+  status: nominated
   occupation: "Animator"
   background: "Creator of One Nation's Please Explain animated political series."
   history:
@@ -19,3 +19,15 @@ candidate:
         News report citing One Nation's statewide announcement and naming
         Nicholson as the party's lead Legislative Council candidate for the
         Northern Metropolitan region at the November 2026 state election.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists NICHOLSON, Mark for
+        northern-metropolitan (council); spreadsheet row 1188. Only candidate
+        name, electorate and party were extracted, not contact details.

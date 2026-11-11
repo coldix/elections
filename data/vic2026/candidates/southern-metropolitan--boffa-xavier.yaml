@@ -3,9 +3,10 @@ candidate:
   party: liberal
   contest: southern-metropolitan
   chamber: council
-  status: endorsed
+  status: nominated
   occupation: "Lawyer"
-  background: "Public policy professional; Liberal candidate for Southern Metropolitan Region"
+  background: "Public policy professional; Liberal candidate for Southern
+    Metropolitan Region"
   history:
     - status: endorsed
       date: 2026-03-14
@@ -18,8 +19,8 @@ candidate:
         Listed as Liberal Legislative Council candidate for Southern
         Metropolitan. Party media (March 2026 convention coverage) reported
         endorsement of upper-house ticket candidates including Boffa; the
-        Liberal Victoria site blocked automated fetch on 2026-07-31.
-        Superseded as evidence by the party page below.
+        Liberal Victoria site blocked automated fetch on 2026-07-31. Superseded
+        as evidence by the party page below.
     - status: endorsed
       date: 2026-08-23
       source:
@@ -32,6 +33,18 @@ candidate:
         rendering the page in a browser — the site is client-rendered, which is
         why the earlier automated fetch failed rather than the page being
         absent.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists BOFFA, Xavier for southern-metropolitan
+        (council); spreadsheet row 1316. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://vic.liberal.org.au/team/xavier-boffa
       kind: party-profile

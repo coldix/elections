@@ -3,20 +3,34 @@ candidate:
   party: liberal
   contest: eildon
   chamber: assembly
-  status: announced
+  status: nominated
   occupation: "Consultant"
   background: "Senior organisational consultant before parliament; MLA for Eildon"
   history:
     - status: announced
       date: 2026-07-09
       note: >-
-        Sitting Liberal MLA. Jess Wilson Fresh Start Tour video names McLeish on her team in Eildon.
+        Sitting Liberal MLA. Jess Wilson Fresh Start Tour video names McLeish on
+        her team in Eildon.
       source:
         url: https://www.instagram.com/reel/DaYjLY5D_Y-/
         publisher: Instagram (Jess Wilson MP)
-        title: "Eildon locals know Victoria needs a fresh start, and with Cindy McLeish on my team…"
+        title: "Eildon locals know Victoria needs a fresh start, and with Cindy McLeish
+          on my team…"
         published: 2026-07-09
         accessed: 2026-07-30
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists MCLEISH, Cindy for eildon (assembly);
+        spreadsheet row 271. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://www.parliament.vic.gov.au/members/cindy-mcleish/
       kind: parliament

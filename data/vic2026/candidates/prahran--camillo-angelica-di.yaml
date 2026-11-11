@@ -3,16 +3,30 @@ candidate:
   party: greens
   contest: prahran
   chamber: assembly
-  status: endorsed
+  status: nominated
   occupation: "Engineer"
   history:
     - status: endorsed
       date: 2025-10-21
       source:
-        url: "https://greens.org.au/vic/news/media-release/local-environmental-engineer-back-take-divided-liberals-prahran-offering"
-        title: "Local Environmental Engineer is Back to Take on the Divided Liberals in Prahran, Offering a Strong, Local Alternative"
+        url: "https://greens.org.au/vic/news/media-release/local-environmental-engineer\
+          -back-take-divided-liberals-prahran-offering"
+        title: "Local Environmental Engineer is Back to Take on the Divided Liberals in
+          Prahran, Offering a Strong, Local Alternative"
         publisher: greens.org.au
         accessed: 2025-10-21
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists DI CAMILLO, Angelica for prahran
+        (assembly); spreadsheet row 849. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://greens.org.au/vic/person/angelica-di-camillo
       kind: party-profile

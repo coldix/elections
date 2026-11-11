@@ -3,9 +3,12 @@ candidate:
   party: family-first
   contest: western-metropolitan
   chamber: council
-  status: endorsed
+  status: nominated
   occupation: "Teacher"
-  background: "Former high school teacher; sitting MLC for Western Metropolitan (crossbench). Family First lead (#1) Legislative Council candidate for Western Metropolitan and Victorian Party Leader. Previously a Liberal candidate (disendorsed July 2026)."
+  background: "Former high school teacher; sitting MLC for Western Metropolitan
+    (crossbench). Family First lead (#1) Legislative Council candidate for
+    Western Metropolitan and Victorian Party Leader. Previously a Liberal
+    candidate (disendorsed July 2026)."
   history:
     - status: disendorsed
       date: 2026-03-24
@@ -45,19 +48,31 @@ candidate:
         published: 2026-09-10
         accessed: 2026-11-04
       note: >-
-        Family First's Federal Executive endorsed her as its lead candidate
-        for the Western Metropolitan Region of the Legislative Council and
-        appointed her Victorian Party Leader. Also reported by ABC News
+        Family First's Federal Executive endorsed her as its lead candidate for
+        the Western Metropolitan Region of the Legislative Council and appointed
+        her Victorian Party Leader. Also reported by ABC News
         (https://www.abc.net.au/news/2026-09-10/moira-deeming-joins-family-first-party/107136754)
         and AAP
         (https://aapnews.aap.com.au/news/dumped-liberal-makes-major-move-before-election).
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists DEEMING, Moira for western-metropolitan
+        (council); spreadsheet row 1359. Only candidate name, electorate and
+        party were extracted, not contact details.
   corrections:
     - date: 2026-11-04
       was: "Liberal, disendorsed"
       now: "Family First, endorsed (Western Metropolitan, #1)"
       reason: >-
-        The record had not been updated after she joined Family First on
-        10 September 2026. Her Liberal history is kept above.
+        The record had not been updated after she joined Family First on 10
+        September 2026. Her Liberal history is kept above.
       source:
         url: https://aapnews.aap.com.au/news/dumped-liberal-makes-major-move-before-election
         title: Dumped Liberal makes major move before election

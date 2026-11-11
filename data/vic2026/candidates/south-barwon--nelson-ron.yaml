@@ -3,7 +3,7 @@ candidate:
   party: independent
   contest: south-barwon
   chamber: assembly
-  status: announced
+  status: nominated
   occupation: "City of Greater Geelong councillor"
   history:
     - status: announced
@@ -17,3 +17,15 @@ candidate:
       note: >-
         Long-time Geelong councillor announced he will contest South Barwon as
         an independent after an unsuccessful Liberal preselection bid.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists NELSON, Ron for south-barwon
+        (assembly); spreadsheet row 945. Only candidate name, electorate and
+        party were extracted, not contact details.

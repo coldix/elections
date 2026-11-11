@@ -3,7 +3,7 @@ candidate:
   party: victorian-socialists
   contest: mildura
   chamber: assembly
-  status: endorsed
+  status: nominated
   history:
     - status: endorsed
       date: 2026-07-29
@@ -14,9 +14,21 @@ candidate:
         accessed: 2026-08-23
       note: >-
         Official Victorian Socialists candidate page states "Candidate for
-        Mildura". Party does not publish a preselection date;
-        2026-07-29 is the earliest date the profile is evidenced (Wikipedia
-        citation access date). Page independently verified 23 August 2026.
+        Mildura". Party does not publish a preselection date; 2026-07-29 is the
+        earliest date the profile is evidenced (Wikipedia citation access date).
+        Page independently verified 23 August 2026.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists NAYEF, Renee for mildura (assembly);
+        spreadsheet row 597. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://www.victoriansocialists.org.au/candidates/renee-nayef
       kind: party-profile

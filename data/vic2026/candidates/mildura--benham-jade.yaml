@@ -3,20 +3,34 @@ candidate:
   party: nationals
   contest: mildura
   chamber: assembly
-  status: announced
+  status: nominated
   occupation: "Member of Parliament"
   background: "MLA for Mildura (Nationals)"
   history:
     - status: announced
       date: 2026-06-30
       note: >-
-        Sitting Nationals MLA. Jess Wilson Fresh Start Tour video names Benham on her team in Mildura.
+        Sitting Nationals MLA. Jess Wilson Fresh Start Tour video names Benham
+        on her team in Mildura.
       source:
         url: https://www.instagram.com/reel/DaBnszfT_qj/
         publisher: Instagram (Jess Wilson MP)
-        title: "Mildura locals know Victoria needs a fresh start, and with Jade Benham on my team…"
+        title: "Mildura locals know Victoria needs a fresh start, and with Jade Benham
+          on my team…"
         published: 2026-06-30
         accessed: 2026-07-30
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists BENHAM, Jade for mildura (assembly);
+        spreadsheet row 598. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://www.jadebenham.com.au
       kind: campaign-site

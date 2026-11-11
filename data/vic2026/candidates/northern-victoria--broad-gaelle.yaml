@@ -3,15 +3,29 @@ candidate:
   party: nationals
   contest: northern-victoria
   chamber: council
-  status: announced
+  status: nominated
   history:
     - status: announced
       date: 2026-10-01
       source:
-        url: "https://mailcommunity.com.au/news/01-10-2026/gaelle-broad-shouldering-the-nationals-campaign-in-northern-victoria/"
+        url: "https://mailcommunity.com.au/news/01-10-2026/gaelle-broad-shouldering-the\
+          -nationals-campaign-in-northern-victoria/"
         publisher: "Star Mail Community"
         title: "Gaelle Broad shouldering the Nationals' campaign in Northern Victoria"
         published: 2026-10-01
         accessed: 2026-11-04
       note: >-
-        Star Mail reports Broad is looking to continue in the upper house representing the Nationals in Northern Victoria.
+        Star Mail reports Broad is looking to continue in the upper house
+        representing the Nationals in Northern Victoria.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists BROAD, Gaelle for northern-victoria
+        (council); spreadsheet row 1244. Only candidate name, electorate and
+        party were extracted, not contact details.

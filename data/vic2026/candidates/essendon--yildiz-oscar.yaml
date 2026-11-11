@@ -3,13 +3,27 @@ candidate:
   party: independent
   contest: essendon
   chamber: assembly
-  status: announced
+  status: nominated
   history:
     - status: announced
       date: 2026-06-04
       source:
-        url: "https://www.theaustralian.com.au/commentary/victoria-ink/the-jacinta-allanjess-wilson-meeting-that-never-happened/news-story/49af1b88a278e8458b4b4057e56c1ca5"
+        url: "https://www.theaustralian.com.au/commentary/victoria-ink/the-jacinta-alla\
+          njess-wilson-meeting-that-never-happened/news-story/49af1b88a278e8458\
+          b4b4057e56c1ca5"
         title: The Jacinta-Jess meeting that never happened
         publisher: The Australian
         published: 2026-06-04
         accessed: 2026-07-10
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists YILDIZ, Oscar for essendon (assembly);
+        spreadsheet row 299. Only candidate name, electorate and party were
+        extracted, not contact details.

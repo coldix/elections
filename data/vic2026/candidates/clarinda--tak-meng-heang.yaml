@@ -3,7 +3,7 @@ candidate:
   party: labor
   contest: clarinda
   chamber: assembly
-  status: provisional
+  status: nominated
   history:
     - status: provisional
       date: 2026-11-04
@@ -13,9 +13,21 @@ candidate:
         title: "Meng Heang Tak | Labor State Team"
         accessed: 2026-11-04
       note: >-
-        Victorian Labor profile lists Meng Heang Tak as State Member for Clarinda. No
-        retirement announced. Provisional: expected to recontest, but the
-        party has not yet officially named them as its 2026 candidate.
+        Victorian Labor profile lists Meng Heang Tak as State Member for
+        Clarinda. No retirement announced. Provisional: expected to recontest,
+        but the party has not yet officially named them as its 2026 candidate.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists TAK, Meng Heang for clarinda
+        (assembly); spreadsheet row 225. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://www.viclabor.org.au/our-team/meng-heang-tak
       kind: party-profile

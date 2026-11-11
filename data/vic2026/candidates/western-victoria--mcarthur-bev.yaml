@@ -3,7 +3,7 @@ candidate:
   party: liberal
   contest: western-victoria
   chamber: council
-  status: announced
+  status: nominated
   occupation: "Member of Parliament"
   background: "MLC for Western Victoria; Liberal lead candidate on the region ticket"
   history:
@@ -19,6 +19,18 @@ candidate:
         title: The election field is taking shape – the Liberal ticket isn't
         published: 2026-06-04
         accessed: 2026-08-01
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists MCARTHUR, Bev for western-victoria
+        (council); spreadsheet row 1399. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: https://www.parliament.vic.gov.au/members/bev-mcarthur/
       kind: parliament

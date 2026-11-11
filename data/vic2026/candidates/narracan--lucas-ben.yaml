@@ -3,7 +3,7 @@ candidate:
   party: one-nation
   contest: narracan
   chamber: assembly
-  status: endorsed
+  status: nominated
   occupation: "Small business owner; Baw Baw Shire councillor (on leave)"
   history:
     - status: endorsed
@@ -16,6 +16,18 @@ candidate:
       note: >-
         Party candidate page lists Ben Lucas as One Nation's candidate for
         Narracan.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists LUCAS, Ben for narracan (assembly);
+        spreadsheet row 690. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://vic.onenation.org.au/ben-lucas
       kind: party-profile

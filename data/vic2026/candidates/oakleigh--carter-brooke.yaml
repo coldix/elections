@@ -3,7 +3,7 @@ candidate:
   party: one-nation
   contest: oakleigh
   chamber: assembly
-  status: endorsed
+  status: nominated
   background: "More than 25 years in the legal system and public sector."
   history:
     - status: endorsed
@@ -17,6 +17,18 @@ candidate:
         Party candidate page lists Brooke as One Nation's candidate for
         Oakleigh. Page carries no publication date; status dated to when
         verified on the party site.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists CARTER, Brooke for oakleigh (assembly);
+        spreadsheet row 765. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://vic.onenation.org.au/brooke-carter
       kind: party-profile

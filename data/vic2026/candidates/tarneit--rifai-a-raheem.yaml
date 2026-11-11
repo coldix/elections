@@ -1,0 +1,46 @@
+candidate:
+  name: A. Raheem Rifai
+  party: greens
+  contest: tarneit
+  chamber: assembly
+  status: nominated
+  occupation: "Unionist"
+  background: "As a long-time unionist, Rifai has personally recruited over 1,600
+    members and organised numerous campaigns to improve conditions for workers
+    in the tertiary ed"
+  history:
+    - status: endorsed
+      date: 2025-11-11
+      source:
+        url: "https://greens.org.au/vic/person/rifai-raheem"
+        title: "Rifai Raheem: Candidate for Tarneit"
+        publisher: Victorian Greens
+        accessed: 2025-11-11
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists RIFAI, A. Raheem for tarneit
+        (assembly); spreadsheet row 1019. Only candidate name, electorate and
+        party were extracted, not contact details.
+  links:
+    - url: https://greens.org.au/vic/person/rifai-raheem
+      kind: party-profile
+  corrections:
+    - date: 2026-11-11
+      was: Rifai Raheem, tarneit (assembly)
+      now: A. Raheem Rifai, tarneit (assembly)
+      reason: Reconcile ballot name with the unique VEC entry for the same party and
+        electorate. Existing endorsement sources are retained.
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11

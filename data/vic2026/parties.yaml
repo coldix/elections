@@ -80,7 +80,8 @@ parties:
     registered: true
     family: one-nation
     commitments:
-      - claim: Party states intention to contest all 88 Legislative Assembly seats at the Nov 2026 election
+      - claim: Party states intention to contest all 88 Legislative Assembly seats at
+          the Nov 2026 election
         source:
           url: https://www.onenation.org.au/one-nation-contest
           publisher: Pauline Hanson's One Nation
@@ -105,21 +106,134 @@ parties:
   - slug: socialist-alliance
     name: Socialist Alliance
     short_name: Socialist Alliance
-    registered: false
+    registered: true
     family: null
     registration:
-      status: seeking registration in Victoria
-      note: >-
-        Federally registered, but NOT on the Victorian register. Unless it
-        registers before nominations close, its candidates appear on the ballot
-        without a party name.
+      status: Listed under RPP Name in VEC final nominations report
+      note: The VEC final nominations report lists 12 candidates under Socialist
+        Alliance in its RPP Name column, superseding the previous
+        seeking-registration note.
       source:
-        url: https://socialist-alliance.org/party-registration/victoria
-        title: Help Socialist Alliance register in Victoria
-        publisher: Socialist Alliance
-        accessed: 2026-07-29
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
   - slug: west-party
     name: The West Party
     short_name: West
     registered: true
     family: null
+  - slug: free-palestine
+    name: Free Palestine
+    short_name: Free Palestine
+    registered: true
+    family: null
+    registration:
+      status: Listed under RPP Name in VEC final nominations report
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+  - slug: australian-citizens
+    name: Australian Citizens Party (Victorian Division)
+    short_name: Australian Citizens Party (Victorian Division)
+    registered: true
+    family: null
+    registration:
+      status: Listed under RPP Name in VEC final nominations report
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+  - slug: climate-action-now
+    name: Climate Action Now
+    short_name: Climate Action Now
+    registered: true
+    family: null
+    registration:
+      status: Listed under RPP Name in VEC final nominations report
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+  - slug: christian-alliance
+    name: Christian Alliance Party – Reform AU
+    short_name: Christian Alliance Party – Reform AU
+    registered: true
+    family: null
+    registration:
+      status: Listed under RPP Name in VEC final nominations report
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+  - slug: republican-maga
+    name: The Republican Make Australia Great Again
+    short_name: The Republican Make Australia Great Again
+    registered: true
+    family: null
+    registration:
+      status: Listed under RPP Name in VEC final nominations report
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+  - slug: avoid-the-fine
+    name: I'm Voting to Avoid the Fine
+    short_name: I'm Voting to Avoid the Fine
+    registered: true
+    family: null
+    registration:
+      status: Listed under RPP Name in VEC final nominations report
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+  - slug: australian-democrats
+    name: Australian Democrats
+    short_name: Australian Democrats
+    registered: true
+    family: null
+    registration:
+      status: Listed under RPP Name in VEC final nominations report
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+  - slug: safety-victoria
+    name: Safety Victoria – Violent Crime Prevention
+    short_name: Safety Victoria – Violent Crime Prevention
+    registered: true
+    family: null
+    registration:
+      status: Listed under RPP Name in VEC final nominations report
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11

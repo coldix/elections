@@ -3,7 +3,7 @@ candidate:
   party: liberal
   contest: frankston
   chamber: assembly
-  status: endorsed
+  status: nominated
   history:
     - status: announced
       date: 2026-08-19
@@ -14,8 +14,8 @@ candidate:
         accessed: 2026-08-19
       note: >-
         Wikipedia candidates table listed Ambry as the Liberal candidate for
-        Frankston with no supporting citation. Retained as the discovery
-        record; superseded as evidence by the party page below.
+        Frankston with no supporting citation. Retained as the discovery record;
+        superseded as evidence by the party page below.
     - status: endorsed
       date: 2026-08-23
       source:
@@ -26,6 +26,18 @@ candidate:
       note: >-
         Official Liberal Victoria team page, verified 23 August 2026. Resolves
         the wikipedia-only status of this record.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists AMBRY, Bree for frankston (assembly);
+        spreadsheet row 365. Only candidate name, electorate and party were
+        extracted, not contact details.
   links:
     - url: https://vic.liberal.org.au/team/bree-ambry
       kind: party-profile

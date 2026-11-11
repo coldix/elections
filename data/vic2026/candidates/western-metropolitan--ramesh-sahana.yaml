@@ -3,7 +3,7 @@ candidate:
   party: west-party
   contest: western-metropolitan
   chamber: council
-  status: endorsed
+  status: nominated
   history:
     - status: endorsed
       date: 2026-11-02
@@ -13,7 +13,22 @@ candidate:
         publisher: "The West Party"
         accessed: 2026-11-02
       note: >-
-        The West Party candidates page lists Sahana Ramesh as an upper house candidate for Western Metropolitan Region. Ticket position not published. Page carries no publication date; status dated to when verified.
+        The West Party candidates page lists Sahana Ramesh as an upper house
+        candidate for Western Metropolitan Region. Ticket position not
+        published. Page carries no publication date; status dated to when
+        verified.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists RAMESH, Sahana for western-metropolitan
+        (council); spreadsheet row 1376. Only candidate name, electorate and
+        party were extracted, not contact details.
   links:
     - url: "https://thewestparty.org.au/local-representation/"
       kind: party

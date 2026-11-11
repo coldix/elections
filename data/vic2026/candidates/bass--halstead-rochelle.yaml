@@ -3,13 +3,26 @@ candidate:
   party: liberal
   contest: bass
   chamber: assembly
-  status: announced
+  status: nominated
   history:
     - status: announced
       date: 2026-04-16
       source:
-        url: "https://www.sgst.com.au/liberals-rochelle-halstead-aims-to-take-care-of-unfinished-business/"
+        url: "https://www.sgst.com.au/liberals-rochelle-halstead-aims-to-take-care-of-u\
+          nfinished-business/"
         title: "Liberals' Rochelle Halstead aims to take care of unfinished business"
         publisher: Sentinel-Times
         published: 2026-04-16
         accessed: 2026-04-18
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists HALSTEAD, Rochelle for bass (assembly);
+        spreadsheet row 35. Only candidate name, electorate and party were
+        extracted, not contact details.

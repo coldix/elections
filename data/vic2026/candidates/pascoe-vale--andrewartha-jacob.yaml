@@ -3,12 +3,25 @@ candidate:
   party: socialist-alliance
   contest: pascoe-vale
   chamber: assembly
-  status: announced
+  status: nominated
   history:
     - status: announced
       date: 2026-02-13
       source:
-        url: "https://www.facebook.com/photo/?fbid=1357591489733430&set=pb.100064477760752.-2207520000"
+        url: "https://www.facebook.com/photo/?fbid=1357591489733430&set=pb.100064477760\
+          752.-2207520000"
         title: Jacob Andrewartha for Pascoe Vale
         publisher: Facebook
         accessed: 2026-02-13
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/-/media/f487c2abe7274ed4b5bb60daa2b001ad.xls
+        title: Candidate Contact Persons' Details Summary Report, State Election 2026
+          (as at 9 Nov 2026 7:58 pm AEDT)
+        publisher: Victorian Electoral Commission
+        published: 2026-11-09
+        accessed: 2026-11-11
+      note: VEC final nominations report lists ANDREWARTHA, Jacob for pascoe-vale
+        (assembly); spreadsheet row 805. Only candidate name, electorate and
+        party were extracted, not contact details.
