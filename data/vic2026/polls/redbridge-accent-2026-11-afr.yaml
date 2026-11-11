@@ -1,0 +1,31 @@
+id: redbridge-accent-2026-11-afr
+pollster: redbridge-accent
+commissioner: australian-financial-review
+commissioner_type: media
+fieldwork_start: 2026-11-03
+fieldwork_end: 2026-11-10
+sample_size: 1008
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "AFR / RedBridge / Accent Victorian state voting intention, fieldwork 3–10 Nov 2026, n=1,008. Others residual after ALP+LNP+GRN+ONP (9). Reported 2PP L/NP 57–43 vs ALP. Figures via AFR report as tabulated on Wikipedia; AFR article is paywalled and was not read directly."
+primaries:
+  alp: 23
+  lnp: 31
+  onp: 22
+  grn: 15
+  others: 9
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.afr.com/politics/victorian-coalition-position-strengthens-labor-reduced-to-rump-in-new-poll-20261111-p61d0z
+    publisher: Australian Financial Review
+    title: Victorian Coalition position strengthens, Labor reduced to rump in new poll
+    published: 2026-11-11
+    accessed: 2026-11-12
+  - url: https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Victorian_state_election
+    publisher: Wikipedia
+    title: Opinion polling for the 2026 Victorian state election (discovery; RedBridge/Accent 3–10 Nov row)
+    published: 2026-11-11
+    accessed: 2026-11-12
