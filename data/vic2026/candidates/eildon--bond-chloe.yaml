@@ -24,3 +24,11 @@ candidate:
       note: VEC final nominations report lists BOND, Chloe for eildon (assembly);
         spreadsheet row 277. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/eildon-district/nominations
+        title: Candidates for Eildon District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.

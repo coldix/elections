@@ -29,6 +29,14 @@ candidate:
       note: VEC final nominations report lists DADISHO, Eddie for kalkallo (assembly);
         spreadsheet row 468. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/kalkallo-district/nominations
+        title: Candidates for Kalkallo District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: "https://vic.liberal.org.au/team/eddie-dadisho"
       kind: party-profile

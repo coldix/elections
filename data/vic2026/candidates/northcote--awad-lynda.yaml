@@ -30,6 +30,14 @@ candidate:
       note: VEC final nominations report lists AWAD, Lynda for northcote (assembly);
         spreadsheet row 754. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/northcote-district/nominations
+        title: Candidates for Northcote District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://en.wikipedia.org/wiki/Candidates_of_the_2026_Victorian_state_election
       kind: wikipedia

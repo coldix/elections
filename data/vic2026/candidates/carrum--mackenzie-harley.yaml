@@ -33,6 +33,14 @@ candidate:
       note: Final VEC nominations report reconfirms MACKENZIE, Harley for carrum
         (assembly); spreadsheet row 203. The earlier interim nomination evidence
         is retained.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/carrum-district/nominations
+        title: Candidates for Carrum District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.lcvicparty.org.au/harley_mackenzie_candidate_for_carrum
       kind: party-profile

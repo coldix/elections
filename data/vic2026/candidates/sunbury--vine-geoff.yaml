@@ -30,6 +30,14 @@ candidate:
       note: Final VEC nominations report reconfirms VINE, Geoff for sunbury
         (assembly); spreadsheet row 981. The earlier interim nomination evidence
         is retained.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/sunbury-district/nominations
+        title: Candidates for Sunbury District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://thewestparty.org.au/local-representation/
       kind: party

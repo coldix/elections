@@ -16,6 +16,14 @@ candidate:
         accessed: 2026-11-11
       note: VEC final nominations report lists MAYNE, Bernadette for macedon (assembly); spreadsheet row
         548. Only candidate name, electorate and party were extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/macedon-district/nominations
+        title: Candidates for Macedon District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.vec.vic.gov.au/voting/2026-state-election/find-candidates
       kind: commission

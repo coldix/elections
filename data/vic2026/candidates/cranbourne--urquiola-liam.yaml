@@ -33,6 +33,14 @@ candidate:
       note: Final VEC nominations report reconfirms URQUIOLA, Liam for cranbourne
         (assembly); spreadsheet row 234. The earlier interim nomination evidence
         is retained.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/cranbourne-district/nominations
+        title: Candidates for Cranbourne District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.lcvicparty.org.au/liam_urquiola_candidate_for_cranbourne
       kind: party-profile

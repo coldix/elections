@@ -30,6 +30,14 @@ candidate:
       note: VEC final nominations report lists MCKENZIE, Sarah for richmond
         (assembly); spreadsheet row 872. Only candidate name, electorate and
         party were extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/richmond-district/nominations
+        title: Candidates for Richmond District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   corrections:
     - date: 2026-08-23
       was: "announced 2026-03-06, source.url

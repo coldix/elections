@@ -25,6 +25,14 @@ candidate:
       note: VEC final nominations report lists GOULAS, Katie for frankston (assembly);
         spreadsheet row 368. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/frankston-district/nominations
+        title: Candidates for Frankston District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://greens.org.au/vic/person/katie-goulas
       kind: party-profile

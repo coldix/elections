@@ -31,3 +31,11 @@ candidate:
         south-eastern-metropolitan (council); spreadsheet row 1290. Only
         candidate name, electorate and party were extracted, not contact
         details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-regions/south-eastern-metropolitan-region/nominations
+        title: Candidates for South-Eastern Metropolitan Region
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.

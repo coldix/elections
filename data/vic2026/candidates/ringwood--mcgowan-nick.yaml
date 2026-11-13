@@ -25,3 +25,11 @@ candidate:
       note: VEC final nominations report lists McGOWAN, Nick for ringwood (assembly);
         spreadsheet row 883. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/ringwood-district/nominations
+        title: Candidates for Ringwood District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.

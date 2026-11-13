@@ -28,6 +28,14 @@ candidate:
       note: VEC final nominations report lists HEALD, Jan for evelyn (assembly);
         spreadsheet row 333. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/evelyn-district/nominations
+        title: Candidates for Evelyn District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://vic.animaljusticeparty.org/jan-heald
       kind: party-profile

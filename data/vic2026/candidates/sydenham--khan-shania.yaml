@@ -24,6 +24,14 @@ candidate:
       note: VEC final nominations report lists KHAN, Shania for sydenham (assembly);
         spreadsheet row 1005. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/sydenham-district/nominations
+        title: Candidates for Sydenham District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.victoriansocialists.org.au/candidates/shania-khan
       kind: party-profile

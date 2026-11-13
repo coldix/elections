@@ -28,6 +28,14 @@ candidate:
       note: VEC final nominations report lists PAVLOVICH, Sue for lowan (assembly);
         spreadsheet row 534. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/lowan-district/nominations
+        title: Candidates for Lowan District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.viclabor.org.au/our-team/sue-pavlovich
       kind: party-profile

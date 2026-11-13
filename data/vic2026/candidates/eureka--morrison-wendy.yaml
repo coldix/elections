@@ -24,3 +24,11 @@ candidate:
       note: VEC final nominations report lists MORRISON, Wendy for eureka (assembly);
         spreadsheet row 310. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/eureka-district/nominations
+        title: Candidates for Eureka District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.

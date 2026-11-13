@@ -16,6 +16,14 @@ candidate:
         accessed: 2026-11-11
       note: VEC final nominations report lists DEAN, Paul for southern-metropolitan (council); spreadsheet
         row 1324. Only candidate name, electorate and party were extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-regions/southern-metropolitan-region/nominations
+        title: Candidates for Southern Metropolitan Region
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.vec.vic.gov.au/voting/2026-state-election/find-candidates
       kind: commission

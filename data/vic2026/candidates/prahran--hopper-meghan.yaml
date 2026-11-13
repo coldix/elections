@@ -28,6 +28,14 @@ candidate:
       note: VEC final nominations report lists HOPPER, Meghan for prahran (assembly);
         spreadsheet row 848. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/prahran-district/nominations
+        title: Candidates for Prahran District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.viclabor.org.au/our-team/meghan-hopper
       kind: party-profile

@@ -26,6 +26,14 @@ candidate:
       note: VEC final nominations report lists McCRACKEN, Lachlan for
         narre-warren-north (assembly); spreadsheet row 703. Only candidate name,
         electorate and party were extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/narre-warren-north-district/nominations
+        title: Candidates for Narre Warren North District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.victoriansocialists.org.au/candidates/lachlan-mccracken
       kind: party-profile

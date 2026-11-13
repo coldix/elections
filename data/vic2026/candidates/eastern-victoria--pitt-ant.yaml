@@ -16,6 +16,14 @@ candidate:
         accessed: 2026-11-11
       note: VEC final nominations report lists PITT, Ant for eastern-victoria (council); spreadsheet row
         1121. Only candidate name, electorate and party were extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-regions/eastern-victoria-region/nominations
+        title: Candidates for Eastern Victoria Region
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.vec.vic.gov.au/voting/2026-state-election/find-candidates
       kind: commission

@@ -24,6 +24,14 @@ candidate:
       note: VEC final nominations report lists ADIN-JAMES, Fiona for melton
         (assembly); spreadsheet row 584. Only candidate name, electorate and
         party were extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/melton-district/nominations
+        title: Candidates for Melton District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   corrections:
     - date: 2026-10-19
       was: "name Fiona Adin-Jones"

@@ -27,6 +27,14 @@ candidate:
       note: VEC final nominations report lists MURPHY, Casey for morwell (assembly);
         spreadsheet row 658. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/morwell-district/nominations
+        title: Candidates for Morwell District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://vic.onenation.org.au/candidates
       kind: party

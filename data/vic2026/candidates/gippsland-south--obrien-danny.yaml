@@ -42,6 +42,14 @@ candidate:
       note: VEC final nominations report lists O'BRIEN, Danny for gippsland-south
         (assembly); spreadsheet row 399. Only candidate name, electorate and
         party were extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/gippsland-south-district/nominations
+        title: Candidates for Gippsland South District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.parliament.vic.gov.au/members/danny-obrien/
       kind: parliament

@@ -26,6 +26,14 @@ candidate:
       note: VEC final nominations report lists THISTLETON, Rebecca for south-barwon
         (assembly); spreadsheet row 944. Only candidate name, electorate and
         party were extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/south-barwon-district/nominations
+        title: Candidates for South Barwon District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.viclabor.org.au/our-team/rebecca-thistleton
       kind: party-profile

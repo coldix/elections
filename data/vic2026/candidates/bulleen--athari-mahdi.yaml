@@ -30,6 +30,14 @@ candidate:
       note: VEC final nominations report lists ATHARI, Mahdi for bulleen (assembly);
         spreadsheet row 183. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/bulleen-district/nominations
+        title: Candidates for Bulleen District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://vic.onenation.org.au/mahdi-athari
       kind: party-profile

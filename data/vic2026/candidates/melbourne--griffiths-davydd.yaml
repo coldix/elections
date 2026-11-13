@@ -26,6 +26,14 @@ candidate:
       note: VEC final nominations report lists GRIFFITHS, Davydd for melbourne
         (assembly); spreadsheet row 570. Only candidate name, electorate and
         party were extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/melbourne-district/nominations
+        title: Candidates for Melbourne District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.viclabor.org.au/our-team/davydd-griffiths
       kind: party-profile

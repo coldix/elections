@@ -27,3 +27,11 @@ candidate:
       note: VEC final nominations report lists HEDLEY, Freya for south-barwon
         (assembly); spreadsheet row 947. Only candidate name, electorate and
         party were extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/south-barwon-district/nominations
+        title: Candidates for South Barwon District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.

@@ -25,6 +25,14 @@ candidate:
       note: VEC final nominations report lists PULFORD, Adam for brunswick (assembly);
         spreadsheet row 166. Only candidate name, electorate and party were
         extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/brunswick-district/nominations
+        title: Candidates for Brunswick District
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://greens.org.au/vic/person/adam-pulford
       kind: party-profile

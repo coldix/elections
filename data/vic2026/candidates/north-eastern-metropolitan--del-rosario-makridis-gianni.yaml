@@ -30,6 +30,14 @@ candidate:
         north-eastern-metropolitan (council); spreadsheet row 1132. Only
         candidate name, electorate and party were extracted, not contact
         details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-regions/north-eastern-metropolitan-region/nominations
+        title: Candidates for North-Eastern Metropolitan Region
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.lcvicparty.org.au/gianni_del_rosario_makridis_candidate_for_north_eastern_metropolitan
       kind: party-profile

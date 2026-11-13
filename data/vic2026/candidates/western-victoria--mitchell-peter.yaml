@@ -29,6 +29,14 @@ candidate:
       note: VEC final nominations report lists MITCHELL, Peter for western-victoria
         (council); spreadsheet row 1395. Only candidate name, electorate and
         party were extracted, not contact details.
+    - status: nominated
+      date: 2026-11-09
+      source:
+        url: https://www.vec.vic.gov.au/electoral-boundaries/state-regions/western-victoria-region/nominations
+        title: Candidates for Western Victoria Region
+        publisher: Victorian Electoral Commission
+        accessed: 2026-11-14
+      note: Official VEC nominations page for this electorate.
   links:
     - url: https://www.lcvicparty.org.au/peter_mitchell_candidate_for_western_victoria
       kind: party-profile
