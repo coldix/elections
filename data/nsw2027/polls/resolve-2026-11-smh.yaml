@@ -1,0 +1,38 @@
+id: resolve-2026-11-smh
+pollster: resolve
+commissioner: sydney-morning-herald
+commissioner_type: media
+fieldwork_start: 2026-10-06
+fieldwork_end: 2026-11-07
+sample_size: 1100
+design_effect: null
+mode: online
+population: nsw-electors
+question_notes: >-
+  NSW Legislative Assembly statewide primary VI from Resolve Political Monitor
+  for the Sydney Morning Herald. Combined NSW samples from two monthly surveys
+  (6–10 October and 2–7 November 2026); overall n=1,100. Primaries (SMH / Poll
+  Bludger): Labor 30 (up 1), One Nation 26 (up 1), Coalition 23 (down 1),
+  Greens 13 (up 2). Others residual 8. Preferred premier (Minns 30, Sloane 12,
+  Newman 11) and issue-management questions not encoded as VI.
+primaries:
+  alp: 30
+  lnp: 23
+  onp: 26
+  grn: 13
+  others: 8
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+eligibility_exception: null
+sources:
+  - url: https://www.smh.com.au/politics/nsw/the-key-issues-giving-minns-an-edge-four-months-out-from-election-20261113-p61diu.html
+    publisher: The Sydney Morning Herald
+    title: The key issues giving Minns an edge four months out from election
+    published: 2026-11-13
+    accessed: 2026-11-14
+  - url: https://www.pollbludger.net/2026/11/13/resolve-strategic-labor-30-one-nation-26-coalition-23-in-new-south-wales/
+    publisher: The Poll Bludger
+    title: "Resolve Strategic: Labor 30, One Nation 26, Coalition 23 in New South Wales"
+    published: 2026-11-13
+    accessed: 2026-11-14

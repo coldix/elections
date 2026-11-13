@@ -42,7 +42,7 @@ test("NSW average uses the latest eligible poll per pollster", () => {
   assert.ok(nsw.primaries, "primaries present");
   assert.ok(nsw.bloc_split, "bloc charts data present");
   assert.ok(
-    nsw.included_poll_ids.includes("resolve-2026-09-smh"),
+    nsw.included_poll_ids.includes("resolve-2026-11-smh"),
     "latest Resolve in average"
   );
   assert.ok(
