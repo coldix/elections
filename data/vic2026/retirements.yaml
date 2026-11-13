@@ -347,3 +347,36 @@ retirements:
       November 2026 election. MLC since 2018. A September Lilydale Star Mail
       report that she intended to run again was described by her as a
       miscommunication.
+
+  - name: Darren Cheeseman
+    party: independent
+    role: MLA
+    seat: south-barwon
+    announced: 2026-11-09
+    source:
+      url: https://www.vec.vic.gov.au/electoral-boundaries/state-districts/south-barwon-district/nominations
+      title: Candidates for South Barwon District
+      publisher: Victorian Electoral Commission
+      accessed: 2026-11-14
+    note: >-
+      Did not nominate. The VEC ballot-order candidate list for South Barwon,
+      published after nominations closed at noon on 9 November 2026, does not
+      include him. No public announcement found; the date recorded is the close
+      of nominations. Sat as an independent after leaving the parliamentary
+      Labor Party in 2024.
+
+  - name: Adem Somyurek
+    party: independent
+    role: MLC
+    seat: northern-metropolitan
+    announced: 2026-11-09
+    source:
+      url: https://www.vec.vic.gov.au/electoral-boundaries/state-regions/northern-metropolitan-region/nominations
+      title: Candidates for Northern Metropolitan Region
+      publisher: Victorian Electoral Commission
+      accessed: 2026-11-14
+    note: >-
+      Did not nominate. The VEC ballot-order candidate list for Northern
+      Metropolitan Region, published after nominations closed at noon on 9
+      November 2026, does not include him. The date recorded is the close of
+      nominations.
