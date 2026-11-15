@@ -1,0 +1,49 @@
+id: growth-intelligence-2026-11-13-herald-sun
+pollster: growth-intelligence-centre
+commissioner: herald-sun
+commissioner_type: media
+fieldwork_start: 2026-11-13
+fieldwork_end: 2026-11-13
+sample_size: 1351
+design_effect: 1.743
+mode: online
+population: victorian-electors
+question_notes: >-
+  Second Herald Sun "Lighthouse" election tracking poll, conducted by Growth
+  Intelligence Centre (News Corp Australia's internal research and data
+  analytics operation) via the Lighthouse Consumer Tracker, a continuous
+  online survey; n=1,351 Victorian voters, effective sample about 775 after
+  weighting (design effect 1351/775), margin of error 3.5 points. Reported
+  primaries L-NP 32 (+1), ONP 23 (steady), ALP 21 (-1), GRN 14 (steady),
+  others and independents 10 (steady) relative to the first wave
+  (19 Oct - 1 Nov). No 2PP reported in the sources read. Net favourability
+  Carroll -19, Wilson +17 (not encoded). Exact fieldwork dates were not stated
+  in any source read; fieldwork_start and fieldwork_end are set to the 13 Nov
+  2026 release date as a placeholder, so the true fieldwork ended on or before
+  that date.
+primaries:
+  alp: 21
+  lnp: 32
+  onp: 23
+  grn: 14
+  others: 10
+undecided_handling: not-stated
+eligible_for_average: false
+exclusion_reason: >-
+  Growth Intelligence Centre is not on the Victorian pollster allowlist in
+  docs/poll-methodology.md (adding a pollster needs an allowlist edit), and
+  the sources read do not state the fieldwork dates (rule on dates). Same
+  treatment as the first Lighthouse wave: ledgered for transparency, out of
+  the average pending a maintainer allowlist decision.
+eligibility_exception: null
+sources:
+  - url: https://www.news.com.au/finance/work/leaders/ben-carroll-risks-losing-his-seat-at-victorian-election-as-coalition-extends-primary-vote-lead-in-new-opinion-poll/news-story/f819afaf30e91e884afecb139f65d7b3
+    publisher: news.com.au
+    title: "Ben Carroll risks losing his seat at Victorian election as Coalition extends primary vote lead in new opinion poll"
+    published: 2026-11-15
+    accessed: 2026-11-16
+  - url: https://www.onenewsaustralia.com/australian-poll-tracker/
+    publisher: One News Australia
+    title: "Lighthouse Victoria: Labor sinks to 21% as voters say it's time for a change"
+    published: 2026-11-13
+    accessed: 2026-11-16
