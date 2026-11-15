@@ -166,3 +166,21 @@ policy:
         title: "Labor Will Slash ED Wait Times by up to 20%"
         published: 2026-10-25
         accessed: 2026-10-26
+
+    - id: labor-health-planned-surgery-2026-11
+      statement: >-
+        A re-elected Carroll Labor Government says it will invest $1.17 billion to deliver 100,000 extra planned surgeries, all in public hospitals through more High-Intensity Theatre lists (including evening and weekend sessions), with 30 per cent in regional Victoria, plus more than $195 million for 500,000 additional specialist appointments. Labor says this will halve the planned surgery waiting list.
+      kind: pledge
+      fiscal:
+        taxpayer_label: Ongoing operational
+        amount_aud: 1365000000
+        amount_display: $1.17 billion plus more than $195 million
+        timeframe: Not specified
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.viclabor.org.au/news/100-000-more-public-surgeries-in-public-hospitals
+        publisher: Victorian Labor
+        title: "100,000 More Public Surgeries - In Public Hospitals"
+        published: 2026-11-15
+        accessed: 2026-11-16

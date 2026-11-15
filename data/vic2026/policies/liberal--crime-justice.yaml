@@ -73,3 +73,23 @@ policy:
         publisher: Liberal Victoria (joint Liberal–Nationals plan)
         title: Our Plan to Deliver for Victorians
         accessed: '2026-10-05'
+    - id: liberal-crime-youth-bootcamp-2026-11
+      statement: >-
+        A Liberal and Nationals government says it will establish a bootcamp for young offenders at the former Dhurringile Prison, modelled on Queensland's Circuit Breaker program, with a compulsory daily routine of physical activity, farm work, cleaning, maintenance, cooking, laundry, education and skills programs. Courts would be able to send offenders aged 14 to 17 there as an alternative to a community corrections order or other custodial sentence.
+      kind: pledge
+      source:
+        url: https://vicliberal.org.au/media-releases/tough-new-bootcamp-to-get-young-offenders-on-the-right-path
+        publisher: Victorian Liberal Party (joint Liberal–Nationals statement)
+        title: Tough new bootcamp to get young offenders on the right path
+        published: 2026-11-15
+        accessed: 2026-11-16
+    - id: liberal-crime-celestes-law-2026-11
+      statement: >-
+        A Liberal and Nationals government says "Celeste's Law" will implement all Victorian Law Reform Commission stalking recommendations, extend family violence courtroom protections such as pre-recorded evidence to other stalking victims, trial offender-pays 24/7 GPS monitoring of high-risk stalkers under intervention orders, mandate specialist stalking training for police, and strengthen digital stalking laws, overseen by a Department of Justice taskforce and funded from its $100 million Safer Communities Fund.
+      kind: pledge
+      source:
+        url: https://vicliberal.org.au/media-releases/2026-11-15-celestes-law-to-strengthen-protections-for-stalking-victims
+        publisher: Victorian Liberal Party (joint Liberal–Nationals statement)
+        title: Celeste's Law to strengthen protections for stalking victims
+        published: 2026-11-16
+        accessed: 2026-11-16

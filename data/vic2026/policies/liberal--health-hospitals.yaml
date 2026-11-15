@@ -88,3 +88,13 @@ policy:
       title: Labor's health promises cannot be trusted
       published: '2026-10-25'
       accessed: '2026-10-26'
+  - id: liberal-health-surgerysooner-2026-11
+    statement: >-
+      The Coalition says its SurgerySooner plan will halve Victoria's elective surgery waiting list by using additional capacity within the health system, including the private system, and that this plan and its other health commitments are offset by more than $26 billion in savings.
+    kind: pledge
+    source:
+      url: https://vicliberal.org.au/media-releases/labors-desperate-surgery-promise-cannot-be-trusted
+      publisher: Victorian Liberal Party (joint Liberal–Nationals statement)
+      title: Labor's desperate surgery promise cannot be trusted
+      published: '2026-11-16'
+      accessed: '2026-11-16'
