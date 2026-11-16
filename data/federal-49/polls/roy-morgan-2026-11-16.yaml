@@ -1,0 +1,31 @@
+id: roy-morgan-2026-11-16
+pollster: "Roy Morgan"
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-11-09
+fieldwork_end: 2026-11-15
+sample_size: 1595
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention. Finding 10387. Single-week sample 9–15 Nov, no overlap with the 26 Oct–8 Nov result (roy-morgan-2026-11-09). L-NP reported as Liberals 22.5% + Nationals 3%. Independent/Others 12%. Respondent-allocated 2PP L-NP 52–48 ALP, previous-election-flows 2PP 50–50, and ALP 52.5–47.5 over One Nation not encoded. Supersedes roy-morgan-2026-11-09 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 24.5
+  lnp: 25.5
+  onp: 23.5
+  grn: 14.5
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10387-federal-voting-intention-november-16-2026
+    publisher: Roy Morgan
+    title: "L-NP Coalition surges to two-party preferred lead, and primary vote lead, for the first time since the 2025 Federal Election"
+    published: 2026-11-16
+    accessed: 2026-11-17
+  - url: https://www.dailymail.com/news/article-16295633/roy-morgan-labor-albanese-poll-coalition.html
+    publisher: Daily Mail Australia
+    title: "Coalition leads Labor in new poll which spells wipeout for Albanese - with government on track to lose 40 seats"
+    published: 2026-11-16
+    accessed: 2026-11-17
