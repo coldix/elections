@@ -1,0 +1,31 @@
+id: yougov-2026-11-17-news24
+pollster: YouGov
+commissioner: news24
+commissioner_type: media
+fieldwork_start: 2026-11-10
+fieldwork_end: 2026-11-17
+sample_size: 1555
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention (fortnightly News24 Pulse / YouGov). Fieldwork Tuesday–Tuesday 10–17 Nov; n=1555 per Poll Bludger. Others residual after ALP+LNP+GRN+ONP (13). Previous-election-flows 2PP Labor 51–49 Coalition and respondent-allocated 2PP Labor over One Nation (56–44) not encoded. Supersedes yougov-2026-11-03-news24 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 24
+  lnp: 22
+  onp: 26
+  grn: 15
+  others: 13
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.news24.com.au/politics/australian-politics/labor-falls-to-equalrecord-low-primary-vote-with-just-one-in-five-voters-backing-the-government-on-its-handling-of-the-costofliving-crisis/news-story/304fb361a9e6e88a934d384edcc8fb13
+    publisher: News24
+    title: "Labor's polling crisis deepens as voters lose faith on cost of living"
+    published: 2026-11-18
+    accessed: 2026-11-18
+  - url: https://www.pollbludger.net/2026/11/18/federal-polls-yougov-and-roy-morgan-open-thread-7/
+    publisher: The Poll Bludger
+    title: "Federal polls: YouGov and Roy Morgan (open thread)"
+    published: 2026-11-18
+    accessed: 2026-11-18
