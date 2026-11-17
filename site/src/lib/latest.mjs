@@ -2,6 +2,7 @@
 import { loadPolls, PARTY_LABELS } from "../../../scripts/lib/polls.mjs";
 import { loadElection, STATUS_LABELS } from "../../../scripts/lib/data.mjs";
 import { loadStateFoundationElection } from "../../../scripts/lib/state-foundation.mjs";
+import { loadCampaignEvents } from "../../../scripts/lib/campaign-events.mjs";
 import { VIC2026, FEDERAL_49, NSW2027, formatDate } from "./site.mjs";
 
 const WINDOW_DAYS = 21;
@@ -172,8 +173,20 @@ export function loadLatest(options = {}) {
     "NSW foundation"
   ).filter((item) => item.date >= cutoff);
 
-  const kindRank = { poll: 0, foundation: 1, candidate: 2 };
-  const items = [...polls, ...foundations, ...candidates].sort((a, b) => {
+  const events = loadCampaignEvents("vic2026")
+    .filter((e) => e.date >= cutoff)
+    .map((e) => ({
+      kind: "event",
+      date: e.date,
+      jurisdiction: "vic",
+      href: e.href ?? VIC2026,
+      kicker: e.type === "debate" ? "Victorian campaign · Debate" : "Victorian campaign",
+      title: e.title,
+      body: e.summary,
+    }));
+
+  const kindRank = { poll: 0, event: 1, foundation: 2, candidate: 3 };
+  const items = [...polls, ...events, ...foundations, ...candidates].sort((a, b) => {
     if (a.date !== b.date) return a.date < b.date ? 1 : -1;
     const ka = kindRank[a.kind] ?? 9;
     const kb = kindRank[b.kind] ?? 9;
@@ -187,6 +200,7 @@ export function loadLatest(options = {}) {
     items,
     polls: polls.sort((a, b) => (a.date < b.date ? 1 : -1)),
     foundations: foundations.sort((a, b) => (a.date < b.date ? 1 : -1)),
+    events: events.sort((a, b) => (a.date < b.date ? 1 : -1)),
     candidates: candidates.sort((a, b) => (a.date < b.date ? 1 : -1)),
   };
 }

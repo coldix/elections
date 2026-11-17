@@ -1,0 +1,178 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, VIC2026, formatDateLong } from "../lib/site.mjs";
+import { findCampaignEvent } from "../../../scripts/lib/campaign-events.mjs";
+
+const event = findCampaignEvent("peoples-forum-2026-11-17");
+const room = [
+  { name: "Jess Wilson (Liberal)", pct: 39 },
+  { name: "Ellen Sandell (Greens)", pct: 25 },
+  { name: "Warren Pickering (One Nation)", pct: 16 },
+  { name: "Ben Carroll (Labor)", pct: 7 },
+  { name: "Undecided", pct: 13 },
+];
+const updated = "2026-11-18";
+
+const schema = {
+  "@type": "Article",
+  headline: "Leaders' debate: the People's Forum, 17 November 2026",
+  datePublished: updated,
+  dateModified: updated,
+  url: `${SITE.url}${VIC2026}/leaders-debate`,
+  isPartOf: { "@id": `${SITE.url}/#website` },
+  about: { "@type": "Event", name: "People's Forum (Victorian leaders' debate)", startDate: event.date },
+};
+---
+
+<Base
+  title="Victorian leaders' debate 2026: the People's Forum"
+  description="Sourced summary of the 17 November 2026 Victorian leaders' debate (News24/Herald Sun People's Forum): the audience room poll as reported, key exchanges with attributed quotes, and voting dates. No scoring, no forecasts."
+  schema={schema}
+  breadcrumbs={[
+    { name: "Victoria 2026", href: VIC2026 },
+    { name: "Leaders' debate", href: `${VIC2026}/leaders-debate` },
+  ]}
+>
+  <article class="wrap wrap-narrow section">
+    <p class="eyebrow">Victoria 2026 · Campaign events · Updated <time datetime={updated}>{formatDateLong(updated)}</time></p>
+    <h1>Leaders' debate: the People's Forum, 17 November 2026</h1>
+    <p class="lede">
+      Victoria's four main party leaders met on Tuesday 17 November at the People's Forum, a
+      90-minute televised debate hosted by News24 and the Herald Sun at the Sofitel in Melbourne.
+      News24 chief news anchor Kieran Gilbert moderated, and 100 undecided voters put questions to
+      Premier Ben Carroll (Labor), Opposition Leader Jess Wilson (Liberal), Greens leader Ellen
+      Sandell and One Nation Victorian leader Warren Pickering.
+    </p>
+    <p>
+      AAP reported it was the only confirmed leaders' debate before the 28 November election.
+      Guardian Australia reported there will be no second debate because Carroll and Wilson did
+      not agree terms for one on free-to-air television.
+    </p>
+
+    <h2>Audience poll</h2>
+    <p>
+      As the 100 undecided voters left, they were asked who had won. News24 published the results,
+      and ABC News, Guardian Australia and AAP reported them:
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Leader</th><th scope="col" class="num">Share of room</th></tr></thead>
+        <tbody>
+          {room.map((r) => (<tr><td>{r.name}</td><td class="num">{r.pct}%</td></tr>))}
+        </tbody>
+      </table>
+    </div>
+    <p class="section-aside">
+      This was a single studio audience of 100 people, not a representative survey of Victorian
+      voters. It is not entered in the tracker's <a href={`${VIC2026}/polls`}>poll ledger or average</a>.
+    </p>
+    <p>
+      Self-selecting online readers' polls gave different results. The Age reported that its own
+      readers' poll, with more than 5,500 votes cast in the half-hour after the debate, had Carroll on
+      48%, Wilson and Sandell on 23% each and Pickering on 6%. Online polls like this are open to
+      anyone and are not representative.
+    </p>
+
+    <h2>Key exchanges</h2>
+    <p>
+      <strong>Former premiers.</strong> Wilson challenged Carroll to say the names of his
+      predecessors, Daniel Andrews and Jacinta Allan. Guardian Australia reported she told him they
+      were "not Voldemort", and AAP quoted her as saying "You can't even say their names." Carroll
+      replied, "I can say their names, just like you can say Jeff Kennett's name" (AAP). Wilson
+      answered: "Jeff Kennett." Guardian Australia reported that Carroll did not say Andrews' or
+      Allan's names during the exchange.
+    </p>
+    <p>
+      <strong>Debt and costings.</strong> According to AAP, the first audience question was on state
+      debt, which is projected to approach $200 billion by 2030. Carroll challenged Wilson's promise
+      of a cash surplus by 2032, citing research he said showed it would need $40 billion in cuts.
+      Wilson replied: "It's just desperate lies and a scare campaign." She later told him: "I won't
+      be lectured by you or your government on costings when you have racked up $200bn worth of debt
+      in this state" (Guardian Australia).
+    </p>
+    <p>
+      <strong>Donations, treaty and protest.</strong> Guardian Australia reported that Sandell
+      criticised all three other parties over their backers: Labor over gambling-industry donations,
+      the Liberals over money from property developers, and One Nation over links to Gina Rinehart.
+      She and Wilson disagreed on treaty, renewable energy and public service cuts, and on
+      pro-Palestinian protests in Melbourne's CBD. Pickering agreed with Sandell that politicians
+      should not decide who gets to protest.
+    </p>
+    <p>
+      <strong>Crime.</strong> Pickering said Victoria resembled "Gotham City" because of rising
+      crime. He said: "I don't give a damn if our prisons are full. You've broken the law. You're
+      going to jail. They're bringing in a supermax in New South Wales. That's where you're bloody
+      going" (Guardian Australia).
+    </p>
+    <p>
+      <strong>Net zero.</strong> Pickering pressed Wilson on the legislated net zero targets. The Age
+      reported that Wilson confirmed a Coalition government would not change them, while One Nation
+      wants them scrapped.
+    </p>
+    <p>
+      <strong>Suburban Rail Loop.</strong> Wilson left open scrapping the project after a review,
+      once a Coalition government had "visibility" of the signed contracts. Asked by Gilbert whether
+      the Coalition would be willing to scrap it, she said: "That's exactly what the review is for"
+      (Guardian Australia; The Age).
+    </p>
+    <p>
+      <strong>Labor's record.</strong> Carroll acknowledged that Labor had made mistakes in 12 years
+      in government. He pointed to what he described as its record: 121 new schools, record NAPLAN
+      results, the highest-paid teachers in the country and 17,000 nurses. He also cited his decision
+      to call a royal commission into corruption in the construction sector (Guardian Australia; AAP).
+      These are the Premier's claims as reported. The tracker has not checked them.
+    </p>
+    <p>
+      <strong>Trust.</strong> Guardian Australia reported that the only rousing applause of the night
+      went to Billy, a schoolteacher in the audience, who asked how the leaders would rebuild trust
+      when "nobody believes a word you say any more".
+    </p>
+
+    <h2>Polling context</h2>
+    <p>
+      AAP's debate coverage cited the latest RedBridge/Accent poll for the Australian Financial
+      Review (fieldwork 3–10 November, n=1,008). It had primary votes of Coalition 31%, Labor 23%,
+      One Nation 22% and Greens 15%, with a reported two-party-preferred result of Coalition 57,
+      Labor 43. That poll is already in the tracker. All published polls are on the
+      <a href={`${VIC2026}/polls`}>Victorian polls page</a>.
+    </p>
+
+    <h2>Voting</h2>
+    <p>
+      Early voting opened at 9am on Wednesday 18 November and runs until 6pm on Friday 27 November.
+      Election day is Saturday 28 November (Victorian Electoral Commission). AAP reported that the VEC
+      expects almost two-thirds of voters to vote early. See
+      <a href={`${VIC2026}/voting`}>how to vote in Victoria 2026</a>.
+    </p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      {event.sources.map((s) => (
+        <li>
+          {s.publisher}, <a href={s.url} rel="noopener">{s.title ?? s.url}</a>
+          {s.published && <> ({formatDateLong(s.published)})</>}
+        </li>
+      ))}
+      <li>
+        Victorian Electoral Commission,
+        <a href="https://www.vec.vic.gov.au/voting/2026-state-election" rel="noopener">2026 state election</a>
+      </li>
+    </ul>
+    <p class="section-aside">
+      The Election Tracker reports what was said and published. It does not score debates and makes
+      no forecasts. Corrections: open a GitHub issue.
+    </p>
+  </article>
+</Base>
+
+<style>
+  h2 {
+    margin-top: 2rem;
+  }
+  .num {
+    text-align: right;
+  }
+  .sources {
+    font-size: 0.92rem;
+  }
+</style>
