@@ -1,0 +1,280 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import SourceLink from "../../../../components/SourceLink.astro";
+import { loadStateFoundationElection, stateFoundationSummaryFor } from "../../../../../../scripts/lib/state-foundation.mjs";
+import { STATUS_LABELS, LIVE_STATUSES } from "../../../../../../scripts/lib/data.mjs";
+import { SITE, NSW2027, partyColour, formatDate, formatDateLong } from "../../../../lib/site.mjs";
+
+const data = loadStateFoundationElection("nsw2027");
+const summary = stateFoundationSummaryFor(data);
+const { election } = data;
+
+// NSW wording for the shared status vocabulary (vic2026 descriptions name the VEC).
+const NSW_STATUS_DESCRIPTIONS = {
+  provisional:
+    "Sitting MP expected to recontest, but the party has not yet officially named them as its 2027 candidate.",
+  announced:
+    "The person, or a named news report, says they will stand; party endorsement not yet confirmed by a primary source.",
+  endorsed: "The party has officially preselected or endorsed this person.",
+  nominated: "Formal nomination accepted by the NSW Electoral Commission.",
+  elected: "Declared elected by the NSW Electoral Commission.",
+  withdrawn: "Candidacy ended.",
+  disendorsed: "The party revoked its endorsement.",
+  defeated: "Contested and not elected.",
+};
+
+const districtName = new Map(data.districts.map((d) => [d.slug, d.name]));
+const partyName = (slug) => {
+  const p = data.partyBySlug.get(slug);
+  return p?.short_name || p?.name || slug;
+};
+
+const retirements = [...data.retirements].sort((a, b) => b.announced.localeCompare(a.announced));
+const live = data.candidates.filter((c) => LIVE_STATUSES.includes(c.status));
+const ended = data.candidates.filter((c) => !LIVE_STATUSES.includes(c.status));
+
+// Group live candidacies by district, alphabetical.
+const byDistrict = data.districts
+  .map((d) => ({
+    ...d,
+    live: live
+      .filter((c) => c.chamber === "assembly" && c.contest === d.slug)
+      .sort((a, b) => partyName(a.party).localeCompare(partyName(b.party)) || a.name.localeCompare(b.name)),
+  }))
+  .filter((d) => d.live.length > 0 || d.retirement);
+
+const partyCounts = data.parties
+  .map((p) => ({ ...p, count: live.filter((c) => c.party === p.slug).length }))
+  .filter((p) => p.count > 0)
+  .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+const retireByParty = data.parties
+  .map((p) => ({ ...p, count: retirements.filter((r) => r.party === p.slug).length }))
+  .filter((p) => p.count > 0)
+  .sort((a, b) => b.count - a.count);
+
+const schema = {
+  "@type": "WebPage",
+  name: `${election.name}: candidates and retirements`,
+  description: `Sourced candidacies and confirmed retirements for the ${election.name}.`,
+  url: `${SITE.url}${NSW2027}/candidates`,
+  isPartOf: { "@id": `${SITE.url}/#website` },
+};
+---
+
+<Base
+  title="NSW 2027 candidates and retirements"
+  description={`${summary.live_candidates} sourced candidacies across ${summary.districts_with_candidates} districts and ${summary.retirements} sitting MPs not recontesting the ${election.date_label} NSW state election. Every record cites a dated source.`}
+  schema={schema}
+  breadcrumbs={[
+    { name: "Upcoming elections", href: "/elections" },
+    { name: "NSW 2027", href: NSW2027 },
+    { name: "Candidates", href: `${NSW2027}/candidates` },
+  ]}
+>
+  <div class="wrap section">
+    <nav aria-label="Breadcrumb" class="crumb">
+      <a href="/elections">Upcoming elections</a>
+      <span aria-hidden="true">/</span>
+      <a href={NSW2027}>NSW 2027</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Candidates</span>
+    </nav>
+
+    <p class="eyebrow">New South Wales · {election.date_label}</p>
+    <h1>Candidates &amp; retirements</h1>
+    <p class="lede">
+      <strong>{summary.live_candidates}</strong> sourced Legislative Assembly candidacies across
+      <strong>{summary.districts_with_candidates}</strong> of {summary.districts} districts, and
+      <strong>{summary.retirements}</strong> sitting MPs who have confirmed they will not recontest.
+      Each record cites a dated public source.
+    </p>
+    <div class="notice" role="note">
+      <strong>Early ledger, not the ballot.</strong> Nominations open on 15 February 2027 and close
+      on 24 February 2027; the NSW Electoral Commission announces candidates on 25 February 2027.
+      Until then this lists only candidacies we have individually verified from party pages or
+      news reports. A seat with no entry does not mean a party has no candidate there.
+    </div>
+
+    <p class="btn-row">
+      <a class="btn btn-ghost" href="#retirements">Retirements</a>
+      <a class="btn btn-ghost" href="#by-district">By district</a>
+      <a class="btn btn-ghost" href={`${NSW2027}/districts`}>All districts</a>
+      <a class="btn btn-ghost" href="/data/nsw2027/candidates.json">candidates.json</a>
+      <a class="btn btn-ghost" href="/data/nsw2027/retirements.json">retirements.json</a>
+    </p>
+
+    <ul class="party-strip" role="list" aria-label="Sourced candidacies by party">
+      {
+        partyCounts.map((p) => (
+          <li>
+            <span class="swatch" style={`--party-colour:${partyColour(p.slug)}`} aria-hidden="true" />
+            <strong class="mono">{p.count}</strong>
+            <span class="muted">{p.short_name || p.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <ul class="status-legend" role="list">
+      {
+        ["endorsed", "announced", "provisional", "nominated"].map((s) => (
+          <li>
+            <span class={`pill pill-${s}`}>{STATUS_LABELS[s]}</span>
+            <span class="muted">{NSW_STATUS_DESCRIPTIONS[s]}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2 id="retirements">Sitting MPs not recontesting ({retirements.length})</h2>
+    <ul class="party-strip" role="list" aria-label="Retirements by party">
+      {
+        retireByParty.map((p) => (
+          <li>
+            <span class="swatch" style={`--party-colour:${partyColour(p.slug)}`} aria-hidden="true" />
+            <strong class="mono">{p.count}</strong>
+            <span class="muted">{p.short_name || p.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">NSW MPs not recontesting in 2027</caption>
+        <thead>
+          <tr>
+            <th scope="col">Member</th>
+            <th scope="col">Party</th>
+            <th scope="col">Seat</th>
+            <th scope="col">Announced</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            retirements.map((r) => (
+              <tr>
+                <th scope="row">{r.name}</th>
+                <td>{partyName(r.party)}</td>
+                <td>
+                  {r.role === "MLA" ? (
+                    <a href={`${NSW2027}/districts/${r.seat}`}>{districtName.get(r.seat) ?? r.seat}</a>
+                  ) : (
+                    "Legislative Council"
+                  )}
+                </td>
+                <td class="mono">{formatDate(r.announced)}</td>
+                <td>
+                  <SourceLink source={r.source} />
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="by-district">Candidacies by district</h2>
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">Sourced NSW 2027 Legislative Assembly candidacies</caption>
+        <thead>
+          <tr>
+            <th scope="col">District</th>
+            <th scope="col">Candidate</th>
+            <th scope="col">Party</th>
+            <th scope="col">Status</th>
+            <th scope="col">Latest source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            byDistrict.flatMap((d) => {
+              const rows = d.live.map((c, i) => (
+                <tr>
+                  {i === 0 && (
+                    <th scope="row" rowspan={d.live.length + (d.retirement ? 1 : 0)}>
+                      <a href={`${NSW2027}/districts/${d.slug}`}>{d.name}</a>
+                    </th>
+                  )}
+                  <td>{c.name}</td>
+                  <td>
+                    <span class="party-cell">
+                      <span class="swatch-sm" style={`background:${partyColour(c.party)}`} aria-hidden="true" />
+                      {partyName(c.party)}
+                    </span>
+                  </td>
+                  <td>
+                    <span class={`pill pill-${c.status}`} title={NSW_STATUS_DESCRIPTIONS[c.status]}>
+                      {STATUS_LABELS[c.status]}
+                    </span>
+                  </td>
+                  <td>
+                    <SourceLink source={c.latest_source} />
+                  </td>
+                </tr>
+              ));
+              if (d.retirement) {
+                rows.push(
+                  <tr class="retire-row">
+                    {d.live.length === 0 && (
+                      <th scope="row">
+                        <a href={`${NSW2027}/districts/${d.slug}`}>{d.name}</a>
+                      </th>
+                    )}
+                    <td colspan="4" class="muted">
+                      Sitting member {d.retirement.name} ({partyName(d.retirement.party)}) is not
+                      recontesting; announced {formatDate(d.retirement.announced)}.
+                    </td>
+                  </tr>
+                );
+              }
+              return rows;
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+
+    {
+      ended.length > 0 && (
+        <>
+          <h2 id="ended">Ended candidacies ({ended.length})</h2>
+          <ul>
+            {ended.map((c) => (
+              <li>
+                {c.name} ({partyName(c.party)}, {districtName.get(c.contest) ?? c.contest}):{" "}
+                {STATUS_LABELS[c.status]} {formatDate(c.latest_date)} <SourceLink source={c.latest_source} />
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    }
+
+    <p class="foot muted">
+      Election day: {formatDateLong(election.election_day)}. Missing a candidate? Send a source by{" "}
+      <a href={SITE.issues}>opening an issue</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
+  .crumb span[aria-hidden] { margin-inline: 0.35rem; }
+  .lede { max-width: 48rem; }
+  .notice { margin: 1.25rem 0; max-width: 52rem; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.65rem; margin: 1rem 0 1.5rem; }
+  .party-strip {
+    list-style: none; margin: 1rem 0 1.25rem; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 0.65rem 1.25rem;
+  }
+  .party-strip li { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.92rem; }
+  .mono { font-variant-numeric: tabular-nums; }
+  h2 { margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.2rem; }
+  .party-cell { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .swatch-sm { width: 0.6rem; height: 0.6rem; border-radius: 999px; flex-shrink: 0; }
+  .retire-row td { font-size: 0.88rem; }
+  .foot { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+</style>

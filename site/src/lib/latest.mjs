@@ -76,9 +76,18 @@ function mapPollItem(p, ledger) {
 }
 
 /**
- * Notable foundation opens from election.yaml notes:
- * "Foundation open (YYYY-MM-DD): …"
+ * Notable foundation and ledger opens from election.yaml notes:
+ * "Foundation open (YYYY-MM-DD): …" or "Candidates ledger open (YYYY-MM-DD): …"
  */
+const MILESTONE_KINDS = [
+  { re: /Foundation open \((\d{4}-\d{2}-\d{2})\)\s*:?\s*(.*)/i, suffix: "foundation open", path: "" },
+  {
+    re: /Candidates ledger open \((\d{4}-\d{2}-\d{2})\)\s*:?\s*(.*)/i,
+    suffix: "candidates and retirements ledger live",
+    path: "/candidates",
+    kicker: "New ledger",
+  },
+];
 function foundationMilestones(electionId, href, kickerTitle) {
   let data;
   try {
@@ -90,18 +99,21 @@ function foundationMilestones(electionId, href, kickerTitle) {
   const out = [];
   for (const note of notes) {
     const text = String(note);
-    const m = text.match(/Foundation open \((\d{4}-\d{2}-\d{2})\)\s*:?\s*(.*)/i);
-    if (!m) continue;
-    const detail = (m[2] || text).replace(/\s+/g, " ").trim();
-    out.push({
-      kind: "foundation",
-      date: m[1],
-      jurisdiction: data.election?.jurisdiction ?? electionId,
-      href,
-      kicker: kickerTitle,
-      title: `${data.election?.name ?? electionId} · foundation open`,
-      body: detail.slice(0, 220) + (detail.length > 220 ? "…" : ""),
-    });
+    for (const kind of MILESTONE_KINDS) {
+      const m = text.match(kind.re);
+      if (!m) continue;
+      const detail = (m[2] || text).replace(/\s+/g, " ").trim();
+      out.push({
+        kind: "foundation",
+        date: m[1],
+        jurisdiction: data.election?.jurisdiction ?? electionId,
+        href: `${href}${kind.path}`,
+        kicker: kind.kicker ? `${kickerTitle.split(" ")[0]} · ${kind.kicker}` : kickerTitle,
+        title: `${data.election?.name ?? electionId} · ${kind.suffix}`,
+        body: detail.slice(0, 220) + (detail.length > 220 ? "…" : ""),
+      });
+      break;
+    }
   }
   return out;
 }

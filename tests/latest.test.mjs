@@ -44,3 +44,14 @@ test("loadLatest still lists federal and does not filter eligible_for_average", 
   assert.ok(nsw);
   assert.equal(nsw.eligible_for_average, false);
 });
+
+test("loadLatest lists the NSW 2027 candidates ledger opening on 17 Nov 2026", () => {
+  const latest = loadLatest({ cutoff: "2026-11-01", windowDays: 21 });
+  const entry = latest.foundations.find(
+    (f) => f.jurisdiction === "nsw" && /candidates and retirements ledger live/i.test(f.title)
+  );
+  assert.ok(entry, "NSW candidates ledger milestone must surface on /latest");
+  assert.equal(entry.date, "2026-11-17");
+  assert.equal(entry.href, "/elections/nsw/2027/candidates");
+  assert.ok(!/\u2014/.test(entry.body), "What's new copy uses no em dashes");
+});

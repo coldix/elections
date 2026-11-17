@@ -1,0 +1,16 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Paul Ell
+  party: liberal
+  contest: south-coast
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-10-01'
+    source:
+      url: https://nswliberal.org.au/news/paul-ell-will-give-the-south-coast-its-voice-back
+      publisher: Liberal Party NSW
+      title: Paul Ell will give the South Coast its voice back
+      published: '2026-10-01'
+      accessed: '2026-11-17'

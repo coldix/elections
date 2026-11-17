@@ -1,0 +1,28 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Sam Boughton
+  party: labor
+  contest: terrigal
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-09-10'
+    source:
+      url: https://coastcommunitynews.com.au/central-coast/news/2026/09/boughton-to-run-for-terrigal-in-state-election/
+      publisher: Coast Community News
+      title: Boughton to run for Terrigal in State election
+      published: '2026-09-10'
+      accessed: '2026-11-17'
+    note: Labor candidate for Terrigal again after contesting the seat in 2023.
+  - status: endorsed
+    date: '2026-11-17'
+    source:
+      url: https://www.nswlabor.org.au/sam_boughton
+      publisher: NSW Labor
+      title: Sam Boughton - Labor Candidate for Terrigal
+      accessed: '2026-11-17'
+    note: Listed on NSW Labor's candidate pages.
+  links:
+  - url: https://www.nswlabor.org.au/sam_boughton
+    kind: party-profile

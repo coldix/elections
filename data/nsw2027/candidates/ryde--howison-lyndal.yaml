@@ -1,0 +1,28 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Lyndal Howison
+  party: labor
+  contest: ryde
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-05-27'
+    source:
+      url: https://www.weeklytimes.com.au/nsw-labor-announces-lyndal-howison-as-first-state-election-candidate/
+      publisher: The Weekly Times (Sydney)
+      title: NSW Labor announces Lyndal Howison as first state election candidate
+      published: '2026-05-27'
+      accessed: '2026-11-17'
+    note: City of Ryde councillor announced by NSW Labor as its Ryde candidate.
+  - status: endorsed
+    date: '2026-11-17'
+    source:
+      url: https://www.nswlabor.org.au/lyndal_howison
+      publisher: NSW Labor
+      title: Lyndal Howison - Labor Candidate for Ryde
+      accessed: '2026-11-17'
+    note: Listed on NSW Labor's candidate pages.
+  links:
+  - url: https://www.nswlabor.org.au/lyndal_howison
+    kind: party-profile

@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Emily Suvaal
+  party: labor
+  contest: wallsend
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-10'
+    source:
+      url: https://www.newcastleherald.com.au/story/9388451/emily-suvaal-chosen-as-nsw-labor-candidate-for-wallsend-seat/
+      publisher: Newcastle Herald
+      title: Emily Suvaal chosen as NSW Labor candidate for Wallsend seat
+      published: '2026-11-10'
+      accessed: '2026-11-17'
+    note: Sitting Labor MLC chosen to succeed retiring Wallsend MP Sonia Hornery.

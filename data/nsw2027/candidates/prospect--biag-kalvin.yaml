@@ -1,0 +1,16 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Kalvin Biag
+  party: liberal
+  contest: prospect
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-05-25'
+    source:
+      url: https://nswliberal.org.au/news/kalvin-biag-will-stand-up-for-prospect
+      publisher: Liberal Party NSW
+      title: Kalvin Biag will stand up for Prospect
+      published: '2026-05-25'
+      accessed: '2026-11-17'

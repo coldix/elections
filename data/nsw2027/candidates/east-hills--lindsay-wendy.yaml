@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Wendy Lindsay
+  party: liberal
+  contest: east-hills
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-01-27'
+    source:
+      url: https://nswliberal.org.au/news/wendy-lindsay-continues-standing-up-for-east-hills
+      publisher: Liberal Party NSW
+      title: Wendy Lindsay continues standing up for East Hills
+      published: '2026-01-27'
+      accessed: '2026-11-17'
+    note: Former Liberal Member for East Hills, recontesting the seat.

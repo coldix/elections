@@ -1,0 +1,28 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Janet Swain
+  party: labor
+  contest: ballina
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-09-09'
+    source:
+      url: https://www.echo.net.au/2026/09/janet-swain-wins-labora-preselection-for-seat-of-ballina/
+      publisher: The Echo
+      title: Janet Swain wins Labor preselection for seat of Ballina
+      published: '2026-09-09'
+      accessed: '2026-11-17'
+    note: Won the Labor preselection vote of Ballina branches.
+  - status: endorsed
+    date: '2026-11-17'
+    source:
+      url: https://www.nswlabor.org.au/janet_swain
+      publisher: NSW Labor
+      title: Janet Swain - Labor Candidate for Ballina
+      accessed: '2026-11-17'
+    note: Listed on NSW Labor's candidate pages.
+  links:
+  - url: https://www.nswlabor.org.au/janet_swain
+    kind: party-profile

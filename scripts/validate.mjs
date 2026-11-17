@@ -556,8 +556,68 @@ function validateStateFoundation(election, dir, load) {
     );
   }
 
+  // Optional candidacy ledger: same record format and rules as vic2026.
+  // Council candidacies/retirements use contest/seat "nsw" (statewide).
+  const councilContests = new Set([meta.jurisdiction ?? "nsw"]);
+  let retirementCount = 0;
+  if (existsSync(join(dir, "retirements.yaml"))) {
+    const file = `${election}/retirements.yaml`;
+    const retirements = load("retirements.yaml").retirements ?? [];
+    const seenRet = new Set();
+    for (const r of retirements) {
+      retirementCount++;
+      if (!r.name) fail(file, "retirement missing name");
+      if (!partySlugs.has(r.party)) fail(file, `${r.name}: unknown party '${r.party}'`);
+      if (!["MLA", "MLC"].includes(r.role)) fail(file, `${r.name}: role must be MLA|MLC`);
+      const validSeats = r.role === "MLC" ? councilContests : districtSlugs;
+      if (!validSeats.has(r.seat)) fail(file, `${r.name}: unknown seat '${r.seat}' for role ${r.role}`);
+      if (!isDate(String(r.announced))) fail(file, `${r.name}: announced must be YYYY-MM-DD`);
+      checkSource(file, r.name, r.source);
+      const key = `${r.role}:${r.seat}:${r.name}`;
+      if (seenRet.has(key)) fail(file, `duplicate retirement ${key}`);
+      seenRet.add(key);
+      // A retiring MLA must be the sitting member for that district.
+      if (r.role === "MLA") {
+        const sitting = assemblyMembers.find((m) => m.district === r.seat);
+        if (sitting && sitting.name !== r.name) {
+          fail(file, `${r.name}: sitting member for ${r.seat} is ${sitting.name}`);
+        }
+      }
+    }
+  }
+
+  let candidateCount = 0;
+  const candDir = join(dir, "candidates");
+  if (existsSync(candDir)) {
+    for (const f of readdirSync(candDir)) {
+      if (f.startsWith("_") || !f.endsWith(".yaml")) continue;
+      candidateCount++;
+      const file = `${election}/candidates/${f}`;
+      const c = parse(readFileSync(join(candDir, f), "utf8"))?.candidate;
+      if (!c) { fail(file, "missing top-level 'candidate' key"); continue; }
+      if (!c.name) fail(file, "name required");
+      if (!partySlugs.has(c.party)) fail(file, `unknown party: ${c.party}`);
+      if (!["assembly", "council"].includes(c.chamber)) fail(file, "chamber must be assembly|council");
+      const contests = c.chamber === "council" ? councilContests : districtSlugs;
+      if (!contests.has(c.contest)) fail(file, `unknown ${c.chamber} contest: ${c.contest}`);
+      if (!STATUSES.includes(c.status)) fail(file, `invalid status: ${c.status}`);
+      if (!Array.isArray(c.history) || c.history.length === 0) {
+        fail(file, "history must have at least one entry");
+      } else {
+        for (const h of c.history) {
+          if (!STATUSES.includes(h.status)) fail(file, `history: invalid status ${h.status}`);
+          if (!isDate(String(h.date))) fail(file, `history ${h.status}: date must be YYYY-MM-DD`);
+          checkSource(file, `history ${h.status}`, h.source);
+        }
+        const last = c.history[c.history.length - 1];
+        if (last.status !== c.status) fail(file, `status '${c.status}' != last history entry '${last.status}'`);
+      }
+      if (!f.startsWith(`${c.contest}--`)) fail(file, `filename must start with '${c.contest}--'`);
+    }
+  }
+
   console.log(
-    `${election}: state-foundation · ${districts.length} districts, ${assemblyMembers.length} MLAs, ${councilMembers.length} MLCs (${upCount} up), ${parties.length} parties`
+    `${election}: state-foundation · ${districts.length} districts, ${assemblyMembers.length} MLAs, ${councilMembers.length} MLCs (${upCount} up), ${parties.length} parties, ${candidateCount} candidates, ${retirementCount} retirements`
   );
 }
 

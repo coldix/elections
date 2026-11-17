@@ -2,7 +2,8 @@
 import Base from "../../../../../layouts/Base.astro";
 import SourceLink from "../../../../../components/SourceLink.astro";
 import { loadStateFoundationElection } from "../../../../../../../scripts/lib/state-foundation.mjs";
-import { SITE, NSW2027, partyColour } from "../../../../../lib/site.mjs";
+import { SITE, NSW2027, partyColour, formatDate } from "../../../../../lib/site.mjs";
+import { STATUS_LABELS, LIVE_STATUSES } from "../../../../../../../scripts/lib/data.mjs";
 
 export function getStaticPaths() {
   const data = loadStateFoundationElection("nsw2027");
@@ -16,6 +17,12 @@ const { district } = Astro.props;
 const data = loadStateFoundationElection("nsw2027");
 const { election } = data;
 const party = data.partyBySlug.get(district.incumbent_party);
+const partyName = (slug) => {
+  const p = data.partyBySlug.get(slug);
+  return p?.short_name || p?.name || slug;
+};
+const candidates = (district.candidates ?? []).filter((c) => LIVE_STATUSES.includes(c.status));
+const retirement = district.retirement;
 
 const schema = {
   "@type": "WebPage",
@@ -27,7 +34,7 @@ const schema = {
 
 <Base
   title={district.name}
-  description={`NSW Legislative Assembly district of ${district.name}. Sitting member of the ${election.sitting_parliament_label} — not a 2027 candidacy.`}
+  description={`NSW Legislative Assembly district of ${district.name}: sitting member of the ${election.sitting_parliament_label} and sourced 2027 candidacies.`}
   schema={schema}
   breadcrumbs={[
     { name: "Upcoming elections", href: "/elections" },
@@ -55,8 +62,9 @@ const schema = {
     </p>
 
     <div class="notice" role="note">
-      <strong>Sitting member only.</strong> This page shows who holds the seat in the
-      {election.sitting_parliament_label}. It is not a list of candidates for the 2027 election.
+      <strong>Sitting member and sourced candidacies.</strong> The sitting member holds the seat in
+      the {election.sitting_parliament_label}. 2027 candidacies below are only those we have
+      individually sourced; the official ballot is set when nominations close on 24 February 2027.
     </div>
 
     <dl class="facts">
@@ -89,7 +97,53 @@ const schema = {
       </div>
     </dl>
 
+    <section class="section compact" aria-labelledby="cand-h">
+      <h2 id="cand-h">2027 candidates</h2>
+      {
+        retirement && (
+          <p class="retire-note">
+            <strong>{retirement.name}</strong> ({partyName(retirement.party)}) will not recontest;
+            announced {formatDate(retirement.announced)}. <SourceLink source={retirement.source} />
+          </p>
+        )
+      }
+      {
+        candidates.length === 0 ? (
+          <p class="muted">No sourced 2027 candidacies recorded for {district.name} yet.</p>
+        ) : (
+          <ul class="cand-list" role="list">
+            {candidates.map((c) => (
+              <li class="card cand">
+                <div class="cand-head">
+                  <div>
+                    <h3>{c.name}</h3>
+                    <p class="cand-party">
+                      <span class="swatch-sm" style={`background:${partyColour(c.party)}`} aria-hidden="true" />
+                      <a href={`${NSW2027}/parties/${c.party}`}>{partyName(c.party)}</a>
+                    </p>
+                  </div>
+                  <span class={`pill pill-${c.status}`}>{STATUS_LABELS[c.status]}</span>
+                </div>
+                <ol class="history" role="list">
+                  {c.history.map((h) => (
+                    <li>
+                      <span class="h-status">{STATUS_LABELS[h.status]}</span>
+                      <span class="muted h-date">{formatDate(h.date)}</span>
+                      <SourceLink source={h.source} />
+                      {h.note && <p class="h-note">{h.note}</p>}
+                    </li>
+                  ))}
+                </ol>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      <p><a href={`${NSW2027}/candidates`}>All NSW 2027 candidates and retirements →</a></p>
+    </section>
+
     <p class="btn-row">
+      <a class="btn btn-ghost btn-sm" href={`${NSW2027}/candidates`}>Candidates</a>
       <a class="btn btn-ghost btn-sm" href={`${NSW2027}/districts`}>All districts</a>
       <a class="btn btn-ghost btn-sm" href={`${NSW2027}/assembly`}>Assembly</a>
       <a class="btn btn-ghost btn-sm" href={NSW2027}>Overview</a>
@@ -110,6 +164,16 @@ const schema = {
   .crumb { font-size: 0.88rem; color: var(--ink-3); margin-bottom: 1rem; }
   .crumb span[aria-hidden] { margin-inline: 0.35rem; }
   .notice { margin: 1.25rem 0; }
+  .cand-list { list-style: none; padding: 0; margin: 0.75rem 0; display: grid; gap: 0.75rem; }
+  .cand { padding: 1rem 1.1rem; }
+  .cand-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+  .cand h3 { margin: 0; font-size: 1.05rem; }
+  .cand-party { margin: 0.2rem 0 0; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.92rem; }
+  .history { margin: 0.75rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.4rem; font-size: 0.88rem; }
+  .h-status { font-weight: 650; margin-right: 0.35rem; }
+  .h-date { margin-right: 0.35rem; }
+  .h-note { margin: 0.2rem 0 0; color: var(--ink-2); }
+  .retire-note { margin: 0.5rem 0 1rem; }
   .facts {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1px;
     background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius);

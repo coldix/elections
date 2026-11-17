@@ -1,0 +1,20 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Carolyn Martin
+  party: liberal
+  contest: coogee
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-17'
+    source:
+      url: https://nswliberal.org.au/carolyn-martin
+      publisher: Liberal Party NSW
+      title: Carolyn Martin - Liberal Party NSW
+      accessed: '2026-11-17'
+    note: Listed as the party's candidate on its own website (accessed 17 Nov 2026). The page
+      does not give an announcement date, so the access date is used.
+  links:
+  - url: https://nswliberal.org.au/carolyn-martin
+    kind: party-profile

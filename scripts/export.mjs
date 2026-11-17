@@ -227,9 +227,39 @@ for (const id of listElections()) {
     write("election.json", data.election);
     write(
       "districts.json",
-      data.districts.map(({ member, ...d }) => d)
+      data.districts.map(({ member, candidates, retirement, ...d }) => d)
     );
     write("assembly-members.json", data.assemblyMembers);
+    // Candidacy ledger (same shape as vic2026 candidates.json / retirements.json).
+    const candidateRows = data.candidates.map(({ file, ...c }) => c);
+    write("candidates.json", {
+      generated: new Date().toISOString(),
+      note:
+        "Sourced candidacy records for the next state election. Only individually " +
+        "sourced candidacies are listed; absence does not mean a party has no candidate.",
+      candidates: candidateRows,
+    });
+    write("retirements.json", {
+      generated: new Date().toISOString(),
+      retirements: data.retirements,
+    });
+    writeFileSync(
+      join(out, "candidates.csv"),
+      csv(
+        data.candidates.map((c) => ({
+          name: c.name,
+          party: c.party,
+          chamber: c.chamber,
+          contest: c.contest,
+          status: c.status,
+          latest_date: c.latest_date,
+          source_url: c.latest_source?.url,
+          source_publisher: c.latest_source?.publisher,
+          verified: c.verified,
+        })),
+        ["name", "party", "chamber", "contest", "status", "latest_date", "source_url", "source_publisher", "verified"]
+      )
+    );
     write("council-members.json", data.councilMembers);
     write("parties.json", data.parties);
     write("representation.json", {
@@ -323,6 +353,9 @@ for (const id of listElections()) {
       "districts.csv",
       "assembly-members.csv",
       "council-members.csv",
+      "candidates.json",
+      "candidates.csv",
+      "retirements.json",
       "polls.json",
       "poll-average.json",
       "polls.csv",
@@ -338,13 +371,15 @@ for (const id of listElections()) {
       assembly_members: summary.assembly_members,
       council_members: summary.council_members,
       council_up: summary.council_up,
+      candidates: summary.candidates,
+      retirements: summary.retirements,
       polls: polls.length,
       issues: issues.length,
       files,
     });
 
     console.log(
-      `${id}: exported state-foundation · ${summary.assembly_members} MLAs, ${summary.council_members} MLCs, ${polls.length} polls, ${issues.length} issues -> site/public/data/${id}/`
+      `${id}: exported state-foundation · ${summary.assembly_members} MLAs, ${summary.council_members} MLCs, ${summary.candidates} candidates, ${summary.retirements} retirements, ${polls.length} polls, ${issues.length} issues -> site/public/data/${id}/`
     );
     continue;
   }

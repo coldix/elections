@@ -1,0 +1,19 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: John Foong
+  party: liberal
+  contest: wahroonga
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-03'
+    source:
+      url: https://www.smh.com.au/politics/nsw/did-nsw-labor-s-safest-seat-just-become-a-one-nation-battleground-20261103-p61av4.html
+      publisher: The Sydney Morning Herald
+      title: 'NSW election retirements: Mark Coure and Sonia Hornery join growing list of
+        MPs leaving parliament before March poll'
+      published: '2026-11-03'
+      accessed: '2026-11-17'
+    note: Won Liberal preselection for Wahroonga (55 votes to 22), succeeding retiring MP
+      Alister Henskens.

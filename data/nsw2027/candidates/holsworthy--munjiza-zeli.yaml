@@ -1,0 +1,28 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Zeli Munjiza
+  party: labor
+  contest: holsworthy
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-09'
+    source:
+      url: https://www.goodmorningmacarthur.com/premier-minns-backs-zeli-munjiza-for-holsworthy/
+      publisher: Good Morning Macarthur
+      title: Premier Minns backs Zeli Munjiza for Holsworthy
+      published: '2026-11-09'
+      accessed: '2026-11-17'
+    note: Liverpool Councillor; will contest Holsworthy for Labor.
+  - status: endorsed
+    date: '2026-11-17'
+    source:
+      url: https://www.nswlabor.org.au/zeli_munjiza
+      publisher: NSW Labor
+      title: Zeli Munjiza - Labor Candidate for Holsworthy
+      accessed: '2026-11-17'
+    note: Listed on NSW Labor's candidate pages.
+  links:
+  - url: https://www.nswlabor.org.au/zeli_munjiza
+    kind: party-profile

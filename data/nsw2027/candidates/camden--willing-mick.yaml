@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Mick Willing
+  party: liberal
+  contest: camden
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-03-21'
+    source:
+      url: https://www.abc.net.au/news/2026-03-21/ex-senior-cop-mick-willing-liberal-camden-pick-for-2027-nsw-vote/106481802
+      publisher: ABC News
+      title: Ex-NSW Police deputy commissioner Mick Willing to run for Liberals in Camden
+        in 2027 state election
+      published: '2026-03-21'
+      accessed: '2026-11-17'

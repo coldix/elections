@@ -1,6 +1,8 @@
-// State-foundation election loader — structure + sitting members, no candidates.
-// Used for NSW 2027 and future thin state starts. Parallel to federal.mjs.
-import { readFileSync, existsSync } from "node:fs";
+// State-foundation election loader: structure, sitting members, and (optionally)
+// a sourced candidates and retirements ledger in the same format as vic2026
+// (candidates/*.yaml and retirements.yaml). Used for NSW 2027 and future thin
+// state starts. Parallel to federal.mjs.
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
@@ -50,6 +52,28 @@ export function loadStateFoundationElection(id) {
 
   const assemblyByDistrict = new Map(assemblyMembers.map((m) => [m.district, m]));
 
+  // Optional candidacy ledger (same record format as vic2026).
+  const retirements = existsSync(join(dir, "retirements.yaml"))
+    ? load(dir, "retirements.yaml").retirements ?? []
+    : [];
+  const candDir = join(dir, "candidates");
+  const candidates = existsSync(candDir)
+    ? readdirSync(candDir)
+        .filter((f) => !f.startsWith("_") && f.endsWith(".yaml"))
+        .sort()
+        .map((f) => {
+          const c = parse(readFileSync(join(candDir, f), "utf8")).candidate;
+          const latest = c.history[c.history.length - 1];
+          return {
+            ...c,
+            file: f,
+            latest_source: latest?.source ?? null,
+            latest_date: latest?.date ?? null,
+            verified: latest?.source?.accessed ?? null,
+          };
+        })
+    : [];
+
   const districtsEnriched = districts.map((d) => {
     const member = assemblyByDistrict.get(d.slug) ?? null;
     return {
@@ -57,6 +81,8 @@ export function loadStateFoundationElection(id) {
       member,
       incumbent: member?.name ?? d.incumbent ?? null,
       incumbent_party: member?.party ?? d.incumbent_party ?? null,
+      candidates: candidates.filter((c) => c.chamber === "assembly" && c.contest === d.slug),
+      retirement: retirements.find((r) => r.role === "MLA" && r.seat === d.slug) ?? null,
     };
   });
 
@@ -69,6 +95,8 @@ export function loadStateFoundationElection(id) {
     districts: districtsEnriched,
     assemblyMembers,
     councilMembers,
+    candidates,
+    retirements,
     sources: {
       assembly: fileSourceAssembly,
       council: fileSourceCouncil,
@@ -111,6 +139,14 @@ export function stateFoundationSummaryFor(data) {
     council_continuing: continuing,
     parties: data.parties.length,
     parties_with_seats: partiesWithSeats,
+    candidates: (data.candidates ?? []).length,
+    live_candidates: (data.candidates ?? []).filter((c) =>
+      ["provisional", "announced", "endorsed", "nominated", "elected"].includes(c.status)
+    ).length,
+    retirements: (data.retirements ?? []).length,
+    districts_with_candidates: new Set(
+      (data.candidates ?? []).filter((c) => c.chamber === "assembly").map((c) => c.contest)
+    ).size,
     parliament_number: data.election.parliament_number,
     sitting_parliament_number: data.election.sitting_parliament_number,
   };

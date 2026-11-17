@@ -33,7 +33,7 @@ views live under `site/src/vicpages/`; thin route wrappers under
 
 ## NSW 2027 (state-foundation)
 
-Sitting members only — data id `nsw2027`, `kind: state-foundation`.
+Sitting members plus a sourced candidates and retirements ledger. Data id `nsw2027`, `kind: state-foundation`.
 
 ```text
 /elections/nsw/2027
@@ -45,6 +45,7 @@ Sitting members only — data id `nsw2027`, `kind: state-foundation`.
 /elections/nsw/2027/parties/<slug>
 /elections/nsw/2027/data
 /elections/nsw/2027/polls
+/elections/nsw/2027/candidates
 ```
 
 | | Value |
@@ -106,7 +107,7 @@ HTML link remains. The header also rewrites links in local development.
 Machine-readable exports remain stable under `/data/<election-id>/`:
 
 - `/data/vic2026/` — full Vic ledger
-- `/data/nsw2027/` — NSW districts, assembly/council members, parties, summary
+- `/data/nsw2027/` — NSW districts, assembly/council members, parties, summary, candidates, retirements
 - `/data/federal-49/` — federal divisions, members, polls, policies
 
 They are already election-scoped and are not redirected.

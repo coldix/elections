@@ -17,6 +17,19 @@ const { election } = data;
 const placeholder = loadElectionPlaceholders().find((e) => e.planned_path === NSW2027);
 const dateStatus = ELECTION_DATE_STATUS[election.date_status] ?? ELECTION_DATE_STATUS.confirmed;
 
+const retirementsByDate = [...data.retirements].sort((a, b) =>
+  b.announced.localeCompare(a.announced)
+);
+const districtName = new Map(data.districts.map((d) => [d.slug, d.name]));
+const partyShort = (slug) => {
+  const p = data.partyBySlug.get(slug);
+  return p?.short_name || p?.name || slug;
+};
+const candidatesByParty = data.parties
+  .map((p) => ({ ...p, count: data.candidates.filter((c) => c.party === p.slug).length }))
+  .filter((p) => p.count > 0)
+  .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
 const partyRows = data.parties
   .map((p) => {
     const r = rep[p.slug] ?? { assembly: 0, council: 0, total: 0 };
@@ -28,7 +41,7 @@ const partyRows = data.parties
 const schema = {
   "@type": "WebPage",
   name: election.name,
-  description: `${election.name} — sitting members of the ${election.sitting_parliament_label}, Legislative Assembly and Legislative Council structure.`,
+  description: `${election.name}: sourced candidates and retirements, sitting members of the ${election.sitting_parliament_label}, and Legislative Assembly and Legislative Council structure.`,
   url: `${SITE.url}${NSW2027}`,
   isPartOf: { "@id": `${SITE.url}/#website` },
 };
@@ -36,7 +49,7 @@ const schema = {
 
 <Base
   title={election.name}
-  description={`Sitting members of the ${election.sitting_parliament_label}: 93 Assembly districts and Legislative Council composition for the 2027 NSW state election. Not yet a full candidacy ledger.`}
+  description={`Sourced candidates and retirements for the 2027 NSW state election, plus sitting members of the ${election.sitting_parliament_label}: 93 Assembly districts and Legislative Council composition.`}
   schema={schema}
   breadcrumbs={[
     { name: "Upcoming elections", href: "/elections" },
@@ -68,10 +81,11 @@ const schema = {
     </p>
 
     <div class="notice" role="note">
-      <strong>Sitting members, not candidacies.</strong>
+      <strong>Sitting members and an early candidates ledger.</strong>
       {election.tracking_status}
       Members listed here sit in the <strong>{election.sitting_parliament_label}</strong>. They are
-      <em>not</em> automatically candidates for {election.date_label}.
+      <em>not</em> automatically candidates for {election.date_label}; only people with an
+      individually sourced record appear in the <a href={`${NSW2027}/candidates`}>candidates ledger</a>.
     </div>
 
     <dl class="facts">
@@ -92,6 +106,14 @@ const schema = {
         <dd>{summary.assembly_members} / {summary.council_members}</dd>
       </div>
       <div>
+        <dt>Sourced candidacies</dt>
+        <dd>{summary.live_candidates}</dd>
+      </div>
+      <div>
+        <dt>MPs not recontesting</dt>
+        <dd>{summary.retirements}</dd>
+      </div>
+      <div>
         <dt>Council places up</dt>
         <dd>{summary.council_up}</dd>
       </div>
@@ -102,13 +124,54 @@ const schema = {
     </dl>
 
     <p class="btn-row">
-      <a class="btn" href={`${NSW2027}/districts`}>Districts</a>
+      <a class="btn" href={`${NSW2027}/candidates`}>Candidates</a>
+      <a class="btn btn-ghost" href={`${NSW2027}/districts`}>Districts</a>
       <a class="btn btn-ghost" href={`${NSW2027}/assembly`}>Legislative Assembly</a>
       <a class="btn btn-ghost" href={`${NSW2027}/council`}>Legislative Council</a>
       <a class="btn btn-ghost" href={`${NSW2027}/parties`}>Parties</a>
       <a class="btn btn-ghost" href={`${NSW2027}/polls`}>Polls</a>
       <a class="btn btn-ghost" href={`${NSW2027}/data`}>Open data</a>
     </p>
+
+    <section aria-labelledby="ledger-h">
+      <p class="eyebrow">2027 candidacies</p>
+      <h2 id="ledger-h">Candidates and retirements</h2>
+      <p class="muted">
+        {summary.live_candidates} sourced Legislative Assembly candidacies across
+        {summary.districts_with_candidates} districts, and {summary.retirements} sitting MPs who have
+        confirmed they will not recontest. Each record cites a dated party page or news report.
+        Formal nominations close on 24 February 2027.
+      </p>
+      <ul class="cand-strip" role="list" aria-label="Sourced candidacies by party">
+        {
+          candidatesByParty.map((p) => (
+            <li>
+              <span class="swatch" style={`background:${partyColour(p.slug)}`} aria-hidden="true" />
+              <strong>{p.count}</strong>
+              <span class="muted">{p.short_name || p.name}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <h3 class="sub-h">Not recontesting</h3>
+      <ul class="retire-list" role="list">
+        {
+          retirementsByDate.map((r) => (
+            <li>
+              <a href={`${NSW2027}/districts/${r.seat}`}>{r.name}</a>
+              <span class="muted">
+                {" "}({partyShort(r.party)}, {districtName.get(r.seat) ?? r.seat}) · announced{" "}
+                {formatDate(r.announced)}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="btn-row">
+        <a class="btn btn-ghost" href={`${NSW2027}/candidates`}>Full candidates and retirements ledger</a>
+        <a class="btn btn-ghost" href="/data/nsw2027/candidates.json">candidates.json</a>
+      </p>
+    </section>
 
     <section aria-labelledby="composition-h">
       <p class="eyebrow">58th Parliament</p>
@@ -265,6 +328,10 @@ const schema = {
   .chamber-card dd { margin: 0.15rem 0 0; color: var(--ink-2); }
   .chamber-link { margin: 0; font-size: 0.92rem; }
   .compact { max-width: 52rem; }
+  .cand-strip { list-style: none; padding: 0; margin: 0.75rem 0 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+  .cand-strip li { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .sub-h { font-size: 1rem; margin: 1rem 0 0.4rem; }
+  .retire-list { list-style: none; padding: 0; margin: 0 0 0.5rem; display: grid; gap: 0.3rem; font-size: 0.92rem; }
   .compact ul, .source-list { padding-left: 1.2rem; display: grid; gap: 0.45rem; }
   .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
   .back { margin-top: 2.5rem; }

@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Garion Thain
+  party: labor
+  contest: badgerys-creek
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-10-25'
+    source:
+      url: https://www.westernweekender.com.au/2026/10/labor-announces-badgerys-creek-candidate-for-state-election/
+      publisher: The Western Weekender
+      title: Labor announces Badgerys Creek candidate for State Election
+      published: '2026-10-25'
+      accessed: '2026-11-17'
+    note: Labor announced Penrith City Councillor Garion Thain as its Badgerys Creek candidate.

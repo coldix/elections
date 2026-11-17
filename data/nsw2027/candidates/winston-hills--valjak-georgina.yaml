@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Georgina Valjak
+  party: liberal
+  contest: winston-hills
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-10-01'
+    source:
+      url: https://nswliberal.org.au/news/georgina-valjak-will-keep-delivering-for-winston-hills
+      publisher: Liberal Party NSW
+      title: Georgina Valjak will keep delivering for Winston Hills
+      published: '2026-10-01'
+      accessed: '2026-11-17'
+    note: Liberal candidate succeeding retiring MP Mark Taylor.

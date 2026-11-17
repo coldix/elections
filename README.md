@@ -118,11 +118,14 @@ from the report, never contact details (PR #89).
 /elections/nsw/2027/parties
 /elections/nsw/2027/parties/:slug
 /elections/nsw/2027/data
+/elections/nsw/2027/candidates
 ```
 
 Data id `nsw2027` (`kind: state-foundation`). 93 Assembly districts and
 sitting MLAs/MLCs of the **58th** Parliament; Council term class (`up` /
-`continuing`) for the half-Council election. **Not** a candidacy ledger.
+`continuing`) for the half-Council election. Since 17 Nov 2026 it also
+carries a sourced candidates and retirements ledger (`data/nsw2027/candidates/`,
+`retirements.yaml`) in the same format as `vic2026`.
 Open data: `/data/nsw2027/`. Membership from Parliament of NSW downloads.
 
 ### Federal — 49th Parliament (sitting members + polls + policies)
@@ -184,7 +187,7 @@ data/
   election-calendar.yaml          national election calendar
   election-placeholders.yaml      outline / chamber structure facts
   vic2026/                        full Victorian ledger (candidates, polls, policies, 2022 results)
-  nsw2027/                        NSW sitting members (state-foundation)
+  nsw2027/                        NSW sitting members, candidates, retirements (state-foundation)
   federal-49/                     federal sitting members, polls, policies
 
 schema/                            JSON Schemas

@@ -109,6 +109,11 @@ const ELECTIONS = {
     data: `${NSW2027}/data`,
     sections: [
       {
+        href: `${NSW2027}/candidates`,
+        label: "Candidates",
+        current: (path) => under(path, NSW2027, "candidates"),
+      },
+      {
         href: `${NSW2027}/assembly`,
         label: "Assembly",
         current: (path) =>

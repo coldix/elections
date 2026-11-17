@@ -10,7 +10,7 @@ const schema = {
   "@type": "CollectionPage",
   name: "What's new — Australian Election Tracker",
   description:
-    "Recent sourced additions to the Australian Election Tracker: new statewide and federal primary-vote polls, Victorian candidacies, and foundation ledger opens.",
+    "Recent sourced additions to the Australian Election Tracker: new statewide and federal primary-vote polls, Victorian candidacies, and foundation and ledger opens.",
   url: `${SITE.url}/latest`,
   isPartOf: { "@id": `${SITE.url}/#website` },
   dateModified: newest,
@@ -29,7 +29,7 @@ const schema = {
     <p class="lede">
       Sourced records added or dated in the last {latest.windowDays} days —
       Vic, federal and NSW statewide polls (by release published date), Victorian
-      candidacies, and notable foundation opens. Nothing here is a forecast; forecasts appear only in the labelled <a href="/forecast">Forecast section</a>.
+      candidacies, and notable foundation and ledger opens. Nothing here is a forecast; forecasts appear only in the labelled <a href="/forecast">Forecast section</a>.
     </p>
 
     <section aria-labelledby="polls-h">
@@ -60,7 +60,7 @@ const schema = {
     {
       latest.foundations.length > 0 && (
         <section aria-labelledby="foundations-h">
-          <h2 id="foundations-h">Foundation updates</h2>
+          <h2 id="foundations-h">Foundation and ledger updates</h2>
           <ol class="latest-list">
             {latest.foundations.map((item) => (
               <li>

@@ -1,0 +1,28 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Elaina Anzellotti
+  party: labor
+  contest: oatley
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-05-19'
+    source:
+      url: https://www.theleader.com.au/story/9249263/elaina-anzellotti-labor-candidate-for-oatley-eyes-2027-election/
+      publisher: St George & Sutherland Shire Leader
+      title: 'Elaina Anzellotti: Labor candidate for Oatley eyes 2027 election'
+      published: '2026-05-19'
+      accessed: '2026-11-17'
+    note: Georges River Councillor announced as the Labor candidate for Oatley.
+  - status: endorsed
+    date: '2026-11-17'
+    source:
+      url: https://www.nswlabor.org.au/elaina_anzellotti
+      publisher: NSW Labor
+      title: Elaina Anzellotti - Labor Candidate for Oatley
+      accessed: '2026-11-17'
+    note: Listed on NSW Labor's candidate pages.
+  links:
+  - url: https://www.nswlabor.org.au/elaina_anzellotti
+    kind: party-profile

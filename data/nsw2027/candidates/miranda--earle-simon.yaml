@@ -1,0 +1,20 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Simon Earle
+  party: labor
+  contest: miranda
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-17'
+    source:
+      url: https://www.nswlabor.org.au/simon_earle
+      publisher: NSW Labor
+      title: Simon Earle - Labor Candidate for Miranda
+      accessed: '2026-11-17'
+    note: Listed as the party's candidate on its own website (accessed 17 Nov 2026). The page
+      does not give an announcement date, so the access date is used.
+  links:
+  - url: https://www.nswlabor.org.au/simon_earle
+    kind: party-profile

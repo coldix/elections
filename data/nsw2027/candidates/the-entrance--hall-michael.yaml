@@ -1,0 +1,16 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Michael Hall
+  party: liberal
+  contest: the-entrance
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-10-29'
+    source:
+      url: https://nswliberal.org.au/news/michael-hall-will-stand-up-for-the-entrance
+      publisher: Liberal Party NSW
+      title: Michael Hall will stand up for The Entrance
+      published: '2026-10-29'
+      accessed: '2026-11-17'

@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Adelaide Cuneo
+  party: liberal
+  contest: manly
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-10-01'
+    source:
+      url: https://www.smh.com.au/politics/nsw/the-liberal-party-is-drowning-this-29-year-old-rebel-wants-to-be-its-lifeboat-20261001-p611nl.html
+      publisher: The Sydney Morning Herald
+      title: 'Adelaide Cuneo, Liberal candidate for Manly: Why the former chef and political
+        staffer is speaking out against her own party'
+      published: '2026-10-01'
+      accessed: '2026-11-17'
+    note: New Liberal candidate for Manly, succeeding retiring MP James Griffin.

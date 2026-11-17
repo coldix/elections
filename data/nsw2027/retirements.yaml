@@ -1,0 +1,133 @@
+# Sitting NSW MPs who announced they will not contest their seat at the
+# 13 March 2027 general election. Distinct from candidates/*.yaml (which tracks
+# people who ARE standing): this tracks confirmed non-contestation.
+# Same format as data/vic2026/retirements.yaml.
+# role: MLA (Legislative Assembly) | MLC (Legislative Council)
+# seat: district slug for MLA; "nsw" for MLC (statewide Council)
+retirements:
+- name: Tamara Smith
+  party: greens
+  role: MLA
+  seat: ballina
+  announced: '2026-05-01'
+  source:
+    url: https://ballinanewsdaily.com.au/2026/05/ballina-greens-mp-tamara-smith-to-exit-politics-after-three-terms/
+    publisher: Ballina News Daily
+    title: Ballina Greens MP Tamara Smith to exit politics after three terms
+    published: '2026-05-01'
+    accessed: '2026-11-17'
+- name: Mark Taylor
+  party: liberal
+  role: MLA
+  seat: winston-hills
+  announced: '2026-07-08'
+  source:
+    url: https://www.parranews.com.au/2026/07/winston-hills-mp-mark-taylor-wont-contest-the-2027-state-election/
+    publisher: Parra News
+    title: Winston Hills MP Mark Taylor won't contest the 2027 State Election
+    published: '2026-07-08'
+    accessed: '2026-11-17'
+- name: James Griffin
+  party: liberal
+  role: MLA
+  seat: manly
+  announced: '2026-09-02'
+  source:
+    url: https://manlyobserver.com.au/member-for-manly-james-griffin-announces-retirement/
+    publisher: Manly Observer
+    title: Member for Manly, James Griffin, announces retirement
+    published: '2026-09-02'
+    accessed: '2026-11-17'
+- name: Alister Henskens
+  party: liberal
+  role: MLA
+  seat: wahroonga
+  announced: '2026-09-11'
+  source:
+    url: https://www.smh.com.au/politics/nsw/kellie-sloane-loses-second-senior-frontbencher-in-as-many-weeks-20260911-p60wm4.html
+    publisher: The Sydney Morning Herald
+    title: Kellie Sloane loses second senior frontbencher in as many weeks
+    published: '2026-09-11'
+    accessed: '2026-11-17'
+- name: Hugh McDermott
+  party: labor
+  role: MLA
+  seat: prospect
+  announced: '2026-10-01'
+  source:
+    url: https://www.smh.com.au/politics/nsw/veteran-mp-resigns-as-nsw-labor-hq-targets-male-backbenchers-20261001-p6121v.html
+    publisher: The Sydney Morning Herald
+    title: Veteran MP resigns as NSW Labor HQ targets male backbenchers
+    published: '2026-10-01'
+    accessed: '2026-11-17'
+- name: Ray Williams
+  party: liberal
+  role: MLA
+  seat: kellyville
+  announced: '2026-10-20'
+  source:
+    url: https://www.smh.com.au/politics/nsw/i-d-do-it-all-again-the-liberal-mp-who-sparked-an-icac-investigation-into-his-own-party-resigns-20261020-p6178a.html
+    publisher: The Sydney Morning Herald
+    title: '''I''d do it all again'': The Liberal MP who sparked an ICAC investigation into
+      his own party resigns'
+    published: '2026-10-20'
+    accessed: '2026-11-17'
+- name: Tanya Davies
+  party: liberal
+  role: MLA
+  seat: badgerys-creek
+  announced: '2026-10-22'
+  source:
+    url: https://www.westernweekender.com.au/2026/10/political-shock-tanya-davies-announces-retirement/
+    publisher: The Western Weekender
+    title: 'Political shock: Tanya Davies announces retirement'
+    published: '2026-10-22'
+    accessed: '2026-11-17'
+  note: Had been endorsed as the Liberal candidate in February 2026 before announcing she
+    will not contest.
+- name: David Harris
+  party: labor
+  role: MLA
+  seat: wyong
+  announced: '2026-10-30'
+  source:
+    url: https://www.smh.com.au/politics/nsw/chris-minns-loses-first-frontbencher-as-david-harris-announces-exit-before-nsw-election-20261030-p619wg.html
+    publisher: The Sydney Morning Herald
+    title: Chris Minns loses first frontbencher as David Harris announces exit before NSW
+      election
+    published: '2026-10-30'
+    accessed: '2026-11-17'
+- name: Mark Coure
+  party: liberal
+  role: MLA
+  seat: oatley
+  announced: '2026-11-03'
+  source:
+    url: https://www.smh.com.au/politics/nsw/did-nsw-labor-s-safest-seat-just-become-a-one-nation-battleground-20261103-p61av4.html
+    publisher: The Sydney Morning Herald
+    title: 'NSW election retirements: Mark Coure and Sonia Hornery join growing list of MPs
+      leaving parliament before March poll'
+    published: '2026-11-03'
+    accessed: '2026-11-17'
+- name: Sonia Hornery
+  party: labor
+  role: MLA
+  seat: wallsend
+  announced: '2026-11-03'
+  source:
+    url: https://www.newcastleherald.com.au/story/9384756/wallsend-mp-sonia-hornery-has-announced-she-will-not-contest-next-years-state-election/
+    publisher: Newcastle Herald
+    title: '''It''s been a privilege'': Wallsend MP Sonia Hornery to retire'
+    published: '2026-11-03'
+    accessed: '2026-11-17'
+- name: Jordan Lane
+  party: liberal
+  role: MLA
+  seat: ryde
+  announced: '2026-11-06'
+  source:
+    url: https://www.smh.com.au/politics/nsw/taken-its-toll-first-term-liberal-mp-in-shock-departure-20261106-p61c32.html
+    publisher: The Sydney Morning Herald
+    title: '''Taken its toll'': First-term Liberal MP in shock departure'
+    published: '2026-11-06'
+    accessed: '2026-11-17'

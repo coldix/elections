@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Tracey Ellen
+  party: labor
+  contest: wyong
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-07'
+    source:
+      url: https://coastcommunitynews.com.au/central-coast/news/2026/11/tracey-ellen-to-stand-for-labor-in-seat-of-wyong/
+      publisher: Coast Community News
+      title: Tracey Ellen to stand for Labor in seat of Wyong
+      published: '2026-11-07'
+      accessed: '2026-11-17'
+    note: Labor candidate to succeed retiring Wyong MP David Harris.
