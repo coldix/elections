@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Lucas Ellis
+  party: sustainable-australia
+  contest: albury
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://www.sustainableaustralia.org.au/2027_albury_nsw_election
+      publisher: Sustainable Australia Party
+      title: 2027 NSW Election - Albury | Affordable Housing Now - Sustainable Australia Party
+      accessed: 2026-11-17
+    note: Named as the Sustainable Australia Party Legislative Assembly candidate for Albury
+      on the party's seat page (accessed 17 Nov 2026). No announcement date given, so the
+      access date is used. The page gives his full name as Lucas James Ellis.

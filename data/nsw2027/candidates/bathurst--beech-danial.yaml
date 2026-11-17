@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Danial Beech
+  party: shooters-fishers-farmers
+  contest: bathurst
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-09
+    source:
+      url: https://www.westernadvocate.com.au/story/9387453/sff-candidate-danial-beech-targets-bathurst-seat-for-2027/
+      publisher: Western Advocate
+      title: SFF candidate Danial Beech targets Bathurst seat for 2027
+      published: 2026-11-09
+      accessed: 2026-11-17
+    note: Shooters, Fishers and Farmers Party candidate for Bathurst.

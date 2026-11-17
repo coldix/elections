@@ -1,0 +1,19 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Michael Want
+  party: sustainable-australia
+  contest: willoughby
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://www.sustainableaustralia.org.au/2027_willoughby_nsw_election
+      publisher: Sustainable Australia Party
+      title: 2027 NSW Election - Willoughby | Affordable Housing Now - Sustainable Australia
+        Party
+      accessed: 2026-11-17
+    note: Named as the Sustainable Australia Party Legislative Assembly candidate for Willoughby
+      on the party's seat page (accessed 17 Nov 2026). No announcement date given, so the
+      access date is used.

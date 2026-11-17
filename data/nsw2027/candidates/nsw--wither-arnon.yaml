@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Arnon Wither
+  party: one-nation
+  contest: nsw
+  chamber: council
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-15
+    source:
+      url: https://www.theguardian.com/australia-news/2026/nov/15/katherine-deves-among-four-nsw-upper-house-candidates-revealed-by-one-nation-ntwnfb
+      publisher: The Guardian
+      title: Katherine Deves among four NSW upper house candidates revealed by One Nation
+      published: 2026-11-15
+      accessed: 2026-11-17
+    note: One of four Legislative Council candidates announced by One Nation NSW leader Mike
+      Newman on 15 Nov 2026. Ticket position not reported.

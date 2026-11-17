@@ -251,13 +251,14 @@ for (const id of listElections()) {
           party: c.party,
           chamber: c.chamber,
           contest: c.contest,
+          ticket_position: c.ticket_position ?? "",
           status: c.status,
           latest_date: c.latest_date,
           source_url: c.latest_source?.url,
           source_publisher: c.latest_source?.publisher,
           verified: c.verified,
         })),
-        ["name", "party", "chamber", "contest", "status", "latest_date", "source_url", "source_publisher", "verified"]
+        ["name", "party", "chamber", "contest", "ticket_position", "status", "latest_date", "source_url", "source_publisher", "verified"]
       )
     );
     write("council-members.json", data.councilMembers);

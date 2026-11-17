@@ -87,6 +87,12 @@ const MILESTONE_KINDS = [
     path: "/candidates",
     kicker: "New ledger",
   },
+  {
+    re: /Candidates ledger update \((\d{4}-\d{2}-\d{2})\)\s*:?\s*(.*)/i,
+    suffix: "upper house and minor-party candidates added",
+    path: "/candidates#council",
+    kicker: "Ledger update",
+  },
 ];
 function foundationMilestones(electionId, href, kickerTitle) {
   let data;

@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Joe McGirr
+  party: independent
+  contest: wagga-wagga
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: 2026-04-11
+    source:
+      url: https://www.dailyadvertiser.com.au/story/9219040/wagga-mps-rural-health-plan-gains-strong-support-ahead-of-2027-election/
+      publisher: The Daily Advertiser
+      title: Wagga MP's rural health plan gains strong support ahead of 2027 election
+      published: 2026-04-11
+      accessed: 2026-11-17
+    note: 'Sitting independent MP quoted: "I''m looking forward to contesting the 2027 state
+      election."'

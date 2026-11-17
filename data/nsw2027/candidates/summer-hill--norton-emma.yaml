@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Emma Norton
+  party: nsw-socialists
+  contest: summer-hill
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://www.nswsocialists.org.au/candidates
+      publisher: NSW Socialists
+      title: Candidates – NSW Socialists
+      accessed: 2026-11-17
+    note: Listed as "Emma Norton for Summer Hill" on the NSW Socialists candidates page (accessed
+      17 Nov 2026).

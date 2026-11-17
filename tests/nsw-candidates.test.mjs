@@ -21,8 +21,16 @@ test("nsw2027 loads a candidates and retirements ledger in the vic2026 format", 
   const parties = new Set(data.parties.map((p) => p.slug));
   for (const c of data.candidates) {
     assert.ok(parties.has(c.party), `${c.name}: party ${c.party}`);
-    assert.equal(c.chamber, "assembly");
-    assert.ok(districts.has(c.contest), `${c.name}: contest ${c.contest}`);
+    assert.ok(["assembly", "council"].includes(c.chamber), `${c.name}: chamber ${c.chamber}`);
+    if (c.chamber === "assembly") {
+      assert.ok(districts.has(c.contest), `${c.name}: contest ${c.contest}`);
+    } else {
+      assert.equal(c.contest, "nsw", `${c.name}: council contest is statewide`);
+    }
+    if (c.ticket_position != null) {
+      assert.equal(c.chamber, "council", `${c.name}: ticket_position only on council records`);
+      assert.ok(Number.isInteger(c.ticket_position) && c.ticket_position > 0);
+    }
     assert.ok(ALL_STATUSES.includes(c.status), `${c.name}: status ${c.status}`);
     assert.equal(c.history.at(-1).status, c.status);
     for (const h of c.history) {
@@ -74,4 +82,47 @@ test("NSW nav has a Candidates section", () => {
   assert.ok(cands);
   assert.equal(cands.current, true);
   assert.equal(nav.sections.filter((s) => s.current).length, 1);
+});
+
+test("Legislative Council tickets load statewide with sourced positions only", () => {
+  const council = data.candidates.filter((c) => c.chamber === "council");
+  assert.ok(council.length > 0, "council candidates loaded");
+  const byName = new Map(council.map((c) => [c.name, c]));
+  const expected = {
+    "Lynda-June Coe": ["greens", undefined],
+    "Stuart Bonds": ["one-nation", 1],
+    "Jeff Bacon": ["one-nation", 2],
+    "Daniel Mookhey": ["labor", 1],
+    "Tara Moriarty": ["labor", 7],
+    "Natalie Ward": ["liberal", 1],
+    "Gemma Noiosi": ["libertarian", 1],
+    "Lyle Shelton": ["family-first", undefined],
+  };
+  for (const [name, [party, pos]] of Object.entries(expected)) {
+    const c = byName.get(name);
+    assert.ok(c, `${name} on the council ledger`);
+    assert.equal(c.party, party);
+    assert.equal(c.ticket_position, pos, `${name} ticket position`);
+  }
+  // No two candidates of the same party share a stated ticket position.
+  const seen = new Set();
+  for (const c of council.filter((c) => c.ticket_position != null)) {
+    const key = `${c.party}#${c.ticket_position}`;
+    assert.ok(!seen.has(key), `duplicate ticket position ${key}`);
+    seen.add(key);
+  }
+  const summary = stateFoundationSummaryFor(data);
+  assert.equal(summary.council_candidates, council.length);
+  assert.equal(summary.assembly_candidates + summary.council_candidates, summary.candidates);
+});
+
+test("minor-party and independent Assembly candidates join their districts", () => {
+  const district = (slug) => data.districts.find((d) => d.slug === slug);
+  assert.ok(district("cessnock").candidates.some((c) => c.name === "Mike Newman" && c.party === "one-nation"));
+  assert.ok(district("sydney").candidates.some((c) => c.name === "Alex Greenwich" && c.party === "independent"));
+  assert.ok(district("bathurst").candidates.some((c) => c.party === "shooters-fishers-farmers"));
+  // Council candidates never leak into a district.
+  for (const d of data.districts) {
+    assert.ok(d.candidates.every((c) => c.chamber === "assembly"), `${d.slug}: assembly only`);
+  }
 });

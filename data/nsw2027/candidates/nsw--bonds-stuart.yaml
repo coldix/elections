@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Stuart Bonds
+  party: one-nation
+  contest: nsw
+  chamber: council
+  ticket_position: 1
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://nsw.onenation.org.au/candidates
+      publisher: One Nation NSW
+      title: Candidates - One Nation NSW
+      accessed: 2026-11-17
+    note: One Nation NSW candidates page names him as the party's lead Legislative Council
+      candidate.

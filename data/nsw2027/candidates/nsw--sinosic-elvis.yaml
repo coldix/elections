@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Elvis Sinosic
+  party: libertarian
+  contest: nsw
+  chamber: council
+  ticket_position: 3
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://www.lpnsw.org.au/state_candidates
+      publisher: Libertarian Party NSW
+      title: Candidates - Libertarian Party NSW
+      accessed: 2026-11-17
+    note: 'Listed as "NSW Upper House #3" in the Libertarian Party NSW candidate directory
+      (accessed 17 Nov 2026).'

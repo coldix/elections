@@ -601,6 +601,12 @@ function validateStateFoundation(election, dir, load) {
       const contests = c.chamber === "council" ? councilContests : districtSlugs;
       if (!contests.has(c.contest)) fail(file, `unknown ${c.chamber} contest: ${c.contest}`);
       if (!STATUSES.includes(c.status)) fail(file, `invalid status: ${c.status}`);
+      if (c.ticket_position != null) {
+        if (c.chamber !== "council") fail(file, "ticket_position is only allowed on council records");
+        if (!Number.isInteger(c.ticket_position) || c.ticket_position < 1) {
+          fail(file, "ticket_position must be a positive integer");
+        }
+      }
       if (!Array.isArray(c.history) || c.history.length === 0) {
         fail(file, "history must have at least one entry");
       } else {

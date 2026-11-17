@@ -50,3 +50,28 @@ parties:
   short_name: SFF
   registered: true
   family: null
+- slug: family-first
+  name: Family First Party
+  short_name: Family First
+  family: null
+  note: Added for the 2027 candidates ledger from the party's own candidate pages. NSW registration status not yet checked against the NSWEC register.
+- slug: nsw-socialists
+  name: NSW Socialists
+  short_name: NSW Socialists
+  family: null
+  note: Added for the 2027 candidates ledger from the party's own candidate pages. NSW registration status not yet checked against the NSWEC register.
+- slug: one-nation
+  name: "Pauline Hanson's One Nation"
+  short_name: One Nation
+  family: null
+  note: Added for the 2027 candidates ledger from the party's own candidate pages. NSW registration status not yet checked against the NSWEC register.
+- slug: socialist-alliance
+  name: Socialist Alliance
+  short_name: Socialist Alliance
+  family: null
+  note: Added for the 2027 candidates ledger from the party's own candidate pages. NSW registration status not yet checked against the NSWEC register.
+- slug: sustainable-australia
+  name: Sustainable Australia Party
+  short_name: Sustainable Australia
+  family: null
+  note: Added for the 2027 candidates ledger from the party's own candidate pages. NSW registration status not yet checked against the NSWEC register.

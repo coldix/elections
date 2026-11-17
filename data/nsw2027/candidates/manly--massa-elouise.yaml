@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Elouise Massa
+  party: independent
+  contest: manly
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: 2026-09-06
+    source:
+      url: https://www.smh.com.au/politics/nsw/i-am-not-the-same-person-how-tragedy-convinced-elouise-massa-to-run-for-parliament-20260904-p60uhz.html
+      publisher: The Sydney Morning Herald
+      title: '''I am not the same person'': How tragedy convinced Elouise Massa to run for
+        parliament'
+      published: 2026-09-06
+      accessed: 2026-11-17
+    note: Running as an independent in Manly.

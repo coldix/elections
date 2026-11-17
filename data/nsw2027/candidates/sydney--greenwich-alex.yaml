@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Alex Greenwich
+  party: independent
+  contest: sydney
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: 2026-03-16
+    source:
+      url: https://www.alexgreenwich.com/latest-news/running-again-in-2027/
+      publisher: Alex Greenwich MP
+      title: Running Again in 2027
+      published: 2026-03-16
+      accessed: 2026-11-17
+    note: 'Sitting independent MP: "I will seek re-election at the 2027 State Election."'

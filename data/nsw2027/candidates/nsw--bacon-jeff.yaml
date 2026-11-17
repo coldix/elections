@@ -1,0 +1,26 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Jeff Bacon
+  party: one-nation
+  contest: nsw
+  chamber: council
+  ticket_position: 2
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-10-03
+    source:
+      url: https://www.netimes.com.au/2026/10/03/tamworths-jeff-bacon-joins-one-nation-upper-house-ticket/
+      publisher: New England Times
+      title: Tamworth's Jeff Bacon joins One Nation upper house ticket
+      published: 2026-10-03
+      accessed: 2026-11-17
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://nsw.onenation.org.au/candidates
+      publisher: One Nation NSW
+      title: Candidates - One Nation NSW
+      accessed: 2026-11-17
+    note: 'One Nation NSW candidates page names him as the party''s #2 Legislative Council
+      candidate.'

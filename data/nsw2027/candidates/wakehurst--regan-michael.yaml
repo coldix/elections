@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Michael Regan
+  party: independent
+  contest: wakehurst
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: 2026-11-17
+    source:
+      url: https://www.michaelregan4mp.com/
+      publisher: Michael Regan Independent 4 Wakehurst
+      title: Michael Regan Independent 4 Wakehurst
+      accessed: 2026-11-17
+    note: Sitting independent MP; campaign site for the 13 March 2027 election says he is
+      "excited to continue representing Wakehurst". No date given, so the access date is used.

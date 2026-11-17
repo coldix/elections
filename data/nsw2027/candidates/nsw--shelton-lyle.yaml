@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Lyle Shelton
+  party: family-first
+  contest: nsw
+  chamber: council
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://www.familyfirstparty.org.au/lyle_shelton_nsw_2027
+      publisher: Family First Party Australia
+      title: Lyle Shelton - Family First Party Australia
+      accessed: 2026-11-17
+    note: Family First Legislative Council candidate for New South Wales. Party profile page
+      (accessed 17 Nov 2026). The page gives no announcement date, so the access date is used.

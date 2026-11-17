@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Mike Newman
+  party: one-nation
+  contest: cessnock
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://nsw.onenation.org.au/candidates
+      publisher: One Nation NSW
+      title: Candidates - One Nation NSW
+      accessed: 2026-11-17
+    note: Listed as "Mike Newman for Cessnock" on One Nation NSW's candidates page. He is
+      One Nation's NSW leader.

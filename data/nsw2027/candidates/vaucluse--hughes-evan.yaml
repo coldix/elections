@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Evan Hughes
+  party: independent
+  contest: vaucluse
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: 2026-09-10
+    source:
+      url: https://www.smh.com.au/politics/nsw/a-little-bit-suss-kellie-sloane-claims-34-storey-tower-plans-aimed-at-her-20260910-p60w6a.html
+      publisher: The Sydney Morning Herald
+      title: '''A little bit suss'': Kellie Sloane claims 34-storey tower plans aimed at her'
+      published: 2026-09-10
+      accessed: 2026-11-17
+    note: Reported to have registered to contest Vaucluse as an independent.

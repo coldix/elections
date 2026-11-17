@@ -127,7 +127,9 @@ Data id `nsw2027` (`kind: state-foundation`). 93 Assembly districts and
 sitting MLAs/MLCs of the **58th** Parliament; Council term class (`up` /
 `continuing`) for the half-Council election. Since 17 Nov 2026 it also
 carries a sourced candidates and retirements ledger (`data/nsw2027/candidates/`,
-`retirements.yaml`) in the same format as `vic2026`.
+`retirements.yaml`) in the same format as `vic2026`, covering Legislative Assembly
+candidacies and Legislative Council tickets (`contest: nsw`, optional sourced
+`ticket_position`).
 Open data: `/data/nsw2027/`. Membership from Parliament of NSW downloads.
 
 ### Federal — 49th Parliament (sitting members + polls + policies)

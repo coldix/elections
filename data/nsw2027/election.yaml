@@ -82,7 +82,8 @@ election:
   tracking_status: >-
     Sitting members of the 58th Parliament of New South Wales are published under this path.
     Statewide primary-vote poll ledger and issue taxonomy are open (foundation tier).
-    A sourced 2027 candidates and retirements ledger is open (Legislative Assembly); a full
+    A sourced 2027 candidates and retirements ledger is open (Legislative Assembly and
+    Legislative Council tickets); a full
     policy matrix for 2027 is not yet tracked.
   authorities:
     - name: NSW Electoral Commission
@@ -131,6 +132,11 @@ election:
       Candidates ledger open (2026-11-17): The NSW 2027 candidates and retirements ledger is
       live, with 73 sourced Legislative Assembly candidacies and 11 sitting MPs not recontesting
       on 13 March 2027. Each record cites a dated party page or news report.
+    - >-
+      Candidates ledger update (2026-11-17): Legislative Council tickets and minor-party and
+      independent Assembly candidates added. The ledger now holds 149 Legislative Assembly
+      candidacies and 44 Legislative Council candidates from 11 parties plus independents,
+      each citing a party page or news report.
   sitting_member_signals:
     - name: James Griffin
       district: manly

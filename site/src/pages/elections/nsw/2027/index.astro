@@ -26,7 +26,15 @@ const partyShort = (slug) => {
   return p?.short_name || p?.name || slug;
 };
 const candidatesByParty = data.parties
-  .map((p) => ({ ...p, count: data.candidates.filter((c) => c.party === p.slug).length }))
+  .map((p) => {
+    const rows = data.candidates.filter((c) => c.party === p.slug);
+    return {
+      ...p,
+      count: rows.length,
+      assembly: rows.filter((c) => c.chamber === "assembly").length,
+      council: rows.filter((c) => c.chamber === "council").length,
+    };
+  })
   .filter((p) => p.count > 0)
   .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
@@ -137,8 +145,9 @@ const schema = {
       <p class="eyebrow">2027 candidacies</p>
       <h2 id="ledger-h">Candidates and retirements</h2>
       <p class="muted">
-        {summary.live_candidates} sourced Legislative Assembly candidacies across
-        {summary.districts_with_candidates} districts, and {summary.retirements} sitting MPs who have
+        {summary.assembly_candidates} sourced Legislative Assembly candidacies across
+        {summary.districts_with_candidates} districts, {summary.council_candidates} Legislative
+        Council candidates, and {summary.retirements} sitting MPs who have
         confirmed they will not recontest. Each record cites a dated party page or news report.
         Formal nominations close on 24 February 2027.
       </p>
@@ -148,11 +157,15 @@ const schema = {
             <li>
               <span class="swatch" style={`background:${partyColour(p.slug)}`} aria-hidden="true" />
               <strong>{p.count}</strong>
-              <span class="muted">{p.short_name || p.name}</span>
+              <span class="muted">
+                {p.short_name || p.name}
+                {p.council > 0 && ` (${p.assembly} LA, ${p.council} LC)`}
+              </span>
             </li>
           ))
         }
       </ul>
+      <p class="muted strip-key">LA = Legislative Assembly, LC = Legislative Council.</p>
       <h3 class="sub-h">Not recontesting</h3>
       <ul class="retire-list" role="list">
         {
@@ -329,6 +342,7 @@ const schema = {
   .chamber-link { margin: 0; font-size: 0.92rem; }
   .compact { max-width: 52rem; }
   .cand-strip { list-style: none; padding: 0; margin: 0.75rem 0 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+  .strip-key { font-size: 0.82rem; margin: -0.5rem 0 1rem; }
   .cand-strip li { display: inline-flex; align-items: center; gap: 0.4rem; }
   .sub-h { font-size: 1rem; margin: 1rem 0 0.4rem; }
   .retire-list { list-style: none; padding: 0; margin: 0 0 0.5rem; display: grid; gap: 0.3rem; font-size: 0.92rem; }

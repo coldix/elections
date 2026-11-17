@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: William Bourke
+  party: sustainable-australia
+  contest: nsw
+  chamber: council
+  ticket_position: 1
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://www.sustainableaustralia.org.au/2027_nsw_election
+      publisher: Sustainable Australia Party
+      title: 2027 NSW Election | Affordable Housing Now - Sustainable Australia Party
+      accessed: 2026-11-17
+    note: Named as the lead Legislative Council candidate on the party's 2027 NSW election
+      page (accessed 17 Nov 2026).

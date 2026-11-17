@@ -14,6 +14,11 @@
         "party": { "type": "string", "description": "slug from parties.yaml" },
         "contest": { "type": "string", "description": "district or region slug" },
         "chamber": { "enum": ["assembly", "council"] },
+        "ticket_position": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Optional upper house ticket position, only when a cited source states it. Council records only."
+        },
         "status": {
           "enum": ["provisional", "announced", "endorsed", "nominated", "withdrawn", "disendorsed", "elected", "defeated"]
         },

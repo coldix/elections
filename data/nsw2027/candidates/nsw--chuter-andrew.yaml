@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Andrew Chuter
+  party: socialist-alliance
+  contest: nsw
+  chamber: council
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://socialist-alliance.org/elections/people-planet-before-profit-2027-nsw-election-campaign
+      publisher: Socialist Alliance
+      title: 'People & planet before profit: 2027 NSW election campaign'
+      accessed: 2026-11-17
+    note: Listed under "New South Wales Legislative Council" in Our candidates on the Socialist
+      Alliance NSW 2027 campaign page (accessed 17 Nov 2026). The page lists names without
+      ticket numbers.

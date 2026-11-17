@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Chloe Rafferty
+  party: nsw-socialists
+  contest: nsw
+  chamber: council
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://www.nswsocialists.org.au/candidates
+      publisher: NSW Socialists
+      title: Candidates – NSW Socialists
+      accessed: 2026-11-17
+    note: Listed "for Legislative Council" on the NSW Socialists candidates page (accessed
+      17 Nov 2026). No ticket numbers are given.

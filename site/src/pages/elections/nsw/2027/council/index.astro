@@ -62,6 +62,12 @@ const schema = {
       2027 election (they may or may not recontest). This is not a list of candidates.
     </div>
 
+    <p class="cand-link">
+      <strong>{summary.council_candidates}</strong> sourced 2027 Legislative Council candidates are
+      listed by party ticket in the{" "}
+      <a href={`${NSW2027}/candidates#council`}>candidates ledger</a>.
+    </p>
+
     <p class="btn-row">
       <a class="btn btn-ghost btn-sm" href={NSW2027}>Overview</a>
       <a class="btn btn-ghost btn-sm" href={`${NSW2027}/assembly`}>Assembly</a>
@@ -248,4 +254,5 @@ const schema = {
   .term-continuing { background: #e2efe6; }
   .compact { max-width: 52rem; }
   .source-list { padding-left: 1.2rem; display: grid; gap: 0.45rem; }
+  .cand-link { margin: 0.75rem 0 1rem; max-width: 48rem; }
 </style>

@@ -1,0 +1,20 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Isaac Nellist
+  party: socialist-alliance
+  contest: balmain
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://socialist-alliance.org/elections/people-planet-before-profit-2027-nsw-election-campaign
+      publisher: Socialist Alliance
+      title: 'People & planet before profit: 2027 NSW election campaign'
+      accessed: 2026-11-17
+    note: Listed as "Isaac Nellist for Balmain" under Our candidates on the Socialist Alliance
+      NSW 2027 campaign page (accessed 17 Nov 2026).
+  links:
+  - url: https://socialist-alliance.org/candidates/isaac-nellist-balmain
+    kind: party-profile

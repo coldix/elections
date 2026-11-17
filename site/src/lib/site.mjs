@@ -130,6 +130,7 @@ export const PARTY_COLOURS = {
   "legalise-cannabis": "#4C8C2B",
   "animal-justice": "#C2185B",
   "victorian-socialists": "#A31621",
+  "nsw-socialists": "#A31621",
   libertarian: "#C99A00",
   "family-first": "#6A3FA0",
   dlp: "#8C4A2F",

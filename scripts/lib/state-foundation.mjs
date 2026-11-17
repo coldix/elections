@@ -143,6 +143,8 @@ export function stateFoundationSummaryFor(data) {
     live_candidates: (data.candidates ?? []).filter((c) =>
       ["provisional", "announced", "endorsed", "nominated", "elected"].includes(c.status)
     ).length,
+    assembly_candidates: (data.candidates ?? []).filter((c) => c.chamber === "assembly").length,
+    council_candidates: (data.candidates ?? []).filter((c) => c.chamber === "council").length,
     retirements: (data.retirements ?? []).length,
     districts_with_candidates: new Set(
       (data.candidates ?? []).filter((c) => c.chamber === "assembly").map((c) => c.contest)

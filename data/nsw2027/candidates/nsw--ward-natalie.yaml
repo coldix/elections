@@ -1,0 +1,20 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Natalie Ward
+  party: liberal
+  contest: nsw
+  chamber: council
+  ticket_position: 1
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-10-21
+    source:
+      url: https://www.smh.com.au/politics/nsw/liberal-elder-damien-tudehope-faces-preselection-challenge-as-mps-scramble-for-spots-20261021-p616si.html
+      publisher: The Sydney Morning Herald
+      title: Liberal elder Damien Tudehope faces preselection challenge as MPs scramble for
+        spots
+      published: 2026-10-21
+      accessed: 2026-11-17
+    note: Deputy Liberal leader; reported to have secured the top spot on the Liberal Legislative
+      Council ticket. The rest of the ticket was not settled at the time.

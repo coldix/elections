@@ -43,10 +43,28 @@ const byDistrict = data.districts
   }))
   .filter((d) => d.live.length > 0 || d.retirement);
 
-const partyCounts = data.parties
-  .map((p) => ({ ...p, count: live.filter((c) => c.party === p.slug).length }))
-  .filter((p) => p.count > 0)
-  .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+const liveAssembly = live.filter((c) => c.chamber === "assembly");
+const liveCouncil = live.filter((c) => c.chamber === "council");
+
+const countsFor = (rows) =>
+  data.parties
+    .map((p) => ({ ...p, count: rows.filter((c) => c.party === p.slug).length }))
+    .filter((p) => p.count > 0)
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+const partyCounts = countsFor(liveAssembly);
+const councilCounts = countsFor(liveCouncil);
+
+// Legislative Council tickets: one group per party, ordered by reported ticket
+// position (where a source states it), then name.
+const councilByParty = councilCounts.map((p) => ({
+  ...p,
+  rows: liveCouncil
+    .filter((c) => c.party === p.slug)
+    .sort(
+      (a, b) =>
+        (a.ticket_position ?? 999) - (b.ticket_position ?? 999) || a.name.localeCompare(b.name)
+    ),
+}));
 
 const retireByParty = data.parties
   .map((p) => ({ ...p, count: retirements.filter((r) => r.party === p.slug).length }))
@@ -64,7 +82,7 @@ const schema = {
 
 <Base
   title="NSW 2027 candidates and retirements"
-  description={`${summary.live_candidates} sourced candidacies across ${summary.districts_with_candidates} districts and ${summary.retirements} sitting MPs not recontesting the ${election.date_label} NSW state election. Every record cites a dated source.`}
+  description={`${liveAssembly.length} sourced Legislative Assembly candidacies across ${summary.districts_with_candidates} districts, ${liveCouncil.length} Legislative Council candidates and ${summary.retirements} sitting MPs not recontesting the ${election.date_label} NSW state election. Every record cites a dated source.`}
   schema={schema}
   breadcrumbs={[
     { name: "Upcoming elections", href: "/elections" },
@@ -84,8 +102,9 @@ const schema = {
     <p class="eyebrow">New South Wales · {election.date_label}</p>
     <h1>Candidates &amp; retirements</h1>
     <p class="lede">
-      <strong>{summary.live_candidates}</strong> sourced Legislative Assembly candidacies across
-      <strong>{summary.districts_with_candidates}</strong> of {summary.districts} districts, and
+      <strong>{liveAssembly.length}</strong> sourced Legislative Assembly candidacies across
+      <strong>{summary.districts_with_candidates}</strong> of {summary.districts} districts,
+      <strong>{liveCouncil.length}</strong> Legislative Council candidates, and
       <strong>{summary.retirements}</strong> sitting MPs who have confirmed they will not recontest.
       Each record cites a dated public source.
     </p>
@@ -99,14 +118,29 @@ const schema = {
     <p class="btn-row">
       <a class="btn btn-ghost" href="#retirements">Retirements</a>
       <a class="btn btn-ghost" href="#by-district">By district</a>
+      <a class="btn btn-ghost" href="#council">Legislative Council</a>
       <a class="btn btn-ghost" href={`${NSW2027}/districts`}>All districts</a>
       <a class="btn btn-ghost" href="/data/nsw2027/candidates.json">candidates.json</a>
       <a class="btn btn-ghost" href="/data/nsw2027/retirements.json">retirements.json</a>
     </p>
 
-    <ul class="party-strip" role="list" aria-label="Sourced candidacies by party">
+    <p class="strip-label muted">Legislative Assembly</p>
+    <ul class="party-strip" role="list" aria-label="Sourced Legislative Assembly candidacies by party">
       {
         partyCounts.map((p) => (
+          <li>
+            <span class="swatch" style={`--party-colour:${partyColour(p.slug)}`} aria-hidden="true" />
+            <strong class="mono">{p.count}</strong>
+            <span class="muted">{p.short_name || p.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="strip-label muted">Legislative Council</p>
+    <ul class="party-strip" role="list" aria-label="Sourced Legislative Council candidacies by party">
+      {
+        councilCounts.map((p) => (
           <li>
             <span class="swatch" style={`--party-colour:${partyColour(p.slug)}`} aria-hidden="true" />
             <strong class="mono">{p.count}</strong>
@@ -237,6 +271,56 @@ const schema = {
       </table>
     </div>
 
+    <h2 id="council">Legislative Council candidates ({liveCouncil.length})</h2>
+    <p class="muted section-note">
+      Half the 42-seat upper house (21 seats) is elected statewide in 2027. Ticket positions are shown
+      only where a cited source states them; otherwise names are listed
+      alphabetically. Tickets are incomplete until the NSW Electoral Commission publishes the
+      group ballot.
+    </p>
+    <div class="table-scroll">
+      <table class="data">
+        <caption class="visually-hidden">Sourced NSW 2027 Legislative Council candidacies by party</caption>
+        <thead>
+          <tr>
+            <th scope="col">Party</th>
+            <th scope="col">Position</th>
+            <th scope="col">Candidate</th>
+            <th scope="col">Status</th>
+            <th scope="col">Latest source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            councilByParty.flatMap((p) =>
+              p.rows.map((c, i) => (
+                <tr>
+                  {i === 0 && (
+                    <th scope="row" rowspan={p.rows.length}>
+                      <span class="party-cell">
+                        <span class="swatch-sm" style={`background:${partyColour(p.slug)}`} aria-hidden="true" />
+                        {p.short_name || p.name}
+                      </span>
+                    </th>
+                  )}
+                  <td class="mono">{c.ticket_position ? `#${c.ticket_position}` : "Not stated"}</td>
+                  <td>{c.name}</td>
+                  <td>
+                    <span class={`pill pill-${c.status}`} title={NSW_STATUS_DESCRIPTIONS[c.status]}>
+                      {STATUS_LABELS[c.status]}
+                    </span>
+                  </td>
+                  <td>
+                    <SourceLink source={c.latest_source} />
+                  </td>
+                </tr>
+              ))
+            )
+          }
+        </tbody>
+      </table>
+    </div>
+
     {
       ended.length > 0 && (
         <>
@@ -244,7 +328,7 @@ const schema = {
           <ul>
             {ended.map((c) => (
               <li>
-                {c.name} ({partyName(c.party)}, {districtName.get(c.contest) ?? c.contest}):{" "}
+                {c.name} ({partyName(c.party)}, {c.chamber === "council" ? "Legislative Council" : districtName.get(c.contest) ?? c.contest}):{" "}
                 {STATUS_LABELS[c.status]} {formatDate(c.latest_date)} <SourceLink source={c.latest_source} />
               </li>
             ))}
@@ -271,6 +355,8 @@ const schema = {
     display: flex; flex-wrap: wrap; gap: 0.65rem 1.25rem;
   }
   .party-strip li { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.92rem; }
+  .strip-label { margin: 1rem 0 -0.5rem; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .section-note { max-width: 52rem; font-size: 0.92rem; }
   .mono { font-variant-numeric: tabular-nums; }
   h2 { margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.2rem; }
   .party-cell { display: inline-flex; align-items: center; gap: 0.4rem; }

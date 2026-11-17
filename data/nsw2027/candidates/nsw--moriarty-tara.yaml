@@ -1,0 +1,19 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Tara Moriarty
+  party: labor
+  contest: nsw
+  chamber: council
+  ticket_position: 7
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-10-18
+    source:
+      url: https://labortribune.net.au/end-the-alp-protected-species-culture/
+      publisher: Labor Tribune
+      title: End the ALP 'protected species' culture
+      published: 2026-10-18
+      accessed: 2026-11-17
+    note: Reported at position 7 on NSW Labor's Legislative Council ticket for the March 2027
+      election.

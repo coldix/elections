@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Tan Hibbert
+  party: libertarian
+  contest: newtown
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-17
+    source:
+      url: https://www.lpnsw.org.au/state_candidates
+      publisher: Libertarian Party NSW
+      title: Candidates - Libertarian Party NSW
+      accessed: 2026-11-17
+    note: Listed for Newtown in the Libertarian Party NSW candidate directory for the 2027
+      state election (accessed 17 Nov 2026). No announcement date given, so the access date
+      is used.
