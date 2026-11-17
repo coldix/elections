@@ -202,3 +202,21 @@ policy:
         title: "Prenatal Testing Costs $500 - Labor Will Make It Free"
         published: 2026-11-16
         accessed: 2026-11-17
+
+    - id: labor-health-casey-mental-health-2026-11
+      statement: >-
+        Labor says a re-elected Carroll Labor Government will plan a new 100-bed acute mental health unit at Casey Hospital, with 50 adult beds, 25 beds for people aged 65 and over and 25 youth beds for 18 to 24-year-olds. Labor describes its $6 million investment as the first step towards delivering the unit.
+      kind: pledge
+      fiscal:
+        taxpayer_label: Not specified
+        amount_aud: 6000000
+        amount_display: $6 million (planning, first step)
+        timeframe: Not specified
+        financing: taxpayer
+        pbo_status: uncosted
+      source:
+        url: https://www.viclabor.org.au/news/mental-health-is-health-care-too-labor-will-protect-it
+        publisher: Victorian Labor
+        title: "Mental Health is Health Care Too - Labor Will Protect It"
+        published: 2026-11-17
+        accessed: 2026-11-18

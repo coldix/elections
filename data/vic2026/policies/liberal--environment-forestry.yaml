@@ -46,3 +46,26 @@ policy:
       title: 335 new fire trucks to back our CFA heroes
       published: '2026-11-04'
       accessed: '2026-11-06'
+  - id: liberal-env-coastal-resilience-2026-11
+    statement: >-
+      The Liberals and Nationals pledged a Victorian Coastal Resilience Strategy backed by a
+      $50 million Coastal Environment Resilience Fund over four years, to pay for urgent repairs
+      to damaged beaches, dunes, foreshore access and existing protection structures, plus dune
+      restoration, revegetation and statewide drone monitoring. A statewide coastal risk
+      framework would identify where protection, adaptation or planned retreat is appropriate
+      and set out state and local government responsibilities. Silverleaves was named as the
+      first priority.
+    kind: pledge
+    fiscal:
+      taxpayer_label: Not specified
+      amount_aud: 50000000
+      amount_display: $50 million over four years
+      timeframe: Four years
+      financing: taxpayer
+      pbo_status: uncosted
+    source:
+      url: https://www.sgst.com.au/silverleaves-first-in-line-as-coalition-pledges-50-million-to-save-beaches/
+      publisher: South Gippsland Sentinel-Times (reporting Liberal–Nationals announcement)
+      title: Silverleaves first in line as Coalition pledges $50 million to save beaches
+      published: '2026-11-17'
+      accessed: '2026-11-18'

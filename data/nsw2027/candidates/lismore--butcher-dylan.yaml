@@ -1,0 +1,21 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Dylan Butcher
+  party: nationals
+  contest: lismore
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-02
+    source:
+      url: https://www.nswnationals.org.au/dylan-butcher-for-lismore/
+      publisher: NSW Nationals
+      title: Dylan Butcher for Lismore - NSW Nationals
+      published: 2026-11-02
+      accessed: 2026-11-18
+    note: Party announcement that he has been preselected as the Nationals candidate for
+      Lismore at the 2027 NSW election.
+  links:
+  - url: https://www.nswnationals.org.au/dylan-butcher-for-lismore/
+    kind: party-profile

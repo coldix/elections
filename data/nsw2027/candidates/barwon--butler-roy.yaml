@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Roy Butler
+  party: independent
+  contest: barwon
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: 2026-10-13
+    source:
+      url: https://www.dailyliberal.com.au/story/9366993/lucie-wightman-named-nationals-candidate-for-barwon-seat/
+      publisher: Daily Liberal
+      title: Lucie Wightman named Nationals candidate for Barwon seat
+      published: 2026-10-13
+      accessed: 2026-11-18
+    note: Sitting independent MP; his office confirmed to the Daily Liberal that he will
+      seek re-election.

@@ -32,3 +32,17 @@ policy:
       title: New laws to protect Victorians by criminalising coercive control
       published: '2025-12-02'
       accessed: '2026-08-02'
+  - id: liberal-gender-puberty-suppressants-review-2026-11
+    statement: >-
+      Opposition Leader Jess Wilson said a Liberal and Nationals government would follow
+      Queensland's approach and immediately commission an independent review into the
+      prescription of puberty suppressants in Victorian public hospitals and health services,
+      citing concerns that the NHMRC interim recommendation did not set a minimum clinical
+      pathway.
+    kind: pledge
+    source:
+      url: https://www.smh.com.au/politics/victoria/a-second-opinion-is-common-sense-wilson-promises-review-of-puberty-blockers-20261117-p61ey5.html
+      publisher: The Sydney Morning Herald (quoting Jess Wilson statement)
+      title: "'A second opinion is common sense': Wilson promises review of puberty blockers"
+      published: '2026-11-17'
+      accessed: '2026-11-18'
