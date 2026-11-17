@@ -58,6 +58,29 @@ const schema = {
     </section>
 
     {
+      latest.events.length > 0 && (
+        <section aria-labelledby="events-h">
+          <h2 id="events-h">Campaign events</h2>
+          <ol class="latest-list">
+            {latest.events.map((item) => (
+              <li>
+                <a class="card card-interactive latest-card" href={item.href}>
+                  <p class="kicker">
+                    <time datetime={item.date}>{formatDate(item.date)}</time>
+                    <span aria-hidden="true"> · </span>
+                    {item.kicker}
+                  </p>
+                  <h2>{item.title}</h2>
+                  <p>{item.body}</p>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
+
+    {
       latest.foundations.length > 0 && (
         <section aria-labelledby="foundations-h">
           <h2 id="foundations-h">Foundation and ledger updates</h2>

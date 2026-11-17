@@ -1,0 +1,41 @@
+# Sourced campaign events for the 2026 Victorian state election.
+# Neutral record only: who, what, when, with dated public sources. No winners
+# declared by the tracker, no forecasts. Audience "worm" or room polls are
+# reported as published and are NOT entered in polls/ or the poll average.
+# Each event needs at least one source (validated by scripts/validate.mjs).
+events:
+  - id: peoples-forum-2026-11-17
+    date: 2026-11-17
+    type: debate
+    title: "Leaders' debate: the People's Forum"
+    href: /elections/vic/2026/leaders-debate
+    summary: >-
+      Carroll, Wilson, Sandell and Pickering faced 100 undecided voters at the
+      News24/Herald Sun forum. Audience room poll as reported: Wilson 39%,
+      Sandell 25%, Pickering 16%, Carroll 7%, undecided 13%.
+    sources:
+      - url: https://www.abc.net.au/news/2026-11-18/victorian-election-debate-jess-wilson-winner/107397070
+        publisher: ABC News
+        title: Policy discussion light in Victorian election debate but there was a clear winner
+        published: 2026-11-18
+        accessed: 2026-11-18
+      - url: https://www.theguardian.com/australia-news/2026/nov/17/voldemort-gotham-city-greens-liberal-labor-one-nation-victorian-election-leaders-debate-ntwnfb
+        publisher: Guardian Australia
+        title: "Voldemort, Gotham City and the Greens: Victorian election gets a jolt of life as leaders face off in sole debate"
+        published: 2026-11-17
+        accessed: 2026-11-18
+      - url: https://aapnews.aap.com.au/news/high-risk-election-debates-have-become-the-debate
+        publisher: AAP
+        title: "'Desperate lies': leaders square off in four-way debate"
+        published: 2026-11-17
+        accessed: 2026-11-18
+      - url: https://aapnews.aap.com.au/news/say-their-names-spectre-of-ex-premiers-haunts-debate
+        publisher: AAP
+        title: "'Say their names': spectre of ex-premiers haunts debate"
+        published: 2026-11-18
+        accessed: 2026-11-18
+      - url: https://www.theage.com.au/national/victoria/victorian-election-leaders-debate-live-ben-carroll-jess-wilson-warren-pickering-and-ellen-sandell-make-pitch-to-undecided-voters-20261117-p61exb.html
+        publisher: The Age
+        title: "Victorian election leaders' debate LIVE updates"
+        published: 2026-11-17
+        accessed: 2026-11-18

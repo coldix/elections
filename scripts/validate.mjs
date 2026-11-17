@@ -776,6 +776,21 @@ for (const election of readdirSync(DATA_DIR)) {
   // district when present). Not a 2026 forecast.
   const resultCount = validateDistrictResults2022(election, dir, districtSlugs);
 
+  // campaign events (optional file) — neutral, sourced event records
+  if (existsSync(join(dir, "campaign-events.yaml"))) {
+    const evFile = `${election}/campaign-events.yaml`;
+    const seen = new Set();
+    for (const ev of load("campaign-events.yaml").events ?? []) {
+      if (!ev.id || seen.has(ev.id)) fail(evFile, `event id missing or duplicate: ${ev.id}`);
+      seen.add(ev.id);
+      if (!isDate(ev.date)) fail(evFile, `${ev.id}: date must be YYYY-MM-DD`);
+      if (!ev.title || !ev.summary) fail(evFile, `${ev.id}: title and summary required`);
+      if (ev.href && !String(ev.href).startsWith("/")) fail(evFile, `${ev.id}: href must be a site path`);
+      if (!Array.isArray(ev.sources) || ev.sources.length === 0) fail(evFile, `${ev.id}: at least one source required`);
+      (ev.sources ?? []).forEach((s, i) => checkSource(evFile, `${ev.id} source ${i + 1}`, s));
+    }
+  }
+
   const { issueCount, policyCount } = validateIssuesPolicies(election, dir, load, partySlugs);
 
   console.log(
