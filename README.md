@@ -1,6 +1,6 @@
 # Australian Election Tracker
 
-> **Updated** 2026-11-08  
+> **Updated** 2026-11-17  
 > Live at [electiontracker.au](https://electiontracker.au) · `main` deploys automatically
 
 **[electiontracker.au](https://electiontracker.au)** is an open, sourced and
@@ -13,13 +13,15 @@ The site is structured nationally:
 - **National home:** [electiontracker.au](https://electiontracker.au)
 - **Upcoming election calendar:** [/elections](https://electiontracker.au/elections)
 - **Full candidate tracker:** [Victoria 2026](https://electiontracker.au/elections/vic/2026)
-- **Sitting-member trackers (no candidates yet):**
-  [NSW 2027](https://electiontracker.au/elections/nsw/2027),
+- **Sitting members plus a growing candidates ledger:**
+  [NSW 2027](https://electiontracker.au/elections/nsw/2027) (candidates and retirements since 17 Nov 2026)
+- **Sitting-member tracker (no candidates yet):**
   [Federal (49th Parliament)](https://electiontracker.au/elections/federal/49)
 - **Outline foundations only:** ACT 2028, QLD 2028, NT 2028, WA 2029, SA 2030, Tas
 
-Victoria is the first full candidacy ledger (`data/vic2026/`). NSW and federal
-publish structure and sitting members first; candidates are added when sourced.
+Victoria is the first full candidacy ledger (`data/vic2026/`). NSW now has a
+sourced candidates and retirements ledger in the same format. Federal publishes
+structure and sitting members first; candidates are added when sourced.
 Other jurisdictions keep permanent outline URLs that expand in place later.
 
 ## What is live
@@ -107,7 +109,7 @@ history kept. Fourteen unmatched older records were left unchanged rather than
 marked withdrawn. Only names, electorates, chambers and party names were taken
 from the report, never contact details (PR #89).
 
-### NSW 2027 (sitting members)
+### NSW 2027 (sitting members + candidates)
 
 ```text
 /elections/nsw/2027
