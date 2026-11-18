@@ -4,7 +4,7 @@ candidate:
   party: labor
   contest: wallsend
   chamber: assembly
-  status: endorsed
+  status: announced
   history:
   - status: endorsed
     date: '2026-11-10'
@@ -15,3 +15,25 @@ candidate:
       published: '2026-11-10'
       accessed: '2026-11-17'
     note: Sitting Labor MLC chosen to succeed retiring Wallsend MP Sonia Hornery.
+  - status: announced
+    date: '2026-11-19'
+    source:
+      url: https://www.watoday.com.au/politics/nsw/minns-earns-ire-from-labor-branches-over-candidate-captain-s-calls-20261111-p61cjn.html
+      publisher: WAtoday (Nine)
+      title: Minns earns ire from Labor branches over candidate 'captain's calls'
+      published: '2026-11-11'
+      accessed: '2026-11-19'
+    note: A government statement said Premier Chris Minns was proud to announce that he
+      had asked sitting Labor MLC Emily Suvaal to nominate for Wallsend. The report says
+      those candidates have not been endorsed and the announcements were made before
+      national executive sign-off.
+  - status: announced
+    date: '2026-11-19'
+    source:
+      url: https://www.smh.com.au/politics/nsw/not-running-a-charity-minns-defies-labor-branch-anger-over-captain-s-calls-20261113-p61e01.html
+      publisher: The Sydney Morning Herald
+      title: "'Not running a charity': Minns defies Labor branch anger over captain's calls"
+      published: '2026-11-13'
+      accessed: '2026-11-19'
+    note: Reports Suvaal was parachuted into Wallsend and was announced before being
+      officially endorsed.
