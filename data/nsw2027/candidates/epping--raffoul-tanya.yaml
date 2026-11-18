@@ -1,0 +1,19 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Tanya Raffoul
+  party: labor
+  contest: epping
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: '2026-11-19'
+    source:
+      url: https://www.smh.com.au/politics/nsw/ex-liberal-staffer-tanya-raffoul-to-run-for-labor-in-epping-20261119-p61fge.html
+      publisher: The Sydney Morning Herald
+      title: Ex-Liberal staffer Tanya Raffoul to run for Labor in Epping
+      published: '2026-11-19'
+      accessed: '2026-11-19'
+    note: Parramatta councillor, formerly a Liberal, who will run as Labor's candidate for
+      Epping; the report says Premier Chris Minns would announce the candidacy on 19 November
+      and that a local preselection had been due over the coming month.

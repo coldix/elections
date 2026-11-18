@@ -3,7 +3,7 @@ candidate:
   party: family-first
   contest: bendigo-west
   chamber: assembly
-  status: nominated
+  status: disendorsed
   history:
     - status: nominated
       date: 2026-11-09
@@ -25,6 +25,19 @@ candidate:
         publisher: Victorian Electoral Commission
         accessed: 2026-11-14
       note: Official VEC nominations page for this electorate.
+    - status: disendorsed
+      date: 2026-11-18
+      source:
+        url: https://www.abc.net.au/news/2026-11-18/family-first-candidate-bendigo-west-disendorsed/107400960
+        title: Family First disendorses Bendigo West candidate Christos Harisopoulos
+        publisher: ABC News
+        published: 2026-11-18
+        accessed: 2026-11-19
+      note: >-
+        Family First national director Lyle Shelton told the ABC the party had
+        disendorsed Harisopoulos over online content and language it described
+        as unbecoming and unacceptable. Nominations had closed, so his name
+        remains on the ballot paper.
   links:
     - url: https://www.vec.vic.gov.au/voting/2026-state-election/find-candidates
       kind: commission

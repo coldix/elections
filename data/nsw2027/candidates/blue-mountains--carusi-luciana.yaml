@@ -1,0 +1,21 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Luciana Carusi
+  party: greens
+  contest: blue-mountains
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-19'
+    source:
+      url: https://www.bluemountainsgreens.org/luciana
+      publisher: Blue Mountains Greens
+      title: Luciana - Blue Mountains Greens
+      accessed: '2026-11-19'
+    note: The local Greens group's site presents her as its candidate for the Blue Mountains
+      at the 2027 state election. The page gives no announcement date, so the access date is
+      used. Not yet on the Greens NSW state candidates page (checked 19 Nov 2026).
+  links:
+  - url: https://www.bluemountainsgreens.org/luciana
+    kind: party-profile
