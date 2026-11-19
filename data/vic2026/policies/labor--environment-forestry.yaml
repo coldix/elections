@@ -75,3 +75,16 @@ policy:
         title: 150 New Fire Trucks for the Frontline to Keep Us Safe
         published: '2026-10-08'
         accessed: '2026-11-06'
+    - id: labor-env-glass-bin-cds-2026-11
+      statement: >-
+        A re-elected Carroll Labor Government says it will add glass wine bottles to Victoria's
+        Container Deposit Scheme, with a 10-cent refund per bottle, and make the purple glass
+        recycling bin optional for councils instead of requiring every council to roll one out by
+        July 2027. Councils that already have the bin can keep it.
+      kind: pledge
+      source:
+        url: https://www.viclabor.org.au/news/wine-bottles-to-join-container-deposit-scheme
+        publisher: Victorian Labor
+        title: Wine Bottles To Join Container Deposit Scheme
+        published: '2026-11-13'
+        accessed: '2026-11-20'

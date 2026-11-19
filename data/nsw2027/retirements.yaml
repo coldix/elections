@@ -131,3 +131,16 @@ retirements:
     title: '''Taken its toll'': First-term Liberal MP in shock departure'
     published: '2026-11-06'
     accessed: '2026-11-17'
+- name: Mark Speakman
+  party: liberal
+  role: MLA
+  seat: cronulla
+  announced: '2026-11-19'
+  source:
+    url: https://www.smh.com.au/politics/nsw/former-nsw-liberal-leader-mark-speakman-announces-retirement-from-politics-20261119-p61fsn.html
+    publisher: The Sydney Morning Herald
+    title: Former NSW Liberal leader Mark Speakman announces retirement from politics
+    published: '2026-11-19'
+    accessed: '2026-11-20'
+  note: Former opposition leader; announced in a speech on the final Legislative Assembly
+    sitting day before the election (also reported by The Guardian, 19 Nov 2026).

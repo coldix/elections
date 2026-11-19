@@ -49,6 +49,7 @@ test("retirements include the announced NSW departures and match sitting members
     "Sonia Hornery": ["labor", "wallsend", "2026-11-03"],
     "James Griffin": ["liberal", "manly", "2026-09-02"],
     "Alister Henskens": ["liberal", "wahroonga", "2026-09-11"],
+    "Mark Speakman": ["liberal", "cronulla", "2026-11-19"],
   };
   for (const [name, [party, seat, date]] of Object.entries(expected)) {
     const r = byName.get(name);
@@ -58,7 +59,7 @@ test("retirements include the announced NSW departures and match sitting members
     assert.equal(String(r.announced), date);
   }
   const liberals = data.retirements.filter((r) => r.party === "liberal");
-  assert.equal(liberals.length, 7, "seven Liberal MLAs not recontesting");
+  assert.equal(liberals.length, 8, "eight Liberal MLAs not recontesting");
   for (const r of data.retirements) {
     const sitting = data.assemblyMembers.find((m) => m.district === r.seat);
     assert.equal(sitting?.name, r.name, `${r.name} is the sitting member for ${r.seat}`);
