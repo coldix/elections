@@ -46,8 +46,12 @@ test("NSW average uses the latest eligible poll per pollster", () => {
     "latest Resolve in average"
   );
   assert.ok(
-    nsw.included_poll_ids.includes("demosau-nsw-2026-08"),
+    nsw.included_poll_ids.includes("demosau-nsw-2026-11"),
     "latest DemosAU in average"
+  );
+  assert.ok(
+    !nsw.included_poll_ids.includes("demosau-nsw-2026-08"),
+    "one poll per pollster (Aug superseded by Nov)"
   );
   assert.ok(
     !nsw.included_poll_ids.includes("demosau-nsw-2026-06"),
