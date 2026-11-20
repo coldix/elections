@@ -1,0 +1,52 @@
+id: growth-intelligence-2026-11-20-herald-sun
+pollster: growth-intelligence-centre
+commissioner: herald-sun
+commissioner_type: media
+fieldwork_start: 2026-11-02
+fieldwork_end: 2026-11-15
+sample_size: 1221
+design_effect: null
+mode: other
+population: victorian-electors
+question_notes: >-
+  Third Herald Sun "Lighthouse" election tracking poll, conducted by Growth
+  Intelligence Centre (News Corp Australia's internal research and data
+  analytics operation); n=1,221 Victorians, margin of error about 3 points
+  (as reported by One News Australia). Published 20 Nov 2026. Reported
+  primaries L-NP 31 (-1), ONP 24 (+1), ALP 22 (+1), GRN 15 (+1), others and
+  independents 8 (-2) relative to the second wave. Fieldwork dates 2-15 Nov
+  2026 are as stated by One News Australia; Wikipedia lists the poll under
+  its 20 Nov release date, and the Herald Sun article was not read directly.
+  No 2PP reported in the sources read. Survey mode and weighting not stated
+  in the sources read, so mode recorded as "other".
+primaries:
+  alp: 22
+  lnp: 31
+  onp: 24
+  grn: 15
+  others: 8
+undecided_handling: not-stated
+eligible_for_average: false
+exclusion_reason: >-
+  Growth Intelligence Centre is not on the Victorian pollster allowlist in
+  docs/poll-methodology.md (adding a pollster needs an allowlist edit), and
+  the sources read do not state survey mode or method. Same treatment as
+  the earlier Lighthouse waves: ledgered for transparency, out of the
+  average pending a maintainer allowlist decision.
+eligibility_exception: null
+sources:
+  - url: https://www.onenewsaustralia.com/australian-poll-tracker/
+    publisher: One News Australia
+    title: "Lighthouse Victoria: One Nation climbs to 24%, its best result yet (Australian Poll Tracker, 20 Nov 2026 entry)"
+    published: 2026-11-20
+    accessed: 2026-11-21
+  - url: https://thecountau.com/vic/polls/
+    publisher: The Count AU
+    title: "Victorian Election 2026 Opinion Polls and Average (Lighthouse 20 Nov row)"
+    published: 2026-11-20
+    accessed: 2026-11-21
+  - url: https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Victorian_state_election
+    publisher: Wikipedia
+    title: Opinion polling for the 2026 Victorian state election (discovery; Lighthouse 20 Nov row)
+    published: 2026-11-20
+    accessed: 2026-11-21
