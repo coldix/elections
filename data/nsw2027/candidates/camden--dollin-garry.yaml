@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Garry Dollin
+  party: one-nation
+  contest: camden
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-22'
+    source:
+      url: https://www.westernweekender.com.au/2026/11/chris-buckley-confirmed-as-one-nation-candidate-for-penrith/
+      publisher: The Western Weekender
+      title: Chris Buckley confirmed as One Nation candidate for Penrith
+      published: '2026-11-22'
+      accessed: '2026-11-23'
+    note: The report says NSW One Nation leader Mike Newman announced Chris Buckley for Penrith
+      alongside Garry Dollin for Camden.

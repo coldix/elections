@@ -1,0 +1,20 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Sally Easlea
+  party: greens
+  contest: goulburn
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-23'
+    source:
+      url: https://greens.org.au/nsw/person/sally-easlea
+      publisher: The Greens NSW
+      title: Sally Easlea - Candidate for Goulburn
+      accessed: '2026-11-23'
+    note: Listed as "Candidate for Goulburn" on the Greens NSW state candidates page and her
+      profile page (accessed 23 Nov 2026). No announcement date given, so the access date is used.
+  links:
+  - url: https://greens.org.au/nsw/person/sally-easlea
+    kind: party-profile

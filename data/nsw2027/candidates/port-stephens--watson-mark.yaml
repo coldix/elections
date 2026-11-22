@@ -1,0 +1,24 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Mark Watson
+  party: nationals
+  contest: port-stephens
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-22'
+    source:
+      url: https://www.nswnationals.org.au/mark-watson-for-port-stephens/
+      publisher: NSW Nationals
+      title: Mark Watson for Port Stephens - NSW Nationals
+      published: '2026-11-22'
+      accessed: '2026-11-23'
+    note: Party announcement that he has been preselected as the Nationals candidate for
+      Port Stephens at the 2027 NSW election. Port Stephens councillor; the Newcastle Herald
+      (22 Nov 2026) reports he contested the seat for One Nation in 2023.
+  links:
+  - url: https://www.nswnationals.org.au/mark-watson-for-port-stephens/
+    kind: party-profile
+  - url: https://www.newcastleherald.com.au/story/9395973/mark-watson-to-contest-port-stephens-for-national-party-in-2027/
+    kind: news

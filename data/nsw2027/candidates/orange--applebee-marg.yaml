@@ -1,0 +1,21 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Marg Applebee
+  party: nationals
+  contest: orange
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-22'
+    source:
+      url: https://www.nswnationals.org.au/marg-applebee-for-orange/
+      publisher: NSW Nationals
+      title: Marg Applebee for Orange - NSW Nationals
+      published: '2026-11-22'
+      accessed: '2026-11-23'
+    note: Party announcement that she has been preselected as the Nationals candidate for
+      Orange at the 2027 NSW election. Parkes Shire councillor and former deputy mayor.
+  links:
+  - url: https://www.nswnationals.org.au/marg-applebee-for-orange/
+    kind: party-profile

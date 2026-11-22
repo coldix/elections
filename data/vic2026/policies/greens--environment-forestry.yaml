@@ -48,3 +48,18 @@ policy:
         publisher: Australian Greens Victoria
         title: Forests Policy
         accessed: '2026-08-02'
+    - id: greens-env-deer-pest-weed-2026-11
+      statement: >-
+        The Greens say they would eradicate deer in Victoria as part of a $250 million pest and
+        weed package. It includes $50 million a year for deer control (including 12 deer
+        facilitator roles across the 10 catchment management regions, full funding of the
+        Victorian Deer Control Strategy and a deer summit in 2027) and a $200 million a year fund
+        for communities and industries dealing with other invasive species and weeds. They also
+        criticise Victoria's classification of deer as a protected game species.
+      kind: pledge
+      source:
+        url: https://greens.org.au/vic/news/media-release/greens-announce-250m-pest-and-weed-plan-and-slam-labor-protecting-feral-deer
+        publisher: Australian Greens Victoria
+        title: Greens announce $250M pest and weed plan, and slam Labor for protecting feral deer
+        published: '2026-11-18'
+        accessed: '2026-11-23'
