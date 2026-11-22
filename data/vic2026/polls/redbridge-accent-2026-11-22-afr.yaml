@@ -1,0 +1,41 @@
+id: redbridge-accent-2026-11-22-afr
+pollster: redbridge-accent
+commissioner: australian-financial-review
+commissioner_type: media
+fieldwork_start: 2026-11-13
+fieldwork_end: 2026-11-20
+sample_size: 1507
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "AFR / RedBridge / Accent final pre-election Victorian state voting intention, published 22 Nov 2026, n=1,507. Primaries L-NP 33 (+2), ONP 23 (+1), ALP 22 (-1), GRN 15 (steady); others residual after the four (7). 2PP L/NP 58-42 vs ALP (from 57-43); Labor v One Nation 50-50. Fieldwork dates 13-20 Nov are as tabulated on Wikipedia and The Count AU; The Poll Bludger notes the AFR report appears to repeat the previous wave's 3-10 Nov dates, so the dates are unconfirmed by a primary source. The AFR articles are paywalled and only the opening paragraphs were read; the Accent Research project page for this wave was not yet published at encode time."
+primaries:
+  alp: 22
+  lnp: 33
+  onp: 23
+  grn: 15
+  others: 7
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.afr.com/politics/victorian-labor-hurtling-towards-historic-electoral-wipeout-20261122-p61fzt
+    publisher: Australian Financial Review
+    title: Victorian Labor hurtling towards historic electoral wipeout
+    published: 2026-11-22
+    accessed: 2026-11-23
+  - url: https://www.afr.com/politics/labor-confronts-the-revenge-of-aspirational-voters-20261122-p61ey4
+    publisher: Australian Financial Review
+    title: Labor confronts the revenge of aspirational voters
+    published: 2026-11-22
+    accessed: 2026-11-23
+  - url: https://www.pollbludger.net/2026/11/22/redbridge-group-labor-22-coalition-33-one-nation-23-in-victoria/
+    publisher: The Poll Bludger
+    title: "RedBridge Group: Labor 22, Coalition 33, One Nation 23 in Victoria"
+    published: 2026-11-22
+    accessed: 2026-11-23
+  - url: https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Victorian_state_election
+    publisher: Wikipedia
+    title: Opinion polling for the 2026 Victorian state election (discovery; RedBridge/Accent 13-20 Nov row)
+    published: 2026-11-22
+    accessed: 2026-11-23

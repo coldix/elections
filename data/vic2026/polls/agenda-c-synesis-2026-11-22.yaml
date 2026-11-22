@@ -1,0 +1,37 @@
+id: agenda-c-synesis-2026-11-22
+pollster: agenda-c-synesis
+commissioner: self-published
+commissioner_type: excluded_advocacy
+fieldwork_start: 2026-11-10
+fieldwork_end: 2026-11-18
+sample_size: 1772
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Agenda C / Synesis (with Antenna) self-initiated Victorian state poll, n=1,772 Victorian adults, 10-18 Nov 2026, effective sample 1,381, MoE about 2.6 points (as reported by the Daily Mail). Primaries L-NP 33, ALP 25, ONP 24, GRN 11; others residual (7). 2PP on stated preferences L/NP 59-41; Labor v One Nation 50-50; L/NP v ONP 68-32. Reported 22 Nov 2026 via News24, Daily Mail and The Poll Bludger; the original Agenda C release was not read."
+primaries:
+  alp: 25
+  lnp: 33
+  onp: 24
+  grn: 11
+  others: 7
+undecided_handling: not-stated
+eligible_for_average: false
+exclusion_reason: "Agenda C / Synesis is not on the pollster allowlist in docs/poll-methodology.md (adding one needs an allowlist edit), the original release was not read, and The Poll Bludger notes the firm has predominantly conservative clients. Ledgered for transparency only."
+eligibility_exception: null
+sources:
+  - url: https://www.news24.com.au/politics/australian-politics/coalition-leads-labor-5941-in-explosive-victorian-election-poll-despite-primary-vote-of-just-33-per-cent/news-story/11ba5269566fc953ec9a83bb238e454d
+    publisher: News24
+    title: Jaw-dropping new poll spells doom after 12 years of Labor rule
+    published: 2026-11-22
+    accessed: 2026-11-23
+  - url: https://www.dailymail.com/news/article-16312597/victoria-election-vec-poll-early-voting-melbourne.html
+    publisher: Daily Mail Australia
+    title: New polling shows Labor set for historic landslide defeat in Victoria after 12 years in government
+    published: 2026-11-22
+    accessed: 2026-11-23
+  - url: https://www.pollbludger.net/2026/11/22/redbridge-group-labor-22-coalition-33-one-nation-23-in-victoria/
+    publisher: The Poll Bludger
+    title: "RedBridge Group: Labor 22, Coalition 33, One Nation 23 in Victoria (Synesis note)"
+    published: 2026-11-22
+    accessed: 2026-11-23

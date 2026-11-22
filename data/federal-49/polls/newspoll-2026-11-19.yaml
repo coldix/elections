@@ -1,0 +1,31 @@
+id: newspoll-2026-11-19
+pollster: "Newspoll / Pyxis"
+commissioner: the-australian
+commissioner_type: media
+fieldwork_start: 2026-11-16
+fieldwork_end: 2026-11-19
+sample_size: 1229
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for The Australian (Newspoll / Pyxis), published 22 Nov 2026. Poll Bludger: 'conducted Monday to Thursday from a sample of 1229'; the dates 16-19 Nov are inferred (the previous Newspoll ended Thu 29 Oct and Poll Bludger says three weeks have passed). Labor steady 27, One Nation down one to 27, Coalition up one to 22, Greens up one to 14. Others residual after ALP+LNP+GRN+ONP (10). No 2PP reported in the sources read. The Australian article was not readable (cookie wall). Supersedes newspoll-2026-10-29 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 27
+  lnp: 22
+  onp: 27
+  grn: 14
+  others: 10
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theaustralian.com.au/nation/politics/newspoll-voters-lose-faith-in-anthony-albanese-angus-taylor-now-preferred-prime-minister/news-story/90905fa4caacd9f45e3b8694cf4a197e
+    publisher: The Australian
+    title: "Newspoll: Voters lose faith in Anthony Albanese, Angus Taylor now preferred prime minister"
+    published: 2026-11-22
+    accessed: 2026-11-23
+  - url: https://www.pollbludger.net/2026/11/22/newspoll-labor-27-one-nation-27-coalition-22-open-thread/
+    publisher: The Poll Bludger
+    title: "Newspoll: Labor 27, One Nation 27, Coalition 22 (open thread)"
+    published: 2026-11-22
+    accessed: 2026-11-23
