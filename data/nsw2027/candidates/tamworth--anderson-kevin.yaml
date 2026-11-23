@@ -1,0 +1,22 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Kevin Anderson
+  party: nationals
+  contest: tamworth
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: '2026-11-23'
+    source:
+      url: https://www.northerndailyleader.com.au/story/9396466/kevin-anderson-to-contest-tamworth-at-2027-nsw-election/
+      publisher: The Northern Daily Leader
+      title: "Empty hospitals, water security, and 'Sydney's rubbish': Kev takes aim at Labor's 'chaos'"
+      published: '2026-11-23'
+      accessed: '2026-11-24'
+    note: 'Sitting Nationals MP for Tamworth and NSW Nationals deputy leader announced his
+      candidacy for Tamworth: "I''ll be running, and I''ll be running hard." The report does
+      not mention a preselection result.'
+  links:
+  - url: https://www.northerndailyleader.com.au/story/9396466/kevin-anderson-to-contest-tamworth-at-2027-nsw-election/
+    kind: news
