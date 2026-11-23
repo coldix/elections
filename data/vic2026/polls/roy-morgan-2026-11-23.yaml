@@ -1,0 +1,31 @@
+id: roy-morgan-2026-11-23
+pollster: roy-morgan
+commissioner: self
+commissioner_type: self
+fieldwork_start: 2026-11-18
+fieldwork_end: 2026-11-19
+sample_size: 1563
+design_effect: null
+mode: sms
+population: victorian-electors
+question_notes: "Special SMS Roy Morgan survey of Victorian state voting intention (Finding 10393), Victoria-wide cross-section of 1,563 electors, 18-19 Nov 2026 (the release text once says 18-20 Nov; the lead paragraph and The Poll Bludger say Wednesday-Thursday, so 18-19 is used). Others = other parties (8.5) + independents (5). Respondent 2PP L-NP 55-45 ALP; L-NP 69 v ONP 31 and ALP 54 v ONP 46 and the three-party-preferred split are not encoded. Supersedes roy-morgan-2026-10 via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 22.5
+  lnp: 31
+  onp: 20
+  grn: 13
+  others: 13.5
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.roymorgan.com/findings/10393-victorian-state-voting-intention-november-2026
+    publisher: Roy Morgan Research
+    title: "Victorian State Voting Intention: Liberal-National Coalition set for victory at this week's Victorian State Election"
+    published: 2026-11-23
+    accessed: 2026-11-24
+  - url: https://www.pollbludger.net/2026/11/24/victorian-polls-yougov-and-roy-morgan/
+    publisher: The Poll Bludger
+    title: "Victorian polls: YouGov and Roy Morgan"
+    published: 2026-11-24
+    accessed: 2026-11-24

@@ -1,0 +1,31 @@
+id: yougov-2026-11-23-news24-megapoll
+pollster: YouGov
+commissioner: news24-herald-sun
+commissioner_type: media
+fieldwork_start: 2026-11-06
+fieldwork_end: 2026-11-23
+sample_size: 3890
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "News24 / Herald Sun YouGov Victorian 'megapoll' (MRP-style, per The Poll Bludger), n=3,890, fieldwork 6-23 Nov 2026 as reported. Primaries L-NP 31, ONP 21, ALP 20, GRN 16; Victorian Socialists 4, independents 4, other parties 5 (components sum to 13, rounding; the residual after the four named parties is 12; 12 recorded; components sum to 13 by rounding). 2PP L-NP 58-42 ALP and four-party-preferred (LNP 33, ONP 23, ALP 22, GRN 22) not encoded. Ledgered only: a 17-day MRP-style fieldwork window overlaps the other November polls, and docs/poll-methodology.md keeps MRP out of the v1 average."
+primaries:
+  alp: 20
+  lnp: 31
+  onp: 21
+  grn: 16
+  others: 12
+undecided_handling: allocated
+eligible_for_average: false
+exclusion_reason: "MRP-style megapoll with a 17-day fieldwork window (6-23 Nov) that overlaps other polls in the window; methodology excludes MRP from the v1 average. Ledgered for transparency only."
+sources:
+  - url: https://www.news24.com.au/politics/australian-politics/victorian-labor-headed-for-nightmare-state-election-recording-worst-vote-since-1902-as-coalition-set-for-landslide-victory/news-story/d5f3b4209cbfc3c3c03d8afc852d8c66
+    publisher: News24
+    title: "BACK TO 1902: Labor's nightmare blow ahead of Victorian election"
+    published: 2026-11-23
+    accessed: 2026-11-24
+  - url: https://www.pollbludger.net/2026/11/24/victorian-polls-yougov-and-roy-morgan/
+    publisher: The Poll Bludger
+    title: "Victorian polls: YouGov and Roy Morgan"
+    published: 2026-11-24
+    accessed: 2026-11-24
