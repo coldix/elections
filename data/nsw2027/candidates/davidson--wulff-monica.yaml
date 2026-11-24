@@ -1,0 +1,22 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Monica Wulff
+  party: independent
+  contest: davidson
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: '2026-11-20'
+    source:
+      url: https://www.theguardian.com/australia-news/2026/nov/21/coalition-one-nation-teals-new-threat-sydney
+      publisher: The Guardian
+      title: 'As the Coalition stares down One Nation in NSW, a new threat is rising: independents'
+      published: '2026-11-20'
+      accessed: '2026-11-25'
+    note: The Guardian reports she has announced a run as an independent in Davidson. Her
+      campaign site (accessed 25 Nov 2026) says "I'm running as your independent candidate for
+      Davidson". The article does not give an announcement date, so the publication date is used.
+  links:
+  - url: https://www.monicawulff.com/
+    kind: campaign-site

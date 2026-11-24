@@ -1,0 +1,23 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Michael Randall
+  party: independent
+  contest: north-shore
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: '2026-11-13'
+    source:
+      url: https://northsydneysun.com.au/community-politics/two-independents-emerge-to-challenge-liberals-in-north-shore-and-willoughby/
+      publisher: North Sydney Sun
+      title: Two independents emerge to challenge Liberals in North Shore and Willoughby
+      published: '2026-11-16'
+      accessed: '2026-11-25'
+    note: Mosman councillor and former deputy mayor; the report says he formally announced his
+      candidacy as a community independent for North Shore on 13 November, backed by North
+      Shore Votes. The Guardian (20 Nov 2026) also reports his announcement. His campaign site
+      presents him as "Community Independent for North Shore".
+  links:
+  - url: https://www.michaelrandall.com.au/
+    kind: campaign-site

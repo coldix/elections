@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Lisa Perry Wildman
+  party: independent
+  contest: penrith
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: '2026-11-21'
+    source:
+      url: https://www.westernweekender.com.au/2026/11/lisa-perry-wildman-confirms-state-election-tilt/
+      publisher: The Western Weekender
+      title: Lisa Perry Wildman confirms State Election tilt
+      published: '2026-11-21'
+      accessed: '2026-11-25'
+    note: Community advocate confirmed she will run as an independent in Penrith, after missing
+      out on One Nation preselection for the seat.

@@ -4,7 +4,7 @@ candidate:
   party: labor
   contest: terrigal
   chamber: assembly
-  status: endorsed
+  status: withdrawn
   history:
   - status: endorsed
     date: '2026-09-10'
@@ -23,6 +23,15 @@ candidate:
       title: Sam Boughton - Labor Candidate for Terrigal
       accessed: '2026-11-17'
     note: Listed on NSW Labor's candidate pages.
-  links:
-  - url: https://www.nswlabor.org.au/sam_boughton
-    kind: party-profile
+  - status: withdrawn
+    date: '2026-11-18'
+    source:
+      url: https://coastcommunitynews.com.au/central-coast/news/2026/11/labors-sam-boughton-withdraws-from-electoral-race/
+      publisher: Coast Community News
+      title: Labor's Sam Boughton withdraws from electoral race
+      published: '2026-11-18'
+      accessed: '2026-11-25'
+    note: Withdrew his candidacy for Terrigal, announced on his Facebook page, citing a recent
+      family tragedy. Labor had not announced a replacement at the time of the report. His
+      NSW Labor candidate page now returns 404 and he is no longer listed on the party's
+      candidates page (checked 25 Nov 2026).

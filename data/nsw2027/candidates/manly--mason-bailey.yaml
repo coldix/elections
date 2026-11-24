@@ -1,0 +1,19 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Bailey Mason
+  party: animal-justice
+  contest: manly
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: '2026-10-30'
+    source:
+      url: https://manlyobserver.com.au/kicking-off-the-2027-nsw-election-with-meet-some-of-the-manly-candidates-forum/
+      publisher: Manly Observer
+      title: Curly questions as Meet the Candidates event launches state election
+      published: '2026-10-30'
+      accessed: '2026-11-25'
+    note: Named as the Animal Justice Party candidate for Manly and spoke at a Meet the
+      Candidates forum. Not yet confirmed on the AJP NSW candidates page, which listed no
+      candidates when checked on 25 Nov 2026.

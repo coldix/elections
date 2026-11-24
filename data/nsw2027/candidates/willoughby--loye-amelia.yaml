@@ -1,0 +1,20 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Amelia Loye
+  party: independent
+  contest: willoughby
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: '2026-11-20'
+    source:
+      url: https://www.theguardian.com/australia-news/2026/nov/21/coalition-one-nation-teals-new-threat-sydney
+      publisher: The Guardian
+      title: 'As the Coalition stares down One Nation in NSW, a new threat is rising: independents'
+      published: '2026-11-20'
+      accessed: '2026-11-25'
+    note: The Guardian reports she will run as an independent in Willoughby, backed by the
+      community group Willoughby Votes, and quotes her ("I want to earn their support"). The
+      North Sydney Sun (16 Nov 2026) reported her NSWEC registration as an independent for
+      Willoughby. Willoughby Votes' own site has not yet named her (checked 25 Nov 2026).
