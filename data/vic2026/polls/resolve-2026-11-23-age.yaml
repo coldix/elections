@@ -1,0 +1,26 @@
+id: resolve-2026-11-23-age
+pollster: resolve
+commissioner: the-age
+commissioner_type: media
+fieldwork_start: 2026-11-20
+fieldwork_end: 2026-11-23
+sample_size: 1000
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Final Resolve Political Monitor Victorian state VI for The Age / Nine before the 28 Nov 2026 election. Per Poll Bludger (25 Nov): 'conducted Friday to Monday from a sample of 1000' (20-23 Nov inferred from the weekday description). ALP 20 (down two), L-NP 31 (up one), ONP 25 (up two), GRN 13 (steady). Others residual after ALP+LNP+GRN+ONP (11). The Age article was not yet online when Poll Bludger reported and was not read; figures are secondary via Poll Bludger. Supersedes resolve-2026-11-age in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 20
+  lnp: 31
+  onp: 25
+  grn: 13
+  others: 11
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/11/25/resolve-strategic-labor-20-coalition-31-one-nation-25-in-victoria/
+    publisher: The Poll Bludger
+    title: "Resolve Strategic: Labor 20, Coalition 31, One Nation 25 in Victoria"
+    published: 2026-11-25
+    accessed: 2026-11-25

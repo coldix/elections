@@ -1,0 +1,26 @@
+id: demosau-2026-11-capital-brief
+pollster: DemosAU
+commissioner: capital-brief
+commissioner_type: media
+fieldwork_start: 2026-11-18
+fieldwork_end: 2026-11-22
+sample_size: 1464
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Federal primary voting intention for Capital Brief / DemosAU, monthly wave. Per Poll Bludger (25 Nov): 'conducted last Wednesday to Sunday from a sample of 1464' (18-22 Nov inferred from the weekday description). ALP 27 (up one), L-NP 25 (up one), ONP 23 (down three), GRN 12 (down one). Others residual after ALP+LNP+GRN+ONP (13). Secondary source only; DemosAU/Capital Brief release not located. Supersedes demosau-2026-10-capital-brief in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 27
+  lnp: 25
+  onp: 23
+  grn: 12
+  others: 13
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/11/25/demosau-labor-27-coalition-25-one-nation-23-open-thread/
+    publisher: The Poll Bludger
+    title: "DemosAU: Labor 27, Coalition 25, One Nation 23 (open thread)"
+    published: 2026-11-25
+    accessed: 2026-11-25
