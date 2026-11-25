@@ -1,0 +1,31 @@
+id: essential-2026-11-24-guardian
+pollster: Essential
+commissioner: the-guardian
+commissioner_type: media
+fieldwork_start: 2026-11-18
+fieldwork_end: 2026-11-23
+sample_size: 1087
+design_effect: null
+mode: online
+population: australian-electors
+question_notes: "Guardian Essential Report federal voting intention. Primaries ALP 26, L/NP 25, ONP 26, GRN 13 as reported by The Guardian; others 10 is the residual (undecided counted in others, per Polling Forecast's read of the Essential charts). Fieldwork Wed 18 - Mon 23 Nov per Polling Forecast, matching Essential's usual pattern (The Guardian says only 'last week'). Sample: The Guardian reports 1,087; Polling Forecast lists 1,017 (discrepancy unresolved, Guardian figure used). 2PP+ not encoded. Supersedes essential-2026-10-28-guardian in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 26
+  lnp: 25
+  onp: 26
+  grn: 13
+  others: 10
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theguardian.com/australia-news/2026/nov/25/guardian-essential-poll-anthony-albaneses-ai-datacentres-labor-one-nation-coalition
+    publisher: The Guardian
+    title: "Guardian Essential poll: Albanese's disapproval rating hits highest level as problems mount for Labor"
+    published: 2026-11-24
+    accessed: 2026-11-26
+  - url: https://www.pollingforecast.com/au/polls/1001574
+    publisher: Polling Forecast
+    title: "Essential Research poll, 23 November 2026: Next federal election"
+    published: 2026-11-25
+    accessed: 2026-11-26
