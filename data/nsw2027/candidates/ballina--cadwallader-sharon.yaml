@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Sharon Cadwallader
+  party: independent
+  contest: ballina
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: '2026-10-14'
+    source:
+      url: https://ballinanewsdaily.com.au/2026/10/cadwallader-enters-race-for-ballina-declaring-im-here-to-win/
+      publisher: Ballina News Daily
+      title: "Cadwallader enters race for Ballina, declaring: 'I'm here to win'"
+      published: '2026-10-14'
+      accessed: '2026-11-26'
+    note: Ballina Shire Mayor launched an independent bid for Ballina at a media conference
+      outside Ballina District Hospital.

@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Michelle Byrne
+  party: liberal
+  contest: kellyville
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-25'
+    source:
+      url: https://nswliberal.org.au/news/michelle-byrne-will-continue-delivering-for-kellyville
+      publisher: Liberal Party NSW
+      title: Michelle Byrne will continue delivering for Kellyville
+      published: '2026-11-25'
+      accessed: '2026-11-26'
+    note: Liberal candidate succeeding retiring MP Ray Williams.

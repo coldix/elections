@@ -1,0 +1,19 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Sarah Coulon
+  party: independent
+  contest: miranda
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: '2026-10-14'
+    source:
+      url: https://www.theleader.com.au/story/9367513/sarah-coulon-launches-independent-bid-for-key-miranda-seat/
+      publisher: St George & Sutherland Shire Leader
+      title: Sarah Coulon launches independent bid for key Miranda seat
+      published: '2026-10-14'
+      accessed: '2026-11-26'
+    note: Reports she is standing as an independent for Miranda. She is NSW senior
+      vice-president of the Australian Democrats, which is not registered for the 2027 NSW
+      election.

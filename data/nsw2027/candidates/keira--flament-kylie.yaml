@@ -1,0 +1,18 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Kylie Flament
+  party: independent
+  contest: keira
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: '2026-10-17'
+    source:
+      url: https://www.theillawarraflame.com.au/independent-to-make-political-debut-in-labor-heartland/
+      publisher: The Illawarra Flame
+      title: Independent to make political debut in Labor heartland
+      published: '2026-10-27'
+      accessed: '2026-11-26'
+    note: Reports her independent campaign for Keira launched at Corrimal Community Centre
+      on 17 October 2026.

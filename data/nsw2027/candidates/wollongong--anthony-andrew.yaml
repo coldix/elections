@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Andrew Anthony
+  party: independent
+  contest: wollongong
+  chamber: assembly
+  status: announced
+  history:
+  - status: announced
+    date: '2026-11-12'
+    source:
+      url: https://www.theillawarraflame.com.au/wollongong-needs-human-scale-city-says-independent-in-bid-for-state-seat/
+      publisher: The Illawarra Flame
+      title: Wollongong needs 'human-scale city', says independent in bid for state seat
+      published: '2026-11-12'
+      accessed: '2026-11-26'
+    note: Wollongong City Councillor announced he will contest Wollongong as an independent.
