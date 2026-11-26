@@ -304,7 +304,15 @@ senate_members:
   term_note: State term ends 30 June 2028; ordinarily faces voters at the next half-Senate election.
   handbook_url: https://handbook.aph.gov.au/Parliamentarian/300644
 - name: Leah Blyth
-  party: liberal
+  party: one-nation
+  party_note: Elected to fill Simon Birmingham's casual vacancy as a Liberal; defected to One Nation
+    on 26 Nov 2026 (Pauline Hanson's first federal senator for South Australia).
+  party_source:
+    url: https://www.abc.net.au/news/2026-11-26/leah-blyth-liberal-one-nation-angus-taylor-/107428224
+    publisher: ABC News
+    title: Liberal senator Leah Blyth defects to One Nation in major blow for Angus Taylor
+    published: '2026-11-26'
+    accessed: '2026-11-27'
   state: sa
   parliament: 48
   end_term: 2028

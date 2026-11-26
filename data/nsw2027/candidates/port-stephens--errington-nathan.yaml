@@ -1,0 +1,26 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Nathan Errington
+  party: liberal
+  contest: port-stephens
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: '2026-11-26'
+    source:
+      url: https://www.newcastleherald.com.au/story/9398954/sometimes-a-pig-bleeds-slowly-coalition-to-candidates-battle-it-out-in-port-stephens/
+      publisher: Newcastle Herald
+      title: Liberals and Nationals to face off in Port Stephens race
+      published: '2026-11-26'
+      accessed: '2026-11-27'
+    note: Reports his preselection as the Liberal candidate for Port Stephens, so the Liberals
+      and Nationals (Mark Watson) will both contest the seat. Port Stephens councillor; he was
+      the Liberal candidate for the seat in 2023. 2HD (26 Nov 2026) also reports he was
+      announced as the NSW Liberal candidate. The NSW Liberal site blocked automated access
+      on 27 Nov 2026.
+  links:
+  - url: https://www.newcastleherald.com.au/story/9398954/sometimes-a-pig-bleeds-slowly-coalition-to-candidates-battle-it-out-in-port-stephens/
+    kind: news
+  - url: https://2hd.com.au/articles/nathan-errington-to-contest-liberal-seat/
+    kind: news
