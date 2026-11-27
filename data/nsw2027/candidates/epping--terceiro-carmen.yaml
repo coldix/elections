@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Carmen Terceiro
+  party: animal-justice
+  contest: epping
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-28
+    source:
+      url: https://nsw.animaljusticeparty.org/carmen_terceiro
+      publisher: Animal Justice Party NSW
+      title: Carmen Terceiro - Animal Justice Party NSW
+      accessed: 2026-11-28
+    note: Animal Justice Party NSW candidate page tagged for the 2027 state election with
+      electorate Epping. No announcement date given, so the access date is used.

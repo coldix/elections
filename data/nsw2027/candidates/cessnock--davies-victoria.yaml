@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Victoria Davies
+  party: animal-justice
+  contest: cessnock
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-28
+    source:
+      url: https://nsw.animaljusticeparty.org/victoria_davies_2027
+      publisher: Animal Justice Party NSW
+      title: Victoria Davies - Animal Justice Party NSW
+      accessed: 2026-11-28
+    note: Animal Justice Party NSW candidate page tagged for the 2027 state election with
+      electorate Cessnock. No announcement date given, so the access date is used.

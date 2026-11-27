@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Jessica Bouyamourn
+  party: animal-justice
+  contest: newtown
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-28
+    source:
+      url: https://nsw.animaljusticeparty.org/jessica_bouyamourn
+      publisher: Animal Justice Party NSW
+      title: Jessica Bouyamourn - Animal Justice Party NSW
+      accessed: 2026-11-28
+    note: Animal Justice Party NSW candidate page tagged for the 2027 state election with
+      electorate Newtown. No announcement date given, so the access date is used.

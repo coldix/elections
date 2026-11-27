@@ -1,0 +1,17 @@
+# NSW 2027 candidacy record. Same schema as data/vic2026/candidates.
+candidate:
+  name: Karin Wentworth-Ping
+  party: animal-justice
+  contest: willoughby
+  chamber: assembly
+  status: endorsed
+  history:
+  - status: endorsed
+    date: 2026-11-28
+    source:
+      url: https://nsw.animaljusticeparty.org/karin_wentworthping
+      publisher: Animal Justice Party NSW
+      title: Karin Wentworth-Ping - Animal Justice Party NSW
+      accessed: 2026-11-28
+    note: Animal Justice Party NSW candidate page tagged for the 2027 state election with
+      electorate Willoughby. No announcement date given, so the access date is used.
