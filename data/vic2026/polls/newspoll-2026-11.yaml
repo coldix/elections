@@ -1,0 +1,31 @@
+id: newspoll-2026-11
+pollster: "Newspoll / Pyxis"
+commissioner: the-australian
+commissioner_type: media
+fieldwork_start: 2026-11-20
+fieldwork_end: 2026-11-25
+sample_size: 1506
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Final Victorian state Newspoll (Pyxis) for The Australian, n=1,506. Fieldwork 20–25 Nov 2026 as listed by Wikipedia; Poll Bludger notes the online report does not give fieldwork dates, so treat dates as unconfirmed. Primaries per Poll Bludger: L-NP 33 (steady), ALP 20 (down 4), ONP 18 (down 2), GRN 17 (up 3); Others residual (12). Reported 2PP L-NP 57.5-42.5 (not encoded). The Australian article is paywalled; figures confirmed via Poll Bludger. Supersedes newspoll-2026-10 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 20
+  lnp: 33
+  onp: 18
+  grn: 17
+  others: 12
+undecided_handling: allocated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.theaustralian.com.au/nation/politics/jess-wilson-opens-15point-newspoll-lead-as-victorian-labor-collapses/news-story/b8962613a919752e3d789fd8f1bec001
+    publisher: The Australian
+    title: Jess Wilson opens 15-point Newspoll lead as Victorian Labor collapses
+    published: 2026-11-26
+    accessed: 2026-11-28
+  - url: https://www.pollbludger.net/2026/11/27/victorian-polls-newspoll-and-demosau/
+    publisher: The Poll Bludger
+    title: "Victorian polls: Newspoll and DemosAU"
+    published: 2026-11-27
+    accessed: 2026-11-28

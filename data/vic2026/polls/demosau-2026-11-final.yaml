@@ -1,0 +1,31 @@
+id: demosau-2026-11-final
+pollster: demosau
+commissioner: premier-national
+commissioner_type: media
+fieldwork_start: 2026-11-21
+fieldwork_end: 2026-11-25
+sample_size: 2092
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Final DemosAU/Premier National Victorian state poll, n=2,092, fieldwork 21–25 Nov 2026 per Wikipedia (DemosAU release dated 26 Nov; DemosAU page not machine-readable at encode time). Primaries per Poll Bludger: L-NP 34 (up 1 on 2–6 Nov), ALP 19 (up 1), GRN 16 (down 1), ONP 16 (down 5); Others residual (15; Wikipedia lists independents 6, others 9). Reported 2PP not encoded. Supersedes demosau-2026-11 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 19
+  lnp: 34
+  onp: 16
+  grn: 16
+  others: 15
+undecided_handling: not-stated
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/11/27/victorian-polls-newspoll-and-demosau/
+    publisher: The Poll Bludger
+    title: "Victorian polls: Newspoll and DemosAU"
+    published: 2026-11-27
+    accessed: 2026-11-28
+  - url: https://demosau.com/news/coalition-in-election-winning-lead-in-final-demosau-premiernational-victorian-poll/
+    publisher: DemosAU
+    title: Coalition in election-winning lead in final DemosAU/PremierNational Victorian poll
+    published: 2026-11-26
+    accessed: 2026-11-28

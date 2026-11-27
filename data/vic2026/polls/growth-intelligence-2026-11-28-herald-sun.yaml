@@ -1,0 +1,32 @@
+id: growth-intelligence-2026-11-28-herald-sun
+pollster: growth-intelligence-centre
+commissioner: herald-sun
+commissioner_type: media
+fieldwork_start: 2026-11-09
+fieldwork_end: 2026-11-22
+sample_size: 1200
+design_effect: null
+mode: other
+population: victorian-electors
+question_notes: "Final Herald Sun 'Lighthouse' tracking poll (Growth Intelligence Centre, News Corp). Herald Sun says conducted 9–22 Nov 2026 from 'more than 1200 respondents' (as relayed by Poll Bludger), so sample_size 1200 is a floor, not the exact n. Primaries per Poll Bludger: ONP 26, L-NP 26, ALP 22, GRN 15; Others residual (11). No 2PP or mode reported. Overlaps fieldwork of the earlier Lighthouse waves."
+primaries:
+  alp: 22
+  lnp: 26
+  onp: 26
+  grn: 15
+  others: 11
+undecided_handling: not-stated
+eligible_for_average: false
+exclusion_reason: "Growth Intelligence Centre is not on the Victorian pollster allowlist in docs/poll-methodology.md, exact sample size and survey mode are not stated, and fieldwork overlaps earlier waves. Ledgered for transparency, out of the average (same treatment as earlier Lighthouse waves)."
+eligibility_exception: null
+sources:
+  - url: https://www.pollbludger.net/2026/11/28/victorian-election-late-polling/
+    publisher: The Poll Bludger
+    title: "Victorian election: late polling"
+    published: 2026-11-28
+    accessed: 2026-11-28
+  - url: https://www.heraldsun.com.au/news/victoria/state-election/final-victorian-election-polls-show-coalition-on-track-to-form-majority-government/news-story/b458264b2534bc9c8be90ab8ccf39584
+    publisher: Herald Sun
+    title: Final Victorian election polls show Coalition on track to form majority government
+    published: 2026-11-27
+    accessed: 2026-11-28

@@ -1,0 +1,31 @@
+id: freshwater-2026-11-herald-sun
+pollster: freshwater
+commissioner: herald-sun
+commissioner_type: media
+fieldwork_start: 2026-11-23
+fieldwork_end: 2026-11-26
+sample_size: 1026
+design_effect: null
+mode: online
+population: victorian-electors
+question_notes: "Final Herald Sun / Freshwater Strategy Victorian state poll, n=1,026, fieldwork Monday–Thursday of election week (23–26 Nov 2026; dates per Poll Bludger 'Monday to Thursday' and Wikipedia). Primaries as reported by Poll Bludger from the Herald Sun: ALP 21 (down 3 on late September), L-NP 34 (up 5), ONP 23 (up 1), GRN 15 (up 1); Others residual after ALP+LNP+GRN+ONP (7). Reported 2PP Coalition 58-42 (not encoded). Herald Sun article read only via secondary reports. Supersedes freshwater-2026-09 in the average via one-poll-per-pollster de-dupe."
+primaries:
+  alp: 21
+  lnp: 34
+  onp: 23
+  grn: 15
+  others: 7
+undecided_handling: excluded
+eligible_for_average: true
+exclusion_reason: null
+sources:
+  - url: https://www.pollbludger.net/2026/11/28/victorian-election-late-polling/
+    publisher: The Poll Bludger
+    title: "Victorian election: late polling"
+    published: 2026-11-28
+    accessed: 2026-11-28
+  - url: https://www.heraldsun.com.au/news/victoria/state-election/final-victorian-election-polls-show-coalition-on-track-to-form-majority-government/news-story/b458264b2534bc9c8be90ab8ccf39584
+    publisher: Herald Sun
+    title: Final Victorian election polls show Coalition on track to form majority government
+    published: 2026-11-27
+    accessed: 2026-11-28
